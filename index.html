@@ -88,6 +88,51 @@ body::before{content:"";position:fixed;inset:0;background:var(--kagit);opacity:.
 }
 .konu-rozet span:first-child{background:var(--turuncu);border-color:var(--turuncu);color:#fff;font-weight:600}
 
+
+/* ---- kilitli test ---- */
+.konu-ad .bolum{
+  font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;
+  color:var(--grafit);background:var(--kagit);border:1px solid var(--cizgi);
+  border-radius:20px;padding:2px 9px;margin-left:9px;vertical-align:middle;
+}
+.konu-kart.kilitli{background:#FAFBFC;border-style:dashed}
+.konu-kart.kilitli .konu-ad,.konu-kart.kilitli .konu-alt{color:var(--grafit)}
+.konu-kart.kilitli .konu-rozet span:first-child{background:var(--grafit);border-color:var(--grafit)}
+.kilit-bar{
+  margin-top:14px;padding-top:13px;border-top:1px dashed var(--cizgi);
+  font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--murekkep);
+}
+.kilit-bar em{display:block;font-style:normal;font-size:11px;color:var(--grafit);margin-top:4px}
+.kod-kutu{display:none;gap:8px;margin-top:12px}
+.konu-kart.kod-acik .kod-kutu{display:flex}
+.kod-kutu input{
+  flex:1;min-width:0;font-family:var(--mono);font-size:15px;letter-spacing:.12em;
+  text-transform:uppercase;padding:12px 13px;border:1px solid var(--cizgi);
+  border-radius:5px;background:var(--kart);color:var(--murekkep);outline:none;
+}
+.kod-kutu input:focus{border-color:var(--turuncu)}
+.kod-kutu button{
+  flex:0 0 74px;background:var(--turuncu);color:#fff;border:none;border-radius:5px;
+  font-family:var(--disp);font-weight:700;font-size:15px;cursor:pointer;
+}
+.konu-kart.sarsi{animation:sars .4s}
+@keyframes sars{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}
+  40%{transform:translateX(7px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+
+/* ---- yol haritası ---- */
+.yolda{margin-top:22px;border-top:1px solid var(--cizgi);padding-top:16px}
+.yolda p{
+  font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--grafit);margin-bottom:10px;
+}
+.yolda span{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:14px;color:var(--grafit);padding:7px 0;border-bottom:1px solid var(--cizgi);
+}
+.yolda span:last-child{border-bottom:none}
+.yolda span b{font-weight:600;color:var(--murekkep)}
+.yolda span::after{content:""}
+
 /* ---- geri ---- */
 .geri{
   display:inline-block;background:none;border:none;cursor:pointer;
@@ -106,7 +151,7 @@ body::before{content:"";position:fixed;inset:0;background:var(--kagit);opacity:.
 .serit{display:flex;gap:4px;margin-bottom:20px;flex-wrap:wrap}
 .karo{
   flex:1 1 0;min-width:0;aspect-ratio:1;border:1px solid var(--cizgi);background:var(--kart);
-  border-radius:3px;font-family:var(--mono);font-size:9px;letter-spacing:-.03em;color:var(--grafit);
+  border-radius:3px;font-family:var(--mono);font-size:10px;color:var(--grafit);
   display:flex;align-items:center;justify-content:center;
   transition:background .25s,color .25s,border-color .25s;
 }
@@ -195,19 +240,9 @@ body::before{content:"";position:fixed;inset:0;background:var(--kagit);opacity:.
   <!-- GİRİŞ -->
   <section id="giris" class="giris">
     <h1>Hangi konudan <u>test</u> çözmek istersin?</h1>
-    <p>İki testte de 20'şer soru var. Müfredat içi ama bilerek zor tutuldu — ezberle değil, kurallarla çözülür. Her sorunun çözümü hemen altında.</p>
+    <p>Her testte 20 soru var. Müfredat içi ama bilerek zor tutuldu — ezberle değil, kurallarla çözülür. Her sorunun çözümü hemen altında.</p>
 
-    <button class="konu-kart" data-test="atom">
-      <div class="konu-ad">Modern Atom Teorisi</div>
-      <div class="konu-alt">Kuantum sayıları · orbital enerjileri · küresel simetri · Bohr ve de Broglie</div>
-      <div class="konu-rozet"><span>20 soru</span><span>Zor</span></div>
-    </button>
-
-    <button class="konu-kart" data-test="gaz">
-      <div class="konu-ad">Gazlar</div>
-      <div class="konu-alt">Gaz yasaları · kısmi basınç · difüzyon · kinetik teori</div>
-      <div class="konu-rozet"><span>20 soru</span><span>Zor</span></div>
-    </button>
+    <div id="konu-liste"></div>
   </section>
 
   <!-- TEST -->
@@ -415,11 +450,258 @@ const sorularGaz = [
    sik:["8","10","12","16","20"], d:1,
    c:"Aynı koşulda eşit hacim = eşit mol. Ortalama mol kütlesi = (4 + 16)/2 = 10 g/mol. Eşit mol olduğu için basit aritmetik ortalama alınır."}
 ];
+const sorularCoz1 = [
+  {konu:"Kütlece yüzde derişim", s:"250 gram suda 50 gram tuz çözülerek hazırlanan çözeltinin kütlece yüzde derişimi kaçtır?",
+   sik:["%16,7","%20","%25","%12,5","%33,3"], d:0,
+   c:"Kütlece yüzde, çözünenin çözelti kütlesine oranıdır; çözücüye değil. Çözelti kütlesi 250 + 50 = 300 g olur. (50/300) × 100 ≈ %16,7. Paydaya 250 yazıp %20 bulmak en sık yapılan hatadır."},
 
-const testler = {
-  atom: {ad:"Modern Atom Teorisi", dizi:sorularAtom},
-  gaz:  {ad:"Gazlar",             dizi:sorularGaz}
-};
+  {konu:"Molarite", s:"0,4 mol NaOH kullanılarak hazırlanan 250 mL çözeltinin molar derişimi kaçtır?",
+   sik:["0,1 M","0,4 M","0,8 M","1,6 M","3,2 M"], d:3,
+   c:"Molarite = mol / hacim(L). 250 mL = 0,25 L olduğundan 0,4 / 0,25 = 1,6 M. Hacmi litreye çevirmeyi unutup 0,4/250 yapmak sık görülen bir hatadır."},
+
+  {konu:"Molalite", s:"200 gram suda 0,4 mol şeker çözülüyor. Çözeltinin molalitesi kaç mol/kg'dır?",
+   sik:["0,5","1","1,5","2","2,5"], d:3,
+   c:"Molalite = çözünen mol / çözücü kütlesi(kg). Dikkat: paydada çözelti değil, yalnızca çözücü vardır. 200 g = 0,2 kg olduğundan 0,4 / 0,2 = 2 molal."},
+
+  {konu:"Mol kesri", s:"2 mol A ve 3 mol B'den oluşan karışımda A'nın mol kesri kaçtır?",
+   sik:["0,2","0,3","0,4","0,6","0,67"], d:2,
+   c:"Mol kesri, bir bileşenin molünün toplam mole oranıdır: 2 / (2+3) = 0,4. Mol kesirlerinin toplamı her zaman 1'dir; burada B'ninki 0,6'dır."},
+
+  {konu:"ppm derişim", s:"5 kg suda 25 mg çözünmüş madde bulunan çözeltinin derişimi kaç ppm'dir?",
+   sik:["5","12,5","25","50","125"], d:0,
+   c:"Seyreltik sulu çözeltilerde ppm, kilogram başına miligram olarak alınabilir: 25 mg / 5 kg = 5 ppm. ppm 'milyonda bir kısım' demektir ve çok düşük derişimleri ifade etmek için kullanılır."},
+
+  {konu:"Seyreltme", s:"2 M'lık 100 mL çözeltiye su eklenerek hacim 500 mL'ye tamamlanıyor. Son çözeltinin molaritesi kaçtır?",
+   sik:["0,4 M","0,5 M","1 M","2 M","10 M"], d:0,
+   c:"Seyreltmede çözünen mol sayısı değişmez: M₁V₁ = M₂V₂. (2)(100) = M₂(500) → M₂ = 0,4 M. Hacim 5 katına çıktığı için derişim 1/5'ine düşmüştür."},
+
+  {konu:"Çözelti karıştırma", s:"1 M'lık 200 mL çözelti ile 3 M'lık 300 mL çözelti karıştırılıyor. Son karışımın molaritesi kaçtır?",
+   sik:["1 M","2 M","2,2 M","3 M","4 M"], d:2,
+   c:"Toplam mol = (1)(0,2) + (3)(0,3) = 0,2 + 0,9 = 1,1 mol. Toplam hacim 0,5 L. Derişim = 1,1 / 0,5 = 2,2 M. İki derişimin aritmetik ortalamasını almak (2 M) yanlıştır; hacimler farklı olduğu için ağırlıklı ortalama gerekir."},
+
+  {konu:"Seyreltme", s:"0,5 M'lık 100 mL çözeltinin derişimini 0,2 M yapmak için üzerine kaç mL su eklenmelidir?",
+   sik:["100","150","200","250","300"], d:1,
+   c:"M₁V₁ = M₂V₂ → (0,5)(100) = (0,2)(V₂) → V₂ = 250 mL. Bu son hacimdir; eklenmesi gereken su ise 250 − 100 = 150 mL'dir. Soru 'eklenecek su' dediği için 250 cevabı tuzaktır."},
+
+  {konu:"Yoğunluk ve derişim", s:"Kütlece %20'lik, yoğunluğu 1,1 g/mL olan bir çözeltide çözünenin mol kütlesi 40 g/mol'dür. Çözeltinin molaritesi kaçtır?",
+   sik:["2,75 M","5,5 M","11 M","22 M","44 M"], d:1,
+   c:"1 L çözelti alalım: kütlesi 1000 × 1,1 = 1100 g. Bunun %20'si çözünendir: 220 g. Mol sayısı 220/40 = 5,5 mol. Hacim 1 L olduğundan derişim 5,5 M'dir."},
+
+  {konu:"Çözünürlük", s:"Bir katının 40 °C'deki çözünürlüğü 60 g/100 g sudur. Bu sıcaklıkta 250 gram suda en fazla kaç gram katı çözünebilir?",
+   sik:["24","60","100","120","150"], d:4,
+   c:"Çözünürlük 100 g su için verilmiştir. 250 g su, 100 g suyun 2,5 katıdır: 60 × 2,5 = 150 g. Çözünürlük değeri çözelti kütlesine değil, çözücü kütlesine bağlıdır."},
+
+  {konu:"Kristallenme", s:"Bir tuzun çözünürlüğü 80 °C'de 80 g/100 g su, 20 °C'de 30 g/100 g sudur. 80 °C'de hazırlanan 180 gramlık doymuş çözelti 20 °C'ye soğutulursa kaç gram katı çöker?",
+   sik:["50","60","80","100","110"], d:0,
+   c:"80 °C'de doymuş çözeltinin 180 gramı 100 g su + 80 g tuzdan oluşur. 20 °C'de aynı 100 g su ancak 30 g tuz tutabilir. Fazlası çöker: 80 − 30 = 50 gram."},
+
+  {konu:"Gazların çözünürlüğü", s:"Bir gazın sudaki çözünürlüğü için aşağıdakilerden hangisi doğrudur?",
+   sik:["Sıcaklık arttıkça artar, basınç arttıkça azalır",
+        "Sıcaklık arttıkça azalır, basınç arttıkça artar",
+        "Hem sıcaklık hem basınç arttıkça artar",
+        "Hem sıcaklık hem basınç arttıkça azalır",
+        "Sıcaklık ve basınçtan etkilenmez"], d:1,
+   c:"Gazların çözünmesi ekzotermiktir; sıcaklık artınca denge çözünmeyen yöne kayar ve çözünürlük azalır. Basınç artışı ise gaz taneciklerini sıvıya iter (Henry yasası) ve çözünürlüğü artırır. Gazozun açılınca köpürmesi ve ısınınca gazını kaybetmesi bunun günlük örneğidir."},
+
+  {konu:"İyon derişimi", s:"0,2 M Al₂(SO₄)₃ çözeltisinde SO₄²⁻ iyonlarının derişimi kaçtır?",
+   sik:["0,1 M","0,2 M","0,4 M","0,6 M","0,9 M"], d:3,
+   c:"Al₂(SO₄)₃ suda Al₂(SO₄)₃ → 2Al³⁺ + 3SO₄²⁻ şeklinde ayrışır. Her 1 mol bileşikten 3 mol sülfat iyonu oluştuğu için 0,2 × 3 = 0,6 M olur."},
+
+  {konu:"Toplam iyon derişimi", s:"0,1 M CaCl₂ çözeltisinde toplam iyon derişimi kaçtır?",
+   sik:["0,05 M","0,1 M","0,15 M","0,2 M","0,3 M"], d:4,
+   c:"CaCl₂ → Ca²⁺ + 2Cl⁻ şeklinde ayrışır. Ca²⁺ derişimi 0,1 M, Cl⁻ derişimi 0,2 M'dir. Toplam iyon derişimi 0,1 + 0,2 = 0,3 M olur."},
+
+  {konu:"Elektrik iletkenliği", s:"Aşağıdaki 0,1 M'lık sulu çözeltilerden hangisi elektriği <em>en iyi</em> iletir?",
+   sik:["Glikoz (C₆H₁₂O₆)","NaCl","CaCl₂","Al₂(SO₄)₃","Etanol (C₂H₅OH)"], d:3,
+   c:"İletkenlik ortamdaki serbest iyon derişimiyle artar. Aynı molaritede iyon sayıları: NaCl 2, CaCl₂ 3, Al₂(SO₄)₃ 5'tir. Glikoz ve etanol moleküler olarak çözünür, iyon vermez ve elektriği iletmez."},
+
+  {konu:"Çözünme etkileşimleri", s:"NaCl'nin suda çözünmesi sırasında oluşan başlıca etkileşim türü hangisidir?",
+   sik:["London kuvvetleri","Dipol-dipol","İyon-dipol","Hidrojen bağı","Kovalent bağ"], d:2,
+   c:"Suyun kısmi negatif oksijen ucu Na⁺ iyonlarını, kısmi pozitif hidrojen uçları Cl⁻ iyonlarını sarar. İyonlarla polar su molekülleri arasında kurulan bu etkileşime iyon-dipol denir ve iyonik katıların suda çözünmesini sağlayan asıl kuvvettir."},
+
+  {konu:"Benzer benzeri çözer", s:"Aşağıdaki maddelerden hangisi suda <em>pratik olarak çözünmez</em>?",
+   sik:["Etanol","Amonyak","Glikoz","Asetik asit","Karbon tetraklorür (CCl₄)"], d:4,
+   c:"Su polar bir çözücüdür ve polar ya da hidrojen bağı yapabilen maddeleri çözer. CCl₄ simetrik yapısı nedeniyle apolardır; su molekülleriyle yeterli etkileşim kuramaz. Diğer dört madde polardır veya hidrojen bağı yapar."},
+
+  {konu:"Çözünme ısısı", s:"Bir katı suda çözünürken kabın dış yüzeyinin soğuduğu gözleniyor. Bu çözünme için aşağıdakilerden hangisi doğrudur?",
+   sik:["Ekzotermiktir, ΔH < 0","Endotermiktir, ΔH > 0","Isı alışverişi yoktur","Sıcaklıkla çözünürlüğü azalır","Basınçla çözünürlüğü artar"], d:1,
+   c:"Kabın soğuması, sistemin ortamdan ısı çektiğini gösterir; yani çözünme endotermiktir ve ΔH pozitiftir. Endotermik çözünmelerde sıcaklık artışı çözünürlüğü artırır — bu tür tuzların çözünürlüğü ısıtmayla yükselir."},
+
+  {konu:"Seyreltmede değişmeyenler", s:"Bir çözeltiye saf su eklendiğinde aşağıdakilerden hangisi <em>değişmez</em>?",
+   sik:["Molarite","Kütlece yüzde derişim","Çözünenin mol sayısı","Çözelti hacmi","Çözeltinin yoğunluğu"], d:2,
+   c:"Su eklemek yalnızca çözücü miktarını artırır; çözünen madde miktarına dokunmaz. Bu yüzden çözünenin mol sayısı sabit kalır. Hacim ve kütle arttığı için molarite, kütlece yüzde ve yoğunluk değişir."},
+
+  {konu:"Derişim dönüşümü", s:"Kütlece %10'luk bir NaOH çözeltisinin molalitesi kaç mol/kg'dır? (NaOH: 40 g/mol)",
+   sik:["0,25","1,11","2,50","2,78","25,0"], d:3,
+   c:"100 g çözelti alalım: 10 g NaOH ve 90 g su içerir. NaOH'ın mol sayısı 10/40 = 0,25 mol. Çözücü kütlesi 90 g = 0,09 kg. Molalite = 0,25 / 0,09 ≈ 2,78 mol/kg. Paydaya 0,1 kg (çözelti) yazıp 2,5 bulmak yaygın hatadır."}
+];
+
+
+/* =======================================================================
+   TEST KAYITLARI · takvimli açılış
+   acilis : "YYYY-AA-GG" — bu tarihe kadar kilitli. null ise hep açık.
+   kod    : erken erişim kodu (hikayede paylaşılır)
+   ======================================================================= */
+const TESTLER = [
+  {id:"atom", unite:"Modern Atom Teorisi", bolum:0, toplam:1,
+   alt:"Kuantum sayıları · orbital enerjileri · Bohr ve de Broglie",
+   dizi:sorularAtom, acilis:null},
+
+  {id:"gaz", unite:"Gazlar", bolum:0, toplam:1,
+   alt:"Gaz yasaları · kısmi basınç · difüzyon · kinetik teori",
+   dizi:sorularGaz, acilis:null},
+
+  {id:"coz1", unite:"Çözeltiler", bolum:1, toplam:2,
+   alt:"Derişim birimleri · seyreltme · çözünürlük · kristallenme",
+   dizi:sorularCoz1, acilis:"2026-07-27", kod:"COZELTI"}
+];
+
+/* yol haritası — henüz yazılmamış bölümler */
+const YOLDA = [
+  ["Çözeltiler", "2. bölüm"],
+  ["Enerji", "tek bölüm"],
+  ["Tepkime Hızı", "2 bölüm"],
+  ["Kimyasal Denge", "2 bölüm"],
+  ["Asit-Baz Dengesi", "3 bölüm"],
+  ["Çözünürlük Dengesi", "tek bölüm"],
+  ["Elektrokimya", "3 bölüm"],
+  ["Organik Kimya", "8 bölüm"]
+];
+
+/* motorun beklediği eski biçim — dokunmadan çalışsın diye */
+const testler = {};
+TESTLER.forEach(t=>{
+  testler[t.id] = {
+    ad: t.unite + (t.bolum ? " · " + t.bolum + ". bölüm" : ""),
+    dizi: t.dizi
+  };
+});
+
+/* ---------- kilit durumu ---------- */
+const KOD_ANAHTAR = "kimyamed_acilan";
+function acilanlar(){
+  try{ return JSON.parse(localStorage.getItem(KOD_ANAHTAR) || "[]"); }catch(e){ return []; }
+}
+function acildiKaydet(id){
+  try{
+    const a = acilanlar();
+    if(a.indexOf(id) < 0){ a.push(id); localStorage.setItem(KOD_ANAHTAR, JSON.stringify(a)); }
+  }catch(e){}
+  if(!window.__acik) window.__acik = [];
+  window.__acik.push(id);
+}
+function koddanAcik(id){
+  return acilanlar().indexOf(id) >= 0 || (window.__acik || []).indexOf(id) >= 0;
+}
+function kalanGun(t){
+  if(!t.acilis) return 0;
+  const bugun = new Date(); bugun.setHours(0,0,0,0);
+  const hedef = new Date(t.acilis + "T00:00:00");
+  return Math.ceil((hedef - bugun) / 86400000);
+}
+function kilitliMi(t){
+  if(!t.acilis) return false;
+  if(koddanAcik(t.id)) return false;
+  return kalanGun(t) > 0;
+}
+function kilitYazi(t){
+  const g = kalanGun(t);
+  if(g === 1) return "Yarın açılıyor";
+  return g + " gün sonra açılıyor";
+}
+
+/* ---------- giriş ekranını çiz ---------- */
+function girisCiz(){
+  const kap = $("konu-liste");
+  if(!kap) return;
+  kap.innerHTML = "";
+
+  TESTLER.forEach(t=>{
+    const kilit = kilitliMi(t);
+    const b = document.createElement("button");
+    b.className = "konu-kart" + (kilit ? " kilitli" : "");
+    b.dataset.test = t.id;
+
+    const bolumEt = t.bolum ? '<span class="bolum">' + t.bolum + "/" + t.toplam + "</span>" : "";
+    b.innerHTML =
+      '<div class="konu-ad">' + t.unite + bolumEt + "</div>" +
+      '<div class="konu-alt">' + t.alt + "</div>" +
+      '<div class="konu-rozet"><span>' + t.dizi.length + " soru</span><span>Zor</span></div>" +
+      (kilit
+        ? '<div class="kilit-bar">🔒 ' + kilitYazi(t) +
+          '<em>Erken erişim kodun varsa dokun</em></div>' +
+          '<div class="kod-kutu">' +
+            '<input type="text" placeholder="Kod" autocapitalize="characters" ' +
+              'autocomplete="off" aria-label="Erken erişim kodu">' +
+            "<button>Aç</button>" +
+          "</div>"
+        : "");
+    kap.appendChild(b);
+  });
+
+  /* yol haritası */
+  if(YOLDA.length){
+    const y = document.createElement("div");
+    y.className = "yolda";
+    y.innerHTML = "<p>Yolda</p>" +
+      YOLDA.map(function(v){
+        return "<span><b>" + v[0] + "</b>" + v[1] + "</span>";
+      }).join("");
+    kap.appendChild(y);
+  }
+}
+
+/* ---------- tıklamalar ---------- */
+function girisBagla(){
+  const kap = $("konu-liste");
+  if(!kap) return;
+
+  kap.addEventListener("click", function(e){
+    const kart = e.target.closest(".konu-kart");
+    if(!kart) return;
+    const t = TESTLER.find(function(x){ return x.id === kart.dataset.test; });
+    if(!t) return;
+
+    /* kilitli değilse teste gir */
+    if(!kilitliMi(t)){ testBaslat(t.id); return; }
+
+    /* "Aç" düğmesine mi basıldı */
+    if(e.target.tagName === "BUTTON" && e.target.parentNode.className === "kod-kutu"){
+      const inp = e.target.parentNode.querySelector("input");
+      const girilen = (inp.value || "").trim().toUpperCase();
+      if(girilen && t.kod && girilen === t.kod.toUpperCase()){
+        acildiKaydet(t.id);
+        girisCiz();
+        setTimeout(function(){ testBaslat(t.id); }, 260);
+      } else {
+        inp.value = "";
+        inp.placeholder = "Kod yanlış";
+        kart.classList.add("sarsi");
+        setTimeout(function(){ kart.classList.remove("sarsi"); }, 420);
+      }
+      return;
+    }
+
+    /* kutuya yazılıyorsa karta dokunma sayma */
+    if(e.target.tagName === "INPUT") return;
+
+    /* kilitli karta dokunuldu → kod kutusunu aç/kapat */
+    kart.classList.toggle("kod-acik");
+    if(kart.classList.contains("kod-acik")){
+      const inp = kart.querySelector(".kod-kutu input");
+      if(inp) setTimeout(function(){ inp.focus(); }, 120);
+    }
+  });
+
+  /* klavyeden Enter */
+  kap.addEventListener("keydown", function(e){
+    if(e.key === "Enter" && e.target.tagName === "INPUT"){
+      e.preventDefault();
+      const btn = e.target.parentNode.querySelector("button");
+      if(btn) btn.click();
+    }
+  });
+}
 
 
 function seritCiz(){
@@ -505,8 +787,7 @@ function testBaslat(konu){
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
-document.querySelectorAll(".konu-kart").forEach(k=>
-  k.addEventListener("click",()=>testBaslat(k.dataset.test)));
+girisBagla();
 
 function konuSecimineDon(){
   $("test").classList.add("gizli");
@@ -677,6 +958,8 @@ $("paylas").addEventListener("click",async ()=>{
   logo.src = kaynak.src;
 })();
 
+/* ---- başlangıç ---- */
+girisCiz();
 
 </script>
 </body>
