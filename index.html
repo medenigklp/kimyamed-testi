@@ -113,6 +113,22 @@ body::before{content:"";position:fixed;inset:0;background:var(--kagit);opacity:.
 .dugme.vurgu{background:var(--turuncu)}
 
 
+
+/* ---- açılış animasyonu ---- */
+#acilis{
+  position:fixed;inset:0;z-index:99;
+  background:var(--kagit);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:opacity .45s ease;cursor:pointer;
+}
+#acilis.kapanan{opacity:0;pointer-events:none}
+#acilis canvas{display:block}
+#acilis .ipucu{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--grafit);margin-top:30px;opacity:0;transition:opacity .6s ease;
+}
+#acilis.ipucu-ac .ipucu{opacity:.75}
+
 /* ---- konu seçim kartları ---- */
 .konu-kart{
   display:block;width:100%;text-align:left;cursor:pointer;
@@ -171,6 +187,12 @@ body::before{content:"";position:fixed;inset:0;background:var(--kagit);opacity:.
 </style>
 </head>
 <body>
+
+<div id="acilis" aria-hidden="true">
+  <canvas id="acilis-tuval"></canvas>
+  <div class="ipucu">dokunup geç</div>
+</div>
+
 <div class="sarmal">
 
   <div class="marka">
@@ -483,6 +505,154 @@ $("paylas").addEventListener("click",async ()=>{
     }
   }catch(e){}
 });
+
+/* ==================== AÇILIŞ ANİMASYONU ==================== */
+(function(){
+  const kap = document.getElementById("acilis");
+  const cv  = document.getElementById("acilis-tuval");
+  if(!kap || !cv) return;
+
+  let kapandi = false;
+  function kapat(){
+    if(kapandi) return;
+    kapandi = true;
+    kap.classList.add("kapanan");
+    setTimeout(()=>{ if(kap.parentNode) kap.parentNode.removeChild(kap); }, 500);
+  }
+  kap.addEventListener("click", kapat);
+
+  // hareket azaltma tercihi varsa animasyonu hiç oynatma
+  const azHareket = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(azHareket){ kapat(); return; }
+
+  const kaynak = document.querySelector(".marka img");
+  if(!kaynak){ kapat(); return; }
+
+  const logo = new Image();
+  logo.onerror = kapat;
+  logo.onload = function(){
+
+    const B   = Math.min(340, window.innerWidth * 0.82);
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width  = B * dpr;  cv.height = B * dpr;
+    cv.style.width = B + "px";  cv.style.height = B + "px";
+    const c = cv.getContext("2d");
+    c.scale(dpr, dpr);
+
+    const cx = B/2, cy = B/2;
+    const R = B * 0.315;
+    const F = R * 3.4;
+    const TILT = 74 * Math.PI/180;
+
+    const RENK = ["75,169,62", "252,192,10", "248,83,0", "6,194,244"];
+    const ZEMIN = getComputedStyle(document.body).backgroundColor || "#F1F3F5";
+
+    const yorungeler = [
+      {faz:0,               roll:0,               el:[[0,0],[Math.PI,2]]},
+      {faz: 70*Math.PI/180, roll: 60*Math.PI/180, el:[[1.1,1]]},
+      {faz:140*Math.PI/180, roll:-60*Math.PI/180, el:[[2.4,3]]}
+    ];
+
+    const kirp = (v,a,b)=>Math.max(a===undefined?0:a, Math.min(b===undefined?1:b, v));
+    const easeOut = t => 1 - Math.pow(1-t,3);
+    function yayli(t){ const c1=1.70158, c3=2.70158;
+      return 1 + c3*Math.pow(t-1,3) + c1*Math.pow(t-1,2); }
+
+    function rotX(p,a){ const s=Math.sin(a),k=Math.cos(a);
+      return [p[0], p[1]*k - p[2]*s, p[1]*s + p[2]*k]; }
+    function rotY(p,a){ const s=Math.sin(a),k=Math.cos(a);
+      return [p[0]*k + p[2]*s, p[1], -p[0]*s + p[2]*k]; }
+    function rotZ(p,a){ const s=Math.sin(a),k=Math.cos(a);
+      return [p[0]*k - p[1]*s, p[0]*s + p[1]*k, p[2]]; }
+
+    function yansit(p){
+      const s = F/(F - p[2]);
+      return [cx + p[0]*s, cy + p[1]*s, p[2], s];
+    }
+
+    const SURE = 2200;         // ms — animasyon süresi
+    const bas = performance.now();
+    let ipucuAcildi = false;
+
+    function ciz(simdi){
+      const gecen = simdi - bas;
+      const t = gecen / 1000;
+
+      if(gecen > 800 && !ipucuAcildi){ ipucuAcildi = true; kap.classList.add("ipucu-ac"); }
+      if(gecen >= SURE){ kapat(); return; }
+
+      const aLogo = kirp(t/0.5);
+      const aRing = kirp((t-0.2)/0.7);
+      const spin  = t * 0.85;
+
+      c.clearRect(0,0,B,B);
+
+      const ogeler = [];
+
+      // yörünge halkaları
+      const ADIM = 110;
+      for(const yor of yorungeler){
+        const nk = [];
+        for(let k=0;k<=ADIM;k++){
+          const u = 2*Math.PI*k/ADIM;
+          let p = [R*Math.cos(u), R*Math.sin(u), 0];
+          p = rotX(p, TILT); p = rotY(p, spin+yor.faz); p = rotZ(p, yor.roll);
+          nk.push(yansit(p));
+        }
+        for(let k=0;k<ADIM;k++){
+          const a1=nk[k], a2=nk[k+1];
+          const zo=(a1[2]+a2[2])/2, so=(a1[3]+a2[3])/2;
+          const d = kirp((so-0.72)/0.62);
+          const alfa = (0.20 + 0.74*d) * aRing;
+          const gen  = Math.max(0.9, B*(0.00185 + 0.0045*d));
+          ogeler.push([zo, function(){
+            c.strokeStyle = "rgba(24,28,34," + alfa.toFixed(3) + ")";
+            c.lineWidth = gen; c.lineCap = "round";
+            c.beginPath(); c.moveTo(a1[0],a1[1]); c.lineTo(a2[0],a2[1]); c.stroke();
+          }]);
+        }
+      }
+
+      // elektronlar
+      for(const yor of yorungeler){
+        for(const [faz0, ri] of yor.el){
+          const u = faz0 + t*1.9;
+          let p = [R*Math.cos(u), R*Math.sin(u), 0];
+          p = rotX(p, TILT); p = rotY(p, spin+yor.faz); p = rotZ(p, yor.roll);
+          const [x,y,z,s] = yansit(p);
+          const rr = B*0.0213*s;
+          const d = kirp((s-0.72)/0.62);
+          const alfa = (0.45 + 0.55*d) * aRing;
+          ogeler.push([z, function(){
+            c.fillStyle = "rgba(" + RENK[ri] + "," + alfa.toFixed(3) + ")";
+            c.beginPath(); c.arc(x,y,rr,0,2*Math.PI); c.fill();
+          }]);
+        }
+      }
+
+      // logo (z = 0 düzlemi)
+      if(aLogo > 0){
+        const olcek = 0.22 + 0.78*yayli(aLogo);
+        const boy = Math.max(4, R*1.30*olcek);
+        const op = easeOut(aLogo);
+        ogeler.push([0, function(){
+          c.globalAlpha = op;
+          c.drawImage(logo, cx-boy/2, cy-boy/2, boy, boy);
+          c.globalAlpha = 1;
+        }]);
+      }
+
+      // derinliğe göre arkadan öne
+      ogeler.sort((a,b)=>a[0]-b[0]);
+      for(const o of ogeler) o[1]();
+
+      requestAnimationFrame(ciz);
+    }
+    requestAnimationFrame(ciz);
+  };
+  logo.src = kaynak.src;
+})();
+
 </script>
 </body>
 </html>
