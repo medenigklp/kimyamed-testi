@@ -637,6 +637,99 @@ const sorularCoz2 = [
         "Çözelti hacmiyle ters orantılıdır"], d:0,
    c:"Buhar basıncı düşmesi ΔP = X(çözünen) × P°(çözücü) bağıntısıyla verilir; yani çözünenin mol kesriyle doğru orantılıdır. Koligatif bir özellik olduğu için çözünenin cinsi değil, tanecik sayısı belirleyicidir."}
 ];
+const sorularEnerji = [
+  {konu:"Ekzotermik ve endotermik", s:"ΔH değeri <em>pozitif</em> olan bir tepkime için aşağıdakilerden hangisi doğrudur?",
+   sik:["Ortamdan ısı alır, kap soğur","Ortama ısı verir, kap ısınır",
+        "Ürünlerin enerjisi girenlerden düşüktür","Isı alışverişi yoktur","Kendiliğinden gerçekleşir"], d:0,
+   c:"ΔH = H(ürünler) − H(girenler) olduğundan pozitif ΔH, ürünlerin daha yüksek enerjili olduğunu gösterir. Sistem bu farkı ortamdan çeker; tepkime endotermiktir ve kabın dış yüzeyi soğur. Ekzotermik tepkimelerde ise ΔH negatiftir ve kap ısınır."},
+
+  {konu:"Isı hesabı", s:"200 gram suyun sıcaklığını 20 °C'den 70 °C'ye çıkarmak için kaç kJ ısı gerekir? (c<em>su</em> = 4,2 J/g·°C)",
+   sik:["0,42","4,2","8,4","21","42"], d:4,
+   c:"q = m · c · ΔT bağıntısı kullanılır. ΔT = 70 − 20 = 50 °C'dir. q = 200 × 4,2 × 50 = 42 000 J = 42 kJ. Joule'ü kilojoule'e çevirmek için 1000'e bölmeyi unutmamak gerekir."},
+
+  {konu:"Oluşum entalpisi", s:"CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(s) tepkimesinin ΔH değeri kaç kJ'dür?<br>ΔH<em>f</em>: CH₄ = −75, CO₂ = −394, H₂O(s) = −286 kJ/mol",
+   sik:["−1041","−966","−891","−605","+891"], d:2,
+   c:"ΔH = Σ ΔH𝑓(ürünler) − Σ ΔH𝑓(girenler) bağıntısı kullanılır. Ürünler: (−394) + 2(−286) = −966. Girenler: (−75) + 2(0) = −75; elementlerin oluşum entalpisi sıfırdır. ΔH = −966 − (−75) = −891 kJ."},
+
+  {konu:"Bağ enerjileri", s:"H₂(g) + Cl₂(g) → 2HCl(g) tepkimesinin ΔH değeri kaç kJ'dür?<br>Bağ enerjileri: H−H = 436, Cl−Cl = 242, H−Cl = 431 kJ/mol",
+   sik:["−184","−92","+184","−615","−1109"], d:0,
+   c:"ΔH = Σ(kırılan bağ enerjileri) − Σ(oluşan bağ enerjileri) şeklinde hesaplanır. Kırılan: 436 + 242 = 678. Oluşan: 2 × 431 = 862. ΔH = 678 − 862 = −184 kJ. Bağ kırmak enerji ister, bağ oluşturmak enerji verir."},
+
+  {konu:"Hess yasası", s:"Verilen tepkimelere göre C(k) + ½O₂(g) → CO(g) tepkimesinin ΔH değeri kaç kJ'dür?<br>C(k) + O₂(g) → CO₂(g) &nbsp; ΔH = −394<br>CO(g) + ½O₂(g) → CO₂(g) &nbsp; ΔH = −283",
+   sik:["−677","−394","−283","−111","+111"], d:3,
+   c:"İkinci tepkime ters çevrilip birinciyle toplanır. Ters çevrilen tepkimenin ΔH işareti değişir: CO₂ → CO + ½O₂ için ΔH = +283. Toplam: −394 + 283 = −111 kJ. Hess yasası, ΔH'ın yoldan bağımsız olmasına dayanır."},
+
+  {konu:"Kalorimetre", s:"Bir kalorimetrede 2 gram yakıt yakılıyor ve 500 gram suyun sıcaklığı 20 °C'den 30 °C'ye çıkıyor. Yakıtın gram başına yanma ısısı kaç kJ/g'dır? (c<em>su</em> = 4,2 J/g·°C)",
+   sik:["1,05","2,1","4,2","10,5","21"], d:3,
+   c:"Önce suyun aldığı ısı bulunur: q = 500 × 4,2 × 10 = 21 000 J = 21 kJ. Bu ısıyı 2 gram yakıt sağladığına göre gram başına 21/2 = 10,5 kJ/g'dır. Kalorimetrede açığa çıkan ısı, suyun aldığı ısıya eşit kabul edilir."},
+
+  {konu:"Erime ısısı", s:"0 °C'deki 100 gram buzun tamamını aynı sıcaklıkta suya dönüştürmek için kaç kJ ısı gerekir? (erime ısısı = 334 J/g)",
+   sik:["33,4","66,8","167","334","3340"], d:0,
+   c:"Hal değişimi sırasında sıcaklık sabit kalır; verilen ısı yalnızca taneciklerin düzenini bozmak için harcanır. q = m × Le = 100 × 334 = 33 400 J = 33,4 kJ olur."},
+
+  {konu:"Buharlaşma ısısı", s:"100 °C'deki 50 gram suyun tamamını aynı sıcaklıkta buhara dönüştürmek için kaç kJ ısı gerekir? (buharlaşma ısısı = 2260 J/g)",
+   sik:["22,6","45,2","56,5","113","226"], d:3,
+   c:"q = m × Lb = 50 × 2260 = 113 000 J = 113 kJ. Buharlaşma ısısının erime ısısından çok daha büyük olması, sıvı halde taneciklerin hâlâ birbirine bağlı olmasından ve gaz haline geçerken bu bağların tümüyle kopmasından kaynaklanır."},
+
+  {konu:"Standart oluşum entalpisi", s:"Aşağıdakilerden hangisinin standart oluşum entalpisi <em>sıfırdır</em>?",
+   sik:["O₂(g)","H₂O(s)","CO₂(g)","NaCl(k)","CH₄(g)"], d:0,
+   c:"Standart koşullarda en kararlı hâlde bulunan elementlerin oluşum entalpisi tanım gereği sıfır kabul edilir. O₂ gazı oksijenin standart hâlidir. Diğer seçenekler bileşik olduğu için oluşum entalpileri sıfırdan farklıdır."},
+
+  {konu:"Enerji diyagramı", s:"Bir tepkimenin enerji diyagramında ürünlerin enerjisi, girenlerin enerjisinden yüksek çizilmiştir. Bu tepkime için ne söylenebilir?",
+   sik:["Ekzotermiktir, ΔH < 0","Endotermiktir, ΔH > 0","ΔH = 0'dır",
+        "Aktivasyon enerjisi sıfırdır","Katalizörle ΔH negatifleşir"], d:1,
+   c:"Diyagramda ürünler daha yukarıdaysa sistem enerji kazanmıştır; bu enerji ortamdan alınmıştır. Tepkime endotermiktir ve ΔH pozitiftir. Katalizör yalnızca aktivasyon enerjisini düşürür, ΔH'ı değiştirmez."},
+
+  {konu:"Bağ enerjisi kavramı", s:"Gaz hâlindeki bir molekülde bağ kırılması için aşağıdakilerden hangisi doğrudur?",
+   sik:["Enerji açığa çıkar, ekzotermiktir","Enerji gerekir, endotermiktir",
+        "Enerji alışverişi olmaz","Her zaman ΔH < 0'dır","Yalnızca katılarda görülür"], d:1,
+   c:"Bağ, atomları bir arada tutan çekim demektir; bu çekimi yenmek için dışarıdan enerji verilmesi gerekir. Bu yüzden bağ kırılması daima endotermiktir. Tersine, bağ oluşumu ekzotermiktir ve enerji açığa çıkarır."},
+
+  {konu:"Mol sayısıyla orantı", s:"H₂(g) + Cl₂(g) → 2HCl(g) tepkimesinin ΔH değeri −184 kJ'dür. 0,5 mol H₂ tepkimeye girdiğinde açığa çıkan ısı kaç kJ olur?",
+   sik:["−23","−46","−92","−184","−368"], d:2,
+   c:"Verilen ΔH, denklemdeki katsayılar için geçerlidir; yani 1 mol H₂ için −184 kJ'dür. 0,5 mol için bu değerin yarısı alınır: −184 × 0,5 = −92 kJ. Tepkime ısısı, tepkimeye giren madde miktarıyla doğru orantılıdır."},
+
+  {konu:"Ters tepkimenin entalpisi", s:"N₂(g) + 3H₂(g) → 2NH₃(g) tepkimesi için ΔH = −92 kJ'dür. 2NH₃(g) → N₂(g) + 3H₂(g) tepkimesinin ΔH değeri kaçtır?",
+   sik:["−92 kJ","−46 kJ","0","+46 kJ","+92 kJ"], d:4,
+   c:"Bir tepkime ters çevrildiğinde entalpi değişiminin büyüklüğü aynı kalır, yalnızca işareti değişir. Amonyak sentezi ekzotermik olduğuna göre ayrışması aynı büyüklükte endotermiktir: ΔH = +92 kJ."},
+
+  {konu:"Isı ve sıcaklık", s:"Isı ve sıcaklık kavramları için aşağıdakilerden hangisi doğrudur?",
+   sik:["İkisi de madde miktarına bağlıdır","Isı madde miktarına bağlıdır, sıcaklık bağımsızdır",
+        "İkisi de madde miktarından bağımsızdır",
+        "Sıcaklık madde miktarına bağlıdır, ısı bağımsızdır",
+        "İkisi de aynı birimle ölçülür"], d:1,
+   c:"Isı, taneciklerin toplam hareket enerjisiyle ilgilidir ve madde miktarı arttıkça artar; joule ile ölçülür. Sıcaklık ise ortalama hareket enerjisinin ölçüsüdür ve madde miktarından bağımsızdır; °C veya K ile ölçülür. Bir bardak kaynar su ile bir kazan kaynar suyun sıcaklığı aynı, ısısı farklıdır."},
+
+  {konu:"Yanma entalpisi", s:"Bir yakıtın yanma entalpisi için aşağıdakilerden hangisi <em>daima</em> doğrudur?",
+   sik:["Pozitiftir","Sıfırdır","Negatiftir","Yakıtın moleküler kütlesine eşittir","Katalizörle değişir"], d:2,
+   c:"Yanma tepkimeleri ısı açığa çıkaran, yani ekzotermik tepkimelerdir. Bu yüzden yanma entalpisi her zaman negatiftir. Katalizör tepkime hızını etkiler ama entalpi değişimini değiştirmez."},
+
+  {konu:"Yakıt karşılaştırması", s:"Metanın (CH₄, 16 g/mol) yanma entalpisi −890 kJ/mol, propanın (C₃H₈, 44 g/mol) −2220 kJ/mol'dür. Gram başına daha çok enerji veren yakıt hangisidir?",
+   sik:["Propan, çünkü mol entalpisi büyüktür","İkisi eşit enerji verir",
+        "Metan, çünkü mol kütlesi küçüktür","Propan, çünkü karbon sayısı fazladır","Karşılaştırma yapılamaz"], d:2,
+   c:"Gram başına enerji için entalpi mol kütlesine bölünür. Metan: 890/16 ≈ 55,6 kJ/g. Propan: 2220/44 ≈ 50,5 kJ/g. Mol başına propan daha çok enerji verse de gram başına metan öndedir; bu yüzden roket ve ısıtma yakıtlarında hafif hidrokarbonlar tercih edilir."},
+
+  {konu:"Katalizör ve entalpi", s:"Bir tepkimeye katalizör eklendiğinde aşağıdakilerden hangisi <em>değişmez</em>?",
+   sik:["Tepkime hızı","Aktivasyon enerjisi","Dengeye ulaşma süresi",
+        "Tepkimenin ΔH değeri","İleri tepkimenin hız sabiti"], d:3,
+   c:"Katalizör, daha düşük aktivasyon enerjili yeni bir tepkime yolu açar; böylece hız artar ve dengeye daha çabuk ulaşılır. Ancak girenlerin ve ürünlerin enerji düzeylerine dokunmadığı için ΔH değişmez."},
+
+  {konu:"Hal değişimi ve enerji", s:"Su donarken enerji açısından ne olur?",
+   sik:["Ortamdan ısı alır, endotermiktir","Isı alışverişi olmaz","Sıcaklığı sürekli düşer",
+        "İç enerjisi artar","Ortama ısı verir, ekzotermiktir"], d:4,
+   c:"Donma sırasında tanecikler düzenli yapıya geçerken aralarında bağ kurar ve bu sırada enerji açığa çıkar. Bu yüzden donma ekzotermiktir; erimenin tam tersidir. Turunçgil bahçelerinin don gecelerinde suyla sulanması bu ilkeye dayanır."},
+
+  {konu:"Çoklu adım hesabı", s:"−10 °C'deki 100 gram buzu 0 °C'ye ısıtmak için kaç kJ ısı gerekir? (c<em>buz</em> = 2,1 J/g·°C)",
+   sik:["1,05","2,1","4,2","21","210"], d:1,
+   c:"Bu aşamada hal değişimi yoktur, yalnızca sıcaklık artışı vardır: q = m · c · ΔT = 100 × 2,1 × 10 = 2100 J = 2,1 kJ. Buzun öz ısısının suyunkinden (4,2) küçük olması, aynı ısıyla buzun daha çok ısınacağı anlamına gelir."},
+
+  {konu:"Sistem ve ortam", s:"Ekzotermik bir tepkimede sistem ve ortam için aşağıdakilerden hangisi doğrudur?",
+   sik:["Sistemin enerjisi artar, ortamınki azalır","İkisinin de enerjisi artar",
+        "İkisinin de enerjisi azalır","Toplam enerji azalır",
+        "Sistemin enerjisi azalır, ortamınki artar"], d:4,
+   c:"Ekzotermik tepkimede sistem ısı verir, yani enerjisi azalır; bu enerji ortama aktarıldığı için ortamın enerjisi artar. Enerjinin korunumu gereği toplam enerji sabit kalır, yalnızca yer değiştirir."}
+];
+
 
 
 
@@ -660,12 +753,15 @@ const TESTLER = [
 
   {id:"coz2", unite:"Çözeltiler", bolum:2, toplam:2,
    alt:"Koligatif özellikler · osmoz · buhar basıncı · kolloitler",
-   dizi:sorularCoz2, acilis:"2026-07-31", kod:"KOLIGATIF"}
+   dizi:sorularCoz2, acilis:"2026-07-31", kod:"KOLIGATIF"},
+
+  {id:"enerji", unite:"Kimyasal Tepkimelerde Enerji", bolum:0, toplam:1,
+   alt:"Entalpi · bağ enerjileri · Hess yasası · kalorimetre",
+   dizi:sorularEnerji, acilis:"2026-08-04", kod:"ENTALPI"}
 ];
 
 /* yol haritası — henüz yazılmamış bölümler */
 const YOLDA = [
-  ["Enerji", "tek bölüm"],
   ["Tepkime Hızı", "2 bölüm"],
   ["Kimyasal Denge", "2 bölüm"],
   ["Asit-Baz Dengesi", "3 bölüm"],
