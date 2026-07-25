@@ -535,6 +535,109 @@ const sorularCoz1 = [
    sik:["0,25","1,11","2,50","2,78","25,0"], d:3,
    c:"100 g çözelti alalım: 10 g NaOH ve 90 g su içerir. NaOH'ın mol sayısı 10/40 = 0,25 mol. Çözücü kütlesi 90 g = 0,09 kg. Molalite = 0,25 / 0,09 ≈ 2,78 mol/kg. Paydaya 0,1 kg (çözelti) yazıp 2,5 bulmak yaygın hatadır."}
 ];
+const sorularCoz2 = [
+  {konu:"Raoult yasası", s:"Uçucu olmayan ve iyonlaşmayan 2 mol katı, 8 mol suda çözülüyor. Saf suyun o sıcaklıktaki buhar basıncı 100 mmHg ise çözeltinin buhar basıncı kaç mmHg olur?",
+   sik:["20","80","100","125","160"], d:1,
+   c:"Raoult yasasına göre çözeltinin buhar basıncı, çözücünün mol kesriyle saf çözücünün buhar basıncının çarpımıdır. Suyun mol kesri 8/(8+2) = 0,8 olduğundan P = 0,8 × 100 = 80 mmHg bulunur. Çözünen madde uçucu olmadığı için buhar basıncına katkı yapmaz."},
+
+  {konu:"Kaynama noktası yükselmesi", s:"0,5 molal glikoz sulu çözeltisi 1 atm basınçta kaç °C'de kaynar? (K<em>b</em> = 0,52 °C·kg/mol)",
+   sik:["100,26","100,52","101,04","102,60","105,20"], d:0,
+   c:"ΔT𝑏 = K𝑏 · m · i bağıntısı kullanılır. Glikoz iyonlaşmadığı için i = 1'dir. ΔT𝑏 = 0,52 × 0,5 × 1 = 0,26 °C. Kaynama noktası 100 + 0,26 = 100,26 °C olur; çözünen madde eklemek kaynama noktasını her zaman yükseltir."},
+
+  {konu:"Donma noktası alçalması", s:"0,2 molal NaCl sulu çözeltisinin donma noktası kaç °C'dir? (K<em>f</em> = 1,86 °C·kg/mol)",
+   sik:["−0,093","−0,186","−0,372","−0,558","−0,744"], d:4,
+   c:"NaCl suda Na⁺ ve Cl⁻ olmak üzere iki iyona ayrışır, yani i = 2'dir. ΔT𝑓 = 1,86 × 0,2 × 2 = 0,744 °C. Donma noktası 0 − 0,744 = −0,744 °C olur. i çarpanını unutup −0,372 bulmak en sık yapılan hatadır."},
+
+  {konu:"Tanecik sayısı karşılaştırması", s:"Aynı molalitedeki sulu çözeltilerden hangisinin donma noktası <em>en düşüktür</em>?",
+   sik:["Glikoz","Etanol","NaCl","CaCl₂","Al₂(SO₄)₃"], d:4,
+   c:"Koligatif özellikler tanecik sayısına bağlıdır. Çözünme sonrası tanecik sayıları: glikoz ve etanol 1, NaCl 2, CaCl₂ 3, Al₂(SO₄)₃ ise 2 + 3 = 5'tir. En çok tanecik veren madde donma noktasını en fazla düşürür."},
+
+  {konu:"Osmotik basınç", s:"0,1 M glikoz çözeltisinin 27 °C'deki osmotik basıncı kaç atm'dir? (R = 0,082 L·atm/mol·K)",
+   sik:["0,25","0,82","1,23","2,46","7,38"], d:3,
+   c:"π = M · R · T · i bağıntısı kullanılır. Sıcaklık Kelvin'e çevrilir: 27 + 273 = 300 K. Glikoz iyonlaşmaz, i = 1. π = 0,1 × 0,082 × 300 = 2,46 atm. Sıcaklığı Celsius bırakmak yaygın hatadır."},
+
+  {konu:"Mol kütlesi bulma", s:"6 gram iyonlaşmayan katı 250 gram suda çözülüyor ve çözelti −0,372 °C'de donuyor. Katının mol kütlesi kaç g/mol'dür? (K<em>f</em> = 1,86)",
+   sik:["12","24","48","60","120"], d:4,
+   c:"Önce molalite bulunur: m = ΔT𝑓/K𝑓 = 0,372/1,86 = 0,2 mol/kg. Çözücü 0,25 kg olduğundan mol sayısı 0,2 × 0,25 = 0,05 mol'dür. Mol kütlesi = 6/0,05 = 120 g/mol. Donma noktası alçalması, bilinmeyen mol kütlesini bulmanın klasik yoludur."},
+
+  {konu:"Kaynama noktasından molalite", s:"İyonlaşmayan bir madde içeren sulu çözelti 100,52 °C'de kaynıyor. Çözeltinin molalitesi kaçtır? (K<em>b</em> = 0,52)",
+   sik:["0,13","0,26","0,52","1,00","2,00"], d:3,
+   c:"ΔT𝑏 = 100,52 − 100 = 0,52 °C'dir. m = ΔT𝑏/(K𝑏·i) = 0,52/(0,52 × 1) = 1,00 mol/kg. Madde iyonlaşmadığı için i = 1 alınır."},
+
+  {konu:"van't Hoff çarpanı", s:"0,1 molal bir X tuzunun sulu çözeltisi −0,558 °C'de donmaktadır. X'in suda verdiği toplam iyon sayısı kaçtır? (K<em>f</em> = 1,86)",
+   sik:["1","2","3","4","5"], d:2,
+   c:"ΔT𝑓 = K𝑓 · m · i → 0,558 = 1,86 × 0,1 × i → i = 3 bulunur. Yani X suda üç iyona ayrışmaktadır; CaCl₂ veya Na₂SO₄ gibi bir tuz olabilir."},
+
+  {konu:"Koligatif özellikler", s:"Aşağıdakilerden hangisi <em>koligatif özellik değildir</em>?",
+   sik:["Buhar basıncı düşmesi","Kaynama noktası yükselmesi","Donma noktası alçalması","Osmotik basınç","Çözeltinin rengi"], d:4,
+   c:"Koligatif özellikler yalnızca çözünen tanecik sayısına bağlıdır, taneciğin cinsine bağlı değildir. Renk ise doğrudan maddenin kimliğine bağlıdır; CuSO₄ mavi, NaCl renksiz çözelti verir. Bu yüzden renk koligatif bir özellik sayılmaz."},
+
+  {konu:"Buhar basıncı karşılaştırması", s:"Aşağıdaki sıvılardan hangisinin aynı sıcaklıktaki buhar basıncı <em>en yüksektir</em>?",
+   sik:["Saf su","0,1 molal glikoz çözeltisi","0,1 molal NaCl çözeltisi","0,1 molal CaCl₂ çözeltisi","0,2 molal glikoz çözeltisi"], d:0,
+   c:"Uçucu olmayan madde eklemek buhar basıncını daima düşürür ve düşüş tanecik sayısıyla artar. Hiç çözünen içermeyen saf su bu yüzden en yüksek buhar basıncına sahiptir."},
+
+  {konu:"İzotonik çözeltiler", s:"0,1 M glikoz çözeltisiyle izotonik (osmotik basınçları eşit) olan NaCl çözeltisinin derişimi kaç molardır?",
+   sik:["0,05","0,10","0,15","0,20","0,40"], d:0,
+   c:"İzotoniklik için etkin tanecik derişimleri eşit olmalıdır. Glikoz için M × 1 = 0,1'dir. NaCl iki iyona ayrıştığından M × 2 = 0,1 → M = 0,05 M bulunur. Aynı osmotik basıncı sağlamak için NaCl'nin derişimi yarı yarıya olmalıdır."},
+
+  {konu:"Osmoz", s:"Yarı geçirgen bir zarla ayrılmış iki bölmeden birinde seyreltik, diğerinde derişik şeker çözeltisi vardır. Osmoz sırasında ne olur?",
+   sik:["Şeker molekülleri derişikten seyreltiğe geçer",
+        "Su molekülleri seyreltikten derişiğe geçer",
+        "Su molekülleri derişikten seyreltiğe geçer",
+        "Hem su hem şeker iki yönde eşit geçer",
+        "Hiçbir madde geçmez"], d:1,
+   c:"Yarı geçirgen zar çözücüyü geçirir, çözüneni geçirmez. Su, derişimi eşitleme yönünde yani seyreltik bölmeden derişik bölmeye geçer. Bu geçişi durdurmak için derişik tarafa uygulanması gereken basınca osmotik basınç denir."},
+
+  {konu:"Günlük hayat uygulaması", s:"Kışın buzlu yollara tuz serpilmesinin kimyasal nedeni nedir?",
+   sik:["Suyun kaynama noktasını yükseltmek","Suyun donma noktasını düşürmek",
+        "Suyun buhar basıncını artırmak","Suyun yoğunluğunu azaltmak","Suyun özısısını artırmak"], d:1,
+   c:"Tuz suda iyonlarına ayrışarak tanecik sayısını artırır ve donma noktasını alçaltır. Böylece su sıfırın altındaki sıcaklıklarda bile sıvı kalır, yol buzlanmaz. Aynı ilke antifrizde de kullanılır."},
+
+  {konu:"Aşırı doymuş çözelti", s:"Aşırı doymuş bir çözelti için aşağıdakilerden hangisi doğrudur?",
+   sik:["Çözünürlüğünden az madde içerir",
+        "Çözünürlüğü kadar madde içerir ve kararlıdır",
+        "Çözünürlüğünden fazla madde içerir ve kararsızdır",
+        "Hiç çözünen içermez",
+        "Sıcaklıkla derişimi değişmez"], d:2,
+   c:"Aşırı doymuş çözelti, o sıcaklıkta çözünebilecek olandan daha fazla madde barındırır. Genellikle sıcak doymuş çözeltinin yavaşça soğutulmasıyla elde edilir ve kararsızdır; küçük bir kristal atıldığında ya da sarsıldığında fazla madde birden çöker."},
+
+  {konu:"Basıncın çözünürlüğe etkisi", s:"Basıncın çözünürlüğe etkisi için aşağıdakilerden hangisi doğrudur?",
+   sik:["Katıların çözünürlüğünü belirgin biçimde artırır",
+        "Katıların çözünürlüğünü azaltır",
+        "Gazların çözünürlüğünü etkilemez",
+        "Gazların çözünürlüğünü artırır, katılarınkini pratikte etkilemez",
+        "Yalnızca sıvı-sıvı çözünmeleri etkiler"], d:3,
+   c:"Katı ve sıvıların hacmi basınçla neredeyse değişmediği için çözünürlükleri basınçtan pratikte etkilenmez. Gazlar ise sıkıştırılabilir olduğundan basınç artışı çözünürlüklerini artırır — bu Henry yasasıdır ve gazlı içeceklerin basınç altında doldurulmasının nedenidir."},
+
+  {konu:"Kolloidler", s:"Bir karışıma tutulan ışık demetinin yandan bakıldığında görünür olması (Tyndall olayı) o karışımın ne olduğunu gösterir?",
+   sik:["Gerçek çözelti","Doymuş çözelti","Kolloit","Saf madde","Aşırı doymuş çözelti"], d:2,
+   c:"Kolloitlerdeki tanecikler ışığı saçacak kadar büyük, ancak çökecek kadar büyük değildir; bu yüzden ışık yolu yandan görünür. Gerçek çözeltilerde tanecikler çok küçük olduğu için ışık saçılmaz ve Tyndall olayı gözlenmez. Sis ve süt bilinen kolloit örnekleridir."},
+
+  {konu:"Kaynama noktası sıralaması", s:"Aşağıdaki sulu çözeltilerin kaynama noktalarının doğru sıralaması hangisidir?<br>I. 0,1 molal glikoz &nbsp; II. 0,1 molal NaCl &nbsp; III. 0,1 molal CaCl₂",
+   sik:["I > II > III","III > II > I","II > III > I","I > III > II","III > I > II"], d:1,
+   c:"Kaynama noktası yükselmesi tanecik sayısıyla doğru orantılıdır. Tanecik sayıları: glikoz 1, NaCl 2, CaCl₂ 3'tür. En çok tanecik veren CaCl₂ en yüksek, glikoz ise en düşük kaynama noktasına sahiptir."},
+
+  {konu:"Zayıf elektrolitler", s:"Suda kısmen iyonlaşan zayıf bir asidin van't Hoff çarpanı (i) için ne söylenebilir?",
+   sik:["i = 0","i < 1","i = 1","1 < i < 2","i = 2"], d:3,
+   c:"Zayıf asit moleküllerinin bir kısmı iyonlaşır, bir kısmı molekül halinde kalır. Hiç iyonlaşmasaydı i = 1, tamamen iyonlaşsaydı i = 2 olurdu. Kısmi iyonlaşma nedeniyle i bu ikisinin arasında bir değer alır."},
+
+  {konu:"Ters osmoz", s:"Deniz suyundan içme suyu elde edilen ters osmoz yönteminde temel ilke nedir?",
+   sik:["Suyu kaynatıp buharını yoğunlaştırmak",
+        "Tuzu kimyasal tepkimeyle çökeltmek",
+        "Osmotik basınçtan büyük bir basınç uygulayarak suyu ters yönde geçirmek",
+        "Suyu dondurup buzu ayırmak",
+        "Elektrik akımıyla iyonları ayrıştırmak"], d:2,
+   c:"Doğal osmozda su, tuzlu tarafa doğru geçer. Tuzlu tarafa osmotik basınçtan daha büyük bir basınç uygulanırsa akış tersine döner ve su, tuzu geride bırakarak yarı geçirgen zardan saf tarafa geçer. Buna ters osmoz denir."},
+
+  {konu:"Buhar basıncı düşmesi", s:"Uçucu olmayan bir madde içeren çözeltinin buhar basıncı düşmesi (ΔP) için aşağıdakilerden hangisi doğrudur?",
+   sik:["Çözünenin mol kesriyle doğru orantılıdır",
+        "Çözücünün mol kesriyle doğru orantılıdır",
+        "Çözünenin cinsine bağlıdır",
+        "Sıcaklıktan bağımsızdır",
+        "Çözelti hacmiyle ters orantılıdır"], d:0,
+   c:"Buhar basıncı düşmesi ΔP = X(çözünen) × P°(çözücü) bağıntısıyla verilir; yani çözünenin mol kesriyle doğru orantılıdır. Koligatif bir özellik olduğu için çözünenin cinsi değil, tanecik sayısı belirleyicidir."}
+];
+
 
 
 /* =======================================================================
@@ -553,12 +656,15 @@ const TESTLER = [
 
   {id:"coz1", unite:"Çözeltiler", bolum:1, toplam:2,
    alt:"Derişim birimleri · seyreltme · çözünürlük · kristallenme",
-   dizi:sorularCoz1, acilis:"2026-07-27", kod:"COZELTI"}
+   dizi:sorularCoz1, acilis:"2026-07-27", kod:"COZELTI"},
+
+  {id:"coz2", unite:"Çözeltiler", bolum:2, toplam:2,
+   alt:"Koligatif özellikler · osmoz · buhar basıncı · kolloitler",
+   dizi:sorularCoz2, acilis:"2026-07-31", kod:"KOLIGATIF"}
 ];
 
 /* yol haritası — henüz yazılmamış bölümler */
 const YOLDA = [
-  ["Çözeltiler", "2. bölüm"],
   ["Enerji", "tek bölüm"],
   ["Tepkime Hızı", "2 bölüm"],
   ["Kimyasal Denge", "2 bölüm"],
