@@ -729,6 +729,115 @@ const sorularEnerji = [
         "Sistemin enerjisi azalır, ortamınki artar"], d:4,
    c:"Ekzotermik tepkimede sistem ısı verir, yani enerjisi azalır; bu enerji ortama aktarıldığı için ortamın enerjisi artar. Enerjinin korunumu gereği toplam enerji sabit kalır, yalnızca yer değiştirir."}
 ];
+const sorularHiz1 = [
+  {konu:"Ortalama tepkime hızı", s:"Bir tepkimede X maddesinin derişimi 2 saniyede 0,8 mol/L'den 0,4 mol/L'ye düşüyor. X'in harcanma hızı kaç mol/L·s'dir?",
+   sik:["0,2","0,4","0,6","0,8","1,2"], d:0,
+   c:"Ortalama hız, derişimdeki değişimin zamana oranıdır: v = |Δ[X]| / Δt = (0,8 − 0,4)/2 = 0,2 mol/L·s. Harcanma hızı pozitif bir sayı olarak ifade edilir; derişim azaldığı için mutlak değer alınır."},
+
+  {konu:"Stokiyometri ve hız", s:"N₂(g) + 3H₂(g) → 2NH₃(g) tepkimesinde H₂'nin harcanma hızı 0,3 mol/L·s ise N₂'nin harcanma hızı kaç mol/L·s'dir?",
+   sik:["0,05","0,1","0,3","0,6","0,9"], d:1,
+   c:"Hızlar denklemdeki katsayılarla orantılıdır. Her 3 mol H₂ için 1 mol N₂ harcandığından N₂'nin hızı H₂'ninkinin üçte biridir: 0,3/3 = 0,1 mol/L·s. NH₃'ün oluşum hızı ise 0,2 mol/L·s olurdu."},
+
+  {konu:"Yüzey alanı etkisi", s:"Aynı kütledeki kalsiyum karbonat ile aynı derişimdeki HCl tepkimeye giriyor. Hangi durumda tepkime <em>en hızlı</em> gerçekleşir?",
+   sik:["Tek büyük parça hâlinde","İki parçaya bölünmüş hâlde","Toz hâlinde",
+        "Küp şeklinde kesilmiş hâlde","Hepsinde hız aynıdır"], d:2,
+   c:"Heterojen tepkimelerde hız, temas yüzeyiyle doğru orantılıdır. Katı ne kadar küçük parçalara ayrılırsa toplam yüzey alanı o kadar büyür ve birim zamanda daha çok çarpışma olur. Toz hâli en büyük yüzey alanını verdiği için en hızlıdır."},
+
+  {konu:"Sıcaklık etkisi", s:"Sıcaklığın artırılması tepkime hızını neden artırır?",
+   sik:["Etkin çarpışma sayısını artırdığı için",
+        "Aktivasyon enerjisini düşürdüğü için",
+        "Tepkimenin ΔH değerini değiştirdiği için",
+        "Girenlerin derişimini artırdığı için",
+        "Denge sabitini büyüttüğü için"], d:0,
+   c:"Sıcaklık arttıkça taneciklerin ortalama kinetik enerjisi büyür; aktivasyon enerjisini aşabilen tanecik oranı ve çarpışma sıklığı artar. Yani etkin çarpışma sayısı artar. Sıcaklık aktivasyon enerjisini değiştirmez, onu düşüren katalizördür."},
+
+  {konu:"Katalizör", s:"Bir tepkimeye katalizör eklendiğinde aşağıdakilerden hangisi gerçekleşir?",
+   sik:["ΔH küçülür","Ürün miktarı artar","Girenlerin enerjisi düşer",
+        "Denge sabiti büyür","Aktivasyon enerjisi düşer"], d:4,
+   c:"Katalizör, daha düşük aktivasyon enerjili alternatif bir tepkime yolu sağlar ve hızı artırır. Girenlerin ve ürünlerin enerji düzeylerine dokunmadığı için ΔH, denge sabiti ve verim değişmez; yalnızca dengeye ulaşma süresi kısalır."},
+
+  {konu:"Aktivasyon enerjisi", s:"Aktivasyon enerjisi neyi ifade eder?",
+   sik:["Tepkimede açığa çıkan toplam enerjiyi",
+        "Tepkimenin başlaması için gereken en düşük enerjiyi",
+        "Ürünlerle girenler arasındaki enerji farkını",
+        "Bağların toplam enerjisini",
+        "Taneciklerin ortalama kinetik enerjisini"], d:1,
+   c:"Aktivasyon enerjisi, çarpışan taneciklerin aktifleşmiş kompleksi oluşturabilmesi için sahip olması gereken en düşük enerjidir. Ürünlerle girenler arasındaki fark ise ΔH'tır; ikisi farklı büyüklüklerdir."},
+
+  {konu:"Etkin çarpışma", s:"Bir çarpışmanın etkin (verimli) sayılabilmesi için hangi koşullar birlikte sağlanmalıdır?",
+   sik:["Yalnızca yeterli enerji","Yalnızca uygun geometri",
+        "Yeterli enerji ve uygun geometri","Yalnızca yüksek derişim",
+        "Yalnızca katalizör varlığı"], d:2,
+   c:"Tanecikler hem aktivasyon enerjisini aşacak kadar enerjiye sahip olmalı hem de bağların kopup yenilerinin kurulmasına elverişli bir doğrultuda çarpışmalıdır. İki koşuldan biri sağlanmazsa tanecikler tepkimeye girmeden ayrılır."},
+
+  {konu:"Hız denklemi ve derece", s:"Hız denklemi v = k[A][B]² olan bir tepkimenin toplam derecesi kaçtır?",
+   sik:["0","1","2","3","4"], d:3,
+   c:"Toplam derece, hız denklemindeki üslerin toplamıdır: 1 + 2 = 3. Derece deneysel olarak bulunur ve denklemdeki stokiyometrik katsayılarla aynı olmak zorunda değildir; yalnızca tek basamaklı tepkimelerde çakışır."},
+
+  {konu:"Derece belirleme", s:"Bir tepkimede yalnızca A'nın derişimi 2 katına çıkarıldığında hız 8 katına çıkıyor. Tepkimenin A'ya göre derecesi kaçtır?",
+   sik:["0","1","2","3","4"], d:3,
+   c:"Hız derişimin üssüyle değişir: 2ⁿ = 8 → n = 3. Yani tepkime A'ya göre üçüncü derecedendir. Hız 2 katına çıksaydı n = 1, 4 katına çıksaydı n = 2 olurdu."},
+
+  {konu:"Hız sabiti", s:"Hız sabiti k için aşağıdakilerden hangisi doğrudur?",
+   sik:["Sıcaklıkla değişir, derişimle değişmez",
+        "Derişimle değişir, sıcaklıkla değişmez",
+        "Hem sıcaklık hem derişimle değişir",
+        "Hiçbir koşulda değişmez",
+        "Yalnızca basınçla değişir"], d:0,
+   c:"k, belirli bir tepkimenin belirli bir sıcaklıktaki karakteristik sabitidir. Derişim değişse de k sabit kalır; hız derişim üzerinden değişir. Sıcaklık artışı ve katalizör ise k'yı büyütür."},
+
+  {konu:"Enerji diyagramı", s:"Ekzotermik bir tepkimenin enerji diyagramında ileri tepkimenin aktivasyon enerjisi (E<em>a</em>) ile geri tepkimenin aktivasyon enerjisi (E<em>a</em>') arasındaki ilişki nedir?",
+   sik:["E<em>a</em> = E<em>a</em>'","E<em>a</em> > E<em>a</em>'","E<em>a</em> < E<em>a</em>'",
+        "İkisi de sıfırdır","İlişki kurulamaz"], d:2,
+   c:"Ekzotermik tepkimede ürünler girenlerden daha düşük enerjilidir. Aktifleşmiş kompleks her iki yön için de aynı tepede olduğundan, daha aşağıdan başlayan geri tepkimenin tırmanacağı yol daha uzundur. Bu yüzden E𝑎 < E𝑎' olur ve aradaki fark |ΔH|'a eşittir."},
+
+  {konu:"Derişim etkisi", s:"Bir tepkimede girenlerin derişimi arttıkça hızın artmasının nedeni nedir?",
+   sik:["Birim hacimdeki çarpışma sayısının artması","Aktivasyon enerjisinin düşmesi",
+        "Taneciklerin ortalama enerjisinin artması","ΔH'ın küçülmesi",
+        "Katalizörün etkinleşmesi"], d:0,
+   c:"Derişim artınca birim hacimde daha çok tanecik bulunur ve çarpışma sıklığı artar. Taneciklerin ortalama enerjisi değişmediği için etkin çarpışma oranı aynı kalır, ancak toplam çarpışma sayısı arttığından hız artar."},
+
+  {konu:"Gazlarda basınç etkisi", s:"Sabit sıcaklıkta gaz fazındaki bir tepkimede kabın hacmi yarıya indirilirse tepkime hızı nasıl etkilenir?",
+   sik:["Değişmez","Yarıya iner","Aktivasyon enerjisi arttığı için azalır",
+        "ΔH değiştiği için azalır","Derişimler arttığı için artar"], d:4,
+   c:"Hacim yarıya inince gazların derişimi iki katına çıkar. Derişim artışı çarpışma sıklığını artırdığından tepkime hızlanır. Basıncı hacim değiştirmeden soy gaz ekleyerek artırmak ise derişimleri değiştirmediği için hızı etkilemez."},
+
+  {konu:"Hız birimi", s:"Tepkime hızının birimi aşağıdakilerden hangisidir?",
+   sik:["mol/L","mol/L·s","L/mol·s","J/mol","mol·s"], d:1,
+   c:"Hız, birim zamandaki derişim değişimidir. Derişimin birimi mol/L, zamanın birimi saniye olduğundan hızın birimi mol/L·s olur. mol/L derişimin, J/mol ise enerjinin birimidir."},
+
+  {konu:"Derişim-zaman grafiği", s:"Bir tepkimede giren maddenin derişim-zaman grafiği çiziliyor. Zaman ilerledikçe eğrinin eğimi için ne söylenebilir?",
+   sik:["Sabit kalır","Sürekli artar","Mutlak değerce azalır","Önce artar sonra azalır","Sıfırdan büyük olur"], d:2,
+   c:"Giren madde tükendikçe derişimi azalır, dolayısıyla çarpışma sıklığı ve hız da düşer. Eğim hızı temsil ettiği için eğrinin dikliği zamanla azalır; grafik yatıklaşarak sıfıra yaklaşır."},
+
+  {konu:"Madde cinsinin etkisi", s:"Aynı koşullarda gerçekleşen iki tepkimeden birinin aktivasyon enerjisi 40 kJ/mol, diğerininki 120 kJ/mol'dür. Bu tepkimeler için ne söylenebilir?",
+   sik:["İkisi de aynı hızda gerçekleşir","Aktivasyon enerjisi büyük olan daha hızlıdır",
+        "ΔH'ları da aynı olmalıdır","Aktivasyon enerjisi küçük olan daha hızlıdır",
+        "Hız yalnızca ΔH'a bağlıdır"], d:3,
+   c:"Aktivasyon enerjisi düştükçe bu engeli aşabilen tanecik oranı üstel olarak artar. 40 kJ/mol'lük engeli aşmak çok daha kolay olduğundan o tepkime belirgin biçimde hızlıdır. Aktivasyon enerjisi maddenin cinsine bağlı bir özelliktir."},
+
+  {konu:"Kataliz türleri", s:"Katı platin yüzeyinde gerçekleşen gaz fazı tepkimesi hangi kataliz türüne örnektir?",
+   sik:["Homojen kataliz","Otokataliz","Enzim katalizi","Negatif kataliz","Heterojen kataliz"], d:4,
+   c:"Katalizör ile tepkenler farklı fazlarda olduğunda heterojen kataliz söz konusudur; burada katalizör katı, tepkenler gazdır. Katalizör ve tepkenler aynı fazdaysa homojen kataliz denir. Egzoz katalitik dönüştürücüleri heterojen katalize günlük bir örnektir."},
+
+  {konu:"Ürün oluşum hızı", s:"2A → 3B tepkimesinde B'nin oluşum hızı 0,6 mol/L·s ise A'nın harcanma hızı kaç mol/L·s'dir?",
+   sik:["0,2","0,4","0,6","0,9","1,2"], d:1,
+   c:"Hızlar katsayılara bölündüğünde eşitlenir: v(A)/2 = v(B)/3. Buradan v(A) = (2/3) × 0,6 = 0,4 mol/L·s bulunur. A'nın katsayısı küçük olduğu için harcanma hızı, B'nin oluşum hızından küçüktür."},
+
+  {konu:"Hıza etki etmeyen etken", s:"Katı bir metal ile asit çözeltisi arasındaki tepkimede aşağıdakilerden hangisi hızı <em>etkilemez</em>?",
+   sik:["Asidin derişimi","Sıcaklık","Metalin toz hâlinde olması",
+        "Katalizör varlığı","Kabın şekli"], d:4,
+   c:"Hızı belirleyen etkenler derişim, sıcaklık, temas yüzeyi, katalizör ve maddenin cinsidir. Kabın şekli temas yüzeyini ya da derişimi değiştirmediği sürece hıza etki etmez."},
+
+  {konu:"Aktifleşmiş kompleks", s:"Aktifleşmiş kompleks (geçiş hâli) için aşağıdakilerden hangisi doğrudur?",
+   sik:["Kararlı bir ara üründür ve saflaştırılabilir",
+        "Enerjisi girenlerden ve ürünlerden düşüktür",
+        "Yalnızca endotermik tepkimelerde oluşur",
+        "Çok kısa ömürlüdür ve enerji diyagramının tepesinde yer alır",
+        "Katalizör eklendiğinde oluşmaz"], d:3,
+   c:"Aktifleşmiş kompleks, eski bağların tam kopmadığı yeni bağların tam kurulmadığı, enerji diyagramının en tepesindeki kararsız yapıdır. Ömrü çok kısadır, ayrıştırılıp saflaştırılamaz. Her tepkimede oluşur; katalizör onu daha düşük enerjili bir yoldan geçirir."}
+];
+
 
 
 
@@ -757,12 +866,16 @@ const TESTLER = [
 
   {id:"enerji", unite:"Kimyasal Tepkimelerde Enerji", bolum:0, toplam:1,
    alt:"Entalpi · bağ enerjileri · Hess yasası · kalorimetre",
-   dizi:sorularEnerji, acilis:"2026-08-04", kod:"ENTALPI"}
+   dizi:sorularEnerji, acilis:"2026-08-04", kod:"ENTALPI"},
+
+  {id:"hiz1", unite:"Tepkime Hızı", bolum:1, toplam:2,
+   alt:"Hız kavramı · etkin çarpışma · hızı etkileyen faktörler",
+   dizi:sorularHiz1, acilis:"2026-08-08", kod:"CARPISMA"}
 ];
 
 /* yol haritası — henüz yazılmamış bölümler */
 const YOLDA = [
-  ["Tepkime Hızı", "2 bölüm"],
+  ["Tepkime Hızı", "2. bölüm"],
   ["Kimyasal Denge", "2 bölüm"],
   ["Asit-Baz Dengesi", "3 bölüm"],
   ["Çözünürlük Dengesi", "tek bölüm"],
