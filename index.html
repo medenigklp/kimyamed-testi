@@ -837,6 +837,568 @@ const sorularHiz1 = [
         "Katalizör eklendiğinde oluşmaz"], d:3,
    c:"Aktifleşmiş kompleks, eski bağların tam kopmadığı yeni bağların tam kurulmadığı, enerji diyagramının en tepesindeki kararsız yapıdır. Ömrü çok kısadır, ayrıştırılıp saflaştırılamaz. Her tepkimede oluşur; katalizör onu daha düşük enerjili bir yoldan geçirir."}
 ];
+const sorularHiz2 = [
+  {konu:"Deneysel hız denklemi", s:"A + B → C tepkimesi için deney verileri:<br><em>1)</em> [A]=0,1 &nbsp;[B]=0,1 &nbsp;v=0,02<br><em>2)</em> [A]=0,2 &nbsp;[B]=0,1 &nbsp;v=0,08<br><em>3)</em> [A]=0,1 &nbsp;[B]=0,2 &nbsp;v=0,04<br>Tepkimenin hız denklemi hangisidir?",
+   sik:["v = k[A]²[B]","v = k[A][B]","v = k[A][B]²","v = k[A]²[B]²","v = k[A]"], d:0,
+   c:"1 ve 2 karşılaştırılır: [B] sabitken [A] 2 katına çıkınca hız 4 katına çıkmış, yani A'ya göre derece 2'dir (2²=4). 1 ve 3 karşılaştırılır: [A] sabitken [B] 2 katına çıkınca hız 2 katına çıkmış, B'ye göre derece 1'dir. Hız denklemi v = k[A]²[B] olur."},
+
+  {konu:"Hız sabiti hesabı", s:"Hız denklemi v = k[A]²[B] olan tepkimede [A]=0,1 M, [B]=0,1 M iken hız 0,02 mol/L·s ölçülmüştür. Hız sabiti k kaçtır?",
+   sik:["0,002","0,02","0,2","2","20"], d:4,
+   c:"k = v / ([A]²[B]) bağıntısı kullanılır. Payda: (0,1)² × 0,1 = 0,01 × 0,1 = 0,001. k = 0,02 / 0,001 = 20 bulunur. Birimi L²/mol²·s'dir."},
+
+  {konu:"Hız belirleyici basamak", s:"Bir tepkimenin mekanizması şöyledir:<br><em>1. basamak (yavaş):</em> A + B → X<br><em>2. basamak (hızlı):</em> X + B → C<br>Tepkimenin hız denklemi hangisidir?",
+   sik:["v = k[A][B]²","v = k[X][B]","v = k[A][B]","v = k[A]","v = k[B]²"], d:2,
+   c:"Toplam hızı en yavaş basamak belirler; bir zincirin en zayıf halkası gibidir. Yavaş basamak A + B olduğundan hız denklemi doğrudan o basamağın tepkenlerinden yazılır: v = k[A][B]. Hızlı basamağın tepkenleri hız denklemine girmez."},
+
+  {konu:"Ara ürün", s:"Bir tepkimenin mekanizması şöyledir:<br><em>1. basamak:</em> A + B → X<br><em>2. basamak:</em> X + B → C<br>Buna göre X maddesi için ne söylenebilir?",
+   sik:["Ara üründür","Katalizördür","Son üründür","Tepkimeye girmez","Aktifleşmiş komplekstir"], d:0,
+   c:"X birinci basamakta oluşur, ikinci basamakta harcanır ve net denklemde görünmez. Bu özellikteki maddelere ara ürün denir. Katalizör ise tersine önce harcanır sonra geri oluşur; aktifleşmiş kompleks ise ayrı bir madde değil, geçiş hâlidir."},
+
+  {konu:"Net tepkime denklemi", s:"1. basamak: A + B → X &nbsp;&nbsp; 2. basamak: X + B → C<br>Bu mekanizmanın net tepkime denklemi hangisidir?",
+   sik:["A + 2B → C","A + B → C","A + B → X + C","2A + B → C","A + 3B → C"], d:0,
+   c:"Basamaklar toplanır ve iki tarafta da bulunan ara ürün X sadeleşir: A + B + X + B → X + C. X'ler götürüldüğünde A + 2B → C kalır. Ara ürünlerin net denklemde yer almaması gerekir."},
+
+  {konu:"Katalizörün mekanizmadaki yeri", s:"Bir mekanizmada ilk basamakta harcanıp son basamakta yeniden oluşan madde nedir?",
+   sik:["Ara ürün","Aktifleşmiş kompleks","Katalizör","Sınırlayıcı bileşen","Artan madde"], d:2,
+   c:"Katalizör tepkimeye katılır, yeni bir yol açar ve sonunda değişmeden geri kazanılır. Bu yüzden net denklemde görünmez ama mekanizmada yer alır. Ara ürünün sırası ise terstir: önce oluşur, sonra harcanır."},
+
+  {konu:"Moleküllük", s:"Tek basamakta gerçekleşen 2NO₂ → N₂O₄ tepkimesinin moleküllüğü nedir?",
+   sik:["Tekmoleküllü","İkimoleküllü","Üçmoleküllü","Dörtmoleküllü","Sıfır moleküllü"], d:1,
+   c:"Moleküllük, bir basamakta çarpışan tanecik sayısıdır. Burada iki NO₂ molekülü çarpıştığı için tepkime ikimoleküllüdür. Üç taneciğin aynı anda uygun geometriyle çarpışma olasılığı çok düşük olduğundan üçmoleküllü basamaklar nadirdir."},
+
+  {konu:"Hız sabitinin birimi", s:"İkinci dereceden bir tepkimenin hız sabitinin birimi nedir?",
+   sik:["s⁻¹","mol/L·s","L²/mol²·s","mol²/L²·s","L/mol·s"], d:4,
+   c:"v = k[A]² denkleminden k = v/[A]² yazılır. Birimler yerleştirilir: (mol/L·s) / (mol/L)² = (mol/L·s) × (L²/mol²) = L/mol·s bulunur. Birinci derecede birim s⁻¹, üçüncü derecede L²/mol²·s olur."},
+
+  {konu:"Sıfırıncı derece", s:"Sıfırıncı dereceden bir tepkime için aşağıdakilerden hangisi doğrudur?",
+   sik:["Hız derişimle doğru orantılıdır","Hız derişimin karesiyle orantılıdır",
+        "Hız her zaman sıfırdır","Katalizörsüz gerçekleşmez",
+        "Hız derişimden bağımsızdır"], d:4,
+   c:"v = k[A]⁰ = k olduğundan hız, derişim değişse de sabit kalır. Bu durum genellikle katalizör yüzeyinin doyduğu ya da enzimin tümüyle meşgul olduğu tepkimelerde görülür; hızı yüzey ya da enzim miktarı sınırlar."},
+
+  {konu:"Yarılanma süresi", s:"Birinci dereceden bir tepkimede maddenin yarılanma süresi 10 dakikadır. Başlangıçta 80 gram olan maddeden 30 dakika sonra kaç gram kalır?",
+   sik:["10","20","26,7","40","80"], d:0,
+   c:"Birinci dereceden tepkimelerde yarılanma süresi derişimden bağımsızdır ve sabittir. 30 dakika, üç yarılanma süresine denk gelir: 80 → 40 → 20 → 10 gram. Sonuçta 10 gram kalır."},
+
+  {konu:"Derişim-zaman grafiği", s:"Bir tepkimede ürün derişiminin zamana göre grafiği çiziliyor. Tepkime tamamlandığında grafiğin görünümü nasıl olur?",
+   sik:["Sürekli dik biçimde yükselir","Yükselerek yatay bir düzlüğe ulaşır",
+        "Sürekli azalır","Sıfırdan başlayıp sıfırda biter","Doğrusal olarak sonsuza gider"], d:1,
+   c:"Ürün derişimi başta hızla artar, girenler tükendikçe artış yavaşlar ve tepkime bittiğinde sabitlenir. Bu yüzden eğri önce dik yükselir, sonra yatay bir düzlüğe oturur. Eğrinin eğimi o andaki tepkime hızını verir."},
+
+  {konu:"Arrhenius bağıntısı", s:"Arrhenius bağıntısına göre hız sabiti k, aşağıdakilerden hangisiyle <em>artar</em>?",
+   sik:["Aktivasyon enerjisinin artmasıyla","Sıcaklığın azalmasıyla",
+        "Derişimin artmasıyla","Sıcaklığın artmasıyla","Basıncın azalmasıyla"], d:3,
+   c:"Sıcaklık arttıkça aktivasyon enerjisini aşabilen tanecik oranı üstel olarak büyür, dolayısıyla k artar. Aktivasyon enerjisinin büyümesi ise k'yı küçültür. Derişim k'yı değil, doğrudan hızı etkiler."},
+
+  {konu:"Mekanizma ve stokiyometri", s:"Bir tepkimenin deneysel hız denklemi, denklemdeki katsayılarla uyuşmuyorsa bu ne anlama gelir?",
+   sik:["Denklem yanlış yazılmıştır","Tepkime birden çok basamakta gerçekleşmektedir",
+        "Tepkime hiç gerçekleşmez","Katalizör kullanılmıştır","Tepkime tersinmezdir"], d:1,
+   c:"Hız denklemi yalnızca tek basamaklı tepkimelerde katsayılarla çakışır. Uyuşmazlık, tepkimenin bir mekanizma üzerinden yürüdüğünü ve hızı yavaş basamağın belirlediğini gösterir. Hız denklemi bu yüzden daima deneyle bulunur."},
+
+  {konu:"Basamak sayısı", s:"Bir mekanizmada üç basamak varsa tepkime hızını hangisi belirler?",
+   sik:["İlk basamak","Son basamak","En hızlı basamak","En yavaş basamak","Üçünün ortalaması"], d:3,
+   c:"Ardışık basamaklarda toplam süreyi en yavaş adım sınırlar; buna hız belirleyici basamak denir. Yavaş basamak ilk sırada olmak zorunda değildir, mekanizmanın herhangi bir yerinde bulunabilir."},
+
+  {konu:"Hız-derişim grafiği", s:"Bir tepkimede hızın derişime göre grafiği orijinden geçen bir doğru olarak çıkıyor. Tepkimenin derecesi kaçtır?",
+   sik:["0","1","2","3","Belirlenemez"], d:1,
+   c:"v = k[A]ⁿ bağıntısında n = 1 ise v ile [A] arasında doğru orantı vardır ve grafik orijinden geçen doğru olur. n = 0 olsaydı grafik yatay doğru, n = 2 olsaydı parabol biçiminde bir eğri çıkardı."},
+
+  {konu:"Enzim katalizi", s:"Enzimlerin biyolojik katalizör olarak temel özelliği nedir?",
+   sik:["Tepkime ısısını artırırlar","Yüksek sıcaklıkta daha etkin çalışırlar",
+        "Her tepkimeyi katalizlerler","Denge sabitini değiştirirler",
+        "Substrata özgüdürler ve aktivasyon enerjisini düşürürler"], d:4,
+   c:"Enzimler kilit-anahtar uyumuyla yalnızca belirli substratlara etki eder ve aktivasyon enerjisini büyük ölçüde düşürür. Protein yapılı olduklarından yüksek sıcaklıkta yapıları bozulur ve etkinliklerini yitirirler."},
+
+  {konu:"Çoklu değişken", s:"Hız denklemi v = k[A]²[B] olan tepkimede [A] iki katına, [B] üç katına çıkarılırsa hız kaç katına çıkar?",
+   sik:["5","6","9","12","36"], d:3,
+   c:"Her derişimin katkısı kendi üssüyle hesaplanır: A için 2² = 4, B için 3¹ = 3. Toplam etki bunların çarpımıdır: 4 × 3 = 12 kat. Katları toplamak (2+3=5) sık yapılan bir hatadır."},
+
+  {konu:"Hacim değişimi", s:"Gaz fazındaki v = k[A]² tepkimesinde kabın hacmi yarıya indirilirse hız kaç katına çıkar?",
+   sik:["Değişmez","2","4","8","Yarıya iner"], d:2,
+   c:"Hacim yarıya inince derişim iki katına çıkar. Hız derişimin karesiyle orantılı olduğundan 2² = 4 katına çıkar. Derece 1 olsaydı hız yalnızca 2 katına çıkardı."},
+
+  {konu:"Katalizör ve denge", s:"Katalizör kullanılan tersinir bir tepkimede aşağıdakilerden hangisi <em>değişmez</em>?",
+   sik:["İleri tepkimenin hızı","Geri tepkimenin hızı","Dengeye ulaşma süresi",
+        "Denge derişimleri","Aktivasyon enerjisi"], d:3,
+   c:"Katalizör ileri ve geri tepkimenin aktivasyon enerjisini eşit ölçüde düşürür; ikisini de aynı oranda hızlandırdığı için denge noktası kaymaz. Denge derişimleri ve denge sabiti aynı kalır, yalnızca dengeye daha çabuk ulaşılır."},
+
+  {konu:"Deneysel yaklaşım", s:"Bir tepkimenin hız denklemini bulmak için izlenmesi gereken yöntem nedir?",
+   sik:["Denklemdeki katsayıları üs olarak yazmak",
+        "ΔH değerinden hesaplamak",
+        "Her seferinde bir derişimi değiştirip hızı ölçmek",
+        "Aktivasyon enerjisini ölçmek",
+        "Denge sabitinden türetmek"], d:2,
+   c:"Başlangıç hızları yöntemi kullanılır: diğerleri sabit tutulurken bir tepkenin derişimi değiştirilir ve hızın kaç katına çıktığına bakılır. Bu, o tepkene göre dereceyi verir. Katsayıları doğrudan üs olarak yazmak yalnızca tek basamaklı tepkimelerde geçerlidir."}
+];
+const sorularDenge1 = [
+  {konu:"Dinamik denge", s:"Kimyasal dengeye ulaşmış kapalı bir sistem için aşağıdakilerden hangisi doğrudur?",
+   sik:["Tepkime tümüyle durmuştur","İleri ve geri tepkime hızları eşittir",
+        "Girenler tamamen tükenmiştir","Ürün ve giren derişimleri birbirine eşittir",
+        "Sıcaklık sürekli değişir"], d:1,
+   c:"Denge dinamiktir: ileri ve geri tepkimeler sürer ancak hızları eşitlendiği için derişimler artık değişmez. Derişimlerin sabit olması, birbirine eşit olduğu anlamına gelmez; genellikle farklıdırlar."},
+
+  {konu:"Denge sabiti ifadesi", s:"N₂(g) + 3H₂(g) ⇌ 2NH₃(g) tepkimesinin denge sabiti (K<em>c</em>) ifadesi hangisidir?",
+   sik:["[NH₃]² / ([N₂]·[H₂]³)","([N₂]·[H₂]³) / [NH₃]²","[NH₃] / ([N₂]·[H₂])",
+        "2[NH₃] / ([N₂] + 3[H₂])","[NH₃]² · [N₂] · [H₂]³"], d:0,
+   c:"Denge sabiti, ürünlerin derişimleri çarpımının girenlerinkine bölünmesiyle yazılır ve her derişim kendi katsayısı kadar üs alır: K𝑐 = [NH₃]² / ([N₂][H₂]³). Katsayılar üs olur, çarpan değil."},
+
+  {konu:"Heterojen denge", s:"CaCO₃(k) ⇌ CaO(k) + CO₂(g) tepkimesinin denge sabiti ifadesi hangisidir?",
+   sik:["[CaO]·[CO₂] / [CaCO₃]","[CO₂] / [CaCO₃]","[CaO]·[CO₂]","[CO₂]","1 / [CO₂]"], d:3,
+   c:"Saf katıların ve saf sıvıların derişimi sabit kabul edilir, bu yüzden denge sabiti ifadesine yazılmazlar. Geriye yalnızca gaz olan CO₂ kalır: K𝑐 = [CO₂]. Kireç taşının bozunması bu dengeye klasik bir örnektir."},
+
+  {konu:"Denge sabiti hesabı", s:"1 litrelik kapta 1 mol H₂ ve 1 mol I₂ ile başlanıyor. Dengede 0,2 mol H₂ kaldığına göre H₂(g) + I₂(g) ⇌ 2HI(g) tepkimesinin K<em>c</em> değeri kaçtır?",
+   sik:["4","16","32","64","128"], d:3,
+   c:"Harcanan H₂ = 1 − 0,2 = 0,8 mol'dür. Katsayılar eşit olduğundan I₂ de 0,8 harcanır, geriye 0,2 kalır. Oluşan HI = 2 × 0,8 = 1,6 mol'dür. K𝑐 = (1,6)² / (0,2 × 0,2) = 2,56 / 0,04 = 64 bulunur."},
+
+  {konu:"Ters tepkimenin sabiti", s:"Bir tepkimenin denge sabiti K<em>c</em> = 64 ise ters tepkimenin denge sabiti kaçtır?",
+   sik:["−64","1/64","64","128","4096"], d:1,
+   c:"Tepkime ters çevrildiğinde ürünlerle girenler yer değiştirir, dolayısıyla denge sabiti çarpmaya göre tersine döner: K' = 1/K = 1/64. Denge sabiti hiçbir zaman negatif olamaz."},
+
+  {konu:"Katsayı değişimi", s:"K<em>c</em> = 4 olan bir tepkimenin denklemindeki tüm katsayılar 2 ile çarpılırsa yeni denge sabiti kaç olur?",
+   sik:["2","4","8","16","64"], d:3,
+   c:"Katsayılar n ile çarpıldığında denge sabiti n. kuvvete yükselir: K' = Kⁿ = 4² = 16. Katsayılar ikiye bölünseydi karekök alınacaktı."},
+
+  {konu:"Tepkimelerin toplanması", s:"K₁ = 2 ve K₂ = 5 olan iki tepkime toplanarak yeni bir tepkime elde ediliyor. Yeni tepkimenin denge sabiti kaçtır?",
+   sik:["2,5","3","7","10","25"], d:3,
+   c:"Tepkimeler toplandığında denge sabitleri çarpılır: K = K₁ × K₂ = 2 × 5 = 10. Bu, Hess yasasının denge sabitindeki karşılığıdır; entalpiler toplanırken denge sabitleri çarpılır."},
+
+  {konu:"Kp ve Kc ilişkisi", s:"N₂(g) + 3H₂(g) ⇌ 2NH₃(g) tepkimesi için K<em>p</em> = K<em>c</em>(RT)<sup>Δn</sup> bağıntısındaki Δn değeri kaçtır?",
+   sik:["−2","−1","0","+1","+2"], d:0,
+   c:"Δn, gaz hâlindeki ürünlerin mol sayısı toplamından girenlerinkinin çıkarılmasıyla bulunur: 2 − (1 + 3) = −2. Δn sıfır olsaydı K𝑝 ile K𝑐 birbirine eşit olurdu."},
+
+  {konu:"Denge sabitinin yorumu", s:"Bir tepkimenin denge sabiti K<em>c</em> = 1×10⁻⁵ ise denge hakkında ne söylenebilir?",
+   sik:["Ürünler baskındır","Girenler baskındır","Ürün ve girenler eşittir",
+        "Tepkime gerçekleşmez","Tepkime çok hızlıdır"], d:1,
+   c:"Denge sabiti çok küçükse paydadaki girenler payı baskılar; yani dengede girenlerin derişimi ürünlerinkinden çok fazladır. Denge sola yatkındır. K'nın büyüklüğü hızla ilgili değildir, yalnızca dengedeki dağılımı gösterir."},
+
+  {konu:"Tepkime yönü", s:"Bir tepkimenin denge sabiti K<em>c</em> = 10, o andaki tepkime oranı ise Q = 2'dir. Sistem hangi yönde ilerler?",
+   sik:["Ürünler yönünde (ileri)","Girenler yönünde (geri)","Dengededir, değişmez",
+        "Önce geri sonra ileri","Belirlenemez"], d:0,
+   c:"Q < K ise pay küçüktür, yani ürünler henüz yeterince oluşmamıştır. Sistem Q'yu K'ya eşitlemek için ürün oluşturur ve ileri yönde ilerler. Q > K olsaydı geri yönde ilerleyecekti."},
+
+  {konu:"Sıcaklığın etkisi", s:"Denge sabiti K<em>c</em>'nin değeri aşağıdakilerden hangisiyle değişir?",
+   sik:["Derişim değişimiyle","Basınç değişimiyle","Katalizör eklenmesiyle",
+        "Hacim değişimiyle","Sıcaklık değişimiyle"], d:4,
+   c:"Denge sabiti yalnızca sıcaklığa bağlıdır. Derişim, basınç ve hacim değişimleri dengeyi kaydırır ama K'yı değiştirmez; sistem yeniden aynı K değerine ulaşacak biçimde düzenlenir. Katalizör ise dengeye ulaşma süresini kısaltır, K'ya dokunmaz."},
+
+  {konu:"Katalizör ve denge", s:"Dengedeki bir sisteme katalizör eklenirse ne olur?",
+   sik:["Denge ürünler yönüne kayar","Denge girenler yönüne kayar",
+        "Denge sabiti büyür","Denge sabiti küçülür","Denge konumu değişmez"], d:4,
+   c:"Katalizör ileri ve geri tepkimeyi eşit oranda hızlandırır. Bu yüzden dengeye daha çabuk ulaşılır ama denge derişimleri ve denge sabiti değişmez. Sisteme zaten dengedeyse hiçbir şey olmaz."},
+
+  {konu:"Denge şartları", s:"Bir tepkimenin dengeye ulaşabilmesi için aşağıdakilerden hangisi <em>gereklidir</em>?",
+   sik:["Tepkimenin ekzotermik olması","Katalizör bulunması","Ürünlerin katı olması",
+        "Sıcaklığın yüksek olması","Sistemin kapalı olması"], d:4,
+   c:"Denge, ürünlerin geri tepkimeye girebilmesini gerektirir. Açık kapta ürün gaz olarak uzaklaşırsa geri tepkime olamaz ve denge kurulmaz. Bu yüzden sistemin kapalı, tepkimenin de tersinir olması gerekir."},
+
+  {konu:"Derişim hesabı", s:"1 litrelik kapta A(g) ⇌ 2B(g) dengesi kurulmuştur. Dengede 0,5 mol A ve 1 mol B bulunduğuna göre K<em>c</em> kaçtır?",
+   sik:["0,5","1","2","4","8"], d:2,
+   c:"K𝑐 = [B]² / [A] = (1)² / 0,5 = 2 bulunur. Hacim 1 litre olduğu için mol sayıları doğrudan derişim olarak kullanılabilir; hacim farklı olsaydı önce derişime çevirmek gerekirdi."},
+
+  {konu:"Denge grafiği", s:"Derişim-zaman grafiğinde dengeye ulaşıldığı nasıl anlaşılır?",
+   sik:["Tüm eğriler sıfıra iner","Eğriler kesişir",
+        "Eğriler yatay duruma gelir ve sabit kalır","Eğriler dikleşir",
+        "Giren ve ürün eğrileri çakışır"], d:2,
+   c:"Dengede derişimler artık değişmediği için eğriler yataylaşır ve sabit bir değerde kalır. Eğrilerin kesişmesi ya da çakışması gerekmez; dengede derişimler genellikle birbirinden farklıdır."},
+
+  {konu:"Saf sıvı ve katılar", s:"Denge sabiti ifadesinde aşağıdakilerden hangisinin derişimi <em>yazılmaz</em>?",
+   sik:["Sulu çözeltideki iyon","Gaz hâlindeki madde","Saf katı",
+        "Çözünmüş molekül","Gaz karışımındaki bileşen"], d:2,
+   c:"Saf katıların ve saf sıvıların derişimi, miktarları değişse bile sabit kalır; yoğunlukları ve mol kütleleri değişmediği için. Bu sabit değerler denge sabitinin içine katıldığından ifadeye ayrıca yazılmazlar."},
+
+  {konu:"Tersinir tepkime", s:"Aşağıdakilerden hangisi tersinir bir tepkimedir?",
+   sik:["Kâğıdın yanması","Yumurtanın pişmesi","Odunun kömürleşmesi",
+        "Havai fişeğin patlaması","N₂ ile H₂'den amonyak oluşumu"], d:4,
+   c:"Amonyak sentezi kapalı kapta her iki yönde de yürüyebilir ve dengeye ulaşır. Yanma, pişme ve patlama gibi olaylar ise pratikte tek yönlüdür; ürünler kendiliğinden girenlere dönüşmez."},
+
+  {konu:"Kısmi basınçlarla denge", s:"Yalnızca gazlardan oluşan bir tepkimede Δn = 0 ise K<em>p</em> ile K<em>c</em> arasındaki ilişki nedir?",
+   sik:["K<em>p</em> = K<em>c</em>","K<em>p</em> > K<em>c</em>","K<em>p</em> < K<em>c</em>",
+        "K<em>p</em> = 1","K<em>c</em> = 0"], d:0,
+   c:"K𝑝 = K𝑐(RT)^Δn bağıntısında Δn = 0 olduğunda (RT)⁰ = 1 olur ve iki sabit birbirine eşitlenir. H₂ + I₂ ⇌ 2HI tepkimesi buna örnektir; iki tarafta da 2 mol gaz vardır."},
+
+  {konu:"Başlangıç ve denge", s:"Kapalı bir kapta yalnızca girenlerle başlanan tersinir bir tepkimede zamanla ne olur?",
+   sik:["İleri hız artar, geri hız azalır","İleri hız azalır, geri hız artar",
+        "Her iki hız da artar","Her iki hız da azalır","İki hız da sabit kalır"], d:1,
+   c:"Başlangıçta yalnızca girenler bulunduğu için ileri hız en yüksek, geri hız sıfırdır. Girenler tükendikçe ileri hız düşer; ürünler biriktikçe geri hız yükselir. İkisi eşitlendiğinde denge kurulur."},
+
+  {konu:"Denge sabiti ve hız", s:"Denge sabiti çok büyük olan bir tepkime için aşağıdakilerden hangisi <em>söylenemez</em>?",
+   sik:["Dengede ürünler baskındır","Denge sağa yatkındır",
+        "Tepkime hızlı gerçekleşir","Ters tepkimenin sabiti çok küçüktür",
+        "Girenlerin derişimi çok azdır"], d:2,
+   c:"Denge sabiti, dengedeki dağılımı gösterir; tepkimenin ne kadar sürede dengeye ulaşacağını söylemez. Hızı belirleyen aktivasyon enerjisidir. K'sı çok büyük olduğu hâlde çok yavaş yürüyen tepkimeler vardır; elmasın grafite dönüşmesi bunun klasik örneğidir."}
+];
+const sorularDenge2 = [
+  {konu:"Le Chatelier ilkesi", s:"Le Chatelier ilkesine göre dengedeki bir sisteme dış etki uygulandığında sistem nasıl davranır?",
+   sik:["Etkiyi azaltacak yönde kayar","Etkiyi artıracak yönde kayar",
+        "Her zaman ürünler yönüne kayar","Her zaman girenler yönüne kayar","Hiç tepki vermez"], d:0,
+   c:"Denge, kendisini bozan etkiyi kısmen ortadan kaldıracak yönde kayar. Derişim artırılırsa o maddeyi tüketen, sıcaklık artırılırsa ısıyı soğuran yön tercih edilir. Sistem eski hâline tam dönmez, yeni bir denge konumuna yerleşir."},
+
+  {konu:"Derişim etkisi", s:"N₂(g) + 3H₂(g) ⇌ 2NH₃(g) dengesine bir miktar N₂ eklenirse denge hangi yöne kayar?",
+   sik:["Girenler yönüne","Ürünler yönüne","Kaymaz","Önce girenler sonra ürünler","Belirlenemez"], d:1,
+   c:"Eklenen N₂'yi tüketmek için sistem ileri yönde ilerler; NH₃ derişimi artar, H₂ azalır. Denge sabiti değişmez, sistem yalnızca aynı K değerini sağlayacak yeni derişimlere ulaşır."},
+
+  {konu:"Ürünün uzaklaştırılması", s:"CaCO₃(k) ⇌ CaO(k) + CO₂(g) dengesinde oluşan CO₂ gazı ortamdan sürekli çekilirse ne olur?",
+   sik:["Denge girenler yönüne kayar","Denge kaymaz","Denge ürünler yönüne kayar, CaCO₃ tükenmeye devam eder",
+        "Denge sabiti küçülür","Tepkime durur"], d:2,
+   c:"Ürün uzaklaştırıldıkça sistem onu yerine koymaya çalışır ve ileri yönde ilerler. CO₂ sürekli çekilirse denge hiç kurulamaz ve kireç taşı tükenene kadar bozunma sürer. Sanayide kireç üretimi bu ilkeyle yapılır."},
+
+  {konu:"Hacim değişimi", s:"2SO₂(g) + O₂(g) ⇌ 2SO₃(g) dengesinde kabın hacmi azaltılırsa denge hangi yöne kayar?",
+   sik:["Girenler yönüne","Kaymaz","Önce ileri sonra geri","Ürünler yönüne","Denge sabiti değişir"], d:3,
+   c:"Hacim azalınca basınç artar; sistem basıncı düşürmek için gaz mol sayısının az olduğu yöne kayar. Girenlerde 3 mol, ürünlerde 2 mol gaz vardır, bu yüzden denge ürünler yönüne kayar."},
+
+  {konu:"Mol sayısı eşitliği", s:"H₂(g) + I₂(g) ⇌ 2HI(g) dengesinde sabit sıcaklıkta hacim yarıya indirilirse denge nasıl etkilenir?",
+   sik:["Ürünler yönüne kayar","Girenler yönüne kayar","Denge sabiti büyür",
+        "Denge sabiti küçülür","Denge kaymaz"], d:4,
+   c:"İki tarafta da 2 mol gaz bulunduğundan hacim değişimi her iki yöndeki derişimleri aynı oranda etkiler. Basınç değişimi dengeyi kaydırmaz; yalnızca tüm derişimler artar. Mol sayıları farklı olsaydı kayma olurdu."},
+
+  {konu:"Sıcaklık — ekzotermik", s:"N₂(g) + 3H₂(g) ⇌ 2NH₃(g) + ısı dengesinde sıcaklık artırılırsa ne olur?",
+   sik:["Denge ürünler yönüne kayar, K büyür","Denge girenler yönüne kayar, K küçülür",
+        "Denge kaymaz","K değişmez, denge sağa kayar","Yalnızca hız artar"], d:1,
+   c:"Ekzotermik tepkimede ısı bir ürün gibi düşünülür. Sıcaklık artışı bu ısıyı tüketen yönü, yani geri tepkimeyi destekler. Denge sola kayar ve amonyak derişimi azaldığı için denge sabiti küçülür. Sıcaklık, K'yı değiştiren tek etkendir."},
+
+  {konu:"Sıcaklık — endotermik", s:"Isı + N₂O₄(g) ⇌ 2NO₂(g) dengesinde sıcaklık düşürülürse ne gözlenir?",
+   sik:["Renk koyulaşır, denge sağa kayar","Renk değişmez","Renk açılır, denge sola kayar",
+        "Denge sabiti büyür","Yalnızca basınç artar"], d:2,
+   c:"Tepkime endotermik olduğundan ısı bir giren gibi davranır. Sıcaklık düşürülünce sistem ısı üretecek yöne, yani geriye kayar. Kahverengi NO₂ azalıp renksiz N₂O₄ arttığı için tüpün rengi açılır."},
+
+  {konu:"Sabit hacimde soy gaz", s:"Sabit hacimli kapalı bir kapta kurulmuş gaz dengesine tepkimeye girmeyen helyum gazı ekleniyor. Denge nasıl etkilenir?",
+   sik:["Ürünler yönüne kayar","Girenler yönüne kayar","Denge sabiti büyür",
+        "Denge kaymaz","Tepkime durur"], d:3,
+   c:"Sabit hacimde soy gaz eklemek toplam basıncı artırır ama tepkimeye giren gazların kısmi basınçlarını ve derişimlerini değiştirmez. Dengeyi belirleyen derişimler olduğu için kayma olmaz."},
+
+  {konu:"Sabit basınçta soy gaz", s:"Sabit basınçta tutulan 2NH₃(g) ⇌ N₂(g) + 3H₂(g) dengesine soy gaz eklenirse denge hangi yöne kayar?",
+   sik:["Kaymaz","Girenler yönüne","Denge sabiti değişir","Tepkime durur","Ürünler yönüne"], d:4,
+   c:"Basıncı sabit tutmak için kabın hacmi büyür; hacim artışı tüm derişimleri seyreltir. Sistem bunu telafi etmek için gaz mol sayısının fazla olduğu yöne kayar. Ürünlerde 4 mol, girenlerde 2 mol gaz olduğundan denge ileri yönde ilerler."},
+
+  {konu:"Katalizör", s:"Dengedeki bir sisteme katalizör eklenmesinin sonucu nedir?",
+   sik:["Denge konumu değişmez, yalnızca dengeye ulaşma süresi kısalır",
+        "Denge ürünler yönüne kayar","Denge sabiti büyür",
+        "Verim artar","Ürün derişimi artar"], d:0,
+   c:"Katalizör ileri ve geri tepkimenin aktivasyon enerjisini eşit ölçüde düşürür; iki yönü de aynı oranda hızlandırdığı için denge konumu ve verim değişmez. Sanayide katalizör kullanılmasının nedeni verimi artırmak değil, üretimi hızlandırmaktır."},
+
+  {konu:"Katı miktarı", s:"C(k) + CO₂(g) ⇌ 2CO(g) dengesine bir miktar daha katı karbon eklenirse ne olur?",
+   sik:["Denge ürünler yönüne kayar","Denge girenler yönüne kayar","Denge kaymaz",
+        "Denge sabiti büyür","CO derişimi artar"], d:2,
+   c:"Saf katıların derişimi miktarları değişse de sabit kalır; bu yüzden denge sabiti ifadesinde yer almazlar. Katı eklemek ya da azaltmak dengeyi kaydırmaz. Ancak katı tümüyle biterse denge bozulur."},
+
+  {konu:"Verim artırma", s:"N₂(g) + 3H₂(g) ⇌ 2NH₃(g) + ısı tepkimesinde amonyak verimini artırmak için hangi koşullar seçilmelidir?",
+   sik:["Yüksek sıcaklık, düşük basınç","Yüksek sıcaklık, yüksek basınç",
+        "Düşük sıcaklık, düşük basınç","Düşük sıcaklık, yüksek basınç",
+        "Yalnızca katalizör kullanmak"], d:3,
+   c:"Tepkime ekzotermik olduğu için düşük sıcaklık dengeyi ürünlere kaydırır. Ürün tarafında daha az gaz molü bulunduğundan yüksek basınç da ileri yönü destekler. Ancak düşük sıcaklıkta hız çok düştüğü için sanayide orta sıcaklık ve katalizör kullanılır; bu, verimle hız arasındaki uzlaşmadır."},
+
+  {konu:"Denge sabitini değiştiren etken", s:"Aşağıdaki işlemlerden hangisi denge sabitinin sayısal değerini <em>değiştirir</em>?",
+   sik:["Giren eklemek","Ürün çekmek","Hacmi azaltmak","Katalizör eklemek","Sıcaklığı artırmak"], d:4,
+   c:"Derişim, basınç ve hacim değişimleri dengeyi kaydırır ama sistem yeniden aynı K değerine ulaşır. Katalizör yalnızca süreyi kısaltır. Denge sabitinin değerini değiştiren tek etken sıcaklıktır."},
+
+  {konu:"Grafik yorumu", s:"Derişim-zaman grafiğinde dengedeki bir sistemde belirli bir anda ürün derişimi aniden yükselip sonra yeni bir sabit değere oturuyor. Bu anda ne yapılmış olabilir?",
+   sik:["Ortama ürün eklenmiştir","Katalizör eklenmiştir","Sıcaklık sabit tutulmuştur",
+        "Kap açılmıştır","Hiçbir işlem yapılmamıştır"], d:0,
+   c:"Ani sıçrama, o maddeden dışarıdan eklendiğini gösterir; derişim önce zıplar, sonra sistem dengeyi yeniden kurarken kısmen azalıp sabitlenir. Katalizör eklenseydi ani sıçrama olmaz, yalnızca dengeye daha çabuk ulaşılırdı."},
+
+  {konu:"Renkli denge", s:"2NO₂(g) ⇌ N₂O₄(g) + ısı dengesindeki kapalı tüp sıcak suya batırıldığında ne gözlenir?",
+   sik:["Renk açılır","Renk koyulaşır","Renk değişmez","Tüpte katı oluşur","Basınç azalır"], d:1,
+   c:"Sıcaklık artışı ekzotermik yönü baskılar; denge ısıyı tüketen geri yöne, yani NO₂ tarafına kayar. Kahverengi NO₂ arttığı için tüpün rengi koyulaşır. Buzlu suya batırıldığında ise renk açılır."},
+
+  {konu:"Basınç ve verim", s:"2CO(g) + O₂(g) ⇌ 2CO₂(g) dengesinde basıncın artırılması CO₂ verimini nasıl etkiler?",
+   sik:["Azaltır","Etkilemez","Önce artırır sonra azaltır","Artırır","Denge sabitini büyütür"], d:3,
+   c:"Girenlerde toplam 3 mol, ürünlerde 2 mol gaz vardır. Basınç artışı sistemi daha az gaz molü içeren tarafa iter, bu da ürünler yönüdür. CO₂ verimi artar; ancak denge sabiti değişmez."},
+
+  {konu:"Sulu çözeltide seyreltme", s:"Sulu çözeltide kurulmuş bir dengeye saf su eklenirse sistem nasıl davranır?",
+   sik:["Denge kaymaz","Denge sabiti küçülür","Katı miktarı artar","Tepkime durur",
+        "Toplam iyon molü fazla olan yöne kayar"], d:4,
+   c:"Su eklemek tüm derişimleri seyreltir; sistem bunu telafi etmek için çözünmüş tanecik sayısını artıran yöne kayar. Bu, gaz dengelerinde hacim büyütmenin karşılığıdır. Tanecik sayıları iki tarafta eşitse kayma olmaz."},
+
+  {konu:"Sıcaklık ve K", s:"Ekzotermik bir tepkimede sıcaklık düşürülürse denge sabiti nasıl değişir?",
+   sik:["Büyür","Küçülür","Değişmez","Sıfır olur","Negatif olur"], d:0,
+   c:"Sıcaklık düşünce denge ısı üreten ileri yöne kayar; ürünlerin derişimi artar, girenlerinki azalır. Pay büyüyüp payda küçüldüğü için denge sabiti büyür. Endotermik tepkimelerde ise tam tersi olur."},
+
+  {konu:"Çoklu etki", s:"N₂(g) + 3H₂(g) ⇌ 2NH₃(g) + ısı dengesinde hem sıcaklık düşürülüp hem basınç artırılırsa NH₃ verimi nasıl etkilenir?",
+   sik:["Azalır","İki etki de verimi artırır","Etkiler birbirini götürür, değişmez",
+        "Önce artar sonra azalır","Yalnızca hız değişir"], d:1,
+   c:"Tepkime ekzotermik olduğu için sıcaklığın düşürülmesi dengeyi ürünlere kaydırır. Ürün tarafında daha az gaz molü bulunduğundan basınç artışı da aynı yönü destekler. İki etki aynı yöne çalıştığı için verim belirgin biçimde artar."},
+
+  {konu:"Dengeyi bozmayan işlem", s:"Aşağıdaki işlemlerden hangisi gaz fazındaki bir dengeyi <em>kesinlikle etkilemez</em>?",
+   sik:["Hacmi yarıya indirmek","Sıcaklığı 50 °C artırmak",
+        "Sabit hacimde soy gaz eklemek","Girenlerden birini çekmek",
+        "Ürünlerden birini eklemek"], d:2,
+   c:"Sabit hacimde soy gaz eklemek toplam basıncı artırsa da tepkimeye katılan gazların derişimlerine dokunmaz; bu yüzden denge etkilenmez. Diğer dört işlem derişimleri ya da denge sabitini değiştirdiği için dengeyi kaydırır."}
+];
+const sorularAsit1 = [
+  {konu:"pH hesabı", s:"0,01 M HCl çözeltisinin pH değeri kaçtır?",
+   sik:["2","3","4","12","13"], d:0,
+   c:"HCl kuvvetli asittir ve suda tümüyle iyonlaşır, bu yüzden [H⁺] = 0,01 M = 10⁻² M olur. pH = −log[H⁺] = −log(10⁻²) = 2 bulunur. Kuvvetli asitlerde derişim doğrudan H⁺ derişimi olarak kullanılabilir."},
+
+  {konu:"Kuvvetli bazda pH", s:"0,001 M NaOH çözeltisinin pH değeri kaçtır?",
+   sik:["1","3","7","11","14"], d:3,
+   c:"NaOH kuvvetli bazdır, [OH⁻] = 10⁻³ M olur. pOH = −log(10⁻³) = 3 bulunur. 25 °C'de pH + pOH = 14 olduğundan pH = 14 − 3 = 11'dir. Doğrudan pH = 3 demek en sık yapılan hatadır."},
+
+  {konu:"pH'tan derişim", s:"pH değeri 4 olan bir çözeltide H⁺ iyonları derişimi kaçtır?",
+   sik:["10⁻¹⁰ M","10⁻⁷ M","10⁻⁴ M","10⁻³ M","4 M"], d:2,
+   c:"pH = −log[H⁺] bağıntısı tersine çevrilir: [H⁺] = 10⁻ᵖᴴ = 10⁻⁴ M. Aynı çözeltide [OH⁻] = 10⁻¹⁰ M olur, çünkü ikisinin çarpımı 25 °C'de daima 10⁻¹⁴'tür."},
+
+  {konu:"pH ve pOH ilişkisi", s:"25 °C'de pH değeri 5,5 olan bir çözeltinin pOH değeri kaçtır?",
+   sik:["5,5","7,0","8,0","8,5","14,0"], d:3,
+   c:"25 °C'de pH + pOH = 14 bağıntısı geçerlidir. pOH = 14 − 5,5 = 8,5 bulunur. pH 7'nin altında olduğu için çözelti asidiktir ve pOH'un 7'den büyük çıkması bunu doğrular."},
+
+  {konu:"Çok değerli asit", s:"0,05 M H₂SO₄ çözeltisinde H⁺ iyonları derişimi kaçtır? (İki basamakta da tam iyonlaşma varsayılsın)",
+   sik:["0,025 M","0,05 M","0,10 M","0,15 M","0,50 M"], d:2,
+   c:"Sülfürik asit iki proton verir: H₂SO₄ → 2H⁺ + SO₄²⁻. Bu yüzden H⁺ derişimi asit derişiminin iki katıdır: 0,05 × 2 = 0,10 M. Tek değerli asit sanıp 0,05 almak yaygın hatadır."},
+
+  {konu:"Çok değerli baz", s:"0,005 M Ca(OH)₂ çözeltisinin pH değeri kaçtır?",
+   sik:["2","5","11","12","13"], d:3,
+   c:"Ca(OH)₂ iki hidroksit verir: [OH⁻] = 0,005 × 2 = 0,01 M = 10⁻² M. pOH = 2 olur, buradan pH = 14 − 2 = 12 bulunur."},
+
+  {konu:"Seyreltme ve pH", s:"pH değeri 3 olan kuvvetli asit çözeltisi su ile 10 kat seyreltilirse yeni pH kaç olur?",
+   sik:["2","3","4","30","13"], d:2,
+   c:"Seyreltme H⁺ derişimini 10'a böler: 10⁻³ → 10⁻⁴ M. pH = 4 olur. Her 10 kat seyreltme pH'ı bir birim yükseltir; ancak seyreltmeyle pH 7'yi geçip bazik bölgeye taşınamaz, en fazla 7'ye yaklaşır."},
+
+  {konu:"Suyun iyonlaşma sabiti", s:"25 °C'de saf suda [H⁺] ile [OH⁻] çarpımı kaçtır?",
+   sik:["10⁻⁷","10⁻¹⁴","10⁻¹","1","10¹⁴"], d:1,
+   c:"Suyun iyonlaşma sabiti K𝑤 = [H⁺][OH⁻] = 10⁻¹⁴'tür ve 25 °C'de sabittir. Saf suda iki derişim eşit olduğundan her biri 10⁻⁷ M olur ve pH 7 çıkar. K𝑤 sıcaklıkla değişir; sıcak suda pH 7'nin altına iner ama su yine nötrdür."},
+
+  {konu:"Konjuge çift", s:"Brønsted-Lowry kuramına göre NH₄⁺ iyonunun konjuge bazı hangisidir?",
+   sik:["NH₄OH","NH₂⁻","N₂","OH⁻","NH₃"], d:4,
+   c:"Konjuge baz, asidin bir proton vermesiyle oluşan türdür: NH₄⁺ → NH₃ + H⁺. Konjuge asit-baz çiftleri yalnızca bir H⁺ kadar farklıdır. NH₃'ün konjuge asidi ise yine NH₄⁺'dır."},
+
+  {konu:"Amfoter türler", s:"Aşağıdakilerden hangisi hem asit hem baz gibi davranabilen amfoter bir türdür?",
+   sik:["HCO₃⁻","Cl⁻","Na⁺","NO₃⁻","CH₄"], d:0,
+   c:"HCO₃⁻ proton vererek CO₃²⁻'ye, proton alarak H₂CO₃'e dönüşebilir; bu yüzden amfoterdir. Su da amfoterdir. Cl⁻ ve NO₃⁻ kuvvetli asitlerin konjuge bazlarıdır ve proton alma eğilimleri çok zayıftır."},
+
+  {konu:"Lewis kuramı", s:"Lewis kuramına göre asit nasıl tanımlanır?",
+   sik:["Elektron çifti alan tür","Proton veren tür","Proton alan tür",
+        "Elektron çifti veren tür","Suda H⁺ veren tür"], d:0,
+   c:"Lewis asidi, bağ kurmak için elektron çifti kabul eden türdür; BF₃ ve AlCl₃ klasik örneklerdir. Lewis bazı ise elektron çifti verendir. Bu kuram, protonu olmayan maddeleri de asit sayabildiği için en kapsamlı tanımdır."},
+
+  {konu:"Brønsted-Lowry kuramı", s:"H₂O + NH₃ ⇌ NH₄⁺ + OH⁻ tepkimesinde su hangi rolü üstlenir?",
+   sik:["Lewis bazı","Brønsted asidi","Brønsted bazı","Nötr çözücü","Yükseltgen"], d:1,
+   c:"Su bu tepkimede amonyağa proton vermektedir, yani Brønsted-Lowry kuramına göre asit gibi davranır. Aynı su, HCl ile tepkimede proton aldığı için baz olur; amfoter olması bu esnekliği sağlar."},
+
+  {konu:"Kuvvetli ve zayıf asit", s:"Eşit derişimdeki HCl ve CH₃COOH çözeltileri karşılaştırıldığında ne söylenebilir?",
+   sik:["İkisinin pH'ı aynıdır","CH₃COOH'un pH'ı daha düşüktür",
+        "İkisi de tam iyonlaşır","HCl'nin elektrik iletkenliği daha düşüktür",
+        "HCl'nin pH'ı daha düşüktür"], d:4,
+   c:"HCl kuvvetli asittir ve tümüyle iyonlaşır; asetik asit zayıf asittir, moleküllerinin ancak küçük bir kısmı iyonlaşır. Aynı derişimde HCl daha çok H⁺ verdiği için pH'ı daha düşük, iletkenliği daha yüksektir."},
+
+  {konu:"pH ölçeği", s:"pH değeri 1 olan çözeltinin H⁺ derişimi, pH değeri 3 olan çözeltininkinin kaç katıdır?",
+   sik:["2","3","10","100","1000"], d:3,
+   c:"pH logaritmik bir ölçektir. [H⁺] değerleri 10⁻¹ ve 10⁻³ M'dir; oranları 10⁻¹/10⁻³ = 10² = 100 kat eder. Her bir pH birimi 10 katlık bir derişim farkına karşılık gelir."},
+
+  {konu:"Nötrlük", s:"Bir çözeltinin nötr olması için hangi koşul <em>her sıcaklıkta</em> geçerlidir?",
+   sik:["[H⁺] = [OH⁻] olması","pH = 7 olması","pOH = 7 olması",
+        "pH + pOH = 14 olması","İndikatörle renk vermemesi"], d:0,
+   c:"Nötrlüğün gerçek ölçütü H⁺ ile OH⁻ derişimlerinin eşit olmasıdır. pH = 7 yalnızca 25 °C'de nötrlüğe karşılık gelir; sıcaklık arttıkça K𝑤 büyür ve saf suyun pH'ı 7'nin altına iner, ama su yine nötrdür."},
+
+  {konu:"İndikatörler", s:"Fenolftalein indikatörü hangi ortamda pembe renk verir?",
+   sik:["pH < 3","pH > 8,2","pH ≈ 5","pH ≈ 7","Her ortamda"], d:1,
+   c:"Fenolftaleinin dönüm aralığı yaklaşık 8,2–10'dur. Bu değerin altında renksiz, üstünde pembedir. Bu yüzden özellikle kuvvetli asit–kuvvetli baz titrasyonlarında dönüm noktasını göstermek için kullanılır."},
+
+  {konu:"Asit yağmurları", s:"Asit yağmurlarının oluşumundan sorumlu başlıca gazlar hangileridir?",
+   sik:["N₂ ve O₂","CH₄ ve H₂","He ve Ne","H₂O ve O₃","SO₂ ve NO₂"], d:4,
+   c:"Fosil yakıtların yanmasıyla açığa çıkan SO₂ ve NO₂, atmosferdeki su ve oksijenle tepkimeye girerek sülfürik ve nitrik asit oluşturur. Bu asitler yağışla yeryüzüne inerek asit yağmurlarına yol açar."},
+
+  {konu:"Asit-baz özellikleri", s:"Aşağıdakilerden hangisi asitlerin ortak özelliklerinden <em>değildir</em>?",
+   sik:["Turnusolu kırmızıya çevirir","Ekşi tat verir",
+        "Aktif metallerle H₂ gazı açığa çıkarır","Sulu çözeltileri elektriği iletir",
+        "Ele kayganlık hissi verir"], d:4,
+   c:"Kayganlık hissi bazların özelliğidir; bazlar deri yüzeyindeki yağları sabunlaştırdığı için kaygan hissettirir. Asitler ise ekşi tatlı, turnusolu kırmızıya çeviren ve aktif metallerle hidrojen açığa çıkaran maddelerdir."},
+
+  {konu:"Karışım pH'ı", s:"0,1 M 100 mL HCl çözeltisine 100 mL saf su eklenirse yeni çözeltinin pH'ı kaç olur?",
+   sik:["0,7","1,0","1,3","2,0","2,3"], d:2,
+   c:"Su eklemek mol sayısını değiştirmez, hacmi iki katına çıkarır: yeni derişim 0,1 × (100/200) = 0,05 M olur. pH = −log(0,05) ≈ 1,3 bulunur. Hacim iki katına çıktığında pH bir birim değil, yalnızca 0,3 birim artar."},
+
+  {konu:"Konjuge asit", s:"Aşağıdaki türlerden hangisi suyun konjuge asididir?",
+   sik:["OH⁻","H₃O⁺","H₂O₂","O²⁻","H₂"], d:1,
+   c:"Konjuge asit, bir türün proton almasıyla oluşur: H₂O + H⁺ → H₃O⁺. Suyun konjuge bazı ise proton vermesiyle oluşan OH⁻'dir. Su hem konjuge asidi hem konjuge bazı olan amfoter bir maddedir."}
+];
+const sorularAsit2 = [
+  {konu:"Ka hesabı", s:"0,1 M HA zayıf asit çözeltisinin pH değeri 3 ölçülmüştür. Bu asidin K<em>a</em> değeri kaçtır?",
+   sik:["10⁻³","10⁻⁴","10⁻⁶","10⁻⁷","10⁻⁵"], d:4,
+   c:"pH = 3 olduğuna göre [H⁺] = 10⁻³ M'dir. HA ⇌ H⁺ + A⁻ dengesinde [A⁻] de 10⁻³ M olur. K𝑎 = [H⁺][A⁻]/[HA] = (10⁻³)(10⁻³)/0,1 = 10⁻⁶/10⁻¹ = 10⁻⁵ bulunur. İyonlaşan miktar çok küçük olduğu için paydada 0,1 kullanılabilir."},
+
+  {konu:"Zayıf asitte pH", s:"K<em>a</em> = 10⁻⁵ olan 0,1 M zayıf asit çözeltisinin pH değeri kaçtır?",
+   sik:["3","1","2","5","6"], d:0,
+   c:"Zayıf asitte [H⁺] = √(K𝑎 · C) yaklaşımı kullanılır: √(10⁻⁵ × 10⁻¹) = √(10⁻⁶) = 10⁻³ M. pH = 3 bulunur. Aynı derişimdeki kuvvetli asidin pH'ı 1 olurdu; aradaki fark zayıf asidin kısmen iyonlaşmasından gelir."},
+
+  {konu:"İyonlaşma yüzdesi", s:"0,1 M zayıf asit çözeltisinde [H⁺] = 10⁻³ M ölçülmüştür. Asidin iyonlaşma yüzdesi kaçtır?",
+   sik:["%0,1","%0,5","%1","%10","%100"], d:2,
+   c:"İyonlaşma yüzdesi, iyonlaşan derişimin başlangıç derişimine oranıdır: (10⁻³ / 10⁻¹) × 100 = %1. Yani her 100 molekülden yalnızca biri iyonlaşmıştır; geri kalanı molekül hâlinde çözeltide durur."},
+
+  {konu:"Ka ve Kb ilişkisi", s:"Bir zayıf asidin K<em>a</em> değeri 10⁻⁵ ise konjuge bazının K<em>b</em> değeri kaçtır?",
+   sik:["10⁻⁵","10⁻⁷","10⁻¹⁴","10⁻⁹","10⁹"], d:3,
+   c:"Konjuge asit-baz çifti için K𝑎 × K𝑏 = K𝑤 = 10⁻¹⁴ bağıntısı geçerlidir. K𝑏 = 10⁻¹⁴/10⁻⁵ = 10⁻⁹ bulunur. Asit ne kadar kuvvetliyse konjuge bazı o kadar zayıftır."},
+
+  {konu:"Asit kuvveti karşılaştırması", s:"K<em>a</em> değerleri verilen asitlerden hangisi <em>en kuvvetlidir</em>?",
+   sik:["K<em>a</em> = 1,8×10⁻⁵","K<em>a</em> = 6,3×10⁻⁵","K<em>a</em> = 4,5×10⁻⁷",
+        "K<em>a</em> = 1,8×10⁻⁴","K<em>a</em> = 2,0×10⁻⁹"], d:3,
+   c:"K𝑎 büyüdükçe denge iyonlaşma yönüne kayar, yani asit daha kuvvetlidir. Verilenler arasında en büyük değer 1,8×10⁻⁴'tür. Üsleri karşılaştırırken −4'ün −9'dan büyük olduğunu gözden kaçırmamak gerekir."},
+
+  {konu:"pKa", s:"K<em>a</em> = 10⁻⁴ olan bir asidin pK<em>a</em> değeri kaçtır?",
+   sik:["−4","4","10","14","10⁻⁴"], d:1,
+   c:"pK𝑎 = −log K𝑎 = −log(10⁻⁴) = 4 bulunur. pK𝑎 küçüldükçe asit kuvvetlenir; bu yönüyle pH ölçeğine benzer bir mantık taşır."},
+
+  {konu:"Tam nötralleşme", s:"0,1 M 50 mL HCl çözeltisi ile 0,1 M 50 mL NaOH çözeltisi karıştırılırsa son çözeltinin pH'ı kaç olur?",
+   sik:["7","1","3","11","13"], d:0,
+   c:"HCl mol sayısı 0,1 × 0,05 = 0,005 mol, NaOH da 0,005 mol'dür. İkisi birebir tepkimeye girip tümüyle tükenir; geriye yalnızca NaCl ve su kalır. NaCl kuvvetli asit-kuvvetli baz tuzu olduğu için hidroliz olmaz ve çözelti nötrdür, pH = 7."},
+
+  {konu:"Artan asit hesabı", s:"0,1 M 100 mL HCl çözeltisine 0,1 M 50 mL NaOH ekleniyor. Son çözeltinin pH'ı yaklaşık kaçtır?",
+   sik:["1,00","1,48","2,00","7,00","12,52"], d:1,
+   c:"HCl 0,010 mol, NaOH 0,005 mol'dür; 0,005 mol H⁺ artar. Toplam hacim 150 mL = 0,15 L olduğundan [H⁺] = 0,005/0,15 ≈ 0,033 M. pH = −log(0,033) ≈ 1,48 bulunur. Hacimlerin toplanmasını unutmak sık yapılan hatadır."},
+
+  {konu:"Ortak iyon etkisi", s:"Asetik asit çözeltisine bir miktar sodyum asetat (CH₃COONa) katısı eklenirse ne olur?",
+   sik:["İyonlaşma artar, pH düşer","Değişiklik olmaz","Asit kuvvetlenir",
+        "K<em>a</em> değeri küçülür","İyonlaşma azalır, pH yükselir"], d:4,
+   c:"Sodyum asetat çözünerek ortama asetat iyonu verir. Le Chatelier ilkesine göre denge, fazla asetatı tüketecek yöne yani molekül tarafına kayar; iyonlaşma baskılanır. H⁺ derişimi azaldığı için pH yükselir. K𝑎 sabit kalır, yalnızca denge konumu değişir."},
+
+  {konu:"Seyreltme etkisi", s:"Zayıf bir asit çözeltisi su ile seyreltilirse iyonlaşma yüzdesi nasıl değişir?",
+   sik:["Artar","Azalır","Değişmez","Önce artar sonra azalır","Sıfırlanır"], d:0,
+   c:"Seyreltme tanecikleri birbirinden uzaklaştırır ve iyonların yeniden birleşme olasılığını düşürür; denge iyonlaşma yönüne kayar. Bu yüzden iyonlaşma yüzdesi artar. Ancak toplam H⁺ derişimi yine de azalır, pH yükselir."},
+
+  {konu:"Tuzların hidrolizi", s:"NH₄Cl tuzunun sulu çözeltisi için ne söylenebilir?",
+   sik:["Baziktir, pH > 7","Nötrdür, pH = 7","Elektriği iletmez",
+        "Asidiktir, pH < 7","İndikatörle renk vermez"], d:3,
+   c:"NH₄Cl, kuvvetli asit (HCl) ile zayıf bazın (NH₃) tuzudur. NH₄⁺ iyonu suyla tepkimeye girip H₃O⁺ üretir, Cl⁻ ise tepkimesizdir. Bu yüzden çözelti asidik olur. Kuvvetli baz-zayıf asit tuzları ise bazik çözelti verir."},
+
+  {konu:"Zayıf baz", s:"K<em>b</em> = 10⁻⁵ olan 0,1 M zayıf baz çözeltisinin pH değeri kaçtır?",
+   sik:["3","5","9","11","13"], d:3,
+   c:"[OH⁻] = √(K𝑏 · C) = √(10⁻⁵ × 10⁻¹) = 10⁻³ M bulunur. pOH = 3 olur, buradan pH = 14 − 3 = 11'dir. Doğrudan pH = 3 demek yaygın bir hatadır; önce pOH hesaplanmalıdır."},
+
+  {konu:"Konjuge baz kuvveti", s:"Aşağıdaki asitlerden hangisinin konjuge bazı <em>en kuvvetlidir</em>?",
+   sik:["HCl","HNO₃","H₂SO₄","HF","HCN (K<em>a</em> = 6×10⁻¹⁰)"], d:4,
+   c:"Asit zayıfladıkça konjuge bazı kuvvetlenir. Listedeki en zayıf asit HCN'dir (K𝑎 çok küçük), dolayısıyla konjuge bazı CN⁻ en kuvvetlidir. Kuvvetli asitlerin konjuge bazları (Cl⁻, NO₃⁻) pratikte tepkimesizdir."},
+
+  {konu:"Nötralleşme tepkimesi", s:"Kuvvetli asit ile kuvvetli bazın nötralleşmesinde net iyon denklemi hangisidir?",
+   sik:["HCl + NaOH → NaCl + H₂O","H⁺ + OH⁻ → H₂O",
+        "Na⁺ + Cl⁻ → NaCl","H₂O → H⁺ + OH⁻","Na⁺ + OH⁻ → NaOH"], d:1,
+   c:"Na⁺ ve Cl⁻ iyonları tepkimeye katılmayan seyirci iyonlardır ve net denklemden çıkarılır. Geriye asit-baz tepkimesinin özü kalır: H⁺ + OH⁻ → H₂O. Bu tepkimenin ısısı, hangi kuvvetli asit-baz çifti kullanılırsa kullanılsın yaklaşık aynıdır."},
+
+  {konu:"Eşdeğerlik noktası", s:"Kuvvetli asit ile zayıf bazın titrasyonunda eşdeğerlik noktasındaki pH için ne söylenebilir?",
+   sik:["pH < 7'dir","pH = 7'dir","pH > 7'dir","pH = 14'tür","Belirlenemez"], d:0,
+   c:"Eşdeğerlik noktasında ortamda kuvvetli asidin zayıf bazla oluşturduğu tuz bulunur. Bu tuzun katyonu hidroliz olup H₃O⁺ ürettiği için çözelti asidiktir, pH 7'nin altındadır. Eşdeğerlik noktası her zaman pH 7 demek değildir."},
+
+  {konu:"İyonlaşma dengesi", s:"CH₃COOH ⇌ CH₃COO⁻ + H⁺ dengesine kuvvetli asit eklenirse denge hangi yöne kayar?",
+   sik:["Ürünler yönüne","Kaymaz","Girenler yönüne","K<em>a</em> büyür","İyonlaşma artar"], d:2,
+   c:"Kuvvetli asit ortama H⁺ verir. Le Chatelier ilkesine göre denge, fazla H⁺'ı tüketecek yöne yani molekül tarafına kayar. Bu da ortak iyon etkisinin bir başka görünümüdür; asetik asidin iyonlaşması baskılanır."},
+
+  {konu:"Zayıf asit iletkenliği", s:"Eşit derişimdeki HCl ve HF çözeltilerinin elektrik iletkenlikleri karşılaştırıldığında ne görülür?",
+   sik:["İkisi aynıdır","HF daha iyi iletir","İkisi de iletmez",
+        "İletkenlik derişime bağlı değildir","HCl daha iyi iletir"], d:4,
+   c:"İletkenlik çözeltideki serbest iyon derişimiyle artar. HCl kuvvetli asit olduğu için tümüyle iyonlaşır ve çok daha fazla iyon verir; HF ise zayıf asittir ve kısmen iyonlaşır. Bu yüzden HCl belirgin biçimde daha iyi iletir."},
+
+  {konu:"Derişim ve pH ilişkisi", s:"Zayıf bir asidin derişimi 100 katına çıkarılırsa pH değeri yaklaşık kaç birim <em>düşer</em>?",
+   sik:["0,5","1","2","10","100"], d:1,
+   c:"Zayıf asitte [H⁺] = √(K𝑎·C) olduğundan derişim 100 katına çıkınca H⁺ derişimi √100 = 10 katına çıkar. Bu da pH'ı 1 birim düşürür. Kuvvetli asitte aynı değişim pH'ı 2 birim düşürürdü."},
+
+  {konu:"Asit-baz tepkime ürünü", s:"H₂SO₄ ile KOH'in tam nötralleşmesinden hangi tuz oluşur?",
+   sik:["KHSO₄","KSO₄","K₂SO₄","K₂S","KOHSO₄"], d:2,
+   c:"Sülfürik asit iki proton verir, potasyum hidroksit ise tek yüklü katyon içerir. Yük dengesi için iki potasyum gerekir: H₂SO₄ + 2KOH → K₂SO₄ + 2H₂O. KHSO₄ ise yalnızca bir proton nötrleştiğinde oluşan asidik tuzdur."},
+
+  {konu:"Yaklaşımın geçerliliği", s:"Zayıf asit pH hesabında [H⁺] = √(K<em>a</em>·C) yaklaşımı ne zaman <em>güvenilir değildir</em>?",
+   sik:["K<em>a</em> çok küçükse","Derişim çok yüksekse","İyonlaşma yüzdesi büyükse",
+        "Sıcaklık düşükse","Asit tek protonluysa"], d:2,
+   c:"Bu yaklaşım, iyonlaşan miktarın başlangıç derişiminin yanında ihmal edilebilir olduğu varsayımına dayanır. İyonlaşma yüzdesi büyüdüğünde (genellikle %5'in üstü) bu varsayım bozulur ve ikinci dereceden denklemin tam çözümü gerekir."}
+];
+const sorularAsit3 = [
+  {konu:"Titrasyon hesabı", s:"25 mL 0,1 M HCl çözeltisini tam nötrleştirmek için 0,05 M NaOH çözeltisinden kaç mL gerekir?",
+   sik:["50","12,5","25","75","100"], d:0,
+   c:"Nötrleşmede mol sayıları eşitlenir: M𝑎V𝑎 = M𝑏V𝑏. (0,1)(25) = (0,05)(V) → V = 2,5/0,05 = 50 mL bulunur. Baz daha seyreltik olduğu için daha büyük hacim gerekir."},
+
+  {konu:"Değerlikli titrasyon", s:"20 mL 0,1 M H₂SO₄ çözeltisini tam nötrleştirmek için 0,2 M NaOH çözeltisinden kaç mL gerekir?",
+   sik:["10","20","30","40","50"], d:1,
+   c:"Sülfürik asit iki protonludur, bu yüzden değerlik çarpanı hesaba katılır: n𝑎M𝑎V𝑎 = n𝑏M𝑏V𝑏. (2)(0,1)(20) = (1)(0,2)(V) → 4 = 0,2V → V = 20 mL. Değerliği unutup 10 mL bulmak yaygın hatadır."},
+
+  {konu:"Bilinmeyen derişim", s:"20 mL derişimi bilinmeyen HCl çözeltisi, 0,1 M NaOH ile titre ediliyor ve dönüm noktasına 25 mL'de ulaşılıyor. Asidin derişimi kaçtır?",
+   sik:["0,08 M","0,10 M","0,125 M","0,20 M","0,25 M"], d:2,
+   c:"M𝑎V𝑎 = M𝑏V𝑏 bağıntısından M𝑎 = (0,1)(25)/20 = 2,5/20 = 0,125 M bulunur. Titrasyonun temel amacı, bilinen derişimli çözelti yardımıyla bilinmeyeni belirlemektir."},
+
+  {konu:"Titrasyon eğrisi", s:"Kuvvetli asidin kuvvetli bazla titrasyonunda pH-hacim grafiğinin görünümü nasıldır?",
+   sik:["Baştan sona düz bir doğrudur","Sürekli azalır","Hiç değişmez",
+        "Basamaklı olarak azalır",
+        "Eşdeğerlik noktası çevresinde dik bir sıçrama gösterir"], d:4,
+   c:"Titrasyonun başında ve sonunda pH yavaş değişir, ancak eşdeğerlik noktasına yaklaşırken çok küçük hacim eklemeleri pH'ı birkaç birim birden değiştirir. Bu yüzden eğri o bölgede neredeyse dikleşir; dönüm noktasının keskin belirlenmesini sağlayan da budur."},
+
+  {konu:"İndikatör seçimi", s:"Kuvvetli asit ile kuvvetli bazın titrasyonunda indikatör nasıl seçilmelidir?",
+   sik:["Dönüm aralığı pH 1-2 arasında olan","Dönüm aralığı pH 12-13 arasında olan",
+        "Renk değiştirmeyen bir madde","Dönüm aralığı eşdeğerlik noktasının pH'ını kapsayan",
+        "Her indikatör aynı sonucu verir"], d:3,
+   c:"İndikatörün renk değiştirdiği aralık, eşdeğerlik noktasındaki pH'ı içermelidir. Kuvvetli asit-kuvvetli baz titrasyonunda eşdeğerlik pH'ı 7 civarındadır ve dik sıçrama geniş olduğundan hem fenolftalein hem metil oranj kullanılabilir."},
+
+  {konu:"Tampon çözelti", s:"Tampon çözelti aşağıdakilerden hangisiyle hazırlanır?",
+   sik:["Kuvvetli asit ve kuvvetli baz","Zayıf asit ve konjuge bazının tuzu","İki kuvvetli asit",
+        "Saf su ve tuz","Kuvvetli asit ve suyu"], d:1,
+   c:"Tampon, zayıf bir asit ile onun konjuge bazından (ya da zayıf baz ile konjuge asidinden) oluşur. Asetik asit-sodyum asetat karışımı klasik örnektir. Kuvvetli asit ve bazlar tam iyonlaştıkları için tamponlama yapamaz."},
+
+  {konu:"Tamponun işleyişi", s:"Bir tampon çözeltiye az miktarda kuvvetli asit eklendiğinde pH'ın neredeyse değişmemesinin nedeni nedir?",
+   sik:["Asit suyla seyrelir","Tampon asidi nötrler","Tampondaki konjuge baz eklenen H⁺'ı bağlar",
+        "Sıcaklık değişir","İyonlaşma durur"], d:2,
+   c:"Ortamdaki konjuge baz (örneğin asetat iyonu) eklenen H⁺ ile birleşerek zayıf asit molekülüne dönüşür. Böylece serbest H⁺ derişimi neredeyse artmaz ve pH sabit kalır. Baz eklenirse bu kez zayıf asit devreye girer."},
+
+  {konu:"Henderson-Hasselbalch", s:"Zayıf asit ile konjuge bazının derişimleri eşit olan bir tampon çözeltinin pH'ı için ne söylenebilir?",
+   sik:["pH = pK<em>a</em>'dır","pH = 7'dir","pH = 14 − pK<em>a</em>'dır",
+        "pH = 0'dır","Belirlenemez"], d:0,
+   c:"pH = pK𝑎 + log([A⁻]/[HA]) bağıntısında derişimler eşitse oran 1, logaritması 0 olur. Geriye pH = pK𝑎 kalır. Tamponlar bu yüzden en iyi kendi pK𝑎 değerlerine yakın pH'larda çalışır."},
+
+  {konu:"Tampon pH hesabı", s:"pK<em>a</em> = 4,74 olan asetik asit ve asetat içeren bir tamponda [CH₃COO⁻] = 0,2 M, [CH₃COOH] = 0,1 M'dir. Çözeltinin pH'ı yaklaşık kaçtır? (log 2 ≈ 0,30)",
+   sik:["5,04","4,44","4,74","5,34","9,26"], d:0,
+   c:"pH = pK𝑎 + log([A⁻]/[HA]) = 4,74 + log(0,2/0,1) = 4,74 + log 2 = 4,74 + 0,30 = 5,04 bulunur. Konjuge baz fazla olduğu için pH, pK𝑎'nın üstüne çıkmıştır."},
+
+  {konu:"Tampon kapasitesi", s:"Bir tamponun kapasitesi ne zaman <em>en yüksektir</em>?",
+   sik:["Bileşen derişimleri çok düşükken","Yalnızca asit varken",
+        "Yalnızca tuz varken","Bileşen derişimleri yüksek ve birbirine yakınken",
+        "pH 7 olduğunda"], d:3,
+   c:"Tampon kapasitesi, pH'ı önemli ölçüde değiştirmeden karşılanabilecek asit veya baz miktarıdır. Her iki bileşen de bol ve oran 1'e yakın olduğunda hem asit hem baz eklemelerine karşı en güçlü direnç gösterilir."},
+
+  {konu:"Kanda tamponlama", s:"İnsan kanının pH'ını yaklaşık 7,4'te tutan başlıca tampon sistemi hangisidir?",
+   sik:["H₂CO₃/HCO₃⁻","NH₃/NH₄⁺","CH₃COOH/CH₃COO⁻","HCl/Cl⁻","NaOH/Na⁺"], d:0,
+   c:"Karbonik asit-bikarbonat sistemi kanın başlıca tamponudur. Metabolizmada üretilen asitler bikarbonat tarafından bağlanır, fazla CO₂ ise solunumla atılır. Kan pH'ının 7,35-7,45 aralığından çıkması yaşamsal tehlike yaratır."},
+
+  {konu:"Tuz hidrolizi", s:"CH₃COONa tuzunun sulu çözeltisi için ne söylenebilir?",
+   sik:["Asidiktir, pH < 7","Nötrdür, pH = 7","Elektriği iletmez",
+        "Baziktir, pH > 7","İndikatörle renk vermez"], d:3,
+   c:"Bu tuz, kuvvetli baz (NaOH) ile zayıf asidin (CH₃COOH) tuzudur. Asetat iyonu suyla tepkimeye girip OH⁻ üretir, sodyum ise tepkimesizdir. Bu yüzden çözelti bazik olur."},
+
+  {konu:"Nötr tuz", s:"Aşağıdaki tuzlardan hangisinin sulu çözeltisi <em>nötrdür</em>?",
+   sik:["NH₄Cl","CH₃COONa","KNO₃","Na₂CO₃","NH₄CN"], d:2,
+   c:"KNO₃, kuvvetli baz (KOH) ile kuvvetli asidin (HNO₃) tuzudur; her iki iyon da hidroliz olmaz ve çözelti nötr kalır. NH₄Cl asidik, CH₃COONa ve Na₂CO₃ ise bazik çözelti verir."},
+
+  {konu:"Titrasyonda eşdeğerlik", s:"Zayıf asidin kuvvetli bazla titrasyonunda eşdeğerlik noktasındaki pH için ne söylenebilir?",
+   sik:["pH < 7'dir","pH = 7'dir","pH = 0'dır","pH = pK<em>a</em>'dır","pH > 7'dir"], d:4,
+   c:"Eşdeğerlik noktasında ortamda zayıf asidin kuvvetli bazla oluşturduğu tuz bulunur. Bu tuzun anyonu hidroliz olarak OH⁻ üretir, bu yüzden çözelti baziktir. Bu titrasyonda fenolftalein uygun indikatördür."},
+
+  {konu:"Yarı eşdeğerlik noktası", s:"Zayıf asidin titrasyonunda eklenen bazın eşdeğerlik hacminin yarısına ulaşıldığında pH neye eşittir?",
+   sik:["7","0","14","pK<em>b</em>","pK<em>a</em>"], d:4,
+   c:"Yarı eşdeğerlik noktasında asidin yarısı tuza dönüşmüştür, yani [HA] = [A⁻] olur. Henderson-Hasselbalch bağıntısında logaritmalı terim sıfırlanır ve pH = pK𝑎 kalır. Bu nokta, deneysel olarak pK𝑎 belirlemenin pratik yoludur."},
+
+  {konu:"Tampona su eklenmesi", s:"Bir tampon çözeltiye saf su eklenirse pH nasıl değişir?",
+   sik:["Belirgin biçimde yükselir","Belirgin biçimde düşer","7'ye eşitlenir",
+        "Neredeyse değişmez","Tampon özelliği hemen kaybolur"], d:3,
+   c:"Su eklemek asit ve konjuge bazın derişimlerini aynı oranda seyreltir, oranları değişmez. pH bu orana bağlı olduğu için neredeyse sabit kalır. Ancak aşırı seyreltme tampon kapasitesini düşürür."},
+
+  {konu:"Standart çözelti", s:"Titrasyonda kullanılan, derişimi tam olarak bilinen çözeltiye ne ad verilir?",
+   sik:["Analit","İndikatör","Standart çözelti","Tampon","Süzüntü"], d:2,
+   c:"Derişimi kesin bilinen ve büretten damla damla eklenen çözeltiye standart çözelti (titrant) denir. Derişimi araştırılan çözelti ise analittir ve genellikle erlende bulunur."},
+
+  {konu:"Dönüm noktası", s:"Titrasyonda dönüm noktası ile eşdeğerlik noktası arasındaki ilişki nedir?",
+   sik:["İkisi aynı şeydir","Dönüm noktası indikatörün renk değiştirdiği andır, eşdeğerlik noktasına yakın olmalıdır",
+        "Dönüm noktası her zaman pH 7'dedir","Eşdeğerlik noktası gözle görülür",
+        "İkisi arasında ilişki yoktur"], d:1,
+   c:"Eşdeğerlik noktası asit ve bazın mol olarak tam eşitlendiği kuramsal noktadır. Dönüm noktası ise indikatörün renk değiştirdiği, gözlenebilen andır. Doğru indikatör seçilirse ikisi birbirine çok yakın olur; aradaki fark titrasyon hatasıdır."},
+
+  {konu:"Tampon bileşimi", s:"Aşağıdaki karışımlardan hangisi tampon çözelti <em>oluşturmaz</em>?",
+   sik:["CH₃COOH + CH₃COONa","NH₃ + NH₄Cl","H₂CO₃ + NaHCO₃",
+        "HF + NaF","HCl + NaCl"], d:4,
+   c:"HCl kuvvetli asittir ve suda tümüyle iyonlaşır; konjuge bazı olan Cl⁻ ise proton bağlama eğilimi göstermez. Bu yüzden bu karışım eklenen asit veya baza karşı direnç gösteremez. Diğer dördü zayıf asit/baz ile konjuge çiftinden oluşur."},
+
+  {konu:"Titrasyon uygulaması", s:"Sirkedeki asetik asit yüzdesini belirlemek için hangi yöntem kullanılır?",
+   sik:["Kaynatma","Kuvvetli bazla titrasyon","Süzme","Damıtma","Kristallendirme"], d:1,
+   c:"Bilinen derişimde NaOH ile titre edilerek harcanan baz hacminden asetik asidin mol sayısı bulunur. Zayıf asit-kuvvetli baz titrasyonu olduğu için eşdeğerlik noktası bazik bölgededir ve fenolftalein uygun indikatördür."}
+];
+
+
+
+
+
+
 
 
 
@@ -870,14 +1432,35 @@ const TESTLER = [
 
   {id:"hiz1", unite:"Tepkime Hızı", bolum:1, toplam:2,
    alt:"Hız kavramı · etkin çarpışma · hızı etkileyen faktörler",
-   dizi:sorularHiz1, acilis:"2026-08-08", kod:"CARPISMA"}
+   dizi:sorularHiz1, acilis:"2026-08-08", kod:"CARPISMA"},
+
+  {id:"hiz2", unite:"Tepkime Hızı", bolum:2, toplam:2,
+   alt:"Hız denklemi · mekanizma · yavaş basamak · yarılanma süresi",
+   dizi:sorularHiz2, acilis:"2026-08-12", kod:"MEKANIZMA"},
+
+  {id:"denge1", unite:"Kimyasal Denge", bolum:1, toplam:2,
+   alt:"Denge sabiti · Kc ve Kp · heterojen denge · tepkime yönü",
+   dizi:sorularDenge1, acilis:"2026-08-16", kod:"DENGE"},
+
+  {id:"denge2", unite:"Kimyasal Denge", bolum:2, toplam:2,
+   alt:"Le Chatelier · derişim, basınç, sıcaklık etkisi · verim",
+   dizi:sorularDenge2, acilis:"2026-08-20", kod:"CHATELIER"},
+
+  {id:"asit1", unite:"Asit-Baz Dengesi", bolum:1, toplam:3,
+   alt:"Asit-baz tanımları · pH ve pOH · kuvvetli asit ve bazlar",
+   dizi:sorularAsit1, acilis:"2026-08-24", kod:"PHDEGERI"},
+
+  {id:"asit2", unite:"Asit-Baz Dengesi", bolum:2, toplam:3,
+   alt:"Zayıf asit-baz dengesi · Ka ve Kb · nötralleşme · hidroliz",
+   dizi:sorularAsit2, acilis:"2026-08-28", kod:"ZAYIFASIT"},
+
+  {id:"asit3", unite:"Asit-Baz Dengesi", bolum:3, toplam:3,
+   alt:"Titrasyon · tampon çözeltiler · hidroliz · indikatör seçimi",
+   dizi:sorularAsit3, acilis:"2026-09-01", kod:"TAMPON"}
 ];
 
 /* yol haritası — henüz yazılmamış bölümler */
 const YOLDA = [
-  ["Tepkime Hızı", "2. bölüm"],
-  ["Kimyasal Denge", "2 bölüm"],
-  ["Asit-Baz Dengesi", "3 bölüm"],
   ["Çözünürlük Dengesi", "tek bölüm"],
   ["Elektrokimya", "3 bölüm"],
   ["Organik Kimya", "8 bölüm"]
