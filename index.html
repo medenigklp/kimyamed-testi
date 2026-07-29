@@ -70,6 +70,16 @@ body::before{content:"";position:fixed;inset:0;background:var(--kagit);opacity:.
 }
 #acilis.ipucu-ac .ipucu{opacity:.75}
 
+
+/* ---- öğretmen modu rozeti ---- */
+.ogr-rozet{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  background:#FFF4EC;border:1px solid var(--turuncu);border-radius:6px;
+  padding:9px 12px;margin-bottom:18px;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:#8A3A00;
+}
+.ogr-rozet a{margin-left:auto;color:var(--turuncu);font-weight:600;text-decoration:underline}
+
 /* ---- konu seçim kartları ---- */
 .konu-kart{
   display:block;width:100%;text-align:left;cursor:pointer;
@@ -246,6 +256,10 @@ body::before{content:"";position:fixed;inset:0;background:var(--kagit);opacity:.
     <img src="data:image/png;base64,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" alt="kimyamed">
     <b>kimyamed</b>
     <span>Zor seviye<br>kimya testleri</span>
+  </div>
+  <div class="ogr-rozet gizli" id="ogr-rozet">
+    👨‍🏫 Öğretmen modu — bütün bölümler açık
+    <a href="?ogretmen=kapat">kapat</a>
   </div>
 
   <!-- GİRİŞ -->
@@ -2598,6 +2612,21 @@ TESTLER.forEach(t=>{
   };
 });
 
+/* ---------- öğretmen modu ----------
+   Adrese ?ogretmen eklenince bütün bölümler açılır ve tercih cihazda
+   saklanır. ?ogretmen=kapat ile kapatılır. */
+const OGR_ANAHTAR = "kimyamed_ogretmen";
+let ogretmenModu = false;
+(function(){
+  let p = null;
+  try{ p = new URLSearchParams(location.search).get("ogretmen"); }catch(e){}
+  try{
+    if(p === "kapat"){ localStorage.removeItem(OGR_ANAHTAR); ogretmenModu = false; }
+    else if(p !== null){ localStorage.setItem(OGR_ANAHTAR, "1"); ogretmenModu = true; }
+    else { ogretmenModu = localStorage.getItem(OGR_ANAHTAR) === "1"; }
+  }catch(e){ ogretmenModu = (p !== null && p !== "kapat"); }
+})();
+
 /* ---------- kilit durumu ---------- */
 const KOD_ANAHTAR = "kimyamed_acilan";
 function acilanlar(){
@@ -2621,6 +2650,7 @@ function kalanGun(t){
   return Math.ceil((hedef - bugun) / 86400000);
 }
 function kilitliMi(t){
+  if(ogretmenModu) return false;
   if(!t.acilis) return false;
   if(koddanAcik(t.id)) return false;
   return kalanGun(t) > 0;
@@ -2635,6 +2665,8 @@ function kilitYazi(t){
 function girisCiz(){
   const kap = $("konu-liste");
   if(!kap) return;
+  const rz = $("ogr-rozet");
+  if(rz) rz.classList.toggle("gizli", !ogretmenModu);
   kap.innerHTML = "";
 
   TESTLER.forEach(t=>{
