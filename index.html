@@ -355,6 +355,7 @@ min-width:20px;padding-top:2px;font-weight:500}
       <button class="dugme yanlis gizli" id="yanlis-tekrar">Yanlışları tekrar çöz</button>
       <button class="dugme vurgu" id="paylas">Sonucu paylaş</button>
       <button class="dugme ikincil" id="tekrar">Testi baştan çöz</button>
+      <button class="dugme ikincil" id="sonuc-liste">← Diğer testlere dön</button>
     </div>
     <p class="dip">Takıldığın soruyu sorabileceğin bir yer arıyorsan <a href="https://instagram.com/kimyamed" target="_blank" rel="noopener">@kimyamed</a>'e yaz.</p>
   </section>
@@ -7698,12 +7699,14 @@ function konuSecimineDon(){
   $("test").classList.add("gizli");
   $("sonuc").classList.add("gizli");
   $("giris").classList.remove("gizli");
+  girisCiz();                        /* kilit durumları güncel kalsın */
   window.scrollTo({top:0,behavior:"smooth"});
 }
 $("geri").addEventListener("click",konuSecimineDon);
 
 $("tekrar").addEventListener("click",()=>testBaslat(aktifKonu));
 $("yanlis-tekrar").addEventListener("click", yanlislariCoz);
+$("sonuc-liste").addEventListener("click", konuSecimineDon);
 
 $("paylas").addEventListener("click",async ()=>{
   const metin = `kimyamed'in ${testler[aktifKonu].ad} zor testinde ${sorular.length} soruda ${dogru} doğru yaptım. Sen kaç yaparsın?`;
