@@ -7925,30 +7925,7 @@ girisCiz();
 ilerlemeYukle();
 
 </script>
-  <script>
-(function(){
-  var kart = document.createElement('a');
-  kart.href = 'konu/';
-  kart.style.cssText = 'display:flex;align-items:center;gap:14px;margin:22px 0 8px;'+
-    'padding:18px 20px;border-radius:18px;background:#fff;border:2px solid #F85300;'+
-    'text-decoration:none;box-shadow:0 4px 14px rgba(248,83,0,.13)';
-  kart.innerHTML = '<span style="font-size:26px">📘</span>'+
-    '<span style="flex:1">'+
-    '<span style="display:block;font:800 19px/1.25 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif;color:#14110F">Konu Anlatımı</span>'+
-    '<span style="display:block;margin-top:3px;font:500 14px/1.4 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif;color:#5C554F">6 modül · 255 çözümlü soru · şekiller ve grafiklerle</span>'+
-    '</span>'+
-    '<span style="font-size:24px;color:#F85300;font-weight:800">›</span>';
-
-  var hedef = null;
-  var hepsi = document.querySelectorAll('p,div,section,h2,h3');
-  for (var i = 0; i < hepsi.length; i++) {
-    var t = hepsi[i].textContent || '';
-    if (t.indexOf('Üç tema') > -1 && t.length < 200) { hedef = hepsi[i]; break; }
-  }
-  if (hedef) hedef.parentNode.insertBefore(kart, hedef.nextSibling);
-  else document.body.insertBefore(kart, document.body.firstChild);
-})();
-</script>
+ 
 
 
 </body>
