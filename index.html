@@ -7470,13 +7470,32 @@ function girisCiz(){
 
   /* yol seçilmemişse seçim ekranını göster */
   if(typeof aktifYol !== "undefined" && aktifYol === null){
-    yolEkraniCiz(kap);
-    const bs = $("giris-baslik"), ba = $("giris-alt"), yg = $("yol-geri");
-    if(bs) bs.innerHTML = "Hangi <u>yolu</u> izlemek istersin?";
-    if(ba) ba.textContent = "İkisi de ücretsiz. Her sorunun çözümü hemen altında.";
-    if(yg) yg.classList.add("gizli");
-    return;
-  }
+    function yolEkraniCiz(kap){
+  const say = y => TESTLER.filter(t=>t.yol===y).reduce((a,t)=>a+t.dizi.length, 0);
+  const bol = y => TESTLER.filter(t=>t.yol===y).length;
+  kap.innerHTML =
+    '<button class="yol-kart" data-yol="ayt">' +
+      '<div class="yol-ust"><span class="yol-rozet">🎓</span>' +
+      '<div><div class="yol-ad">AYT Hazırlık</div>' +
+      '<div class="yol-alt">Sınava yönelik zor seviye testler</div></div></div>' +
+      '<div class="yol-sayi">' + bol("ayt") + ' test · ' + say("ayt") + ' soru</div>' +
+    '</button>' +
+    '<button class="yol-kart" data-yol="maarif">' +
+      '<div class="yol-ust"><span class="yol-rozet">📘</span>' +
+      '<div><div class="yol-ad">11. Sınıf · Maarif</div>' +
+      '<div class="yol-alt">Okul müfredatı · 3 tema, beceri temelli</div></div></div>' +
+      '<div class="yol-sayi">' + bol("maarif") + ' bölüm · ' + say("maarif") + ' soru</div>' +
+    '</button>' +
+    '<a class="yol-kart" href="konu/" onclick="event.stopPropagation()" ' +
+       'style="display:block;text-decoration:none;color:inherit">' +
+      '<div class="yol-ust"><span class="yol-rozet">📗</span>' +
+      '<div><div class="yol-ad">Konu Anlatımı</div>' +
+      '<div class="yol-alt">11. sınıf · şekiller ve grafiklerle</div></div></div>' +
+      '<div class="yol-sayi">6 modül · 255 çözümlü soru</div>' +
+    '</a>' +
+    '<p class="yol-not">Seçimin hatırlanır; istediğin zaman değiştirebilirsin.</p>';
+}
+
 
   /* başlık ve geri düğmesi */
   const bs = $("giris-baslik"), ba = $("giris-alt"), yg = $("yol-geri");
