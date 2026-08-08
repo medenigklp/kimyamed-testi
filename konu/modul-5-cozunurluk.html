@@ -117,6 +117,15 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 .test details{margin-top:8px;background:rgba(255,255,255,.07);border-radius:9px;padding:8px 12px}
 .test summary{cursor:pointer;font-size:13px;font-weight:700;color:#FF8B4D;letter-spacing:.04em}
 .test details p{margin:8px 0 2px;font-size:15px;color:#EDE7E0}
+.test .sekil{background:#FBF9F7;border-radius:10px;padding:9px 8px;margin:10px 0 4px}
+.test .sekil svg{display:block;width:100%;height:auto}
+.test .tkutu{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0 4px;background:#FBF9F7;border-radius:10px}
+.test table{width:100%;border-collapse:collapse;font-size:12.5px;line-height:1.35}
+.test table th,.test table td{padding:6px 8px;border-bottom:1px solid #E7E0D9;color:#14110F;text-align:left;vertical-align:top;word-break:break-word}
+.test table th{background:#F1ECE7;font-weight:800;font-size:11.5px;white-space:nowrap}
+.test table td:first-child,.test table th:first-child{white-space:nowrap}
+.test li{margin:20px 0}
+
 .test .tip{display:block;font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#FF8B4D;margin-bottom:3px}
 .test ol{padding-left:22px}
 
@@ -146,7 +155,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <div class="sayac">
     <div><b>53</b>çözümlü soru</div>
     <div><b>8</b>grafik ve şekil</div>
-    <div><b>20</b>kendin çöz</div>
+    <div><b>32</b>kendin çöz</div>
   </div>
 </section>
 
@@ -1624,7 +1633,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 
 <div class="test">
   <h3>Kendin çöz</h3>
-  <p class="alt-baslik">Her soru tipinden birer örnek. Önce kâğıt üzerinde çöz, sonra cevabı aç.</p>
+  <p class="alt-baslik">32 soru. Kavram haritası, labirent, grafik seçme ve bağlam temelli tipler dâhil.</p>
   <ol>
     <li><span class="tip">Doymuş çözelti</span>Dibinde katı bulunan doymuş bir çözeltide çözünme ve çökelme durmuş mudur?
       <details><summary>Cevabı gör</summary><p><b>Hayır.</b> Hızlar eşitlenmiştir, iki olay da sürer. Sabit olan iyon derişimleridir.</p></details>
@@ -1685,6 +1694,48 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
     </li>
     <li><span class="tip">Q<sub>çç</sub> · ek konu</span>Q<sub>çç</sub> &gt; K<sub>çç</sub> hesaplanan bir çözeltide ne gözlenir?
       <details><summary>Cevabı gör</summary><p>Çözelti <b>aşırı doymuştur</b>; iyon derişimleri K<sub>çç</sub>'yi sağlayana kadar <b>çökelme</b> olur.</p></details>
+    </li>
+    <li><span class="tip">Öğrenci yorumu</span>Üç öğrenci, doymuş AgCl çözeltisine <b>NaCl eklenmesini</b> yorumluyor:<br><b>Ilgın:</b> "AgCl'nin çözünürlüğü azalır."<br><b>Sinan:</b> "K<sub>çç</sub> değeri de küçülür."<br><b>Ceren:</b> "Çözeltideki Ag⁺ derişimi azalır."<br>Hangilerinin yorumu doğrudur?
+      <div class="sekil"><svg viewBox="0 0 400 122" role="img"><circle cx="70" cy="30" r="14" fill="#C7381A"/><text x="70" y="35" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">I</text><circle cx="200" cy="30" r="14" fill="#0B5C8A"/><text x="200" y="35" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">S</text><circle cx="330" cy="30" r="14" fill="#1B6B4A"/><text x="330" y="35" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">C</text><rect x="14" y="52" width="112" height="46" rx="9" fill="#F3EEE9" stroke="#D9CFC5"/><text x="70" y="72" font-size="9" fill="#14110F" text-anchor="middle">Çözünürlük</text><text x="70" y="86" font-size="9" fill="#14110F" text-anchor="middle">azalır.</text><rect x="144" y="52" width="112" height="46" rx="9" fill="#F3EEE9" stroke="#D9CFC5"/><text x="200" y="72" font-size="9" fill="#14110F" text-anchor="middle">Kçç de</text><text x="200" y="86" font-size="9" fill="#14110F" text-anchor="middle">küçülür.</text><rect x="274" y="52" width="112" height="46" rx="9" fill="#F3EEE9" stroke="#D9CFC5"/><text x="330" y="72" font-size="9" fill="#14110F" text-anchor="middle">Ag⁺ derişimi</text><text x="330" y="86" font-size="9" fill="#14110F" text-anchor="middle">azalır.</text><text x="70" y="114" font-size="10" font-weight="700" text-anchor="middle" fill="#5C554F">Ilgın</text><text x="200" y="114" font-size="10" font-weight="700" text-anchor="middle" fill="#5C554F">Sinan</text><text x="330" y="114" font-size="10" font-weight="700" text-anchor="middle" fill="#5C554F">Ceren</text></svg></div>
+      <details><summary>Cevabı gör</summary><p><b>Ilgın ✔</b> Ortak iyon etkisi çözünürlüğü düşürür.<br><b>Sinan ✘</b> K<sub>çç</sub> yalnızca <b>sıcaklıkla</b> değişir.<br><b>Ceren ✔</b> Çökelme olduğu için Ag⁺ harcanır; çarpım sabitken [Cl⁻] arttığına göre [Ag⁺] azalmak zorundadır.<br>Doğru: <b>Ilgın ve Ceren</b>.</p></details>
+    </li>
+    <li><span class="tip">Kavram haritası</span>Kavram haritasındaki numaralı bilgilerden hangileri <b>doğrudur</b>?
+      <div class="sekil"><svg viewBox="0 0 400 116" role="img"><rect x="132" y="6" width="136" height="26" rx="8" fill="#F85300"/><text x="200" y="23" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">ÇÖZÜNÜRLÜK ÇARPIMI</text><line x1="162" y1="32" x2="80" y2="50" stroke="#5C554F" stroke-width="1.3"/><line x1="238" y1="32" x2="320" y2="50" stroke="#5C554F" stroke-width="1.3"/><rect x="10" y="50" width="140" height="22" rx="7" fill="#FFF1E9" stroke="#F0BFA4"/><text x="80" y="65" font-size="9" fill="#14110F" text-anchor="middle">1 · Katı yazılmaz</text><rect x="250" y="50" width="140" height="22" rx="7" fill="#EAF3F8" stroke="#9CC0D6"/><text x="320" y="65" font-size="9" fill="#14110F" text-anchor="middle">3 · Ortak iyon: s azalır</text><rect x="10" y="86" width="140" height="22" rx="7" fill="#F3EEE9" stroke="#D9CFC5"/><text x="80" y="101" font-size="9" fill="#14110F" text-anchor="middle">2 · Kovalentte de Kçç var</text><rect x="250" y="86" width="140" height="22" rx="7" fill="#F3EEE9" stroke="#D9CFC5"/><text x="320" y="101" font-size="8.5" fill="#14110F" text-anchor="middle">4 · Kçç büyük → hep çok çözünür</text><line x1="80" y1="72" x2="80" y2="86" stroke="#5C554F" stroke-width="1.2"/><line x1="320" y1="72" x2="320" y2="86" stroke="#5C554F" stroke-width="1.2"/></svg></div>
+      <details><summary>Cevabı gör</summary><p><b>1 ✔</b> Katı, K<sub>çç</sub> bağıntısında yer almaz.<br><b>2 ✘</b> Kovalent katıların K<sub>çç</sub> değeri <b>yoktur</b>.<br><b>3 ✔</b> Ortak iyon çözünürlüğü azaltır.<br><b>4 ✘</b> K<sub>çç</sub> büyük olan daha çok çözünür — bu yalnızca <b>aynı tipteki</b> tuzlar için geçerlidir.<br>Doğru: <b>1 ve 3</b>.</p></details>
+    </li>
+    <li><span class="tip">Doğru–yanlış labirenti</span>Her adımda doğru/yanlış seçerek ilerleyen, <b>hiç hata yapmayan</b> öğrenci hangi çıkışa ulaşır?
+      <div class="sekil"><svg viewBox="0 0 400 154" role="img"><rect x="128" y="6" width="144" height="24" rx="7" fill="#F3EEE9" stroke="#D9CFC5"/><text x="200" y="22" font-size="9" fill="#14110F" text-anchor="middle">1 · Doymuşta çözünme ve çökelme sürer</text><line x1="165" y1="30" x2="105" y2="46" stroke="#1B6B4A" stroke-width="1.3"/><text x="126" y="42" font-size="9" font-weight="700" fill="#1B6B4A">D</text><line x1="235" y1="30" x2="292" y2="46" stroke="#B02E10" stroke-width="1.3"/><text x="266" y="42" font-size="9" font-weight="700" fill="#B02E10">Y</text><rect x="24" y="46" width="152" height="24" rx="7" fill="#F3EEE9" stroke="#D9CFC5"/><text x="100" y="62" font-size="8.5" fill="#14110F" text-anchor="middle">2 · Katı eklemek iyon derişimini artırır</text><rect x="224" y="46" width="156" height="24" rx="7" fill="#F3EEE9" stroke="#D9CFC5"/><text x="302" y="62" font-size="8.5" fill="#14110F" text-anchor="middle">2′ · Kçç birimlidir</text><line x1="270" y1="70" x2="240" y2="86" stroke="#1B6B4A" stroke-width="1.3"/><text x="244" y="82" font-size="9" font-weight="700" fill="#1B6B4A">D</text><line x1="336" y1="70" x2="356" y2="86" stroke="#B02E10" stroke-width="1.3"/><text x="350" y="82" font-size="9" font-weight="700" fill="#B02E10">Y</text><rect x="146" y="86" width="176" height="24" rx="7" fill="#F3EEE9" stroke="#D9CFC5"/><text x="234" y="102" font-size="8.5" fill="#14110F" text-anchor="middle">3 · Su eklenince s ve Kçç değişmez</text><line x1="200" y1="110" x2="178" y2="126" stroke="#1B6B4A" stroke-width="1.3"/><text x="180" y="122" font-size="9" font-weight="700" fill="#1B6B4A">D</text><line x1="280" y1="110" x2="306" y2="126" stroke="#B02E10" stroke-width="1.3"/><text x="300" y="122" font-size="9" font-weight="700" fill="#B02E10">Y</text><circle cx="45" cy="136" r="12" fill="#E7E0D9"/><text x="45" y="140" font-size="10" font-weight="700" text-anchor="middle" fill="#14110F">1</text><circle cx="120" cy="136" r="12" fill="#F85300"/><text x="120" y="140" font-size="10" font-weight="700" text-anchor="middle" fill="#fff">2</text><circle cx="178" cy="136" r="12" fill="#E7E0D9"/><text x="178" y="140" font-size="10" font-weight="700" text-anchor="middle" fill="#14110F">3</text><circle cx="312" cy="136" r="12" fill="#E7E0D9"/><text x="312" y="140" font-size="10" font-weight="700" text-anchor="middle" fill="#14110F">4</text></svg></div>
+      <details><summary>Cevabı gör</summary><p><b>1.</b> "Doymuş çözeltide çözünme ve çökelme sürer" → <b>D</b><br><b>2.</b> "Katı eklemek iyon derişimini artırır" → <b>Y</b><br><b>3.</b> "Su eklenince doymuş çözeltide s ve K<sub>çç</sub> değişmez" → <b>D</b><br>Yol: D → Y → D → <b>2. çıkış</b>.</p></details>
+    </li>
+    <li><span class="tip">Eşleştirme</span>Tuz tiplerini K<sub>çç</sub>–s bağıntılarıyla eşleştirin.<br><b>a)</b> AgCl &nbsp; <b>b)</b> Mg(OH)₂ &nbsp; <b>c)</b> Fe(OH)₃ &nbsp; <b>d)</b> Ca₃(PO₄)₂<br><b>1.</b> 27s⁴ &nbsp; <b>2.</b> s² &nbsp; <b>3.</b> 108s⁵ &nbsp; <b>4.</b> 4s³
+      <details><summary>Cevabı gör</summary><p><b>a–2 · b–4 · c–1 · d–3</b><br>Belirleyici olan formül değil, <b>toplam iyon sayısıdır</b>: 2 iyon → s², 3 iyon → 4s³, 4 iyon → 27s⁴, 5 iyon → 108s⁵.</p></details>
+    </li>
+    <li><span class="tip">Boşluk doldurma</span>Boşlukları <b>doymuş · artar · azalır · sıcaklık · çökelme · sabit</b> ifadeleriyle doldurun:<br>Dibinde katısı bulunan çözelti …(1)…'tur. Ortak iyon eklendiğinde denge …(2)… yönüne kayar, çözünürlük …(3)…. K<sub>çç</sub> ise …(4)… kalır; onu değiştiren tek etken …(5)…'tır.
+      <details><summary>Cevabı gör</summary><p>(1) <b>doymuş</b> · (2) <b>çökelme</b> · (3) <b>azalır</b> · (4) <b>sabit</b> · (5) <b>sıcaklık</b>.</p></details>
+    </li>
+    <li><span class="tip">Tablo tamamlama</span>Tablodaki numaralı boşlukları doldurun.
+      <div class="tkutu"><table><tr><th>Tuz</th><th>Tip</th><th>s (mol/L)</th><th>K<sub>çç</sub></th></tr><tr><td>X</td><td>AB</td><td>2×10⁻⁵</td><td>1 · ?</td></tr><tr><td>Y</td><td>AB₂</td><td>2 · ?</td><td>4×10⁻¹²</td></tr><tr><td colspan="4">3 · Hangisi daha çok çözünür?</td></tr></table></div>
+      <details><summary>Cevabı gör</summary><p><b>1:</b> AB tipi → K<sub>çç</sub> = s² = (2×10⁻⁵)² = <b>4×10⁻¹⁰</b><br><b>2:</b> AB₂ tipi → 4s³ = 4×10⁻¹² → s³ = 10⁻¹² → <b>s = 10⁻⁴ M</b><br><b>3:</b> Çözünürlükler karşılaştırılır: 10⁻⁴ &gt; 2×10⁻⁵ → daha çok çözünen <b>Y</b></p></details>
+    </li>
+    <li><span class="tip">Grafik seçme</span>Çözünmesi <b>ekzotermik</b> olan bir tuzun çözünürlük–sıcaklık grafiği hangisi olabilir?
+      <div class="sekil"><svg viewBox="0 0 400 118" role="img"><line x1="22" y1="14" x2="22" y2="94" stroke="#14110F" stroke-width="1.5"/><line x1="22" y1="94" x2="127" y2="94" stroke="#14110F" stroke-width="1.5"/><text x="22" y="10" font-size="8.5" fill="#5C554F">s</text><text x="127" y="105" font-size="8.5" fill="#5C554F" text-anchor="end">T</text><path d="M28,86 C60,78 90,50 122,22" fill="none" stroke="#1B6B4A" stroke-width="1.9"/><text x="74" y="112" font-size="10" font-weight="700" text-anchor="middle" fill="#14110F">I</text><line x1="150" y1="14" x2="150" y2="94" stroke="#14110F" stroke-width="1.5"/><line x1="150" y1="94" x2="255" y2="94" stroke="#14110F" stroke-width="1.5"/><text x="150" y="10" font-size="8.5" fill="#5C554F">s</text><text x="255" y="105" font-size="8.5" fill="#5C554F" text-anchor="end">T</text><path d="M156,24 C188,40 218,72 250,86" fill="none" stroke="#B02E10" stroke-width="1.9"/><text x="202" y="112" font-size="10" font-weight="700" text-anchor="middle" fill="#14110F">II</text><line x1="278" y1="14" x2="278" y2="94" stroke="#14110F" stroke-width="1.5"/><line x1="278" y1="94" x2="383" y2="94" stroke="#14110F" stroke-width="1.5"/><text x="278" y="10" font-size="8.5" fill="#5C554F">s</text><text x="383" y="105" font-size="8.5" fill="#5C554F" text-anchor="end">T</text><line x1="284" y1="52" x2="378" y2="52" stroke="#0B5C8A" stroke-width="1.9"/><text x="330" y="112" font-size="10" font-weight="700" text-anchor="middle" fill="#14110F">III</text></svg></div>
+      <details><summary>Cevabı gör</summary><p>Ekzotermik çözünmede ısıtmak dengeyi <b>çökelme</b> yönüne kaydırır → sıcaklık arttıkça çözünürlük <b>azalır</b> → eğri <b>alçalmalıdır</b>.<br><b>I ✘</b> yükseliyor (endotermik) · <b>II ✔</b> alçalıyor · <b>III ✘</b> sabit (sıcaklıktan etkilenmiyor, gerçekçi değil).<br>Doğru: <b>Yalnız II</b>.</p></details>
+    </li>
+    <li><span class="tip">Tersten çıkarım</span>Bir tuz için: <b>(i)</b> sıcaklık artınca çözünürlüğü artıyor, <b>(ii)</b> çözeltisine NaOH eklenince çözünürlüğü azalıyor, <b>(iii)</b> HCl eklenince çözünürlüğü artıyor. Bu tuz hangisi olabilir?<br><b>I.</b> AgCl &nbsp; <b>II.</b> Mg(OH)₂ &nbsp; <b>III.</b> NaCl
+      <details><summary>Cevabı gör</summary><p><b>(ii)</b> NaOH ortak iyon etkisi yapıyorsa tuz <b>OH⁻ içermelidir</b> → yalnız II.<br><b>(iii)</b> HCl, OH⁻'yi bağlayıp ortamdan çeker → denge çözünme yönüne kayar ✔ II ile uyumlu.<br><b>(i)</b> Çözünme endotermik ✔<br>III zaten çok çözünendir, K<sub>çç</sub> verilmez. Cevap: <b>Yalnız II</b>.</p></details>
+    </li>
+    <li><span class="tip">Metin bağlamlı · 1</span><b>Ortak metin:</b> Böbrek taşlarının çoğu kalsiyum oksalat (CaC₂O₄) tuzundan oluşur. İdrarda Ca²⁺ ve C₂O₄²⁻ derişimleri arttığında bu tuz çökelmeye başlar. Doktorlar bol su tüketilmesini önerir.<br><br><b>Soru:</b> Bol su tüketmek çökelmeyi neden zorlaştırır?
+      <details><summary>Cevabı gör</summary><p>Su, idrardaki iyonları <b>seyreltir</b> → [Ca²⁺] ve [C₂O₄²⁻] düşer → çarpımları K<sub>çç</sub>'nin altında kalır → çözelti doymamış olur ve <b>çökelme başlamaz</b>.</p></details>
+    </li>
+    <li><span class="tip">Metin bağlamlı · 2</span><b>(Aynı metin)</b> CaC₂O₄ için K<sub>çç</sub> = 4×10⁻⁹ ise saf sudaki molar çözünürlüğü kaçtır?
+      <details><summary>Cevabı gör</summary><p>AB tipi → s² = 4×10⁻⁹ = 40×10⁻¹⁰ → s = √40 × 10⁻⁵ ≈ <b>6,3×10⁻⁵ mol/L</b>.</p></details>
+    </li>
+    <li><span class="tip">Metin bağlamlı · 3</span><b>(Aynı metin)</b> Bazı gıdalar idrardaki oksalat derişimini artırır. Bu durum çökelme açısından hangi etkiye örnektir?
+      <details><summary>Cevabı gör</summary><p><b>Ortak iyon etkisi.</b> Dışarıdan gelen C₂O₄²⁻, dengeyi çökelme yönüne kaydırır ve CaC₂O₄'ün çözünürlüğünü düşürür — taş oluşma riski artar.</p></details>
+    </li>
+    <li><span class="tip">Kap karşılaştırma</span>Aynı sıcaklıkta üç ortamda AgCl'nin çözünürlüğü ölçülüyor. Tabloya göre çözünürlükleri <b>büyükten küçüğe</b> sıralayın.
+      <div class="tkutu"><table><tr><th>Ortam</th><th>Çözelti</th></tr><tr><td>I</td><td>Saf su</td></tr><tr><td>II</td><td>0,01 M NaCl</td></tr><tr><td>III</td><td>0,1 M AgNO₃</td></tr></table></div>
+      <details><summary>Cevabı gör</summary><p>Ortak iyon derişimi arttıkça çözünürlük azalır; ortak iyon yoksa çözünürlük en büyüktür.<br>I: ortak iyon yok → en büyük · II: 0,01 M Cl⁻ · III: 0,1 M Ag⁺<br>Sıralama: <b>I &gt; II &gt; III</b>.</p></details>
     </li>
   </ol>
 </div>
