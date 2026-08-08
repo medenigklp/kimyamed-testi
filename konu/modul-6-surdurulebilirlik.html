@@ -1,1 +1,674 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Modül 6 · Sürdürülebilirlik — 11. Sınıf Kimya | kimyamed</title>
+<meta name="description" content="Yeşil hidrojen enerjisi, hidrojen renk kodları, nanoteknolojik ürünlerin faydaları ve olası zararları, mikroplastik ve nanoplastikler. 3. Tema konu anlatımı ve sorular.">
+<meta name="theme-color" content="#F85300">
+<style>
+:root{
+  --turuncu:#F85300;--turuncu-yumusak:#FFF1E9;--murekkep:#14110F;--gri:#5C554F;
+  --cizgi:#E7E0D9;--kagit:#FBF8F5;--beyaz:#FFFFFF;--mavi:#0B5C8A;--mavi-yumusak:#EAF3F8;
+  --yesil:#1B6B4A;--mor:#7A3E8C;--r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--kagit);color:var(--murekkep);
+  font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:17px;line-height:1.68;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding:0 18px}
+.ust{position:sticky;top:0;z-index:50;background:rgba(251,248,245,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--cizgi)}
+.ust .wrap{display:flex;align-items:center;gap:12px;height:56px}
+.marka{font-weight:800;letter-spacing:-.02em;font-size:18px;color:var(--murekkep);text-decoration:none}
+.marka span{color:var(--turuncu)}
+.ust .etiket{margin-left:auto;font-size:12px;color:var(--gri);text-transform:uppercase;letter-spacing:.08em}
+#ilerleme{position:absolute;left:0;bottom:-1px;height:2px;background:var(--turuncu);width:0}
+
+.hero{padding:40px 0 24px;border-bottom:1px solid var(--cizgi)}
+.hero .modul{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--turuncu)}
+.hero h1{font-size:clamp(28px,7vw,42px);line-height:1.1;letter-spacing:-.03em;margin:8px 0 12px;font-weight:800}
+.hero p{color:var(--gri);margin:0 0 16px}
+.sayac{display:flex;gap:22px;flex-wrap:wrap;border-top:1px solid var(--cizgi);padding-top:14px}
+.sayac div{font-size:13px;color:var(--gri)}
+.sayac b{display:block;font-size:22px;color:var(--murekkep);line-height:1.2}
+
+h2{font-size:clamp(23px,5.5vw,30px);letter-spacing:-.02em;margin:44px 0 8px;line-height:1.18;padding-top:8px}
+h2 .no{color:var(--turuncu);font-size:.62em;font-weight:800;display:block;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+h3{font-size:20px;margin:30px 0 10px;letter-spacing:-.01em}
+h4{font-size:17px;margin:22px 0 8px}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:6px 0}
+sub,sup{line-height:0}
+.form{font-family:"SFMono-Regular",Consolas,Menlo,monospace;background:var(--beyaz);border:1px solid var(--cizgi);border-radius:8px;padding:2px 7px;font-size:.94em;white-space:nowrap}
+.blokform{display:block;text-align:center;background:var(--beyaz);border:1px solid var(--cizgi);border-left:3px solid var(--turuncu);border-radius:8px;padding:14px 12px;margin:16px 0;overflow-x:auto}
+
+.kart{border-radius:var(--r);padding:16px 18px;margin:18px 0;border:1px solid var(--cizgi);background:var(--beyaz)}
+.kart .baslik{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.kart p:last-child,.kart ul:last-child,.kart ol:last-child{margin-bottom:0}
+.kural{border-left:4px solid var(--turuncu);background:var(--turuncu-yumusak);border-color:#F8D6C2}
+.kural .baslik{color:var(--turuncu)}
+.tuzak{border-left:4px solid #C7381A;background:#FFF4F1;border-color:#F5CFC5}
+.tuzak .baslik{color:#C7381A}
+.gunluk{border-left:4px solid var(--yesil);background:#EEF6F1;border-color:#CFE4D8}
+.gunluk .baslik{color:var(--yesil)}
+
+.soru{border:1px solid var(--cizgi);border-radius:var(--r);background:var(--beyaz);margin:20px 0;overflow:hidden}
+.soru .ust-serit{display:flex;align-items:center;gap:10px;padding:11px 16px;background:#F3EEE9;border-bottom:1px solid var(--cizgi)}
+.soru .numara{font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mavi)}
+.seviye{margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.s-orta{background:#FFF0DC;color:#9A5B00}
+.s-zor{background:#FBE3DE;color:#B02E10}
+.s-ileri{background:#E7E1F3;color:#5B3A8C}
+.soru .govde{padding:14px 16px 16px}
+.soru .metin{font-weight:600;margin-bottom:6px}
+.soru .veri{font-size:15px;color:var(--gri);margin-bottom:0}
+.soru figure{margin:14px 0 0;padding:10px}
+.oncul{list-style:none;padding-left:0;margin:10px 0 0;font-size:15px;color:var(--gri)}
+.oncul li{margin:5px 0;padding-left:30px;text-indent:-30px}
+.oncul b{color:var(--murekkep)}
+.siklar{list-style:none;padding-left:0;margin:11px 0 0;font-weight:600}
+.siklar li{margin:7px 0;padding-left:28px;text-indent:-28px}
+.siklar b{color:var(--turuncu)}
+.secenek{list-style:none;padding-left:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:15px}
+.secenek li{margin:0}
+.secenek b{color:var(--mavi)}
+
+.ek-rozet{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  background:#E7E1F3;color:#5B3A8C;border:1px solid #CFC3E4;border-radius:999px;padding:4px 11px;margin-bottom:8px}
+.ek-not{border-left:4px solid var(--mor);background:#F6F2FA;border-color:#DED2EC}
+.ek-not .baslik{color:var(--mor)}
+
+.adim{counter-reset:adim;list-style:none;padding-left:0;margin:14px 0 0}
+.adim li{counter-increment:adim;position:relative;padding-left:34px;margin:10px 0}
+.adim li::before{content:counter(adim);position:absolute;left:0;top:2px;width:23px;height:23px;border-radius:50%;background:var(--mavi);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.cevap{margin-top:14px;padding:10px 14px;border-radius:10px;background:var(--mavi-yumusak);border:1px solid #CFE2EE;font-weight:700}
+
+.cozum{margin-top:16px;border-top:1px dashed var(--cizgi);padding-top:12px}
+.cozum summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:700;color:var(--mavi);background:var(--mavi-yumusak);
+  border:1px solid #CFE2EE;padding:8px 15px;border-radius:999px;user-select:none;transition:background .15s}
+.cozum summary:hover{background:#DCEBF4}
+.cozum summary::-webkit-details-marker{display:none}
+.cozum summary svg{width:17px;height:17px;flex:none}
+.cozum summary .kapali{display:inline-flex;align-items:center;gap:8px}
+.cozum summary .acik{display:none;align-items:center;gap:8px}
+.cozum[open] summary .kapali{display:none}
+.cozum[open] summary .acik{display:inline-flex}
+.cozum[open] summary{color:var(--gri);background:#F3EEE9;border-color:var(--cizgi)}
+.cozum .adim{margin-top:16px}
+
+.tablo-sar{overflow-x:auto;margin:16px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--beyaz);min-width:400px}
+th,td{border:1px solid var(--cizgi);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#F3EEE9;font-weight:700;font-size:13px}
+
+figure{margin:20px 0;background:var(--beyaz);border:1px solid var(--cizgi);border-radius:var(--r);padding:14px}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
+.sekil-no{font-size:12px;font-weight:800;color:var(--turuncu);letter-spacing:.08em;text-transform:uppercase}
+
+.test{background:var(--murekkep);color:#F5F1EC;border-radius:var(--r);padding:22px 20px;margin:36px 0}
+.test h3{color:#fff;margin:0 0 4px;font-size:21px}
+.test .alt-baslik{color:#B9AFA5;font-size:14px;margin-bottom:16px}
+.test ol{padding-left:20px}
+.test li{margin:14px 0}
+.test details{margin-top:8px;background:rgba(255,255,255,.07);border-radius:9px;padding:8px 12px}
+.test summary{cursor:pointer;font-size:13px;font-weight:700;color:#FF8B4D;letter-spacing:.04em}
+.test details p{margin:8px 0 2px;font-size:15px;color:#EDE7E0}
+.test .tip{display:block;font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#FF8B4D;margin-bottom:3px}
+.test ol{padding-left:22px}
+
+
+.alt{border-top:1px solid var(--cizgi);margin-top:44px;padding:24px 0 60px;color:var(--gri);font-size:15px}
+.yukari{position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;background:var(--turuncu);color:#fff;border:none;font-size:20px;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(248,83,0,.35);z-index:40}
+.yukari.gor{display:flex}
+:focus-visible{outline:3px solid var(--turuncu);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="ust">
+  <div class="wrap">
+    <a class="marka" href="./">kimya<span>med</span></a>
+    <span class="etiket">Modül 6 · Sürdürülebilirlik</span>
+  </div>
+  <div id="ilerleme"></div>
+</header>
+
+<main class="wrap">
+
+<section class="hero">
+  <div class="modul">3. Tema · Sürdürülebilirlik</div>
+  <h1>Nanoteknoloji ve sürdürülebilirlik</h1>
+  <p>Bu tema hesap değil, <b>değerlendirme</b> ister: bir teknolojinin faydasını ve olası zararını birlikte tartıp karar verebilmek. Üç başlık var — yeşil hidrojen, nanoteknolojik ürünler ve mikroplastikler.</p>
+  <div class="sayac">
+    <div><b>14</b>çözümlü soru</div>
+    <div><b>5</b>şekil ve tablo</div>
+    <div><b>16</b>kendin çöz</div>
+  </div>
+</section>
+
+<!-- ===== 1 ===== -->
+<h2><span class="no">Bölüm 1</span>Yeşil hidrojen enerjisi</h2>
+
+<p>Enerji ihtiyacımızın büyük bölümü kömür, petrol ve doğal gaz gibi <b>yenilenemez</b> kaynaklardan karşılanır. Bu kaynaklar hem maliyetlidir hem de çevre kirliliği ve küresel ısınma gibi sorunlara yol açar. Hidrojen bu noktada güçlü bir alternatiftir.</p>
+
+<div class="kart kural">
+  <div class="baslik">Hidrojen gazının özellikleri</div>
+  <ul>
+    <li>Evrende <b>en yaygın elementtir</b>, ancak yeryüzünde serbest hâlde nadiren bulunur; çoğunlukla bileşikler hâlindedir.</li>
+    <li><b>Renksiz, kokusuz, yanıcı</b> bir gazdır ve havadan oldukça <b>hafiftir</b>.</li>
+    <li>Yanma tepkimesi: <span class="form">H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(g)</span></li>
+    <li>Yanma sırasında yüksek miktarda enerji açığa çıkar ve oluşan tek ürün <b>su buharıdır</b> — CO<sub>2</sub> salınımı yoktur.</li>
+    <li>Kullanım alanları: kömürden benzin eldesi, paslanmaz çelik üretimi, reaktör soğutma, <b>hidrojen yakıt hücreleri</b> ve uzay araçları.</li>
+  </ul>
+</div>
+
+<h3>Hidrojenin renk kodları</h3>
+<p>Hidrojen gazı çeşitli yöntemlerle üretilebilir ve <b>üretim yöntemine göre</b> farklı renklerle sembolize edilir. Rengin gazın kendisiyle ilgisi yoktur; <b>üretimin çevresel maliyetini</b> anlatır.</p>
+
+<div class="tablo-sar">
+<table>
+<tr><th>Renk kodu</th><th>Üretim yöntemi</th><th>Çevresel etki</th></tr>
+<tr><td><b>Yeşil</b></td><td>Güneş, rüzgâr, evsel atık gibi <b>yenilenebilir</b> kaynaklarla üretim</td><td>Çevreye zararı <b>çok az</b></td></tr>
+<tr><td><b>Pembe</b></td><td><b>Nükleer enerji</b> ile suyun elektrolizi</td><td>CO<sub>2</sub> oluşmaz, ancak <b>nükleer kirlilik</b> olabilir</td></tr>
+<tr><td><b>Turkuaz</b></td><td>Doğal gazdan <b>piroliz</b></td><td>Oluşan CO<sub>2</sub> <b>katı karbona</b> dönüştürülür</td></tr>
+<tr><td><b>Mavi</b></td><td>Doğal gazdan <b>buhar reformasyonu</b></td><td>CO<sub>2</sub>'nin çoğu <b>yakalanıp yer altında depolanır</b></td></tr>
+<tr><td><b>Sarı</b></td><td><b>Şehir şebekesi</b> elektriğiyle suyun elektrolizi</td><td>Şebekenin üretim yöntemine bağlı olarak CO<sub>2</sub> salınabilir</td></tr>
+<tr><td><b>Gri</b></td><td>Doğal gazdan buhar reformasyonu</td><td>Doğaya <b>CO<sub>2</sub> salınır</b></td></tr>
+<tr><td><b>Kahverengi</b></td><td><b>Kömürden gazlaştırma</b></td><td>CO<sub>2</sub> ve diğer sera gazları salınır</td></tr>
+</table>
+</div>
+
+<div class="kart tuzak">
+  <div class="baslik">Tuzak</div>
+  <p><b>Mavi ile turkuaz hidrojenin ikisi de doğal gazdan üretilir</b>, farkları CO<sub>2</sub>'ye ne yapıldığındadır: mavide gaz <b>yakalanıp depolanır</b>, turkuazda <b>katı karbona dönüştürülür</b>. <b>Gri ile mavi</b> de aynı yöntemi (buhar reformasyonu) kullanır; gri'de CO<sub>2</sub> doğaya salınır, mavide salınmaz. Yani üretim yöntemi tek başına rengi belirlemez, <b>CO<sub>2</sub>'nin akıbeti</b> belirler.</p>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 1</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">Aşağıdaki hidrojen üretim yöntemlerinden hangileri <b>doğaya doğrudan CO<sub>2</sub> salınımına</b> yol açar?</p>
+    <ul class="oncul">
+      <li><b>I.</b> Kömürden gazlaştırma</li>
+      <li><b>II.</b> Doğal gazdan buhar reformasyonu, CO<sub>2</sub> yakalanmadan</li>
+      <li><b>III.</b> Rüzgâr enerjisiyle suyun elektrolizi</li>
+      <li><b>IV.</b> Nükleer enerjiyle suyun elektrolizi</li>
+    </ul>
+    <p class="veri" style="margin-top:11px"><b>yargılarından hangileri doğrudur?</b></p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li><b>I ✔</b> Kahverengi hidrojen. Kömürün gazlaştırılmasında CO<sub>2</sub> ve diğer sera gazları doğaya salınır.</li>
+      <li><b>II ✔</b> Gri hidrojen. Aynı yöntem CO<sub>2</sub> yakalanarak yapılsaydı <b>mavi</b> hidrojen olurdu.</li>
+      <li><b>III ✘</b> Yeşil hidrojen. Yenilenebilir kaynak kullanıldığı için çevresel etkisi çok azdır.</li>
+      <li><b>IV ✘</b> Pembe hidrojen. CO<sub>2</sub> oluşmaz — ancak <b>nükleer kirlilik</b> riski vardır; "çevreye hiç zararı yok" demek yanlış olur.</li>
+    </ol>
+    <div class="cevap">I ve II</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 2</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">Yeşil hidrojen enerjisi çevre dostu olmasına ve yüksek enerji verimine sahip olmasına rağmen diğer enerji kaynakları kadar yaygın kullanılmamaktadır. Bunun olası sebeplerini tartışın.</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li><b>Üretim maliyeti:</b> Elektroliz bol miktarda elektrik ister. Bu elektriğin yenilenebilir kaynaklardan sağlanması gerektiği için kurulum maliyeti yüksektir.</li>
+      <li><b>Depolama zorluğu:</b> Hidrojen havadan çok hafif ve son derece yanıcıdır. Yüksek basınçlı ya da çok soğuk özel tanklar gerekir; bu da hem maliyet hem güvenlik sorunu doğurur.</li>
+      <li><b>Taşıma ve altyapı:</b> Mevcut akaryakıt altyapısı hidrojene uygun değildir. Yeni boru hatları, istasyonlar ve taşıma sistemleri kurulması gerekir.</li>
+      <li><b>Verim kaybı:</b> Elektrik → hidrojen → yeniden elektrik dönüşümünde her basamakta enerji kaybı olur.</li>
+      <li><b>Yaygınlık ve alışkanlık:</b> Fosil yakıt teknolojileri yüzyıllık bir altyapıya sahiptir; geçiş hem zaman hem yatırım ister.</li>
+      <li>Değerlendirme: Yeşil hidrojenin sorunu <b>kimyasal değil, ekonomik ve teknolojiktir</b>. Bu yüzden gelişimi maliyet düşüşüne bağlıdır.</li>
+    </ol>
+    <div class="cevap">Yüksek üretim maliyeti, depolama ve taşıma zorluğu, altyapı eksikliği ve dönüşüm kayıpları.</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 3</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="govde">
+    <p class="metin">Suyun elektrolizle ayrıştırılması: 2H<sub>2</sub>O(s) → 2H<sub>2</sub>(g) + O<sub>2</sub>(g)<br>Hidrojenin yanması ise: H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(g) &nbsp; ΔH &lt; 0</p>
+    <ul class="siklar">
+      <li><b>a)</b> Elektroliz tepkimesi ekzotermik midir endotermik midir?</li>
+      <li><b>b)</b> "Hidrojen bir enerji kaynağı değil, enerji taşıyıcısıdır" ifadesi ne anlama gelir?</li>
+      <li><b>c)</b> Yeşil hidrojenin çevre dostu sayılması neye bağlıdır?</li>
+    </ul>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>a) Yanma ekzotermik olduğuna göre onun <b>tersi</b> olan ayrışma <b>endotermiktir</b>. Suyu ayrıştırmak için dışarıdan enerji (elektrik) vermek gerekir.</li>
+      <li>b) Hidrojen doğada serbest hâlde bulunmaz; onu elde etmek için <b>önce enerji harcarız</b>, sonra yakarak o enerjiyi geri alırız.</li>
+      <li>Yani hidrojen enerjiyi <b>üretmez</b>, başka bir kaynaktan alınan enerjiyi <b>depolar ve taşır</b>. Petrol gibi bir kaynak değil, pil gibi bir taşıyıcıdır.</li>
+      <li>c) Tam da bu yüzden: hidrojenin çevre dostu olup olmadığı, <b>ayrıştırma enerjisinin nereden geldiğine</b> bağlıdır.</li>
+      <li>Elektrik kömür santralinden geliyorsa (sarı/gri hidrojen) CO<sub>2</sub> salınımı yalnızca <b>yer değiştirmiş</b> olur. Güneş ya da rüzgârdan geliyorsa (yeşil hidrojen) zincirin tamamı temiz kalır.</li>
+      <li>Bu, renk kodlarının neden var olduğunu da açıklar: aynı gaz, üretim zincirine göre çevre dostu ya da kirletici olabilir.</li>
+    </ol>
+    <div class="cevap">a) Endotermik &nbsp;·&nbsp; b) Enerjiyi üretmez, depolar ve taşır &nbsp;·&nbsp; c) Elektrolizde kullanılan elektriğin kaynağına</div>
+    </details>
+  </div>
+</div>
+
+<!-- ===== 2 ===== -->
+<h2><span class="no">Bölüm 2</span>Nanoteknolojik ürünler: faydalar ve olası zararlar</h2>
+
+<p><b>Nanoteknoloji</b>, maddenin nanometre ölçeğinde (1 nm = 10<sup>−9</sup> m) işlenmesini konu alır. Nanoteknolojik ürünler, istenilen özelliklere sahip <b>nanoparçacıklar</b> kullanılarak üretilir; bu sayede çok kullanışlı ve dayanıklı ürünler ortaya çıkar.</p>
+
+<figure>
+<svg viewBox="0 0 660 190" role="img" aria-label="Nano boyut ölçeği">
+  <line x1="60" y1="120" x2="610" y2="120" stroke="#14110F" stroke-width="2"/>
+  <g font-size="11.5" fill="#5C554F" text-anchor="middle">
+    <line x1="110" y1="112" x2="110" y2="128" stroke="#14110F" stroke-width="1.6"/><text x="110" y="146">1 m</text>
+    <line x1="235" y1="112" x2="235" y2="128" stroke="#14110F" stroke-width="1.6"/><text x="235" y="146">1 mm</text>
+    <line x1="360" y1="112" x2="360" y2="128" stroke="#14110F" stroke-width="1.6"/><text x="360" y="146">1 µm</text>
+    <line x1="485" y1="112" x2="485" y2="128" stroke="#14110F" stroke-width="1.6"/><text x="485" y="146">1 nm</text>
+    <line x1="580" y1="112" x2="580" y2="128" stroke="#14110F" stroke-width="1.6"/><text x="580" y="146">1 Å</text>
+  </g>
+  <g font-size="11" fill="#14110F" text-anchor="middle">
+    <text x="110" y="98">insan boyu</text>
+    <text x="235" y="98">kalem ucu</text>
+    <text x="360" y="98">bakteri</text>
+    <text x="485" y="98">DNA çapı</text>
+    <text x="580" y="98">atom</text>
+  </g>
+  <rect x="400" y="60" width="150" height="22" rx="6" fill="#FFF1E9" stroke="#F8D6C2"/>
+  <text x="475" y="76" font-size="11.5" font-weight="700" fill="#B02E10" text-anchor="middle">nano ölçek: 1–100 nm</text>
+  <text x="335" y="176" font-size="11.5" fill="#5C554F" text-anchor="middle">Her adım <tspan font-weight="700">1000 kat</tspan> küçülmedir</text>
+</svg>
+<figcaption><span class="sekil-no">Şekil 1</span> · Nano ölçekte maddeler, aynı maddenin iri hâlinden <b>farklı özellikler</b> gösterebilir: renk, sertlik, iletkenlik ve tepkime verme eğilimi değişir.</figcaption>
+</figure>
+
+<h3>Neden nano boyutta özellikler değişir?</h3>
+<p>Bir madde küçük parçalara bölündükçe toplam kütlesi değişmez ama <b>yüzey alanı büyür</b>. Nano boyutta taneciklerin çok büyük bir kısmı yüzeyde bulunur; bu da maddeyi çok daha <b>etkin</b> hâle getirir.</p>
+
+<figure>
+<svg viewBox="0 0 660 180" role="img" aria-label="Küp bölündükçe yüzey alanının artması">
+  <rect x="70" y="45" width="90" height="90" fill="#EAF3F8" stroke="#0B5C8A" stroke-width="2.5"/>
+  <text x="115" y="158" font-size="12" fill="#14110F" text-anchor="middle">1 büyük parça</text>
+  <text x="115" y="30" font-size="11.5" fill="#5C554F" text-anchor="middle">yüzey alanı: 1 birim</text>
+  <text x="215" y="95" font-size="20" fill="#5C554F" text-anchor="middle">→</text>
+  <g fill="#EAF3F8" stroke="#0B5C8A" stroke-width="2">
+    <rect x="270" y="45" width="42" height="42"/><rect x="318" y="45" width="42" height="42"/>
+    <rect x="270" y="93" width="42" height="42"/><rect x="318" y="93" width="42" height="42"/>
+  </g>
+  <text x="315" y="158" font-size="12" fill="#14110F" text-anchor="middle">4 parça</text>
+  <text x="315" y="30" font-size="11.5" fill="#5C554F" text-anchor="middle">yüzey alanı: 2 birim</text>
+  <text x="405" y="95" font-size="20" fill="#5C554F" text-anchor="middle">→</text>
+  <g fill="#EAF3F8" stroke="#0B5C8A" stroke-width="1.4">
+    <rect x="450" y="45" width="20" height="20"/><rect x="474" y="45" width="20" height="20"/><rect x="498" y="45" width="20" height="20"/><rect x="522" y="45" width="20" height="20"/>
+    <rect x="450" y="69" width="20" height="20"/><rect x="474" y="69" width="20" height="20"/><rect x="498" y="69" width="20" height="20"/><rect x="522" y="69" width="20" height="20"/>
+    <rect x="450" y="93" width="20" height="20"/><rect x="474" y="93" width="20" height="20"/><rect x="498" y="93" width="20" height="20"/><rect x="522" y="93" width="20" height="20"/>
+    <rect x="450" y="117" width="20" height="20"/><rect x="474" y="117" width="20" height="20"/><rect x="498" y="117" width="20" height="20"/><rect x="522" y="117" width="20" height="20"/>
+  </g>
+  <text x="496" y="158" font-size="12" fill="#14110F" text-anchor="middle">16 parça</text>
+  <text x="496" y="30" font-size="11.5" fill="#5C554F" text-anchor="middle">yüzey alanı: 4 birim</text>
+</svg>
+<figcaption><span class="sekil-no">Şekil 2</span> · Kütle sabit kalırken yüzey alanı artar. Bu, Modül 2'de gördüğün <b>"katıyı toz hâline getirmek tepkime hızını artırır"</b> kuralının aynısıdır — nanoteknoloji bu ilkeyi uç noktaya taşır.</figcaption>
+</figure>
+
+<div class="tablo-sar">
+<table>
+<tr><th>Alan</th><th>Faydaları</th><th>Olası zararları</th></tr>
+<tr><td>Tekstil</td><td>Islanmayan, kir tutmayan kumaşlar</td><td>Yıkamayla suya karışan nanoparçacıklar</td></tr>
+<tr><td>Sağlık</td><td>İlacın doğrudan hedef hücreye taşınması, hızlı teşhis</td><td>Vücutta birikme ve uzun vadeli etkilerin bilinmemesi</td></tr>
+<tr><td>Gıda</td><td>Daha uzun raf ömrü, akıllı ambalaj</td><td>Sindirim yoluyla vücuda geçiş riski</td></tr>
+<tr><td>Enerji</td><td>Daha verimli piller ve güneş panelleri</td><td>Üretim atıklarının çevreye etkisi</td></tr>
+<tr><td>Kozmetik</td><td>Cilde daha iyi nüfuz eden ürünler</td><td>Deriden kana geçiş olasılığı</td></tr>
+</table>
+</div>
+
+<div class="kart ek-not">
+  <div class="baslik">Kitabın vurgusu</div>
+  <p>Ders kitabı bu konuda kesin bir hüküm vermez, bilinçli olarak: <b>"Nanoteknolojik ürünlerin insan sağlığına ve çevreye olası zararları henüz tam olarak bilinmemektedir. Bu zararların anlaşılması uzun yıllar süren bilimsel çalışmalar gerektirebilir."</b> Beklenen davranış, faydayı ve riski birlikte tartıp <b>eleştirel bir değerlendirme</b> yapabilmektir; "tamamen zararlıdır" ya da "tamamen güvenlidir" demek değil.</p>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 4</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">Nanoteknolojik ürünlerle ilgili aşağıdaki yargılardan hangileri doğrudur?</p>
+    <ul class="oncul">
+      <li><b>I.</b> Nano boyuttaki bir madde, aynı maddenin iri hâlinden farklı özellikler gösterebilir.</li>
+      <li><b>II.</b> Nanoparçacıkların insan sağlığına etkileri bilimsel olarak kesin biçimde belirlenmiştir.</li>
+      <li><b>III.</b> Bir madde küçük parçalara bölündükçe toplam yüzey alanı artar.</li>
+      <li><b>IV.</b> Nanoteknoloji yalnızca sağlık alanında kullanılır.</li>
+    </ul>
+    <p class="veri" style="margin-top:11px"><b>yargılarından hangileri doğrudur?</b></p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li><b>I doğru:</b> Nano ölçekte renk, sertlik, iletkenlik ve tepkime verme eğilimi değişebilir. Nanoteknolojinin dayandığı temel olgu budur.</li>
+      <li><b>II yanlış:</b> Kitabın açık ifadesiyle bu etkiler <b>henüz tam olarak bilinmemektedir</b>; anlaşılması uzun yıllar sürebilir.</li>
+      <li><b>III doğru:</b> Kütle sabit kalırken bölünme yüzey alanını artırır.</li>
+      <li><b>IV yanlış:</b> Sağlık, teknoloji, gıda, otomotiv, enerji ve tekstil gibi <b>birçok alanda</b> kullanılır.</li>
+    </ol>
+    <div class="cevap">I ve III</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 5</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="govde">
+    <p class="metin">Bir firma, güneş kremine nanoparçacık ekleyerek daha ince ve şeffaf bir ürün geliştirmiştir. Ürünü kullanıp kullanmama kararını verirken hangi ölçütleri değerlendirirsiniz?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li><b>Fayda tarafı:</b> Daha iyi koruma, cilt üzerinde beyaz iz bırakmaması, daha az miktarla aynı etkiyi sağlaması.</li>
+      <li><b>Risk tarafı:</b> Nanoparçacıkların deriden kana geçip geçmediği, vücutta birikip birikmediği, yıkanınca suya karışıp deniz canlılarını etkileyip etkilemediği.</li>
+      <li><b>Bilgi düzeyi:</b> Ürün üzerinde nanoparçacık içerdiği <b>belirtilmiş mi</b>? Bağımsız bilimsel çalışmalarla test edilmiş mi? Sağlık otoritelerinin onayı var mı?</li>
+      <li><b>Alternatifler:</b> Aynı korumayı sağlayan nanoparçacıksız ürünler var mı, aralarındaki fark ne kadar?</li>
+      <li><b>Kullanım biçimi:</b> Günde bir kez mi kullanılacak, yıllar boyu her gün mü? Bebeklerde mi yetişkinlerde mi kullanılacak?</li>
+      <li><b>Sonuç:</b> Beklenen cevap "kullanılmalı" ya da "kullanılmamalı" değil; <b>faydayı ve belirsizliği birlikte tartarak</b> gerekçeli bir karar verebilmektir. Bilimsel bilgi eksikse ihtiyatlı davranmak da geçerli bir tutumdur.</li>
+    </ol>
+    <div class="cevap">Fayda, bilinen ve bilinmeyen riskler, etiket bilgisi, alternatifler ve kullanım sıklığı birlikte değerlendirilmelidir.</div>
+    </details>
+  </div>
+</div>
+
+<!-- ===== 3 ===== -->
+<h2><span class="no">Bölüm 3</span>Mikroplastik ve nanoplastikler</h2>
+
+<p>Plastikler hafif, dayanıklı, kolay işlenebilir ve düşük maliyetlidir; ambalaj, inşaat, otomotiv ve sağlık gibi birçok sektörde vazgeçilmez hâle gelmişlerdir. Ancak kullanımın artmasıyla denizlerdeki plastik atık miktarı da ciddi biçimde artmıştır.</p>
+
+<figure>
+<svg viewBox="0 0 660 220" role="img" aria-label="Mikroplastik ve nanoplastiklerin oluşum yolları">
+  <rect x="40" y="30" width="230" height="66" rx="10" fill="#EAF3F8" stroke="#9CC0D6" stroke-width="2"/>
+  <text x="155" y="52" font-size="12.5" font-weight="700" fill="#0B5C8A" text-anchor="middle">BİRİNCİL mikroplastikler</text>
+  <text x="155" y="70" font-size="11.5" fill="#14110F" text-anchor="middle">doğrudan küçük üretilenler</text>
+  <text x="155" y="87" font-size="11" fill="#5C554F" text-anchor="middle">kozmetik mikro boncuklar · mikrofiberler</text>
+
+  <rect x="40" y="118" width="230" height="66" rx="10" fill="#FFF1E9" stroke="#F0BFA4" stroke-width="2"/>
+  <text x="155" y="140" font-size="12.5" font-weight="700" fill="#B02E10" text-anchor="middle">İKİNCİL mikroplastikler</text>
+  <text x="155" y="158" font-size="11.5" fill="#14110F" text-anchor="middle">büyük atıkların parçalanmasıyla</text>
+  <text x="155" y="175" font-size="11" fill="#5C554F" text-anchor="middle">şişeler · poşetler · ağlar</text>
+
+  <path d="M278,63 C310,63 310,105 340,105" fill="none" stroke="#5C554F" stroke-width="2" marker-end="url(#okp)"/>
+  <path d="M278,151 C310,151 310,110 340,110" fill="none" stroke="#5C554F" stroke-width="2" marker-end="url(#okp)"/>
+
+  <rect x="350" y="82" width="130" height="52" rx="10" fill="#F3EEE9" stroke="#D9CFC5" stroke-width="2"/>
+  <text x="415" y="103" font-size="12.5" font-weight="700" fill="#14110F" text-anchor="middle">MİKROPLASTİK</text>
+  <text x="415" y="121" font-size="11" fill="#5C554F" text-anchor="middle">&lt; 5 mm</text>
+
+  <line x1="488" y1="108" x2="524" y2="108" stroke="#5C554F" stroke-width="2" marker-end="url(#okp)"/>
+  <rect x="534" y="82" width="106" height="52" rx="10" fill="#EEF6F1" stroke="#CFE4D8" stroke-width="2"/>
+  <text x="587" y="103" font-size="12.5" font-weight="700" fill="#1B6B4A" text-anchor="middle">NANOPLASTİK</text>
+  <text x="587" y="121" font-size="11" fill="#5C554F" text-anchor="middle">nanometre boyutu</text>
+  <text x="510" y="152" font-size="10.5" fill="#5C554F" text-anchor="middle">dalga · güneş ışığı · sıcaklık · kimyasal tepkimeler</text>
+  <defs><marker id="okp" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#5C554F"/></marker></defs>
+</svg>
+<figcaption><span class="sekil-no">Şekil 3</span> · Mikroplastikler iki yoldan oluşur. Denizlerdeki dalgalar, güneş ışığı, sıcaklık değişimleri ve kimyasal tepkimeler bu parçacıkları daha da küçülterek <b>nanometre boyutuna</b> indirir.</figcaption>
+</figure>
+
+<div class="kart gunluk">
+  <div class="baslik">Deniz canlıları üzerindeki etkiler</div>
+  <ul>
+    <li>Deniz canlıları büyük plastiklere <b>takılabilir</b> ya da onları <b>yutabilir</b>; bu boğulma, yaralanma, sindirim sorunları ve beslenme bozukluklarına yol açar.</li>
+    <li>Mikroplastikler ve nanoplastikler <b>küçük boyutları nedeniyle besin zannedilerek yutulur</b>.</li>
+    <li>Yutulan parçacıklar <b>besin zinciri</b> boyunca aktarılır; küçük canlıları yiyen büyük canlılarda birikir.</li>
+    <li>Zincirin ucundaki insanlar da deniz ürünleri yoluyla bu parçacıklara maruz kalabilir.</li>
+  </ul>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 6</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">Aşağıdakilerden hangileri <b>birincil mikroplastiklere</b> örnektir?</p>
+    <ul class="oncul">
+      <li><b>I.</b> Yüz temizleme jelindeki mikro boncuklar</li>
+      <li><b>II.</b> Denizde yıllarca parçalanmış plastik şişe kalıntıları</li>
+      <li><b>III.</b> Sentetik kumaşların yıkanmasıyla çıkan mikrofiberler</li>
+      <li><b>IV.</b> Güneş ışığında ufalanmış plastik poşet parçaları</li>
+    </ul>
+    <p class="veri" style="margin-top:11px"><b>yargılarından hangileri doğrudur?</b></p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Ayırt etme ölçütü: parçacık <b>zaten küçük olarak mı üretilmiş</b>, yoksa <b>büyükken parçalanmış mı</b>?</li>
+      <li><b>I ✔ Birincil</b> — kozmetik ürünlerine bilerek eklenen mikro boncuklar.</li>
+      <li><b>II ✘ İkincil</b> — büyük bir plastik atığın zamanla parçalanması.</li>
+      <li><b>III ✔ Birincil</b> — sentetik kumaştan çıkan mikrofiberler doğrudan bu boyutta salınır.</li>
+      <li><b>IV ✘ İkincil</b> — poşet başlangıçta büyüktü, güneş ışığıyla ufalandı.</li>
+    </ol>
+    <div class="cevap">I ve III</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 7</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">Mikroplastiklerin nanoplastiklere dönüşmesinde etkili olan çevresel etkenler nelerdir ve bu küçülme neden sorunu <b>büyütür</b>?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li><b>Etkenler:</b> denizlerdeki dalgaların mekanik etkisi, güneş ışığı, sıcaklık değişimleri ve kimyasal tepkimeler.</li>
+      <li><b>Neden daha tehlikeli:</b> Parçacık küçüldükçe <b>daha çok canlı tarafından yutulabilir</b> hâle gelir; en küçük planktonlar bile alabilir.</li>
+      <li>Nano boyuttaki parçacıklar hücre zarlarından ve dokulardan <b>geçebilecek</b> kadar küçüktür; büyük parçalar için mümkün olmayan bir yayılım söz konusudur.</li>
+      <li>Yüzey alanı arttığı için üzerlerine <b>diğer kirleticileri de tutup taşıyabilirler</b> — parçacık hem kendisi hem de taşıdığıyla zarar verir.</li>
+      <li>Sudan <b>süzülüp temizlenmeleri</b> pratikte imkânsız hâle gelir; büyük atıklar toplanabilir, nanoplastikler toplanamaz.</li>
+      <li>Sonuç: kütle olarak azalmadılar, yalnızca bölündüler — ama <b>ulaşabilecekleri yer sayısı katlandı</b>.</li>
+    </ol>
+    <div class="cevap">Dalga, güneş ışığı, sıcaklık ve kimyasal tepkimeler; küçüldükçe daha çok canlıya ve dokuya ulaşır, temizlenmeleri imkânsızlaşır.</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 8</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="govde">
+    <p class="metin">Gelecek nesillere plastik içermeyen bir deniz bırakmak için bireysel ve toplumsal düzeyde neler yapılabilir?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li><b>Bireysel:</b> tek kullanımlık plastik yerine yeniden kullanılabilir ürünler; bez çanta, cam ya da çelik matara.</li>
+      <li>Mikro boncuk içeren kozmetik ürünlerden kaçınmak — etiketleri okumak.</li>
+      <li>Sentetik kumaşları daha seyrek ve düşük sıcaklıkta yıkamak, mikrofiber filtreli makine ya da yıkama torbası kullanmak.</li>
+      <li>Atıkları <b>ayrıştırarak</b> geri dönüşüme vermek; sahil ve doğa temizliklerine katılmak.</li>
+      <li><b>Toplumsal:</b> tek kullanımlık plastiklerin sınırlandırılması, üreticiye geri toplama sorumluluğu getirilmesi, mikro boncuk yasakları.</li>
+      <li>Biyobozunur alternatiflerin geliştirilmesi için araştırma desteği; atık su tesislerine mikroplastik filtreleri eklenmesi.</li>
+      <li><b>Eğitim:</b> Sorunun kaynağı tek bir davranış değil, bir <b>üretim–tüketim–atık zinciridir</b>; kalıcı çözüm zincirin her halkasında değişiklik gerektirir.</li>
+    </ol>
+    <div class="cevap">Tek kullanımlık plastiği azaltmak, etiket okumak, ayrıştırma, üretici sorumluluğu, yasal düzenleme ve biyobozunur alternatifler.</div>
+    </details>
+  </div>
+</div>
+
+<h2><span class="no">Bölüm 4</span>Kavramları birleştiren sorular</h2>
+<p>Bu tema, önceki temalarda öğrendiğin kimyanın <b>gerçek dünyadaki karşılığıdır</b>. Aşağıdaki sorular üç temayı birbirine bağlar.</p>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 9</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="govde">
+    <p class="metin">Hidrojenin yanma tepkimesi H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(g) &nbsp; ΔH = −242 kJ/mol'dür. Metanın yanma entalpisi ise −890 kJ/mol'dür.</p>
+    <ul class="siklar">
+      <li><b>a)</b> 1 mol başına metan daha çok enerji verdiğine göre hidrojen neden daha iyi bir yakıt sayılıyor?</li>
+      <li><b>b)</b> 2 gram hidrojen ve 16 gram metan yakıldığında açığa çıkan enerjileri karşılaştırın.</li>
+      <li><b>c)</b> Çevresel açıdan iki yakıt arasındaki temel fark nedir?</li>
+    </ul>
+    <p class="veri">H = 1 · C = 12</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>a) Yakıtları karşılaştırırken mol başına değil, <b>kütle başına</b> enerji (ısıl değer) bakılır. Hidrojenin mol kütlesi çok küçük olduğu için kütle başına verimi çok yüksektir.</li>
+      <li>b) 2 g H<sub>2</sub> = 1 mol → 242 kJ &nbsp;·&nbsp; 16 g CH<sub>4</sub> = 1 mol → 890 kJ</li>
+      <li>Kütle başına: hidrojen 242 ÷ 2 = <b>121 kJ/g</b> &nbsp;·&nbsp; metan 890 ÷ 16 = <b>55,6 kJ/g</b></li>
+      <li>Hidrojen gram başına yaklaşık <b>iki kattan fazla</b> enerji verir. Uzay araçlarında kullanılmasının sebebi budur.</li>
+      <li>c) Hidrojen yandığında tek ürün <b>su buharıdır</b>; metan yandığında ise <b>CO<sub>2</sub></b> oluşur.</li>
+      <li>CO<sub>2</sub> hem sera gazıdır hem de Modül 3'te gördüğün gibi okyanuslarda çözünerek <b>asitlenmeye</b> yol açar. Hidrojende bu zincir hiç başlamaz.</li>
+    </ol>
+    <div class="cevap">a) Kütle başına verim yüksek &nbsp;·&nbsp; b) 121 kJ/g ve 55,6 kJ/g &nbsp;·&nbsp; c) Hidrojen CO₂ üretmez</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 10</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">Nanoparçacıkların tepkimelere karşı çok etkin olmasının sebebi, Modül 2'de öğrenilen hangi kuralla açıklanır? Bu durum hem bir <b>fayda</b> hem bir <b>risk</b> olarak nasıl yorumlanabilir?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>İlgili kural: <b>katı maddenin yüzey alanı arttıkça tepkime hızı artar</b>, çünkü tepkimenin gerçekleşeceği daha fazla bölge oluşur.</li>
+      <li>Nano boyutta parçacıkların kütlesi değişmeden yüzey alanı muazzam biçimde büyür; taneciklerin büyük kısmı yüzeyde bulunur.</li>
+      <li><b>Fayda:</b> Aynı işi çok daha az maddeyle yapabilmek. Katalizörlerde, ilaç taşıyıcılarda ve pillerde verim artar; daha az hammadde tüketilir.</li>
+      <li><b>Risk:</b> Aynı etkinlik, parçacığın vücutta ya da çevrede <b>beklenmedik tepkimelere</b> girmesi anlamına da gelir. İri hâlde zararsız olan bir madde nano boyutta zararlı davranabilir.</li>
+      <li>Ayrıca küçüklük, hücre zarlarından geçebilme ve <b>ortamdan uzaklaştırılamama</b> sonucunu doğurur.</li>
+      <li>Değerlendirme: Nanoteknolojiyi güçlü yapan özellik ile riskli yapan özellik <b>aynı özelliktir</b>. Bu yüzden "fayda mı zarar mı" sorusunun tek cümlelik cevabı yoktur.</li>
+    </ol>
+    <div class="cevap">Yüzey alanı–tepkime hızı ilişkisi; aynı etkinlik hem verimi hem beklenmedik etkileşim riskini artırır.</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 11</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="govde">
+    <p class="metin">Yeşil hidrojen üretiminde suyun elektrolizi kullanılır. Bu süreçte kullanılan elektrik güneş panellerinden sağlanmaktadır.</p>
+    <ul class="oncul">
+      <li><b>I.</b> Elektroliz endotermik bir süreçtir.</li>
+      <li><b>II.</b> Üretilen hidrojenin yakılmasıyla elde edilen enerji, elektrolizde harcanan enerjiden fazladır.</li>
+      <li><b>III.</b> Bu üretim yönteminde atmosfere CO<sub>2</sub> salınımı olmaz.</li>
+      <li><b>IV.</b> Aynı elektrik kömür santralinden sağlansaydı üretilen hidrojen yine yeşil hidrojen olurdu.</li>
+    </ul>
+    <p class="veri" style="margin-top:11px"><b>yargılarından hangileri doğrudur?</b></p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li><b>I doğru:</b> Su ayrışması, yanmanın tersidir; dışarıdan enerji gerektirir.</li>
+      <li><b>II yanlış:</b> Enerjinin korunumu gereği geri alınan enerji, harcanandan <b>fazla olamaz</b>. Her dönüşüm basamağında kayıp olur; bu yüzden hidrojen bir enerji <b>kaynağı</b> değil, <b>taşıyıcısıdır</b>.</li>
+      <li><b>III doğru:</b> Hem elektrik yenilenebilir kaynaktan geliyor hem de elektroliz tepkimesi CO<sub>2</sub> üretmiyor.</li>
+      <li><b>IV yanlış:</b> Şehir şebekesi elektriğiyle yapılan elektroliz <b>sarı hidrojen</b> üretir; kaynağın kömür olması hâlinde CO<sub>2</sub> salınımı yalnızca santrale kaymış olur.</li>
+      <li>Rengin, gazın kendisiyle değil <b>üretim zinciriyle</b> ilgili olduğunun en net örneği budur.</li>
+    </ol>
+    <div class="cevap">I ve III doğru.</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 12</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">Mikroplastikler, üzerlerinde başka kirleticileri de tutup taşıyabilir. Bu davranış, Modül 5'te öğrenilen hangi olguyla ilişkilendirilebilir? Sonuçlarını değerlendirin.</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Mikroplastikler küçüldükçe <b>yüzey alanı/kütle oranı</b> büyür — nanoparçacıklardaki mantığın aynısı.</li>
+      <li>Büyük yüzey, ortamdaki organik kirleticilerin ve ağır metallerin parçacık yüzeyine <b>tutunmasını</b> kolaylaştırır.</li>
+      <li>Sonuç: parçacık artık yalnızca plastik değil, üzerinde kirletici <b>taşıyan bir araç</b> hâline gelir.</li>
+      <li>Bir canlı bu parçacığı yuttuğunda hem plastiği hem de yüzeyindeki kirleticiyi almış olur; etki tek başına plastiğinkinden büyüktür.</li>
+      <li>Besin zinciri boyunca ilerledikçe bu yük üst basamaklarda <b>birikir</b>.</li>
+      <li>Değerlendirme: "Plastik zaten inert bir maddedir, zararsızdır" savunması bu yüzden eksiktir — sorun maddenin kendisi kadar <b>ne taşıdığıdır</b>.</li>
+    </ol>
+    <div class="cevap">Yüzey alanının artması kirleticilerin tutunmasını kolaylaştırır; parçacık kirletici taşıyıcısına dönüşür ve besin zincirinde birikir.</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 13</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">Aşağıdaki hidrojen renk kodlarını, <b>çevreye verdiği zarara göre</b> en azdan en çoğa doğru sıralayın.</p>
+    <ul class="oncul">
+      <li><b>I.</b> Kahverengi hidrojen &nbsp;&nbsp; <b>II.</b> Yeşil hidrojen &nbsp;&nbsp; <b>III.</b> Mavi hidrojen &nbsp;&nbsp; <b>IV.</b> Gri hidrojen</li>
+    </ul>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li><b>II. Yeşil:</b> Yenilenebilir kaynak; zararı en azdır.</li>
+      <li><b>III. Mavi:</b> Doğal gazdan üretilir ama CO<sub>2</sub>'nin çoğu yakalanıp depolanır — salınım büyük ölçüde engellenir.</li>
+      <li><b>IV. Gri:</b> Aynı doğal gaz yöntemi, ama CO<sub>2</sub> doğrudan doğaya salınır.</li>
+      <li><b>I. Kahverengi:</b> Kömürden gazlaştırma; CO<sub>2</sub>'nin yanında <b>diğer sera gazları</b> da salınır, en zararlısıdır.</li>
+      <li>Sıralama: <b>II &lt; III &lt; IV &lt; I</b></li>
+      <li>Not: Doğal gaz kömürden daha temiz yandığı için gri, kahverengiden daha az zararlıdır.</li>
+    </ol>
+    <div class="cevap">II (yeşil) &lt; III (mavi) &lt; IV (gri) &lt; I (kahverengi)</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 14</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="govde">
+    <p class="metin">"Sürdürülebilirlik" kavramı açısından, bir teknolojinin değerlendirilmesinde yalnızca <b>kullanım aşamasına</b> bakmanın neden yetersiz olduğunu, bu temada gördüğün üç örnek üzerinden açıklayın.</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li><b>Hidrojen:</b> Kullanım aşamasında tek ürün su buharıdır, kusursuz görünür. Ama <b>üretim aşamasına</b> bakılmazsa gri ya da kahverengi hidrojenin CO<sub>2</sub> yükü gözden kaçar.</li>
+      <li><b>Nanoteknolojik ürünler:</b> Kullanırken fayda açıktır (kir tutmayan kumaş, etkili ilaç). Ancak <b>üretim atıkları</b> ve <b>kullanım sonrası</b> parçacıkların nereye gittiği belirsizdir.</li>
+      <li><b>Plastikler:</b> Kullanım aşamasında son derece işlevseldir — hafif, dayanıklı, ucuz. Sorun tamamen <b>atık aşamasında</b> ortaya çıkar ve yüzlerce yıl sürer.</li>
+      <li>Ortak ders: Bir teknolojinin gerçek maliyeti <b>üretim → kullanım → atık</b> zincirinin tamamına bakılarak anlaşılır. Buna yaşam döngüsü bakışı denir.</li>
+      <li>Sürdürülebilirlik, "bugünün ihtiyacını karşılarken gelecek nesillerin ihtiyaçlarını tehlikeye atmamak" demektir; bu da ancak zincirin tamamı hesaba katılırsa mümkündür.</li>
+      <li>Bu yüzden kitap bu temada kesin hükümler yerine <b>eleştirel değerlendirme</b> ister.</li>
+    </ol>
+    <div class="cevap">Bir teknolojinin maliyeti üretim, kullanım ve atık aşamalarının tamamına bakılarak değerlendirilmelidir.</div>
+    </details>
+  </div>
+</div>
+
+<div class="test">
+  <h3>Kendin çöz</h3>
+  <p class="alt-baslik">Her başlıktan birer örnek. Önce kendin cevapla, sonra kontrol et.</p>
+  <ol>
+    <li><span class="tip">Hidrojenin özellikleri</span>Hidrojen gazının fiziksel özellikleri nelerdir?
+      <details><summary>Cevabı gör</summary><p><b>Renksiz, kokusuz, yanıcı</b> ve havadan oldukça <b>hafif</b> bir gazdır.</p></details>
+    </li>
+    <li><span class="tip">Yanma ürünü</span>Hidrojen yandığında hangi ürün oluşur?
+      <details><summary>Cevabı gör</summary><p>Yalnızca <b>su buharı</b>: H₂(g) + ½O₂(g) → H₂O(g). CO₂ oluşmaz.</p></details>
+    </li>
+    <li><span class="tip">Yeşil hidrojen</span>Yeşil hidrojen nasıl tanımlanır?
+      <details><summary>Cevabı gör</summary><p>Güneş, rüzgâr, evsel atık gibi <b>yenilenebilir</b> kaynaklar kullanılarak üretilen hidrojendir.</p></details>
+    </li>
+    <li><span class="tip">Renk kodu · sarı</span>Sarı hidrojen nasıl üretilir?
+      <details><summary>Cevabı gör</summary><p><b>Şehir enerji şebekesinden</b> sağlanan elektrikle suyun elektrolizi. Şebekenin kaynağına göre CO₂ salınabilir.</p></details>
+    </li>
+    <li><span class="tip">Renk kodu · gri/mavi</span>Gri ve mavi hidrojenin farkı nedir?
+      <details><summary>Cevabı gör</summary><p>İkisi de doğal gazdan <b>buhar reformasyonuyla</b> üretilir. Gri'de CO₂ doğaya salınır, mavide <b>yakalanıp depolanır</b>.</p></details>
+    </li>
+    <li><span class="tip">Renk kodu · turkuaz</span>Turkuaz hidrojende CO₂'ye ne olur?
+      <details><summary>Cevabı gör</summary><p>Doğal gazdan <b>piroliz</b> ile üretilir; oluşan CO₂ <b>katı karbona</b> dönüştürülür.</p></details>
+    </li>
+    <li><span class="tip">Renk kodu · pembe</span>Pembe hidrojenin çevresel riski nedir?
+      <details><summary>Cevabı gör</summary><p><b>Nükleer enerjiyle</b> üretilir; CO₂ oluşmaz ama <b>nükleer kirlilik</b> riski vardır.</p></details>
+    </li>
+    <li><span class="tip">Enerji taşıyıcısı</span>Hidrojen neden enerji kaynağı değil enerji taşıyıcısı sayılır?
+      <details><summary>Cevabı gör</summary><p>Doğada serbest bulunmaz; elde etmek için <b>önce enerji harcanır</b>. Enerjiyi üretmez, depolar ve taşır.</p></details>
+    </li>
+    <li><span class="tip">Yaygınlaşma engeli</span>Yeşil hidrojenin yaygınlaşmasını zorlaştıran etkenler nelerdir?
+      <details><summary>Cevabı gör</summary><p>Yüksek <b>üretim maliyeti</b>, depolama ve taşıma zorluğu, <b>altyapı</b> eksikliği ve dönüşüm kayıpları.</p></details>
+    </li>
+    <li><span class="tip">Nano ölçek</span>Nano ölçek hangi boyut aralığını kapsar?
+      <details><summary>Cevabı gör</summary><p><b>1–100 nanometre</b>. 1 nm = 10⁻⁹ m'dir.</p></details>
+    </li>
+    <li><span class="tip">Nano özellik değişimi</span>Nano boyutta maddenin özellikleri neden değişir?
+      <details><summary>Cevabı gör</summary><p>Yüzey alanı büyük ölçüde arttığı için taneciklerin çoğu yüzeyde bulunur; madde çok daha <b>etkin</b> davranır.</p></details>
+    </li>
+    <li><span class="tip">Yüzey alanı ilişkisi</span>Bu durum Modül 2'deki hangi kuralla aynıdır?
+      <details><summary>Cevabı gör</summary><p><b>Katının yüzey alanı arttıkça tepkime hızı artar</b> kuralıyla. Nanoteknoloji bunu uç noktaya taşır.</p></details>
+    </li>
+    <li><span class="tip">Nano kullanım alanları</span>Nanoteknoloji hangi alanlarda kullanılır?
+      <details><summary>Cevabı gör</summary><p>Sağlık, teknoloji, gıda, otomotiv, enerji ve <b>tekstil</b> gibi birçok alanda.</p></details>
+    </li>
+    <li><span class="tip">Nano riskler</span>Nanoteknolojik ürünlerin zararları konusunda kitabın tutumu nedir?
+      <details><summary>Cevabı gör</summary><p>Zararların <b>henüz tam olarak bilinmediği</b>, anlaşılmasının uzun yıllar sürebileceği belirtilir. Beklenen davranış eleştirel değerlendirmedir.</p></details>
+    </li>
+    <li><span class="tip">Mikroplastik türleri</span>Birincil ve ikincil mikroplastik farkı nedir?
+      <details><summary>Cevabı gör</summary><p><b>Birincil:</b> doğrudan küçük üretilenler (kozmetik boncuklar, mikrofiberler). <b>İkincil:</b> büyük atıkların parçalanmasıyla oluşanlar.</p></details>
+    </li>
+    <li><span class="tip">Nanoplastik oluşumu</span>Mikroplastikler nasıl nanoplastiğe dönüşür?
+      <details><summary>Cevabı gör</summary><p>Denizlerdeki <b>dalgalar, güneş ışığı, sıcaklık değişimleri</b> ve kimyasal tepkimelerle daha da küçülerek.</p></details>
+    </li>
+  </ol>
+</div>
+
+<div class="alt">
+  <p>Bu modülle <b>11. sınıf kimya programının üç teması da</b> tamamlandı: Etkileşim (Modül 1–2), Çeşitlilik (Modül 3–5) ve Sürdürülebilirlik (Modül 6).</p>
+</div>
+
+</main>
+<button class="yukari" id="yukari" aria-label="Sayfanın başına dön">↑</button>
+<script>
+(function(){
+  var bar=document.getElementById('ilerleme'),btn=document.getElementById('yukari');
+  function guncelle(){
+    var h=document.documentElement,o=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+    bar.style.width=o+'%';btn.classList.toggle('gor',h.scrollTop>700);
+  }
+  document.addEventListener('scroll',guncelle,{passive:true});
+  btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  guncelle();
+})();
+</script>
+</body>
+</html>
 
