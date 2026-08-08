@@ -154,8 +154,8 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <h1>Asit-baz dengesi</h1>
   <p>Suyun otoiyonizasyonundan titrasyon eğrisine kadar 2.2 bölümünün tamamı. Konunun tek bir omurgası var: <b>K<sub>su</sub> = [H<sub>3</sub>O<sup>+</sup>]·[OH<sup>−</sup>]</b>. Sıcaklık değişmediği sürece bu çarpım hiç değişmez — bütün hesaplar bunun üzerine kurulur.</p>
   <div class="sayac">
-    <div><b>64</b>çözümlü soru</div>
-    <div><b>19</b>şekil ve grafik</div>
+    <div><b>68</b>çözümlü soru</div>
+    <div><b>20</b>şekil ve grafik</div>
     <div><b>42</b>kendin çöz</div>
   </div>
 </section>
@@ -1301,6 +1301,63 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 
 <!-- ============ 7 ============ -->
 <h2><span class="no">Bölüm 7</span>Titrasyon</h2>
+<h3>Titrasyon deneyi ve düzeneği</h3>
+<p>Titrasyon, derişimi bilinmeyen bir asit ya da baz çözeltisinin derişimini, derişimi bilinen bir çözeltiyle nötralleştirerek belirleme işlemidir.</p>
+
+<figure>
+<svg viewBox="0 0 660 300" role="img" aria-label="Titrasyon düzeneği ve malzemeleri">
+  <line x1="120" y1="268" x2="230" y2="268" stroke="#5C554F" stroke-width="5"/>
+  <line x1="175" y1="268" x2="175" y2="42" stroke="#5C554F" stroke-width="5"/>
+  <rect x="175" y="86" width="26" height="9" rx="3" fill="#5C554F"/>
+  <rect x="196" y="46" width="17" height="126" rx="5" fill="#EAF3F8" stroke="#14110F" stroke-width="2"/>
+  <rect x="197" y="58" width="15" height="96" fill="#BFD9E8"/>
+  <path d="M196,172 L213,172 L207,192 L202,192 Z" fill="#EAF3F8" stroke="#14110F" stroke-width="1.6"/>
+  <circle cx="204.5" cy="204" r="3.5" fill="#3B6FB0"/>
+  <text x="228" y="70" font-size="12.5" font-weight="700" fill="#14110F">büret</text>
+  <text x="228" y="86" font-size="11" fill="#5C554F">(derişimi bilinen çözelti)</text>
+  <text x="228" y="150" font-size="11" fill="#5C554F">musluk · damla damla</text>
+  <path d="M262,216 L318,216 L296,256 L296,268 Q296,276 288,276 L292,276 Q284,276 284,268 L284,256 Z" fill="#FFF1E9" stroke="#14110F" stroke-width="2"/>
+  <path d="M276,240 L304,240 L296,256 L296,268 Q296,274 290,274 Q284,274 284,268 L284,256 Z" fill="#F9C9B0"/>
+  <text x="330" y="252" font-size="12.5" font-weight="700" fill="#14110F">erlenmayer</text>
+  <text x="330" y="268" font-size="11" fill="#5C554F">(derişimi bilinmeyen + indikatör)</text>
+  <text x="120" y="26" font-size="12" font-weight="700" fill="#14110F">Malzemeler</text>
+  <text x="120" y="300" font-size="11" fill="#5C554F">Spor düzeneği · kıskaç</text>
+  <g font-size="11.5" fill="#14110F">
+    <text x="440" y="46">· 100 mL'lik büret</text>
+    <text x="440" y="66">· 100 mL'lik erlenmayer</text>
+    <text x="440" y="86">· mezür</text>
+    <text x="440" y="106">· huni</text>
+    <text x="440" y="126">· spor düzeneği ve kıskaç</text>
+    <text x="440" y="146">· fenolftalein indikatörü</text>
+  </g>
+</svg>
+<figcaption><span class="sekil-no">Şekil 11</span> · Titrasyon düzeneği. Büretteki çözelti erlenmayere <b>damla damla</b> eklenir; indikatörün renk değiştirdiği an <b>dönüm noktasıdır</b>.</figcaption>
+</figure>
+
+<div class="kart kural">
+  <div class="baslik">Kural — deneyin işlem basamakları</div>
+  <ol>
+    <li>Derişimi bilinmeyen çözeltiden <b>mezür</b> ile belirli bir hacim ölçülüp <b>erlenmayere</b> aktarılır.</li>
+    <li>Erlenmayere birkaç damla <b>indikatör</b> damlatılır.</li>
+    <li>Derişimi bilinen çözelti, <b>huni</b> yardımıyla <b>bürete</b> doldurulur ve başlangıç hacmi okunur.</li>
+    <li>Büret musluğu açılarak çözelti erlenmayere <b>damla damla</b> eklenir; erlenmayer sürekli çalkalanır.</li>
+    <li>İndikatörün <b>kalıcı renk değişimi</b> görüldüğü anda musluk kapatılır ve son hacim okunur.</li>
+    <li>Harcanan hacim, iki okuma arasındaki farktır. Derişim şu bağıntıyla hesaplanır:</li>
+  </ol>
+  <span class="blokform">z<sub>A</sub> · V<sub>A</sub> · M<sub>A</sub> = z<sub>B</sub> · V<sub>B</sub> · M<sub>B</sub></span>
+  <p>Burada <b>z</b> tesir değerliği, <b>V</b> hacim, <b>M</b> molar derişimdir.</p>
+</div>
+
+<div class="kart tuzak">
+  <div class="baslik">Tuzak — deney hataları</div>
+  <ul>
+    <li>Çözelti <b>damla damla</b> eklenmezse dönüm noktası aşılır; harcanan hacim olduğundan büyük ölçülür ve bulunan derişim <b>yanlış çıkar</b>.</li>
+    <li>Renk değişimi <b>kalıcı</b> olmalıdır. Çalkalayınca kaybolan geçici renk, dönüm noktasına ulaşıldığını göstermez.</li>
+    <li>Erlenmayere fazladan saf su eklenmesi sonucu <b>etkilemez</b>: çözünen madde miktarı değişmez, yalnızca hacim artar. Ancak <b>bürete</b> su karışırsa derişim değişeceği için sonuç bozulur.</li>
+    <li>İndikatör fazla damlatılmamalıdır; kendisi de asit ya da baz olduğu için sonucu etkileyebilir.</li>
+  </ul>
+</div>
+
 <div class="kart ek-not">
   <div class="baslik">Terim ve kapsam notu</div>
   <p>Ders kitabı, asidin ve bazın tam olarak birbirini nötralleştirdiği ana <b>"dönüm noktası"</b> der. Bazı kaynaklarda aynı nokta <b>"eşdeğerlik noktası"</b> olarak geçer; ikisi aynı şeydir. Bu modülde kitabın terimi kullanılmıştır.</p>
@@ -1344,7 +1401,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <text x="240" y="238" font-size="11" fill="#B02E10">asit bölgesi</text>
   <text x="540" y="80" font-size="11" fill="#3B3A8F">baz fazlası</text>
 </svg>
-<figcaption><span class="sekil-no">Şekil 11</span> · Kuvvetli asit–kuvvetli baz titrasyonu. Dönüm noktası civarında <b>tek damla</b> pH'yi 3'ten 11'e taşır; bu yüzden her iki indikatör de kullanılabilir.</figcaption>
+<figcaption><span class="sekil-no">Şekil 12</span> · Kuvvetli asit–kuvvetli baz titrasyonu. Dönüm noktası civarında <b>tek damla</b> pH'yi 3'ten 11'e taşır; bu yüzden her iki indikatör de kullanılabilir.</figcaption>
 </figure>
 
 <div class="kart kural">
@@ -1404,11 +1461,59 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 31</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">Derişimi bilinmeyen 20 mL HCl çözeltisi, büretteki 0,2 M NaOH çözeltisiyle titre ediliyor. Büretin başlangıç okuması 3,0 mL, dönüm noktasındaki okuması 28,0 mL'dir.</p>
+    <ul class="siklar"><li><b>a)</b> Harcanan NaOH hacmi kaç mL'dir?</li><li><b>b)</b> HCl çözeltisinin derişimi kaç molardır?</li></ul>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim"><li>Harcanan hacim <b>iki okuma arasındaki farktır</b>: 28,0 − 3,0 = <b>25,0 mL</b></li><li>Bağıntı: z<sub>A</sub>·V<sub>A</sub>·M<sub>A</sub> = z<sub>B</sub>·V<sub>B</sub>·M<sub>B</sub></li><li>HCl ve NaOH'un tesir değerlikleri 1'dir → 1 × 20 × M<sub>A</sub> = 1 × 25 × 0,2</li><li>20·M<sub>A</sub> = 5 → <b>M<sub>A</sub> = 0,25 M</b></li><li>Sık hata: büretin son okumasını (28 mL) doğrudan harcanan hacim sanmak. Bu durumda 0,28 M bulunur ve sonuç yanlış olur.</li></ol>
+    <div class="cevap">0,25 M</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 32</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">Bir öğrenci, 25 mL 0,1 M Ca(OH)₂ çözeltisini 0,25 M HNO₃ ile titre ediyor.</p>
+    <ul class="siklar"><li><b>a)</b> Dönüm noktasına ulaşmak için kaç mL HNO₃ harcanır?</li><li><b>b)</b> Dönüm noktasında çözeltinin pH'si kaçtır?</li></ul>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim"><li>Ca(OH)₂'nin tesir değerliği <b>2</b>, HNO₃'ünki <b>1</b>'dir.</li><li>z<sub>B</sub>·V<sub>B</sub>·M<sub>B</sub> = 2 × 25 × 0,1 = <b>5</b></li><li>z<sub>A</sub>·V<sub>A</sub>·M<sub>A</sub> = 1 × V<sub>A</sub> × 0,25 = 5 → <b>V<sub>A</sub> = 20 mL</b></li><li>Oluşan tuz Ca(NO₃)₂ <b>nötr</b> bir tuzdur (kuvvetli asit + kuvvetli baz) → dönüm noktasında <b>pH = 7</b>.</li><li>Uygun indikatör, dönüm noktasının bulunduğu dik bölgeye denk gelen fenolftalein (8,2–10,0) ya da metil kırmızısıdır.</li></ol>
+    <div class="cevap">a) 20 mL &nbsp;·&nbsp; b) pH = 7</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 33</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="govde">
+    <p class="metin">Titrasyon deneyi sırasında yapılan aşağıdaki işlemlerden hangileri <b>bulunan derişimin yanlış çıkmasına</b> yol açar?</p>
+    <ul class="siklar"><li><b>I.</b> Erlenmayere bir miktar saf su eklemek</li><li><b>II.</b> Büreti çalkaladıktan sonra kurutmadan çözelti doldurmak</li><li><b>III.</b> Çözeltiyi damla damla değil, sürekli akıtarak eklemek</li><li><b>IV.</b> İndikatörden iki damla yerine üç damla kullanmak</li></ul>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim"><li><b>I ✘ Hataya yol açmaz.</b> Erlenmayere saf su eklemek çözünen madde <b>miktarını</b> değiştirmez; yalnızca hacim artar. Nötralleşme için gereken mol aynı kaldığı için harcanan hacim de değişmez.</li><li><b>II ✔ Hataya yol açar.</b> Büret iç yüzeyindeki su, doldurulan çözeltiyi seyreltir → derişimi düşer → dönüm noktasına ulaşmak için <b>daha fazla</b> hacim harcanır, bulunan derişim yanlış çıkar.</li><li><b>III ✔ Hataya yol açar.</b> Hızlı ekleme dönüm noktasının aşılmasına neden olur; harcanan hacim olduğundan büyük ölçülür.</li><li><b>IV ✘ Hataya yol açmaz.</b> İndikatör miktarı birkaç damla düzeyinde tutulduğu sürece sonucu etkilemez; yalnızca aşırı miktarda kullanılırsa sorun olur.</li><li>Ayırt edici ölçüt: işlem <b>madde miktarını</b> ya da <b>ölçülen hacmi</b> değiştiriyorsa hata doğurur; yalnızca seyreltiyorsa doğurmaz.</li></ol>
+    <div class="cevap">II ve III</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 34</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="govde">
+    <p class="metin">İki farklı asit çözeltisi, aynı NaOH çözeltisiyle ayrı ayrı titre ediliyor. Eşit hacimde alınan bu çözeltilerden <b>X için 20 mL</b>, <b>Y için 40 mL</b> NaOH harcanıyor.</p>
+    <ul class="siklar"><li><b>a)</b> Bu sonuçtan iki asit hakkında ne söylenebilir?</li><li><b>b)</b> Hangisinin daha kuvvetli olduğu söylenebilir mi?</li></ul>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim"><li>Harcanan baz hacmi, asidin <b>toplam iyonlaşabilir proton miktarıyla</b> orantılıdır: z·V·M çarpımı.</li><li>Y için iki kat baz harcandığına göre Y'nin z·M çarpımı X'inkinin <b>iki katıdır</b>.</li><li>Bu iki farklı biçimde sağlanabilir: <b>(i)</b> Y'nin derişimi X'in iki katı olabilir, <b>(ii)</b> derişimler eşitken Y iki değerlikli, X tek değerlikli olabilir.</li><li><b>Kuvvet hakkında hiçbir şey söylenemez.</b> Titrasyonda harcanan hacim, asidin <b>toplam</b> miktarına bağlıdır; iyonlaşmış kısmına değil.</li><li>Yani X zayıf, Y kuvvetli olabileceği gibi tersi de olabilir. Kuvvet farkı ancak <b>başlangıç pH'sinden</b> ya da titrasyon eğrisinin biçiminden anlaşılır.</li></ol>
+    <div class="cevap">Y'nin z·M çarpımı X'inkinin iki katıdır; kuvvetleri hakkında bir şey söylenemez.</div>
+    </details>
+  </div>
+</div>
+
 <h2><span class="no">Bölüm 8</span>Zorlayıcı sorular</h2>
 <p>Bu bölümdeki sorular birden çok kazanımı aynı anda kullanmayı gerektirir: stokiyometri + pH, seyreltme + denge sabiti, veri tablosundan kuvvet belirleme gibi.</p>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 31</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 35</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Oda koşullarında pH'si 2 olan 900 mL HCl çözeltisi ile pH'si 13 olan 100 mL NaOH çözeltisi karıştırılıyor. Son çözeltinin pH'si kaçtır?</p>
     <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
@@ -1427,7 +1532,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 32</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 36</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Değerliği 2 olan kuvvetli bir asidin 4,9 gramını tam olarak nötralleştirmek için 0,5 M NaOH çözeltisinden 200 mL kullanılıyor. Asidin mol kütlesi kaç g/mol'dür?</p>
     <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
@@ -1445,7 +1550,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 33</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 37</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Yeterince Zn metali 600 mL HCl çözeltisine atıldığında normal koşullarda 6,72 L H<sub>2</sub> gazı açığa çıkıyor ve asidin tamamı harcanıyor.</p>
     <ul class="siklar">
@@ -1468,7 +1573,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 34</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 38</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Oda koşullarında hazırlanan beş çözeltinin derişimleri ve pH değerleri tabloda verilmiştir. Tüm çözünenler <b>tek değerliklidir</b>.</p>
     <div class="tablo-sar"><table>
@@ -1493,7 +1598,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 35</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 39</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Oda koşullarında pH'si 5 olan 0,1 M HF çözeltisinin 1 litresine kaç litre saf su eklenirse çözeltinin pH'si 6 olur?</p>
     <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
@@ -1562,7 +1667,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
     <line x1="553" y1="234" x2="553" y2="239"/><line x1="620" y1="234" x2="620" y2="239"/>
   </g>
 </svg>
-<figcaption><span class="sekil-no">Şekil 12</span> · Her indikatör yalnızca <b>kendi dar aralığında</b> renk değiştirir; aralığın dışında iki uç renkten birini gösterir. Bu yüzden tek bir indikatör pH'yi <b>tam olarak</b> söylemez, bir <b>aralık</b> verir.</figcaption>
+<figcaption><span class="sekil-no">Şekil 13</span> · Her indikatör yalnızca <b>kendi dar aralığında</b> renk değiştirir; aralığın dışında iki uç renkten birini gösterir. Bu yüzden tek bir indikatör pH'yi <b>tam olarak</b> söylemez, bir <b>aralık</b> verir.</figcaption>
 </figure>
 
 <div class="tablo-sar">
@@ -1583,7 +1688,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 36</span><span class="seviye s-orta">Orta</span></div>
+  <div class="ust-serit"><span class="numara">Soru 40</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Oda koşullarında pH'si 5 olan bir çözeltiden alınan üç örneğe sırasıyla metil oranj, bromtimol mavisi ve fenolftalein damlatılıyor. Örneklerin renkleri ne olur?</p>
     <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
@@ -1599,7 +1704,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 37</span><span class="seviye s-zor">Zor</span></div>
+  <div class="ust-serit"><span class="numara">Soru 41</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Bir X çözeltisinden alınan örneklere indikatör damlatıldığında şu gözlemler yapılıyor:</p>
     <ul class="oncul">
@@ -1623,7 +1728,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 38</span><span class="seviye s-orta">Orta</span></div>
+  <div class="ust-serit"><span class="numara">Soru 42</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci HCl çözeltisini NaOH ile titre ederken indikatör olarak alizarin sarısı kullanıyor ve rengin kırmızıya döndüğü anda durduruyor.</p>
     <ul class="siklar">
@@ -1645,7 +1750,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 39</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 43</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci mor lahana suyunu doğal indikatör olarak kullanıp dört maddeyi test ediyor ve sonuçları kaydediyor: limon suyu <b>kırmızı</b>, saf su <b>mor</b>, karbonatlı su <b>mavi-yeşil</b>, çamaşır suyu <b>sarı</b>.</p>
     <ul class="siklar">
@@ -1701,7 +1806,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 40</span><span class="seviye s-orta">Orta</span></div>
+  <div class="ust-serit"><span class="numara">Soru 44</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki tuzların sulu çözeltilerinde hidroliz olan iyonu belirleyip çözeltinin asidik, bazik ya da nötr olduğunu yazın.</p>
     <ul class="oncul">
@@ -1723,7 +1828,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 41</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 45</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">NH<sub>4</sub>F tuzunun sulu çözeltisinde hem katyon hem anyon hidroliz olur. Buna göre çözelti asidik midir bazik midir?</p>
     <p class="veri">K<sub>a</sub>(HF) = 10<sup>−4</sup> &nbsp;·&nbsp; K<sub>b</sub>(NH<sub>3</sub>) = 10<sup>−5</sup></p>
@@ -1742,7 +1847,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 42</span><span class="seviye s-zor">Zor</span></div>
+  <div class="ust-serit"><span class="numara">Soru 46</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Oda koşullarında 25 mL 0,1 M HCN çözeltisi, 25 mL 0,1 M NaOH ile tam olarak nötralleştiriliyor.</p>
     <ul class="siklar">
@@ -1796,7 +1901,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 43</span><span class="seviye s-orta">Orta</span></div>
+  <div class="ust-serit"><span class="numara">Soru 47</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki karışımlardan hangileri tampon çözelti oluşturur?</p>
     <ul class="oncul">
@@ -1820,7 +1925,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 44</span><span class="seviye s-zor">Zor</span></div>
+  <div class="ust-serit"><span class="numara">Soru 48</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">CH<sub>3</sub>COOH ve CH<sub>3</sub>COONa içeren bir tampon çözeltiye az miktarda HCl ekleniyor.</p>
     <ul class="oncul">
@@ -1844,7 +1949,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 45</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 49</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Oda koşullarında 1 L 0,2 M HF çözeltisi ile 1 L 0,1 M NaOH çözeltisi karıştırılıyor.</p>
     <ul class="siklar">
@@ -1873,7 +1978,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 <p>Bu bölümdeki sorular, sınavlarda sık karşılaşılan <b>format</b>lara odaklanır: iletkenlik grafiği, tanecik modeli, kütlece yüzde–molarite geçişi, hacim oranı, ters titrasyon eğrisi ve stokiyometriyle birleşik hesaplar.</p>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 46</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 50</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Oda koşullarında 25 mL HCl çözeltisine damla damla NaOH çözeltisi ekleniyor ve karışımın elektrik iletkenliği ölçülüyor. Elde edilen grafik aşağıdaki gibidir.</p>
     <figure>
@@ -1889,7 +1994,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
       <text x="150" y="90" font-size="12" fill="#5C554F">I. bölge</text>
       <text x="470" y="120" font-size="12" fill="#5C554F">II. bölge</text>
     </svg>
-    <figcaption><span class="sekil-no">Şekil 13</span> · İletkenlik önce azalır, K noktasında en düşük değere iner, sonra tekrar artar.</figcaption>
+    <figcaption><span class="sekil-no">Şekil 14</span> · İletkenlik önce azalır, K noktasında en düşük değere iner, sonra tekrar artar.</figcaption>
     </figure>
     <ul class="oncul">
       <li><b>I.</b> K noktası dönüm noktasıdır.</li>
@@ -1911,7 +2016,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 47</span><span class="seviye s-zor">Zor</span></div>
+  <div class="ust-serit"><span class="numara">Soru 51</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Eşit hacimli ve aynı derişimde hazırlanan X ve Y asit çözeltilerinin tanecik modelleri şekildeki gibidir. (Su molekülleri gösterilmemiştir.)</p>
     <figure>
@@ -1937,7 +2042,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
       </g>
       <text x="505" y="236" font-size="12" fill="#5C554F" text-anchor="middle">1 H⁺ · 1 B⁻ · 2 HB</text>
     </svg>
-    <figcaption><span class="sekil-no">Şekil 14</span> · Toplam asit birimi sayısı her iki beherde de 3'tür.</figcaption>
+    <figcaption><span class="sekil-no">Şekil 15</span> · Toplam asit birimi sayısı her iki beherde de 3'tür.</figcaption>
     </figure>
     <ul class="oncul">
       <li><b>I.</b> X kuvvetli, Y zayıf asittir.</li>
@@ -1959,7 +2064,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 48</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 52</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Kütlece %36,5'lik ve özkütlesi 1 g/mL olan HCl çözeltisinden 10 mL alınıp saf su ile 1 litreye tamamlanıyor.</p>
     <ul class="siklar">
@@ -1983,7 +2088,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 49</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 53</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Oda koşullarında pH'si 3 olan H<sub>2</sub>SO<sub>4</sub> çözeltisinden V<sub>1</sub> mL ile pH'si 12 olan KOH çözeltisinden V<sub>2</sub> mL karıştırıldığında tam nötralleşme gerçekleşiyor. Buna göre V<sub>1</sub>/V<sub>2</sub> oranı kaçtır?</p>
     <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
@@ -2002,7 +2107,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 50</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 54</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Oda koşullarında 500 mL 0,4 M HCl çözeltisi ile 500 mL 0,4 M NaOH çözeltisi bir kalorimetre kabında karıştırılıyor.</p>
     <ul class="siklar">
@@ -2026,7 +2131,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 51</span><span class="seviye s-zor">Zor</span></div>
+  <div class="ust-serit"><span class="numara">Soru 55</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Oda koşullarında 100 mL NaOH çözeltisi 0,1 M HCl ile titre ediliyor ve aşağıdaki eğri elde ediliyor.</p>
     <figure>
@@ -2046,7 +2151,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
       <line x1="90" y1="111" x2="360" y2="111" stroke="#F85300" stroke-width="1.4" stroke-dasharray="4 4"/>
       <text x="150" y="36" font-size="12" fill="#3B3A8F">başlangıç pH = 13</text>
     </svg>
-    <figcaption><span class="sekil-no">Şekil 15</span> · Baza asit eklendiğinde eğri <b>yukarıdan aşağıya</b> iner.</figcaption>
+    <figcaption><span class="sekil-no">Şekil 16</span> · Baza asit eklendiğinde eğri <b>yukarıdan aşağıya</b> iner.</figcaption>
     </figure>
     <ul class="siklar">
       <li><b>a)</b> NaOH çözeltisinin derişimi kaçtır?</li>
@@ -2067,7 +2172,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 52</span><span class="seviye s-zor">Zor</span></div>
+  <div class="ust-serit"><span class="numara">Soru 56</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki çözelti çiftleri <b>eşit hacimlerde</b> karıştırıldığında hangisinde tam nötralleşme <b>olmaz</b>?</p>
     <ul class="oncul">
@@ -2093,7 +2198,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 53</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 57</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">0,65 gram Zn metali, 200 mL 0,2 M HCl çözeltisine atılıyor ve metal tamamen çözünüyor.</p>
     <ul class="siklar">
@@ -2117,7 +2222,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 54</span><span class="seviye s-zor">Zor</span></div>
+  <div class="ust-serit"><span class="numara">Soru 58</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Mermer (CaCO<sub>3</sub>) bir heykelin yüzeyinden alınan 8 gramlık örnek, yeterli miktarda HCl çözeltisine atıldığında normal koşullarda 1,12 L CO<sub>2</sub> gazı açığa çıkıyor.</p>
     <ul class="siklar">
@@ -2142,7 +2247,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 55</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 59</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Diş minesinin ana bileşeni hidroksiapatittir ve ağız ortamının pH'si <b>5,5'in altına</b> düştüğünde çözünmeye başlar. Bir öğrenci gün içindeki ağız pH'sini ölçüp kaydediyor: asitli içecek içtikten hemen sonra pH 3,5'e düşüyor, yaklaşık 30 dakika içinde tükürük sayesinde 6,8'e geri dönüyor.</p>
     <ul class="oncul">
@@ -2163,7 +2268,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 56</span><span class="ek-rozet" style="margin:0 0 0 8px;padding:2px 8px;font-size:10px">müfredat dışı</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 60</span><span class="ek-rozet" style="margin:0 0 0 8px;padding:2px 8px;font-size:10px">müfredat dışı</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Aynı derişimde ve aynı hacimde hazırlanan bir kuvvetli asit (HCl) ile bir zayıf asit (CH<sub>3</sub>COOH) çözeltisi, aynı derişimli NaOH ile ayrı ayrı titre ediliyor ve iki eğri aynı eksende çiziliyor.</p>
     <ul class="oncul">
@@ -2187,7 +2292,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 57</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 61</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Oda koşullarında 100 mL'lik H<sub>2</sub>SO<sub>4</sub> çözeltisi, 0,1 M Ca(OH)<sub>2</sub> çözeltisi ile yavaş yavaş titre ediliyor ve aşağıdaki eğri elde ediliyor. Grafikteki V, x, y, z ve t değerlerini bulun.</p>
     <figure>
@@ -2216,7 +2321,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
       </g>
       <circle cx="290" cy="170" r="5.5" fill="#F85300"/>
     </svg>
-    <figcaption><span class="sekil-no">Şekil 16</span> · Turuncu nokta dönüm noktasıdır. Grafik şematiktir, eksenler ölçekli çizilmemiştir.</figcaption>
+    <figcaption><span class="sekil-no">Şekil 17</span> · Turuncu nokta dönüm noktasıdır. Grafik şematiktir, eksenler ölçekli çizilmemiştir.</figcaption>
     </figure>
     <p class="veri">log5 = 0,7</p>
     <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
@@ -2242,7 +2347,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 58</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 62</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Kütlece %49'luk, özkütlesi 1,2 g/mL olan 100 mL H<sub>2</sub>SO<sub>4</sub> çözeltisine bir miktar NaOH katısı eklendiğinde oluşan çözeltinin 25 °C'deki pH değeri 13 oluyor. Buna göre eklenen NaOH kaç gramdır?</p>
     <p class="veri">NaOH = 40 g/mol &nbsp;·&nbsp; H<sub>2</sub>SO<sub>4</sub> = 98 g/mol &nbsp;·&nbsp; hacim değişimi ihmal edilecek</p>
@@ -2276,7 +2381,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 59</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 63</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Bir sulu çözelti için T<sub>1</sub> ve T<sub>2</sub> sıcaklıklarında pH ile pOH değerleri arasındaki ilişkiyi gösteren grafik aşağıda verilmiştir.</p>
     <figure>
@@ -2302,7 +2407,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
       <text x="470" y="180" font-size="13" font-weight="700" fill="#C7381A">T₁</text>
       <text x="450" y="222" font-size="13" font-weight="700" fill="#3B6FB0">T₂</text>
     </svg>
-    <figcaption><span class="sekil-no">Şekil 17</span> · İki farklı sıcaklıkta pH + pOH toplamı farklıdır.</figcaption>
+    <figcaption><span class="sekil-no">Şekil 18</span> · İki farklı sıcaklıkta pH + pOH toplamı farklıdır.</figcaption>
     </figure>
     <ul class="oncul">
       <li><b>I.</b> Sıcaklıklar arasında T<sub>1</sub> &gt; T<sub>2</sub> ilişkisi vardır.</li>
@@ -2328,7 +2433,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 60</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 64</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Asit ya da baz oldukları bilinen X ve Y maddelerinin sulu çözeltileri tepkimeye sokuluyor. Buna göre aşağıdaki ifadelerden hangileri <b>kesinlikle</b> doğrudur?</p>
     <ul class="oncul">
@@ -2353,7 +2458,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 61</span><span class="seviye s-zor">Zor</span></div>
+  <div class="ust-serit"><span class="numara">Soru 65</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">HX ve HY zayıf asitlerinin t °C'deki pK<sub>a</sub> değerleri arasında <b>pK<sub>a</sub>(HX) &gt; pK<sub>a</sub>(HY)</b> ilişkisi vardır. t °C'deki eşit derişimli HX ve HY sulu çözeltileri ile ilgili hangi yargılar doğrudur?</p>
     <ul class="oncul">
@@ -2379,7 +2484,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 62</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 66</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Oda koşullarında bulunan HX çözeltisine saf su ilave ediliyor. Hacim ile H<sup>+</sup> iyonu derişiminin değişimi grafikteki gibi oluyor. Bu çözelti için ne söylenebilir?</p>
     <figure>
@@ -2396,7 +2501,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
       <g font-size="12.5" fill="#14110F" text-anchor="end"><text x="94" y="65">0,006</text><text x="94" y="177">0,003</text></g>
       <g font-size="12.5" fill="#14110F" text-anchor="middle"><text x="220" y="250">100</text><text x="470" y="250">300</text></g>
     </svg>
-    <figcaption><span class="sekil-no">Şekil 18</span> · Hacim 3 katına çıkarken derişim yalnızca yarıya inmiş.</figcaption>
+    <figcaption><span class="sekil-no">Şekil 19</span> · Hacim 3 katına çıkarken derişim yalnızca yarıya inmiş.</figcaption>
     </figure>
     <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
     <ol class="adim">
@@ -2446,7 +2551,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <text x="330" y="132" font-size="12.5" fill="#1B6B4A" text-anchor="middle">Florür ve tükürük, erken aşamada mineyi <tspan font-weight="700">yeniden mineralize eder</tspan>.</text>
   <defs><marker id="okd" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#14110F"/></marker></defs>
 </svg>
-<figcaption><span class="sekil-no">Şekil 19</span> · Diş çürüğü, bakterilerin şekeri aside dönüştürmesiyle başlar. Minede beyaz noktalar oluşması çürümenin <b>erken belirtisidir</b>.</figcaption>
+<figcaption><span class="sekil-no">Şekil 20</span> · Diş çürüğü, bakterilerin şekeri aside dönüştürmesiyle başlar. Minede beyaz noktalar oluşması çürümenin <b>erken belirtisidir</b>.</figcaption>
 </figure>
 <ul>
   <li>Ağız içi pH'si homeostazinin bir parçasıdır. Limon, turşu ve gazlı içecek gibi asitli gıdaların sık tüketimi ağız pH'sini düşürür.</li>
@@ -2480,7 +2585,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 63</span><span class="seviye s-zor">Zor</span></div>
+  <div class="ust-serit"><span class="numara">Soru 67</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Bir market rafında pH değerleri farklı üç diş macunu bulunmaktadır: A macununun pH'si 7,5 &nbsp;·&nbsp; B macununun pH'si 8,5 &nbsp;·&nbsp; C macununun pH'si 10.</p>
     <ul class="oncul">
@@ -2504,7 +2609,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </div>
 
 <div class="soru">
-  <div class="ust-serit"><span class="numara">Soru 64</span><span class="seviye s-ileri">İleri</span></div>
+  <div class="ust-serit"><span class="numara">Soru 68</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Mide yanması şikâyeti olan bir kişi eczaneden antasit alıyor. Antasitlerde NaOH gibi kuvvetli bazlar yerine Mg(OH)<sub>2</sub>, Al(OH)<sub>3</sub> veya NaHCO<sub>3</sub> kullanılır.</p>
     <ul class="siklar">
@@ -2540,7 +2645,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
       <details><summary>Cevabı gör</summary><p>[H<sub>3</sub>O<sup>+</sup>]² = 10<sup>−14</sup> × 10<sup>8</sup> = 10<sup>−6</sup> → [H<sub>3</sub>O<sup>+</sup>] = 10<sup>−3</sup> → <b>pH = 3</b></p></details>
     </li>
     <li><span class="tip">Konjuge çift</span>HPO<sub>4</sub><sup>2−</sup> iyonunun konjuge asidi ve konjuge bazı nedir?
-      <details><summary>Cevabı gör</summary><p>Konjuge asidi <b>H<sub>2</sub>PO<sub>4</sub><sup>−</sup></b>, konjuge bazı <b>PO<sub>4</sub><sup>3−</sup></b> · amfiprotiktir.</p></details>
+      <details><summary>Cevabı gör</summary><p>Konjuge asidi <b>H<sub>2</sub>PO<sub>4</sub><sup>−</sup></b>, konjuge bazı <b>PO<sub>4</sub><sup>3−</sup></b> · hem asit hem baz gibi davranır.</p></details>
     </li>
     <li><span class="tip">Asit-baz teorileri</span>BF<sub>3</sub> hangi teoriye göre asittir? Gerekçesi nedir?
       <details><summary>Cevabı gör</summary><p><b>Yalnız Lewis</b> teorisine göre. Yapısında H olmadığı için proton veremez; borun boş orbitali elektron çifti <b>alır</b>.</p></details>
