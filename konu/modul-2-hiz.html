@@ -1,1 +1,1001 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Modül 2 · Kimyasal Tepkimelerde Hız — 11. Sınıf Kimya | kimyamed</title>
+<meta name="description" content="Çarpışma teorisi, aktivasyon enerjisi, tepkime hızı, hıza etki eden faktörler, hız denklemi ve mekanizmalar. Grafikli konu anlatımı ve 20 çözümlü soru.">
+<meta name="theme-color" content="#F85300">
+<style>
+:root{
+  --turuncu:#F85300;--turuncu-yumusak:#FFF1E9;--murekkep:#14110F;--gri:#5C554F;
+  --cizgi:#E7E0D9;--kagit:#FBF8F5;--beyaz:#FFFFFF;--mavi:#0B5C8A;--mavi-yumusak:#EAF3F8;
+  --yesil:#1B6B4A;--r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--kagit);color:var(--murekkep);
+  font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:17px;line-height:1.68;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding:0 18px}
+.ust{position:sticky;top:0;z-index:50;background:rgba(251,248,245,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--cizgi)}
+.ust .wrap{display:flex;align-items:center;gap:12px;height:56px}
+.marka{font-weight:800;letter-spacing:-.02em;font-size:18px;color:var(--murekkep);text-decoration:none}
+.marka span{color:var(--turuncu)}
+.ust .etiket{margin-left:auto;font-size:12px;color:var(--gri);text-transform:uppercase;letter-spacing:.08em}
+#ilerleme{position:absolute;left:0;bottom:-1px;height:2px;background:var(--turuncu);width:0}
+
+.hero{padding:40px 0 24px;border-bottom:1px solid var(--cizgi)}
+.hero .modul{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--turuncu)}
+.hero h1{font-size:clamp(28px,7vw,42px);line-height:1.1;letter-spacing:-.03em;margin:8px 0 12px;font-weight:800}
+.hero p{color:var(--gri);margin:0 0 16px}
+.sayac{display:flex;gap:22px;flex-wrap:wrap;border-top:1px solid var(--cizgi);padding-top:14px}
+.sayac div{font-size:13px;color:var(--gri)}
+.sayac b{display:block;font-size:22px;color:var(--murekkep);line-height:1.2}
+
+h2{font-size:clamp(23px,5.5vw,30px);letter-spacing:-.02em;margin:44px 0 8px;line-height:1.18;padding-top:8px}
+h2 .no{color:var(--turuncu);font-size:.62em;font-weight:800;display:block;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+h3{font-size:20px;margin:30px 0 10px;letter-spacing:-.01em}
+h4{font-size:17px;margin:22px 0 8px}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:6px 0}
+sub,sup{line-height:0}
+.form{font-family:"SFMono-Regular",Consolas,Menlo,monospace;background:var(--beyaz);border:1px solid var(--cizgi);border-radius:8px;padding:2px 7px;font-size:.94em;white-space:nowrap}
+.blokform{display:block;text-align:center;background:var(--beyaz);border:1px solid var(--cizgi);border-left:3px solid var(--turuncu);border-radius:8px;padding:14px 12px;margin:16px 0;overflow-x:auto}
+
+.kart{border-radius:var(--r);padding:16px 18px;margin:18px 0;border:1px solid var(--cizgi);background:var(--beyaz)}
+.kart .baslik{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.kart p:last-child,.kart ul:last-child,.kart ol:last-child{margin-bottom:0}
+.kural{border-left:4px solid var(--turuncu);background:var(--turuncu-yumusak);border-color:#F8D6C2}
+.kural .baslik{color:var(--turuncu)}
+.tuzak{border-left:4px solid #C7381A;background:#FFF4F1;border-color:#F5CFC5}
+.tuzak .baslik{color:#C7381A}
+
+.soru{border:1px solid var(--cizgi);border-radius:var(--r);background:var(--beyaz);margin:20px 0;overflow:hidden}
+.soru .ust-serit{display:flex;align-items:center;gap:10px;padding:11px 16px;background:#F3EEE9;border-bottom:1px solid var(--cizgi)}
+.soru .numara{font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mavi)}
+.seviye{margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.s-kolay{background:#E4F2EA;color:var(--yesil)}
+.s-orta{background:#FFF0DC;color:#9A5B00}
+.s-zor{background:#FBE3DE;color:#B02E10}
+.soru .govde{padding:14px 16px 16px}
+.soru .metin{font-weight:600;margin-bottom:6px}
+.soru .veri{font-size:15px;color:var(--gri);margin-bottom:0}
+.oncul{list-style:none;padding-left:0;margin:10px 0 0;font-size:15px;color:var(--gri)}
+.oncul li{margin:5px 0;padding-left:30px;text-indent:-30px}
+.oncul b{color:var(--murekkep)}
+.adim{counter-reset:adim;list-style:none;padding-left:0;margin:14px 0 0}
+.adim li{counter-increment:adim;position:relative;padding-left:34px;margin:10px 0}
+.adim li::before{content:counter(adim);position:absolute;left:0;top:2px;width:23px;height:23px;border-radius:50%;background:var(--mavi);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.cevap{margin-top:14px;padding:10px 14px;border-radius:10px;background:var(--mavi-yumusak);border:1px solid #CFE2EE;font-weight:700}
+.cozum{margin-top:16px;border-top:1px dashed var(--cizgi);padding-top:12px}
+.cozum summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:700;color:var(--mavi);background:var(--mavi-yumusak);
+  border:1px solid #CFE2EE;padding:8px 15px;border-radius:999px;user-select:none;transition:background .15s}
+.cozum summary:hover{background:#DCEBF4}
+.cozum summary::-webkit-details-marker{display:none}
+.cozum summary svg{width:17px;height:17px;flex:none}
+.cozum summary .kapali{display:inline-flex;align-items:center;gap:8px}
+.cozum summary .acik{display:none;align-items:center;gap:8px}
+.cozum[open] summary .kapali{display:none}
+.cozum[open] summary .acik{display:inline-flex}
+.cozum[open] summary{color:var(--gri);background:#F3EEE9;border-color:var(--cizgi)}
+.cozum .adim{margin-top:16px}
+
+
+.tablo-sar{overflow-x:auto;margin:16px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--beyaz);min-width:400px}
+th,td{border:1px solid var(--cizgi);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#F3EEE9;font-weight:700;font-size:13px}
+
+figure{margin:20px 0;background:var(--beyaz);border:1px solid var(--cizgi);border-radius:var(--r);padding:14px}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
+
+.test{background:var(--murekkep);color:#F5F1EC;border-radius:var(--r);padding:22px 20px;margin:36px 0}
+.test h3{color:#fff;margin:0 0 4px;font-size:21px}
+.test .alt-baslik{color:#B9AFA5;font-size:14px;margin-bottom:16px}
+.test ol{padding-left:20px}
+.test li{margin:14px 0}
+.test details{margin-top:8px;background:rgba(255,255,255,.07);border-radius:9px;padding:8px 12px}
+.test summary{cursor:pointer;font-size:13px;font-weight:700;color:#FF8B4D;letter-spacing:.04em}
+.test details p{margin:8px 0 2px;font-size:15px;color:#EDE7E0}
+
+.alt{border-top:1px solid var(--cizgi);margin-top:44px;padding:24px 0 60px;color:var(--gri);font-size:15px}
+.yukari{position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;background:var(--turuncu);color:#fff;border:none;font-size:20px;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(248,83,0,.35);z-index:40}
+.yukari.gor{display:flex}
+:focus-visible{outline:3px solid var(--turuncu);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="ust">
+  <div class="wrap">
+    <a class="marka" href="./">kimya<span>med</span></a>
+    <span class="etiket">Modül 2 · Hız</span>
+  </div>
+  <div id="ilerleme"></div>
+</header>
+
+<main class="wrap">
+
+<section class="hero">
+  <div class="modul">1. Tema · Etkileşim</div>
+  <h1>Kimyasal tepkimelerde hız</h1>
+  <p>Çarpışma teorisinden mekanizmalara kadar 1.2 bölümünün tamamı. Enerji bir tepkimenin <b>olup olmayacağını</b>, hız <b>ne kadar sürede</b> olacağını söyler; ikisi birbirinden bağımsızdır.</p>
+  <div class="sayac">
+    <div><b>30</b>çözümlü soru</div>
+    <div><b>8</b>alt başlık</div>
+    <div><b>8</b>kendin çöz</div>
+  </div>
+</section>
+
+<!-- ============ 1 ============ -->
+<h2><span class="no">Bölüm 1</span>Tepkimenin şartları ve çarpışma teorisi</h2>
+
+<p>Tanecikler tepkimeye girmek için önce <b>çarpışmalıdır</b>. Ama her çarpışma tepkimeyle sonuçlanmaz; sonuçlananlara <b>etkin çarpışma</b> denir.</p>
+
+<div class="kart kural">
+  <div class="baslik">Kural — etkin çarpışmanın iki şartı</div>
+  <ol>
+    <li><b>Yeterli enerji:</b> çarpışan taneciklerin toplam kinetik enerjisi <b>aktivasyon enerjisine (E<sub>a</sub>)</b> eşit ya da ondan büyük olmalı. Eski bağları koparmak için bu enerji gerekir.</li>
+    <li><b>Uygun yönelim (geometri):</b> tanecikler bağın kurulacağı yüzlerinden çarpışmalı. Yeterli enerjiyle ama yanlış açıyla çarpışan tanecikler sekip ayrılır.</li>
+  </ol>
+  <p>Bu yüzden bir kaptaki çarpışma sayısı milyarlarca olsa da bunların yalnızca çok küçük bir kısmı ürün verir.</p>
+</div>
+
+<h3>Eşik enerjisi</h3>
+<p>Kinetik enerjisi düşük iki taneciğin çarpışmasında bağların kırılması olası değildir. Bir tepkimenin gerçekleşebilmesi için çarpışan taneciklerin sahip olması gereken <b>minimum toplam kinetik enerjiye</b>, tepkimenin <b>eşik değeri (eşik enerjisi)</b> denir.</p>
+<p>Kinetik enerjisi eşik değerine <b>eşit ya da ondan büyük</b> olan tanecikler etkin çarpışma yapabilir. Enerji tepesinin yüksekliği bu eşiği belirler: eşik enerjisi ne kadar yüksekse, onu aşabilen tanecik oranı o kadar azdır ve tepkime o kadar yavaştır.</p>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 1</span><span class="seviye s-kolay">Kolay</span></div>
+  <div class="govde">
+    <p class="metin">Aşağıdaki ifadelerden hangileri doğrudur?</p>
+    <p class="veri">I. Bir kaptaki her çarpışma tepkimeyle sonuçlanır.<br>II. Aktivasyon enerjisinden düşük enerjili çarpışmalar etkisizdir.<br>III. Yeterli enerjiyle çarpışan tanecikler her durumda ürün verir.<br>IV. Kinetik enerjisi eşik değerinden büyük olan tanecikler etkin çarpışma yapabilir.</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>I yanlış: çarpışmaların çok küçük bir kısmı etkindir.</li>
+      <li>II doğru: enerji şartı sağlanmazsa bağlar kopmaz.</li>
+      <li>III yanlış: enerji yetse bile <b>yönelim</b> uygun değilse tepkime olmaz.</li>
+      <li>IV doğru: Kitabın tanımı gereği eşik değerine <b>eşit ya da ondan büyük</b> kinetik enerjiye sahip tanecikler etkin çarpışma yapabilir.</li>
+    </ol>
+    <div class="cevap">Doğru olanlar: II ve IV</div>
+    </details>
+  </div>
+</div>
+
+<!-- ============ 2 ============ -->
+<h2><span class="no">Bölüm 2</span>Aktivasyon enerjisi ve potansiyel enerji diyagramı</h2>
+
+<figure>
+<svg viewBox="0 0 660 320" role="img" aria-label="Ekzotermik bir tepkimenin potansiyel enerji diyagramı">
+  <line x1="60" y1="20" x2="60" y2="270" stroke="#14110F" stroke-width="2"/>
+  <line x1="60" y1="270" x2="640" y2="270" stroke="#14110F" stroke-width="2"/>
+  <text x="30" y="150" font-size="13" fill="#5C554F" text-anchor="middle" transform="rotate(-90 30,150)">Potansiyel enerji (kJ)</text>
+  <text x="350" y="296" font-size="13" fill="#5C554F" text-anchor="middle">Tepkime ilerlemesi →</text>
+
+  <!-- katalizorsuz yol -->
+  <path d="M90,180 L150,180 C230,180 250,55 330,55 C410,55 425,225 490,225 L600,225"
+        fill="none" stroke="#0B5C8A" stroke-width="3"/>
+  <!-- katalizorlu yol -->
+  <path d="M150,180 C230,180 255,110 330,110 C405,110 420,225 490,225"
+        fill="none" stroke="#1B6B4A" stroke-width="2.5" stroke-dasharray="6 5"/>
+
+  <!-- seviye cizgileri -->
+  <line x1="150" y1="180" x2="620" y2="180" stroke="#E7E0D9" stroke-width="1"/>
+  <line x1="330" y1="55" x2="620" y2="55" stroke="#E7E0D9" stroke-width="1"/>
+  <line x1="490" y1="225" x2="620" y2="225" stroke="#E7E0D9" stroke-width="1"/>
+
+  <!-- Ea ileri -->
+  <line x1="185" y1="180" x2="185" y2="58" stroke="#F85300" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/>
+  <text x="192" y="120" font-size="13" font-weight="700" fill="#F85300">E<tspan font-size="10" dy="3">a,ileri</tspan></text>
+  <!-- Ea geri -->
+  <line x1="565" y1="225" x2="565" y2="58" stroke="#B02E10" stroke-width="2" marker-start="url(#b)" marker-end="url(#b)"/>
+  <text x="500" y="150" font-size="13" font-weight="700" fill="#B02E10">E<tspan font-size="10" dy="3">a,geri</tspan></text>
+  <!-- delta H -->
+  <line x1="625" y1="180" x2="625" y2="225" stroke="#14110F" stroke-width="2" marker-start="url(#c)" marker-end="url(#c)"/>
+  <text x="600" y="205" font-size="13" font-weight="700" fill="#14110F">ΔH</text>
+
+  <text x="95" y="172" font-size="13" fill="#0B5C8A">Tepkenler</text>
+  <text x="497" y="245" font-size="13" fill="#0B5C8A">Ürünler</text>
+  <text x="336" y="45" font-size="12" fill="#5C554F">eşik enerjisi düzeyi</text>
+  <text x="340" y="132" font-size="12" fill="#1B6B4A">katalizörlü yol</text>
+
+  <defs>
+    <marker id="a" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#F85300"/></marker>
+    <marker id="b" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#B02E10"/></marker>
+    <marker id="c" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#14110F"/></marker>
+  </defs>
+</svg>
+<figcaption>Ekzotermik tepkime: ürünler tepkenlerden alçakta. Katalizör tepeyi alçaltır, <b>seviyeleri değiştirmez</b>.</figcaption>
+</figure>
+
+<div class="kart kural">
+  <div class="baslik">Kural — diyagramdan okunacak her şey</div>
+  <ul>
+    <li>Tepkenler seviyesinden tepeye olan fark = <b>E<sub>a,ileri</sub></b></li>
+    <li>Ürünler seviyesinden tepeye olan fark = <b>E<sub>a,geri</sub></b></li>
+    <li><span class="form">ΔH = E<sub>a,ileri</sub> − E<sub>a,geri</sub></span></li>
+    <li>Ekzotermikte E<sub>a,ileri</sub> &lt; E<sub>a,geri</sub>; endotermikte E<sub>a,ileri</sub> &gt; E<sub>a,geri</sub></li>
+    <li>E<sub>a</sub> <b>küçükse tepkime hızlıdır</b>. E<sub>a</sub> ile ΔH arasında bir bağ yoktur: çok ekzotermik bir tepkime çok yavaş olabilir.</li>
+    <li>Katalizör hem E<sub>a,ileri</sub>'yi hem E<sub>a,geri</sub>'yi <b>aynı miktarda</b> düşürür; ΔH değişmez.</li>
+  </ul>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 2</span><span class="seviye s-kolay">Kolay</span></div>
+  <div class="govde">
+    <p class="metin">Bir tepkimede E<sub>a,ileri</sub> = 150 kJ ve ΔH = −60 kJ'dür. E<sub>a,geri</sub> kaç kJ'dür?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>ΔH = E<sub>a,ileri</sub> − E<sub>a,geri</sub></li>
+      <li>−60 = 150 − E<sub>a,geri</sub></li>
+      <li>E<sub>a,geri</sub> = 150 + 60 = 210 kJ</li>
+    </ol>
+    <div class="cevap">E<sub>a,geri</sub> = 210 kJ (ekzotermik olduğu için geri aktivasyon enerjisi daha büyük)</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 3</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">Bir tepkimenin diyagramında tepkenlerin enerjisi 40 kJ, eşik enerjisi düzeyi 130 kJ, ürünlerin enerjisi 70 kJ'dür. E<sub>a,ileri</sub>, E<sub>a,geri</sub> ve ΔH'yi bulun.</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>E<sub>a,ileri</sub> = 130 − 40 = <b>90 kJ</b></li>
+      <li>E<sub>a,geri</sub> = 130 − 70 = <b>60 kJ</b></li>
+      <li>ΔH = 70 − 40 = <b>+30 kJ</b> (ya da 90 − 60 = +30, aynı sonuç)</li>
+      <li>ΔH pozitif → tepkime <b>endotermik</b>; nitekim E<sub>a,ileri</sub> &gt; E<sub>a,geri</sub>.</li>
+    </ol>
+    <div class="cevap">E<sub>a,ileri</sub> = 90 kJ, E<sub>a,geri</sub> = 60 kJ, ΔH = +30 kJ (endotermik)</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 4</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">Soru 3'teki tepkimeye katalizör eklendiğinde E<sub>a,ileri</sub> 90 kJ'den 50 kJ'ye düşüyor. Bu durumda E<sub>a,geri</sub> ve ΔH ne olur? Eşik enerjisi düzeyi kaç olur?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Katalizör <b>ΔH'yi değiştirmez</b> → ΔH yine +30 kJ.</li>
+      <li>ΔH = E<sub>a,ileri</sub> − E<sub>a,geri</sub> → 30 = 50 − E<sub>a,geri</sub> → E<sub>a,geri</sub> = <b>20 kJ</b></li>
+      <li>Yani geri aktivasyon enerjisi de 60'tan 20'ye, <b>aynı 40 kJ kadar</b> düşmüştür.</li>
+      <li>Yeni tepe noktası = tepkenler + yeni E<sub>a,ileri</sub> = 40 + 50 = <b>90 kJ</b></li>
+    </ol>
+    <div class="cevap">E<sub>a,geri</sub> = 20 kJ, ΔH = +30 kJ (değişmedi), tepe 90 kJ'ye indi.</div>
+    </details>
+  </div>
+</div>
+
+<!-- ============ 3 ============ -->
+<h2><span class="no">Bölüm 3</span>Ortalama tepkime hızı</h2>
+
+<p>Tepkime hızı, birim zamanda harcanan tepken veya oluşan ürün miktarıdır. Birimi genelde <b>mol/L·s</b>'dir.</p>
+<span class="blokform">r = − Δ[Tepken] / (a·Δt) &nbsp;=&nbsp; + Δ[Ürün] / (b·Δt)</span>
+
+<figure>
+<svg viewBox="0 0 660 300" role="img" aria-label="Derişim zaman grafiği: tepken azalır, ürün artar, sonra sabitlenir">
+  <line x1="60" y1="20" x2="60" y2="250" stroke="#14110F" stroke-width="2"/>
+  <line x1="60" y1="250" x2="630" y2="250" stroke="#14110F" stroke-width="2"/>
+  <text x="30" y="135" font-size="13" fill="#5C554F" text-anchor="middle" transform="rotate(-90 30,135)">Derişim (mol/L)</text>
+  <text x="345" y="278" font-size="13" fill="#5C554F" text-anchor="middle">Zaman (s) →</text>
+  <path d="M60,50 C170,140 260,195 400,205 L610,207" fill="none" stroke="#0B5C8A" stroke-width="3"/>
+  <path d="M60,250 C170,165 260,115 400,105 L610,103" fill="none" stroke="#1B6B4A" stroke-width="3"/>
+  <text x="500" y="196" font-size="13" fill="#0B5C8A">Tepken</text>
+  <text x="500" y="94" font-size="13" fill="#1B6B4A">Ürün</text>
+  <line x1="140" y1="250" x2="140" y2="20" stroke="#E7E0D9" stroke-dasharray="4 4"/>
+  <text x="146" y="36" font-size="12" fill="#F85300">eğim dik → hız büyük</text>
+  <line x1="470" y1="250" x2="470" y2="20" stroke="#E7E0D9" stroke-dasharray="4 4"/>
+  <text x="330" y="36" font-size="12" fill="#F85300" text-anchor="start"> </text>
+  <text x="476" y="52" font-size="12" fill="#F85300">eğim yatay → hız ≈ 0</text>
+</svg>
+<figcaption>Hız zamanla <b>azalır</b>: tepken azaldıkça çarpışma sayısı düşer. Anlık hız, eğrinin o noktadaki teğetinin eğimidir.</figcaption>
+</figure>
+
+<div class="kart kural">
+  <div class="baslik">Kural</div>
+  <ul>
+    <li>Tepken derişimi azaldığı için Δ negatiftir; hızı pozitif yapmak için başına <b>eksi</b> konur.</li>
+    <li>Her maddenin hızı <b>kendi katsayısıyla doğru orantılıdır</b>. Ortak bir "tepkime hızı" için her birini kendi katsayısına böl.</li>
+    <li><span class="form">N<sub>2</sub> + 3H<sub>2</sub> → 2NH<sub>3</sub></span> → r = r(N<sub>2</sub>) = r(H<sub>2</sub>)/3 = r(NH<sub>3</sub>)/2. En hızlı değişen madde <b>katsayısı en büyük</b> olandır.</li>
+    <li>Katı ve saf sıvılar derişim cinsinden hız ifadesine girmez.</li>
+    <li>Mol verilmişse önce <b>hacme bölüp</b> derişime çevir.</li>
+  </ul>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 5</span><span class="seviye s-kolay">Kolay</span></div>
+  <div class="govde">
+    <p class="metin">2A(g) → B(g) tepkimesinde A'nın derişimi 4 saniyede 0,50 mol/L'den 0,30 mol/L'ye düşüyor. Tepkime hızı kaçtır?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Δ[A] = 0,30 − 0,50 = −0,20 mol/L</li>
+      <li>A'nın harcanma hızı = 0,20 ÷ 4 = 0,05 mol/L·s</li>
+      <li>Tepkime hızı için katsayıya böl: 0,05 ÷ 2 = 0,025 mol/L·s</li>
+    </ol>
+    <div class="cevap">r = 0,025 mol/L·s &nbsp;(B'nin oluşma hızı da 0,025 mol/L·s'dir)</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 6</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">2 L'lik kapta N<sub>2</sub>(g) + 3H<sub>2</sub>(g) → 2NH<sub>3</sub>(g) tepkimesinde 5 saniyede 0,30 mol NH<sub>3</sub> oluşuyor. Tepkime hızını ve H<sub>2</sub>'nin harcanma hızını bulun.</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Derişime çevir: Δ[NH<sub>3</sub>] = 0,30 ÷ 2 = 0,15 mol/L</li>
+      <li>NH<sub>3</sub> oluşma hızı = 0,15 ÷ 5 = 0,03 mol/L·s</li>
+      <li>Tepkime hızı = 0,03 ÷ 2 = <b>0,015 mol/L·s</b></li>
+      <li>H<sub>2</sub> katsayısı 3 → r(H<sub>2</sub>) = 3 × 0,015 = <b>0,045 mol/L·s</b></li>
+    </ol>
+    <div class="cevap">r = 0,015 mol/L·s &nbsp;·&nbsp; r(H<sub>2</sub>) = 0,045 mol/L·s</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 7</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">2N<sub>2</sub>O<sub>5</sub>(g) → 4NO<sub>2</sub>(g) + O<sub>2</sub>(g) tepkimesinde O<sub>2</sub> gazı 0,02 mol/L·s hızla oluşuyor. N<sub>2</sub>O<sub>5</sub>'in harcanma ve NO<sub>2</sub>'nin oluşma hızları kaçtır?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>O<sub>2</sub>'nin katsayısı 1 → tepkime hızı r = 0,02 ÷ 1 = 0,02 mol/L·s</li>
+      <li>r(N<sub>2</sub>O<sub>5</sub>) = 2 × 0,02 = <b>0,04 mol/L·s</b></li>
+      <li>r(NO<sub>2</sub>) = 4 × 0,02 = <b>0,08 mol/L·s</b></li>
+      <li>Kontrol: hızların oranı katsayı oranına eşit → 0,04 : 0,08 : 0,02 = 2 : 4 : 1 ✔</li>
+    </ol>
+    <div class="cevap">r(N<sub>2</sub>O<sub>5</sub>) = 0,04 &nbsp;·&nbsp; r(NO<sub>2</sub>) = 0,08 mol/L·s</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 8</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">5 L'lik kapalı kapta 1 mol X<sub>2</sub> ve 3 mol Y<sub>2</sub> gazı ile X<sub>2</sub>(g) + 3Y<sub>2</sub>(g) → 2XY<sub>3</sub>(g) tepkimesi başlatılıyor. 10 saniye sonunda kapta 0,6 mol X<sub>2</sub> kaldığına göre XY<sub>3</sub>'ün ortalama oluşma hızı kaçtır?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Harcanan X<sub>2</sub> = 1 − 0,6 = 0,4 mol</li>
+      <li>Katsayı oranı 1 : 2 → oluşan XY<sub>3</sub> = 2 × 0,4 = 0,8 mol</li>
+      <li>Derişim değişimi: 0,8 ÷ 5 = 0,16 mol/L</li>
+      <li>r(XY<sub>3</sub>) = 0,16 ÷ 10 = <b>0,016 mol/L·s</b></li>
+    </ol>
+    <div class="cevap">r(XY<sub>3</sub>) = 0,016 mol/L·s &nbsp;(tepkime hızı ise 0,008 mol/L·s)</div>
+    </details>
+  </div>
+</div>
+
+<div class="kart tuzak">
+  <div class="baslik">Tuzak</div>
+  <p>"Tepkime hızı" ile "bir maddenin hızı" farklı sayılardır. Soru <b>hangisini</b> istiyor, dikkatle oku. Ayrıca hacim verilmemişse mol/L·s cinsinden cevap veremezsin; o zaman mol/s ile çalışılır.</p>
+</div>
+
+<!-- ============ 4 ============ -->
+<h2><span class="no">Bölüm 4</span>Hıza etki eden faktörler</h2>
+
+<p>Her faktör tek bir mantıkla açıklanır: <b>çarpışma sayısını artırır</b>, <b>etkin çarpışma oranını artırır</b> ya da <b>aktivasyon enerjisini düşürür</b>.</p>
+
+<div class="tablo-sar">
+<table>
+<tr><th>Faktör</th><th>Etkisi</th><th>Nedeni</th></tr>
+<tr><td>Madde cinsi</td><td>İyonik &gt; kovalent</td><td>Sulu ortamda iyonlar zaten ayrışmıştır, bağ kırmak gerekmez → E<sub>a</sub> çok küçüktür.</td></tr>
+<tr><td>Fiziksel hâl</td><td>Gaz &gt; çözelti &gt; sıvı &gt; katı</td><td>Tanecik hareketliliği ve temas imkânı arttıkça çarpışma sayısı artar.</td></tr>
+<tr><td>Derişim</td><td>Artarsa hız artar</td><td>Birim hacimde daha çok tanecik → daha çok çarpışma. Gazlarda basınç artışı da derişim artışıdır.</td></tr>
+<tr><td>Sıcaklık</td><td>Hızı <b>en çok</b> artıran</td><td>Hem çarpışma sayısı artar hem de E<sub>a</sub>'yı aşabilen tanecik oranı çok yükselir. İkincisi baskındır.</td></tr>
+<tr><td>Katalizör</td><td>Artırır</td><td>Daha düşük E<sub>a</sub>'lı <b>yeni bir yol</b> açar.</td></tr>
+<tr><td>Temas yüzeyi</td><td>Büyürse artar</td><td>Katı toz hâline gelince aynı kütlede çok daha fazla tanecik yüzeye çıkar.</td></tr>
+</table>
+</div>
+
+<div class="kart kural">
+  <div class="baslik">Kural — katalizör dosyası</div>
+  <ul>
+    <li>E<sub>a,ileri</sub> ve E<sub>a,geri</sub>'yi <b>eşit miktarda</b> düşürür → ileri ve geri tepkimeyi eşit oranda hızlandırır.</li>
+    <li><b>ΔH'yi, ürün miktarını ve verimi değiştirmez.</b> Sadece aynı sonuca <b>daha erken</b> varılır.</li>
+    <li>Tepkimeye girer ama sonunda <b>değişmeden geri çıkar</b>; mekanizmanın ilk basamağında harcanır, son basamağında yeniden oluşur.</li>
+    <li>Tepkimenin izlediği <b>yolu değiştirir</b>; yeni yolun eşik enerjisi daha düşüktür.</li>
+    <li><b>İnhibitör (negatif katalizör)</b> E<sub>a</sub>'yı yükselterek hızı düşürür.</li>
+  </ul>
+</div>
+
+<div class="kart tuzak">
+  <div class="baslik">Tuzak</div>
+  <ul>
+    <li>"Sıcaklık artınca E<sub>a</sub> düşer" <b>yanlıştır</b>. E<sub>a</sub> tepkimenin kendi özelliğidir; onu yalnızca katalizör değiştirir. Sıcaklık, E<sub>a</sub>'yı <b>aşabilen tanecik sayısını</b> artırır.</li>
+    <li>Katı bir maddenin <b>miktarını</b> artırmak (aynı parça boyutuyla) hızı değiştirmez; <b>yüzeyini</b> artırmak değiştirir.</li>
+    <li>Sabit hacimde eklenen <b>inert gaz</b> hızı değiştirmez: tepkenlerin derişimi aynı kalır.</li>
+  </ul>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 9</span><span class="seviye s-kolay">Kolay</span></div>
+  <div class="govde">
+    <p class="metin">Kalsiyum karbonatın hidroklorik asitle tepkimesinde hızı artırmak için hangileri yapılabilir?</p>
+    <p class="veri">I. CaCO<sub>3</sub>'ü toz hâline getirmek &nbsp; II. Asidi seyreltmek &nbsp; III. Ortamı ısıtmak &nbsp; IV. Kabın hacmini büyütmek</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>I doğru: temas yüzeyi artar.</li>
+      <li>II yanlış: seyreltmek derişimi <b>düşürür</b>, hız azalır.</li>
+      <li>III doğru: sıcaklık hızı artırır.</li>
+      <li>IV yanlış: hacim büyürse çözelti seyrelir, hız düşer.</li>
+    </ol>
+    <div class="cevap">I ve III</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 10</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">Bir tepkimenin hızı her 10 °C'lik sıcaklık artışında 2 katına çıkmaktadır. Sıcaklık 20 °C'den 50 °C'ye çıkarılırsa hız kaç katına çıkar?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Artış: 50 − 20 = 30 °C</li>
+      <li>Kaç kez 10 °C: 30 ÷ 10 = 3 kez</li>
+      <li>Her seferinde 2 katı → 2 × 2 × 2 = 2<sup>3</sup></li>
+      <li>Hız 8 katına çıkar.</li>
+    </ol>
+    <div class="cevap">8 katına çıkar.</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 11</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">Bir tepkimeye katalizör eklendiğinde aşağıdakilerden hangileri değişir?</p>
+    <p class="veri">I. Aktivasyon enerjisi &nbsp; II. Tepkime entalpisi &nbsp; III. Oluşan ürün miktarı &nbsp; IV. Tepkimenin izlediği yol &nbsp; V. Tepkimenin süresi</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>I değişir: katalizörün tanımı budur, E<sub>a</sub>'yı düşürür.</li>
+      <li>II değişmez: tepken ve ürünlerin enerji seviyeleri aynı kalır.</li>
+      <li>III değişmez: verim aynı, sadece daha çabuk ulaşılır.</li>
+      <li>IV değişir: katalizör tepkimeye daha düşük eşik enerjili <b>yeni bir yol</b> açar.</li>
+      <li>V değişir: tepkime daha kısa sürede tamamlanır.</li>
+    </ol>
+    <div class="cevap">Değişenler: I, IV ve V</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 12</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">Aynı kütlede çinko örnekleri eşit derişimli HCl çözeltisine atılıyor. Hangi durumda H<sub>2</sub> gazı en hızlı çıkar?</p>
+    <p class="veri">I. Tek parça çinko, 25 °C &nbsp; II. Toz çinko, 25 °C &nbsp; III. Tek parça çinko, 50 °C &nbsp; IV. Toz çinko, 50 °C</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>İki değişken var: temas yüzeyi ve sıcaklık. İkisi de hızı artırır.</li>
+      <li>IV'te her iki faktör de en olumlu → en hızlı.</li>
+      <li>I'de her ikisi de en olumsuz → en yavaş.</li>
+      <li>Not: Dördünde de <b>toplam</b> H<sub>2</sub> miktarı aynıdır — çinko kütlesi eşit. Değişen sadece <b>süre</b>.</li>
+    </ol>
+    <div class="cevap">En hızlı IV, en yavaş I. Açığa çıkan toplam gaz hepsinde eşittir.</div>
+    </details>
+  </div>
+</div>
+
+<!-- ============ 5 ============ -->
+<h2><span class="no">Bölüm 5</span>Hız denklemi</h2>
+
+<span class="blokform">r = k · [A]<sup>m</sup> · [B]<sup>n</sup></span>
+<p><b>k:</b> hız sabiti (yalnızca sıcaklığa ve katalizöre bağlı). <b>m, n:</b> tepkime dereceleri. <b>m + n:</b> toplam derece.</p>
+
+<div class="kart kural">
+  <div class="baslik">Kural</div>
+  <ul>
+    <li>Dereceler <b>denklem katsayılarından okunamaz</b>, deneyle bulunur. Tek istisna: tepkime <b>tek basamaklıysa</b> katsayılar üs olarak yazılır.</li>
+    <li>Çok basamaklıda hız denklemi <b>en yavaş basamağa</b> göre yazılır.</li>
+    <li><b>Katı ve saf sıvılar</b> hız denkleminde yer almaz.</li>
+    <li>Derişim değişince <b>k değişmez</b>. k'yi yalnızca <b>sıcaklık ve katalizör</b> değiştirir.</li>
+    <li>k'nin birimi toplam dereceye göre değişir: 0. derece → mol/L·s, 1. derece → s<sup>−1</sup>, 2. derece → L/mol·s.</li>
+  </ul>
+</div>
+
+<div class="tablo-sar">
+<table>
+<tr><th>Derişim kaça katlanır</th><th>Hız kaça katlanır</th><th>Derece</th></tr>
+<tr><td>2</td><td>1 (değişmez)</td><td>0</td></tr>
+<tr><td>2</td><td>2</td><td>1</td></tr>
+<tr><td>2</td><td>4</td><td>2</td></tr>
+<tr><td>3</td><td>9</td><td>2</td></tr>
+<tr><td>2</td><td>8</td><td>3</td></tr>
+</table>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 13</span><span class="seviye s-kolay">Kolay</span></div>
+  <div class="govde">
+    <p class="metin">Tek basamakta gerçekleşen 2NO(g) + O<sub>2</sub>(g) → 2NO<sub>2</sub>(g) tepkimesinin hız denklemi nedir? NO derişimi 3 katına çıkarılırsa hız kaç katına çıkar?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Tepkime <b>tek basamaklı</b> olduğu için katsayılar üs olarak yazılabilir: r = k[NO]<sup>2</sup>[O<sub>2</sub>]</li>
+      <li>NO'nun derecesi 2 → 3<sup>2</sup> = 9</li>
+    </ol>
+    <div class="cevap">r = k[NO]<sup>2</sup>[O<sub>2</sub>] &nbsp;·&nbsp; hız 9 katına çıkar.</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 14</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">A + B → C tepkimesi için deney verileri veriliyor. Hız denklemini ve k'yi bulun.</p>
+    <div class="tablo-sar"><table>
+      <tr><th>Deney</th><th>[A] (M)</th><th>[B] (M)</th><th>r (M/s)</th></tr>
+      <tr><td>1</td><td>0,1</td><td>0,1</td><td>0,004</td></tr>
+      <tr><td>2</td><td>0,2</td><td>0,1</td><td>0,008</td></tr>
+      <tr><td>3</td><td>0,2</td><td>0,3</td><td>0,072</td></tr>
+    </table></div>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li><b>1 → 2:</b> [B] sabit, [A] 2 katına çıkmış, hız 2 katına çıkmış (0,004 → 0,008) → 2<sup>m</sup> = 2 → <b>m = 1</b></li>
+      <li><b>2 → 3:</b> [A] sabit, [B] 3 katına çıkmış, hız 9 katına çıkmış (0,008 → 0,072) → 3<sup>n</sup> = 9 → <b>n = 2</b></li>
+      <li>r = k[A][B]<sup>2</sup>, toplam derece 3</li>
+      <li>k'yi 1. deneyden bul: 0,004 = k(0,1)(0,1)<sup>2</sup> = k × 0,001 → k = 4</li>
+      <li>Birim: 3. derece → L<sup>2</sup>/mol<sup>2</sup>·s</li>
+    </ol>
+    <div class="cevap">r = 4·[A][B]<sup>2</sup> &nbsp;(k = 4 L<sup>2</sup>/mol<sup>2</sup>·s)</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 15</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">r = k[X]<sup>2</sup>[Y] hız denklemine sahip bir tepkimede [X] yarıya düşürülüp [Y] 4 katına çıkarılırsa hız kaç katına çıkar?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>[X] için: (½)<sup>2</sup> = ¼</li>
+      <li>[Y] için: 4<sup>1</sup> = 4</li>
+      <li>Toplam etki: ¼ × 4 = 1</li>
+    </ol>
+    <div class="cevap">Hız <b>değişmez</b> (1 katı kalır).</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 16</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">2A + B → ürünler tepkimesinde [A] 2 katına çıkarıldığında hız 4 katına, [B] 2 katına çıkarıldığında hız değişmiyor. Tepkimenin sabit hacimli kapta toplam basıncı 2 katına çıkarılırsa hız kaç katına çıkar?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Dereceler: A için 2, B için 0 → r = k[A]<sup>2</sup></li>
+      <li>Toplam basınç 2 katına çıkarılırsa <b>bütün gazların derişimi</b> 2 katına çıkar.</li>
+      <li>Yalnızca [A] hıza etki ediyor: 2<sup>2</sup> = 4</li>
+      <li>[B]'nin 2 katına çıkması hızı etkilemez (derecesi 0).</li>
+    </ol>
+    <div class="cevap">Hız 4 katına çıkar.</div>
+    </details>
+  </div>
+</div>
+
+<div class="kart tuzak">
+  <div class="baslik">Tuzak</div>
+  <p>Bir maddenin derecesinin <b>sıfır</b> olması "o madde tepkimeye girmiyor" demek değildir. Girer, ürüne dönüşür — ama <b>yavaş basamakta yer almadığı için</b> derişimi hızı etkilemez.</p>
+</div>
+
+<!-- ============ 6 ============ -->
+<h2><span class="no">Bölüm 6</span>Çok basamaklı tepkimeler ve mekanizma</h2>
+
+<p>Tepkimelerin çoğu tek adımda olmaz; art arda gelen basamaklardan oluşan bir <b>mekanizma</b> izler. Basamakların toplamı <b>net denklemi</b> verir.</p>
+
+<div class="kart kural">
+  <div class="baslik">Kural</div>
+  <ul>
+    <li>Toplam hızı <b>en yavaş basamak</b> belirler; buna <b>hızı belirleyen basamak</b> denir. (Trafikteki en dar şerit gibi.)</li>
+    <li>Hız denklemi <b>yavaş basamağın</b> tepkenlerinden yazılır ve orada katsayılar üs olarak kullanılabilir — çünkü tek bir basamak elementerdir.</li>
+    <li><b>Ara ürün:</b> önce <b>oluşur</b> (sağda çıkar), sonra harcanır. Net denklemde görünmez.</li>
+    <li><b>Katalizör:</b> önce <b>harcanır</b> (solda girer), sonra geri oluşur. Net denklemde görünmez.</li>
+    <li>Ayırt etme sorusu: madde ilk kez <b>sağda</b> mı göründü (ara ürün), <b>solda</b> mı (katalizör)?</li>
+  </ul>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 17</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">Mekanizma:<br>1. (yavaş) NO<sub>2</sub> + Cl<sub>2</sub> → NO<sub>2</sub>Cl + Cl<br>2. (hızlı) NO<sub>2</sub> + Cl → NO<sub>2</sub>Cl<br>Net denklem, hız denklemi ve Cl'nin görevi nedir?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Topla: 2NO<sub>2</sub> + Cl<sub>2</sub> + Cl → 2NO<sub>2</sub>Cl + Cl → Cl sadeleşir.</li>
+      <li>Net denklem: <b>2NO<sub>2</sub> + Cl<sub>2</sub> → 2NO<sub>2</sub>Cl</b></li>
+      <li>Cl ilk kez 1. basamakta <b>sağda</b> göründü → <b>ara üründür</b>.</li>
+      <li>Hız denklemi yavaş basamaktan: <b>r = k[NO<sub>2</sub>][Cl<sub>2</sub>]</b></li>
+      <li>Dikkat: net denklemde NO<sub>2</sub>'nin katsayısı 2 olmasına rağmen hız denkleminde üssü 1'dir.</li>
+    </ol>
+    <div class="cevap">2NO<sub>2</sub> + Cl<sub>2</sub> → 2NO<sub>2</sub>Cl &nbsp;·&nbsp; r = k[NO<sub>2</sub>][Cl<sub>2</sub>] &nbsp;·&nbsp; Cl ara ürün</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 18</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">Mekanizma:<br>1. (hızlı) A + X → AX<br>2. (yavaş) AX + B → AB + X<br>Net denklem nedir? X ve AX nedir? Hız denklemi nedir?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Topla: A + X + AX + B → AX + AB + X → hem X hem AX sadeleşir.</li>
+      <li>Net denklem: <b>A + B → AB</b></li>
+      <li>X ilk kez 1. basamakta <b>solda</b> girmiş, 2. basamakta geri çıkmış → <b>katalizördür</b>.</li>
+      <li>AX ilk kez <b>sağda</b> oluşmuş, sonra harcanmış → <b>ara üründür</b>.</li>
+      <li>Hız denklemi yavaş basamaktan: <b>r = k[AX][B]</b></li>
+    </ol>
+    <div class="cevap">A + B → AB &nbsp;·&nbsp; X katalizör, AX ara ürün &nbsp;·&nbsp; r = k[AX][B]</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 19</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">İki basamaklı bir tepkimenin basamak aktivasyon enerjileri E<sub>1</sub> = 120 kJ, E<sub>2</sub> = 45 kJ'dür. Hangi basamak hızı belirler? Bu basamağın enerjisi katalizörle 80 kJ'ye düşürülürse tepkimenin toplam hızı ne olur?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Aktivasyon enerjisi <b>büyük</b> olan basamak <b>yavaş</b> olandır → 1. basamak hızı belirleyen basamaktır.</li>
+      <li>Yavaş basamak hızlanırsa toplam hız artar → tepkime hızlanır.</li>
+      <li>Dikkat: 2. basamağı hızlandırmak toplam hızı <b>değiştirmezdi</b>; darboğaz 1. basamakta.</li>
+      <li>Katalizör ΔH'yi değiştirmediği için ürün miktarı aynı kalır, sadece süre kısalır.</li>
+    </ol>
+    <div class="cevap">1. basamak hızı belirleyen basamaktır; E<sub>a</sub> 120'den 80'e düşünce tepkime hızlanır, verim değişmez.</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 20</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">r = k[A][B] hız denklemine sahip bir tepkimede sıcaklık artırılıyor. Aşağıdakilerden hangileri değişir?</p>
+    <p class="veri">I. k &nbsp; II. Tepkime derecesi &nbsp; III. Aktivasyon enerjisi &nbsp; IV. Etkin çarpışma sayısı &nbsp; V. ΔH</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>I değişir: k sıcaklığa bağlıdır, sıcaklık artınca <b>k büyür</b>.</li>
+      <li>II değişmez: dereceler mekanizmadan gelir, sıcaklıkla değişmez.</li>
+      <li>III değişmez: E<sub>a</sub>'yı yalnızca katalizör değiştirir.</li>
+      <li>IV değişir: E<sub>a</sub>'yı aşabilen tanecik oranı arttığı için etkin çarpışma sayısı artar.</li>
+      <li>V değişmez: entalpi maddelerin özelliğidir (sıcaklıkla çok küçük değişir, bu seviyede sabit kabul edilir).</li>
+    </ol>
+    <div class="cevap">Değişenler: I ve IV</div>
+    </details>
+  </div>
+</div>
+
+<!-- ============ 7 ============ -->
+<h2><span class="no">Bölüm 7</span>Pistonlu kaplar: sabit basınçta hız</h2>
+
+<p>Bu soru tipi, hız konusunun en çok yanlış yapılan kısmıdır. Sebebi tek bir cümle: <b>pistonlu kaba gaz eklersen hacim de büyür</b>, dolayısıyla eklemediğin maddenin derişimi <b>düşer</b>.</p>
+
+<div class="kart kural">
+  <div class="baslik">Kural — önce kabın tipini belirle</div>
+  <ul>
+    <li><b>Sabit hacimli kapalı kap:</b> hacim değişmez. Eklenen gazın derişimi artar, diğerlerininki <b>aynı kalır</b>. İnert gaz eklemek hiçbir şeyi değiştirmez.</li>
+    <li><b>Pistonlu kap (sabit basınç):</b> hacim toplam mol sayısıyla doğru orantılıdır.<br><span class="form">V<sub>yeni</sub> / V<sub>eski</sub> = n<sub>toplam,yeni</sub> / n<sub>toplam,eski</sub></span></li>
+    <li>Pistonlu kapta <b>inert gaz eklemek hızı düşürür</b>: mol arttığı için hacim büyür, bütün derişimler seyrelir.</li>
+    <li>Pistonlu kapta tepkime ilerlerken gaz mol sayısı değişiyorsa <b>hacim de sürekli değişir</b>; derişimi her an yeni hacimle hesapla.</li>
+    <li>Pistonu sabitlemek, piston o an nerede duruyorsa hacmi <b>oraya kilitler</b>. Sabitleme noktası aşağıdaysa hacim küçülür, derişimler artar.</li>
+  </ul>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 21</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">İdeal pistonlu bir kapta 2 mol X<sub>2</sub> ve 2 mol Y<sub>2</sub> gazı bulunuyor ve X<sub>2</sub>(g) + 2Y<sub>2</sub>(g) → 2XY(g) tepkimesi tek basamakta gerçekleşiyor. Sabit sıcaklıkta yapılan hangi işlemler <b>tek başına</b> tepkime hızını artırır?</p>
+    <ul class="oncul">
+      <li><b>I.</b> Pistonu, mevcut konumunun altındaki A noktasında sabitlemek.</li>
+      <li><b>II.</b> 4 mol X<sub>2</sub> gazı eklemek.</li>
+      <li><b>III.</b> 4 mol Y<sub>2</sub> gazı eklemek.</li>
+    </ul>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Tek basamaklı → r = k[X<sub>2</sub>][Y<sub>2</sub>]<sup>2</sup>. Başlangıç: hacim V, r = k(2/V)(2/V)<sup>2</sup> = <b>8k/V<sup>3</sup></b></li>
+      <li><b>I:</b> Piston aşağı inip A'da kilitlenir → hacim <b>küçülür</b> → her iki derişim de artar → hız <b>artar</b>. ✔</li>
+      <li><b>II:</b> Toplam mol 4 → 8, sabit basınçta hacim <b>2V</b> olur. [X<sub>2</sub>] = 6/2V = 3/V, [Y<sub>2</sub>] = 2/2V = <b>1/V</b> (yarıya indi).<br>r′ = k(3/V)(1/V)<sup>2</sup> = 3k/V<sup>3</sup> → 3/8 katı → hız <b>azalır</b>. ✘</li>
+      <li><b>III:</b> Yine hacim 2V. [X<sub>2</sub>] = 2/2V = 1/V (yarıya indi), [Y<sub>2</sub>] = 6/2V = 3/V.<br>r′ = k(1/V)(3/V)<sup>2</sup> = 9k/V<sup>3</sup> → 9/8 katı → hız <b>artar</b>. ✔</li>
+      <li>Asıl fark: Y<sub>2</sub> hız denklemine <b>karesiyle</b> girdiği için kazancı (1,5<sup>2</sup> = 2,25) X<sub>2</sub>'nin kaybını (½) yener. X<sub>2</sub> eklemede ise Y<sub>2</sub>'nin kaybı (½)<sup>2</sup> = ¼ her şeyi bastırır.</li>
+    </ol>
+    <div class="cevap">I ve III</div>
+    </details>
+  </div>
+</div>
+
+<div class="kart kural">
+  <div class="baslik">Kural — pistonlu kapta hangi gazı eklemek kazandırır?</div>
+  <p>Sabit basınçta bir tepken eklendiğinde <b>diğer bütün tepkenler seyrelir</b>. Bu yüzden ekleme, ancak eklenen maddenin <b>üssü yeterince büyükse</b> hızı artırır. Pratik ölçüt: hacim k katına çıkıyorsa, eklenen maddenin derişim artışının kendi üssü kadar kuvveti, diğerlerinin seyrelmesini yenmelidir. Üssü <b>en büyük</b> olan tepkeni eklemek genelde kazandırır; üssü küçük olanı eklemek çoğu zaman hızı düşürür.</p>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 22</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">Eşit mollerdeki A<sub>2</sub> ve B<sub>2</sub> gazları arasında A<sub>2</sub>(g) + 2B<sub>2</sub>(g) → 2AB<sub>2</sub>(g) tepkimesi kapalı kapta tek adımda gerçekleşiyor. Sabit sıcaklık ve basınçta kaba, <b>kapta bulunan tanecik sayısı kadar</b> B<sub>2</sub> gazı ilave edilirse tepkime hızı kaç katına çıkar?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Başlangıç: n mol A<sub>2</sub> + n mol B<sub>2</sub> = 2n toplam, hacim V.</li>
+      <li>Eklenen B<sub>2</sub> = kaptaki tanecik sayısı kadar = <b>2n mol</b> → yeni toplam 4n mol.</li>
+      <li>Sabit basınç: hacim de 2 katına çıkar → <b>2V</b></li>
+      <li>[A<sub>2</sub>]: n/V → n/2V &nbsp;(<b>½ katı</b>) &nbsp;·&nbsp; [B<sub>2</sub>]: n/V → 3n/2V &nbsp;(<b>1,5 katı</b>)</li>
+      <li>r = k[A<sub>2</sub>][B<sub>2</sub>]<sup>2</sup> → r′/r = (½)(1,5)<sup>2</sup> = ½ × 2,25 = 1,125</li>
+    </ol>
+    <div class="cevap">Hız 9/8 (1,125) katına çıkar.</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 23</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">Sabit sıcaklıkta sürtünmesiz ideal pistonlu bir kaba 4'er mol X ve Y gazı konularak X(g) + 2Y(g) → Z(g) tepkimesinin tek basamakta gerçekleşmesi sağlanıyor. Başlangıç hızı r ise, X'in %25'inin harcandığı andaki hız kaç r'dir?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Harcanan X = 4 × 0,25 = 1 mol → katsayı oranına göre 2 mol Y harcanır, 1 mol Z oluşur.</li>
+      <li>Son durum: X = 3, Y = 2, Z = 1 → <b>toplam 6 mol</b> (başlangıçta 8 mol)</li>
+      <li>Sabit basınçta hacim molle orantılı: V′ = (6/8)V<sub>0</sub> = <b>0,75V<sub>0</sub></b></li>
+      <li>[X] = 3/0,75V<sub>0</sub> = 4/V<sub>0</sub> → başlangıçtaki 4/V<sub>0</sub> ile <b>aynı</b> (hacim küçüldüğü için harcanma telafi oldu)</li>
+      <li>[Y] = 2/0,75V<sub>0</sub> = 2,67/V<sub>0</sub> → başlangıçtaki 4/V<sub>0</sub>'ın <b>2/3</b>'ü</li>
+      <li>r′/r = (1)(2/3)<sup>2</sup> = 4/9</li>
+    </ol>
+    <div class="cevap">r′ = (4/9)r ≈ 0,44r</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 24</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">A(g) + B(g) → C(g) tepkimesi tek basamakta gerçekleşiyor. 2 mol A ve 2 mol B içeren kaba 4 mol He (inert) gazı ekleniyor. Hız kaç katına çıkar?<br>a) Kap sabit hacimliyse &nbsp; b) Kap ideal pistonluysa</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>r = k[A][B]</li>
+      <li><b>a)</b> Hacim değişmez → [A] ve [B] aynı kalır. He tepkimeye girmez, sadece toplam basıncı artırır. Hız <b>değişmez (1 katı)</b>.</li>
+      <li><b>b)</b> Toplam mol 4 → 8, sabit basınçta hacim <b>2V</b> olur.</li>
+      <li>[A] ve [B] birer yarıya iner: r′/r = (½)(½) = <b>¼</b></li>
+    </ol>
+    <div class="cevap">a) Değişmez &nbsp;·&nbsp; b) Hız ¼ katına düşer (yavaşlar)</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 25</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">İdeal pistonlu kapta 6 mol A gazı ile 2A(g) → 3B(g) tepkimesi tek basamakta başlatılıyor. A'nın %50'si harcandığında hız, başlangıçtaki hızın kaç katı olur?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>r = k[A]<sup>2</sup>. Başlangıç: 6 mol, hacim V<sub>0</sub> → [A] = 6/V<sub>0</sub></li>
+      <li>Harcanan A = 3 mol → oluşan B = 3 × (3/2) = 4,5 mol</li>
+      <li>Son durum: 3 mol A + 4,5 mol B = <b>7,5 mol</b> (başlangıç 6 mol)</li>
+      <li>Hacim: V′ = (7,5/6)V<sub>0</sub> = <b>1,25V<sub>0</sub></b> — piston <b>yukarı çıkmış</b>, çünkü mol arttı.</li>
+      <li>[A] = 3/1,25V<sub>0</sub> = 2,4/V<sub>0</sub> → başlangıcın 2,4/6 = <b>0,4 katı</b></li>
+      <li>r′/r = (0,4)<sup>2</sup> = 0,16</li>
+    </ol>
+    <div class="cevap">Hız başlangıçtakinin 0,16 katına (4/25) düşer.</div>
+    </details>
+  </div>
+</div>
+
+<div class="kart tuzak">
+  <div class="baslik">Tuzak</div>
+  <p>Sabit <b>hacimli</b> kapta tepkime ilerlerken derişim sadece harcanmayla düşer. Pistonlu kapta ise <b>iki etki birlikte</b> çalışır: madde harcanır (derişim düşer) ama hacim de değişir (mol azalıyorsa derişimi yukarı çeker). Soru 23'te bu iki etki X için tam olarak birbirini götürmüştü — derişimi hiç değişmedi. Otomatik olarak "harcandı, derişim düştü" deme.</p>
+</div>
+
+<!-- ============ 8 ============ -->
+<h2><span class="no">Bölüm 8</span>Sıcaklık ve katalizör grafikleri</h2>
+
+<h3>Tanecik enerji dağılımı (Maxwell-Boltzmann)</h3>
+<p>Bir kaptaki taneciklerin hepsi aynı enerjiye sahip değildir. Yatay eksen kinetik enerji, dikey eksen o enerjiye sahip tanecik sayısıdır. <b>E<sub>a</sub> çizgisinin sağında kalan alan</b>, tepkime verebilecek tanecikleri gösterir.</p>
+
+<figure>
+<svg viewBox="0 0 660 300" role="img" aria-label="İki farklı sıcaklıkta tanecik enerji dağılımı grafiği">
+  <line x1="60" y1="20" x2="60" y2="250" stroke="#14110F" stroke-width="2"/>
+  <line x1="60" y1="250" x2="640" y2="250" stroke="#14110F" stroke-width="2"/>
+  <text x="30" y="140" font-size="12" fill="#5C554F" text-anchor="middle" transform="rotate(-90 30,140)">Tanecik sayısı</text>
+  <text x="350" y="284" font-size="13" fill="#5C554F" text-anchor="middle">Kinetik enerji →</text>
+  <path d="M60,250 C120,250 155,60 215,60 C275,60 300,205 400,235 C480,250 560,249 638,249" fill="none" stroke="#0B5C8A" stroke-width="3"/>
+  <path d="M60,250 C140,250 190,115 275,115 C355,115 385,190 470,220 C540,240 595,246 638,247" fill="none" stroke="#B02E10" stroke-width="3"/>
+  <line x1="470" y1="250" x2="470" y2="35" stroke="#F85300" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="478" y="50" font-size="14" font-weight="700" fill="#F85300">E<tspan font-size="10" dy="3">a</tspan></text>
+  <text x="222" y="54" font-size="13" fill="#0B5C8A">T₁ (düşük sıcaklık)</text>
+  <text x="285" y="108" font-size="13" fill="#B02E10">T₂ (yüksek sıcaklık)</text>
+  <text x="478" y="240" font-size="12" fill="#5C554F">tepkime verebilen</text>
+  <text x="478" y="256" font-size="12" fill="#5C554F">tanecikler</text>
+</svg>
+<figcaption>Sıcaklık artınca eğri <b>basıklaşır ve sağa kayar</b>; E<sub>a</sub> çizgisinin sağındaki alan büyür. Toplam tanecik sayısı değişmediği için <b>iki eğrinin altındaki toplam alan eşittir</b>.</figcaption>
+</figure>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 26</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">Yukarıdaki grafiğe göre hangi ifadeler doğrudur?</p>
+    <p class="veri">I. T₂ &gt; T₁'dir. &nbsp; II. T₂'de toplam tanecik sayısı daha fazladır. &nbsp; III. T₂'de E<sub>a</sub>'yı aşan tanecik sayısı daha fazladır. &nbsp; IV. T₂'de aktivasyon enerjisi daha küçüktür.</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>I doğru: eğri sağa kaymış ve basıklaşmışsa sıcaklık yüksektir.</li>
+      <li>II <b>yanlış</b>: eğri altındaki toplam alan tanecik sayısıdır ve iki eğride de eşittir. Sadece <b>dağılım</b> değişmiştir.</li>
+      <li>III doğru: E<sub>a</sub> çizgisinin sağındaki alan T₂ eğrisinde daha büyüktür — hızın artmasının asıl sebebi budur.</li>
+      <li>IV <b>yanlış</b>: E<sub>a</sub> çizgisi <b>yerinde duruyor</b>. Sıcaklık E<sub>a</sub>'yı değiştirmez, onu aşan tanecik sayısını değiştirir.</li>
+    </ol>
+    <div class="cevap">Doğru olanlar: I ve III</div>
+    </details>
+  </div>
+</div>
+
+<h3>Aynı sıcaklıkta katalizör eklenirse</h3>
+
+<figure>
+<svg viewBox="0 0 660 300" role="img" aria-label="Sabit sıcaklıkta katalizörlü ve katalizörsüz aktivasyon enerjisi çizgileri">
+  <line x1="60" y1="20" x2="60" y2="250" stroke="#14110F" stroke-width="2"/>
+  <line x1="60" y1="250" x2="640" y2="250" stroke="#14110F" stroke-width="2"/>
+  <text x="30" y="140" font-size="12" fill="#5C554F" text-anchor="middle" transform="rotate(-90 30,140)">Tanecik sayısı</text>
+  <text x="350" y="284" font-size="13" fill="#5C554F" text-anchor="middle">Kinetik enerji →</text>
+  <path d="M60,250 C130,250 170,80 240,80 C310,80 340,195 430,228 C510,248 575,249 638,249" fill="none" stroke="#0B5C8A" stroke-width="3"/>
+  <line x1="480" y1="250" x2="480" y2="35" stroke="#B02E10" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="488" y="50" font-size="13" font-weight="700" fill="#B02E10">E<tspan font-size="10" dy="3">a</tspan> (katalizörsüz)</text>
+  <line x1="355" y1="250" x2="355" y2="35" stroke="#1B6B4A" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="150" y="50" font-size="13" font-weight="700" fill="#1B6B4A">E<tspan font-size="10" dy="3">a</tspan>′ (katalizörlü)</text>
+  <line x1="355" y1="150" x2="470" y2="150" stroke="#1B6B4A" stroke-width="2" marker-end="url(#g)"/>
+  <text x="358" y="142" font-size="12" fill="#1B6B4A">kazanılan tanecikler</text>
+  <defs><marker id="g" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto"><path d="M7,0 L0,3.5 L7,7 z" fill="#1B6B4A"/></marker></defs>
+</svg>
+<figcaption>Katalizör <b>eğriyi değil, E<sub>a</sub> çizgisini</b> sola kaydırır. Sıcaklık sabit olduğu için dağılım aynen kalır, ama artık daha çok tanecik eşiği aşabilmektedir.</figcaption>
+</figure>
+
+<div class="kart kural">
+  <div class="baslik">Kural — iki grafiği karıştırma</div>
+  <ul>
+    <li><b>Sıcaklık değişirse:</b> eğrinin <b>şekli ve yeri</b> değişir, E<sub>a</sub> çizgisi <b>sabit kalır</b>.</li>
+    <li><b>Katalizör eklenirse:</b> eğri <b>aynen kalır</b>, E<sub>a</sub> çizgisi <b>sola kayar</b>.</li>
+    <li>İkisinde de sonuç aynı: eşiği aşan tanecik oranı artar, hız artar.</li>
+  </ul>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 27</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">Sabit sıcaklıkta bir tepkimeye katalizör eklendiğinde tanecik enerji dağılımı grafiğinde ne değişir?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Sıcaklık sabit → taneciklerin ortalama kinetik enerjisi değişmez → <b>eğri hiç değişmez</b>.</li>
+      <li>Katalizör E<sub>a</sub>'yı düşürür → dikey <b>E<sub>a</sub> çizgisi sola kayar</b>.</li>
+      <li>Çizginin sağında kalan alan büyür → tepkime verebilen tanecik sayısı artar → hız artar.</li>
+      <li>Eğri altındaki toplam alan (tanecik sayısı) yine aynıdır.</li>
+    </ol>
+    <div class="cevap">Yalnızca E<sub>a</sub> çizgisi sola kayar; eğri ve toplam alan değişmez.</div>
+    </details>
+  </div>
+</div>
+
+<h3>Derişim–zaman grafiğinde katalizörün izi</h3>
+
+<figure>
+<svg viewBox="0 0 660 300" role="img" aria-label="Katalizörlü ve katalizörsüz tepkimede tepken derişiminin zamanla değişimi">
+  <line x1="60" y1="20" x2="60" y2="250" stroke="#14110F" stroke-width="2"/>
+  <line x1="60" y1="250" x2="640" y2="250" stroke="#14110F" stroke-width="2"/>
+  <text x="30" y="135" font-size="12" fill="#5C554F" text-anchor="middle" transform="rotate(-90 30,135)">[Tepken]</text>
+  <text x="350" y="284" font-size="13" fill="#5C554F" text-anchor="middle">Zaman →</text>
+  <path d="M60,50 C130,140 200,185 300,192 L630,194" fill="none" stroke="#1B6B4A" stroke-width="3"/>
+  <path d="M60,50 C200,150 330,188 460,192 L630,193" fill="none" stroke="#0B5C8A" stroke-width="3"/>
+  <line x1="60" y1="193" x2="630" y2="193" stroke="#F85300" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="380" y="212" font-size="12" font-weight="700" fill="#F85300">aynı son derişim</text>
+  <text x="150" y="176" font-size="13" fill="#1B6B4A">katalizörlü</text>
+  <text x="330" y="176" font-size="13" fill="#0B5C8A">katalizörsüz</text>
+  <circle cx="60" cy="50" r="4" fill="#14110F"/>
+  <text x="70" y="44" font-size="12" fill="#5C554F">aynı başlangıç derişimi</text>
+</svg>
+<figcaption>Katalizörlü eğri <b>daha dik iner ve daha erken yatay hâle gelir</b>; ama başlangıç ve bitiş noktaları katalizörsüz eğriyle <b>aynıdır</b>.</figcaption>
+</figure>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 28</span><span class="seviye s-orta">Orta</span></div>
+  <div class="govde">
+    <p class="metin">Yukarıdaki grafikte iki eğri aynı tepkimeye aittir; biri katalizörlüdür. Hangi ifadeler doğrudur?</p>
+    <p class="veri">I. Yeşil eğri katalizörlü tepkimeye aittir. &nbsp; II. Katalizörlü tepkimede daha çok ürün oluşur. &nbsp; III. İki tepkimenin ΔH'si aynıdır. &nbsp; IV. Katalizörlü tepkime daha kısa sürede tamamlanır.</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>I doğru: daha <b>dik</b> inen eğri daha hızlı olandır.</li>
+      <li>II <b>yanlış</b>: iki eğri de aynı son derişimde yataylaşıyor → ürün miktarı <b>aynı</b>. Katalizör verimi değiştirmez.</li>
+      <li>III doğru: tepken ve ürünlerin enerji seviyeleri değişmediği için ΔH aynıdır.</li>
+      <li>IV doğru: katalizörlü eğri yatay hâle daha erken geçiyor.</li>
+    </ol>
+    <div class="cevap">Doğru olanlar: I, III ve IV</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 29</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">Aynı tepkime üç farklı koşulda yürütülüyor ve tepken derişiminin zamanla değişimi çiziliyor. I. eğri en dik, III. eğri en yatık, üçü de aynı son derişimde bitiyor. Koşullar: (a) 25 °C, (b) 25 °C + katalizör, (c) 50 °C. Eğrileri koşullarla eşleştirin.</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Üç eğri de <b>aynı son derişimde</b> bitiyor → başlangıç derişimleri ve tepkimenin kendisi aynı; sadece <b>hız</b> farklı.</li>
+      <li>En yatık (en yavaş) eğri hiçbir hızlandırıcı etkinin olmadığı koşuldur → III = <b>(a) 25 °C</b></li>
+      <li>Kalan ikisinde hem sıcaklık artışı hem katalizör hızlandırıcıdır. Sıcaklık, hızı en çok artıran faktördür → I = <b>(c) 50 °C</b></li>
+      <li>Ortadaki → II = <b>(b) 25 °C + katalizör</b></li>
+      <li>Ayırt edici not: eğer eğrilerden biri <b>farklı bir son derişimde</b> bitseydi, o zaman değişen şey hız değil, <b>başlangıç miktarı veya denge</b> olurdu.</li>
+    </ol>
+    <div class="cevap">I → 50 °C &nbsp;·&nbsp; II → 25 °C + katalizör &nbsp;·&nbsp; III → 25 °C</div>
+    </details>
+  </div>
+</div>
+
+<div class="soru">
+  <div class="ust-serit"><span class="numara">Soru 30</span><span class="seviye s-zor">Zor</span></div>
+  <div class="govde">
+    <p class="metin">Bir tepkimenin potansiyel enerji diyagramında katalizörsüz yolun tepesi 260 kJ, katalizörlü yolun tepesi 200 kJ'dedir. Tepkenlerin enerjisi 120 kJ, ürünlerin enerjisi 180 kJ'dir. Katalizörün E<sub>a,geri</sub>'de yaptığı değişim kaç kJ'dir?</p>
+    <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+    <ol class="adim">
+      <li>Katalizörsüz: E<sub>a,ileri</sub> = 260 − 120 = 140 kJ &nbsp;·&nbsp; E<sub>a,geri</sub> = 260 − 180 = <b>80 kJ</b></li>
+      <li>Katalizörlü: E<sub>a,ileri</sub> = 200 − 120 = 80 kJ &nbsp;·&nbsp; E<sub>a,geri</sub> = 200 − 180 = <b>20 kJ</b></li>
+      <li>E<sub>a,geri</sub>'deki azalma: 80 − 20 = <b>60 kJ</b></li>
+      <li>E<sub>a,ileri</sub>'deki azalma da 140 − 80 = 60 kJ → <b>ikisi eşit</b>, kuralla uyumlu.</li>
+      <li>ΔH kontrolü: 180 − 120 = +60 kJ; katalizörlü yolda da 80 − 20 = +60 kJ ✔ (değişmedi)</li>
+    </ol>
+    <div class="cevap">E<sub>a,geri</sub> 60 kJ azalır (80 → 20 kJ); ΔH yine +60 kJ kalır.</div>
+    </details>
+  </div>
+</div>
+
+<div class="kart tuzak">
+  <div class="baslik">Tuzak</div>
+  <p>Grafik sorularında önce <b>eksenlere</b> bak. "Derişim–zaman" grafiğinde dik inen eğri hızlıdır; ama "hız–zaman" grafiğinde eğrinin <b>başlangıç yüksekliği</b> hızı verir ve hızlı tepkime daha erken sıfıra iner. "Tanecik sayısı–enerji" grafiğinde ise eğrinin yüksekliği hızla ilgili değildir; <b>E<sub>a</sub>'nın sağındaki alan</b> ile ilgilidir.</p>
+</div>
+
+<div class="test">
+  <h3>Kendin çöz</h3>
+  <p class="alt-baslik">Önce kâğıt üzerinde çöz, sonra cevabı aç.</p>
+  <ol>
+    <li>E<sub>a,ileri</sub> = 70 kJ, E<sub>a,geri</sub> = 190 kJ ise ΔH kaçtır ve tepkime ekzotermik midir?
+      <details><summary>Cevabı gör</summary><p>ΔH = 70 − 190 = <b>−120 kJ</b> → ekzotermiktir.</p></details>
+    </li>
+    <li>4 L'lik kapta 6 saniyede 1,2 mol C gazı oluşuyorsa C'nin oluşma hızı kaçtır?
+      <details><summary>Cevabı gör</summary><p>[C] = 1,2 ÷ 4 = 0,3 M → r = 0,3 ÷ 6 = <b>0,05 mol/L·s</b></p></details>
+    </li>
+    <li>r = k[X]<sup>3</sup> olan tepkimede [X] 2 katına çıkarsa hız kaç katına çıkar?
+      <details><summary>Cevabı gör</summary><p>2<sup>3</sup> = <b>8 katına</b></p></details>
+    </li>
+    <li>A + 2B → 3C tepkimesinde r(B) = 0,06 mol/L·s ise r(C) kaçtır?
+      <details><summary>Cevabı gör</summary><p>Tepkime hızı = 0,06 ÷ 2 = 0,03 → r(C) = 3 × 0,03 = <b>0,09 mol/L·s</b></p></details>
+    </li>
+    <li>Bir mekanizmada bir madde 1. basamakta solda, 3. basamakta sağda görünüyor. Bu madde nedir?
+      <details><summary>Cevabı gör</summary><p>Önce harcanıp sonra geri oluştuğu için <b>katalizördür</b>.</p></details>
+    </li>
+    <li>Katalizör eklenirse dengedeki bir tepkimenin ürün miktarı artar mı?
+      <details><summary>Cevabı gör</summary><p><b>Hayır.</b> Katalizör ileri ve geri tepkimeyi eşit oranda hızlandırır; sadece dengeye <b>daha erken</b> ulaşılır.</p></details>
+    </li>
+    <li>Pistonlu kapta 3 mol A ve 3 mol B varken 6 mol inert gaz ekleniyor. r = k[A][B] ise hız kaç katına çıkar?
+      <details><summary>Cevabı gör</summary><p>Toplam 6 → 12 mol, hacim 2 katı. İki derişim de yarıya iner: (½)(½) = <b>¼ katına düşer</b>.</p></details>
+    </li>
+    <li>Sıcaklık artırıldığında tanecik enerji dağılımı grafiğinde E<sub>a</sub> çizgisi hareket eder mi?
+      <details><summary>Cevabı gör</summary><p><b>Hayır.</b> E<sub>a</sub> çizgisi yerinde kalır, eğri sağa kayıp basıklaşır. E<sub>a</sub> çizgisini yalnızca <b>katalizör</b> sola kaydırır.</p></details>
+    </li>
+  </ol>
+</div>
+
+<div class="alt">
+  <p><b>Sırada:</b> Modül 3 — Denge (tersinir tepkimeler, K<sub>c</sub>–K<sub>p</sub>, ICE tabloları, Q ve Le Chatelier).</p>
+</div>
+
+</main>
+
+<button class="yukari" id="yukari" aria-label="Sayfanın başına dön">↑</button>
+
+<script>
+(function(){
+  var bar=document.getElementById('ilerleme'),btn=document.getElementById('yukari');
+  function guncelle(){
+    var h=document.documentElement,o=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+    bar.style.width=o+'%';btn.classList.toggle('gor',h.scrollTop>700);
+  }
+  document.addEventListener('scroll',guncelle,{passive:true});
+  btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  guncelle();
+})();
+</script>
+</body>
+</html>
 
