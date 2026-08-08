@@ -101,6 +101,17 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 .test details{margin-top:8px;background:rgba(255,255,255,.07);border-radius:9px;padding:8px 12px}
 .test summary{cursor:pointer;font-size:13px;font-weight:700;color:#FF8B4D;letter-spacing:.04em}
 .test details p{margin:8px 0 2px;font-size:15px;color:#EDE7E0}
+.test .sekil{background:#FBF9F7;border-radius:10px;padding:9px 8px;margin:10px 0 4px}
+.test .sekil svg{display:block;width:100%;height:auto}
+.test .tip{display:block;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#FF8B4D;margin-bottom:3px}
+.test .tkutu{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0 4px;background:#FBF9F7;border-radius:10px}
+.test table{width:100%;border-collapse:collapse;font-size:12.5px;line-height:1.35}
+.test table th,.test table td{padding:6px 8px;border-bottom:1px solid #E7E0D9;color:#14110F;text-align:left;vertical-align:top;word-break:break-word;hyphens:auto}
+.test table th{background:#F1ECE7;font-weight:800;font-size:11.5px;white-space:nowrap}
+.test table td:first-child,.test table th:first-child{white-space:nowrap}
+.test ol{padding-left:20px}
+.test li{margin:20px 0}
+
 
 .alt{border-top:1px solid var(--cizgi);margin-top:44px;padding:24px 0 60px;color:var(--gri);font-size:15px}
 .yukari{position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;background:var(--turuncu);color:#fff;border:none;font-size:20px;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(248,83,0,.35);z-index:40}
@@ -128,7 +139,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <div class="sayac">
     <div><b>30</b>çözümlü soru</div>
     <div><b>8</b>alt başlık</div>
-    <div><b>8</b>kendin çöz</div>
+    <div><b>40</b>kendin çöz</div>
   </div>
 </section>
 
@@ -947,31 +958,140 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 
 <div class="test">
   <h3>Kendin çöz</h3>
-  <p class="alt-baslik">Önce kâğıt üzerinde çöz, sonra cevabı aç.</p>
+  <p class="alt-baslik">40 özgün soru. Çoğu grafik ve şekil üzerinden; önce kâğıt üzerinde çöz, sonra cevabı aç.</p>
   <ol>
-    <li>E<sub>a,ileri</sub> = 70 kJ, E<sub>a,geri</sub> = 190 kJ ise ΔH kaçtır ve tepkime ekzotermik midir?
-      <details><summary>Cevabı gör</summary><p>ΔH = 70 − 190 = <b>−120 kJ</b> → ekzotermiktir.</p></details>
+    <li><span class="tip">Aktivasyon enerjisi</span>Diyagrama göre ileri ve geri tepkimelerin aktivasyon enerjileri ile tepkimenin ΔH'si kaçtır?
+      <div class="sekil"><svg viewBox="0 0 400 150" role="img"><line x1="45" y1="16" x2="45" y2="120" stroke="#14110F" stroke-width="1.6"/><line x1="45" y1="120" x2="375" y2="120" stroke="#14110F" stroke-width="1.6"/><text x="45" y="12" font-size="9" fill="#5C554F">Ep (kJ)</text><text x="375" y="133" font-size="9" fill="#5C554F" text-anchor="end">tepkime ilerlemesi</text><path d="M65,86 C130,86 140,26 200,26 C260,26 270,102 340,102" fill="none" stroke="#C7381A" stroke-width="2.4"/><line x1="45" y1="26" x2="200" y2="26" stroke="#B9AFA5" stroke-width="1" stroke-dasharray="3 3"/><line x1="45" y1="86" x2="200" y2="86" stroke="#B9AFA5" stroke-width="1" stroke-dasharray="3 3"/><line x1="45" y1="102" x2="340" y2="102" stroke="#B9AFA5" stroke-width="1" stroke-dasharray="3 3"/><text x="41" y="29" font-size="9" text-anchor="end" fill="#14110F">150</text><text x="41" y="89" font-size="9" text-anchor="end" fill="#14110F">50</text><text x="41" y="105" font-size="9" text-anchor="end" fill="#14110F">30</text></svg></div>
+      <details><summary>Cevabı gör</summary><p>Ea(ileri) = 150 − 50 = <b>100 kJ</b> · Ea(geri) = 150 − 30 = <b>120 kJ</b> · ΔH = 30 − 50 = <b>−20 kJ</b> (ekzotermik).</p></details>
     </li>
-    <li>4 L'lik kapta 6 saniyede 1,2 mol C gazı oluşuyorsa C'nin oluşma hızı kaçtır?
-      <details><summary>Cevabı gör</summary><p>[C] = 1,2 ÷ 4 = 0,3 M → r = 0,3 ÷ 6 = <b>0,05 mol/L·s</b></p></details>
+    <li><span class="tip">Katalizör diyagramı</span>Kesikli eğri katalizörlü yolu göstermektedir. Katalizör hangi büyüklükleri değiştirmiş, hangilerini değiştirmemiştir?
+      <div class="sekil"><svg viewBox="0 0 400 150" role="img"><line x1="45" y1="16" x2="45" y2="120" stroke="#14110F" stroke-width="1.6"/><line x1="45" y1="120" x2="375" y2="120" stroke="#14110F" stroke-width="1.6"/><text x="45" y="12" font-size="9" fill="#5C554F">Ep (kJ)</text><text x="375" y="133" font-size="9" fill="#5C554F" text-anchor="end">tepkime ilerlemesi</text><path d="M65,86 C130,86 140,26 200,26 C260,26 270,102 340,102" fill="none" stroke="#C7381A" stroke-width="2.2"/><path d="M65,86 C130,86 145,50 200,50 C255,50 268,102 340,102" fill="none" stroke="#1B6B4A" stroke-width="2.2" stroke-dasharray="6 4"/><text x="205" y="22" font-size="8.5" fill="#C7381A">katalizörsüz</text><text x="205" y="62" font-size="8.5" fill="#1B6B4A">katalizörlü</text></svg></div>
+      <details><summary>Cevabı gör</summary><p><b>Değişen:</b> Ea(ileri) 100 → 60, Ea(geri) 120 → 80, izlenen yol. <b>Değişmeyen:</b> ΔH (−20 kJ), tepkenlerin ve ürünlerin enerjisi, denge miktarları.</p></details>
     </li>
-    <li>r = k[X]<sup>3</sup> olan tepkimede [X] 2 katına çıkarsa hız kaç katına çıkar?
-      <details><summary>Cevabı gör</summary><p>2<sup>3</sup> = <b>8 katına</b></p></details>
+    <li><span class="tip">Maxwell–Boltzmann</span>Sıcaklık T₁'den T₂'ye çıkarıldığında eğri nasıl değişir ve tepkime hızı neden bu kadar çok artar?
+      <div class="sekil"><svg viewBox="0 0 400 150" role="img"><line x1="40" y1="16" x2="40" y2="116" stroke="#14110F" stroke-width="1.6"/><line x1="40" y1="116" x2="380" y2="116" stroke="#14110F" stroke-width="1.6"/><text x="40" y="12" font-size="9" fill="#5C554F">Tanecik sayısı</text><text x="380" y="129" font-size="9" fill="#5C554F" text-anchor="end">kinetik enerji</text><path d="M40,116 C90,116 100,30 150,30 C200,30 230,110 375,114" fill="none" stroke="#0B5C8A" stroke-width="2.2"/><path d="M40,116 C110,116 130,52 195,52 C260,52 300,104 375,110" fill="none" stroke="#C7381A" stroke-width="2.2"/><text x="152" y="26" font-size="9" fill="#0B5C8A">T₁</text><text x="200" y="48" font-size="9" fill="#C7381A">T₂</text><line x1="290" y1="16" x2="290" y2="116" stroke="#F85300" stroke-width="1.4" stroke-dasharray="4 3"/><text x="294" y="30" font-size="8.5" font-weight="700" fill="#F85300">eşik enerjisi</text></svg></div>
+      <details><summary>Cevabı gör</summary><p>Eğri <b>sağa ve basıklaşarak</b> kayar; ortalama kinetik enerji artar. Eşik enerjisini aşan tanecik oranı (taralı alan) <b>katlanarak</b> büyüdüğü için hız çok artar — sıcaklık yalnızca çarpışma sayısını değil, <b>etkin çarpışma oranını</b> artırır.</p></details>
     </li>
-    <li>A + 2B → 3C tepkimesinde r(B) = 0,06 mol/L·s ise r(C) kaçtır?
-      <details><summary>Cevabı gör</summary><p>Tepkime hızı = 0,06 ÷ 2 = 0,03 → r(C) = 3 × 0,03 = <b>0,09 mol/L·s</b></p></details>
+    <li><span class="tip">Derişim–zaman</span>Grafikten tepkimenin denklemini ve X'in ortalama harcanma hızını (0–20 s) bulun.
+      <div class="sekil"><svg viewBox="0 0 400 150" role="img"><line x1="48" y1="16" x2="48" y2="116" stroke="#14110F" stroke-width="1.6"/><line x1="48" y1="116" x2="368" y2="116" stroke="#14110F" stroke-width="1.6"/><text x="48" y="12" font-size="9" fill="#5C554F">Derişim (mol/L)</text><text x="368" y="129" font-size="9" fill="#5C554F" text-anchor="end">zaman (s)</text><path d="M48,26 C110,80 170,110 240,114 L360,115" fill="none" stroke="#0B5C8A" stroke-width="2.3"/><path d="M48,116 C110,92 170,80 240,78 L360,78" fill="none" stroke="#1B6B4A" stroke-width="2.3"/><text x="364" y="118" font-size="9" fill="#0B5C8A">X</text><text x="364" y="81" font-size="9" fill="#1B6B4A">Z</text><text x="44" y="29" font-size="9" text-anchor="end" fill="#14110F">0,8</text><text x="44" y="81" font-size="9" text-anchor="end" fill="#14110F">0,3</text><text x="44" y="118" font-size="9" text-anchor="end" fill="#14110F">0,2</text><text x="240" y="129" font-size="9" text-anchor="middle" fill="#14110F">20</text></svg></div>
+      <details><summary>Cevabı gör</summary><p>ΔX = 0,8 − 0,2 = 0,6 · ΔZ = 0,3 → oran <b>2 : 1</b> → <b>2X → Z</b>. Hız = 0,6 ÷ 20 = <b>0,03 mol/L·s</b>.</p></details>
     </li>
-    <li>Bir mekanizmada bir madde 1. basamakta solda, 3. basamakta sağda görünüyor. Bu madde nedir?
-      <details><summary>Cevabı gör</summary><p>Önce harcanıp sonra geri oluştuğu için <b>katalizördür</b>.</p></details>
+    <li><span class="tip">Hız–zaman yorumu</span>Sabit hacimli kapta gerçekleşen bir tepkimenin hız–zaman grafiği veriliyor. t₁ anında ne yapılmış olabilir?
+      <div class="sekil"><svg viewBox="0 0 400 150" role="img"><line x1="45" y1="16" x2="45" y2="116" stroke="#14110F" stroke-width="1.6"/><line x1="45" y1="116" x2="375" y2="116" stroke="#14110F" stroke-width="1.6"/><text x="45" y="12" font-size="9" fill="#5C554F">Hız</text><text x="375" y="129" font-size="9" fill="#5C554F" text-anchor="end">zaman</text><path d="M45,26 C90,70 130,92 175,96" fill="none" stroke="#C7381A" stroke-width="2.3"/><line x1="175" y1="96" x2="175" y2="44" stroke="#C7381A" stroke-width="2.3"/><path d="M175,44 C230,84 290,104 365,108" fill="none" stroke="#C7381A" stroke-width="2.3"/><line x1="175" y1="16" x2="175" y2="116" stroke="#F85300" stroke-width="1.3" stroke-dasharray="4 3"/><text x="180" y="28" font-size="9" font-weight="700" fill="#F85300">t₁</text></svg></div>
+      <details><summary>Cevabı gör</summary><p>Hız <b>dikey olarak sıçramış</b>, sonra yine azalarak devam etmiş → derişim ya da sıcaklık artırılmıştır. Sıçramadan sonra eğrinin <b>daha yüksek bir yerden</b> düşmesi tepkenin eklendiğini gösterir.</p></details>
     </li>
-    <li>Katalizör eklenirse dengedeki bir tepkimenin ürün miktarı artar mı?
-      <details><summary>Cevabı gör</summary><p><b>Hayır.</b> Katalizör ileri ve geri tepkimeyi eşit oranda hızlandırır; sadece dengeye <b>daha erken</b> ulaşılır.</p></details>
+    <li><span class="tip">Hız denklemi · tablo</span>Deney verilerine göre tepkimenin hız denklemi ve k değeri nedir?
+      <div class="tkutu"><table><tr><th>Deney</th><th>[A]</th><th>[B]</th><th>Hız (mol/L·s)</th></tr><tr><td>1</td><td>0,1</td><td>0,1</td><td>0,04</td></tr><tr><td>2</td><td>0,2</td><td>0,1</td><td>0,16</td></tr><tr><td>3</td><td>0,1</td><td>0,2</td><td>0,04</td></tr></table></div>
+      <details><summary>Cevabı gör</summary><p>1→2: [A] 2 katına çıkınca hız 4 kat → <b>2. derece</b>. 1→3: [B] 2 katına çıkınca hız değişmiyor → <b>0. derece</b>. Hız = k[A]² → 0,04 = k(0,1)² → <b>k = 4</b>.</p></details>
     </li>
-    <li>Pistonlu kapta 3 mol A ve 3 mol B varken 6 mol inert gaz ekleniyor. r = k[A][B] ise hız kaç katına çıkar?
-      <details><summary>Cevabı gör</summary><p>Toplam 6 → 12 mol, hacim 2 katı. İki derişim de yarıya iner: (½)(½) = <b>¼ katına düşer</b>.</p></details>
+    <li><span class="tip">Mekanizma</span>Mekanizma: <b>1.</b> A + A → C (yavaş) &nbsp; <b>2.</b> C + B → D (hızlı). Toplam denklem ve hız denklemi nedir?
+      <details><summary>Cevabı gör</summary><p>Toplam: <b>2A + B → D</b> (C ara üründür, sadeleşir). Hızı <b>yavaş basamak belirler</b> → Hız = <b>k[A]²</b>. B hız denkleminde yer almaz.</p></details>
     </li>
-    <li>Sıcaklık artırıldığında tanecik enerji dağılımı grafiğinde E<sub>a</sub> çizgisi hareket eder mi?
-      <details><summary>Cevabı gör</summary><p><b>Hayır.</b> E<sub>a</sub> çizgisi yerinde kalır, eğri sağa kayıp basıklaşır. E<sub>a</sub> çizgisini yalnızca <b>katalizör</b> sola kaydırır.</p></details>
+    <li><span class="tip">Ara ürün · katalizör</span>Mekanizma: <b>1.</b> X + K → XK &nbsp; <b>2.</b> XK + Y → Z + K. Bu mekanizmada ara ürün ve katalizör hangileridir?
+      <details><summary>Cevabı gör</summary><p><b>Katalizör: K</b> — başta girip sonda çıkar. <b>Ara ürün: XK</b> — başta yok, ortada oluşur, sonda tükenir. Toplam denklem: X + Y → Z.</p></details>
+    </li>
+    <li><span class="tip">Yüzey alanı</span>Aynı kütlede çinko, biri toz biri levha hâlinde eşit derişimli fazla HCl'ye atılıyor. Grafikte hangi eğri toz çinkoya aittir? Toplam gaz miktarları neden eşittir?
+      <div class="sekil"><svg viewBox="0 0 400 150" role="img"><line x1="45" y1="16" x2="45" y2="116" stroke="#14110F" stroke-width="1.6"/><line x1="45" y1="116" x2="375" y2="116" stroke="#14110F" stroke-width="1.6"/><text x="45" y="12" font-size="9" fill="#5C554F">Toplanan H₂ (mL)</text><text x="375" y="129" font-size="9" fill="#5C554F" text-anchor="end">zaman</text><path d="M45,116 C90,40 130,30 200,28 L360,28" fill="none" stroke="#C7381A" stroke-width="2.3"/><path d="M45,116 C120,90 210,42 290,30 L360,28" fill="none" stroke="#0B5C8A" stroke-width="2.3"/><text x="120" y="34" font-size="9" fill="#C7381A">I</text><text x="250" y="52" font-size="9" fill="#0B5C8A">II</text></svg></div>
+      <details><summary>Cevabı gör</summary><p>Dik yükselen <b>I</b> toz çinkodur; yüzey alanı büyük olduğu için hız yüksektir. Toplam gaz, <b>çinko mol sayısına</b> bağlıdır; yüzey alanı yalnızca <b>hızı</b> değiştirir, miktarı değil — bu yüzden iki eğri aynı platoda buluşur.</p></details>
+    </li>
+    <li><span class="tip">Etkin çarpışma</span>Bir çarpışmanın etkin olması için hangi iki şart birlikte sağlanmalıdır?
+      <details><summary>Cevabı gör</summary><p><b>1.</b> Taneciklerin toplam kinetik enerjisi <b>eşik enerjisine eşit ya da ondan büyük</b> olmalı. <b>2.</b> Çarpışma <b>uygun geometride (doğru yönelimle)</b> gerçekleşmeli. Biri eksikse çarpışma sonuçsuz kalır.</p></details>
+    </li>
+    <li><span class="tip">Ortalama hız</span>2 L kapta 4 mol N₂O₄, 10 saniyede %25 ayrışıyor: N₂O₄ → 2NO₂. NO₂'nin ortalama oluşma hızı kaçtır?
+      <details><summary>Cevabı gör</summary><p>Harcanan N₂O₄ = 1 mol → oluşan NO₂ = 2 mol → derişim 2 ÷ 2 = 1 mol/L. Hız = 1 ÷ 10 = <b>0,1 mol/L·s</b>.</p></details>
+    </li>
+    <li><span class="tip">Hız oranları</span>N₂ + 3H₂ → 2NH₃ tepkimesinde H₂'nin harcanma hızı 0,6 mol/L·s ise N₂'nin harcanma ve NH₃'ün oluşma hızları kaçtır?
+      <details><summary>Cevabı gör</summary><p>Katsayılara böl: tepkime hızı = 0,6 ÷ 3 = 0,2. N₂ → 0,2 × 1 = <b>0,2</b> · NH₃ → 0,2 × 2 = <b>0,4 mol/L·s</b>.</p></details>
+    </li>
+    <li><span class="tip">Derece bulma</span>Hız = k[A][B]² olan bir tepkimede [A] yarıya indirilip [B] 4 katına çıkarılırsa hız kaç katına çıkar?
+      <details><summary>Cevabı gör</summary><p>(1/2) × 4² = (1/2) × 16 = <b>8 katına</b> çıkar.</p></details>
+    </li>
+    <li><span class="tip">Sıcaklık kuralı</span>Sıcaklığın her 10 °C artışında hızı 3 katına çıkan bir tepkimede sıcaklık 20 °C'den 50 °C'ye çıkarılırsa hız kaç katına çıkar?
+      <details><summary>Cevabı gör</summary><p>30 °C artış = 3 basamak → 3³ = <b>27 katına</b> çıkar.</p></details>
+    </li>
+    <li><span class="tip">Pistonlu kap</span>Sabit basınçlı pistonlu kapta 2A(g) + B(g) → C(g) dengesizken kaba sabit sıcaklıkta He gazı ekleniyor. Tepkime hızı nasıl değişir?
+      <details><summary>Cevabı gör</summary><p>Sabit basınçta He eklenince <b>hacim büyür</b> → bütün derişimler <b>azalır</b> → tepkime hızı <b>düşer</b>. Sabit hacimli kapta ise hız değişmezdi.</p></details>
+    </li>
+    <li><span class="tip">Sabit hacim vs piston</span>Aynı tepkime iki kapta yürütülüyor: I. sabit hacimli, II. sabit basınçlı pistonlu. İkisine de aynı miktar inert gaz ekleniyor. Hızlar nasıl etkilenir?
+      <details><summary>Cevabı gör</summary><p><b>I:</b> derişimler değişmez → hız <b>değişmez</b>. <b>II:</b> hacim büyür, derişimler düşer → hız <b>azalır</b>. İnert gazın etkisi kabın tipine bağlıdır.</p></details>
+    </li>
+    <li><span class="tip">Grafikten derece</span>Hız–[A] grafiği doğrusal, hız–[B] grafiği ise parabolik (hız ∝ [B]²) çıkmıştır. Hız denklemi nedir ve toplam derece kaçtır?
+      <details><summary>Cevabı gör</summary><p>Hız = <b>k[A][B]²</b> → toplam derece <b>3</b>. Doğrusal grafik 1. derece, parabolik grafik 2. dereceyi gösterir.</p></details>
+    </li>
+    <li><span class="tip">Yavaş basamak</span>Üç basamaklı bir tepkimede basamakların aktivasyon enerjileri 45, 120 ve 60 kJ'dür. Toplam tepkimenin hızını hangi basamak belirler?
+      <details><summary>Cevabı gör</summary><p>Aktivasyon enerjisi en <b>büyük</b> olan basamak en yavaştır → <b>2. basamak (120 kJ)</b>. Kitabın ifadesiyle hızı yavaş basamak belirler.</p></details>
+    </li>
+    <li><span class="tip">Enerji dağılımı</span>İki farklı tepkimenin eşik enerjileri 40 kJ ve 90 kJ'dür. Aynı sıcaklıkta hangisi daha hızlıdır ve neden?
+      <details><summary>Cevabı gör</summary><p><b>Eşik enerjisi 40 kJ olan</b>. Aynı sıcaklıkta taneciklerin enerji dağılımı aynıdır; düşük eşiği aşabilen tanecik <b>oranı</b> çok daha büyüktür → etkin çarpışma sayısı fazladır.</p></details>
+    </li>
+    <li><span class="tip">Katalizör sınırı</span>Bir katalizör, ekzotermik bir tepkimede açığa çıkan ısıyı artırır mı? Gerekçelendirin.
+      <details><summary>Cevabı gör</summary><p><b>Hayır.</b> Katalizör tepkenlerin ve ürünlerin enerji düzeylerini değiştirmez, yalnızca aradaki yolu kısaltır. ΔH tamamen bu iki düzeyin farkıdır → değişmez.</p></details>
+    </li>
+    <li><span class="tip">Basınç etkisi</span>Sabit hacimli kapta gerçekleşen 2NO(g) + O₂(g) → 2NO₂(g) tepkimesinde kabın hacmi yarıya indirilirse hız kaç katına çıkar? (Hız = k[NO]²[O₂])
+      <details><summary>Cevabı gör</summary><p>Hacim yarıya inince bütün derişimler 2 katına çıkar: 2² × 2 = <b>8 katına</b> çıkar.</p></details>
+    </li>
+    <li><span class="tip">Yüzde harcanma</span>1 L kapta 0,5 mol X ile başlayan tepkimede 20 saniyede X'in %60'ı harcanıyor. X'in ortalama harcanma hızı kaçtır?
+      <details><summary>Cevabı gör</summary><p>Harcanan = 0,5 × 0,6 = 0,3 mol → derişim 0,3 mol/L. Hız = 0,3 ÷ 20 = <b>0,015 mol/L·s</b>.</p></details>
+    </li>
+    <li><span class="tip">Anlık vs ortalama</span>Derişim–zaman grafiğinde anlık hız ile ortalama hız nasıl bulunur? Tepkime ilerledikçe hız neden azalır?
+      <details><summary>Cevabı gör</summary><p><b>Ortalama hız:</b> iki nokta arasındaki değişimin zamana oranı (kirişin eğimi). <b>Anlık hız:</b> o noktadaki <b>teğetin eğimi</b>. Tepkenler azaldıkça çarpışma sayısı düştüğü için hız azalır.</p></details>
+    </li>
+    <li><span class="tip">Tanecik modeli</span>İki kapta aynı sıcaklıkta aynı tepkime yürüyor. Hangi kaptaki hız daha büyüktür?
+      <div class="sekil"><svg viewBox="0 0 400 140" role="img"><rect x="45" y="20" width="130" height="95" rx="8" fill="#EAF3F8" stroke="#5C554F" stroke-width="2"/><circle cx="75" cy="45" r="7" fill="#C7381A"/><circle cx="125" cy="60" r="7" fill="#C7381A"/><circle cx="95" cy="90" r="7" fill="#0B5C8A"/><circle cx="145" cy="95" r="7" fill="#0B5C8A"/><text x="110" y="133" font-size="11" font-weight="700" text-anchor="middle" fill="#14110F">I</text><rect x="225" y="20" width="130" height="95" rx="8" fill="#EAF3F8" stroke="#5C554F" stroke-width="2"/><circle cx="250" cy="40" r="7" fill="#C7381A"/><circle cx="290" cy="35" r="7" fill="#C7381A"/><circle cx="330" cy="48" r="7" fill="#C7381A"/><circle cx="255" cy="75" r="7" fill="#C7381A"/><circle cx="300" cy="70" r="7" fill="#0B5C8A"/><circle cx="340" cy="82" r="7" fill="#0B5C8A"/><circle cx="265" cy="105" r="7" fill="#0B5C8A"/><circle cx="315" cy="102" r="7" fill="#0B5C8A"/><text x="290" y="133" font-size="11" font-weight="700" text-anchor="middle" fill="#14110F">II</text></svg></div>
+      <details><summary>Cevabı gör</summary><p><b>II</b>. Aynı hacimde daha çok tanecik var → derişim yüksek → birim zamandaki çarpışma sayısı fazla. Sıcaklık aynı olduğu için taneciklerin ortalama enerjisi eşittir; fark yalnızca derişimden gelir.</p></details>
+    </li>
+    <li><span class="tip">Ea ve ΔH ilişkisi</span>Ea(ileri) = 80 kJ, ΔH = +30 kJ olan bir tepkimede Ea(geri) kaçtır?
+      <details><summary>Cevabı gör</summary><p>Ea(geri) = Ea(ileri) − ΔH = 80 − 30 = <b>50 kJ</b>. Endotermik tepkimede geri yönün aktivasyon enerjisi daima <b>daha küçüktür</b>.</p></details>
+    </li>
+    <li><span class="tip">Çoklu değişken</span>Hız = k[A]²[B] olan tepkimede hacim 1/3'e indirilip aynı anda sıcaklık her 10 °C'de hızı 2 katına çıkaracak biçimde 20 °C artırılırsa hız kaç katına çıkar?
+      <details><summary>Cevabı gör</summary><p>Hacim: derişimler 3 katı → 3² × 3 = 27 kat. Sıcaklık: 2² = 4 kat. Toplam: 27 × 4 = <b>108 katına</b> çıkar.</p></details>
+    </li>
+    <li><span class="tip">Grafik çizimi</span>Sabit hacimli kapta yürüyen bir tepkimeye katalizör eklenirse derişim–zaman grafiği nasıl değişir?
+      <details><summary>Cevabı gör</summary><p>Eğriler <b>daha dik</b> iner/çıkar, plato <b>daha erken</b> kurulur; ancak <b>ulaşılan son derişimler aynı kalır</b>. Katalizör hızı değiştirir, miktarı değil.</p></details>
+    </li>
+    <li><span class="tip">Deney tasarımı</span>Bir tepkimenin B'ye göre derecesini bulmak isteyen öğrenci hangi değişkeni sabit tutmalıdır ve neden?
+      <details><summary>Cevabı gör</summary><p><b>[A] sabit tutulmalı</b>, yalnızca [B] değiştirilmelidir. Aynı anda ikisi de değişirse hızdaki değişimin hangisinden kaynaklandığı ayırt edilemez — kontrollü değişken ilkesi.</p></details>
+    </li>
+    <li><span class="tip">Tuzak</span>"Aktivasyon enerjisi küçük olan tepkimenin ΔH'si de küçüktür" ifadesi doğru mudur?
+      <details><summary>Cevabı gör</summary><p><b>Yanlış.</b> Ea, tepenin yüksekliğidir; ΔH ise başlangıç ve bitiş düzeyleri arasındaki farktır. Birbirinden <b>bağımsızdır</b>: Ea'sı çok büyük bir tepkime ΔH'si sıfıra yakın olabilir.</p></details>
+    </li>
+    <li><span class="tip">Karma</span>1 L kapta 2X(g) + Y(g) → 2Z(g) tepkimesi başlıyor. 0,4 mol Y harcandığında Z'nin derişimi kaç olur ve X'in harcanma hızı, Y'ninkinin kaç katıdır?
+      <details><summary>Cevabı gör</summary><p>Katsayı oranı: Y 0,4 harcanınca X 0,8 harcanır, Z <b>0,8 mol/L</b> oluşur. X'in hızı Y'ninkinin <b>2 katıdır</b>.</p></details>
+    </li>
+    <li><span class="tip">Öğrenci yorumu</span>Üç öğrenci, sabit hacimli kapta yürüyen bir tepkimeye <b>katalizör</b> eklenmesini yorumluyor:<br><b>Deniz:</b> "Aktivasyon enerjisi düştüğü için hız artar."<br><b>Eren:</b> "Tepkimenin ΔH'si de küçülür."<br><b>Feray:</b> "Eşik enerjisini aşabilen tanecik oranı artar."<br>Hangilerinin yorumu doğrudur?
+      <div class="sekil"><svg viewBox="0 0 400 140" role="img"><circle cx="86" cy="34" r="15" fill="#C7381A"/><text x="86" y="39" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">D</text><rect x="30" y="58" width="112" height="60" rx="9" fill="#F3EEE9" stroke="#D9CFC5"/><circle cx="200" cy="34" r="15" fill="#0B5C8A"/><text x="200" y="39" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">E</text><rect x="144" y="58" width="112" height="60" rx="9" fill="#F3EEE9" stroke="#D9CFC5"/><circle cx="314" cy="34" r="15" fill="#1B6B4A"/><text x="314" y="39" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">F</text><rect x="258" y="58" width="112" height="60" rx="9" fill="#F3EEE9" stroke="#D9CFC5"/><text x="86" y="80" font-size="9" fill="#14110F" text-anchor="middle">Ea düştüğü için</text><text x="86" y="94" font-size="9" fill="#14110F" text-anchor="middle">hız artar.</text><text x="200" y="80" font-size="9" fill="#14110F" text-anchor="middle">ΔH de</text><text x="200" y="94" font-size="9" fill="#14110F" text-anchor="middle">küçülür.</text><text x="314" y="80" font-size="9" fill="#14110F" text-anchor="middle">Eşiği aşan</text><text x="314" y="94" font-size="9" fill="#14110F" text-anchor="middle">oran artar.</text><text x="86" y="132" font-size="10" font-weight="700" text-anchor="middle" fill="#5C554F">Deniz</text><text x="200" y="132" font-size="10" font-weight="700" text-anchor="middle" fill="#5C554F">Eren</text><text x="314" y="132" font-size="10" font-weight="700" text-anchor="middle" fill="#5C554F">Feray</text></svg></div>
+      <details><summary>Cevabı gör</summary><p><b>Deniz ✔</b> Katalizör daha düşük eşikli yeni bir yol açar.<br><b>Eren ✘</b> ΔH tepken ve ürün düzeylerinin farkıdır; katalizör bu düzeyleri <b>değiştirmez</b>.<br><b>Feray ✔</b> Eşik düştüğü için aynı sıcaklıkta onu aşabilen tanecik oranı büyür.<br>Doğru: <b>Deniz ve Feray</b>.</p></details>
+    </li>
+    <li><span class="tip">Kavram haritası</span>Kavram haritasındaki numaralı bilgilerden hangileri <b>yanlıştır</b>?
+      <div class="sekil"><svg viewBox="0 0 400 120" role="img"><rect x="135" y="8" width="130" height="26" rx="8" fill="#F85300"/><text x="200" y="25" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">HIZA ETKİ EDEN</text><line x1="160" y1="34" x2="70" y2="52" stroke="#5C554F" stroke-width="1.4"/><line x1="240" y1="34" x2="330" y2="52" stroke="#5C554F" stroke-width="1.4"/><rect x="14" y="52" width="112" height="22" rx="7" fill="#FFF1E9" stroke="#F0BFA4"/><text x="70" y="67" font-size="9.5" fill="#14110F" text-anchor="middle">1 · Derişim ↑ hız ↑</text><rect x="140" y="52" width="112" height="22" rx="7" fill="#FFF1E9" stroke="#F0BFA4"/><text x="196" y="67" font-size="9.5" fill="#14110F" text-anchor="middle">2 · Katalizör Ea ↑</text><rect x="266" y="52" width="120" height="22" rx="7" fill="#EAF3F8" stroke="#9CC0D6"/><text x="326" y="67" font-size="9.5" fill="#14110F" text-anchor="middle">3 · Sıcaklık ↑ etkin ↑</text><rect x="120" y="90" width="160" height="22" rx="7" fill="#EEF6F1" stroke="#CFE4D8"/><text x="200" y="105" font-size="9.5" fill="#14110F" text-anchor="middle">4 · Temas yüzeyi her tepkimede</text><line x1="200" y1="74" x2="200" y2="90" stroke="#5C554F" stroke-width="1.2"/></svg></div>
+      <details><summary>Cevabı gör</summary><p><b>1 ✔</b> Derişim artışı çarpışma sayısını artırır.<br><b>2 ✘</b> Katalizör eşik enerjisini <b>düşürür</b>, yükseltmez.<br><b>3 ✔</b> Sıcaklık artışı etkin çarpışma oranını artırır.<br><b>4 ✘</b> Temas yüzeyi <b>katılar</b> için geçerlidir; gaz-gaz tepkimesinde etkisizdir.<br>Yanlış olanlar: <b>2 ve 4</b>.</p></details>
+    </li>
+    <li><span class="tip">Doğru–yanlış labirenti</span>Her adımda doğru/yanlış seçerek ilerleyen, <b>hiç hata yapmayan</b> öğrenci hangi çıkışa ulaşır?
+      <div class="sekil"><svg viewBox="0 0 400 154" role="img"><rect x="125" y="6" width="150" height="24" rx="7" fill="#F3EEE9" stroke="#D9CFC5"/><text x="200" y="22" font-size="9.5" fill="#14110F" text-anchor="middle">1 · Katalizör dengeyi değiştirmez</text><line x1="160" y1="30" x2="100" y2="46" stroke="#1B6B4A" stroke-width="1.4"/><text x="122" y="42" font-size="9" font-weight="700" fill="#1B6B4A">D</text><line x1="240" y1="30" x2="300" y2="46" stroke="#B02E10" stroke-width="1.4"/><text x="272" y="42" font-size="9" font-weight="700" fill="#B02E10">Y</text><rect x="25" y="46" width="152" height="24" rx="7" fill="#F3EEE9" stroke="#D9CFC5"/><text x="101" y="62" font-size="9" fill="#14110F" text-anchor="middle">2 · Hız denklemi katsayılardan yazılır</text><rect x="232" y="46" width="140" height="24" rx="7" fill="#F3EEE9" stroke="#D9CFC5"/><text x="302" y="62" font-size="9" fill="#14110F" text-anchor="middle">2′ · Hız her zaman sabittir</text><line x1="70" y1="70" x2="48" y2="86" stroke="#1B6B4A" stroke-width="1.4"/><text x="52" y="82" font-size="9" font-weight="700" fill="#1B6B4A">D</text><line x1="132" y1="70" x2="160" y2="86" stroke="#B02E10" stroke-width="1.4"/><text x="154" y="82" font-size="9" font-weight="700" fill="#B02E10">Y</text><rect x="95" y="86" width="150" height="24" rx="7" fill="#F3EEE9" stroke="#D9CFC5"/><text x="170" y="102" font-size="9.5" fill="#14110F" text-anchor="middle">3 · Hızı en yavaş basamak belirler</text><line x1="135" y1="110" x2="112" y2="126" stroke="#1B6B4A" stroke-width="1.4"/><text x="114" y="122" font-size="9" font-weight="700" fill="#1B6B4A">D</text><line x1="205" y1="110" x2="232" y2="126" stroke="#B02E10" stroke-width="1.4"/><text x="226" y="122" font-size="9" font-weight="700" fill="#B02E10">Y</text><circle cx="40" cy="136" r="12" fill="#E7E0D9"/><text x="40" y="140" font-size="10" font-weight="700" text-anchor="middle" fill="#14110F">1</text><circle cx="112" cy="136" r="12" fill="#F85300"/><text x="112" y="140" font-size="10" font-weight="700" text-anchor="middle" fill="#fff">2</text><circle cx="238" cy="136" r="12" fill="#E7E0D9"/><text x="238" y="140" font-size="10" font-weight="700" text-anchor="middle" fill="#14110F">3</text><circle cx="325" cy="136" r="12" fill="#E7E0D9"/><text x="325" y="140" font-size="10" font-weight="700" text-anchor="middle" fill="#14110F">4</text></svg></div>
+      <details><summary>Cevabı gör</summary><p><b>1.</b> "Katalizör dengeyi değiştirmez" → <b>D</b><br><b>2.</b> "Hız denklemi denklem katsayılarından yazılır" → <b>Y</b> (deneyle bulunur; yalnızca tek basamaklıda katsayı kullanılır)<br><b>3.</b> "Hızı en yavaş basamak belirler" → <b>D</b><br>Yol: D → Y → D → <b>2. çıkış</b>.</p></details>
+    </li>
+    <li><span class="tip">Deney tablosu</span>Aynı kütlede CaCO₃ ile aşağıdaki deneyler yapılıyor. Tepkime hızlarını <b>büyükten küçüğe</b> sıralayın.
+      <div class="tkutu"><table><tr><th>Deney</th><th>CaCO₃ hâli</th><th>HCl derişimi</th><th>Sıcaklık</th></tr><tr><td>I</td><td>Toz</td><td>1 M</td><td>25 °C</td></tr><tr><td>II</td><td>Parça</td><td>1 M</td><td>25 °C</td></tr><tr><td>III</td><td>Toz</td><td>2 M</td><td>40 °C</td></tr><tr><td>IV</td><td>Parça</td><td>2 M</td><td>25 °C</td></tr></table></div>
+      <details><summary>Cevabı gör</summary><p>Hızı artıran etkenler: <b>yüksek derişim</b>, <b>yüksek sıcaklık</b>, <b>büyük temas yüzeyi</b>.<br>III (toz, 2 M, 40 °C) en hızlı → sonra I (toz, 1 M, 25 °C) ile IV (parça, 2 M, 25 °C) karşılaştırılır; toz hâli ve derişim birlikte değerlendirilir → IV &gt; I → en yavaş II.<br>Sıralama: <b>III &gt; IV &gt; I &gt; II</b>.</p></details>
+    </li>
+    <li><span class="tip">Boşluk doldurma</span>Boşlukları <b>etkin · eşik · yönelim · aktivasyon · azalır</b> ifadeleriyle doldurun:<br>Ürün oluşturan çarpışmalara …(1)… çarpışma denir. Bunun için taneciklerin enerjisi …(2)… değerine ulaşmalı ve çarpışma uygun …(3)… ile gerçekleşmelidir. Katalizör …(4)… enerjisini düşürür. Tepkime ilerledikçe tepken derişimi azaldığı için hız …(5)….
+      <details><summary>Cevabı gör</summary><p>(1) <b>etkin</b> · (2) <b>eşik</b> · (3) <b>yönelim</b> · (4) <b>aktivasyon</b> · (5) <b>azalır</b>.</p></details>
+    </li>
+    <li><span class="tip">Eşleştirme</span>Terimleri tanımlarıyla eşleştirin.<br><b>a)</b> Eşik enerjisi &nbsp; <b>b)</b> Hız sabiti &nbsp; <b>c)</b> Ara ürün &nbsp; <b>d)</b> Tepkime derecesi<br><b>1.</b> Hız denklemindeki üslerin toplamı &nbsp; <b>2.</b> Bir basamakta oluşup diğerinde tükenen tür &nbsp; <b>3.</b> Çarpışan taneciklerin sahip olması gereken minimum toplam kinetik enerji &nbsp; <b>4.</b> Sıcaklığa bağlı, derişimden bağımsız orantı katsayısı
+      <details><summary>Cevabı gör</summary><p><b>a–3 · b–4 · c–2 · d–1</b><br>Ayrım: <b>ara ürün</b> önce oluşur sonra tükenir; <b>katalizör</b> ise önce girer sonra çıkar.</p></details>
+    </li>
+    <li><span class="tip">Metin bağlamlı · 1</span><b>Ortak metin:</b> Otomobil egzozlarındaki zararlı CO ve NO gazları, katalitik konvertörde platin yüzeyinde şu tepkimeyle dönüştürülür: 2CO(g) + 2NO(g) → 2CO₂(g) + N₂(g). Motor soğukken dönüşüm verimi düşüktür; motor ısındıkça verim hızla artar.<br><br><b>Soru:</b> Motor soğukken verimin düşük olmasının kinetik açıklaması nedir?
+      <details><summary>Cevabı gör</summary><p>Düşük sıcaklıkta taneciklerin ortalama kinetik enerjisi küçüktür; <b>eşik enerjisini aşabilen tanecik oranı azdır</b> → etkin çarpışma sayısı düşük, hız yavaştır.</p></details>
+    </li>
+    <li><span class="tip">Metin bağlamlı · 2</span><b>(Aynı metin)</b> Platin bu tepkimede hangi rolü üstlenir ve tepkime sonunda ne olur?
+      <details><summary>Cevabı gör</summary><p>Platin <b>katalizördür</b>: daha düşük eşik enerjili yeni bir yol sağlar. Tepkimeye girer ama sonunda <b>değişmeden geri çıkar</b>; harcanmaz. Bu yüzden konvertör uzun süre kullanılabilir.</p></details>
+    </li>
+    <li><span class="tip">Metin bağlamlı · 3</span><b>(Aynı metin)</b> Konvertörde platin ince gözenekli bir yapıya kaplanır. Bunun kinetik gerekçesi nedir?
+      <details><summary>Cevabı gör</summary><p>Gözenekli yapı <b>temas yüzeyini</b> muazzam artırır. Katı katalizörde tepkime yüzeyde yürüdüğü için yüzey alanı arttıkça etkin çarpışma sayısı ve dolayısıyla hız artar — aynı ilke, nanoteknolojinin de temelidir.</p></details>
+    </li>
+    <li><span class="tip">Tablo tamamlama</span>Tablodaki numaralı boşlukları doldurun.
+      <div class="tkutu"><table><tr><th>#</th><th>Bilgi</th><th>Değer</th></tr><tr><td>—</td><td>Deney 1: [A]=0,1 · [B]=0,1 · hız=0,02</td><td></td></tr><tr><td>—</td><td>Deney 2: [A]=0,3 · [B]=0,1 · hız=0,18</td><td></td></tr><tr><td>—</td><td>Deney 3: [A]=0,1 · [B]=0,2 · hız=0,04</td><td></td></tr><tr><td>1</td><td>A'ya göre derece</td><td>?</td></tr><tr><td>2</td><td>B'ye göre derece</td><td>?</td></tr><tr><td>3</td><td>Hız denklemi ve toplam derece</td><td>?</td></tr><tr><td>4</td><td>k değeri</td><td>?</td></tr></table></div>
+      <details><summary>Cevabı gör</summary><p><b>1:</b> [A] 3 katına çıkınca hız 9 kat → derece <b>2</b><br><b>2:</b> [B] 2 katına çıkınca hız 2 kat → derece <b>1</b><br><b>3:</b> Hız = <b>k[A]²[B]</b>, toplam derece <b>3</b><br><b>4:</b> 0,02 = k(0,1)²(0,1) = k × 0,001 → <b>k = 20</b></p></details>
     </li>
   </ol>
 </div>
