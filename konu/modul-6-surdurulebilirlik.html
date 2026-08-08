@@ -130,6 +130,15 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 .test ol{padding-left:22px}
 
 
+
+.gezin{display:flex;gap:10px;flex-wrap:wrap;margin:34px 0 0}
+.gezin a{flex:1 1 42%;display:flex;flex-direction:column;gap:3px;padding:14px 16px;border:1px solid var(--cizgi);
+  border-radius:13px;text-decoration:none;background:#fff;transition:.15s}
+.gezin a:hover{border-color:var(--turuncu);box-shadow:0 5px 16px rgba(248,83,0,.10)}
+.gezin .yon{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--turuncu)}
+.gezin .ad{font-size:15.5px;font-weight:700;color:var(--murekkep)}
+.gezin .liste{flex:1 1 100%;text-align:center;background:#F3EEE9;border-style:dashed}
+.gezin .liste .ad{color:var(--gri);font-weight:600;font-size:14.5px}
 .alt{border-top:1px solid var(--cizgi);margin-top:44px;padding:24px 0 60px;color:var(--gri);font-size:15px}
 .yukari{position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;background:var(--turuncu);color:#fff;border:none;font-size:20px;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(248,83,0,.35);z-index:40}
 .yukari.gor{display:flex}
@@ -633,7 +642,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 <div class="soru">
   <div class="ust-serit"><span class="numara">Soru 17</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
-    <p class="metin">Nanoteknolojik ürünlerle ilgili aşağıdaki yargılardan hangileri doğrudur?<br><b>I.</b> Nano boyutta maddenin rengi, sertliği ve iletkenliği değişebilir.<br><b>II.</b> Nanoparçacıkların etkinliği, yüzey alanı/hacim oranının büyümesiyle açıklanır.<br><b>III.</b> Bir madde iri hâlde zararsızsa nano hâlde de zararsızdır.<br><b>IV.</b> Nanoteknolojik ürünlerin uzun vadeli etkileri henüz tam bilinmemektedir.</p>
+    <p class="metin">Bir öğrenci nanoteknoloji sunumu hazırlıyor ve slaytına şu dört ifadeyi yazıyor. Bunlardan hangileri <b>doğrudur</b>?<br><b>I.</b> Nano boyutta maddenin rengi, sertliği ve iletkenliği değişebilir.<br><b>II.</b> Nanoparçacıkların etkinliği, yüzey alanı/hacim oranının büyümesiyle açıklanır.<br><b>III.</b> Bir madde iri hâlde zararsızsa nano hâlde de zararsızdır.<br><b>IV.</b> Nanoteknolojik ürünlerin uzun vadeli etkileri henüz tam bilinmemektedir.</p>
     <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
     <ol class="adim"><li><b>I doğru:</b> Nano ölçekte fiziksel ve kimyasal özellikler değişebilir; nanoteknolojinin dayandığı olgu budur.</li><li><b>II doğru:</b> Kütle sabitken bölünme yüzey alanını büyütür; taneciklerin çoğu yüzeyde bulunur.</li><li><b>III yanlış:</b> Tam tersi geçerlidir. Etkinliği artıran özellik, <b>beklenmedik etkileşim riskini</b> de artırır. İri hâlde zararsız bir madde nano boyutta farklı davranabilir.</li><li><b>IV doğru:</b> Ders kitabının açık ifadesiyle bu etkilerin anlaşılması uzun yıllar sürebilir.</li><li>III ile IV birlikte okunduğunda kitabın istediği tutum çıkar: kesin hüküm vermeden, <b>fayda ve belirsizliği birlikte</b> tartmak.</li></ol>
     <div class="cevap">I, II ve IV doğru; III yanlış.</div>
@@ -780,6 +789,11 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
     </li>
   </ol>
 </div>
+
+<nav class="gezin">
+  <a href="modul-5-cozunurluk.html"><span class="yon">← Önceki</span><span class="ad">Modül 5 · Çözünürlük</span></a>
+  <a class="liste" href="./"><span class="ad">Tüm modüller</span></a>
+</nav>
 
 <div class="alt">
   <p>Bu modülle <b>11. sınıf kimya programının üç teması da</b> tamamlandı: Etkileşim (Modül 1–2), Çeşitlilik (Modül 3–5) ve Sürdürülebilirlik (Modül 6).</p>
