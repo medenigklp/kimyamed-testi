@@ -1,1 +1,1873 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Modül 3 · Denkleştirme ve Stokiyometri — 10. Sınıf Kimya | kimyamed</title>
+<meta name="description" content="10. sınıf kimya: kimyasal denklem denkleştirme, bilinmeyen formül bulma, stokiyometrik hesaplamalar, sınırlayıcı bileşen, yüzde verim ve saflık. Çözümlü sorular ve grafiklerle.">
+<meta name="theme-color" content="#F85300">
+<style>
+:root{
+--turuncu:#F85300;--turuncu-yumusak:#FFF1E9;--murekkep:#14110F;--gri:#5C554F;
+--cizgi:#E7E0D9;--kagit:#FBF8F5;--beyaz:#FFFFFF;--mavi:#0B5C8A;--mavi-yumusak:#EAF3F8;
+--yesil:#1B6B4A;--r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--kagit);color:var(--murekkep);
+font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+font-size:17px;line-height:1.68;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding:0 18px}
+.ust{position:sticky;top:0;z-index:50;background:rgba(251,248,245,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--cizgi)}
+.ust .wrap{display:flex;align-items:center;gap:12px;height:56px}
+.marka{font-weight:800;letter-spacing:-.02em;font-size:18px;color:var(--murekkep);text-decoration:none}
+.marka span{color:var(--turuncu)}
+.ust .etiket{margin-left:auto;font-size:12px;color:var(--gri);text-transform:uppercase;letter-spacing:.08em}
+#ilerleme{position:absolute;left:0;bottom:-1px;height:2px;background:var(--turuncu);width:0}
+.hero{padding:40px 0 24px;border-bottom:1px solid var(--cizgi)}
+.hero .modul{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--turuncu)}
+.hero h1{font-size:clamp(28px,7vw,42px);line-height:1.1;letter-spacing:-.03em;margin:8px 0 12px;font-weight:800}
+.hero p{color:var(--gri);margin:0 0 16px}
+.sayac{display:flex;gap:22px;flex-wrap:wrap;border-top:1px solid var(--cizgi);padding-top:14px}
+.sayac div{font-size:13px;color:var(--gri)}
+.sayac b{display:block;font-size:22px;color:var(--murekkep);line-height:1.2}
+h2{font-size:clamp(23px,5.5vw,30px);letter-spacing:-.02em;margin:44px 0 8px;line-height:1.18;padding-top:8px}
+h2 .no{color:var(--turuncu);font-size:.62em;font-weight:800;display:block;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+h3{font-size:20px;margin:30px 0 10px;letter-spacing:-.01em}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:6px 0}
+sub,sup{line-height:0}
+.form{font-family:"SFMono-Regular",Consolas,Menlo,monospace;background:var(--beyaz);border:1px solid var(--cizgi);border-radius:8px;padding:2px 7px;font-size:.94em;white-space:nowrap}
+.form-uzun{display:block;white-space:normal;overflow-wrap:anywhere;margin-top:5px;padding:7px 10px;line-height:1.9}
+.blokform{display:block;text-align:center;background:var(--beyaz);border:1px solid var(--cizgi);border-left:3px solid var(--turuncu);border-radius:8px;padding:14px 12px;margin:16px 0;overflow-x:auto}
+.kart{border-radius:var(--r);padding:16px 18px;margin:18px 0;border:1px solid var(--cizgi);background:var(--beyaz)}
+.kart .baslik{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.kart p:last-child,.kart ul:last-child,.kart ol:last-child{margin-bottom:0}
+.kural{border-left:4px solid var(--turuncu);background:var(--turuncu-yumusak);border-color:#F8D6C2}
+.kural .baslik{color:var(--turuncu)}
+.tuzak{border-left:4px solid #C7381A;background:#FFF4F1;border-color:#F5CFC5}
+.tuzak .baslik{color:#C7381A}
+.soru{border:1px solid var(--cizgi);border-radius:var(--r);background:var(--beyaz);margin:20px 0;overflow:hidden}
+.soru .ust-serit{display:flex;align-items:center;gap:10px;padding:11px 16px;background:#F3EEE9;border-bottom:1px solid var(--cizgi)}
+.soru .numara{font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mavi)}
+.seviye{margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.s-kolay{background:#E4F2EA;color:var(--yesil)}
+.s-orta{background:#FFF0DC;color:#9A5B00}
+.s-zor{background:#FBE3DE;color:#B02E10}
+.s-ileri{background:#E7E1F3;color:#5B3A8C}
+.ek-not{border-left:4px solid #7A3E8C;background:#F6F2FA;border-color:#DED2EC}
+.ek-not .baslik{color:#7A3E8C}
+.gunluk{border-left:4px solid var(--yesil);background:#EEF6F1;border-color:#CFE4D8}
+.gunluk .baslik{color:var(--yesil)}
+.oncul{list-style:none;padding-left:0;margin:10px 0 0;font-size:15px;color:var(--gri)}
+.oncul li{margin:5px 0;padding-left:30px;text-indent:-30px}
+.oncul b{color:var(--murekkep)}
+.siklar{list-style:none;padding-left:0;margin:11px 0 0;font-weight:600}
+.siklar li{margin:7px 0;padding-left:28px;text-indent:-28px}
+.siklar b{color:var(--turuncu)}
+.secenek{list-style:none;padding-left:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:15px}
+.secenek li{margin:0}
+.secenek b{color:var(--mavi)}
+.soru .govde{padding:14px 16px 16px}
+.soru .metin{font-weight:600;margin-bottom:6px}
+.soru .veri{font-size:15px;color:var(--gri);margin-bottom:0}
+.adim{counter-reset:adim;list-style:none;padding-left:0;margin:14px 0 0}
+.adim li{counter-increment:adim;position:relative;padding-left:34px;margin:10px 0}
+.adim li::before{content:counter(adim);position:absolute;left:0;top:2px;width:23px;height:23px;border-radius:50%;background:var(--mavi);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.cevap{margin-top:14px;padding:10px 14px;border-radius:10px;background:var(--mavi-yumusak);border:1px solid #CFE2EE;font-weight:700}
+.cozum{margin-top:16px;border-top:1px dashed var(--cizgi);padding-top:12px}
+.cozum summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;
+font-size:14px;font-weight:700;color:var(--mavi);background:var(--mavi-yumusak);
+border:1px solid #CFE2EE;padding:8px 15px;border-radius:999px;user-select:none;transition:background .15s}
+.cozum summary:hover{background:#DCEBF4}
+.cozum summary::-webkit-details-marker{display:none}
+.cozum summary svg{width:17px;height:17px;flex:none}
+.cozum summary .kapali{display:inline-flex;align-items:center;gap:8px}
+.cozum summary .acik{display:none;align-items:center;gap:8px}
+.cozum[open] summary .kapali{display:none}
+.cozum[open] summary .acik{display:inline-flex}
+.cozum[open] summary{color:var(--gri);background:#F3EEE9;border-color:var(--cizgi)}
+.cozum .adim{margin-top:16px}
+.tablo-sar{overflow-x:auto;margin:16px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--beyaz);min-width:400px}
+th,td{border:1px solid var(--cizgi);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#F3EEE9;font-weight:700;font-size:13px}
+figure{margin:20px 0;background:var(--beyaz);border:1px solid var(--cizgi);border-radius:var(--r);padding:14px}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
+.test{background:var(--murekkep);color:#F5F1EC;border-radius:var(--r);padding:22px 20px;margin:36px 0}
+.test h3{color:#fff;margin:0 0 4px;font-size:21px}
+.test .alt-baslik{color:#B9AFA5;font-size:14px;margin-bottom:16px}
+.test ol{padding-left:20px}
+.test li{margin:20px 0}
+.test details{margin-top:8px;background:rgba(255,255,255,.07);border-radius:9px;padding:8px 12px}
+.test summary{cursor:pointer;font-size:13px;font-weight:700;color:#FF8B4D;letter-spacing:.04em}
+.test details p{margin:8px 0 2px;font-size:15px;color:#EDE7E0}
+.test .tip{display:block;font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#FF8B4D;margin-bottom:3px}
+.gezin{display:flex;gap:10px;flex-wrap:wrap;margin:34px 0 0}
+.gezin a{flex:1 1 42%;display:flex;flex-direction:column;gap:3px;padding:14px 16px;border:1px solid var(--cizgi);
+border-radius:13px;text-decoration:none;background:#fff;transition:.15s}
+.gezin a:hover{border-color:var(--turuncu);box-shadow:0 5px 16px rgba(248,83,0,.10)}
+.gezin .yon{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--turuncu)}
+.gezin .ad{font-size:15.5px;font-weight:700;color:var(--murekkep)}
+.gezin .liste{flex:1 1 100%;text-align:center;background:#F3EEE9;border-style:dashed}
+.gezin .liste .ad{color:var(--gri);font-weight:600;font-size:14.5px}
+.alt{border-top:1px solid var(--cizgi);margin-top:44px;padding:24px 0 60px;color:var(--gri);font-size:15px}
+.yukari{position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;background:var(--turuncu);color:#fff;border:none;font-size:20px;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(248,83,0,.35);z-index:40}
+.yukari.gor{display:flex}
+:focus-visible{outline:3px solid var(--turuncu);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="ust">
+<div class="wrap">
+<a class="marka" href="../" style="display:inline-flex;align-items:center;gap:9px"><img src="../logo.png" alt="" width="28" height="28" style="display:block;border-radius:50%;flex:none" onerror="this.style.display='none'"><span>kimya<b style="color:var(--turuncu);font-weight:800">med</b></span></a>
+<a class="etiket" href="./?sinif=10" style="text-decoration:none">10. Sınıf · Modül 3</a>
+</div>
+<div id="ilerleme"></div>
+</header>
+
+<main class="wrap">
+
+<section class="hero">
+<div class="modul">1. Tema · Etkileşim</div>
+<h1>Denkleştirme ve stokiyometri</h1>
+<p>Modül 1 tepkimelerin nasıl olduğunu, Modül 2 miktarları saymayı öğretti. Burada ikisi birleşiyor: denklemin katsayıları, harcanan ve oluşan maddeler arasında sayısal bir köprü kuruyor.</p>
+<div class="sayac">
+<div><b>59</b>çözümlü soru</div>
+<div><b>30</b>kendin çöz</div>
+<div><b>7</b>görsel</div>
+</div>
+</section>
+
+<!-- ==================== 1 ==================== -->
+<h2><span class="no">Bölüm 1</span>Denklem denkleştirme</h2>
+
+<p>Kütlenin korunumu, denklemin iki yanında her elementin atom sayısının eşit olmasını zorunlu kılar. Formüllerin önüne yazılan sayılara <b>stokiyometrik katsayı</b> denir.</p>
+
+<div class="kart kural">
+<div class="baslik">Kural — denkleştirme düzeni</div>
+<ol>
+<li>Atom sayısı en fazla olan bileşiğin katsayısını <b>1</b> al; oradan başla.</li>
+<li>Sırayı takip et: <b>M → A → H → O</b> (önce metaller, sonra ametaller, en son hidrojen ve oksijen).</li>
+<li>Oksijeni sona bırakmak neredeyse her zaman işi kolaylaştırır, çünkü genelde birden çok bileşikte bulunur.</li>
+<li>Sonda kesirli katsayı çıkarsa <b>tüm denklemi</b> uygun bir sayıyla genişleterek tam sayıya çevir.</li>
+</ol>
+</div>
+
+<div class="kart tuzak">
+<div class="baslik">Tuzak</div>
+<ul>
+<li>Katsayı değiştirilebilir, <b>formül değiştirilemez</b>. 2H<sub>2</sub>O yazılır, H<sub>4</sub>O<sub>2</sub> yazılmaz.</li>
+<li>Bileşiklerin ve atomik yapılı elementlerin (Na, Fe, Cu) katsayıları <b>kesirli olamaz</b>. Yalnızca moleküler elementlere (O<sub>2</sub>, H<sub>2</sub>, Cl<sub>2</sub>) geçici olarak kesir verilebilir.</li>
+<li>Parantez dışındaki alt indis, parantez içindeki <b>tüm</b> atomlara dağılır: Ca(ClO<sub>4</sub>)<sub>2</sub>'de 2 Cl ve 8 O vardır.</li>
+</ul>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 1</span><span class="seviye s-kolay">Kolay</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki denklemleri en küçük tam sayılarla denkleştirin.</p>
+<ul class="oncul">
+<li><b>I.</b> C<sub>3</sub>H<sub>8</sub> + O<sub>2</sub> → CO<sub>2</sub> + H<sub>2</sub>O</li>
+<li><b>II.</b> Fe + O<sub>2</sub> → Fe<sub>2</sub>O<sub>3</sub></li>
+<li><b>III.</b> KClO<sub>3</sub> → KCl + O<sub>2</sub></li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I.</b> C: 3 → 3CO<sub>2</sub>. H: 8 → 4H<sub>2</sub>O. O: sağda 6 + 4 = 10 atom → 5O<sub>2</sub>.<br><b>C<sub>3</sub>H<sub>8</sub> + 5O<sub>2</sub> → 3CO<sub>2</sub> + 4H<sub>2</sub>O</b></li>
+<li><b>II.</b> Fe<sub>2</sub>O<sub>3</sub>'ün katsayısı 1 iken 2 Fe ve 3 O gerekir; O tek sayı olduğu için ürünü 2 ile al: 2Fe<sub>2</sub>O<sub>3</sub> → 4 Fe ve 6 O.<br><b>4Fe + 3O<sub>2</sub> → 2Fe<sub>2</sub>O<sub>3</sub></b></li>
+<li><b>III.</b> Solda 3 O var, sağda O<sub>2</sub> çift sayı gerektiriyor. KClO<sub>3</sub>'ü 2 al → 6 O → 3O<sub>2</sub>.<br><b>2KClO<sub>3</sub> → 2KCl + 3O<sub>2</sub></b></li>
+<li>Ortak nokta: oksijen tek sayı çıktığında ilgili bileşiği <b>2 ile çarpmak</b> çözümü açar.</li>
+</ol>
+<div class="cevap">I) 1-5-3-4 &nbsp;·&nbsp; II) 4-3-2 &nbsp;·&nbsp; III) 2-2-3</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 2</span><span class="seviye s-kolay">Kolay</span></div>
+<div class="govde">
+<p class="metin">NH<sub>3</sub> + O<sub>2</sub> → N<sub>2</sub>O<sub>3</sub> + H<sub>2</sub>O</p>
+<p class="veri">tepkimesi en küçük tam sayılarla denkleştirildiğinde <b>ürünlerin</b> katsayıları toplamı kaç olur?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Atom sayısı en fazla olan N<sub>2</sub>O<sub>3</sub>'ün katsayısını 1 al.</li>
+<li>N: sağda 2 → solda 2NH<sub>3</sub>.</li>
+<li>H: solda 2 × 3 = 6 → sağda 3H<sub>2</sub>O.</li>
+<li>O: sağda 3 + 3 = 6 atom → solda 3O<sub>2</sub>.</li>
+<li><b>2NH<sub>3</sub> + 3O<sub>2</sub> → N<sub>2</sub>O<sub>3</sub> + 3H<sub>2</sub>O</b></li>
+<li>Ürünlerin katsayıları: 1 + 3 = <b>4</b> (Girenlerinki 5 olurdu — soru hangisini istiyor, dikkat et.)</li>
+</ol>
+<div class="cevap">4</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 3</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">C<sub>4</sub>H<sub>6</sub> + O<sub>2</sub> → CO<sub>2</sub> + H<sub>2</sub>O</p>
+<p class="veri">tepkimesi en küçük tam sayılarla denkleştirildiğinde O<sub>2</sub> molekülünün katsayısı kaç olur?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>C<sub>4</sub>H<sub>6</sub>'nın katsayısını 1 al. C: 4 → 4CO<sub>2</sub>. H: 6 → 3H<sub>2</sub>O.</li>
+<li>O: sağda 8 + 3 = 11 atom → solda 11/2 O<sub>2</sub>.</li>
+<li>C<sub>4</sub>H<sub>6</sub> + (11/2)O<sub>2</sub> → 4CO<sub>2</sub> + 3H<sub>2</sub>O</li>
+<li>En küçük tam sayı istendiği için tümünü <b>2 ile</b> genişlet:</li>
+<li><b>2C<sub>4</sub>H<sub>6</sub> + 11O<sub>2</sub> → 8CO<sub>2</sub> + 6H<sub>2</sub>O</b></li>
+<li>O<sub>2</sub>'nin katsayısı <b>11</b>'dir. Kesirli hâlde bırakıp "5,5" demek klasik hatadır.</li>
+</ol>
+<div class="cevap">11</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 4</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki denklemleri denkleştirin. (Parantezlere dikkat!)</p>
+<ul class="oncul">
+<li><b>I.</b> Mg<sub>3</sub>N<sub>2</sub> + H<sub>2</sub>O → Mg(OH)<sub>2</sub> + NH<sub>3</sub></li>
+<li><b>II.</b> Ca(OH)<sub>2</sub> + HClO<sub>4</sub> → Ca(ClO<sub>4</sub>)<sub>2</sub> + H<sub>2</sub>O</li>
+<li><b>III.</b> KOH + H<sub>3</sub>PO<sub>4</sub> → K<sub>3</sub>PO<sub>4</sub> + H<sub>2</sub>O</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I.</b> Mg: 3 → 3Mg(OH)<sub>2</sub>. N: 2 → 2NH<sub>3</sub>. Sağda H: 3 × 2 + 2 × 3 = 12 → solda 6H<sub>2</sub>O. O kontrolü: solda 6, sağda 3 × 2 = 6 ✔<br><b>Mg<sub>3</sub>N<sub>2</sub> + 6H<sub>2</sub>O → 3Mg(OH)<sub>2</sub> + 2NH<sub>3</sub></b></li>
+<li><b>II.</b> Ca(ClO<sub>4</sub>)<sub>2</sub>'de <b>2 Cl ve 8 O</b> var → solda 2HClO<sub>4</sub>. H: 2 + 2 = 4 → 2H<sub>2</sub>O.<br><b>Ca(OH)<sub>2</sub> + 2HClO<sub>4</sub> → Ca(ClO<sub>4</sub>)<sub>2</sub> + 2H<sub>2</sub>O</b></li>
+<li><b>III.</b> K: 3 → 3KOH. Sağda H: 4 × 2 değil — önce H<sub>2</sub>O sayısını bul: solda H toplam 3 + 3 = 6 → 3H<sub>2</sub>O.<br><b>3KOH + H<sub>3</sub>PO<sub>4</sub> → K<sub>3</sub>PO<sub>4</sub> + 3H<sub>2</sub>O</b></li>
+<li>Üçünde de ortak kısayol: <b>tuzun formülündeki metal sayısı</b> doğrudan bazın katsayısını verir.</li>
+</ol>
+<div class="cevap">I) 1-6-3-2 &nbsp;·&nbsp; II) 1-2-1-2 &nbsp;·&nbsp; III) 3-1-1-3</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 5</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Gliserol (C<sub>3</sub>H<sub>5</sub>(OH)<sub>3</sub>) yanma denklemini en küçük tam sayılarla denkleştirin.</p>
+<p class="veri">C<sub>3</sub>H<sub>5</sub>(OH)<sub>3</sub> + O<sub>2</sub> → CO<sub>2</sub> + H<sub>2</sub>O</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Formülü aç: C<sub>3</sub>H<sub>5</sub>(OH)<sub>3</sub> = <b>C<sub>3</sub>H<sub>8</sub>O<sub>3</sub></b> (5 + 3 = 8 H, 3 O).</li>
+<li>C: 3 → 3CO<sub>2</sub>. H: 8 → 4H<sub>2</sub>O.</li>
+<li>O: sağda 6 + 4 = 10 atom. Solda molekülün kendisinde <b>zaten 3 O</b> var → O<sub>2</sub>'den gelmesi gereken 10 − 3 = 7 atom.</li>
+<li>7 tek sayı olduğu için 7/2 O<sub>2</sub> çıkar; tümünü 2 ile genişlet.</li>
+<li><b>2C<sub>3</sub>H<sub>5</sub>(OH)<sub>3</sub> + 7O<sub>2</sub> → 6CO<sub>2</sub> + 8H<sub>2</sub>O</b></li>
+<li>Kontrol: C 6 = 6 ✔ H 16 = 16 ✔ O: solda 6 + 14 = 20, sağda 12 + 8 = 20 ✔</li>
+<li>En kritik adım 3. adımdır: yakıtın kendi oksijenini hesaba katmayı unutmak en sık yapılan hatadır.</li>
+</ol>
+<div class="cevap">2-7-6-8</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 6</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">MnO<sub>2</sub> + HCl → MnCl<sub>2</sub> + Cl<sub>2</sub> + H<sub>2</sub>O</p>
+<p class="veri">denklemini denkleştirin. (İpucu: klor iki farklı üründe bulunuyor.)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Mn: iki tarafta da 1 → MnO<sub>2</sub> ve MnCl<sub>2</sub> katsayıları 1.</li>
+<li>O: solda 2 → sağda <b>2H<sub>2</sub>O</b>.</li>
+<li>H: sağda 4 → solda <b>4HCl</b>.</li>
+<li>Cl kontrolü: solda 4. Sağda MnCl<sub>2</sub>'de 2 + Cl<sub>2</sub>'de 2 = 4 ✔</li>
+<li><b>MnO<sub>2</sub> + 4HCl → MnCl<sub>2</sub> + Cl<sub>2</sub> + 2H<sub>2</sub>O</b></li>
+<li>Bir element iki üründe birden bulunuyorsa onu <b>en sona bırak</b>; diğerlerini bitirince kendiliğinden tutar.</li>
+</ol>
+<div class="cevap">1-4-1-1-2</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 7</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Cl<sub>2</sub> + NH<sub>3</sub> → N<sub>2</sub> + NH<sub>4</sub>Cl</p>
+<p class="veri">denklemini en küçük tam sayılarla denkleştirin. (Azot da iki üründe bulunuyor.)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>N<sub>2</sub>'nin katsayısını 1 al ve NH<sub>4</sub>Cl'ye <b>a</b> de.</li>
+<li>Cl: sağda a tane → solda a/2 Cl<sub>2</sub>.</li>
+<li>N: sağda 2 + a → solda (2 + a) NH<sub>3</sub>.</li>
+<li>H: solda 3(2 + a) = 6 + 3a · sağda 4a. Eşitle: 6 + 3a = 4a → <b>a = 6</b>.</li>
+<li>Yerine koy: NH<sub>3</sub> katsayısı 2 + 6 = 8, Cl<sub>2</sub> katsayısı 6/2 = 3.</li>
+<li><b>3Cl<sub>2</sub> + 8NH<sub>3</sub> → N<sub>2</sub> + 6NH<sub>4</sub>Cl</b></li>
+<li>Kontrol: Cl 6 = 6 ✔ N 8 = 2 + 6 ✔ H 24 = 24 ✔</li>
+<li>Gözle denkleştirmenin zorlandığı yerde <b>harf vermek</b> (cebirsel yöntem) çözümü hızlandırır.</li>
+</ol>
+<div class="cevap">3-8-1-6</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 8</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Nitrogliserinin patlama tepkimesi:</p>
+<p class="veri" style="margin-bottom:10px">C<sub>3</sub>H<sub>5</sub>N<sub>3</sub>O<sub>9</sub> → N<sub>2</sub> + CO<sub>2</sub> + H<sub>2</sub>O + O<sub>2</sub></p>
+<p class="metin">Bu denklem en küçük tam sayılarla denkleştirildiğinde katsayıların toplamı kaçtır?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Girenin katsayısına <b>4</b> vererek başla (H sayısı 5 tek olduğu için 2'nin katı gerekiyor; 4 en pratik seçim).</li>
+<li>4 molekülde: C 12, H 20, N 12, O 36.</li>
+<li>N: 12 → <b>6N<sub>2</sub></b> · C: 12 → <b>12CO<sub>2</sub></b> · H: 20 → <b>10H<sub>2</sub>O</b></li>
+<li>O dengesi: kullanılan O = 12 × 2 + 10 × 1 = 34. Elde 36 var → artan 2 atom → <b>1O<sub>2</sub></b>.</li>
+<li><b>4C<sub>3</sub>H<sub>5</sub>N<sub>3</sub>O<sub>9</sub> → 6N<sub>2</sub> + 12CO<sub>2</sub> + 10H<sub>2</sub>O + O<sub>2</sub></b></li>
+<li>Katsayılar toplamı: 4 + 6 + 12 + 10 + 1 = <b>33</b></li>
+<li>Dikkat çeken nokta: 4 molekül katıdan <b>29 molekül gaz</b> çıkıyor. Patlamanın şiddeti bu ani hacim artışından gelir.</li>
+</ol>
+<div class="cevap">33</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 9</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">C<sub>x</sub>H<sub>7</sub>(OH)<sub>y</sub> + 5O<sub>2</sub> → 4CO<sub>2</sub> + 5H<sub>2</sub>O</p>
+<p class="veri">denkleşmiş denklemine göre (x + y) değeri kaçtır?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>Karbondan git:</b> solda x, sağda 4 → <b>x = 4</b>.</li>
+<li><b>Hidrojenden git:</b> solda 7 + y (parantez içindeki OH'lerin H'leri), sağda 5 × 2 = 10 → 7 + y = 10 → <b>y = 3</b>.</li>
+<li><b>Oksijenle kontrol et:</b> solda y + 5 × 2 = 3 + 10 = 13 · sağda 4 × 2 + 5 × 1 = 13 ✔</li>
+<li>x + y = 4 + 3 = <b>7</b></li>
+<li>Bileşik C<sub>4</sub>H<sub>7</sub>(OH)<sub>3</sub>'tür. Kontrol adımını atlamamak önemli: x ve y'yi bulduktan sonra oksijen tutmuyorsa bir yerde hata var demektir.</li>
+</ol>
+<div class="cevap">7</div>
+</details>
+</div>
+</div>
+
+<!-- ==================== 2 ==================== -->
+<h2><span class="no">Bölüm 2</span>Denklemdeki bilinmeyen maddeyi bulma</h2>
+
+<p>Denkleşmiş bir denklemde bir madde X ile gösterilmişse, onu bulmanın tek yolu <b>atom sayımıdır</b>. Girenlerde ve ürünlerde her elementi say; eksik kalan atomlar X'in yapısındadır.</p>
+
+<div class="kart kural">
+<div class="baslik">Kural — üç adım</div>
+<ol>
+<li>X'in bulunmadığı taraftaki tüm atomları say.</li>
+<li>Diğer tarafta eksik kalan atom türü ve sayısını belirle.</li>
+<li>Bu eksiği <b>X'in katsayısına böl</b> — sonuç bir molekül X'in formülüdür.</li>
+</ol>
+<p>Dayanak kütlenin korunumu kanunudur: atom türü ve sayısı tepkimede korunur.</p>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 10</span><span class="seviye s-kolay">Kolay</span></div>
+<div class="govde">
+<p class="metin">Pb(NO<sub>3</sub>)<sub>2</sub> + 2X → PbCl<sub>2</sub> + 2KNO<sub>3</sub></p>
+<p class="veri">denkleşmiş denkleminde X maddesinin formülü nedir?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<div class="tablo-sar">
+<table>
+<tr><th>Atom</th><th>Girenlerde</th><th>Ürünlerde</th></tr>
+<tr><td>Pb</td><td>1</td><td>1 ✔</td></tr>
+<tr><td>N</td><td>2</td><td>2 ✔</td></tr>
+<tr><td>O</td><td>6</td><td>6 ✔</td></tr>
+<tr><td>Cl</td><td><b>X'te olmalı</b></td><td>2</td></tr>
+<tr><td>K</td><td><b>X'te olmalı</b></td><td>2</td></tr>
+</table>
+</div>
+<ol class="adim">
+<li>Girenlerde 2 K ve 2 Cl eksik.</li>
+<li>X'in katsayısı 2 olduğuna göre <b>bir</b> X molekülünde 1 K ve 1 Cl bulunmalı.</li>
+<li>Formül yazılırken önce metal yazılır → <b>X = KCl</b></li>
+</ol>
+<div class="cevap">KCl</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 11</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">CH<sub>4</sub> + 4X → CBr<sub>4</sub> + 4HBr</p>
+<p class="veri">denkleşmiş denkleminde X'in formülünü bulun ve bu işlemi hangi kanuna dayanarak yaptığınızı açıklayın.</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Ürünlerde: C 1, H 4, Br 4 + 4 = <b>8</b>.</li>
+<li>Girenlerde CH<sub>4</sub>'ten C 1 ve H 4 geliyor — bunlar tutuyor.</li>
+<li>Eksik olan <b>8 Br atomu</b>; bunlar X'ten gelmeli.</li>
+<li>X'in katsayısı 4 → bir X molekülünde 8 ÷ 4 = <b>2 Br</b> atomu var.</li>
+<li><b>X = Br<sub>2</sub></b></li>
+<li>Dayanak: <b>kütlenin korunumu kanunu</b>. Tepkimeye giren atom türü ve sayısı, çıkan atom türü ve sayısına eşit olmak zorundadır.</li>
+<li>Sonuç kimyasal olarak da tutarlı: brom elementi doğada Br<sub>2</sub> molekülleri hâlinde bulunur.</li>
+</ol>
+<div class="cevap">Br<sub>2</sub></div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 12</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">3Cu + 8HNO<sub>3</sub> → 3Cu(NO<sub>3</sub>)<sub>2</sub> + 2X + 4H<sub>2</sub>O</p>
+<p class="veri">denkleminde X'in formülü nedir?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>Cu:</b> solda 3, sağda 3 ✔</li>
+<li><b>H:</b> solda 8, sağda 4 × 2 = 8 ✔ → X'te hidrojen yok.</li>
+<li><b>N:</b> solda 8. Sağda Cu(NO<sub>3</sub>)<sub>2</sub>'de 3 × 2 = 6 → eksik <b>2 N</b>.</li>
+<li><b>O:</b> solda 8 × 3 = 24. Sağda 3 × 6 = 18 (nitratlarda) + 4 (sularda) = 22 → eksik <b>2 O</b>.</li>
+<li>X'in katsayısı 2 → bir molekülde 1 N ve 1 O var.</li>
+<li><b>X = NO</b></li>
+<li>Not: derişik HNO<sub>3</sub> kullanılsaydı ürün NO<sub>2</sub> olurdu. Denklem hangi ürünün oluştuğunu bize <b>atom sayımıyla</b> söylüyor.</li>
+</ol>
+<div class="cevap">NO</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 13</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Sn + 4HNO<sub>3</sub> → X + 4NO<sub>2</sub> + 2H<sub>2</sub>O</p>
+<p class="veri">denkleminde X'in formülünü bulun.</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>Sn:</b> solda 1 → X'te 1 Sn olmalı (başka Sn içeren ürün yok).</li>
+<li><b>H:</b> solda 4, sağda 2 × 2 = 4 ✔ → X'te hidrojen yok.</li>
+<li><b>N:</b> solda 4, sağda 4 ✔ → X'te azot yok.</li>
+<li><b>O:</b> solda 4 × 3 = 12. Sağda NO<sub>2</sub>'lerde 4 × 2 = 8, sularda 2 → toplam 10. Eksik <b>2 O</b>.</li>
+<li>X'in katsayısı 1 → <b>X = SnO<sub>2</sub></b></li>
+<li>Kontrol: Sn 1 = 1, H 4 = 4, N 4 = 4, O 12 = 2 + 8 + 2 ✔</li>
+<li>Yöntemin gücü burada görülüyor: X'in ne olduğunu bilmeden, yalnızca sayarak buluyoruz.</li>
+</ol>
+<div class="cevap">SnO<sub>2</sub></div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 14</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki denklemlerde boş bırakılan maddelerin formüllerini bulun.</p>
+<ul class="oncul">
+<li><b>I.</b> 2Al + ......... → Al<sub>2</sub>O<sub>3</sub> + 2Fe</li>
+<li><b>II.</b> 4NH<sub>3</sub> + 5O<sub>2</sub> → 4......... + 6H<sub>2</sub>O</li>
+<li><b>III.</b> BaCl<sub>2</sub> + ......... → BaSO<sub>4</sub> + 2NaCl</li>
+<li><b>IV.</b> CaC<sub>2</sub> + 2H<sub>2</sub>O → Ca(OH)<sub>2</sub> + .........</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I.</b> Sağda 2 Fe ve 3 O eksik, katsayı 1 → <b>Fe<sub>2</sub>O<sub>3</sub></b> (termit tepkimesi).</li>
+<li><b>II.</b> Solda N 4, O 10; sağda sularda 6 O ve hiç N yok. Eksik: 4 N ve 4 O; katsayı 4 → <b>NO</b>.</li>
+<li><b>III.</b> Sağda 1 S, 4 O ve 2 Na eksik; katsayı 1 → <b>Na<sub>2</sub>SO<sub>4</sub></b>.</li>
+<li><b>IV.</b> Solda C 2, H 4, O 2, Ca 1. Ca(OH)<sub>2</sub>'de Ca 1, O 2, H 2 var. Eksik: 2 C ve 2 H → <b>C<sub>2</sub>H<sub>2</sub></b> (asetilen).</li>
+<li>Her birinde yöntem aynı: eksiği bul, katsayıya böl.</li>
+</ol>
+<div class="cevap">I) Fe<sub>2</sub>O<sub>3</sub> &nbsp;·&nbsp; II) NO &nbsp;·&nbsp; III) Na<sub>2</sub>SO<sub>4</sub> &nbsp;·&nbsp; IV) C<sub>2</sub>H<sub>2</sub></div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 15</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">4Al + nO<sub>2</sub> → 2Al<sub>2</sub>O<sub>n</sub></p>
+<p class="veri">denklemine göre 108 gram Al katısı artansız tepkimeye girdiğinde katı kütlesi 96 gram artmaktadır. Buna göre n kaçtır? (O: 16, Al: 27 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Katı kütlesindeki artış, katıya bağlanan <b>oksijenin kütlesidir</b>: 96 gram.</li>
+<li>n(O<sub>2</sub>) = 96 ÷ 32 = <b>3 mol</b></li>
+<li>n(Al) = 108 ÷ 27 = <b>4 mol</b></li>
+<li>Denkleme göre 4 mol Al ile n mol O<sub>2</sub> tepkimeye giriyor. Elimizde 4 mol Al ile 3 mol O<sub>2</sub> harcandığına göre <b>n = 3</b>.</li>
+<li>Denklem: 4Al + 3O<sub>2</sub> → 2Al<sub>2</sub>O<sub>3</sub> ✔ Bilinen alüminyum oksit formülüyle uyumlu.</li>
+<li>Buradaki kilit fikir bir sonraki bölümlerde çok kullanılacak: <b>katı kütlesindeki artış = katıya giren gazın kütlesi</b>.</li>
+</ol>
+<div class="cevap">n = 3</div>
+</details>
+</div>
+</div>
+
+<div class="kart ek-not">
+<div class="baslik">Sırada ne var</div>
+<p>Bu modül 1. Tema'nın hesap kısmını tamamlıyor. Modül 4'te <b>gazlar</b> geliyor: kinetik moleküler teori, gaz yasaları, ideal gaz denklemi ve difüzyon. Molar hacim (22,4 L) orada tanımlanacak ve stokiyometriye hacim boyutu eklenecek.</p>
+</div>
+
+<!-- ==================== 3 ==================== -->
+<h2><span class="no">Bölüm 3</span>Stokiyometrik hesaplamalar</h2>
+
+<p>Denkleşmiş denklemin katsayıları, maddelerin <b>mol sayıları arasındaki oranı</b> verir. Bu oran, bilinen bir maddeden bilinmeyene geçmenin köprüsüdür.</p>
+
+<div class="kart kural">
+<div class="baslik">Kural — üç adımlı geçiş</div>
+<ol>
+<li>Miktarı verilen maddeyi (kütle, tanecik sayısı, atom sayısı) <b>mole çevir</b>.</li>
+<li>Denklem katsayılarıyla oran kurup <b>istenen maddenin molüne</b> geç.</li>
+<li>Bulduğun molü sorunun istediği <b>niceliğe çevir</b> (gram, tane, atom molü).</li>
+</ol>
+<p>Her soru bu üç adımdır. Zorluk, hangi adımın uzadığından gelir.</p>
+</div>
+
+<div class="kart tuzak">
+<div class="baslik">Tuzak</div>
+<p>Katsayılar <b>mol oranını</b> verir, <b>kütle oranını vermez</b>. P<sub>4</sub> + 6Cl<sub>2</sub> → 4PCl<sub>3</sub> tepkimesinde:</p>
+<div class="tablo-sar">
+<table>
+<tr><th>Nicelik</th><th>Girenler</th><th>Ürünler</th><th>Korunur mu?</th></tr>
+<tr><td>Mol sayısı</td><td>1 + 6 = 7</td><td>4</td><td>Hayır</td></tr>
+<tr><td>Molekül sayısı</td><td>7</td><td>4</td><td>Hayır</td></tr>
+<tr><td>Atom sayısı</td><td>4 + 12 = 16</td><td>16</td><td><b>Evet</b></td></tr>
+<tr><td>Kütle</td><td>124 + 426 = 550 g</td><td>550 g</td><td><b>Evet</b></td></tr>
+</table>
+</div>
+<p>Korunan yalnızca <b>atom sayısı ve kütledir</b>. Mol ve molekül sayısı katsayılara göre değişir.</p>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 16</span><span class="seviye s-kolay">Kolay</span></div>
+<div class="govde">
+<p class="metin">C<sub>3</sub>H<sub>4</sub>(g) + 4O<sub>2</sub>(g) → 3CO<sub>2</sub>(g) + 2H<sub>2</sub>O(g)</p>
+<p class="veri">denklemine göre 2 mol C<sub>3</sub>H<sub>4</sub> gazının tamamı yeterli O<sub>2</sub> ile yandığında kaç mol H<sub>2</sub>O oluşur?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Denkleme göre 1 mol C<sub>3</sub>H<sub>4</sub> yandığında 2 mol H<sub>2</sub>O oluşur.</li>
+<li>Orantı: 1 mol → 2 mol ise, 2 mol → ?</li>
+<li>? = <b>4 mol H<sub>2</sub>O</b></li>
+<li>"Yeterli miktarda O<sub>2</sub>" ifadesi oksijenin sınırlayıcı olmadığını, hesabın C<sub>3</sub>H<sub>4</sub> üzerinden yapılacağını söyler.</li>
+</ol>
+<div class="cevap">4 mol</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 17</span><span class="seviye s-kolay">Kolay</span></div>
+<div class="govde">
+<p class="metin">2N<sub>2</sub>(g) + 3O<sub>2</sub>(g) → 2N<sub>2</sub>O<sub>3</sub>(g)</p>
+<p class="veri">denklemine göre artansız gerçekleşen tepkimede 0,6 mol N<sub>2</sub>O<sub>3</sub> elde etmek için kaçar mol N<sub>2</sub> ve O<sub>2</sub> harcanır?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Katsayı oranı N<sub>2</sub> : O<sub>2</sub> : N<sub>2</sub>O<sub>3</sub> = 2 : 3 : 2</li>
+<li>Ürün 2'den 0,6'ya inmiş → çarpan 0,3.</li>
+<li>N<sub>2</sub>: 2 × 0,3 = <b>0,6 mol</b></li>
+<li>O<sub>2</sub>: 3 × 0,3 = <b>0,9 mol</b></li>
+<li>Kontrol: 0,6 + 0,9 = 1,5 mol gaz girip 0,6 mol gaz çıkıyor — mol sayısı korunmuyor, bu normal.</li>
+</ol>
+<div class="cevap">0,6 mol N<sub>2</sub> ve 0,9 mol O<sub>2</sub></div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 18</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Ca(k) + 2HNO<sub>3</sub>(suda) → Ca(NO<sub>3</sub>)<sub>2</sub>(suda) + H<sub>2</sub>(g)</p>
+<p class="veri">tepkimesinde 4 mol HNO<sub>3</sub>'ün tamamı yeterince Ca ile tepkimeye girdiğinde elde edilen H<sub>2</sub> gazı kaç tane atom içerir? (N<sub>A</sub>: Avogadro sayısı)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Katsayı oranı HNO<sub>3</sub> : H<sub>2</sub> = 2 : 1</li>
+<li>4 mol HNO<sub>3</sub> → <b>2 mol H<sub>2</sub></b></li>
+<li>H<sub>2</sub> iki atomlu: 2 × 2 = <b>4 mol atom</b></li>
+<li>Tane cinsinden: <b>4 · N<sub>A</sub> tane atom</b></li>
+<li>Üç adımın üçü de burada görünüyor: mol (verilen) → mol (istenen) → nicelik (atom, tane).</li>
+</ol>
+<div class="cevap">4 · N<sub>A</sub> tane</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 19</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">C<sub>4</sub>H<sub>10</sub>(g) + (13/2)O<sub>2</sub>(g) → 4CO<sub>2</sub>(g) + 5H<sub>2</sub>O(s)</p>
+<p class="veri">tepkimesinde 0,2 mol C<sub>4</sub>H<sub>10</sub> tamamen yandığında açığa çıkan CO<sub>2</sub> kaç gramdır? (C: 12, O: 16 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Katsayı oranı C<sub>4</sub>H<sub>10</sub> : CO<sub>2</sub> = 1 : 4</li>
+<li>0,2 × 4 = <b>0,8 mol CO<sub>2</sub></b></li>
+<li>M(CO<sub>2</sub>) = 12 + 32 = 44 g/mol</li>
+<li>m = 0,8 × 44 = <b>35,2 gram</b></li>
+<li>Not: O<sub>2</sub>'nin kesirli katsayısı (13/2) hesabı hiç etkilemedi; kullanılmayan katsayıyı tam sayıya çevirmeye uğraşmaya gerek yok.</li>
+</ol>
+<div class="cevap">35,2 gram</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 20</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">C<sub>3</sub>H<sub>4</sub>(g) + 4O<sub>2</sub>(g) → 3CO<sub>2</sub>(g) + 2H<sub>2</sub>O(g)</p>
+<p class="veri">tepkimesinde 13,2 gram CO<sub>2</sub> oluşması için kaç gram O<sub>2</sub> harcanır? (C: 12, O: 16 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>1. adım:</b> n(CO<sub>2</sub>) = 13,2 ÷ 44 = <b>0,3 mol</b></li>
+<li><b>2. adım:</b> Katsayı oranı O<sub>2</sub> : CO<sub>2</sub> = 4 : 3 → n(O<sub>2</sub>) = 0,3 × (4/3) = <b>0,4 mol</b></li>
+<li><b>3. adım:</b> m = 0,4 × 32 = <b>12,8 gram</b></li>
+<li>Bu soru ürün → giren yönünde çalışıyor. Köprü aynı; oranı ters kurmamaya dikkat et (0,3 × 3/4 = 0,225 yanlış olurdu).</li>
+</ol>
+<div class="cevap">12,8 gram</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 21</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">8,1 gram Al metalinin tamamı yeterince HCl çözeltisiyle</p>
+<p class="veri" style="margin-bottom:10px">Al(k) + 3HCl(suda) → AlCl<sub>3</sub>(suda) + (3/2)H<sub>2</sub>(g)</p>
+<p class="metin">denklemine göre tepkimeye giriyor. Oluşan AlCl<sub>3</sub> kaç tane Cl atomu içerir? (Al: 27 g/mol, N<sub>A</sub>: Avogadro sayısı)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>n(Al) = 8,1 ÷ 27 = <b>0,3 mol</b></li>
+<li>Katsayı oranı Al : AlCl<sub>3</sub> = 1 : 1 → <b>0,3 mol AlCl<sub>3</sub></b> oluşur.</li>
+<li>Bir AlCl<sub>3</sub> biriminde 3 Cl var → 0,3 × 3 = <b>0,9 mol Cl atomu</b></li>
+<li>Tane cinsinden: <b>0,9 · N<sub>A</sub> tane</b> (≈ 5,4 · 10<sup>23</sup>)</li>
+<li>Alternatif kontrol: harcanan HCl 0,9 mol; her HCl bir Cl taşıdığına göre Cl atomu yine 0,9 mol ✔ İki farklı yoldan aynı sonuca varmak hatayı yakalar.</li>
+</ol>
+<div class="cevap">0,9 · N<sub>A</sub> tane Cl atomu</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 22</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">13,8 gram NO<sub>2</sub> gazının tamamı yeterince suyla</p>
+<p class="veri" style="margin-bottom:10px">3NO<sub>2</sub>(g) + H<sub>2</sub>O(s) → 2HNO<sub>3</sub>(suda) + NO(g)</p>
+<p class="metin">denklemine göre tepkimeye giriyor. Oluşan HNO<sub>3</sub>'ün tamamı Na metaliyle</p>
+<p class="veri" style="margin-bottom:10px">HNO<sub>3</sub>(suda) + Na(k) → NaNO<sub>3</sub>(suda) + (1/2)H<sub>2</sub>(g)</p>
+<p class="metin">denklemine göre tepkimeye girdiğinde kaç mol H<sub>2</sub> elde edilir? (N: 14, O: 16 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>M(NO<sub>2</sub>) = 14 + 32 = 46 g/mol → n = 13,8 ÷ 46 = <b>0,3 mol NO<sub>2</sub></b></li>
+<li><b>1. tepkime:</b> NO<sub>2</sub> : HNO<sub>3</sub> = 3 : 2 → 0,3 × (2/3) = <b>0,2 mol HNO<sub>3</sub></b></li>
+<li><b>Köprü:</b> birinci tepkimenin ürünü, ikinci tepkimenin gireni. 0,2 mol HNO<sub>3</sub> olduğu gibi aktarılır.</li>
+<li><b>2. tepkime:</b> HNO<sub>3</sub> : H<sub>2</sub> = 1 : 1/2 → 0,2 × 0,5 = <b>0,1 mol H<sub>2</sub></b></li>
+<li>Ardışık tepkimelerde yöntem hep aynı: <b>ortak maddeyi bul</b>, onun molünü bir tepkimeden diğerine taşı.</li>
+</ol>
+<div class="cevap">0,1 mol</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 23</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">H<sub>2</sub>(g) + Cl<sub>2</sub>(g) → 2HCl(g)</p>
+<p class="veri">tepkimesinde harcanan H<sub>2</sub> gazının <b>kütlesi</b> bilinmektedir. Buna göre aşağıdaki niceliklerden hangileri bulunabilir? (H: 1, Cl: 35 g/mol, N<sub>A</sub>: Avogadro sayısı)</p>
+<ul class="oncul">
+<li><b>I.</b> Harcanan Cl<sub>2</sub>'nin mol sayısı</li>
+<li><b>II.</b> Oluşan HCl'nin kütlesi</li>
+<li><b>III.</b> Oluşan HCl'nin içerdiği toplam atom sayısı</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Kütle biliniyorsa n = m / M<sub>A</sub> ile <b>H<sub>2</sub>'nin molü</b> bulunur — bütün kapı bu adımla açılır.</li>
+<li><b>I ✔</b> Katsayı oranı H<sub>2</sub> : Cl<sub>2</sub> = 1 : 1 → Cl<sub>2</sub>'nin molü doğrudan bulunur.</li>
+<li><b>II ✔</b> H<sub>2</sub> : HCl = 1 : 2 → HCl'nin molü bulunur; mol kütlesi (36) verildiği için kütlesi de hesaplanır.</li>
+<li><b>III ✔</b> HCl'nin molü bilindiğine göre atom molü = 2 × n(HCl), tane cinsinden N<sub>A</sub> ile çarpılır.</li>
+<li>Ders: bir maddenin <b>molü bulunabiliyorsa</b>, denklemdeki her maddenin her niceliği bulunabilir. Sorunun cevabı çoğu zaman "mol bulunabildi mi?" sorusunda saklıdır.</li>
+</ol>
+<div class="cevap">I, II ve III</div>
+</details>
+</div>
+</div>
+
+<!-- ==================== 4 ==================== -->
+<h2><span class="no">Bölüm 4</span>Sınırlayıcı bileşen ve artan madde</h2>
+
+<p>Girenler her zaman denklemdeki oranda verilmez. Bu durumda maddelerden biri önce tükenir ve tepkimeyi durdurur; buna <b>sınırlayıcı bileşen</b> denir. Hesap her zaman <b>sınırlayıcı bileşen üzerinden</b> yapılır.</p>
+
+<div class="kart kural">
+<div class="baslik">Kural — Başlangıç / Değişim / Sonuç tablosu</div>
+<ol>
+<li>Girenlerden birinin biteceğini varsay ve diğerinden ne kadar gerekeceğini hesapla.</li>
+<li>Gereken miktar elindekinden <b>fazlaysa</b> varsayımın yanlıştır — öbür madde sınırlayıcıdır.</li>
+<li>Sınırlayıcıyı bulduktan sonra üç satırlı tabloyu doldur: <b>başlangıç</b>, <b>değişim</b> (girenler eksi, ürünler artı), <b>sonuç</b>.</li>
+</ol>
+<p><b>Tam verimli tepkime:</b> girenlerden en az biri biter. <b>Artansız tepkime:</b> girenlerin tamamı biter.</p>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 24</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">4 mol N<sub>2</sub> ve 5 mol O<sub>2</sub> gazının</p>
+<p class="veri" style="margin-bottom:10px">2N<sub>2</sub>(g) + 5O<sub>2</sub>(g) → 2N<sub>2</sub>O<sub>5</sub>(g)</p>
+<p class="metin">denklemine göre tam verimli tepkimesinden kaç mol N<sub>2</sub>O<sub>5</sub> oluşur? Hangi maddeden kaç mol artar?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>Varsayım:</b> 4 mol N<sub>2</sub>'nin tamamı bitsin. Denkleme göre 2 mol N<sub>2</sub> için 5 mol O<sub>2</sub> gerekiyorsa, 4 mol için <b>10 mol O<sub>2</sub></b> gerekir.</li>
+<li>Elimizde 5 mol O<sub>2</sub> var, 10 mol yok → varsayım yanlış. <b>Sınırlayıcı bileşen O<sub>2</sub>'dir.</b></li>
+<li>5 mol O<sub>2</sub> harcanır; O<sub>2</sub> : N<sub>2</sub> = 5 : 2 → harcanan N<sub>2</sub> = <b>2 mol</b>.</li>
+<li>O<sub>2</sub> : N<sub>2</sub>O<sub>5</sub> = 5 : 2 → oluşan ürün = <b>2 mol N<sub>2</sub>O<sub>5</sub></b>.</li>
+<li>Artan N<sub>2</sub> = 4 − 2 = <b>2 mol</b>.</li>
+<li>Kontrol: girenlerden 2 + 5 = 7 mol harcandı, 2 mol ürün oluştu; kapta 2 mol N<sub>2</sub> + 2 mol N<sub>2</sub>O<sub>5</sub> = 4 mol gaz kaldı.</li>
+</ol>
+<div class="cevap">2 mol N<sub>2</sub>O<sub>5</sub> oluşur, 2 mol N<sub>2</sub> artar</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 25</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) → CO<sub>2</sub>(g) + 2H<sub>2</sub>O(g)</p>
+<p class="veri">denklemine göre <b>ikişer mol</b> CH<sub>4</sub> ve O<sub>2</sub> tam verimle tepkimeye girdiğinde hangi maddeden kaç mol artar?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>2 mol CH<sub>4</sub>'ün tamamı yansaydı 4 mol O<sub>2</sub> gerekirdi; elimizde 2 mol var → <b>O<sub>2</sub> sınırlayıcı</b>.</li>
+<li>2 mol O<sub>2</sub> ile harcanan CH<sub>4</sub> = 2 × (1/2) = <b>1 mol</b>.</li>
+<li>Artan CH<sub>4</sub> = 2 − 1 = <b>1 mol</b>.</li>
+<li>Oluşanlar: 1 mol CO<sub>2</sub> ve 2 mol H<sub>2</sub>O.</li>
+<li>Bu, eksik yanmanın sayısal karşılığıdır: oksijen yetmediğinde yakıtın bir kısmı yanmadan kalır.</li>
+</ol>
+<div class="cevap">1 mol CH<sub>4</sub> artar</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 26</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">2,4 gram Mg metali ile 14,4 gram HCl içeren çözelti</p>
+<p class="veri" style="margin-bottom:10px">Mg(k) + 2HCl(suda) → MgCl<sub>2</sub>(suda) + H<sub>2</sub>(g)</p>
+<p class="metin">denklemine göre tepkimeye giriyor. Sınırlayıcı bileşeni ve artan maddenin mol sayısını bulun. (Mg: 24, HCl: 36 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Önce ikisini de mole çevir: n(Mg) = 2,4 ÷ 24 = <b>0,1 mol</b> · n(HCl) = 14,4 ÷ 36 = <b>0,4 mol</b></li>
+<li>0,1 mol Mg için gereken HCl = 0,1 × 2 = <b>0,2 mol</b>. Elimizde 0,4 mol var → yeterli.</li>
+<li>Demek ki <b>Mg sınırlayıcı bileşendir</b>, HCl artar.</li>
+<li>Artan HCl = 0,4 − 0,2 = <b>0,2 mol</b></li>
+<li>Oluşanlar: 0,1 mol MgCl<sub>2</sub> ve 0,1 mol H<sub>2</sub>.</li>
+<li>Tuzak: gram cinsinden HCl (14,4) Mg'den (2,4) çok daha fazla görünüyor ama karar <b>gramla değil molle</b> verilir — üstelik burada ikisi de aynı sonucu veriyor, her zaman vermez.</li>
+</ol>
+<div class="cevap">Sınırlayıcı Mg; 0,2 mol HCl artar</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 27</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">4 mol A gazı ile 10 mol B gazı</p>
+<p class="veri" style="margin-bottom:10px">2A(g) + 3B(g) → C(g)</p>
+<p class="metin">denklemine göre tam verimle tepkimeye giriyor. Sınırlayıcı bileşeni, artan maddeyi ve oluşan C gazının mol sayısını bulun.</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>4 mol A'nın tamamı bitseydi gereken B = 4 × (3/2) = <b>6 mol</b>. Elimizde 10 mol var → yeterli.</li>
+<li>Demek ki <b>A sınırlayıcı bileşendir</b>.</li>
+<li>Tablo: <br>Başlangıç → A: 4, B: 10, C: — <br>Değişim → A: −4, B: −6, C: +2 <br>Sonuç → A: 0, B: 4, C: 2</li>
+<li>Oluşan C = <b>2 mol</b> (A : C = 2 : 1)</li>
+<li>Artan B = 10 − 6 = <b>4 mol</b></li>
+<li>Kütle kontrolü olmasa da mol kontrolü mantıklı: 14 mol gaz girip 4 + 2 = 6 mol gaz kalmış; katsayılar mol azalmasını öngörüyor.</li>
+</ol>
+<div class="cevap">Sınırlayıcı A · 4 mol B artar · 2 mol C oluşur</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 28</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">8 mol H<sub>2</sub> ve 2 mol N<sub>2</sub> gazı</p>
+<p class="veri" style="margin-bottom:10px">N<sub>2</sub>(g) + 3H<sub>2</sub>(g) → 2NH<sub>3</sub>(g)</p>
+<p class="metin">denklemine göre tam verimle tepkimeye giriyor. Buna göre hangi yargılar doğrudur?</p>
+<ul class="oncul">
+<li><b>I.</b> Sınırlayıcı bileşen H<sub>2</sub> gazıdır.</li>
+<li><b>II.</b> 4 mol NH<sub>3</sub> oluşmuştur.</li>
+<li><b>III.</b> Artan maddenin kütlesi 4 gramdır.</li>
+</ul>
+<p class="veri">H<sub>2</sub>: 2 g/mol · N<sub>2</sub>: 28 g/mol</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>2 mol N<sub>2</sub> için gereken H<sub>2</sub> = 2 × 3 = <b>6 mol</b>. Elimizde 8 mol var → yeterli.</li>
+<li><b>I ✘</b> Sınırlayıcı bileşen <b>N<sub>2</sub></b>'dir, H<sub>2</sub> değil.</li>
+<li><b>II ✔</b> N<sub>2</sub> : NH<sub>3</sub> = 1 : 2 → 2 × 2 = <b>4 mol NH<sub>3</sub></b>.</li>
+<li>Artan H<sub>2</sub> = 8 − 6 = 2 mol.</li>
+<li><b>III ✔</b> m = 2 × 2 = <b>4 gram</b>.</li>
+<li>Çeldirici mantığı: H<sub>2</sub> sayıca daha çok (8 &gt; 2) olduğu için sınırlayıcı sanılıyor. Karar veren <b>miktar değil, katsayıya göre oran</b>dır.</li>
+</ol>
+<div class="cevap">II ve III</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 29</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Eşit mollerde alınan H<sub>2</sub> ve Cl<sub>2</sub> gazları</p>
+<p class="veri" style="margin-bottom:10px">H<sub>2</sub>(g) + Cl<sub>2</sub>(g) → 2HCl(g)</p>
+<p class="metin">denklemine göre tam verimle tepkimeye girdiğinde 4 mol HCl oluşuyor. Başlangıçta alınan gaz karışımı kaç moldür?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Denklemde H<sub>2</sub> ve Cl<sub>2</sub>'nin katsayıları <b>eşit</b> (1 : 1). Eşit mol alındığına göre ikisi de aynı anda biter — artan madde yoktur.</li>
+<li>Her birinin molüne n diyelim. HCl : H<sub>2</sub> = 2 : 1 → 2n = 4 → <b>n = 2 mol</b>.</li>
+<li>Başlangıçtaki karışım: 2 + 2 = <b>4 mol</b></li>
+<li>Not: burada karışımın molü ile ürünün molü tesadüfen eşit çıktı (4 = 4); bu her zaman böyle değildir.</li>
+<li>"Eşit mol" ifadesinde genel kural: katsayısı <b>büyük</b> olan madde önce biter. Katsayılar eşitse ikisi birlikte biter.</li>
+</ol>
+<div class="cevap">4 mol</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 30</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Eşit mollerde alınan N<sub>2</sub> ve O<sub>2</sub> gazlarının</p>
+<p class="veri" style="margin-bottom:10px">N<sub>2</sub>(g) + 2O<sub>2</sub>(g) → N<sub>2</sub>O<sub>4</sub>(g)</p>
+<p class="metin">tam verimli tepkimesinde 92 gram N<sub>2</sub>O<sub>4</sub> oluştuğuna göre artan madde kaç gramdır? (N: 14, O: 16 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>M(N<sub>2</sub>O<sub>4</sub>) = 28 + 64 = 92 g/mol → n = 92 ÷ 92 = <b>1 mol N<sub>2</sub>O<sub>4</sub></b></li>
+<li>Katsayılara göre harcananlar: <b>1 mol N<sub>2</sub></b> ve <b>2 mol O<sub>2</sub></b>.</li>
+<li>Eşit mol alınmış ve O<sub>2</sub>'nin katsayısı büyük olduğu için <b>O<sub>2</sub> biten maddedir</b>. Başlangıçta her birinden 2'şer mol vardı.</li>
+<li>Artan N<sub>2</sub> = 2 − 1 = <b>1 mol</b></li>
+<li>m = 1 × 28 = <b>28 gram</b></li>
+<li>Kontrol: başlangıç 2 + 2 = 4 mol; sonuçta 1 mol N<sub>2</sub> + 1 mol N<sub>2</sub>O<sub>4</sub> = 2 mol. Kütle: 56 + 64 = 120 g = 28 + 92 ✔</li>
+</ol>
+<div class="cevap">28 gram N<sub>2</sub> artar</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 31</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">Eşit mollerde X ve Y gazları</p>
+<p class="veri" style="margin-bottom:10px">3X(g) + Y(g) → 2Z(g)</p>
+<p class="metin">denklemine göre tam verimle tepkimeye giriyor. Tepkime sonunda 16,8 gram madde artarken 0,6 mol Z oluşuyor. Buna göre Y'nin mol kütlesi kaç g/mol'dür?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Eşit mol alınmış; katsayısı büyük olan <b>X</b> önce biter → artan madde <b>Y</b>'dir.</li>
+<li>0,6 mol Z oluştuğuna göre harcananlar: X = 0,6 × (3/2) = <b>0,9 mol</b> · Y = 0,6 × (1/2) = <b>0,3 mol</b></li>
+<li>X tamamen bittiği için başlangıçta <b>0,9 mol X</b> vardı; eşit mol alındığından <b>0,9 mol Y</b> de vardı.</li>
+<li>Artan Y = 0,9 − 0,3 = <b>0,6 mol</b></li>
+<li>M<sub>A</sub>(Y) = 16,8 ÷ 0,6 = <b>28 g/mol</b></li>
+<li>Zincirin mantığı: ürün → harcananlar → başlangıç → artan → mol kütlesi. Her adım bir öncekine dayanıyor; "eşit mol" bilgisi olmasaydı başlangıç bulunamazdı.</li>
+</ol>
+<div class="cevap">28 g/mol</div>
+</details>
+</div>
+</div>
+
+<!-- ==================== 5 ==================== -->
+<h2><span class="no">Bölüm 5</span>Katı kütlesindeki değişim</h2>
+
+<p>Bazı sorularda tartılan tek şey kaptaki katıdır. Bu durumda katı kütlesindeki değişim, sisteme giren ya da sistemden çıkan gazın kütlesini doğrudan verir.</p>
+
+<div class="kart kural">
+<div class="baslik">Kural — iki yön</div>
+<ul>
+<li><b>Katı kütlesi artıyorsa:</b> girenlerdeki gaz ya da sıvı bir madde katıya bağlanmıştır.<br>Artış = <b>katıya giren gazın kütlesi</b></li>
+<li><b>Katı kütlesi azalıyorsa:</b> katıdaki bir kısım gaz hâline geçip ortamdan ayrılmıştır.<br>Azalma = <b>çıkan gazın kütlesi</b></li>
+</ul>
+<span class="form form-uzun">MgO(k) + SO<sub>3</sub>(g) → MgSO<sub>4</sub>(k) &nbsp;·&nbsp; 40 g katı → 120 g katı, artış 80 g = harcanan SO<sub>3</sub></span>
+<span class="form form-uzun">CaCO<sub>3</sub>(k) → CaO(k) + CO<sub>2</sub>(g) &nbsp;·&nbsp; 100 g katı → 56 g katı, azalma 44 g = çıkan CO<sub>2</sub></span>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 32</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">120 gram MgO katısı yeterli miktarda CO<sub>2</sub> ile</p>
+<p class="veri" style="margin-bottom:10px">MgO(k) + CO<sub>2</sub>(g) → MgCO<sub>3</sub>(k)</p>
+<p class="metin">denklemine göre tam verimle tepkimeye giriyor. Katı kütlesindeki artış kaç gramdır? (C: 12, O: 16, Mg: 24 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>M(MgO) = 24 + 16 = 40 g/mol → n = 120 ÷ 40 = <b>3 mol MgO</b></li>
+<li>Katsayı oranı 1 : 1 → harcanan CO<sub>2</sub> = <b>3 mol</b></li>
+<li>M(CO<sub>2</sub>) = 44 → m = 3 × 44 = <b>132 gram</b></li>
+<li>Katıya bağlanan gaz 132 gram olduğuna göre katı kütlesindeki artış da <b>132 gramdır</b>.</li>
+<li>Kontrol: katı 120 g'dan 252 g'a çıkar; 252 = 3 mol MgCO<sub>3</sub> × 84 g/mol ✔</li>
+</ol>
+<div class="cevap">132 gram</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 33</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Bir miktar KClO<sub>3</sub> katısı ısıtılarak</p>
+<p class="veri" style="margin-bottom:10px">KClO<sub>3</sub>(k) → KCl(k) + (3/2)O<sub>2</sub>(g)</p>
+<p class="metin">denklemine göre ayrışıyor. Katı kütlesindeki azalma 9,6 gram olduğuna göre ayrışan KClO<sub>3</sub> kaç moldür? (O: 16 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Katıdan ayrılan tek madde O<sub>2</sub> gazıdır → çıkan O<sub>2</sub> = <b>9,6 gram</b>.</li>
+<li>n(O<sub>2</sub>) = 9,6 ÷ 32 = <b>0,3 mol</b></li>
+<li>Katsayı oranı KClO<sub>3</sub> : O<sub>2</sub> = 1 : 3/2 → n(KClO<sub>3</sub>) = 0,3 ÷ 1,5 = <b>0,2 mol</b></li>
+<li>Dikkat: KCl de katıdır ve kapta kalır; kütle kaybına katkısı yoktur. Azalmanın tamamı gazdan gelir.</li>
+</ol>
+<div class="cevap">0,2 mol</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 34</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Bir miktar Cu metalinin O<sub>2</sub> ile</p>
+<p class="veri" style="margin-bottom:10px">2Cu(k) + (1/2)O<sub>2</sub>(g) → Cu<sub>2</sub>O(k)</p>
+<p class="metin">tepkimesinde katı kütlesindeki artış 80 gramdır. Oluşan Cu<sub>2</sub>O kaç gramdır? (O: 16, Cu: 64 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Artış, katıya bağlanan oksijenin kütlesidir → harcanan O<sub>2</sub> = <b>80 gram</b>.</li>
+<li>n(O<sub>2</sub>) = 80 ÷ 32 = <b>2,5 mol</b></li>
+<li>Katsayı oranı O<sub>2</sub> : Cu<sub>2</sub>O = 1/2 : 1 → n(Cu<sub>2</sub>O) = 2,5 × 2 = <b>5 mol</b></li>
+<li>M(Cu<sub>2</sub>O) = 2 × 64 + 16 = <b>144 g/mol</b></li>
+<li>m = 5 × 144 = <b>720 gram</b></li>
+<li>Kontrol: başlangıçtaki Cu = 10 mol = 640 g; 640 + 80 = 720 ✔ Kütlenin korunumu tutuyor.</li>
+</ol>
+<div class="cevap">720 gram</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 35</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Ağzı açık bir kapta</p>
+<p class="veri" style="margin-bottom:10px">2KClO<sub>3</sub>(k) → 2KCl(k) + 3O<sub>2</sub>(g)</p>
+<p class="metin">tepkimesi gerçekleşiyor ve kaptaki katı kütlesi 19,2 gram azalıyor. Buna göre hangi yargılar <b>yanlıştır</b>?</p>
+<ul class="oncul">
+<li><b>I.</b> Tepkimeye giren KClO<sub>3</sub> 48,8 gramdır.</li>
+<li><b>II.</b> 0,4 mol KCl oluşur.</li>
+<li><b>III.</b> Elde edilen O<sub>2</sub> gazı 0,3 · N<sub>A</sub> tane molekül içerir.</li>
+</ul>
+<p class="veri">O: 16, Cl: 35, K: 39 g/mol · N<sub>A</sub>: Avogadro sayısı</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Azalma tamamen çıkan O<sub>2</sub>'den geliyor: n(O<sub>2</sub>) = 19,2 ÷ 32 = <b>0,6 mol</b></li>
+<li>Katsayı oranı KClO<sub>3</sub> : O<sub>2</sub> = 2 : 3 → n(KClO<sub>3</sub>) = 0,6 × (2/3) = <b>0,4 mol</b></li>
+<li>M(KClO<sub>3</sub>) = 39 + 35 + 48 = 122 g/mol → m = 0,4 × 122 = <b>48,8 gram</b> → <b>I ✔ doğru</b></li>
+<li>KClO<sub>3</sub> : KCl = 2 : 2 = 1 : 1 → <b>0,4 mol KCl</b> → <b>II ✔ doğru</b></li>
+<li>O<sub>2</sub> 0,6 mol olduğuna göre <b>0,6 · N<sub>A</sub></b> tane molekül içerir; öncül 0,3 diyor → <b>III ✘ yanlış</b></li>
+<li>Soru "yanlıştır" diye sorduğu için cevap yalnız III'tür. III'teki 0,3 sayısı, KClO<sub>3</sub>'ün molü olan 0,4 ile karıştırılması için değil, <b>0,6'nın yarısı</b> olarak konmuş bir çeldiricidir.</li>
+</ol>
+<div class="cevap">Yalnız III</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 36</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">Ağzı açık bir kapta bulunan 56 gram Fe katısı</p>
+<p class="veri" style="margin-bottom:10px">4Fe(k) + 3O<sub>2</sub>(g) → 2Fe<sub>2</sub>O<sub>3</sub>(k)</p>
+<p class="metin">denklemine göre oksitleniyor. Fe'nin kütlece %20'sinin oksitlendiği anda ortamdaki <b>toplam katı kütlesi</b> kaç gramdır? (O: 16, Fe: 56 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Başlangıç: n(Fe) = 56 ÷ 56 = <b>1 mol</b></li>
+<li>Kütlece %20'si oksitleniyor → harcanan Fe = 0,2 mol (11,2 gram). Kalan Fe = <b>0,8 mol = 44,8 gram</b>.</li>
+<li>Katsayı oranı Fe : Fe<sub>2</sub>O<sub>3</sub> = 4 : 2 = 2 : 1 → oluşan Fe<sub>2</sub>O<sub>3</sub> = 0,2 ÷ 2 = <b>0,1 mol</b></li>
+<li>M(Fe<sub>2</sub>O<sub>3</sub>) = 112 + 48 = 160 → m = 0,1 × 160 = <b>16 gram</b></li>
+<li>Ortamdaki katılar: <b>kalan Fe + oluşan oksit</b> = 44,8 + 16 = <b>60,8 gram</b></li>
+<li>Alternatif kontrol: katı kütlesindeki artış = bağlanan oksijen = 0,15 mol O<sub>2</sub> × 32 = 4,8 g → 56 + 4,8 = 60,8 ✔</li>
+<li>En sık hata: yalnızca oluşan oksidi (16 g) yazmak. Soru <b>ortamdaki tüm katıyı</b> istiyor; tepkimeye girmemiş demir de kapta duruyor.</li>
+</ol>
+<div class="cevap">60,8 gram</div>
+</details>
+</div>
+</div>
+
+<!-- ==================== 6 ==================== -->
+<h2><span class="no">Bölüm 6</span>Yüzde verim ve saflık</h2>
+
+<p>Şimdiye kadarki hesaplar tepkimenin sonuna kadar gittiğini varsaydı. Gerçekte girenlerin bir kısmı tepkimeye girmeden kalabilir; bu oranı <b>yüzde verim</b> anlatır.</p>
+
+<span class="blokform">% verim = (deneysel verim ÷ teorik verim) × 100</span>
+
+<div class="kart kural">
+<div class="baslik">Kural</div>
+<ul>
+<li>Hesap <b>sınırlayıcı bileşen</b> üzerinden yapılır: gerçekte harcanan sınırlayıcı ÷ teorik olarak harcanması gereken.</li>
+<li>Tepkimede <b>en az bir reaktif tamamen bitiyorsa</b> verim %100'dür.</li>
+<li><b>Saflık:</b> saf olmayan bir örnekte yalnızca saf kısım tepkimeye girer.<br>Saflık yüzdesi = (tepkimeye giren madde ÷ başlangıçtaki örnek) × 100</li>
+</ul>
+</div>
+
+<div class="kart tuzak">
+<div class="baslik">Tuzak</div>
+<p><b>Verim</b> ile <b>saflık</b> farklı şeylerdir. Verimde madde saf ama tepkime tamamlanmamıştır; saflıkta madde zaten baştan katkılıdır ve katkı kısmı hiç tepkimeye girmez. Bir soruda ikisi birlikte de verilebilir — o zaman önce saf miktarı bul, sonra verimi uygula.</p>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 37</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">44,8 gram CaO katısı</p>
+<p class="veri" style="margin-bottom:10px">2CaO(k) → 2Ca(k) + O<sub>2</sub>(g)</p>
+<p class="metin">denklemine göre ayrıştırılıyor ve 8 gram Ca elde ediliyor. Tepkime yüzde kaç verimle gerçekleşmiştir? (O: 16, Ca: 40 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>M(CaO) = 56 g/mol → n = 44,8 ÷ 56 = <b>0,8 mol CaO</b> (başlangıç)</li>
+<li>Elde edilen Ca: n = 8 ÷ 40 = <b>0,2 mol</b></li>
+<li>Katsayı oranı CaO : Ca = 1 : 1 → gerçekte ayrışan CaO = <b>0,2 mol</b></li>
+<li>Teorik olarak 0,8 mol CaO'nun tamamı ayrışabilirdi.</li>
+<li>% verim = (0,2 ÷ 0,8) × 100 = <b>%25</b></li>
+<li>Verimi hesaplarken hep <b>aynı maddenin</b> gerçek ve teorik değerlerini karşılaştır; CaO ile Ca'yı karıştırma.</li>
+</ol>
+<div class="cevap">%25</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 38</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">2 mol N<sub>2</sub> ve 9 mol H<sub>2</sub> gazı</p>
+<p class="veri" style="margin-bottom:10px">N<sub>2</sub>(g) + 3H<sub>2</sub>(g) → 2NH<sub>3</sub>(g)</p>
+<p class="metin">denklemine göre tepkimeye girdiğinde 3 mol NH<sub>3</sub> elde ediliyor. Tepkime verimi yüzde kaçtır?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Önce sınırlayıcıyı bul: 2 mol N<sub>2</sub> için 6 mol H<sub>2</sub> gerekir, elimizde 9 mol var → <b>N<sub>2</sub> sınırlayıcı</b>.</li>
+<li><b>Teorik verim:</b> 2 mol N<sub>2</sub> tamamen harcansaydı 2 × 2 = <b>4 mol NH<sub>3</sub></b> oluşurdu.</li>
+<li><b>Deneysel verim:</b> 3 mol NH<sub>3</sub></li>
+<li>% verim = (3 ÷ 4) × 100 = <b>%75</b></li>
+<li>Aynı sonuca sınırlayıcıdan da varılır: gerçekte harcanan N<sub>2</sub> = 1,5 mol; 1,5 ÷ 2 = %75 ✔</li>
+</ol>
+<div class="cevap">%75</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 39</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">160 gram Mg metali aşırı miktardaki HCl çözeltisine atıldığında</p>
+<p class="veri" style="margin-bottom:10px">Mg(k) + 2HCl(suda) → MgCl<sub>2</sub>(suda) + H<sub>2</sub>(g)</p>
+<p class="metin">tepkimesi <b>%75 verimle</b> gerçekleşiyor. Oluşan H<sub>2</sub> kaç gramdır? (H: 1, Mg: 24 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>"Aşırı miktarda HCl" demek, HCl'nin bitmeyeceği ve <b>Mg'nin sınırlayıcı</b> olduğu demektir.</li>
+<li>Verim %75 olduğuna göre Mg'nin yalnızca %75'i harcanır: 160 × 0,75 = <b>120 gram</b></li>
+<li>n(Mg) = 120 ÷ 24 = <b>5 mol</b></li>
+<li>Katsayı oranı Mg : H<sub>2</sub> = 1 : 1 → <b>5 mol H<sub>2</sub></b></li>
+<li>m = 5 × 2 = <b>10 gram</b></li>
+<li>Sıralamaya dikkat: verim <b>önce</b> uygulanır, sonra stokiyometri. Ters sırada yapılırsa da sonuç aynı çıkar ama işlem uzar.</li>
+</ol>
+<div class="cevap">10 gram</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 40</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Bir miktar NH<sub>3</sub> gazı <b>%34 verimle</b></p>
+<p class="veri" style="margin-bottom:10px">2NH<sub>3</sub>(g) → N<sub>2</sub>(g) + 3H<sub>2</sub>(g)</p>
+<p class="metin">denklemine göre ayrışıyor ve 12 gram H<sub>2</sub> oluşuyor. Başlangıçta alınan NH<sub>3</sub> kaç gramdır? (H: 1, N: 14 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>n(H<sub>2</sub>) = 12 ÷ 2 = <b>6 mol</b></li>
+<li>Katsayı oranı NH<sub>3</sub> : H<sub>2</sub> = 2 : 3 → gerçekte ayrışan NH<sub>3</sub> = 6 × (2/3) = <b>4 mol</b></li>
+<li>m(ayrışan) = 4 × 17 = <b>68 gram</b></li>
+<li>Bu 68 gram, başlangıçtakinin <b>%34'ü</b>dür.</li>
+<li>Başlangıç = 68 ÷ 0,34 = <b>200 gram</b></li>
+<li>Bu soru ters yönde çalışıyor: üründen başlayıp verime bölerek başlangıca dönüyoruz. Verimle <b>çarpmak</b> yerine <b>bölmek</b> gerektiğini fark etmek kritik.</li>
+</ol>
+<div class="cevap">200 gram</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 41</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Kütlece <b>%20 saflıktaki</b> 200 gram CaCO<sub>3</sub> örneği</p>
+<p class="veri" style="margin-bottom:10px">CaCO<sub>3</sub>(k) → CaO(k) + CO<sub>2</sub>(g)</p>
+<p class="metin">denklemine göre tam verimle ayrıştığında kaç gram CaO oluşur? (C: 12, O: 16, Ca: 40 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Örneğin yalnızca saf kısmı tepkimeye girer: 200 × 0,20 = <b>40 gram saf CaCO<sub>3</sub></b></li>
+<li>M(CaCO<sub>3</sub>) = 100 g/mol → n = 40 ÷ 100 = <b>0,4 mol</b></li>
+<li>Katsayı oranı 1 : 1 → oluşan CaO = <b>0,4 mol</b></li>
+<li>M(CaO) = 56 → m = 0,4 × 56 = <b>22,4 gram</b></li>
+<li>Kalan 160 gramlık katkı maddesi tepkimeye girmez ama <b>kapta kalmaya devam eder</b>; katı kütlesi sorulursa hesaba katılmalıdır.</li>
+</ol>
+<div class="cevap">22,4 gram</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 42</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">260 gram çinko cevheri</p>
+<p class="veri" style="margin-bottom:10px">Zn(k) + 2HCl(suda) → ZnCl<sub>2</sub>(suda) + H<sub>2</sub>(g)</p>
+<p class="metin">denklemine göre yeterli HCl ile tam verimle tepkimeye girdiğinde 2 mol H<sub>2</sub> açığa çıkıyor. Cevherin saflık yüzdesi kaçtır? (Zn: 65 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Katsayı oranı Zn : H<sub>2</sub> = 1 : 1 → tepkimeye giren Zn = <b>2 mol</b></li>
+<li>m(saf Zn) = 2 × 65 = <b>130 gram</b></li>
+<li>Saflık = (130 ÷ 260) × 100 = <b>%50</b></li>
+<li>Yorum: cevherin yarısı çinko, yarısı tepkimeye girmeyen kayaç ve safsızlıktır.</li>
+<li>Tepkime <b>tam verimli</b> dendiği için düşük gaz miktarının sebebi verim değil saflıktır. İki kavramı ayırt etmenin sınavdaki karşılığı budur.</li>
+</ol>
+<div class="cevap">%50</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 43</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">3 mol CH<sub>4</sub> ile 7 mol O<sub>2</sub> gazı</p>
+<p class="veri" style="margin-bottom:10px">CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) → CO<sub>2</sub>(g) + 2H<sub>2</sub>O(g)</p>
+<p class="metin">denklemine göre <b>%60 verimle</b> tepkimeye giriyor. Aşağıdaki yargılardan hangisi <b>yanlıştır</b>? (H: 1, C: 12, O: 16 g/mol)</p>
+<ul class="secenek">
+<li><b>A)</b> Harcanan CH<sub>4</sub> 28,8 gramdır.</li>
+<li><b>B)</b> Oluşan CO<sub>2</sub> 1,8 moldür.</li>
+<li><b>C)</b> Sınırlayıcı bileşen O<sub>2</sub> gazıdır.</li>
+<li><b>D)</b> Tepkimeye girmeden kalan madde 4,6 moldür.</li>
+<li><b>E)</b> Harcanan CH<sub>4</sub>'ün molü, oluşan CO<sub>2</sub>'nin molüne eşittir.</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Sınırlayıcıyı bul: 3 mol CH<sub>4</sub> için 6 mol O<sub>2</sub> gerekir, elimizde 7 mol var → <b>CH<sub>4</sub> sınırlayıcıdır</b> → <b>C ✘ yanlış olan bu</b>.</li>
+<li>%60 verim → harcanan CH<sub>4</sub> = 3 × 0,60 = <b>1,8 mol</b> → m = 1,8 × 16 = <b>28,8 gram</b> → <b>A ✔</b></li>
+<li>CH<sub>4</sub> : CO<sub>2</sub> = 1 : 1 → oluşan CO<sub>2</sub> = <b>1,8 mol</b> → <b>B ✔</b> ve <b>E ✔</b></li>
+<li>Harcanan O<sub>2</sub> = 1,8 × 2 = 3,6 mol → artan O<sub>2</sub> = 7 − 3,6 = 3,4 mol</li>
+<li>Artan CH<sub>4</sub> = 3 − 1,8 = 1,2 mol → toplam artan = 3,4 + 1,2 = <b>4,6 mol</b> → <b>D ✔</b></li>
+<li>Not: verim %100 olsaydı CH<sub>4</sub> tamamen biterdi. Verim düştüğü için <b>her iki madde de</b> artıyor — "sınırlayıcı bileşen artmaz" ezberi yalnızca tam verimli tepkimelerde geçerlidir.</li>
+</ol>
+<div class="cevap">C) Sınırlayıcı bileşen O<sub>2</sub> gazıdır</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 44</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">200 gram Al metali aşırı miktardaki Fe<sub>2</sub>O<sub>3</sub> ile</p>
+<p class="veri" style="margin-bottom:10px">2Al + Fe<sub>2</sub>O<sub>3</sub> → Al<sub>2</sub>O<sub>3</sub> + 2Fe</p>
+<p class="metin">denklemine göre <b>%27 verimle</b> tepkimeye giriyor. Kaç gram Al<sub>2</sub>O<sub>3</sub> elde edilir? (O: 16, Al: 27 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Fe<sub>2</sub>O<sub>3</sub> aşırı olduğuna göre <b>Al sınırlayıcıdır</b>.</li>
+<li>Verim %27 → harcanan Al = 200 × 0,27 = <b>54 gram</b></li>
+<li>n(Al) = 54 ÷ 27 = <b>2 mol</b></li>
+<li>Katsayı oranı Al : Al<sub>2</sub>O<sub>3</sub> = 2 : 1 → n(Al<sub>2</sub>O<sub>3</sub>) = <b>1 mol</b></li>
+<li>M(Al<sub>2</sub>O<sub>3</sub>) = 54 + 48 = <b>102 g/mol</b> → m = <b>102 gram</b></li>
+<li>Bu termit tepkimesidir; açığa çıkan ısı demiri eritecek kadar yüksektir ve ray kaynağında kullanılır.</li>
+</ol>
+<div class="cevap">102 gram</div>
+</details>
+</div>
+</div>
+
+<!-- ==================== 7 ==================== -->
+<h2><span class="no">Bölüm 7</span>Karışım ve ardışık tepkimeler</h2>
+
+<div class="kart kural">
+<div class="baslik">Kural — iki ayrı düzen</div>
+<ul>
+<li><b>Karışım tepkimelerinde</b> her bileşen için <b>ayrı denklem</b> yazılır. Ortak nicelik (oluşan CO<sub>2</sub>, harcanan O<sub>2</sub>) her biri için hesaplanıp toplanır. Genelde iki bilinmeyenli denklem sistemi çıkar.</li>
+<li><b>Ardışık tepkimelerde</b> bir tepkimenin ürünü diğerinin girenidir. Yöntem: <b>ortak maddeyi bul</b>, molünü bir denklemden diğerine olduğu gibi taşı, sonra istenen niceliğe geç.</li>
+</ul>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 45</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">CH<sub>4</sub> ve C<sub>3</sub>H<sub>4</sub> gazlarından oluşan 0,4 mollük karışım yeterince O<sub>2</sub> ile yakıldığında 0,6 mol CO<sub>2</sub> elde ediliyor.</p>
+<p class="veri">Karışımın molce yüzde kaçı CH<sub>4</sub>'tür?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>CH<sub>4</sub>'e x, C<sub>3</sub>H<sub>4</sub>'e y de: <b>x + y = 0,4</b></li>
+<li>Her CH<sub>4</sub> 1 CO<sub>2</sub>, her C<sub>3</sub>H<sub>4</sub> 3 CO<sub>2</sub> verir → <b>x + 3y = 0,6</b></li>
+<li>İkinciden birinciyi çıkar: 2y = 0,2 → <b>y = 0,1</b> · x = <b>0,3 mol</b></li>
+<li>Molce yüzde: (0,3 ÷ 0,4) × 100 = <b>%75</b></li>
+<li>Kısayol: karbon sayısı formülden okunur; yanma denklemlerini tam yazmaya gerek bile yok.</li>
+</ol>
+<div class="cevap">%75</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 46</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">N<sub>2</sub> ve SO<sub>2</sub> gazlarından oluşan 1 mollük karışımın tamamı yakıldığında 16 gram SO<sub>3</sub> oluşuyor.</p>
+<p class="veri">Başlangıçtaki karışımın molce yüzde kaçı SO<sub>2</sub>'dir? (SO<sub>3</sub>: 80 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Kritik gözlem: <b>SO<sub>3</sub>'ün kaynağı yalnızca SO<sub>2</sub>'dir.</b> Azot yandığında NO, N<sub>2</sub>O gibi oksitler verir, SO<sub>3</sub> vermez.</li>
+<li>n(SO<sub>3</sub>) = 16 ÷ 80 = <b>0,2 mol</b></li>
+<li>SO<sub>2</sub> + (1/2)O<sub>2</sub> → SO<sub>3</sub> · oran 1 : 1 → n(SO<sub>2</sub>) = <b>0,2 mol</b></li>
+<li>Molce yüzde: (0,2 ÷ 1) × 100 = <b>%20</b></li>
+<li>Karışım sorularında bazen ikinci denkleme hiç gerek kalmaz; ürünün <b>hangi bileşenden geldiğini</b> bulmak yeter.</li>
+</ol>
+<div class="cevap">%20</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 47</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">CS<sub>2</sub> ve CO gazlarından oluşan 5 mollük bir karışım</p>
+<p class="veri" style="margin-bottom:10px">CS<sub>2</sub> + 3O<sub>2</sub> → CO<sub>2</sub> + 2SO<sub>2</sub> &nbsp;·&nbsp; CO + (1/2)O<sub>2</sub> → CO<sub>2</sub></p>
+<p class="metin">denklemlerine göre yakılıyor. Oluşan SO<sub>2</sub> 64 gram olduğuna göre karışımın molce yüzde kaçı CS<sub>2</sub>'dir? (SO<sub>2</sub>: 64 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>SO<sub>2</sub> yalnızca CS<sub>2</sub>'den gelir; CO'nun yapısında kükürt yok.</li>
+<li>n(SO<sub>2</sub>) = 64 ÷ 64 = <b>1 mol</b></li>
+<li>Katsayı oranı CS<sub>2</sub> : SO<sub>2</sub> = 1 : 2 → n(CS<sub>2</sub>) = <b>0,5 mol</b></li>
+<li>Molce yüzde: (0,5 ÷ 5) × 100 = <b>%10</b></li>
+<li>Not: iki tepkime de CO<sub>2</sub> veriyor. Eğer soru CO<sub>2</sub> üzerinden sorulsaydı iki denklemli sistem kurmak zorunda kalırdık — <b>ayırt edici ürünü</b> seçmek çözümü kısaltır.</li>
+</ol>
+<div class="cevap">%10</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 48</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Cu ve Zn metallerinden oluşan 50 gramlık alaşım derişik NaOH çözeltisine atıldığında <b>yalnızca Zn</b></p>
+<p class="veri" style="margin-bottom:10px">Zn(k) + 2NaOH(suda) → Na<sub>2</sub>ZnO<sub>2</sub>(suda) + H<sub>2</sub>(g)</p>
+<p class="metin">denklemine göre tepkimeye giriyor ve 0,2 mol H<sub>2</sub> oluşuyor. Buna göre hangi yargılar doğrudur? (Zn: 65 g/mol)</p>
+<ul class="oncul">
+<li><b>I.</b> Alaşımın kütlece %26'sı çinkodur.</li>
+<li><b>II.</b> Alaşımdaki Cu 37 gramdır.</li>
+<li><b>III.</b> Gaz çıkışı kimyasal değişimin göstergesidir.</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Katsayı oranı Zn : H<sub>2</sub> = 1 : 1 → n(Zn) = <b>0,2 mol</b></li>
+<li>m(Zn) = 0,2 × 65 = <b>13 gram</b></li>
+<li><b>I ✔</b> (13 ÷ 50) × 100 = <b>%26</b></li>
+<li><b>II ✔</b> m(Cu) = 50 − 13 = <b>37 gram</b></li>
+<li><b>III ✔</b> Yeni oluşan H<sub>2</sub> gazı, kimyasal değişim göstergesidir (Modül 1, Bölüm 1).</li>
+<li>Karışımın <b>bir bileşeni tepkimeye girmiyorsa</b> o bileşen hesabın dışında kalır; kütlesi ancak farktan bulunur.</li>
+</ol>
+<div class="cevap">I, II ve III</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 49</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Ardışık gerçekleşen tepkimeler:</p>
+<p class="veri" style="margin-bottom:10px">NO(g) + (1/2)O<sub>2</sub>(g) → NO<sub>2</sub>(g)<br>2NO<sub>2</sub>(g) + (1/2)O<sub>2</sub>(g) + H<sub>2</sub>O(s) → 2HNO<sub>3</sub>(suda)</p>
+<p class="metin">Bu denklemlere göre 12,6 gram HNO<sub>3</sub> elde etmek için kaç mol NO harcanmalıdır? (HNO<sub>3</sub>: 63 g/mol)</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>n(HNO<sub>3</sub>) = 12,6 ÷ 63 = <b>0,2 mol</b></li>
+<li><b>Ortak madde NO<sub>2</sub>'dir</b>; ikinci tepkimeden başlayıp geriye git.</li>
+<li>2. tepkime: NO<sub>2</sub> : HNO<sub>3</sub> = 2 : 2 = 1 : 1 → gereken NO<sub>2</sub> = <b>0,2 mol</b></li>
+<li>1. tepkime: NO : NO<sub>2</sub> = 1 : 1 → gereken NO = <b>0,2 mol</b></li>
+<li>Ardışık tepkimelerde yön önemli değil; istenen üründen başlayıp geriye gitmek çoğu zaman daha kısadır.</li>
+</ol>
+<div class="cevap">0,2 mol</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 50</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">Endüstride nitrik asit üretimi üç ardışık tepkimeyle yapılır:</p>
+<p class="veri" style="margin-bottom:10px">4NH<sub>3</sub> + 5O<sub>2</sub> → 4NO + 6H<sub>2</sub>O<br>2NO + O<sub>2</sub> → 2NO<sub>2</sub><br>3NO<sub>2</sub> + H<sub>2</sub>O → 2HNO<sub>3</sub> + NO</p>
+<p class="metin">Tüm basamaklar tam verimle gerçekleştiğinde 2 mol HNO<sub>3</sub> elde etmek için kaç mol NH<sub>3</sub> kullanılmalıdır?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>3. basamaktan başla:</b> 2 mol HNO<sub>3</sub> için NO<sub>2</sub> : HNO<sub>3</sub> = 3 : 2 → gereken NO<sub>2</sub> = <b>3 mol</b></li>
+<li><b>2. basamak:</b> NO : NO<sub>2</sub> = 2 : 2 = 1 : 1 → gereken NO = <b>3 mol</b></li>
+<li><b>1. basamak:</b> NH<sub>3</sub> : NO = 4 : 4 = 1 : 1 → gereken NH<sub>3</sub> = <b>3 mol</b></li>
+<li>Dikkat: 3. basamakta <b>1 mol NO geri kazanılıyor</b> ve prosese döndürülüyor. 10. sınıf düzeyinde bu geri dönüş hesaba katılmaz; katılsaydı gereken NH<sub>3</sub> daha az olurdu.</li>
+<li>Zincirde her adımda yalnızca <b>ortak maddenin</b> molü taşınır; ara ürünlerin kütlelerini hesaplamak gereksizdir.</li>
+</ol>
+<div class="cevap">3 mol NH<sub>3</sub></div>
+</details>
+</div>
+</div>
+
+<!-- ==================== 8 ==================== -->
+<h2><span class="no">Bölüm 8</span>Grafik ve tanecik soruları</h2>
+
+<div class="kart kural">
+<div class="baslik">Kural — mol sayısı–zaman grafiği okuma</div>
+<ul>
+<li><b>Azalan eğriler</b> girenleri, <b>artan eğriler</b> ürünleri gösterir.</li>
+<li>Katsayılar, başlangıç değerlerinden değil <b>değişim miktarlarından</b> bulunur.</li>
+<li>Bir eğri sıfıra iniyorsa o madde <b>sınırlayıcı bileşendir</b>; yatay biten ama sıfırlanmayan eğri <b>artan maddedir</b>.</li>
+</ul>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 51</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Bir tepkimeye ait mol sayısı–zaman grafiği aşağıda verilmiştir.</p>
+<figure>
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif" font-size="11" role="img" aria-label="Mol sayısı zaman grafiği">
+<defs><marker id="okD" markerWidth="8" markerHeight="8" refX="0" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 z" fill="#14110F"/></marker></defs>
+<line x1="48" y1="162" x2="308" y2="162" stroke="#14110F" stroke-width="1.4" marker-end="url(#okD)"/>
+<line x1="48" y1="162" x2="48" y2="22" stroke="#14110F" stroke-width="1.4" marker-end="url(#okD)"/>
+<text x="268" y="182" fill="#5C554F">Zaman</text>
+<text x="18" y="46" transform="rotate(-90 18,46)" fill="#5C554F">Mol sayısı</text>
+<line x1="44" y1="120" x2="48" y2="120" stroke="#14110F"/><text x="38" y="124" text-anchor="end" fill="#5C554F">1</text>
+<line x1="44" y1="78" x2="48" y2="78" stroke="#14110F"/><text x="38" y="82" text-anchor="end" fill="#5C554F">2</text>
+<line x1="44" y1="36" x2="48" y2="36" stroke="#14110F"/><text x="38" y="40" text-anchor="end" fill="#5C554F">3</text>
+<g stroke="#B9AFA5" stroke-dasharray="4 4" stroke-width="1">
+<line x1="48" y1="36" x2="150" y2="36"/>
+<line x1="48" y1="120" x2="110" y2="120"/>
+<line x1="48" y1="78" x2="296" y2="78"/>
+</g>
+<path d="M48,36 C110,36 150,150 220,162 L296,162" fill="none" stroke="#0B5C8A" stroke-width="2.4"/>
+<path d="M48,120 C110,120 150,152 220,162 L296,162" fill="none" stroke="#C7381A" stroke-width="2.4"/>
+<path d="M48,162 C110,162 150,86 220,78 L296,78" fill="none" stroke="#1B6B4A" stroke-width="2.4"/>
+<text x="230" y="30" fill="#0B5C8A" font-weight="700">H₂</text>
+<text x="230" y="150" fill="#C7381A" font-weight="700">N₂</text>
+<text x="230" y="70" fill="#1B6B4A" font-weight="700">NH₃</text>
+</svg>
+</figure>
+<p class="veri">Buna göre hangi yargılar doğrudur?</p>
+<ul class="oncul">
+<li><b>I.</b> Denklem N<sub>2</sub> + 3H<sub>2</sub> → 2NH<sub>3</sub> şeklindedir.</li>
+<li><b>II.</b> Aynı koşullarda 0,4 mol NH<sub>3</sub> oluşması için 0,6 mol H<sub>2</sub> harcanır.</li>
+<li><b>III.</b> Tepkimede toplam molekül sayısı yarıya inmiştir.</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Grafikten değişimleri oku: H<sub>2</sub> 3 → 0 (Δ = 3) · N<sub>2</sub> 1 → 0 (Δ = 1) · NH<sub>3</sub> 0 → 2 (Δ = 2)</li>
+<li>Değişim oranı 1 : 3 : 2 → <b>I ✔</b> N<sub>2</sub> + 3H<sub>2</sub> → 2NH<sub>3</sub></li>
+<li><b>II ✔</b> NH<sub>3</sub> : H<sub>2</sub> = 2 : 3 → 0,4 × (3/2) = 0,6 mol ✔</li>
+<li><b>III ✔</b> Başlangıç 1 + 3 = 4 mol, sonuç 2 mol → tam yarısı.</li>
+<li>Her iki giren de sıfıra indiği için bu <b>artansız</b> bir tepkimedir; başlangıç miktarları tam katsayı oranındaydı.</li>
+</ol>
+<div class="cevap">I, II ve III</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 52</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki grafikte dört maddenin mol sayıları zamanla değişmektedir.</p>
+<figure>
+<svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif" font-size="11" role="img" aria-label="Dört maddeli mol sayısı zaman grafiği">
+<defs><marker id="okE" markerWidth="8" markerHeight="8" refX="0" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 z" fill="#14110F"/></marker></defs>
+<line x1="48" y1="172" x2="308" y2="172" stroke="#14110F" stroke-width="1.4" marker-end="url(#okE)"/>
+<line x1="48" y1="172" x2="48" y2="20" stroke="#14110F" stroke-width="1.4" marker-end="url(#okE)"/>
+<text x="268" y="192" fill="#5C554F">Zaman</text>
+<text x="18" y="46" transform="rotate(-90 18,46)" fill="#5C554F">Mol sayısı</text>
+<line x1="44" y1="147" x2="48" y2="147" stroke="#14110F"/><text x="38" y="151" text-anchor="end" fill="#5C554F">1</text>
+<line x1="44" y1="122" x2="48" y2="122" stroke="#14110F"/><text x="38" y="126" text-anchor="end" fill="#5C554F">2</text>
+<line x1="44" y1="97" x2="48" y2="97" stroke="#14110F"/><text x="38" y="101" text-anchor="end" fill="#5C554F">3</text>
+<line x1="44" y1="72" x2="48" y2="72" stroke="#14110F"/><text x="38" y="76" text-anchor="end" fill="#5C554F">4</text>
+<line x1="44" y1="22" x2="48" y2="22" stroke="#14110F"/><text x="38" y="26" text-anchor="end" fill="#5C554F">6</text>
+<g stroke="#B9AFA5" stroke-dasharray="4 4" stroke-width="1">
+<line x1="48" y1="22" x2="120" y2="22"/>
+<line x1="48" y1="97" x2="296" y2="97"/>
+<line x1="48" y1="147" x2="296" y2="147"/>
+<line x1="48" y1="122" x2="296" y2="122"/>
+<line x1="48" y1="72" x2="296" y2="72"/>
+</g>
+<path d="M48,22 C110,22 160,90 220,97 L296,97" fill="none" stroke="#0B5C8A" stroke-width="2.4"/>
+<path d="M48,97 C110,97 160,142 220,147 L296,147" fill="none" stroke="#C7381A" stroke-width="2.4"/>
+<path d="M48,172 C110,172 160,126 220,122 L296,122" fill="none" stroke="#1B6B4A" stroke-width="2.4"/>
+<path d="M48,172 C110,172 160,80 220,72 L296,72" fill="none" stroke="#7A3E8C" stroke-width="2.4"/>
+<text x="232" y="92" fill="#0B5C8A" font-weight="700">A</text>
+<text x="232" y="142" fill="#C7381A" font-weight="700">Y</text>
+<text x="232" y="118" fill="#1B6B4A" font-weight="700">D</text>
+<text x="232" y="68" fill="#7A3E8C" font-weight="700">N</text>
+</svg>
+</figure>
+<p class="veri">Buna göre tepkimenin en küçük tam sayılarla denkleştirilmiş denklemini yazın.</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>Azalanlar giren:</b> A (6 → 3) ve Y (3 → 1). <b>Artanlar ürün:</b> D (0 → 2) ve N (0 → 4).</li>
+<li>Değişimler: ΔA = 3 · ΔY = 2 · ΔD = 2 · ΔN = 4</li>
+<li>Bu sayılar doğrudan katsayı olur: <b>3A + 2Y → 2D + 4N</b></li>
+<li>Ortak bölen var mı diye bak: 3, 2, 2, 4'ün ortak böleni yok → denklem zaten en küçük tam sayılarla yazılmış.</li>
+<li>Dikkat: A'nın başlangıcı 6'ydı ama katsayı 6 değil <b>3</b>'tür. Grafik sorularında katsayıyı belirleyen <b>fark</b>tır.</li>
+<li>Ayrıca hiçbir eğri sıfıra inmemiş — yani <b>tepkime tam verimle gerçekleşmemiş</b>, girenlerden ikisi de artmıştır.</li>
+</ol>
+<div class="cevap">3A + 2Y → 2D + 4N</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 53</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">A<sub>2</sub> ve B<sub>2</sub> gazlarının tepkimesine ait mol sayısı–zaman grafiği aşağıdadır. Tepkimede tek ürün olarak A<sub>2</sub>B oluşmaktadır.</p>
+<figure>
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif" font-size="11" role="img" aria-label="A2 B2 mol sayısı zaman grafiği">
+<defs><marker id="okF" markerWidth="8" markerHeight="8" refX="0" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 z" fill="#14110F"/></marker></defs>
+<line x1="48" y1="164" x2="308" y2="164" stroke="#14110F" stroke-width="1.4" marker-end="url(#okF)"/>
+<line x1="48" y1="164" x2="48" y2="22" stroke="#14110F" stroke-width="1.4" marker-end="url(#okF)"/>
+<text x="268" y="184" fill="#5C554F">Zaman</text>
+<text x="18" y="46" transform="rotate(-90 18,46)" fill="#5C554F">Mol sayısı</text>
+<line x1="44" y1="136" x2="48" y2="136" stroke="#14110F"/><text x="38" y="140" text-anchor="end" fill="#5C554F">1</text>
+<line x1="44" y1="108" x2="48" y2="108" stroke="#14110F"/><text x="38" y="112" text-anchor="end" fill="#5C554F">2</text>
+<line x1="44" y1="80" x2="48" y2="80" stroke="#14110F"/><text x="38" y="84" text-anchor="end" fill="#5C554F">3</text>
+<line x1="44" y1="52" x2="48" y2="52" stroke="#14110F"/><text x="38" y="56" text-anchor="end" fill="#5C554F">4</text>
+<g stroke="#B9AFA5" stroke-dasharray="4 4" stroke-width="1">
+<line x1="48" y1="52" x2="296" y2="52"/>
+<line x1="48" y1="80" x2="120" y2="80"/>
+<line x1="48" y1="136" x2="296" y2="136"/>
+</g>
+<path d="M48,52 C110,52 160,158 220,164 L296,164" fill="none" stroke="#0B5C8A" stroke-width="2.4"/>
+<path d="M48,80 C110,80 160,132 220,136 L296,136" fill="none" stroke="#C7381A" stroke-width="2.4"/>
+<path d="M48,164 C110,164 160,58 220,52 L296,52" fill="none" stroke="#1B6B4A" stroke-width="2.4"/>
+<text x="232" y="46" fill="#1B6B4A" font-weight="700">A₂B</text>
+<text x="232" y="132" fill="#C7381A" font-weight="700">B₂</text>
+<text x="150" y="46" fill="#0B5C8A" font-weight="700">A₂</text>
+</svg>
+</figure>
+<ul class="siklar">
+<li><b>a)</b> Denklemi yazın.</li>
+<li><b>b)</b> Sınırlayıcı bileşen ve artan madde hangisidir?</li>
+<li><b>c)</b> Başlangıçtaki A<sub>2</sub> 112 gram, B<sub>2</sub> 96 gram ise A ve B'nin atom kütlelerini bulun.</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Grafikten: A<sub>2</sub> 4 → 0 (Δ = 4) · B<sub>2</sub> 3 → 1 (Δ = 2) · A<sub>2</sub>B 0 → 4 (Δ = 4)</li>
+<li>a) Oran 4 : 2 : 4 = 2 : 1 : 2 → <b>2A<sub>2</sub> + B<sub>2</sub> → 2A<sub>2</sub>B</b></li>
+<li>Atom kontrolü: solda 4 A + 2 B, sağda 4 A + 2 B ✔</li>
+<li>b) A<sub>2</sub> sıfıra indiği için <b>sınırlayıcı bileşen A<sub>2</sub></b>; B<sub>2</sub>'den <b>1 mol artmıştır</b>.</li>
+<li>c) M(A<sub>2</sub>) = 112 ÷ 4 = 28 → <b>A = 14 g/mol</b> · M(B<sub>2</sub>) = 96 ÷ 3 = 32 → <b>B = 16 g/mol</b></li>
+<li>Bu değerler azot ve oksijene karşılık gelir; ürün N<sub>2</sub>O'dur. Oluşan 4 mol A<sub>2</sub>B = 4 × 44 = 176 gram.</li>
+<li>Kütle kontrolü: harcanan 112 + (2 × 32) = 176 gram ✔</li>
+</ol>
+<div class="cevap">a) 2A<sub>2</sub> + B<sub>2</sub> → 2A<sub>2</sub>B &nbsp;·&nbsp; b) Sınırlayıcı A<sub>2</sub>, 1 mol B<sub>2</sub> artar &nbsp;·&nbsp; c) A = 14, B = 16 g/mol</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 54</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">Kapalı bir kapta gerçekleşen bir tepkimenin öncesi ve sonrası tanecik modeliyle verilmiştir.</p>
+<figure>
+<svg viewBox="0 0 340 170" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif" font-size="11" role="img" aria-label="Tepkime öncesi ve sonrası tanecikler">
+<rect x="8" y="26" width="145" height="130" rx="10" fill="#FBF9F7" stroke="#E7E0D9"/>
+<rect x="187" y="26" width="145" height="130" rx="10" fill="#FBF9F7" stroke="#E7E0D9"/>
+<text x="80" y="18" text-anchor="middle" fill="#5C554F" font-weight="700">Öncesi</text>
+<text x="259" y="18" text-anchor="middle" fill="#5C554F" font-weight="700">Sonrası</text>
+<g fill="#0B5C8A">
+<circle cx="38" cy="52" r="8"/><circle cx="54" cy="52" r="8"/>
+<circle cx="38" cy="86" r="8"/><circle cx="54" cy="86" r="8"/>
+<circle cx="38" cy="120" r="8"/><circle cx="54" cy="120" r="8"/>
+</g>
+<g fill="#F85300">
+<circle cx="108" cy="60" r="8"/><circle cx="124" cy="60" r="8"/>
+<circle cx="108" cy="110" r="8"/><circle cx="124" cy="110" r="8"/>
+</g>
+<g fill="#0B5C8A">
+<circle cx="212" cy="52" r="8"/><circle cx="228" cy="52" r="8"/>
+<circle cx="212" cy="120" r="8"/><circle cx="228" cy="120" r="8"/>
+</g>
+<g fill="#F85300"><circle cx="244" cy="52" r="8"/></g>
+<g fill="#0B5C8A"><circle cx="278" cy="86" r="8"/><circle cx="294" cy="86" r="8"/></g>
+<g fill="#F85300"><circle cx="310" cy="86" r="8"/><circle cx="286" cy="118" r="8"/><circle cx="302" cy="118" r="8"/></g>
+<circle cx="30" cy="166" r="0" fill="none"/>
+</svg>
+<figcaption>Mavi: A atomu · Turuncu: B atomu</figcaption>
+</figure>
+<ul class="siklar">
+<li><b>a)</b> Tepkime denklemini yazın.</li>
+<li><b>b)</b> Sınırlayıcı bileşeni ve artan maddeyi belirtin.</li>
+<li><b>c)</b> Tepkimenin verimi yüzde kaçtır?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>Öncesi:</b> 3 tane A<sub>2</sub> ve 2 tane B<sub>2</sub>.</li>
+<li><b>Sonrası:</b> 1 tane A<sub>2</sub> (artan), 2 tane A<sub>2</sub>B ve 1 tane B<sub>2</sub> (artan) görünüyor.</li>
+<li>Harcananlar: 2 tane A<sub>2</sub> ve 1 tane B<sub>2</sub>; oluşan 2 tane A<sub>2</sub>B.</li>
+<li>a) <b>2A<sub>2</sub> + B<sub>2</sub> → 2A<sub>2</sub>B</b></li>
+<li>b) Teorik olarak 3 A<sub>2</sub>'nin tamamı bitseydi 1,5 B<sub>2</sub> gerekirdi; elimizde 2 var → <b>sınırlayıcı A<sub>2</sub></b>. Ama tepkime tamamlanmadığı için sonda hem A<sub>2</sub> hem B<sub>2</sub> kaldı.</li>
+<li>c) Verim, sınırlayıcı üzerinden: gerçekte harcanan A<sub>2</sub> = 2, teorik harcanması gereken = 3.</li>
+<li>% verim = (2 ÷ 3) × 100 ≈ <b>%66,7</b></li>
+<li>Atom kontrolü: öncesinde 6 A + 4 B; sonrasında 2 + 4 = 6 A ve 2 + 2 = 4 B ✔ Model tutarlı.</li>
+</ol>
+<div class="cevap">a) 2A<sub>2</sub> + B<sub>2</sub> → 2A<sub>2</sub>B &nbsp;·&nbsp; b) Sınırlayıcı A<sub>2</sub>; hem A<sub>2</sub> hem B<sub>2</sub> arttı &nbsp;·&nbsp; c) ≈%66,7</div>
+</details>
+</div>
+</div>
+
+<!-- ==================== 9 ==================== -->
+<h2><span class="no">Bölüm 9</span>Sınav tarzı sorular</h2>
+
+<div class="kart ek-not">
+<div class="baslik">Not</div>
+<p>Bu bölümdeki sorular ÖSYM biçiminde yazılmıştır ancak <b>çıkmış sınav soruları değildir</b>.</p>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 55</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">3 mol Fe katısı ile 4 mol HNO<sub>3</sub> içeren çözelti</p>
+<p class="veri" style="margin-bottom:10px">Fe(k) + 2HNO<sub>3</sub>(suda) → Fe(NO<sub>3</sub>)<sub>2</sub>(suda) + H<sub>2</sub>(g)</p>
+<p class="metin">denklemine göre tam verimle tepkimeye giriyor. Hangi maddeden kaç mol artar?</p>
+<ul class="secenek">
+<li><b>A)</b> 2 mol HNO<sub>3</sub></li><li><b>B)</b> 1 mol Fe</li><li><b>C)</b> 1 mol HNO<sub>3</sub></li><li><b>D)</b> 2 mol Fe</li><li><b>E)</b> 1,5 mol HNO<sub>3</sub></li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>3 mol Fe'nin tamamı için 6 mol HNO<sub>3</sub> gerekir; elimizde 4 mol var → <b>HNO<sub>3</sub> sınırlayıcı</b>.</li>
+<li>4 mol HNO<sub>3</sub> ile harcanan Fe = 4 × (1/2) = <b>2 mol</b></li>
+<li>Artan Fe = 3 − 2 = <b>1 mol</b></li>
+<li>Çeldirici A ve C, sınırlayıcının artacağını sanan öğrenci içindir; sınırlayıcı bileşen tam verimli tepkimede <b>artmaz</b>.</li>
+</ol>
+<div class="cevap">B) 1 mol Fe</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 56</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">244 gram KClO<sub>3</sub> katısı ısıtıldığında</p>
+<p class="veri" style="margin-bottom:10px">KClO<sub>3</sub>(k) → KCl(k) + (3/2)O<sub>2</sub>(g)</p>
+<p class="metin">denklemine göre tamamen ayrışıyor. Açığa çıkan O<sub>2</sub> kaç gramdır? (O: 16, Cl: 35, K: 39 g/mol)</p>
+<ul class="secenek">
+<li><b>A)</b> 48</li><li><b>B)</b> 64</li><li><b>C)</b> 96</li><li><b>D)</b> 108</li><li><b>E)</b> 192</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>M(KClO<sub>3</sub>) = 39 + 35 + 48 = <b>122 g/mol</b> → n = 244 ÷ 122 = <b>2 mol</b></li>
+<li>Katsayı oranı KClO<sub>3</sub> : O<sub>2</sub> = 1 : 3/2 → n(O<sub>2</sub>) = 2 × 1,5 = <b>3 mol</b></li>
+<li>m = 3 × 32 = <b>96 gram</b></li>
+<li>Kontrol: kalan KCl = 2 mol × 74 = 148 g; 148 + 96 = 244 ✔</li>
+</ol>
+<div class="cevap">C) 96 gram</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 57</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">H<sub>2</sub>(g) + Cl<sub>2</sub>(g) → 2HCl(g)</p>
+<p class="veri">denklemine göre 10 mol H<sub>2</sub> ve 3 mol Cl<sub>2</sub> tam verimle tepkimeye giriyor. Oluşan bileşiğin mol sayısının, artan gazın mol sayısına oranı kaçtır?</p>
+<ul class="secenek">
+<li><b>A)</b> 6/7</li><li><b>B)</b> 1/2</li><li><b>C)</b> 3/4</li><li><b>D)</b> 3/7</li><li><b>E)</b> 3</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Katsayılar 1 : 1 olduğu için <b>miktarı az olan sınırlayıcıdır</b> → Cl<sub>2</sub> (3 mol).</li>
+<li>Harcanan H<sub>2</sub> = 3 mol → artan H<sub>2</sub> = 10 − 3 = <b>7 mol</b></li>
+<li>Oluşan HCl = 3 × 2 = <b>6 mol</b></li>
+<li>Oran = 6 ÷ 7 = <b>6/7</b></li>
+<li>Kontrol: sonda kapta 7 mol H<sub>2</sub> + 6 mol HCl = 13 mol; başlangıçta 13 mol vardı. Bu tepkimede mol sayısı korunur (1 + 1 → 2).</li>
+</ol>
+<div class="cevap">A) 6/7</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 58</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">4X(g) + 3Y(g) → 2Z(g)</p>
+<p class="veri">denklemine göre eşit mollerde alınan X ve Y gazlarından en fazla 6 mol Z elde edilmektedir. Artan gazın türü ve mol sayısı nedir?</p>
+<ul class="secenek">
+<li><b>A)</b> 3 mol Y</li><li><b>B)</b> 2 mol X</li><li><b>C)</b> 3 mol X</li><li><b>D)</b> 2 mol Y</li><li><b>E)</b> 4 mol Y</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Eşit mol alındığında <b>katsayısı büyük olan önce biter</b> → X sınırlayıcıdır (4 &gt; 3).</li>
+<li>6 mol Z için: X harcanan = 6 × (4/2) = <b>12 mol</b> · Y harcanan = 6 × (3/2) = <b>9 mol</b></li>
+<li>X tamamen bittiğine göre başlangıçta 12 mol X vardı; eşit mol alındığından <b>12 mol Y</b> de vardı.</li>
+<li>Artan Y = 12 − 9 = <b>3 mol</b></li>
+<li>"En fazla" ifadesi tepkimenin sınırlayıcı bitene kadar sürdüğünü, yani tam verimli olduğunu söyler.</li>
+</ol>
+<div class="cevap">A) 3 mol Y</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 59</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">0,8 mol C<sub>3</sub>H<sub>8</sub> gazı ve 16 gram O<sub>2</sub> gazı</p>
+<p class="veri" style="margin-bottom:10px">C<sub>3</sub>H<sub>8</sub> + 5O<sub>2</sub> → 3CO<sub>2</sub> + 4H<sub>2</sub>O</p>
+<p class="metin">denklemine göre tam verimle tepkimeye giriyor. Oluşan CO<sub>2</sub> kaç gramdır? (C: 12, O: 16 g/mol)</p>
+<ul class="secenek">
+<li><b>A)</b> 11</li><li><b>B)</b> 22</li><li><b>C)</b> 13,2</li><li><b>D)</b> 44</li><li><b>E)</b> 88</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>n(O<sub>2</sub>) = 16 ÷ 32 = <b>0,5 mol</b></li>
+<li>0,8 mol C<sub>3</sub>H<sub>8</sub> için 4 mol O<sub>2</sub> gerekirdi; elimizde 0,5 mol var → <b>O<sub>2</sub> sınırlayıcı</b>.</li>
+<li>Katsayı oranı O<sub>2</sub> : CO<sub>2</sub> = 5 : 3 → n(CO<sub>2</sub>) = 0,5 × (3/5) = <b>0,3 mol</b></li>
+<li>m = 0,3 × 44 = <b>13,2 gram</b></li>
+<li>Tuzak: propanın molü (0,8) büyük ve doğrudan verilmiş olduğu için hesap ondan başlatılıyor; o zaman 0,8 × 3 × 44 = 105,6 gibi bir sonuç çıkar. <b>Önce sınırlayıcıyı belirlemeden hesaba başlama.</b></li>
+</ol>
+<div class="cevap">C) 13,2 gram</div>
+</details>
+</div>
+</div>
+
+<!-- ==================== ETKİNLİK ==================== -->
+<h2><span class="no">Etkinlik</span>Denkleştirme çalışma kâğıdı ve doğru-yanlış</h2>
+
+<p><b>1.</b> Aşağıdaki denklemleri en küçük tam sayılarla denkleştirin.</p>
+<ul class="oncul">
+<li><b>a)</b> ... Al<sub>2</sub>S<sub>3</sub> + ... H<sub>2</sub>O → ... Al(OH)<sub>3</sub> + ... H<sub>2</sub>S</li>
+<li><b>b)</b> ... C<sub>2</sub>H<sub>2</sub> + ... O<sub>2</sub> → ... CO<sub>2</sub> + ... H<sub>2</sub>O</li>
+<li><b>c)</b> ... Al + ... H<sub>2</sub>SO<sub>4</sub> → ... Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> + ... H<sub>2</sub></li>
+<li><b>d)</b> ... NaHCO<sub>3</sub> → ... Na<sub>2</sub>CO<sub>3</sub> + ... H<sub>2</sub>O + ... CO<sub>2</sub></li>
+<li><b>e)</b> ... NH<sub>3</sub> + ... CuO → ... Cu + ... N<sub>2</sub> + ... H<sub>2</sub>O</li>
+<li><b>f)</b> ... C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> → ... C<sub>2</sub>H<sub>5</sub>OH + ... CO<sub>2</sub></li>
+<li><b>g)</b> ... P<sub>4</sub> + ... Cl<sub>2</sub> → ... PCl<sub>3</sub></li>
+<li><b>h)</b> ... K + ... H<sub>2</sub>O → ... KOH + ... H<sub>2</sub></li>
+</ul>
+
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Cevapları göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Cevapları gizle</span></summary>
+<ol class="adim">
+<li><b>a)</b> Al<sub>2</sub>S<sub>3</sub> + 6H<sub>2</sub>O → 2Al(OH)<sub>3</sub> + 3H<sub>2</sub>S &nbsp;(1-6-2-3)</li>
+<li><b>b)</b> 2C<sub>2</sub>H<sub>2</sub> + 5O<sub>2</sub> → 4CO<sub>2</sub> + 2H<sub>2</sub>O &nbsp;(2-5-4-2)</li>
+<li><b>c)</b> 2Al + 3H<sub>2</sub>SO<sub>4</sub> → Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> + 3H<sub>2</sub> &nbsp;(2-3-1-3)</li>
+<li><b>d)</b> 2NaHCO<sub>3</sub> → Na<sub>2</sub>CO<sub>3</sub> + H<sub>2</sub>O + CO<sub>2</sub> &nbsp;(2-1-1-1)</li>
+<li><b>e)</b> 2NH<sub>3</sub> + 3CuO → 3Cu + N<sub>2</sub> + 3H<sub>2</sub>O &nbsp;(2-3-3-1-3)</li>
+<li><b>f)</b> C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> → 2C<sub>2</sub>H<sub>5</sub>OH + 2CO<sub>2</sub> &nbsp;(1-2-2)</li>
+<li><b>g)</b> P<sub>4</sub> + 6Cl<sub>2</sub> → 4PCl<sub>3</sub> &nbsp;(1-6-4)</li>
+<li><b>h)</b> 2K + 2H<sub>2</sub>O → 2KOH + H<sub>2</sub> &nbsp;(2-2-2-1)</li>
+</ol>
+</details>
+
+<p style="margin-top:26px"><b>2.</b> Aşağıdaki denklemlerde boş bırakılan maddelerin formüllerini yazın.</p>
+<ul class="oncul">
+<li><b>a)</b> Fe<sub>2</sub>O<sub>3</sub> + 3......... → 2Fe + 3CO<sub>2</sub></li>
+<li><b>b)</b> Na<sub>2</sub>CO<sub>3</sub> + 2HCl → 2......... + H<sub>2</sub>O + CO<sub>2</sub></li>
+<li><b>c)</b> Cu + 2......... → Cu(NO<sub>3</sub>)<sub>2</sub> + 2Ag</li>
+<li><b>d)</b> Al<sub>4</sub>C<sub>3</sub> + 12H<sub>2</sub>O → 4......... + 3CH<sub>4</sub></li>
+<li><b>e)</b> 2NaOH + H<sub>2</sub>S → ......... + 2H<sub>2</sub>O</li>
+<li><b>f)</b> 5C + 2......... → CS<sub>2</sub> + 4CO</li>
+</ul>
+
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Cevapları göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Cevapları gizle</span></summary>
+<ol class="adim">
+<li><b>a) CO</b> — Sağda 3 C ve 6 O var; Fe<sub>2</sub>O<sub>3</sub>'ten 3 O geliyor, kalan 3 C ve 3 O boşluktan.</li>
+<li><b>b) NaCl</b> — Sağda 2 Na ve 2 Cl eksik, katsayı 2.</li>
+<li><b>c) AgNO<sub>3</sub></b> — 2 Ag ve 2 NO<sub>3</sub> gerekiyor, katsayı 2.</li>
+<li><b>d) Al(OH)<sub>3</sub></b> — 4 Al ve 12 O, 12 H; katsayı 4 → bir molekülde 1 Al, 3 OH.</li>
+<li><b>e) Na<sub>2</sub>S</b> — 2 Na ve 1 S kalıyor.</li>
+<li><b>f) SO<sub>2</sub></b> — Sağda 2 S ve 4 O; katsayı 2 → bir molekülde 1 S, 2 O.</li>
+</ol>
+</details>
+
+<p style="margin-top:26px"><b>3.</b> Doğruysa <b>D</b>, yanlışsa <b>Y</b> yazın.</p>
+<ul class="oncul">
+<li><b>a)</b> (....) Denklem katsayıları maddelerin kütle oranını verir.</li>
+<li><b>b)</b> (....) Sınırlayıcı bileşen, miktarı en az olan maddedir.</li>
+<li><b>c)</b> (....) Tam verimli bir tepkimede girenlerin en az biri tamamen biter.</li>
+<li><b>d)</b> (....) Katı kütlesindeki azalma, ortamdan ayrılan gazın kütlesine eşittir.</li>
+<li><b>e)</b> (....) %100 verimli tepkimede girenlerin tamamı biter.</li>
+<li><b>f)</b> (....) Saflık ile verim aynı kavramlardır.</li>
+<li><b>g)</b> (....) Mol sayısı–zaman grafiğinde katsayılar, eğrilerin başlangıç değerlerinden bulunur.</li>
+<li><b>h)</b> (....) Bir denklemi denkleştirirken formüldeki alt indisler değiştirilemez.</li>
+</ul>
+
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Cevapları göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Cevapları gizle</span></summary>
+<ol class="adim">
+<li><b>a) Y</b> — Katsayılar <b>mol</b> oranını verir.</li>
+<li><b>b) Y</b> — Miktar değil, <b>katsayıya göre oran</b> belirler.</li>
+<li><b>c) D</b> — Tam verimli tepkimenin tanımı budur.</li>
+<li><b>d) D</b> — Kaptan yalnızca gaz ayrılır.</li>
+<li><b>e) Y</b> — Yalnızca sınırlayıcı biter; diğerinden artabilir.</li>
+<li><b>f) Y</b> — Saflıkta madde baştan katkılı, verimde madde saf ama tepkime tamamlanmamıştır.</li>
+<li><b>g) Y</b> — Katsayıyı <b>değişim miktarları</b> belirler.</li>
+<li><b>h) D</b> — Katsayı değişir, formül değişmez.</li>
+</ol>
+<div class="cevap">a) Y · b) Y · c) D · d) D · e) Y · f) Y · g) Y · h) D</div>
+</details>
+
+<!-- ==================== KENDİN ÇÖZ ==================== -->
+<div class="test">
+<h3>Kendin çöz</h3>
+<p class="alt-baslik">Bölüm 1-9 karışık · cevapları açmadan önce kâğıt üzerinde dene</p>
+<ol>
+<li><span class="tip">Denkleştirme</span>Al<sub>2</sub>S<sub>3</sub> + H<sub>2</sub>O → Al(OH)<sub>3</sub> + H<sub>2</sub>S denklemini denkleştirin.
+<details><summary>Cevabı gör</summary><p>1-6-2-3</p></details></li>
+
+<li><span class="tip">Denkleştirme</span>C<sub>2</sub>H<sub>2</sub> + O<sub>2</sub> → CO<sub>2</sub> + H<sub>2</sub>O denkleminde O<sub>2</sub>'nin katsayısı kaçtır?
+<details><summary>Cevabı gör</summary><p>2C<sub>2</sub>H<sub>2</sub> + 5O<sub>2</sub> → 4CO<sub>2</sub> + 2H<sub>2</sub>O → <b>5</b></p></details></li>
+
+<li><span class="tip">Basit stokiyometri</span>0,5 mol H<sub>2</sub>S, 2H<sub>2</sub>S + SO<sub>2</sub> → 3S + 2H<sub>2</sub>O denklemine göre artansız tepkimeye giriyor. Kaç mol S oluşur?
+<details><summary>Cevabı gör</summary><p>H<sub>2</sub>S : S = 2 : 3 → 0,5 × 1,5 = <b>0,75 mol</b></p></details></li>
+
+<li><span class="tip">Mol → kütle</span>0,1 mol O<sub>2</sub>, 2NO + O<sub>2</sub> → 2NO<sub>2</sub> denklemine göre artansız tepkimeye giriyor. Oluşan NO<sub>2</sub> kaç gramdır? (N: 14, O: 16)
+<details><summary>Cevabı gör</summary><p>O<sub>2</sub> : NO<sub>2</sub> = 1 : 2 → 0,2 mol → 0,2 × 46 = <b>9,2 gram</b></p></details></li>
+
+<li><span class="tip">Geriye hesap</span>6,8 gram NH<sub>3</sub> elde etmek için N<sub>2</sub> + 3H<sub>2</sub> → 2NH<sub>3</sub> denklemine göre kaçar mol N<sub>2</sub> ve H<sub>2</sub> gerekir? (H: 1, N: 14)
+<details><summary>Cevabı gör</summary><p>n(NH<sub>3</sub>) = 6,8 ÷ 17 = 0,4 mol → N<sub>2</sub> = <b>0,2 mol</b>, H<sub>2</sub> = <b>0,6 mol</b></p></details></li>
+
+<li><span class="tip">Artansız</span>0,4 mol X gazı bir miktar Y ile 2X + 3Y → 2Z denklemine göre artansız tepkimeye giriyor. Harcanan Y ve oluşan Z kaç moldür?
+<details><summary>Cevabı gör</summary><p>Y = 0,4 × 1,5 = <b>0,6 mol</b> · Z = <b>0,4 mol</b></p></details></li>
+
+<li><span class="tip">Sınırlayıcı</span>4 mol H<sub>2</sub> ve 6 mol O<sub>2</sub>, 2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O denklemine göre tepkimeye giriyor. Kaç gram H<sub>2</sub>O oluşur? (H: 1, O: 16)
+<details><summary>Cevabı gör</summary><p>4 mol H<sub>2</sub> için 2 mol O<sub>2</sub> yeter → H<sub>2</sub> sınırlayıcı. 4 mol H<sub>2</sub>O × 18 = <b>72 gram</b></p></details></li>
+
+<li><span class="tip">Artan madde</span>1,2 mol A<sub>2</sub> ve 3 mol B<sub>2</sub>, 2A<sub>2</sub> + 3B<sub>2</sub> → C denklemine göre tepkimeye giriyor. Hangi maddeden kaç mol artar?
+<details><summary>Cevabı gör</summary><p>1,2 mol A<sub>2</sub> için 1,8 mol B<sub>2</sub> gerekir → A<sub>2</sub> sınırlayıcı. Artan B<sub>2</sub> = 3 − 1,8 = <b>1,2 mol</b></p></details></li>
+
+<li><span class="tip">Başlangıcı bulma</span>Mg + 2HCl → MgCl<sub>2</sub> + H<sub>2</sub> tepkimesinde 188 gram MgCl<sub>2</sub> oluşurken 1,5 mol Mg tepkimeye girmemiştir. Başlangıçtaki Mg kaç gramdır? (Mg: 24, Cl: 35)
+<details><summary>Cevabı gör</summary><p>M(MgCl<sub>2</sub>) = 94 → 2 mol. Harcanan Mg = 2 mol; toplam = 3,5 mol → <b>84 gram</b></p></details></li>
+
+<li><span class="tip">Eşit mol</span>Eşit mollerde C<sub>2</sub>H<sub>4</sub> ve O<sub>2</sub>, C<sub>2</sub>H<sub>4</sub> + 3O<sub>2</sub> → 2CO<sub>2</sub> + 2H<sub>2</sub>O denklemine göre tepkimeye girip 88 gram CO<sub>2</sub> veriyor. Artan madde ve mol sayısı nedir? (CO<sub>2</sub>: 44)
+<details><summary>Cevabı gör</summary><p>2 mol CO<sub>2</sub> → C<sub>2</sub>H<sub>4</sub> 1 mol, O<sub>2</sub> 3 mol harcanmış. O<sub>2</sub> bittiğine göre başlangıç 3'er mol → artan <b>2 mol C<sub>2</sub>H<sub>4</sub></b></p></details></li>
+
+<li><span class="tip">Ayrışma</span>CaCO<sub>3</sub> → CaO + CO<sub>2</sub> denklemine göre 4,4 gram CO<sub>2</sub> oluşması için kaç mol CaCO<sub>3</sub> gerekir? (C: 12, O: 16)
+<details><summary>Cevabı gör</summary><p>n(CO<sub>2</sub>) = 0,1 mol → oran 1 : 1 → <b>0,1 mol</b></p></details></li>
+
+<li><span class="tip">Kütle → mol</span>144 gram Mg, 3Mg + 2H<sub>3</sub>PO<sub>4</sub> → Mg<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> + 3H<sub>2</sub> denklemine göre yeterli asitle tepkimeye giriyor. Kaç mol Mg<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> oluşur? (Mg: 24)
+<details><summary>Cevabı gör</summary><p>n(Mg) = 6 mol → Mg : ürün = 3 : 1 → <b>2 mol</b></p></details></li>
+
+<li><span class="tip">Verim</span>168 gram saf MgCO<sub>3</sub>, MgCO<sub>3</sub> → MgO + CO<sub>2</sub> denklemine göre %50 verimle ayrışıyor. Kaç mol CO<sub>2</sub> oluşur? (C: 12, O: 16, Mg: 24)
+<details><summary>Cevabı gör</summary><p>M = 84 → 2 mol. %50 → 1 mol ayrışır → <b>1 mol CO<sub>2</sub></b></p></details></li>
+
+<li><span class="tip">Metal eldesi</span>Fe<sub>2</sub>O<sub>3</sub> + 3CO → 2Fe + 3CO<sub>2</sub> denklemine göre 32 gram Fe<sub>2</sub>O<sub>3</sub>'ün tamamı tepkimeye girdiğinde kaç mol CO<sub>2</sub> oluşur? (O: 16, Fe: 56)
+<details><summary>Cevabı gör</summary><p>M = 160 → 0,2 mol → CO<sub>2</sub> = 0,2 × 3 = <b>0,6 mol</b></p></details></li>
+
+<li><span class="tip">Çok yargılı</span>9,8 gram H<sub>2</sub>SO<sub>4</sub>, Mg + H<sub>2</sub>SO<sub>4</sub> → MgSO<sub>4</sub> + H<sub>2</sub> denklemine göre yeterli Mg ile tam verimle tepkimeye giriyor. Harcanan Mg kaç gram, oluşan H<sub>2</sub> kaç tanedir? (H: 1, O: 16, Mg: 24, S: 32, N<sub>A</sub> = 6,02·10<sup>23</sup>)
+<details><summary>Cevabı gör</summary><p>M(H<sub>2</sub>SO<sub>4</sub>) = 98 → 0,1 mol. Mg = 0,1 mol = <b>2,4 gram</b>; H<sub>2</sub> = 0,1 mol = <b>6,02·10<sup>22</sup> tane</b></p></details></li>
+
+<li><span class="tip">Bilinmeyen element</span>Ağzı açık kapta 61 gram XClO<sub>3</sub> ısıtılıp tamamen ayrıştığında 24 gram O<sub>2</sub> açığa çıkıyor. X'in atom kütlesi kaçtır? (O: 16, Cl: 35)
+<details><summary>Cevabı gör</summary><p>n(O<sub>2</sub>) = 0,75 mol → XClO<sub>3</sub> = 0,75 ÷ 1,5 = 0,5 mol → M = 122 → X = 122 − 35 − 48 = <b>39</b></p></details></li>
+
+<li><span class="tip">Verim hesabı</span>1 mol C<sub>3</sub>H<sub>8</sub>, 5 mol O<sub>2</sub> ile yakıldığında 1,5 mol CO<sub>2</sub> elde ediliyor. Tepkime verimi yüzde kaçtır?
+<details><summary>Cevabı gör</summary><p>Teorik CO<sub>2</sub> = 3 mol → verim = 1,5 ÷ 3 = <b>%50</b></p></details></li>
+
+<li><span class="tip">Ters verim</span>2SO<sub>3</sub> → 2SO<sub>2</sub> + O<sub>2</sub> tepkimesi %40 verimle gerçekleşiyor ve toplam 3 mol ürün gazı oluşuyor. Başlangıçtaki SO<sub>3</sub> kaç gramdır? (O: 16, S: 32)
+<details><summary>Cevabı gör</summary><p>a mol SO<sub>3</sub>'ün %40'ı ayrışır: SO<sub>2</sub> = 0,4a, O<sub>2</sub> = 0,2a → toplam ürün 0,6a = 3 → a = 5 mol → 5 × 80 = <b>400 gram</b></p></details></li>
+
+<li><span class="tip">Eşit kütle</span>Eşit kütlelerde SO<sub>2</sub> ve O<sub>2</sub>, 2SO<sub>2</sub> + O<sub>2</sub> → 2SO<sub>3</sub> denklemine göre tam verimle tepkimeye girip en fazla 0,4 mol SO<sub>3</sub> veriyor. Hangi maddeden kaç gram artar? (O: 16, S: 32)
+<details><summary>Cevabı gör</summary><p>SO<sub>2</sub> harcanan 0,4 mol → m = 25,6 g (her ikisinden de). n(O<sub>2</sub>) = 0,8 mol, harcanan 0,2 → artan 0,6 mol = <b>19,2 gram O<sub>2</sub></b></p></details></li>
+
+<li><span class="tip">Bütünleştirici</span>3NO<sub>2</sub> + H<sub>2</sub>O → 2HNO<sub>3</sub> + NO tepkimesinde 6 gram NO oluştuğunda harcanan NO<sub>2</sub> ve H<sub>2</sub>O kütleleri toplamı kaç gramdır? (H: 1, N: 14, O: 16)
+<details><summary>Cevabı gör</summary><p>n(NO) = 0,2 mol → NO<sub>2</sub> = 0,6 mol = 27,6 g · H<sub>2</sub>O = 0,2 mol = 3,6 g → toplam <b>31,2 gram</b></p></details></li>
+<li><span class="tip">Grafik · denklem</span>Aşağıdaki mol sayısı–zaman grafiğine göre tepkimenin denklemini yazın, sınırlayıcı bileşeni ve artan maddeyi belirtin.
+<figure>
+<svg viewBox="0 0 340 190" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif" font-size="11" role="img" aria-label="Mol sayısı zaman grafiği">
+<defs><marker id="okG" markerWidth="8" markerHeight="8" refX="0" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 z" fill="#14110F"/></marker></defs>
+<line x1="48" y1="158" x2="308" y2="158" stroke="#14110F" stroke-width="1.4" marker-end="url(#okG)"/>
+<line x1="48" y1="158" x2="48" y2="20" stroke="#14110F" stroke-width="1.4" marker-end="url(#okG)"/>
+<text x="266" y="178" fill="#5C554F">Zaman</text>
+<text x="18" y="44" transform="rotate(-90 18,44)" fill="#5C554F">Mol sayısı</text>
+<line x1="44" y1="135" x2="48" y2="135" stroke="#14110F"/><text x="38" y="139" text-anchor="end" fill="#5C554F">1</text>
+<line x1="44" y1="112" x2="48" y2="112" stroke="#14110F"/><text x="38" y="116" text-anchor="end" fill="#5C554F">2</text>
+<line x1="44" y1="66" x2="48" y2="66" stroke="#14110F"/><text x="38" y="70" text-anchor="end" fill="#5C554F">4</text>
+<line x1="44" y1="20" x2="48" y2="20" stroke="#14110F"/><text x="38" y="24" text-anchor="end" fill="#5C554F">6</text>
+<g stroke="#B9AFA5" stroke-dasharray="4 4" stroke-width="1">
+<line x1="48" y1="66" x2="120" y2="66"/><line x1="48" y1="20" x2="120" y2="20"/>
+<line x1="48" y1="66" x2="296" y2="66"/><line x1="48" y1="112" x2="296" y2="112"/>
+</g>
+<path d="M48,66 C110,66 160,152 220,158 L296,158" fill="none" stroke="#0B5C8A" stroke-width="2.4"/>
+<path d="M48,20 C110,20 160,60 220,66 L296,66" fill="none" stroke="#C7381A" stroke-width="2.4"/>
+<path d="M48,158 C110,158 160,106 220,112 L296,112" fill="none" stroke="#1B6B4A" stroke-width="2.4"/>
+<text x="232" y="152" fill="#0B5C8A" font-weight="700">X</text>
+<text x="232" y="60" fill="#C7381A" font-weight="700">Y</text>
+<text x="232" y="108" fill="#1B6B4A" font-weight="700">Z</text>
+</svg>
+</figure>
+<details><summary>Cevabı gör</summary><p>Değişimler: X 4 → 0 (Δ4) · Y 6 → 4 (Δ2) · Z 0 → 2 (Δ2). Oran 4 : 2 : 2 = 2 : 1 : 1 → <b>2X + Y → Z</b>. X sıfıra indiği için <b>sınırlayıcı X</b>; <b>4 mol Y artar</b>.</p></details></li>
+
+<li><span class="tip">Grafik · verim</span>Aşağıdaki grafikte 2A<sub>2</sub> + B<sub>2</sub> → 2A<sub>2</sub>B tepkimesi verilmiştir. Tepkimenin verimi yüzde kaçtır?
+<figure>
+<svg viewBox="0 0 340 190" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif" font-size="11" role="img" aria-label="Verim grafiği">
+<defs><marker id="okH" markerWidth="8" markerHeight="8" refX="0" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 z" fill="#14110F"/></marker></defs>
+<line x1="48" y1="158" x2="308" y2="158" stroke="#14110F" stroke-width="1.4" marker-end="url(#okH)"/>
+<line x1="48" y1="158" x2="48" y2="20" stroke="#14110F" stroke-width="1.4" marker-end="url(#okH)"/>
+<text x="266" y="178" fill="#5C554F">Zaman</text>
+<text x="18" y="44" transform="rotate(-90 18,44)" fill="#5C554F">Mol sayısı</text>
+<line x1="44" y1="135" x2="48" y2="135" stroke="#14110F"/><text x="38" y="139" text-anchor="end" fill="#5C554F">1</text>
+<line x1="44" y1="112" x2="48" y2="112" stroke="#14110F"/><text x="38" y="116" text-anchor="end" fill="#5C554F">2</text>
+<line x1="44" y1="66" x2="48" y2="66" stroke="#14110F"/><text x="38" y="70" text-anchor="end" fill="#5C554F">4</text>
+<line x1="44" y1="43" x2="48" y2="43" stroke="#14110F"/><text x="38" y="47" text-anchor="end" fill="#5C554F">5</text>
+<line x1="44" y1="20" x2="48" y2="20" stroke="#14110F"/><text x="38" y="24" text-anchor="end" fill="#5C554F">6</text>
+<g stroke="#B9AFA5" stroke-dasharray="4 4" stroke-width="1">
+<line x1="48" y1="43" x2="120" y2="43"/><line x1="48" y1="20" x2="120" y2="20"/>
+<line x1="48" y1="135" x2="296" y2="135"/><line x1="48" y1="66" x2="296" y2="66"/>
+</g>
+<path d="M48,43 C110,43 160,128 220,135 L296,135" fill="none" stroke="#0B5C8A" stroke-width="2.4"/>
+<path d="M48,20 C110,20 160,60 220,66 L296,66" fill="none" stroke="#C7381A" stroke-width="2.4"/>
+<path d="M48,158 C110,158 160,72 220,66 L296,66" fill="none" stroke="#1B6B4A" stroke-width="2.4"/>
+<text x="232" y="130" fill="#0B5C8A" font-weight="700">A₂</text>
+<text x="150" y="34" fill="#C7381A" font-weight="700">B₂</text>
+<text x="232" y="82" fill="#1B6B4A" font-weight="700">A₂B</text>
+</svg>
+</figure>
+<details><summary>Cevabı gör</summary><p>A<sub>2</sub> 5 → 1 (4 mol harcandı), B<sub>2</sub> 6 → 4 (2 mol), ürün 4 mol. 5 mol A<sub>2</sub> için 2,5 mol B<sub>2</sub> yeterdi → <b>A<sub>2</sub> sınırlayıcı</b>, teorik harcanması gereken 5 mol. Verim = 4 ÷ 5 = <b>%80</b>.</p></details></li>
+
+<li><span class="tip">Grafik · kütle</span>Ağzı açık bir kapta ısıtılan katının kütle–zaman grafiği aşağıdadır. Katı CaCO<sub>3</sub> ise çıkan gaz kaç gramdır ve kaç moldür? (C: 12, O: 16, Ca: 40)
+<figure>
+<svg viewBox="0 0 340 190" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif" font-size="11" role="img" aria-label="Katı kütlesi zaman grafiği">
+<defs><marker id="okI" markerWidth="8" markerHeight="8" refX="0" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 z" fill="#14110F"/></marker></defs>
+<line x1="56" y1="158" x2="308" y2="158" stroke="#14110F" stroke-width="1.4" marker-end="url(#okI)"/>
+<line x1="56" y1="158" x2="56" y2="20" stroke="#14110F" stroke-width="1.4" marker-end="url(#okI)"/>
+<text x="266" y="178" fill="#5C554F">Zaman</text>
+<text x="20" y="40" transform="rotate(-90 20,40)" fill="#5C554F">Katı kütlesi (g)</text>
+<line x1="52" y1="36" x2="56" y2="36" stroke="#14110F"/><text x="46" y="40" text-anchor="end" fill="#5C554F">100</text>
+<line x1="52" y1="102" x2="56" y2="102" stroke="#14110F"/><text x="46" y="106" text-anchor="end" fill="#5C554F">56</text>
+<g stroke="#B9AFA5" stroke-dasharray="4 4" stroke-width="1">
+<line x1="56" y1="36" x2="130" y2="36"/>
+<line x1="56" y1="102" x2="296" y2="102"/>
+</g>
+<path d="M56,36 C120,36 170,96 230,102 L296,102" fill="none" stroke="#F85300" stroke-width="2.4"/>
+</svg>
+</figure>
+<details><summary>Cevabı gör</summary><p>Azalma = 100 − 56 = <b>44 gram CO<sub>2</sub></b> → n = 44 ÷ 44 = <b>1 mol</b>. Geriye 56 gram CaO (1 mol) kalmıştır.</p></details></li>
+
+<li><span class="tip">Denkleştirme</span>C<sub>3</sub>H<sub>7</sub>OH + O<sub>2</sub> → CO<sub>2</sub> + H<sub>2</sub>O denkleminde O<sub>2</sub> ve CO<sub>2</sub>'nin katsayıları toplamı kaçtır?
+<details><summary>Cevabı gör</summary><p>2C<sub>3</sub>H<sub>7</sub>OH + 9O<sub>2</sub> → 6CO<sub>2</sub> + 8H<sub>2</sub>O → 9 + 6 = <b>15</b></p></details></li>
+
+<li><span class="tip">Bilinmeyen formül</span>3Ag + 4HNO<sub>3</sub> → 3AgNO<sub>3</sub> + X + 2H<sub>2</sub>O denkleminde X'in formülü nedir?
+<details><summary>Cevabı gör</summary><p>N: 4 − 3 = 1 · O: 12 − 9 − 2 = 1 · H: 4 = 4 ✔ → katsayı 1 → <b>NO</b></p></details></li>
+
+<li><span class="tip">Katı kütlesi</span>2Mg + O<sub>2</sub> → 2MgO tepkimesinde katı kütlesi 32 gram artmıştır. Kaç mol MgO oluşmuştur? (O: 16, Mg: 24)
+<details><summary>Cevabı gör</summary><p>Artış = bağlanan O<sub>2</sub> = 32 g → 1 mol O<sub>2</sub> → MgO = <b>2 mol</b></p></details></li>
+
+<li><span class="tip">Saflık</span>Kütlece %80 saflıktaki 50 gram CaCO<sub>3</sub> örneği tam verimle ayrıştığında kaç gram CO<sub>2</sub> çıkar? (C: 12, O: 16, Ca: 40)
+<details><summary>Cevabı gör</summary><p>Saf kısım 40 g = 0,4 mol → CO<sub>2</sub> 0,4 mol = <b>17,6 gram</b></p></details></li>
+
+<li><span class="tip">Karışım</span>CH<sub>4</sub> ve C<sub>2</sub>H<sub>6</sub> gazlarından oluşan 0,5 mollük karışım yakıldığında 0,8 mol CO<sub>2</sub> oluşuyor. Karışımda kaç mol C<sub>2</sub>H<sub>6</sub> vardır?
+<details><summary>Cevabı gör</summary><p>x + y = 0,5 · x + 2y = 0,8 → y = <b>0,3 mol C<sub>2</sub>H<sub>6</sub></b></p></details></li>
+
+<li><span class="tip">Ardışık</span>2SO<sub>2</sub> + O<sub>2</sub> → 2SO<sub>3</sub> ve SO<sub>3</sub> + H<sub>2</sub>O → H<sub>2</sub>SO<sub>4</sub> tepkimelerine göre 4 mol H<sub>2</sub>SO<sub>4</sub> elde etmek için kaç mol SO<sub>2</sub> gerekir?
+<details><summary>Cevabı gör</summary><p>4 mol H<sub>2</sub>SO<sub>4</sub> için 4 mol SO<sub>3</sub>, onun için de <b>4 mol SO<sub>2</sub></b> gerekir.</p></details></li>
+
+<li><span class="tip">Bütünleştirici</span>Eşit kütlelerde CH<sub>4</sub> ve O<sub>2</sub> sabit hacimli kapalı kapta CH<sub>4</sub> + 2O<sub>2</sub> → CO<sub>2</sub> + 2H<sub>2</sub>O denklemine göre tam verimle tepkimeye giriyor ve 22 gram CO<sub>2</sub> oluşuyor. Başlangıçta her birinden kaç gram alınmıştır? (H: 1, C: 12, O: 16)
+<details><summary>Cevabı gör</summary><p>n(CO<sub>2</sub>) = 0,5 mol → harcanan CH<sub>4</sub> 0,5 mol (8 g), O<sub>2</sub> 1 mol (32 g). Eşit kütlede alındığı ve O<sub>2</sub> daha çok harcandığı için başlangıçta her birinden <b>32'şer gram</b> vardır (8 g CH<sub>4</sub> harcanır, 24 g CH<sub>4</sub> artar).</p></details></li>
+</ol>
+</div>
+
+<nav class="gezin">
+<a class="liste" href="./?sinif=10"><span class="yon">Modül listesi</span><span class="ad">10. sınıf konu anlatımı</span></a>
+<a href="./10-modul-2-mol.html"><span class="yon">Önceki modül</span><span class="ad">Modül 2 · Mol kavramı</span></a>
+<a href="../"><span class="yon">Test çöz</span><span class="ad">Konu testlerine dön</span></a>
+</nav>
+
+<footer class="alt">
+<p>kimyamed · 10. sınıf Maarif Modeli kimya konu anlatımı. Sıradaki modül: gazlar.</p>
+</footer>
+
+</main>
+
+<button class="yukari" id="yukari" aria-label="Yukarı çık">↑</button>
+
+<script>
+(function(){
+  var cubuk=document.getElementById('ilerleme');
+  var btn=document.getElementById('yukari');
+  function guncelle(){
+    var h=document.documentElement;
+    var oran=h.scrollTop/((h.scrollHeight-h.clientHeight)||1);
+    cubuk.style.width=(oran*100)+'%';
+    btn.classList.toggle('gor',h.scrollTop>600);
+  }
+  document.addEventListener('scroll',guncelle,{passive:true});
+  btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  guncelle();
+})();
+</script>
+</body>
+</html>
 
