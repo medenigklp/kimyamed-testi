@@ -7927,6 +7927,7 @@ ilerlemeYukle();
 </script>
  <script>
 (function(){
+  var MODUL = 9, SORU = 425;   // yeni modül eklendikçe sadece bu satırı güncelle
   function ekle(){
     var kap = document.querySelector('.yol-kart');
     if (!kap || document.getElementById('konuBag')) return;
@@ -7938,16 +7939,16 @@ ilerlemeYukle();
     a.style.textDecoration = 'none';
     a.style.color = 'inherit';
     a.innerHTML = '<div class="yol-ust"><span class="yol-rozet">📗</span>'+
-      '<div><div class="yol-ad">Konu Anlatımı</div>'+
-      '<div class="yol-alt">11. sınıf · şekiller ve grafiklerle</div></div></div>'+
-      '<div class="yol-sayi">6 modül · 255 çözümlü soru</div>';
+      '<div><div class="yol-ad">Konu Anlatımı</div></div></div>'+
+      '<div class="yol-sayi">'+MODUL+' modül · '+SORU+' çözümlü soru</div>';
     var son = document.querySelectorAll('.yol-kart');
     son = son[son.length-1];
     son.parentNode.insertBefore(a, son.nextSibling);
   }
-  setInterval(ekle, 500);
+  var t = setInterval(function(){ ekle(); if (document.getElementById('konuBag')) clearInterval(t); }, 500);
 })();
 </script>
+
 
 
 
