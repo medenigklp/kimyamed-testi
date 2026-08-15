@@ -54,6 +54,11 @@ header.ust .wrap{display:flex;align-items:center;gap:12px;height:56px}
 .kart.yakinda .no{background:#C9C1B9}
 .kart.yakinda h2{color:var(--gri)}
 .kart.yakinda .durum{font-size:12.5px;font-weight:700;color:#8A8078;border-top:1px solid #EDE8E3;padding-top:11px}
+.kisim{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;margin:-6px 0 0}
+.kisim a{flex:1 1 46%;display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--kenar);
+  border-radius:12px;padding:11px 14px;text-decoration:none;color:var(--murekkep);font-size:14px;font-weight:600;transition:.15s}
+.kisim a:hover{border-color:var(--turuncu);color:var(--turuncu)}
+.kisim span.ok{color:var(--turuncu);font-weight:800}
 .not{background:#fff;border:1px solid var(--kenar);border-left:4px solid var(--mavi);
   border-radius:12px;padding:16px 18px;margin-bottom:30px}
 .not h3{margin:0 0 7px;font-size:15.5px;color:var(--mavi)}
@@ -83,15 +88,15 @@ footer a{color:var(--turuncu);font-weight:600;text-decoration:none}
       <span class="rozet">Ücretsiz · üyelik yok</span>
     </div>
     <div class="rozetler" id="rozet-10" hidden>
-      <span class="rozet"><b>170</b> çözümlü soru</span>
-      <span class="rozet"><b>80</b> kendin çöz</span>
-      <span class="rozet"><b>20</b> şekil ve grafik</span>
+      <span class="rozet"><b>312</b> çözümlü soru</span>
+      <span class="rozet"><b>146</b> kendin çöz</span>
+      <span class="rozet"><b>31</b> şekil ve grafik</span>
       <span class="rozet">Ücretsiz · üyelik yok</span>
     </div>
   </section>
 
   <div class="sekmeler" role="tablist">
-    <button class="sekme" id="sekme-10" role="tab" aria-selected="false" aria-controls="liste-10">10. Sınıf<small>3 modül yayında</small></button>
+    <button class="sekme" id="sekme-10" role="tab" aria-selected="false" aria-controls="liste-10">10. Sınıf<small>4 modül yayında</small></button>
     <button class="sekme" id="sekme-11" role="tab" aria-selected="true" aria-controls="liste-11">11. Sınıf<small>6 modül · tamamlandı</small></button>
   </div>
 
@@ -171,11 +176,16 @@ footer a{color:var(--turuncu);font-weight:600;text-decoration:none}
       <div class="sayilar"><span><b>59</b> çözümlü soru</span><span><b>30</b> kendin çöz</span><span><b>7</b> görsel</span></div>
     </a>
 
-    <div class="kart yakinda">
-      <div class="ust"><span class="no">4</span><span class="tema">1. Tema · Etkileşim</span></div>
+    <a class="kart" href="10-modul-4-gazlar.html">
+      <div class="ust"><span class="no">4</span><span class="tema">1. Tema · Etkileşim</span><span class="yeni">Yeni</span></div>
       <h2>Gazlar</h2>
-      <p>Kinetik moleküler teori, gaz yasaları, ideal gaz denklemi, Graham difüzyon ve efüzyon yasası.</p>
-      <div class="durum">Hazırlanıyor</div>
+      <p>Gaz nicelikleri ve birimler, Boyle–Charles–Gay Lussac–Avogadro yasaları, kinetik moleküler teori, ideal gaz denklemi, gaz yoğunluğu, gaz stokiyometrisi ve Graham difüzyon-efüzyon yasası. Sonda 100 puanlık yazılı denemesi.</p>
+      <div class="sayilar"><span><b>142</b> çözümlü soru</span><span><b>66</b> kendin çöz</span><span><b>11</b> görsel</span><span>2 kısım</span></div>
+    </a>
+
+    <div class="kisim">
+      <a href="10-modul-4-gazlar.html"><span class="ok">1.</span> Gazlar · Bölüm 1–6 <span style="margin-left:auto;color:var(--gri);font-weight:600">nicelikler ve gaz yasaları</span></a>
+      <a href="10-modul-4-gazlar-2.html"><span class="ok">2.</span> Gazlar · Bölüm 7–11 <span style="margin-left:auto;color:var(--gri);font-weight:600">ideal gaz, Graham, yazılı</span></a>
     </div>
 
     <div class="kart yakinda">
