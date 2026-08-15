@@ -1,1 +1,2046 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Modül 1 · Kimyasal Tepkimeler — 10. Sınıf Kimya | kimyamed</title>
+<meta name="description" content="10. sınıf kimya 1. tema: kimyasal değişim göstergeleri, korunan ve değişen özellikler, modelleme ve tepkime türleri. Grafikli konu anlatımı ve çözümlü sorular.">
+<meta name="theme-color" content="#F85300">
+<style>
+:root{
+--turuncu:#F85300;--turuncu-yumusak:#FFF1E9;--murekkep:#14110F;--gri:#5C554F;
+--cizgi:#E7E0D9;--kagit:#FBF8F5;--beyaz:#FFFFFF;--mavi:#0B5C8A;--mavi-yumusak:#EAF3F8;
+--yesil:#1B6B4A;--r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--kagit);color:var(--murekkep);
+font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+font-size:17px;line-height:1.68;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding:0 18px}
+.ust{position:sticky;top:0;z-index:50;background:rgba(251,248,245,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--cizgi)}
+.ust .wrap{display:flex;align-items:center;gap:12px;height:56px}
+.marka{font-weight:800;letter-spacing:-.02em;font-size:18px;color:var(--murekkep);text-decoration:none}
+.marka span{color:var(--turuncu)}
+.ust .etiket{margin-left:auto;font-size:12px;color:var(--gri);text-transform:uppercase;letter-spacing:.08em}
+#ilerleme{position:absolute;left:0;bottom:-1px;height:2px;background:var(--turuncu);width:0}
+.hero{padding:40px 0 24px;border-bottom:1px solid var(--cizgi)}
+.hero .modul{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--turuncu)}
+.hero h1{font-size:clamp(28px,7vw,42px);line-height:1.1;letter-spacing:-.03em;margin:8px 0 12px;font-weight:800}
+.hero p{color:var(--gri);margin:0 0 16px}
+.sayac{display:flex;gap:22px;flex-wrap:wrap;border-top:1px solid var(--cizgi);padding-top:14px}
+.sayac div{font-size:13px;color:var(--gri)}
+.sayac b{display:block;font-size:22px;color:var(--murekkep);line-height:1.2}
+h2{font-size:clamp(23px,5.5vw,30px);letter-spacing:-.02em;margin:44px 0 8px;line-height:1.18;padding-top:8px}
+h2 .no{color:var(--turuncu);font-size:.62em;font-weight:800;display:block;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+h3{font-size:20px;margin:30px 0 10px;letter-spacing:-.01em}
+h4{font-size:17px;margin:22px 0 8px}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:6px 0}
+sub,sup{line-height:0}
+.form{font-family:"SFMono-Regular",Consolas,Menlo,monospace;background:var(--beyaz);border:1px solid var(--cizgi);border-radius:8px;padding:2px 7px;font-size:.94em;white-space:nowrap}
+.form-uzun{display:block;white-space:normal;overflow-wrap:anywhere;margin-top:5px;padding:7px 10px;line-height:1.9}
+.blokform{display:block;text-align:center;background:var(--beyaz);border:1px solid var(--cizgi);border-left:3px solid var(--turuncu);border-radius:8px;padding:14px 12px;margin:16px 0;overflow-x:auto}
+.kart{border-radius:var(--r);padding:16px 18px;margin:18px 0;border:1px solid var(--cizgi);background:var(--beyaz)}
+.kart .baslik{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.kart p:last-child,.kart ul:last-child,.kart ol:last-child{margin-bottom:0}
+.kural{border-left:4px solid var(--turuncu);background:var(--turuncu-yumusak);border-color:#F8D6C2}
+.kural .baslik{color:var(--turuncu)}
+.tuzak{border-left:4px solid #C7381A;background:#FFF4F1;border-color:#F5CFC5}
+.tuzak .baslik{color:#C7381A}
+.soru{border:1px solid var(--cizgi);border-radius:var(--r);background:var(--beyaz);margin:20px 0;overflow:hidden}
+.soru .ust-serit{display:flex;align-items:center;gap:10px;padding:11px 16px;background:#F3EEE9;border-bottom:1px solid var(--cizgi)}
+.soru .numara{font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mavi)}
+.seviye{margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.s-kolay{background:#E4F2EA;color:var(--yesil)}
+.s-orta{background:#FFF0DC;color:#9A5B00}
+.s-zor{background:#FBE3DE;color:#B02E10}
+.s-ileri{background:#E7E1F3;color:#5B3A8C}
+.ek-rozet{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+background:#E7E1F3;color:#5B3A8C;border:1px solid #CFC3E4;border-radius:999px;padding:4px 11px;margin-bottom:8px}
+.ek-not{border-left:4px solid #7A3E8C;background:#F6F2FA;border-color:#DED2EC}
+.ek-not .baslik{color:#7A3E8C}
+.gunluk{border-left:4px solid var(--yesil);background:#EEF6F1;border-color:#CFE4D8}
+.gunluk .baslik{color:var(--yesil)}
+.oncul{list-style:none;padding-left:0;margin:10px 0 0;font-size:15px;color:var(--gri)}
+.oncul li{margin:5px 0;padding-left:30px;text-indent:-30px}
+.oncul b{color:var(--murekkep)}
+.siklar{list-style:none;padding-left:0;margin:11px 0 0;font-weight:600}
+.siklar li{margin:7px 0;padding-left:28px;text-indent:-28px}
+.siklar b{color:var(--turuncu)}
+.secenek{list-style:none;padding-left:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:15px}
+.secenek li{margin:0}
+.secenek b{color:var(--mavi)}
+.soru .govde{padding:14px 16px 16px}
+.soru .metin{font-weight:600;margin-bottom:6px}
+.soru .veri{font-size:15px;color:var(--gri);margin-bottom:0}
+.adim{counter-reset:adim;list-style:none;padding-left:0;margin:14px 0 0}
+.adim li{counter-increment:adim;position:relative;padding-left:34px;margin:10px 0}
+.adim li::before{content:counter(adim);position:absolute;left:0;top:2px;width:23px;height:23px;border-radius:50%;background:var(--mavi);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.cevap{margin-top:14px;padding:10px 14px;border-radius:10px;background:var(--mavi-yumusak);border:1px solid #CFE2EE;font-weight:700}
+.cozum{margin-top:16px;border-top:1px dashed var(--cizgi);padding-top:12px}
+.cozum summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;
+font-size:14px;font-weight:700;color:var(--mavi);background:var(--mavi-yumusak);
+border:1px solid #CFE2EE;padding:8px 15px;border-radius:999px;user-select:none;transition:background .15s}
+.cozum summary:hover{background:#DCEBF4}
+.cozum summary::-webkit-details-marker{display:none}
+.cozum summary svg{width:17px;height:17px;flex:none}
+.cozum summary .kapali{display:inline-flex;align-items:center;gap:8px}
+.cozum summary .acik{display:none;align-items:center;gap:8px}
+.cozum[open] summary .kapali{display:none}
+.cozum[open] summary .acik{display:inline-flex}
+.cozum[open] summary{color:var(--gri);background:#F3EEE9;border-color:var(--cizgi)}
+.cozum .adim{margin-top:16px}
+.tablo-sar{overflow-x:auto;margin:16px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--beyaz);min-width:400px}
+th,td{border:1px solid var(--cizgi);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#F3EEE9;font-weight:700;font-size:13px}
+figure{margin:20px 0;background:var(--beyaz);border:1px solid var(--cizgi);border-radius:var(--r);padding:14px}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
+.test{background:var(--murekkep);color:#F5F1EC;border-radius:var(--r);padding:22px 20px;margin:36px 0}
+.test h3{color:#fff;margin:0 0 4px;font-size:21px}
+.test .alt-baslik{color:#B9AFA5;font-size:14px;margin-bottom:16px}
+.test ol{padding-left:20px}
+.test li{margin:20px 0}
+.test details{margin-top:8px;background:rgba(255,255,255,.07);border-radius:9px;padding:8px 12px}
+.test summary{cursor:pointer;font-size:13px;font-weight:700;color:#FF8B4D;letter-spacing:.04em}
+.test details p{margin:8px 0 2px;font-size:15px;color:#EDE7E0}
+.test .tip{display:block;font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#FF8B4D;margin-bottom:3px}
+.gezin{display:flex;gap:10px;flex-wrap:wrap;margin:34px 0 0}
+.gezin a{flex:1 1 42%;display:flex;flex-direction:column;gap:3px;padding:14px 16px;border:1px solid var(--cizgi);
+border-radius:13px;text-decoration:none;background:#fff;transition:.15s}
+.gezin a:hover{border-color:var(--turuncu);box-shadow:0 5px 16px rgba(248,83,0,.10)}
+.gezin .yon{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--turuncu)}
+.gezin .ad{font-size:15.5px;font-weight:700;color:var(--murekkep)}
+.gezin .liste{flex:1 1 100%;text-align:center;background:#F3EEE9;border-style:dashed}
+.gezin .liste .ad{color:var(--gri);font-weight:600;font-size:14.5px}
+.alt{border-top:1px solid var(--cizgi);margin-top:44px;padding:24px 0 60px;color:var(--gri);font-size:15px}
+.yukari{position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;background:var(--turuncu);color:#fff;border:none;font-size:20px;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(248,83,0,.35);z-index:40}
+.yukari.gor{display:flex}
+:focus-visible{outline:3px solid var(--turuncu);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="ust">
+<div class="wrap">
+<a class="marka" href="../" style="display:inline-flex;align-items:center;gap:9px"><img src="../logo.png" alt="" width="28" height="28" style="display:block;border-radius:50%;flex:none" onerror="this.style.display='none'"><span>kimya<b style="color:var(--turuncu);font-weight:800">med</b></span></a>
+<a class="etiket" href="./" style="text-decoration:none">10. Sınıf · Modül 1</a>
+</div>
+<div id="ilerleme"></div>
+</header>
+
+<main class="wrap">
+
+<section class="hero">
+<div class="modul">1. Tema · Etkileşim</div>
+<h1>Kimyasal tepkimeler ve tepkime türleri</h1>
+<p>Bir değişimin kimyasal olup olmadığını ayırmaktan tepkime türlerini tanımaya kadar 1.1 bölümünün ilk yarısı. Her kuralın hemen ardından soru geliyor; okuduğun yerde uygulamadan geçmiyorsun.</p>
+<div class="sayac">
+<div><b>59</b>çözümlü soru</div>
+<div><b>20</b>kendin çöz</div>
+<div><b>6</b>görsel</div>
+</div>
+</section>
+
+<!-- ==================== 1 ==================== -->
+<h2><span class="no">Bölüm 1</span>Fiziksel ve kimyasal değişim</h2>
+
+<p>Kimyanın bütün konuları tek bir soruya dayanır: <b>ortada yeni bir madde var mı?</b> Bu sorunun cevabı değişimin türünü belirler.</p>
+
+<ul>
+<li><b>Fiziksel değişimde</b> maddenin kimliği korunur. Tanecikler arasındaki uzaklık ve düzen değişir, taneciğin kendisi değişmez. Erime, buharlaşma, çözünme, kırılma, şekil değiştirme.</li>
+<li><b>Kimyasal değişimde</b> tanecikler arasındaki bağlar kırılır, yeni bağlar oluşur. Ortaya kimliği farklı maddeler çıkar. Yanma, paslanma, ekşime, fotosentez, elektroliz.</li>
+</ul>
+
+<h3>Kimyasal değişimin göstergeleri</h3>
+<ul>
+<li>Gaz çıkışı</li>
+<li>Çökelek oluşumu</li>
+<li>Kalıcı renk değişimi</li>
+<li>Isı veya ışık alışverişi</li>
+<li>Koku oluşumu</li>
+<li>Olayın kendiliğinden geri dönmemesi</li>
+</ul>
+
+<div class="kart tuzak">
+<div class="baslik">Tuzak</div>
+<p>Bu göstergelerin <b>hiçbiri tek başına kesin kanıt değildir</b>:</p>
+<ul>
+<li>Kaynayan su kabarcık çıkarır — gaz çıkışı var ama olay <b>fizikseldir</b>.</li>
+<li>Şeker suda çözünürken ortam soğur — ısı alışverişi var, yine <b>fizikseldir</b>.</li>
+<li>CuSO<sub>4</sub> kristali suda çözününce mavi renk verir — renk değişimi var, <b>fizikseldir</b>.</li>
+</ul>
+<p>Ölçüt tektir: <b>yeni bir madde oluştu mu?</b> Gösterge seni yalnızca şüphelendirir, karar verdirmez.</p>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 1</span><span class="seviye s-kolay">Kolay</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki olayları fiziksel ve kimyasal değişim olarak sınıflandırın.</p>
+<ul class="oncul">
+<li><b>I.</b> Mumun erimesi</li>
+<li><b>II.</b> Mumun yanması</li>
+<li><b>III.</b> Tuzun suda çözünmesi</li>
+<li><b>IV.</b> Sütün ekşimesi</li>
+<li><b>V.</b> Demirin paslanması</li>
+<li><b>VI.</b> Camın kırılması</li>
+<li><b>VII.</b> Suyun elektrolizi</li>
+<li><b>VIII.</b> İyodun süblimleşmesi</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I fiziksel:</b> Katı mum sıvı muma dönüşür; madde aynıdır, yalnızca hâli değişir.</li>
+<li><b>II kimyasal:</b> Hidrokarbonlar oksijenle birleşir, CO<sub>2</sub> ve H<sub>2</sub>O oluşur.</li>
+<li><b>III fiziksel:</b> NaCl iyonlarına ayrışır ama suyu uçurunca tuzu geri alırsın.</li>
+<li><b>IV kimyasal:</b> Laktoz laktik aside dönüşür; süt geri gelmez.</li>
+<li><b>V kimyasal:</b> Demir oksijenle birleşip Fe<sub>2</sub>O<sub>3</sub> verir.</li>
+<li><b>VI fiziksel:</b> Yalnızca parça boyutu değişir.</li>
+<li><b>VII kimyasal:</b> Su ayrışıp H<sub>2</sub> ve O<sub>2</sub> verir; bağlar kırılır.</li>
+<li><b>VIII fiziksel:</b> Katı iyot doğrudan gaz hâline geçer; tanecik hâlâ I<sub>2</sub>'dir.</li>
+</ol>
+<div class="cevap">Fiziksel: I, III, VI, VIII &nbsp;·&nbsp; Kimyasal: II, IV, V, VII</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 2</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Bir öğrenci "gaz çıkışı gördüm, demek ki kimyasal tepkime oldu" diyor. Bu çıkarım her zaman doğru mudur? İki karşı örnekle açıklayın.</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Çıkarım <b>her zaman doğru değildir</b>. Gaz çıkışı ipucudur, kanıt değildir.</li>
+<li><b>Karşı örnek 1:</b> Su kaynarken kabarcık çıkar. Çıkan gaz su buharıdır; madde hâlâ sudur → fiziksel.</li>
+<li><b>Karşı örnek 2:</b> Gazoz açıldığında CO<sub>2</sub> kabarcıkları çıkar. Basınç düşünce çözünmüş gaz ayrılır; yeni madde doğmaz → fiziksel.</li>
+<li>Buna karşılık kabartma tozu sirkeye atıldığında çıkan CO<sub>2</sub> tepkimede <b>yeni oluşmuş</b> bir maddedir → kimyasal.</li>
+<li>Ayırt etme yolu: çıkan gaz zaten sistemde var olan bir madde miydi, yoksa tepkimede mi doğdu?</li>
+</ol>
+<div class="cevap">Hayır; çıkan gaz yeni oluşmuş bir madde değilse değişim fizikseldir.</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 3</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki değişimlerin hangilerinde <b>taneciğin kendi yapısı</b> değişmiştir?</p>
+<ul class="oncul">
+<li><b>I.</b> Naftalinin süblimleşmesi</li>
+<li><b>II.</b> Şekerin karamelleşmesi</li>
+<li><b>III.</b> Alkolün suda çözünmesi</li>
+<li><b>IV.</b> Yumurtanın pişmesi</li>
+<li><b>V.</b> Bakır telin çekilerek inceltilmesi</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Soru "hâl değişti mi" değil, "<b>molekülün içindeki bağlar</b> değişti mi" diye soruyor.</li>
+<li><b>I ✘</b> Süblimleşmede tanecikler arası çekim yenilir; naftalin molekülü aynı kalır.</li>
+<li><b>II ✔</b> Karamelleşmede şeker molekülleri parçalanıp yeni bileşikler verir; koku ve renk bu yüzden değişir.</li>
+<li><b>III ✘</b> Çözünmede alkol molekülleri su moleküllerinin arasına dağılır; kimliği korunur.</li>
+<li><b>IV ✔</b> Protein zincirlerinin yapısı bozulur ve yeni bağlar kurulur; olay geri dönmez.</li>
+<li><b>V ✘</b> Metalin şekli değişir, bakır atomları aynı kalır.</li>
+</ol>
+<div class="cevap">II ve IV</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 4</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Bir öğrenci iki ayrı deney yapıyor:</p>
+<ul class="oncul">
+<li><b>Deney 1:</b> X sıvısı ısıtılıyor; kaynama boyunca sıcaklık sabit kalıyor, çıkan buhar soğutulunca yine X elde ediliyor.</li>
+<li><b>Deney 2:</b> Y sıvısı ısıtılıyor; sıcaklık sürekli yükseliyor, çıkan gaz soğutulunca X'ten farklı bir sıvı ve yanıcı bir gaz veriyor.</li>
+</ul>
+<p class="veri">Buna göre her iki deneydeki değişim türünü belirleyin ve gerekçelendirin.</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>Deney 1 fiziksel.</b> İki kanıt var: kaynama boyunca sıcaklığın sabit kalması X'in <b>saf</b> olduğunu gösterir, buharın yoğuşunca yine X vermesi de kimliğin korunduğunu gösterir.</li>
+<li><b>Deney 2 kimyasal.</b> Çıkan üründen <b>iki farklı yeni madde</b> elde ediliyor; bunlar Y'nin ısıyla ayrışmasından doğmuştur.</li>
+<li>Sıcaklığın sürekli yükselmesi tek başına kimyasal değişim kanıtı <b>değildir</b> — karışımlar da sabit sıcaklıkta kaynamaz. Kararı veren şey yeni maddelerin oluşmasıdır.</li>
+<li>Yöntem: "geri döndü mü?" ve "kaç farklı madde çıktı?" sorularını birlikte sor.</li>
+</ol>
+<div class="cevap">Deney 1 fiziksel, Deney 2 kimyasal.</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 5</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki ifadelerden hangileri <b>kesinlikle</b> kimyasal bir değişimi gösterir?</p>
+<ul class="oncul">
+<li><b>I.</b> Bir katı ısıtıldığında kütlesi azalıyor ve geriye farklı renkte bir katı kalıyor.</li>
+<li><b>II.</b> İki renksiz çözelti karıştırıldığında beyaz bir katı çöküyor.</li>
+<li><b>III.</b> Bir sıvı soğutulduğunda katılaşıyor, ısıtılınca aynı sıvı geri geliyor.</li>
+<li><b>IV.</b> Bir metal parçası çözeltiye batırıldığında üzeri kırmızımsı bir tabakayla kaplanıyor ve çözeltinin mavi rengi soluyor.</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I ✔</b> Kütle azalması bir gazın ayrıldığını, farklı renkteki katı geride <b>başka bir maddenin</b> kaldığını gösterir. (CaCO<sub>3</sub> → CaO + CO<sub>2</sub> gibi.)</li>
+<li><b>II ✔</b> Çözeltide bulunmayan yeni bir katının oluşması <b>çökelme tepkimesidir</b>.</li>
+<li><b>III ✘</b> Geri döndürülebiliyor ve aynı madde elde ediliyor → fiziksel (donma-erime).</li>
+<li><b>IV ✔</b> Hem metalin üzerinde yeni bir katı oluşuyor hem çözeltideki renkli iyon tükeniyor. Bu bir <b>yer değiştirme</b> tepkimesidir (Fe + CuSO<sub>4</sub> gibi).</li>
+<li>Dikkat: III'te renk ve hâl değişiyor ama kimlik değişmiyor. "Değişti" ile "başka madde oldu" aynı şey değil.</li>
+</ol>
+<div class="cevap">I, II ve IV</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 6</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">Ağzı açık bir kapta bulunan beyaz K katısı tartılıp ısıtılıyor. Deney boyunca kaydedilen veriler:</p>
+<div class="tablo-sar">
+<table>
+<tr><th>Gözlem</th><th>Sonuç</th></tr>
+<tr><td>Isıtma öncesi kütle</td><td>20,0 g</td></tr>
+<tr><td>Isıtma sonrası kütle</td><td>11,2 g</td></tr>
+<tr><td>Kaptan çıkan gaz</td><td>Kireç suyunu bulandırıyor</td></tr>
+<tr><td>Kalan katı</td><td>Suya atılınca ısı vererek çözünüyor, çözelti bazik</td></tr>
+</table>
+</div>
+<p class="veri">Buna göre bu deneyle ilgili hangi çıkarımlar yapılabilir?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Kireç suyunu bulandıran gaz <b>CO<sub>2</sub></b>'dir. Demek ki K katısı ısıtılınca CO<sub>2</sub> vererek ayrışmıştır → <b>kimyasal değişim</b>.</li>
+<li>Kaybolan kütle = 20,0 − 11,2 = <b>8,8 g</b>; bu, kaptan çıkan CO<sub>2</sub>'nin kütlesidir.</li>
+<li>Kütle korunmuştur; korunmayan şey <b>terazinin ölçtüğü</b> kütledir. Kap kapalı olsaydı 20,0 g okunurdu.</li>
+<li>Kalan katının suyla ısı vererek bazik çözelti vermesi, geride bir <b>metal oksit</b> kaldığını gösterir.</li>
+<li>Bu veriler K'nin bir <b>karbonat</b> olduğunu düşündürür: MCO<sub>3</sub> → MO + CO<sub>2</sub>. (8,8 g CO<sub>2</sub> = 0,2 mol; 11,2 g oksit de 0,2 mol ise oksidin mol kütlesi 56 g/mol, yani CaO — K, CaCO<sub>3</sub>'tür.)</li>
+<li>Uyarı: sadece "kütle azaldı" verisiyle kimyasal değişime karar verilemezdi; kararı veren şey <b>çıkan gazın kimliği</b> ve <b>kalan katının farklı özellikleri</b>dir.</li>
+</ol>
+<div class="cevap">Olay kimyasaldır; 8,8 g CO<sub>2</sub> ayrılmıştır ve K bir karbonat bileşiğidir (CaCO<sub>3</sub>).</div>
+</details>
+</div>
+</div>
+
+<!-- ==================== 2 ==================== -->
+<h2><span class="no">Bölüm 2</span>Korunan ve değişen özellikler</h2>
+
+<p>Kimyasal tepkimede atomlar yok olmaz, yeniden yaratılmaz; yalnızca <b>yer değiştirir</b>. Bu tek cümle, korunanlar listesinin tamamını üretir.</p>
+
+<div class="kart kural">
+<div class="baslik">Türetme — kütlenin korunumundan atom korunumuna</div>
+<ol>
+<li>Kimyasal tepkimede çekirdekler değişmez; atom yok olmaz, yenisi oluşmaz.</li>
+<li>Bir atomun kütlesi çekirdeğinden gelir ve tepkime boyunca sabittir.</li>
+<li>Atom sayısı ve atom kütlesi sabitse, toplam kütle de sabittir.</li>
+<li>Sonuç: denklemin iki yanında <b>her elementin atom sayısı eşit olmalıdır</b>. Denkleştirmenin dayanağı budur.</li>
+</ol>
+</div>
+
+<span class="blokform">Σm(girenler) = Σm(ürünler)</span>
+
+<div class="tablo-sar">
+<table>
+<tr><th>Daima korunur</th><th>Değişebilir</th></tr>
+<tr><td>Toplam kütle</td><td>Toplam mol sayısı</td></tr>
+<tr><td>Toplam atom sayısı</td><td>Molekül sayısı</td></tr>
+<tr><td>Her elementin atom sayısı</td><td>Gazlarda toplam hacim</td></tr>
+<tr><td>Toplam proton ve nötron sayısı</td><td>Kimyasal bağlar</td></tr>
+<tr><td>Toplam yük</td><td>Renk, koku, yoğunluk, çözünürlük</td></tr>
+<tr><td>Element kimliği (çekirdek yapısı)</td><td>Potansiyel enerji</td></tr>
+</table>
+</div>
+
+<figure>
+<svg viewBox="0 0 340 190" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif" font-size="11" role="img" aria-label="Kapalı ve açık kapta kütle-zaman grafiği">
+<defs><marker id="ok" markerWidth="8" markerHeight="8" refX="0" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 z" fill="#14110F"/></marker></defs>
+<line x1="46" y1="156" x2="308" y2="156" stroke="#14110F" stroke-width="1.4" marker-end="url(#ok)"/>
+<line x1="46" y1="156" x2="46" y2="22" stroke="#14110F" stroke-width="1.4" marker-end="url(#ok)"/>
+<text x="266" y="176" fill="#5C554F">Zaman</text>
+<text x="20" y="34" transform="rotate(-90 20,34)" fill="#5C554F">Kütle</text>
+<line x1="46" y1="56" x2="288" y2="56" stroke="#F85300" stroke-width="2.4"/>
+<text x="150" y="48" fill="#F85300" font-weight="700">Kapalı kap</text>
+<path d="M46,56 C96,56 132,110 288,124" fill="none" stroke="#0B5C8A" stroke-width="2.4"/>
+<text x="140" y="145" fill="#0B5C8A" font-weight="700">Açık kap (gaz çıkışlı)</text>
+</svg>
+<figcaption>Açık kapta çizginin düşmesi kütlenin korunmadığı anlamına gelmez; çıkan gaz tartım dışında kaldığı için <b>ölçülen</b> kütle azalır.</figcaption>
+</figure>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 7</span><span class="seviye s-kolay">Kolay</span></div>
+<div class="govde">
+<p class="metin">Kapalı bir kapta 8 gram metan, 32 gram oksijen ile tam olarak yanıyor. Oluşan CO<sub>2</sub> 22 gram olduğuna göre açığa çıkan su kaç gramdır?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Girenlerin toplam kütlesi: 8 + 32 = 40 gram</li>
+<li>Kütle korunur → ürünlerin toplamı da 40 gram olmalı.</li>
+<li>22 + m(H<sub>2</sub>O) = 40</li>
+<li>m(H<sub>2</sub>O) = <b>18 gram</b></li>
+</ol>
+<div class="cevap">18 gram su oluşur.</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 8</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">N<sub>2</sub>(g) + 3H<sub>2</sub>(g) → 2NH<sub>3</sub>(g) tepkimesi kapalı bir kapta gerçekleşiyor. Buna göre aşağıdaki niceliklerden hangileri değişmez?</p>
+<ul class="oncul">
+<li><b>I.</b> Toplam kütle</li>
+<li><b>II.</b> Toplam molekül sayısı</li>
+<li><b>III.</b> Toplam atom sayısı</li>
+<li><b>IV.</b> Toplam mol sayısı</li>
+<li><b>V.</b> Azot atomlarının mol sayısı</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Denklem 1 + 3 = <b>4 mol gaz</b> girip <b>2 mol gaz</b> çıktığını söylüyor.</li>
+<li><b>I ✔</b> Atomlar korunduğu için kütle korunur.</li>
+<li><b>II ✘</b> Molekül sayısı 4'ten 2'ye düşer.</li>
+<li><b>III ✔</b> Girenlerde 2 N + 6 H = 8 atom; ürünlerde 2 × 4 = 8 atom.</li>
+<li><b>IV ✘</b> Mol sayısı molekül sayısıyla orantılıdır; o da azalır.</li>
+<li><b>V ✔</b> Azot atomu ne yok olur ne oluşur; yalnızca N<sub>2</sub>'den NH<sub>3</sub>'e taşınır.</li>
+<li>Ayrım şu: <b>atomların</b> mol sayısı korunur, <b>moleküllerin</b> mol sayısı korunmayabilir.</li>
+</ol>
+<div class="cevap">I, III ve V</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 9</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Açık bir kapta kabartma tozu sirkeye atılıyor ve terazideki değer sürekli azalıyor. Bir öğrenci bunu "kütlenin korunumu yasası burada geçerli değil" diye yorumluyor. Öğrencinin yanılgısı nedir?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Tepkimede CO<sub>2</sub> gazı oluşuyor ve kaptan havaya karışıyor.</li>
+<li>Terazi yalnızca <b>kapta kalanı</b> ölçer; havaya gideni ölçmez.</li>
+<li>Aynı deney <b>kapalı kapta</b> yapılsaydı terazi sabit kalırdı.</li>
+<li>Kütle korunmuştur; korunmayan şey <b>ölçülen</b> kütledir.</li>
+<li>Genel kural: kütlenin korunumunu sınamak için sistem <b>kapalı</b> olmalıdır.</li>
+</ol>
+<div class="cevap">Sistem açık olduğu için oluşan gaz tartımdan çıkmıştır; yasa ihlal edilmemiştir.</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 10</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Kapalı bir kapta 5,6 gram demir tozu ile 3,2 gram kükürt tozu ısıtıldığında ikisi de tamamen harcanarak FeS bileşiği oluşuyor.</p>
+<ul class="siklar">
+<li><b>a)</b> Oluşan FeS kaç gramdır?</li>
+<li><b>b)</b> Aynı deney 5,6 gram demir ve 6,4 gram kükürtle yapılsaydı sonuç ne olurdu?</li>
+</ul>
+<p class="veri">Fe = 56 g/mol · S = 32 g/mol</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>a) Kapalı kapta kütle korunur: 5,6 + 3,2 = <b>8,8 gram FeS</b></li>
+<li>Kontrol: n(Fe) = 5,6 ÷ 56 = 0,1 mol, n(S) = 3,2 ÷ 32 = 0,1 mol. Oran 1 : 1 → ikisi de tam biter ✔</li>
+<li>b) 6,4 gram kükürt = 0,2 mol. Demir yine 0,1 mol.</li>
+<li>Demir 0,1 mol kükürtle birleşip yine <b>8,8 gram FeS</b> verir; geriye <b>3,2 gram kükürt artar</b>.</li>
+<li>Kapta toplam kütle 5,6 + 6,4 = 12,0 gramdır ve korunur: 8,8 g ürün + 3,2 g artan.</li>
+<li>Ders: kütlenin korunumu artan maddeyi de kapsar; "korunan kütle" ürünlerin kütlesi demek değildir.</li>
+</ol>
+<div class="cevap">a) 8,8 gram &nbsp;·&nbsp; b) Yine 8,8 gram FeS oluşur, 3,2 gram kükürt artar.</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 11</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">X ve Y elementleri arasında gerçekleşen bir tepkimede, 12 gram X ile 32 gram Y tam olarak birleşerek Z bileşiğini veriyor.</p>
+<ul class="siklar">
+<li><b>a)</b> 20 gram X ile 32 gram Y karıştırılırsa kaç gram Z oluşur, hangi madde kaç gram artar?</li>
+<li><b>b)</b> 18 gram X ile 40 gram Y karıştırılırsa kaç gram Z oluşur?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Sabit oran: X : Y = 12 : 32 = <b>3 : 8</b> (kütlece). Bu oran her koşulda değişmez.</li>
+<li>a) 32 gram Y, 12 gram X ile birleşir. Elimizde 20 gram X var → <b>X fazladır</b>, Y sınırlayıcıdır.</li>
+<li>Harcanan: 12 g X + 32 g Y → <b>44 gram Z</b>. Artan: 20 − 12 = <b>8 gram X</b>.</li>
+<li>Kontrol: 44 + 8 = 52 = 20 + 32 ✔</li>
+<li>b) 18 gram X'in isteyeceği Y = 18 × (8/3) = 48 gram. Elimizde 40 gram var → bu kez <b>Y sınırlayıcı</b>.</li>
+<li>40 gram Y'nin harcayacağı X = 40 × (3/8) = 15 gram → oluşan Z = 15 + 40 = <b>55 gram</b> (3 gram X artar).</li>
+<li>Tuzak: hangi maddenin fazla olduğuna <b>gram sayısına bakarak</b> karar verilmez; sabit orana bakılır.</li>
+</ol>
+<div class="cevap">a) 44 g Z, 8 g X artar &nbsp;·&nbsp; b) 55 g Z (3 g X artar)</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 12</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Kapalı bir kapta X<sub>2</sub> ve Y<sub>2</sub> gazları tepkimeye giriyor. Tepkime öncesi ve sonrası tanecikler sayıldığında:</p>
+<ul class="oncul">
+<li><b>Başlangıç:</b> 6 tane X<sub>2</sub>, 4 tane Y<sub>2</sub></li>
+<li><b>Bitiş:</b> 2 tane X<sub>2</sub>, 8 tane XY, bir miktar Y<sub>2</sub></li>
+</ul>
+<p class="veri">Buna göre bitişte kaç tane Y<sub>2</sub> molekülü kalmıştır?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Molekülleri değil, <b>atomları</b> say. Başlangıçta X atomu: 6 × 2 = <b>12</b>; Y atomu: 4 × 2 = <b>8</b>.</li>
+<li>Bitişte X atomu: 2 × 2 (kalan X<sub>2</sub>) + 8 × 1 (XY'de) = 4 + 8 = <b>12</b> ✔ korunmuş.</li>
+<li>Bitişte XY içindeki Y atomu: 8 × 1 = 8.</li>
+<li>Y atomu da korunmalı: 8 = 8 + 2 × n(Y<sub>2</sub>)</li>
+<li>2 × n(Y<sub>2</sub>) = 0 → <b>n(Y<sub>2</sub>) = 0</b></li>
+<li>Y<sub>2</sub> tamamen tükenmiştir; artan madde X<sub>2</sub>'dir. Sorudaki "bir miktar Y<sub>2</sub>" ifadesi bilerek konmuş bir çeldiricidir — atom sayımı onu çürütür.</li>
+</ol>
+<div class="cevap">Hiç Y<sub>2</sub> kalmamıştır (0 tane); artan gaz X<sub>2</sub>'dir.</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 13</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Sabit hacimli kapalı bir kapta aşağıdaki tepkime gerçekleşiyor:</p>
+<p class="veri" style="margin-bottom:10px">2NO<sub>2</sub>(g) → N<sub>2</sub>O<sub>4</sub>(g)</p>
+<p class="metin">Buna göre tepkime ilerledikçe aşağıdakilerden hangileri azalır?</p>
+<ul class="oncul">
+<li><b>I.</b> Kaptaki toplam kütle</li>
+<li><b>II.</b> Kaptaki toplam molekül sayısı</li>
+<li><b>III.</b> Kaptaki toplam atom sayısı</li>
+<li><b>IV.</b> Gazın ortalama mol kütlesi</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I ✘</b> Kap kapalı; hiçbir madde çıkmıyor → kütle sabit.</li>
+<li><b>II ✔</b> 2 molekülden 1 molekül oluşuyor → molekül sayısı azalır.</li>
+<li><b>III ✘</b> Atomlar yalnızca yeniden düzenleniyor → toplam atom sayısı sabit.</li>
+<li><b>IV ✘</b> Ortalama mol kütlesi = toplam kütle ÷ toplam mol. Kütle sabit, mol sayısı azalıyor → oran <b>artar</b>.</li>
+<li>Bu son madde en sık hata yapılan yerdir: mol sayısı azalınca ortalama mol kütlesi büyür.</li>
+</ol>
+<div class="cevap">Yalnız II</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 14</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">Ağzı balonla kapatılmış bir erlende mermer taşı (CaCO<sub>3</sub>) ile hidroklorik asit tepkimeye sokuluyor. Düzenek tepkime boyunca terazide duruyor.</p>
+<ul class="oncul">
+<li><b>I.</b> Balon şişerken terazideki değer sabit kalır.</li>
+<li><b>II.</b> Balon patlarsa terazideki değer azalır.</li>
+<li><b>III.</b> Balon şiştiği için sistemin kütlesi artmıştır.</li>
+</ul>
+<p class="veri">yargılarından hangileri doğrudur?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Tepkime: CaCO<sub>3</sub> + 2HCl → CaCl<sub>2</sub> + H<sub>2</sub>O + CO<sub>2</sub>. Oluşan CO<sub>2</sub> balonun içinde <b>sistemde kalıyor</b>.</li>
+<li><b>I ✔</b> Sistem kapalı olduğu için hiçbir madde tartımdan çıkmaz; değer sabit kalır.</li>
+<li><b>II ✔</b> Balon patlarsa CO<sub>2</sub> havaya karışır, tartımdan çıkar → değer azalır.</li>
+<li><b>III ✘</b> Balonun şişmesi <b>hacim</b> artışıdır, kütle artışı değil. Kütle korunur.</li>
+<li>Ek incelik: çok hassas bir terazide balon şiştikçe kaldırma kuvveti arttığı için okunan değer bir miktar düşebilir — ama bu tepkimeyle değil, havanın kaldırma kuvvetiyle ilgilidir.</li>
+</ol>
+<div class="cevap">I ve II</div>
+</details>
+</div>
+</div>
+
+<!-- ==================== 3 ==================== -->
+<h2><span class="no">Bölüm 3</span>Modelleme: aynı olayın üç dili</h2>
+
+<p>Bir kimyasal olayı üç ayrı düzeyde anlatabiliriz. Sorular çoğu zaman bir düzeyden ötekine geçmeni ister.</p>
+
+<div class="tablo-sar">
+<table>
+<tr><th>Düzey</th><th>Ne gösterir</th><th>Örnek</th></tr>
+<tr><td><b>Makroskobik</b></td><td>Gözle görülen</td><td>Kabarcık, çökelek, alev, renk değişimi</td></tr>
+<tr><td><b>Sembolik</b></td><td>Formül ve denklem</td><td>2H<sub>2</sub>(g) + O<sub>2</sub>(g) → 2H<sub>2</sub>O(s)</td></tr>
+<tr><td><b>Alt mikroskobik</b></td><td>Tanecik düzeyi</td><td>Lewis, çizgi-bağ, top-çubuk, uzay-dolgu modelleri</td></tr>
+</table>
+</div>
+
+<div class="kart kural">
+<div class="baslik">Kural — model seçimi</div>
+<ul>
+<li><b>Lewis</b> değerlik elektronlarını ve ortaklanmamış çiftleri gösterir; bağ ve elektron çifti saymak için kullanılır.</li>
+<li><b>Çizgi-bağ</b> yalnızca bağları gösterir, elektron çiftlerini göstermez; iskeleti hızlı okumak içindir.</li>
+<li><b>Top-çubuk</b> bağ açılarını ve geometriyi gösterir; atomlar gerçek boyutlarında <b>değildir</b>.</li>
+<li><b>Uzay-dolgu</b> atomların <b>gerçek hacim oranını</b> gösterir; buna karşılık bağ açıları görünmez.</li>
+</ul>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 15</span><span class="seviye s-kolay">Kolay</span></div>
+<div class="govde">
+<p class="metin">"Magnezyum şeridi havada yakıldığında göz kamaştırıcı beyaz bir alevle yanar ve geriye beyaz bir toz kalır."</p>
+<ul class="siklar">
+<li><b>a)</b> Bu ifade hangi düzeyde bir anlatımdır?</li>
+<li><b>b)</b> Olayı sembolik düzeyde yazın.</li>
+<li><b>c)</b> Kimyasal değişimin hangi göstergeleri vardır?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>a) Gözle görülen olaylar anlatılıyor → <b>makroskobik</b> düzey.</li>
+<li>b) 2Mg(k) + O<sub>2</sub>(g) → 2MgO(k)</li>
+<li>c) <b>Işık çıkışı</b> (parlak alev), <b>ısı çıkışı</b> ve <b>yeni madde oluşumu</b> (beyaz toz MgO).</li>
+<li>Kalan beyaz toz magnezyumdan farklı bir maddedir; olay geri de dönmez.</li>
+</ol>
+<div class="cevap">a) Makroskobik &nbsp;·&nbsp; b) 2Mg + O<sub>2</sub> → 2MgO &nbsp;·&nbsp; c) Işık, ısı ve yeni madde</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 16</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">C<sub>2</sub>H<sub>6</sub> molekülü için aşağıdaki bilgileri hangi model verir?</p>
+<ul class="oncul">
+<li><b>I.</b> Molekülde kaç tane C—H bağı olduğu</li>
+<li><b>II.</b> Karbon atomunun hidrojenden büyük olduğu</li>
+<li><b>III.</b> Ortaklanmamış elektron çifti bulunup bulunmadığı</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I → çizgi-bağ veya top-çubuk.</b> İkisi de bağları tek tek gösterir; C<sub>2</sub>H<sub>6</sub>'da 6 tane C—H ve 1 tane C—C bağı sayılır.</li>
+<li><b>II → uzay-dolgu.</b> Yalnızca bu model atomların gerçek hacim oranını verir.</li>
+<li><b>III → Lewis.</b> Ortaklanmamış elektron çiftleri sadece Lewis yapısında noktalarla gösterilir. (C<sub>2</sub>H<sub>6</sub>'da hiç yoktur; bunu da ancak Lewis çizerek görürsün.)</li>
+<li>Not: top-çubuk modelinde çubuk uzunlukları geometriyi verir ama atom boyutları <b>gerçek oranda değildir</b>.</li>
+</ol>
+<div class="cevap">I: çizgi-bağ / top-çubuk &nbsp;·&nbsp; II: uzay-dolgu &nbsp;·&nbsp; III: Lewis</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 17</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Bir tepkimenin tanecik modeli şöyle veriliyor: <b>iki tane iki atomlu A<sub>2</sub> molekülü</b> ile <b>bir tane iki atomlu B<sub>2</sub> molekülü</b> birleşerek <b>iki tane üç atomlu</b> molekül oluşturuyor.</p>
+<ul class="siklar">
+<li><b>a)</b> Ürünün formülü nedir?</li>
+<li><b>b)</b> Denklemi yazın.</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Girenlerdeki atomlar: A atomu 2 × 2 = <b>4</b>, B atomu 1 × 2 = <b>2</b>.</li>
+<li>Bu atomlar 2 moleküle dağılacak → molekül başına 2 tane A, 1 tane B.</li>
+<li>Ürün üç atomlu ✔ (2 + 1 = 3) → formül <b>A<sub>2</sub>B</b>.</li>
+<li>Denklem: 2A<sub>2</sub> + B<sub>2</sub> → 2A<sub>2</sub>B</li>
+<li>Kontrol: solda 4 A ve 2 B, sağda 4 A ve 2 B ✔</li>
+<li>Bu, suyun oluşumunun (2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O) tanecik düzeyindeki karşılığıdır.</li>
+</ol>
+<div class="cevap">a) A<sub>2</sub>B &nbsp;·&nbsp; b) 2A<sub>2</sub> + B<sub>2</sub> → 2A<sub>2</sub>B</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 18</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Bir kapta 4 tane X<sub>2</sub>Y molekülü ile 8 tane Y<sub>2</sub> molekülü bulunuyor. Bu moleküller arasında tepkime gerçekleşiyor ve <b>tek ürün</b> olarak XY<sub>2</sub> oluşuyor. Tepkime sonunda X<sub>2</sub>Y molekülünün tamamı harcanıyor.</p>
+<ul class="siklar">
+<li><b>a)</b> Kaç tane XY<sub>2</sub> oluşur?</li>
+<li><b>b)</b> Kaç tane Y<sub>2</sub> harcanır?</li>
+<li><b>c)</b> Tepkime sonunda kapta kaç tane Y<sub>2</sub> kalır?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Molekülleri değil <b>atomları</b> say. 4 tane X<sub>2</sub>Y → X atomu 8, Y atomu 4. 8 tane Y<sub>2</sub> → Y atomu 16. Toplam Y = 20.</li>
+<li>a) Ürün XY<sub>2</sub>; her ürün <b>1 tane X</b> içerir. X atomu 8 tane olduğuna ve X<sub>2</sub>Y'nin tamamı harcandığına göre <b>8 tane XY<sub>2</sub></b> oluşur.</li>
+<li>Bu ürünlerin içindeki Y atomu: 8 × 2 = <b>16</b>.</li>
+<li>Bu 16 Y atomunun 4 tanesi zaten X<sub>2</sub>Y'den geliyor. Geri kalan 12 tanesi Y<sub>2</sub>'den gelmeli.</li>
+<li>b) 12 ÷ 2 = <b>6 tane Y<sub>2</sub></b> harcanır.</li>
+<li>c) Başlangıçta 8 tane vardı → kalan: 8 − 6 = <b>2 tane Y<sub>2</sub></b>.</li>
+<li>Kontrol: ürünlerde 16 + artanda 2 × 2 = 4 → toplam 20 Y atomu ✔ Sınırlayıcı X<sub>2</sub>Y, artan Y<sub>2</sub>'dir.</li>
+<li>Denklem hâli: 4X<sub>2</sub>Y + 6Y<sub>2</sub> → 8XY<sub>2</sub>, sadeleştirilirse <b>2X<sub>2</sub>Y + 3Y<sub>2</sub> → 4XY<sub>2</sub></b></li>
+</ol>
+<div class="cevap">a) 8 tane XY<sub>2</sub> &nbsp;·&nbsp; b) 6 tane Y<sub>2</sub> &nbsp;·&nbsp; c) 2 tane Y<sub>2</sub> kalır</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 19</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki gösterimlerden hangileri <b>alt mikroskobik</b> düzeydedir?</p>
+<ul class="oncul">
+<li><b>I.</b> Suyun top-çubuk modeli</li>
+<li><b>II.</b> 2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O denklemi</li>
+<li><b>III.</b> Bir bardak suyun fotoğrafı</li>
+<li><b>IV.</b> NH<sub>3</sub>'ün Lewis yapısı</li>
+<li><b>V.</b> "Su renksiz ve kokusuzdur" ifadesi</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Alt mikroskobik düzey = <b>tanecikleri</b> gösteren her türlü gösterim.</li>
+<li><b>I ✔</b> Top-çubuk bir tanecik modelidir.</li>
+<li><b>II ✘</b> Denklem <b>sembolik</b> düzeydir; harf ve sayı kullanır, tanecik çizmez.</li>
+<li><b>III ✘</b> Fotoğraf gözle görülene aittir → makroskobik.</li>
+<li><b>IV ✔</b> Lewis yapısı elektronları ve atomları gösterir → alt mikroskobik.</li>
+<li><b>V ✘</b> Gözlenebilir özellik → makroskobik.</li>
+<li>Sık karışan yer: formül ve denklem tanecikten <b>söz eder</b> ama tanecik <b>göstermez</b>; o yüzden semboliktir.</li>
+</ol>
+<div class="cevap">I ve IV</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 20</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Aynı olay üç düzeyde şöyle anlatılıyor:</p>
+<ul class="oncul">
+<li><b>Makroskobik:</b> Çinko parçası asit çözeltisine atılınca yüzeyinde kabarcıklar oluşuyor ve metal zamanla küçülüyor.</li>
+<li><b>Sembolik:</b> Zn(k) + 2HCl(suda) → ZnCl<sub>2</sub>(suda) + H<sub>2</sub>(g)</li>
+<li><b>Alt mikroskobik:</b> Zn atomları çözeltiye Zn<sup>2+</sup> olarak geçiyor, H<sup>+</sup> iyonları eşleşerek H<sub>2</sub> molekülü veriyor.</li>
+</ul>
+<p class="veri">Buna göre hangi çıkarımlar yapılabilir?</p>
+<ul class="oncul">
+<li><b>I.</b> Cl<sup>−</sup> iyonları tepkimeye girmemiştir.</li>
+<li><b>II.</b> Çözeltinin kütlesi artmıştır.</li>
+<li><b>III.</b> Kabarcıklar çözeltide zaten çözünmüş olan gazın ayrılmasıdır.</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I ✔</b> Alt mikroskobik anlatımda Cl<sup>−</sup> hiç değişmiyor; başta da sonda da çözeltide serbest iyon hâlinde. Böyle iyonlara <b>seyirci iyon</b> denir.</li>
+<li><b>II ✔</b> Katı Zn çözeltiye geçiyor; buna karşılık ayrılan H<sub>2</sub> ondan hafiftir. 65 g Zn girip 2 g H<sub>2</sub> çıktığına göre çözelti net kütle kazanır.</li>
+<li><b>III ✘</b> Kabarcıklardaki H<sub>2</sub> tepkimede <b>yeni oluşmuştur</b>; başlangıçta çözeltide H<sub>2</sub> yoktu.</li>
+<li>Üç düzeyi birlikte okumanın kazancı: seyirci iyonu yalnızca alt mikroskobik anlatım, kütle değişimini yalnızca sembolik denklem gösterir.</li>
+</ol>
+<div class="cevap">I ve II</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 21</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">Bir öğrenci CH<sub>4</sub> molekülünü top-çubuk modeliyle çizerken dört hidrojeni karbonun çevresine <b>kare düzlem</b> biçiminde, 90°'lik açılarla yerleştiriyor.</p>
+<ul class="siklar">
+<li><b>a)</b> Bu çizim hangi bilgiyi doğru, hangisini yanlış verir?</li>
+<li><b>b)</b> Aynı hatanın uzay-dolgu modelinde yapılması hâlinde ne kaybedilir?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>a) <b>Doğru verdiği:</b> bağ sayısı ve türü — 4 tane C—H bağı vardır, hepsi tektir. Formül bilgisi de doğrudur.</li>
+<li><b>Yanlış verdiği:</b> geometri. CH<sub>4</sub> düzlemsel değil <b>dört yüzlüdür (tetrahedral)</b>, açılar 90° değil yaklaşık <b>109,5°</b>'dir.</li>
+<li>Top-çubuk modelinin varlık sebebi zaten geometriyi göstermektir; geometriyi yanlış çizmek bu modeli işlevsiz bırakır.</li>
+<li>b) Uzay-dolgu modelinde atomlar gerçek hacim oranıyla çizilir; hatalı yerleşimde <b>atomların kapladığı gerçek hacim ve birbirini örtme ilişkisi</b> yanlış görünür.</li>
+<li>Ayrıca düzlemsel çizim, moleküllerin üç boyutlu olduğu gerçeğini gizler — bu, ileride polarlık konusunda doğrudan yanlış sonuca götürür.</li>
+</ol>
+<div class="cevap">a) Bağ sayısı doğru, geometri (109,5° yerine 90°) yanlış &nbsp;·&nbsp; b) Gerçek hacim ve üç boyutlu yerleşim bilgisi kaybedilir.</div>
+</details>
+</div>
+</div>
+
+<div class="kart gunluk">
+<div class="baslik">Günlük hayat</div>
+<p>Ekmek mayalanırken hamurun kabarması bir <b>gaz çıkışıdır</b>: maya şekeri parçalayıp CO<sub>2</sub> üretir. Hamurun içindeki gluten ağı bu gazı hapsettiği için hacim artar. Fırında pişerken de proteinler yapı değiştirir — yani hem kabarma hem pişme kimyasal değişimdir. Buna karşılık hamurun yoğrulup şekil alması yalnızca fizikseldir.</p>
+</div>
+
+<!-- ==================== 4 ==================== -->
+<h2><span class="no">Bölüm 4</span>Çökelme tepkimeleri, net iyon ve seyirci iyon</h2>
+
+<p>İki <b>çözünmüş tuz</b> çözeltisi karıştırıldığında iyonlar eş değiştirir. Yeni oluşan ikililerden biri suda çözünmüyorsa katı hâlde ayrılır; buna <b>çökelek</b>, olaya <b>çökelme tepkimesi</b> denir.</p>
+
+<span class="blokform">AB(suda) + CD(suda) → AD(k) + CB(suda)</span>
+
+<p>Çökeleğin oluşup oluşmayacağını bilmek için çözünürlük kurallarını tanımak gerekir. Aşağıdaki tablo, 10. sınıf sorularının tamamını çözmeye yeter.</p>
+
+<div class="tablo-sar">
+<table>
+<tr><th>İyon</th><th>Kural</th><th>İstisna</th></tr>
+<tr><td>1A metalleri (Na<sup>+</sup>, K<sup>+</sup>, Li<sup>+</sup>) ve NH<sub>4</sub><sup>+</sup></td><td>Tuzlarının <b>hepsi çözünür</b></td><td>Yok</td></tr>
+<tr><td>NO<sub>3</sub><sup>−</sup>, CH<sub>3</sub>COO<sup>−</sup></td><td>Tuzlarının <b>hepsi çözünür</b></td><td>Yok</td></tr>
+<tr><td>Cl<sup>−</sup>, Br<sup>−</sup>, I<sup>−</sup></td><td><b>Çözünür</b></td><td>Ag<sup>+</sup>, Pb<sup>2+</sup></td></tr>
+<tr><td>SO<sub>4</sub><sup>2−</sup></td><td><b>Çözünür</b></td><td>Ba<sup>2+</sup>, Pb<sup>2+</sup>, Ca<sup>2+</sup>, Sr<sup>2+</sup></td></tr>
+<tr><td>CO<sub>3</sub><sup>2−</sup>, PO<sub>4</sub><sup>3−</sup>, S<sup>2−</sup></td><td><b>Çözünmez</b></td><td>1A ve NH<sub>4</sub><sup>+</sup></td></tr>
+<tr><td>OH<sup>−</sup></td><td><b>Çözünmez</b></td><td>1A, NH<sub>4</sub><sup>+</sup>, Ba<sup>2+</sup></td></tr>
+</table>
+</div>
+
+<div class="kart kural">
+<div class="baslik">Kural — üç denklem, üç aşama</div>
+<ol>
+<li><b>Moleküler denklem:</b> maddeler formül hâlinde yazılır.<br><span class="form form-uzun">AgNO<sub>3</sub>(suda) + NaCl(suda) → AgCl(k) + NaNO<sub>3</sub>(suda)</span></li>
+<li><b>İyonik denklem:</b> suda çözünenler <b>iyonlarına ayrılmış</b> yazılır; katı, sıvı ve gazlar ayrılmaz.<br><span class="form form-uzun">Ag<sup>+</sup> + NO<sub>3</sub><sup>−</sup> + Na<sup>+</sup> + Cl<sup>−</sup> → AgCl(k) + Na<sup>+</sup> + NO<sub>3</sub><sup>−</sup></span></li>
+<li><b>Net iyon denklemi:</b> iki tarafta aynen duran iyonlar silinir.<br><span class="form form-uzun">Ag<sup>+</sup>(suda) + Cl<sup>−</sup>(suda) → AgCl(k)</span></li>
+</ol>
+<p>Silinen iyonlara <b>seyirci iyon</b> denir. Burada seyirciler Na<sup>+</sup> ve NO<sub>3</sub><sup>−</sup>'dir: tepkimeye girmezler, çözeltide baştan sona serbest dolaşırlar.</p>
+</div>
+
+<div class="kart tuzak">
+<div class="baslik">Tuzak</div>
+<ul>
+<li>Katı (k), sıvı (s) ve gaz (g) hâldeki maddeler iyonik denklemde <b>asla</b> iyonlarına ayrılmaz. Çökelek zaten ürün olduğu için bütün yazılır.</li>
+<li>Net iyon denkleminde de <b>yük korunmalıdır</b>. Ag<sup>+</sup> + Cl<sup>−</sup> → AgCl'de solda +1 −1 = 0, sağda 0 ✔</li>
+<li>Katsayılar sadeleştirilebiliyorsa sadeleştirilir: 2Ag<sup>+</sup> + 2Cl<sup>−</sup> → 2AgCl yerine 1'lik hâli yazılır. Ama Pb<sup>2+</sup> + 2I<sup>−</sup> → PbI<sub>2</sub>'de 2 sadeleşmez, çünkü formülden gelir.</li>
+<li>Bütün ürünler çözünüyorsa <b>tepkime gerçekleşmez</b>; net iyon denklemi yazılamaz, ortada yalnızca iyon karışımı vardır.</li>
+</ul>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 22</span><span class="seviye s-kolay">Kolay</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki bileşiklerden hangileri suda çözünür?</p>
+<ul class="oncul">
+<li><b>I.</b> KNO<sub>3</sub> &nbsp;&nbsp; <b>II.</b> BaSO<sub>4</sub> &nbsp;&nbsp; <b>III.</b> AgCl</li>
+<li><b>IV.</b> Na<sub>2</sub>CO<sub>3</sub> &nbsp;&nbsp; <b>V.</b> Mg(OH)<sub>2</sub> &nbsp;&nbsp; <b>VI.</b> (NH<sub>4</sub>)<sub>2</sub>S</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I ✔</b> Hem K<sup>+</sup> (1A) hem NO<sub>3</sub><sup>−</sup> her koşulda çözünür — çifte garanti.</li>
+<li><b>II ✘</b> SO<sub>4</sub><sup>2−</sup> çözünür ama Ba<sup>2+</sup> istisnadır.</li>
+<li><b>III ✘</b> Cl<sup>−</sup> çözünür ama Ag<sup>+</sup> istisnadır.</li>
+<li><b>IV ✔</b> CO<sub>3</sub><sup>2−</sup> normalde çözünmez, ancak Na<sup>+</sup> 1A olduğu için istisnaya girer.</li>
+<li><b>V ✘</b> OH<sup>−</sup> çözünmez; Mg 1A değil, istisna listesinde de yok.</li>
+<li><b>VI ✔</b> S<sup>2−</sup> çözünmez ama NH<sub>4</sub><sup>+</sup> istisnadır.</li>
+<li>Yöntem: <b>önce katyona bak.</b> 1A veya NH<sub>4</sub><sup>+</sup> görüyorsan anyona bakmana bile gerek yok.</li>
+</ol>
+<div class="cevap">I, IV ve VI</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 23</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Pb(NO<sub>3</sub>)<sub>2</sub> çözeltisi ile KI çözeltisi karıştırıldığında parlak sarı bir çökelek oluşuyor.</p>
+<ul class="siklar">
+<li><b>a)</b> Moleküler denklemi yazıp denkleştirin.</li>
+<li><b>b)</b> Net iyon denklemini yazın.</li>
+<li><b>c)</b> Seyirci iyonları belirtin.</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>İyonlar eş değiştirir: Pb<sup>2+</sup> ile I<sup>−</sup>, K<sup>+</sup> ile NO<sub>3</sub><sup>−</sup> eşleşir.</li>
+<li>Kurala göre PbI<sub>2</sub> çözünmez (Pb, I<sup>−</sup> istisnasıdır), KNO<sub>3</sub> çözünür.</li>
+<li>a) Pb(NO<sub>3</sub>)<sub>2</sub>(suda) + 2KI(suda) → PbI<sub>2</sub>(k) + 2KNO<sub>3</sub>(suda)</li>
+<li>İyonik: Pb<sup>2+</sup> + 2NO<sub>3</sub><sup>−</sup> + 2K<sup>+</sup> + 2I<sup>−</sup> → PbI<sub>2</sub>(k) + 2K<sup>+</sup> + 2NO<sub>3</sub><sup>−</sup></li>
+<li>b) İki tarafta aynen duranları sil: <b>Pb<sup>2+</sup>(suda) + 2I<sup>−</sup>(suda) → PbI<sub>2</sub>(k)</b></li>
+<li>c) Seyirci iyonlar: <b>K<sup>+</sup> ve NO<sub>3</sub><sup>−</sup></b></li>
+<li>Dikkat: I<sup>−</sup>'nin önündeki 2 sadeleşmez; PbI<sub>2</sub> formülünün gereğidir.</li>
+</ol>
+<div class="cevap">b) Pb<sup>2+</sup> + 2I<sup>−</sup> → PbI<sub>2</sub>(k) &nbsp;·&nbsp; c) K<sup>+</sup> ve NO<sub>3</sub><sup>−</sup></div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 24</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">NaCl çözeltisi ile KNO<sub>3</sub> çözeltisi karıştırılıyor. Bir öğrenci "NaNO<sub>3</sub> ve KCl oluştu, tepkime gerçekleşti" diyor. Öğrenci haklı mıdır?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Olası ürünler: NaNO<sub>3</sub> ve KCl.</li>
+<li>Kurala bak: her ikisinin de katyonu 1A → <b>ikisi de çözünür</b>.</li>
+<li>Öyleyse ortada katı, gaz veya su oluşumu yoktur; hiçbir iyon serbestlikten çıkmaz.</li>
+<li>Kapta yalnızca Na<sup>+</sup>, Cl<sup>−</sup>, K<sup>+</sup>, NO<sub>3</sub><sup>−</sup> iyonlarının karışımı vardır.</li>
+<li>Bütün iyonlar seyirci olduğu için net iyon denklemi <b>yazılamaz</b>: tepkime gerçekleşmemiştir.</li>
+<li>Öğrenci haksızdır. "İyonlar eş değiştirir" kalıbı kâğıt üzerinde her zaman yazılabilir; tepkimenin gerçekleşmesi için ürünlerden birinin ortamdan <b>ayrılması</b> gerekir.</li>
+</ol>
+<div class="cevap">Haksızdır; her iki ürün de çözündüğü için tepkime gerçekleşmez.</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 25</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Bir X çözeltisi üzerinde şu testler yapılıyor:</p>
+<ul class="oncul">
+<li><b>I.</b> AgNO<sub>3</sub> eklenince <b>beyaz</b> çökelek oluşuyor.</li>
+<li><b>II.</b> Ba(NO<sub>3</sub>)<sub>2</sub> eklenince çökelek <b>oluşmuyor</b>.</li>
+<li><b>III.</b> Na<sub>2</sub>CO<sub>3</sub> eklenince çökelek <b>oluşmuyor</b>.</li>
+</ul>
+<p class="veri">Buna göre X aşağıdakilerden hangisi olabilir? AgCl beyaz, AgBr açık sarı, AgI sarı çökelektir.</p>
+<ul class="secenek">
+<li><b>A)</b> CaCl<sub>2</sub></li><li><b>B)</b> KI</li><li><b>C)</b> KCl</li><li><b>D)</b> Na<sub>2</sub>SO<sub>4</sub></li><li><b>E)</b> MgBr<sub>2</sub></li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I. testten:</b> Ag<sup>+</sup> ile çökelek verdiğine göre X'te halojenür (Cl<sup>−</sup>, Br<sup>−</sup> veya I<sup>−</sup>) var. Çökelek <b>beyaz</b> olduğu için anyon <b>Cl<sup>−</sup></b>'dir → B ve E elenir.</li>
+<li><b>II. testten:</b> Ba<sup>2+</sup> ile çökelek yok → X'te SO<sub>4</sub><sup>2−</sup> yok → D elenir.</li>
+<li><b>III. testten:</b> CO<sub>3</sub><sup>2−</sup> ile çökelek yok → X'in katyonu Ca<sup>2+</sup> gibi karbonat çökelten bir iyon <b>olamaz</b> → A elenir.</li>
+<li>Geriye <b>C) KCl</b> kalır: K<sup>+</sup> 1A olduğu için karbonatla çökelek vermez, Cl<sup>−</sup> ise Ag<sup>+</sup> ile beyaz AgCl verir.</li>
+<li>Yöntem: her test bir <b>eleme</b> yapar. Testleri tek tek uygulayıp şık silmek, doğrudan cevabı aramaktan hızlıdır.</li>
+</ol>
+<div class="cevap">C) KCl</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 26</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Bir çökelme tepkimesinin net iyon denklemi şöyledir:</p>
+<p class="veri" style="margin-bottom:10px">Ba<sup>2+</sup>(suda) + SO<sub>4</sub><sup>2−</sup>(suda) → BaSO<sub>4</sub>(k)</p>
+<ul class="siklar">
+<li><b>a)</b> Bu net denklemi verecek <b>iki farklı</b> moleküler denklem yazın.</li>
+<li><b>b)</b> Her ikisinde seyirci iyonlar nelerdir?</li>
+<li><b>c)</b> Neden tek bir moleküler denklem söylenemez?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Net denklem yalnızca <b>tepkimeye giren</b> iyonları söyler. Bunları taşıyan çözünür tuzları biz seçeriz.</li>
+<li>Ba<sup>2+</sup> için çözünür kaynak: BaCl<sub>2</sub>, Ba(NO<sub>3</sub>)<sub>2</sub>. SO<sub>4</sub><sup>2−</sup> için: Na<sub>2</sub>SO<sub>4</sub>, K<sub>2</sub>SO<sub>4</sub>.</li>
+<li>a) BaCl<sub>2</sub>(suda) + Na<sub>2</sub>SO<sub>4</sub>(suda) → BaSO<sub>4</sub>(k) + 2NaCl(suda)</li>
+<li>a) Ba(NO<sub>3</sub>)<sub>2</sub>(suda) + K<sub>2</sub>SO<sub>4</sub>(suda) → BaSO<sub>4</sub>(k) + 2KNO<sub>3</sub>(suda)</li>
+<li>b) Birincide Na<sup>+</sup> ve Cl<sup>−</sup>; ikincide K<sup>+</sup> ve NO<sub>3</sub><sup>−</sup>.</li>
+<li>c) Çünkü seyirci iyonlar tepkimeye katılmaz; hangi seyirciyi kullandığın sonucu değiştirmez. <b>Net iyon denklemi bire bir tek bir maddeyi değil, bir olay ailesini</b> temsil eder.</li>
+</ol>
+<div class="cevap">Seyirciler serbest seçilebildiği için sonsuz sayıda moleküler denklem aynı net denklemi verir.</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 27</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Bir kapta Na<sup>+</sup>, Ba<sup>2+</sup>, Cl<sup>−</sup> ve NO<sub>3</sub><sup>−</sup> iyonları bulunuyor. Bu çözeltiye sırasıyla önce K<sub>2</sub>SO<sub>4</sub>, ardından AgNO<sub>3</sub> çözeltisi ekleniyor.</p>
+<ul class="siklar">
+<li><b>a)</b> Her eklemede hangi çökelek oluşur?</li>
+<li><b>b)</b> Son durumda çözeltide hangi iyonlar kalır?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>1. ekleme:</b> SO<sub>4</sub><sup>2−</sup> geliyor. Kaptaki katyonlar Na<sup>+</sup> ve Ba<sup>2+</sup>. Na<sub>2</sub>SO<sub>4</sub> çözünür, BaSO<sub>4</sub> çözünmez → <b>BaSO<sub>4</sub> çöker</b>.</li>
+<li>Net iyon: Ba<sup>2+</sup> + SO<sub>4</sub><sup>2−</sup> → BaSO<sub>4</sub>(k). Ba<sup>2+</sup> çözeltiden çekilir.</li>
+<li><b>2. ekleme:</b> Ag<sup>+</sup> geliyor. Kaptaki anyonlar Cl<sup>−</sup>, NO<sub>3</sub><sup>−</sup> ve artan SO<sub>4</sub><sup>2−</sup>. AgNO<sub>3</sub> çözünür, AgCl <b>çözünmez</b> → <b>AgCl çöker</b>.</li>
+<li>Net iyon: Ag<sup>+</sup> + Cl<sup>−</sup> → AgCl(k). Cl<sup>−</sup> de çözeltiden çekilir.</li>
+<li>b) Geriye çökmeyen iyonlar kalır: <b>Na<sup>+</sup>, K<sup>+</sup>, NO<sub>3</sub><sup>−</sup></b> ve varsa artan SO<sub>4</sub><sup>2−</sup>.</li>
+<li>Sıra önemlidir: eğer önce AgNO<sub>3</sub> eklenseydi Ag<sup>+</sup> hem Cl<sup>−</sup> hem SO<sub>4</sub><sup>2−</sup> ile tepkime eğilimi gösterirdi ve ayrım netliğini kaybederdi. Analiz sorularında <b>seçici çöktürme</b> bu yüzden sırayla yapılır.</li>
+</ol>
+<div class="cevap">a) Önce BaSO<sub>4</sub>, sonra AgCl &nbsp;·&nbsp; b) Na<sup>+</sup>, K<sup>+</sup>, NO<sub>3</sub><sup>−</sup> (ve artan SO<sub>4</sub><sup>2−</sup>)</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 28</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">Eşit hacimli üç çözelti ikişerli karıştırılıyor ve sonuçlar tabloya yazılıyor.</p>
+<div class="tablo-sar">
+<table>
+<tr><th></th><th>X</th><th>Y</th><th>Z</th></tr>
+<tr><td><b>X</b></td><td>—</td><td>Beyaz çökelek</td><td>Değişim yok</td></tr>
+<tr><td><b>Y</b></td><td>Beyaz çökelek</td><td>—</td><td>Beyaz çökelek</td></tr>
+<tr><td><b>Z</b></td><td>Değişim yok</td><td>Beyaz çökelek</td><td>—</td></tr>
+</table>
+</div>
+<p class="veri">Çözeltiler NaCl, Ba(NO<sub>3</sub>)<sub>2</sub> ve Na<sub>2</sub>SO<sub>4</sub>'ten biridir... ancak bu üçlüyle tablo sağlanamıyor. Tabloyu sağlayan üçlü hangisi olabilir?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Tabloyu oku: <b>Y</b> hem X hem Z ile çökelek veriyor; X ile Z birbiriyle vermiyor. Yani Y "ortak çöktürücü"dür.</li>
+<li>Önerilen üçlüyü dene: NaCl + Ba(NO<sub>3</sub>)<sub>2</sub> → BaCl<sub>2</sub> çözünür, çökelek <b>yok</b>. Ba(NO<sub>3</sub>)<sub>2</sub> + Na<sub>2</sub>SO<sub>4</sub> → BaSO<sub>4</sub> <b>çöker</b>. NaCl + Na<sub>2</sub>SO<sub>4</sub> → çökelek <b>yok</b>.</li>
+<li>Bu üçlüde yalnızca <b>bir</b> çökelme olur; tabloda ise <b>iki</b> var. Öyleyse üçlü uygun değildir.</li>
+<li>Uygun bir üçlü kurmak için Y'nin katyonu hem Cl<sup>−</sup> hem SO<sub>4</sub><sup>2−</sup> ile çökmeli: bu <b>Pb<sup>2+</sup></b>'dir.</li>
+<li>Örnek: <b>X = NaCl, Y = Pb(NO<sub>3</sub>)<sub>2</sub>, Z = Na<sub>2</sub>SO<sub>4</sub></b>. X+Y → PbCl<sub>2</sub> beyaz çöker ✔ · Y+Z → PbSO<sub>4</sub> beyaz çöker ✔ · X+Z → çökelek yok ✔</li>
+<li>Ders: tablo tipi sorularda önce <b>kaç çökelme var</b> diye say, sonra bu sayıyı sağlayabilecek katyonu ara. Şıkları tek tek denemek en yavaş yoldur.</li>
+</ol>
+<div class="cevap">X = NaCl, Y = Pb(NO<sub>3</sub>)<sub>2</sub>, Z = Na<sub>2</sub>SO<sub>4</sub></div>
+</details>
+</div>
+</div>
+
+<div class="kart gunluk">
+<div class="baslik">Günlük hayat</div>
+<p>Sert sularda çözünmüş Ca<sup>2+</sup> ve Mg<sup>2+</sup> iyonları, sabunun içindeki iyonlarla çözünmeyen tuzlar oluşturur — sabunun köpürmemesinin ve küvette kalan gri halkanın sebebi budur. Çamaşır makinesi rezistansındaki beyaz kireç tabakası da aynı ailedendir: ısınan suda CaCO<sub>3</sub> çökelir.</p>
+</div>
+
+<!-- ==================== 5 ==================== -->
+<h2><span class="no">Bölüm 5</span>Asitler, bazlar ve nötrleşme</h2>
+
+<p>Suda çözündüğünde ortama <b>H<sup>+</sup></b> veren maddelere <b>asit</b>, <b>OH<sup>−</sup></b> veren maddelere <b>baz</b> denir. Bu iki iyon buluştuğunda birleşip su oluşturur — nötrleşmenin bütün mantığı budur.</p>
+
+<div class="tablo-sar">
+<table>
+<tr><th></th><th>Asitler</th><th>Bazlar</th></tr>
+<tr><td><b>Suda verdiği</b></td><td>H<sup>+</sup></td><td>OH<sup>−</sup></td></tr>
+<tr><td><b>Tat</b></td><td>Ekşi</td><td>Acı</td></tr>
+<tr><td><b>Dokunuş</b></td><td>—</td><td>Kaygan</td></tr>
+<tr><td><b>Turnusol</b></td><td>Maviyi kırmızıya çevirir</td><td>Kırmızıyı maviye çevirir</td></tr>
+<tr><td><b>Aktif metalle</b></td><td>H<sub>2</sub> gazı verir</td><td>Genelde tepkimezler</td></tr>
+<tr><td><b>Örnek</b></td><td>HCl, HNO<sub>3</sub>, H<sub>2</sub>SO<sub>4</sub>, CH<sub>3</sub>COOH</td><td>NaOH, KOH, Ca(OH)<sub>2</sub>, NH<sub>3</sub></td></tr>
+</table>
+</div>
+
+<div class="kart kural">
+<div class="baslik">Kural — nötrleşme</div>
+<p>Asit + Baz → <b>Tuz + Su</b></p>
+<span class="blokform">H<sup>+</sup>(suda) + OH<sup>−</sup>(suda) → H<sub>2</sub>O(s)</span>
+<ul>
+<li>Kuvvetli asit ile kuvvetli bazın nötrleşmesinde net iyon denklemi <b>daima</b> yukarıdaki gibidir; hangi asit hangi baz olduğu değişmez.</li>
+<li>Tuzu oluşturan iyonlar (Na<sup>+</sup>, Cl<sup>−</sup> gibi) çözeltide serbest kalır → <b>seyirci iyon</b>.</li>
+<li>Denkleştirirken asidin verebildiği H sayısı ile bazın verebildiği OH sayısını eşitle: H<sub>2</sub>SO<sub>4</sub> iki H verir, bu yüzden 2 mol NaOH ister.</li>
+</ul>
+</div>
+
+<div class="kart tuzak">
+<div class="baslik">Tuzak</div>
+<ul>
+<li>Nötrleşme "ortam nötr oldu" demek <b>değildir</b>. Asit veya baz fazlaysa tepkime yine olur, ama çözelti asidik ya da bazik kalır.</li>
+<li>Her tuz nötr değildir. NaCl nötr, ama zayıf asit ya da zayıf bazdan gelen tuzlar nötr olmaz. (10. sınıfta bu ayrıntıya girilmez, "nötrleşme = tuz + su" yeterlidir.)</li>
+<li>CH<sub>3</sub>COOH'ta 4 hidrojen vardır ama yalnızca <b>1 tanesi</b> asidik (COOH grubundaki). Formüldeki bütün H'leri saymak klasik hatadır.</li>
+</ul>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 29</span><span class="seviye s-kolay">Kolay</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki maddeleri asit ve baz olarak sınıflandırın.</p>
+<ul class="oncul">
+<li><b>I.</b> HNO<sub>3</sub> &nbsp;&nbsp; <b>II.</b> KOH &nbsp;&nbsp; <b>III.</b> H<sub>2</sub>SO<sub>4</sub></li>
+<li><b>IV.</b> NH<sub>3</sub> &nbsp;&nbsp; <b>V.</b> CH<sub>3</sub>COOH &nbsp;&nbsp; <b>VI.</b> Ca(OH)<sub>2</sub></li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>Asitler:</b> I, III, V. Formülün başında H bulunması tipik işarettir (HNO<sub>3</sub>, H<sub>2</sub>SO<sub>4</sub>); CH<sub>3</sub>COOH ise sondaki COOH grubuyla asittir.</li>
+<li><b>Bazlar:</b> II, VI. Yapılarında OH<sup>−</sup> taşırlar.</li>
+<li><b>IV özel:</b> NH<sub>3</sub> yapısında OH yok, ama suda NH<sub>3</sub> + H<sub>2</sub>O → NH<sub>4</sub><sup>+</sup> + OH<sup>−</sup> dengesiyle ortama OH<sup>−</sup> verir → <b>bazdır</b>.</li>
+<li>Ders: "OH içeriyorsa bazdır" ezberi eksiktir. Ölçüt, <b>suda ne verdiğidir</b>.</li>
+</ol>
+<div class="cevap">Asit: I, III, V &nbsp;·&nbsp; Baz: II, IV, VI</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 30</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">HCl çözeltisi ile NaOH çözeltisi karıştırılıyor.</p>
+<ul class="siklar">
+<li><b>a)</b> Moleküler denklemi yazın.</li>
+<li><b>b)</b> İyonik ve net iyon denklemlerini yazın.</li>
+<li><b>c)</b> Seyirci iyonları belirtin ve suyu buharlaştırırsak geriye ne kalacağını söyleyin.</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>a) HCl(suda) + NaOH(suda) → NaCl(suda) + H<sub>2</sub>O(s)</li>
+<li>İyonik: H<sup>+</sup> + Cl<sup>−</sup> + Na<sup>+</sup> + OH<sup>−</sup> → Na<sup>+</sup> + Cl<sup>−</sup> + H<sub>2</sub>O(s)</li>
+<li>Su <b>ayrılmaz</b> yazılır — çözünmüş bir tuz değil, saf sıvıdır.</li>
+<li>b) Net iyon: <b>H<sup>+</sup>(suda) + OH<sup>−</sup>(suda) → H<sub>2</sub>O(s)</b></li>
+<li>c) Seyirciler: <b>Na<sup>+</sup> ve Cl<sup>−</sup></b>. Suyu buharlaştırırsak bu iki iyon birleşip <b>NaCl katısı</b> olarak geride kalır.</li>
+<li>Bu, tuzun tepkimede "oluşmadığını", zaten çözeltide serbest duran iyonların suyun gitmesiyle bir araya geldiğini gösterir.</li>
+</ol>
+<div class="cevap">b) H<sup>+</sup> + OH<sup>−</sup> → H<sub>2</sub>O &nbsp;·&nbsp; c) Na<sup>+</sup>, Cl<sup>−</sup>; geriye NaCl kalır</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 31</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki nötrleşme denklemlerini denkleştirin.</p>
+<ul class="oncul">
+<li><b>I.</b> H<sub>2</sub>SO<sub>4</sub> + KOH → K<sub>2</sub>SO<sub>4</sub> + H<sub>2</sub>O</li>
+<li><b>II.</b> HNO<sub>3</sub> + Ca(OH)<sub>2</sub> → Ca(NO<sub>3</sub>)<sub>2</sub> + H<sub>2</sub>O</li>
+<li><b>III.</b> H<sub>3</sub>PO<sub>4</sub> + NaOH → Na<sub>3</sub>PO<sub>4</sub> + H<sub>2</sub>O</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Kısa yol: asidin verdiği H sayısı ile bazın verdiği OH sayısını eşitle; oluşan su sayısı da bu sayıya eşittir.</li>
+<li><b>I.</b> H<sub>2</sub>SO<sub>4</sub> 2 H verir, KOH 1 OH verir → 1 : 2.<br><b>H<sub>2</sub>SO<sub>4</sub> + 2KOH → K<sub>2</sub>SO<sub>4</sub> + 2H<sub>2</sub>O</b></li>
+<li><b>II.</b> HNO<sub>3</sub> 1 H, Ca(OH)<sub>2</sub> 2 OH verir → 2 : 1.<br><b>2HNO<sub>3</sub> + Ca(OH)<sub>2</sub> → Ca(NO<sub>3</sub>)<sub>2</sub> + 2H<sub>2</sub>O</b></li>
+<li><b>III.</b> H<sub>3</sub>PO<sub>4</sub> 3 H, NaOH 1 OH → 1 : 3.<br><b>H<sub>3</sub>PO<sub>4</sub> + 3NaOH → Na<sub>3</sub>PO<sub>4</sub> + 3H<sub>2</sub>O</b></li>
+<li>Kontrol için tuzun formülüne bak: Na<sub>3</sub>PO<sub>4</sub>'te 3 Na var, demek ki 3 NaOH harcanmış ✔</li>
+</ol>
+<div class="cevap">I) 1-2-1-2 &nbsp;·&nbsp; II) 2-1-1-2 &nbsp;·&nbsp; III) 1-3-1-3</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 32</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">HCl + NaOH, HNO<sub>3</sub> + KOH ve HCl + KOH tepkimelerinin <b>net iyon denklemleri aynıdır</b>.</p>
+<ul class="siklar">
+<li><b>a)</b> Bu neden böyledir?</li>
+<li><b>b)</b> Buna göre "net iyon denklemi verilirse hangi asit ve bazın kullanıldığı bulunabilir" yargısı doğru mudur?</li>
+<li><b>c)</b> H<sub>2</sub>SO<sub>4</sub> + Ba(OH)<sub>2</sub> tepkimesinde net iyon denklemi yine aynı mıdır?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>a) Üç tepkimede de gerçekten değişen tek şey H<sup>+</sup> ile OH<sup>−</sup>'nin birleşip su vermesidir. Na<sup>+</sup>, K<sup>+</sup>, Cl<sup>−</sup>, NO<sub>3</sub><sup>−</sup> baştan sona serbest iyon hâlinde kalır → hepsi seyircidir.</li>
+<li>Net iyon denklemi yalnızca <b>gerçekten değişen</b> kısmı yazar; seyirciler silindiğinde üçünden de aynı ifade kalır.</li>
+<li>b) <b>Yanlıştır.</b> Net denklem seyircileri sildiği için hangi tuzun kullanıldığını söylemez. Aynı net denklemi veren sonsuz sayıda asit-baz çifti vardır.</li>
+<li>c) <b>Hayır, aynı değildir.</b> Ba<sup>2+</sup> ile SO<sub>4</sub><sup>2−</sup> çözünmeyen BaSO<sub>4</sub>'ü verir; bu iyonlar seyirci olamaz, çünkü ortamdan ayrılırlar.</li>
+<li>Net iyon: <b>2H<sup>+</sup> + SO<sub>4</sub><sup>2−</sup> + Ba<sup>2+</sup> + 2OH<sup>−</sup> → BaSO<sub>4</sub>(k) + 2H<sub>2</sub>O(s)</b></li>
+<li>Burada tek tepkimede hem <b>nötrleşme</b> hem <b>çökelme</b> vardır; bu yüzden hiçbir iyon seyirci kalmaz.</li>
+</ol>
+<div class="cevap">a) Seyirciler silindiği için &nbsp;·&nbsp; b) Yanlış &nbsp;·&nbsp; c) Hayır; BaSO<sub>4</sub> çöktüğü için denklem farklıdır</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 33</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Bir öğrenci CaCO<sub>3</sub> katısı üzerine HCl çözeltisi damlatıyor. Kabarcıklar çıkıyor ve çıkan gaz kireç suyunu bulandırıyor.</p>
+<ul class="siklar">
+<li><b>a)</b> Tepkime denklemini yazın.</li>
+<li><b>b)</b> Bu bir nötrleşme tepkimesi midir?</li>
+<li><b>c)</b> Net iyon denklemini yazın.</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Kireç suyunu bulandıran gaz <b>CO<sub>2</sub></b>'dir.</li>
+<li>a) CaCO<sub>3</sub>(k) + 2HCl(suda) → CaCl<sub>2</sub>(suda) + H<sub>2</sub>O(s) + CO<sub>2</sub>(g)</li>
+<li>b) Ürünler arasında tuz ve su var, ama <b>ek olarak gaz da çıkıyor</b>. Asit bir bazla değil, bir <b>karbonat tuzuyla</b> tepkimeye girmiştir. Klasik anlamda nötrleşme değildir; asit-karbonat tepkimesidir. Yine de asidin H<sup>+</sup>'ı harcandığı için ortam nötrleşmeye doğru gider.</li>
+<li>c) CaCO<sub>3</sub> <b>katıdır</b>, iyonlarına ayrılmaz. Cl<sup>−</sup> seyircidir.</li>
+<li>Net iyon: <b>CaCO<sub>3</sub>(k) + 2H<sup>+</sup>(suda) → Ca<sup>2+</sup>(suda) + H<sub>2</sub>O(s) + CO<sub>2</sub>(g)</b></li>
+<li>Bu tepkime mermer heykellerin asit yağmurlarında aşınmasının da denklemidir.</li>
+</ol>
+<div class="cevap">c) CaCO<sub>3</sub>(k) + 2H<sup>+</sup> → Ca<sup>2+</sup> + H<sub>2</sub>O + CO<sub>2</sub>(g)</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 34</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Kimliği bilinmeyen renksiz K çözeltisiyle şu gözlemler yapılıyor:</p>
+<ul class="oncul">
+<li><b>I.</b> Mavi turnusol kâğıdını kırmızıya çeviriyor.</li>
+<li><b>II.</b> İçine magnezyum şeridi atılınca kabarcıklar çıkıyor.</li>
+<li><b>III.</b> Ba(NO<sub>3</sub>)<sub>2</sub> çözeltisi eklenince beyaz çökelek oluşuyor.</li>
+</ul>
+<p class="veri">Buna göre K aşağıdakilerden hangisidir?</p>
+<ul class="secenek">
+<li><b>A)</b> HCl</li><li><b>B)</b> NaOH</li><li><b>C)</b> H<sub>2</sub>SO<sub>4</sub></li><li><b>D)</b> NaCl</li><li><b>E)</b> Na<sub>2</sub>SO<sub>4</sub></li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I.</b> Mavi turnusolü kırmızıya çeviriyor → K <b>asittir</b>. B, D, E elenir (bazik ve nötr tuzlar).</li>
+<li><b>II.</b> Aktif metalle H<sub>2</sub> çıkışı asit olmasını doğrular; A ve C ikisi de sağlar, ayırt etmez.</li>
+<li><b>III.</b> Ba<sup>2+</sup> ile beyaz çökelek → ortamda <b>SO<sub>4</sub><sup>2−</sup></b> var (BaSO<sub>4</sub>). HCl olsaydı BaCl<sub>2</sub> çözünür, çökelek olmazdı → A elenir.</li>
+<li>Geriye <b>C) H<sub>2</sub>SO<sub>4</sub></b> kalır: hem asittir hem sülfat içerir.</li>
+<li>Yöntem: her gözlem bir özelliği test eder. II. gözlem burada <b>ayırt edici değildir</b> — soruların içinde böyle "işe yaramaz" veri bulunması normaldir, panik yapma.</li>
+</ol>
+<div class="cevap">C) H<sub>2</sub>SO<sub>4</sub></div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 35</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">Ba(OH)<sub>2</sub> çözeltisine damla damla H<sub>2</sub>SO<sub>4</sub> çözeltisi ekleniyor. Karışımın elektrik iletkenliği ölçülüyor ve önce <b>azalıp</b> sonra <b>arttığı</b> görülüyor.</p>
+<p class="veri">Bu gözlemi açıklayın.</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Çözeltinin iletkenliği <b>serbest iyon sayısına</b> bağlıdır.</li>
+<li>Tepkime: Ba<sup>2+</sup> + 2OH<sup>−</sup> + 2H<sup>+</sup> + SO<sub>4</sub><sup>2−</sup> → BaSO<sub>4</sub>(k) + 2H<sub>2</sub>O(s)</li>
+<li>Bu tepkimede <b>dört tür iyon da</b> ortamdan çekilir: Ba<sup>2+</sup> ve SO<sub>4</sub><sup>2−</sup> katı hâlde çöker, H<sup>+</sup> ve OH<sup>−</sup> suya dönüşür.</li>
+<li>Bu yüzden asit eklendikçe serbest iyon sayısı düşer → <b>iletkenlik azalır</b>. Tam denklik noktasında ortamda neredeyse yalnızca su ve katı vardır; iletkenlik en düşük değerine iner.</li>
+<li>Denklik noktasından sonra eklenen H<sub>2</sub>SO<sub>4</sub>'ün tepkimeye girecek Ba(OH)<sub>2</sub>'si kalmamıştır; H<sup>+</sup> ve SO<sub>4</sub><sup>2−</sup> çözeltide birikir → <b>iletkenlik artar</b>.</li>
+<li>Aynı deney HCl + NaOH ile yapılsaydı iletkenlik bu kadar düşmezdi: Na<sup>+</sup> ve Cl<sup>−</sup> seyirci olarak ortamda kalmaya devam ederdi. Grafiğin dibe inmesi, <b>her iki iyonun da ortamdan ayrıldığı</b> özel durumun işaretidir.</li>
+</ol>
+<div class="cevap">Denklik noktasına kadar tüm iyonlar çökelek ve suya dönüştüğü için iletkenlik düşer, sonrasında fazla asit iyon eklediği için yükselir.</div>
+</details>
+</div>
+</div>
+
+<!-- ==================== 6 ==================== -->
+<h2><span class="no">Bölüm 6</span>İndirgenme-yükseltgenme (elektron alışverişi)</h2>
+
+<p>Bazı tepkimelerde atomlar arasında <b>elektron aktarılır</b>. Elektron veren tanecik <b>yükseltgenir</b>, elektron alan tanecik <b>indirgenir</b>. İkisi her zaman birlikte gerçekleşir: verilen elektronu alan biri olmak zorundadır.</p>
+
+<div class="kart kural">
+<div class="baslik">Kural — dört terim, tek cümle</div>
+<ul>
+<li><b>Yükseltgenme:</b> elektron <b>verme</b>. Tanecik daha pozitif hâle geçer. (Zn → Zn<sup>2+</sup> + 2e<sup>−</sup>)</li>
+<li><b>İndirgenme:</b> elektron <b>alma</b>. Tanecik daha negatif hâle geçer. (Cu<sup>2+</sup> + 2e<sup>−</sup> → Cu)</li>
+<li><b>İndirgen:</b> elektronu <b>veren</b> maddedir; karşısındakini indirger, kendi yükseltgenir.</li>
+<li><b>Yükseltgen:</b> elektronu <b>alan</b> maddedir; karşısındakini yükseltger, kendi indirgenir.</li>
+</ul>
+<p>Verilen elektron sayısı, alınan elektron sayısına <b>daima eşittir</b>. Denkleştirmenin anahtarı budur.</p>
+</div>
+
+<div class="kart ek-not">
+<div class="baslik">Müfredat notu</div>
+<p>10. sınıf Maarif Modeli kimya ders kitabında <b>"yükseltgenme basamağı" terimi geçmez</b>; indirgenme-yükseltgenme doğrudan <b>elektron alışverişi</b> üzerinden anlatılır. Bu bölüm de o çerçeveye sadık kalır. Yükseltgenme basamağı hesabı AYT'de işine yarar ama ders kitabı sınavında sorulmaz; aşağıda ayrıca işaretlenmiştir.</p>
+</div>
+
+<h3>Nerede karşımıza çıkar?</h3>
+<ul>
+<li><b>Metal + asit:</b> Zn(k) + 2HCl(suda) → ZnCl<sub>2</sub>(suda) + H<sub>2</sub>(g)</li>
+<li><b>Metal + tuz çözeltisi (yer değiştirme):</b> Fe(k) + CuSO<sub>4</sub>(suda) → FeSO<sub>4</sub>(suda) + Cu(k)</li>
+<li><b>Yanma:</b> 2Mg(k) + O<sub>2</sub>(g) → 2MgO(k)</li>
+<li><b>Paslanma, pil tepkimeleri, fotosentez ve solunum</b> da bu ailedendir.</li>
+</ul>
+
+<div class="kart tuzak">
+<div class="baslik">Tuzak</div>
+<ul>
+<li>"İndirgen" ile "indirgenen" karıştırılır. <b>İndirgen = elektron veren = yükseltgenen</b> maddedir. Terim, maddenin kendine değil karşısına yaptığı işe göre verilmiştir.</li>
+<li>Çökelme ve nötrleşme tepkimelerinde elektron aktarımı <b>yoktur</b>; bunlar redoks değildir. AgNO<sub>3</sub> + NaCl'de iyonlar yalnızca eşleşir, yük değiştirmez.</li>
+<li>Yer değiştirmenin gerçekleşmesi için giren metalin, çözeltideki metalden <b>daha aktif</b> olması gerekir. Aksi hâlde tepkime olmaz.</li>
+</ul>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 36</span><span class="seviye s-kolay">Kolay</span></div>
+<div class="govde">
+<p class="metin">Zn(k) + Cu<sup>2+</sup>(suda) → Zn<sup>2+</sup>(suda) + Cu(k)</p>
+<ul class="siklar">
+<li><b>a)</b> Hangi tanecik elektron vermiştir?</li>
+<li><b>b)</b> Hangisi indirgenmiştir?</li>
+<li><b>c)</b> İndirgen ve yükseltgen maddeleri yazın.</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Zn yüksüzken Zn<sup>2+</sup> olmuş → yükü artmış → <b>2 elektron vermiş</b>.</li>
+<li>Cu<sup>2+</sup> yüksüz Cu olmuş → yükü azalmış → <b>2 elektron almış</b>.</li>
+<li>a) Elektronu veren <b>Zn</b>'dir (yükseltgenmiştir).</li>
+<li>b) İndirgenen <b>Cu<sup>2+</sup></b>'dir.</li>
+<li>c) İndirgen madde <b>Zn</b>, yükseltgen madde <b>Cu<sup>2+</sup></b>'dir.</li>
+<li>Kontrol: verilen 2 elektron, alınan 2 elektrona eşit ✔</li>
+</ol>
+<div class="cevap">a) Zn &nbsp;·&nbsp; b) Cu<sup>2+</sup> &nbsp;·&nbsp; c) İndirgen Zn, yükseltgen Cu<sup>2+</sup></div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 37</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">2Mg(k) + O<sub>2</sub>(g) → 2MgO(k) tepkimesi için yarı tepkimeleri yazın ve elektron denkliğini gösterin.</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>MgO iyonik bir bileşiktir: Mg<sup>2+</sup> ve O<sup>2−</sup> iyonlarından oluşur.</li>
+<li><b>Yükseltgenme:</b> Mg → Mg<sup>2+</sup> + 2e<sup>−</sup> &nbsp;(her Mg atomu 2 elektron verir)</li>
+<li><b>İndirgenme:</b> O<sub>2</sub> + 4e<sup>−</sup> → 2O<sup>2−</sup> &nbsp;(O<sub>2</sub> molekülü toplam 4 elektron alır)</li>
+<li>Denklik için yükseltgenme yarı tepkimesini <b>2 ile çarp</b>: 2Mg → 2Mg<sup>2+</sup> + 4e<sup>−</sup></li>
+<li>Şimdi verilen 4 elektron, alınan 4 elektrona eşit ✔ Toplanınca 2Mg + O<sub>2</sub> → 2MgO elde edilir.</li>
+<li>Denklemdeki 2 katsayısı buradan gelir: elektron denkliği katsayıyı <b>zorunlu kılar</b>, keyfi değildir.</li>
+</ol>
+<div class="cevap">2Mg → 2Mg<sup>2+</sup> + 4e<sup>−</sup> &nbsp;·&nbsp; O<sub>2</sub> + 4e<sup>−</sup> → 2O<sup>2−</sup></div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 38</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki tepkimelerden hangileri indirgenme-yükseltgenme tepkimesidir?</p>
+<ul class="oncul">
+<li><b>I.</b> AgNO<sub>3</sub>(suda) + NaCl(suda) → AgCl(k) + NaNO<sub>3</sub>(suda)</li>
+<li><b>II.</b> Zn(k) + 2HCl(suda) → ZnCl<sub>2</sub>(suda) + H<sub>2</sub>(g)</li>
+<li><b>III.</b> HCl(suda) + NaOH(suda) → NaCl(suda) + H<sub>2</sub>O(s)</li>
+<li><b>IV.</b> CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) → CO<sub>2</sub>(g) + 2H<sub>2</sub>O(s)</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Ölçüt: bir taneciğin <b>yükü değişmiş mi</b>?</li>
+<li><b>I ✘</b> Ag<sup>+</sup> başta da sonda da +1, Cl<sup>−</sup> da −1. Yalnızca eşleşme değişti → çökelme, redoks değil.</li>
+<li><b>II ✔</b> Zn (0) → Zn<sup>2+</sup>, H<sup>+</sup> (+1) → H<sub>2</sub> (0). Elektron aktarılmış.</li>
+<li><b>III ✘</b> Na<sup>+</sup>, Cl<sup>−</sup> yükleri sabit; H<sup>+</sup> ve OH<sup>−</sup> birleşip su verdi ama elektron aktarımı yok → nötrleşme.</li>
+<li><b>IV ✔</b> Elementel O<sub>2</sub> (0) bileşikte O olarak bulunuyor; karbon oksijenle bağ kuruyor. Yanma tepkimelerinin <b>tamamı</b> redokstur.</li>
+<li>Pratik ipucu: denklemin bir tarafında <b>serbest element</b> (Zn, O<sub>2</sub>, H<sub>2</sub>, Cu) varsa ve öbür tarafta bileşik hâline geçmişse tepkime neredeyse kesinlikle redokstur.</li>
+</ol>
+<div class="cevap">II ve IV</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 39</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Demir çivi CuSO<sub>4</sub> çözeltisine batırıldığında üzeri kırmızımsı bir tabakayla kaplanıyor ve çözeltinin mavi rengi soluyor. Buna karşılık bakır tel FeSO<sub>4</sub> çözeltisine batırıldığında hiçbir değişim gözlenmiyor.</p>
+<ul class="siklar">
+<li><b>a)</b> Gerçekleşen tepkimenin denklemini yazın.</li>
+<li><b>b)</b> Hangi metal daha aktiftir?</li>
+<li><b>c)</b> İkinci deneyde neden tepkime olmuyor?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>a) Fe(k) + CuSO<sub>4</sub>(suda) → FeSO<sub>4</sub>(suda) + Cu(k)<br>Net iyon: <b>Fe(k) + Cu<sup>2+</sup>(suda) → Fe<sup>2+</sup>(suda) + Cu(k)</b></li>
+<li>Çivinin üzerindeki kırmızımsı tabaka açığa çıkan <b>bakır</b>, solan mavi renk de azalan <b>Cu<sup>2+</sup></b> iyonlarıdır.</li>
+<li>b) Elektronu veren Fe'dir. Elektron vermeye daha istekli olan metal daha aktiftir → <b>Fe, Cu'dan aktiftir</b>.</li>
+<li>c) İkinci deneyde bakırın Fe<sup>2+</sup>'ye elektron vermesi gerekirdi; ama Cu daha az aktiftir, elektron vermez → tepkime <b>gerçekleşmez</b>.</li>
+<li>Genel kural: yer değiştirme yalnızca <b>aktif metal, daha az aktif metali tuzundan ayırıyorsa</b> gerçekleşir. Ters yönü kendiliğinden olmaz.</li>
+<li>Bu, konserve kutularının içinin kalayla, gemi gövdelerinin çinkoyla kaplanmasının da mantığıdır: daha aktif metal kendini feda eder.</li>
+</ol>
+<div class="cevap">a) Fe + Cu<sup>2+</sup> → Fe<sup>2+</sup> + Cu &nbsp;·&nbsp; b) Fe &nbsp;·&nbsp; c) Cu daha az aktif olduğu için elektron veremez</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 40</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">X, Y ve Z metalleriyle yapılan deneylerin sonuçları:</p>
+<ul class="oncul">
+<li><b>I.</b> X + Y<sup>2+</sup> → X<sup>2+</sup> + Y &nbsp;(gerçekleşiyor)</li>
+<li><b>II.</b> Z + X<sup>2+</sup> → tepkime gözlenmiyor</li>
+<li><b>III.</b> Y + Z<sup>2+</sup> → Y<sup>2+</sup> + Z &nbsp;(gerçekleşiyor)</li>
+</ul>
+<p class="veri">Buna göre metallerin aktiflik sıralaması nedir?</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Kural: tepkime gerçekleşiyorsa <b>katı hâlde giren metal daha aktiftir</b>.</li>
+<li><b>I'den:</b> X katı olarak girdi ve Y'yi açığa çıkardı → <b>X &gt; Y</b></li>
+<li><b>III'ten:</b> Y katı olarak girdi ve Z'yi açığa çıkardı → <b>Y &gt; Z</b></li>
+<li>Birleştir: X &gt; Y &gt; Z</li>
+<li><b>II ile kontrol:</b> Z katı olarak girmiş ama tepkime olmamış → Z, X'ten <b>az aktif</b> olmalı. Sıralamamız bunu zaten söylüyor ✔ Yani II. veri çelişki içermiyor, sıralamayı doğruluyor.</li>
+<li>Not: II'de tepkime <b>olmaması</b> da bir bilgidir. "Bir şey olmadı" verisi çoğu zaman en kesin elemeyi yapar.</li>
+</ol>
+<div class="cevap">X &gt; Y &gt; Z</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 41</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Al(k) + Cu<sup>2+</sup>(suda) → Al<sup>3+</sup>(suda) + Cu(k) tepkimesini elektron denkliğini kullanarak denkleştirin.</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>Yükseltgenme:</b> Al → Al<sup>3+</sup> + 3e<sup>−</sup> &nbsp;(her Al 3 elektron verir)</li>
+<li><b>İndirgenme:</b> Cu<sup>2+</sup> + 2e<sup>−</sup> → Cu &nbsp;(her Cu<sup>2+</sup> 2 elektron alır)</li>
+<li>Verilen ve alınan elektron sayıları eşitlenmeli. 3 ile 2'nin ortak katı <b>6</b>'dır.</li>
+<li>İlk yarı tepkimeyi 2 ile çarp: 2Al → 2Al<sup>3+</sup> + 6e<sup>−</sup></li>
+<li>İkinciyi 3 ile çarp: 3Cu<sup>2+</sup> + 6e<sup>−</sup> → 3Cu</li>
+<li>Topla: <b>2Al(k) + 3Cu<sup>2+</sup>(suda) → 2Al<sup>3+</sup>(suda) + 3Cu(k)</b></li>
+<li>Yük kontrolü: solda 3 × (+2) = +6, sağda 2 × (+3) = +6 ✔ Atom kontrolü de tutuyor.</li>
+</ol>
+<div class="cevap">2Al + 3Cu<sup>2+</sup> → 2Al<sup>3+</sup> + 3Cu</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 42</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">Eşit kütlede iki demir çivi alınıyor. Birincisi CuSO<sub>4</sub> çözeltisine, ikincisi saf suya batırılıp bir gün bekletiliyor. Sonunda:</p>
+<ul class="oncul">
+<li><b>I.</b> Birinci çivinin kütlesi artmış, çözeltinin mavi rengi solmuştur.</li>
+<li><b>II.</b> İkinci çivinin üzerinde kahverengi lekeler oluşmuştur.</li>
+</ul>
+<p class="veri">Her iki gözlemi de indirgenme-yükseltgenme diliyle açıklayın ve birinci çivideki kütle artışını gerekçelendirin.</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I.</b> Fe(k) + Cu<sup>2+</sup> → Fe<sup>2+</sup> + Cu(k). Demir yükseltgenip çözeltiye geçer, bakır iyonları indirgenip çivinin üzerine katı olarak birikir.</li>
+<li>Kütle artışının sebebi: her 1 mol Fe (56 g) çözeltiye geçerken yerine 1 mol Cu (64 g) çöker. Ayrılandan <b>ağır</b> bir madde biriktiği için net kütle artar.</li>
+<li>Sayısal kontrol: 0,1 mol dönüşümde çivi 5,6 g kaybeder, 6,4 g kazanır → net <b>+0,8 g</b>.</li>
+<li><b>II.</b> Saf suda bile çözünmüş oksijen vardır. Demir yükseltgenip Fe<sup>2+</sup>/Fe<sup>3+</sup>'ye dönüşür, oksijen indirgenir; sonuçta pas (demir oksit) oluşur.</li>
+<li>Her iki olayda da <b>demir elektron veren taraftır</b>, yani indirgendir. Değişen yalnızca elektronu alan maddedir: birincide Cu<sup>2+</sup>, ikincide O<sub>2</sub>.</li>
+<li>Bu yüzden demir yapılar hem tuzlu-nemli ortamdan hem daha soy metallerle temastan korunur.</li>
+</ol>
+<div class="cevap">Her ikisinde de demir yükseltgenir; birinci çividen ayrılan Fe'nin yerine daha ağır Cu biriktiği için kütle artar (0,1 mol için +0,8 g).</div>
+</details>
+</div>
+</div>
+
+<!-- ==================== 7 ==================== -->
+<h2><span class="no">Bölüm 7</span>Sentez, analiz, yer değiştirme ve yanma</h2>
+
+<p>Önceki bölümlerde tepkimeleri <b>ne olduğuna</b> göre ayırdık (çökelme, nötrleşme, redoks). Şimdi <b>denklemin biçimine</b> göre ayıracağız. Bir tepkime aynı anda birden fazla sınıfa girebilir — bu bir çelişki değil, iki farklı bakış açısıdır.</p>
+
+<div class="tablo-sar">
+<table>
+<tr><th>Tür</th><th>Kalıp</th><th>Örnek</th></tr>
+<tr><td><b>Sentez (birleşme)</b></td><td>A + B → AB</td><td>N<sub>2</sub> + 3H<sub>2</sub> → 2NH<sub>3</sub></td></tr>
+<tr><td><b>Analiz (ayrışma)</b></td><td>AB → A + B</td><td>CaCO<sub>3</sub> → CaO + CO<sub>2</sub></td></tr>
+<tr><td><b>Yer değiştirme</b></td><td>A + BC → AC + B</td><td>Fe + CuSO<sub>4</sub> → FeSO<sub>4</sub> + Cu</td></tr>
+<tr><td><b>Çift yer değiştirme</b></td><td>AB + CD → AD + CB</td><td>AgNO<sub>3</sub> + NaCl → AgCl + NaNO<sub>3</sub></td></tr>
+<tr><td><b>Yanma</b></td><td>Madde + O<sub>2</sub> → oksitler</td><td>CH<sub>4</sub> + 2O<sub>2</sub> → CO<sub>2</sub> + 2H<sub>2</sub>O</td></tr>
+</table>
+</div>
+
+<div class="kart kural">
+<div class="baslik">Kural — hidrokarbon yanması</div>
+<ul>
+<li><b>Tam yanma:</b> yeterli oksijen varsa ürünler <b>yalnızca CO<sub>2</sub> ve H<sub>2</sub>O</b>'dur.</li>
+<li><b>Eksik yanma:</b> oksijen yetersizse ürünler arasında <b>CO</b> ve/veya <b>is (C)</b> bulunur.</li>
+<li>Denkleştirme sırası: önce <b>C</b>, sonra <b>H</b>, en son <b>O</b>. Oksijeni sona bırakmak neredeyse her zaman işi kolaylaştırır.</li>
+<li>Bütün yanma tepkimeleri aynı zamanda <b>redokstur</b>; oksijen elektron alarak indirgenir.</li>
+</ul>
+</div>
+
+<div class="kart tuzak">
+<div class="baslik">Tuzak</div>
+<ul>
+<li>"Ürün sayısı 1 ise sentez, 2 ise analiz" ezberi yanlıştır. Ölçüt <b>madde sayısı değil, kalıptır</b>: sentezde birden çok madde <b>tek</b> bileşik verir, analizde <b>tek</b> bileşik parçalanır.</li>
+<li>Çift yer değiştirmenin gerçekleşmesi için ürünlerden birinin ortamdan <b>ayrılması</b> gerekir: çökelek, su ya da gaz. Aksi hâlde tepkime yoktur (Bölüm 4).</li>
+<li>Tek yer değiştirmede sadece metaller değil <b>halojenler</b> de yarışır: aktiflik F<sub>2</sub> &gt; Cl<sub>2</sub> &gt; Br<sub>2</sub> &gt; I<sub>2</sub> şeklindedir.</li>
+</ul>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 43</span><span class="seviye s-kolay">Kolay</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki tepkimeleri türlerine göre sınıflandırın.</p>
+<ul class="oncul">
+<li><b>I.</b> 2KClO<sub>3</sub> → 2KCl + 3O<sub>2</sub></li>
+<li><b>II.</b> CaO + H<sub>2</sub>O → Ca(OH)<sub>2</sub></li>
+<li><b>III.</b> Zn + 2HCl → ZnCl<sub>2</sub> + H<sub>2</sub></li>
+<li><b>IV.</b> BaCl<sub>2</sub> + Na<sub>2</sub>SO<sub>4</sub> → BaSO<sub>4</sub> + 2NaCl</li>
+<li><b>V.</b> C<sub>2</sub>H<sub>6</sub> + O<sub>2</sub> → CO<sub>2</sub> + H<sub>2</sub>O</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I → analiz.</b> Tek bileşik ısıyla iki ürüne parçalanıyor.</li>
+<li><b>II → sentez.</b> İki madde birleşip tek bileşik veriyor.</li>
+<li><b>III → yer değiştirme.</b> Zn, HCl'deki hidrojenin yerine geçiyor; açığa H<sub>2</sub> çıkıyor. Aynı zamanda redokstur.</li>
+<li><b>IV → çift yer değiştirme.</b> İyonlar eş değiştiriyor, BaSO<sub>4</sub> çöküyor. Aynı zamanda çökelme tepkimesidir.</li>
+<li><b>V → yanma.</b> Denkleşmiş hâli: 2C<sub>2</sub>H<sub>6</sub> + 7O<sub>2</sub> → 4CO<sub>2</sub> + 6H<sub>2</sub>O</li>
+<li>Not: III, IV ve V aynı anda başka bir sınıfa da giriyor. Bir tepkimeye tek etiket yapıştırmak zorunda değilsin.</li>
+</ol>
+<div class="cevap">I analiz · II sentez · III yer değiştirme · IV çift yer değiştirme · V yanma</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 44</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Propanın (C<sub>3</sub>H<sub>8</sub>) tam ve eksik yanma denklemlerini yazıp denkleştirin. Eksik yanmada ürün olarak yalnızca CO ve H<sub>2</sub>O oluştuğunu kabul edin.</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>Tam yanma.</b> Önce C: 3 karbon → 3CO<sub>2</sub>. Sonra H: 8 hidrojen → 4H<sub>2</sub>O.</li>
+<li>En son O: sağda 3×2 + 4×1 = 10 oksijen atomu → solda 5 tane O<sub>2</sub>.<br><b>C<sub>3</sub>H<sub>8</sub> + 5O<sub>2</sub> → 3CO<sub>2</sub> + 4H<sub>2</sub>O</b></li>
+<li><b>Eksik yanma.</b> C: 3 karbon → 3CO. H: 8 hidrojen → 4H<sub>2</sub>O.</li>
+<li>O: sağda 3×1 + 4×1 = 7 oksijen atomu. 7 tek sayı olduğu için tüm denklemi <b>2 ile çarpmak</b> gerekir.</li>
+<li><b>2C<sub>3</sub>H<sub>8</sub> + 7O<sub>2</sub> → 6CO + 8H<sub>2</sub>O</b></li>
+<li>Kontrol: C 6 = 6 ✔ H 16 = 16 ✔ O 14 = 6 + 8 = 14 ✔</li>
+<li>Karşılaştırma: aynı miktar propan için tam yanma 5 mol, eksik yanma 3,5 mol O<sub>2</sub> ister. Eksik yanmanın sebebi zaten oksijenin yetersizliğidir.</li>
+</ol>
+<div class="cevap">Tam: C<sub>3</sub>H<sub>8</sub> + 5O<sub>2</sub> → 3CO<sub>2</sub> + 4H<sub>2</sub>O &nbsp;·&nbsp; Eksik: 2C<sub>3</sub>H<sub>8</sub> + 7O<sub>2</sub> → 6CO + 8H<sub>2</sub>O</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 45</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Bir evde şofben bacasız bir banyoda çalıştırıldığında zehirlenme riski doğar. Kimyasal olarak ne oluyor, açıklayın ve neden CO'nun tehlikeli olduğunu belirtin.</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Kapalı ortamda yanma sürdükçe oksijen tükenir; yanma <b>tam yanmadan eksik yanmaya</b> kayar.</li>
+<li>Tam yanma: CH<sub>4</sub> + 2O<sub>2</sub> → CO<sub>2</sub> + 2H<sub>2</sub>O</li>
+<li>Eksik yanma: 2CH<sub>4</sub> + 3O<sub>2</sub> → 2CO + 4H<sub>2</sub>O</li>
+<li>Oluşan <b>CO renksiz ve kokusuzdur</b>; kişi tehlikeyi fark edemez.</li>
+<li>CO, kandaki hemoglobine oksijenden çok daha kuvvetli bağlanır; hemoglobin oksijen taşıyamaz hâle gelir. Bu yüzden "sessiz katil" denir.</li>
+<li>Önlem: baca ve havalandırma, yani ortama sürekli <b>taze oksijen</b> sağlamak. Alevin renginin sarılaşması eksik yanmanın erken işaretidir.</li>
+</ol>
+<div class="cevap">Oksijen azalınca eksik yanma başlar ve renksiz-kokusuz CO oluşur; CO hemoglobine bağlanarak oksijen taşınmasını engeller.</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 46</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">2Mg(k) + O<sub>2</sub>(g) → 2MgO(k) tepkimesi için aşağıdaki yargılardan hangileri doğrudur?</p>
+<ul class="oncul">
+<li><b>I.</b> Sentez tepkimesidir.</li>
+<li><b>II.</b> Yanma tepkimesidir.</li>
+<li><b>III.</b> İndirgenme-yükseltgenme tepkimesidir.</li>
+<li><b>IV.</b> Bir tepkime aynı anda birden fazla türe giremeyeceği için yargılardan yalnızca biri doğrudur.</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I ✔</b> İki madde birleşip tek bileşik veriyor → sentez kalıbına uyar.</li>
+<li><b>II ✔</b> Oksijenle tepkimeye girip ısı ve ışık açığa çıkarıyor → yanmadır.</li>
+<li><b>III ✔</b> Mg elektron veriyor, O<sub>2</sub> elektron alıyor → redokstur.</li>
+<li><b>IV ✘</b> Sınıflandırmalar farklı ölçütlere dayanır: sentez <b>kalıba</b>, yanma <b>oksijenle tepkimeye</b>, redoks <b>elektron aktarımına</b> bakar. Bunlar birbirini dışlamaz.</li>
+<li>Genel olarak: metallerin oksijenle yanması her zaman aynı anda sentez + yanma + redokstur.</li>
+</ol>
+<div class="cevap">I, II ve III</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 47</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki tepkimelerden hangileri gerçekleşir?</p>
+<ul class="oncul">
+<li><b>I.</b> Cl<sub>2</sub> + 2KBr → 2KCl + Br<sub>2</sub></li>
+<li><b>II.</b> I<sub>2</sub> + 2KCl → 2KI + Cl<sub>2</sub></li>
+<li><b>III.</b> Br<sub>2</sub> + 2KI → 2KBr + I<sub>2</sub></li>
+<li><b>IV.</b> Cu + 2HCl → CuCl<sub>2</sub> + H<sub>2</sub></li>
+</ul>
+<p class="veri">Halojen aktifliği: F<sub>2</sub> &gt; Cl<sub>2</sub> &gt; Br<sub>2</sub> &gt; I<sub>2</sub> · Cu, hidrojenden az aktiftir.</p>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Kural: serbest hâlde giren tanecik, bileşikteki taneciği <b>yerinden edebilmek için daha aktif</b> olmalı.</li>
+<li><b>I ✔</b> Cl<sub>2</sub> serbest, Br bileşikte. Cl<sub>2</sub> &gt; Br<sub>2</sub> olduğu için Cl bromu yerinden eder.</li>
+<li><b>II ✘</b> I<sub>2</sub> serbest, Cl bileşikte. Ama I<sub>2</sub> &lt; Cl<sub>2</sub> → gerçekleşmez.</li>
+<li><b>III ✔</b> Br<sub>2</sub> serbest, I bileşikte. Br<sub>2</sub> &gt; I<sub>2</sub> → gerçekleşir.</li>
+<li><b>IV ✘</b> Cu hidrojenden az aktif olduğu için HCl'den H<sub>2</sub> açığa çıkaramaz. (Bakır kaplar bu yüzden seyreltik HCl'den etkilenmez.)</li>
+<li>Kalıp aynı: ister metal ister halojen olsun, <b>serbest olan daha aktifse</b> tepkime yürür.</li>
+</ol>
+<div class="cevap">I ve III</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 48</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki denklemleri denkleştirin.</p>
+<ul class="oncul">
+<li><b>I.</b> Al + O<sub>2</sub> → Al<sub>2</sub>O<sub>3</sub></li>
+<li><b>II.</b> Fe<sub>2</sub>O<sub>3</sub> + C → Fe + CO<sub>2</sub></li>
+<li><b>III.</b> C<sub>4</sub>H<sub>10</sub> + O<sub>2</sub> → CO<sub>2</sub> + H<sub>2</sub>O</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I.</b> Sağda 2 Al ve 3 O var. Al'yi 2, O<sub>2</sub>'yi 3/2 alırsak: Al<sub>2</sub>O<sub>3</sub> denk olur. Kesirden kurtulmak için tümünü 2 ile çarp.<br><b>4Al + 3O<sub>2</sub> → 2Al<sub>2</sub>O<sub>3</sub></b></li>
+<li><b>II.</b> Önce Fe: 2Fe<sub>2</sub>O<sub>3</sub> alırsak 4 Fe olur. Oksijen: solda 6, sağda CO<sub>2</sub> başına 2 → 3CO<sub>2</sub>. Karbon: 3C.<br><b>2Fe<sub>2</sub>O<sub>3</sub> + 3C → 4Fe + 3CO<sub>2</sub></b></li>
+<li>Kontrol: Fe 4=4, O 6=6, C 3=3 ✔ (Bu, yüksek fırında demir üretiminin özet denklemidir.)</li>
+<li><b>III.</b> C: 4 → 4CO<sub>2</sub>. H: 10 → 5H<sub>2</sub>O. O: sağda 8 + 5 = 13 atom → 13/2 O<sub>2</sub>.</li>
+<li>Kesir olduğu için tümünü 2 ile çarp:<br><b>2C<sub>4</sub>H<sub>10</sub> + 13O<sub>2</sub> → 8CO<sub>2</sub> + 10H<sub>2</sub>O</b></li>
+<li>Yöntem özeti: C → H → O sırasıyla git, sonda kesir çıkarsa tüm denklemi çarparak temizle.</li>
+</ol>
+<div class="cevap">I) 4-3-2 &nbsp;·&nbsp; II) 2-3-4-3 &nbsp;·&nbsp; III) 2-13-8-10</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 49</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">Kapalı bir kapta 8,0 gram X bileşiği ısıtılıyor ve yalnızca iki elemente ayrışıyor: 6,4 gram Y ve geri kalanı Z.</p>
+<ul class="siklar">
+<li><b>a)</b> Tepkimenin türü nedir?</li>
+<li><b>b)</b> Z kaç gramdır ve bileşikteki kütle oranı nedir?</li>
+<li><b>c)</b> Bu verilerle X'in formülü bulunabilir mi?</li>
+<li><b>d)</b> 20 gram X ayrıştırılsaydı kaç gram Y elde edilirdi?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>a) Tek bileşik parçalanıp elementlerini veriyor → <b>analiz (ayrışma)</b> tepkimesi.</li>
+<li>b) Kapalı kapta kütle korunur: m(Z) = 8,0 − 6,4 = <b>1,6 gram</b>.</li>
+<li>Kütle oranı Y : Z = 6,4 : 1,6 = <b>4 : 1</b>. Bu oran bileşiğe özgüdür ve miktardan bağımsızdır.</li>
+<li>c) <b>Bulunamaz.</b> Formül için atom sayısı oranı gerekir; elimizde yalnızca kütle oranı var. Y ve Z'nin atom kütleleri bilinmeden kütle oranı atom oranına çevrilemez.</li>
+<li>d) Sabit oran çalışır: 8,0 gram X'ten 6,4 gram Y çıkıyorsa, 20 gram X'ten (20 ÷ 8,0) × 6,4 = <b>16 gram Y</b> çıkar.</li>
+<li>Ayrıca 20 − 16 = 4 gram Z elde edilir; oran yine 4 : 1 ✔</li>
+<li>Bu soru Modül 2'nin (mol kavramı) kapısını açıyor: kütle oranından formüle geçmek için <b>mol</b> gerekir.</li>
+</ol>
+<div class="cevap">a) Analiz &nbsp;·&nbsp; b) 1,6 g Z; Y : Z = 4 : 1 &nbsp;·&nbsp; c) Hayır &nbsp;·&nbsp; d) 16 gram</div>
+</details>
+</div>
+</div>
+
+<!-- ==================== 8 ==================== -->
+<h2><span class="no">Bölüm 8</span>Görsel sorular: modeller, tanecik kutuları ve grafikler</h2>
+
+<p>Sınav sorularının önemli bir kısmı sözle değil <b>şekille</b> verilir. Bu bölümde aynı kimyayı üç görsel dilde okuyacağız: tanecik kutusu, molekül modeli ve grafik.</p>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 50</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Kapalı bir kapta gerçekleşen tepkimenin öncesi ve sonrası aşağıda tanecik modeliyle verilmiştir.</p>
+<figure>
+<svg viewBox="0 0 340 170" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif" font-size="11" role="img" aria-label="Tepkime öncesi ve sonrası tanecik kutuları">
+<rect x="8" y="26" width="145" height="130" rx="10" fill="#FBF9F7" stroke="#E7E0D9"/>
+<rect x="187" y="26" width="145" height="130" rx="10" fill="#FBF9F7" stroke="#E7E0D9"/>
+<text x="80" y="18" text-anchor="middle" fill="#5C554F" font-weight="700">Tepkime öncesi</text>
+<text x="259" y="18" text-anchor="middle" fill="#5C554F" font-weight="700">Tepkime sonrası</text>
+<g fill="#0B5C8A">
+<circle cx="40" cy="55" r="9"/><circle cx="58" cy="55" r="9"/>
+<circle cx="40" cy="90" r="9"/><circle cx="58" cy="90" r="9"/>
+<circle cx="40" cy="125" r="9"/><circle cx="58" cy="125" r="9"/>
+</g>
+<g fill="#F85300">
+<circle cx="110" cy="90" r="9"/><circle cx="128" cy="90" r="9"/>
+</g>
+<g fill="#0B5C8A">
+<circle cx="215" cy="60" r="9"/><circle cx="233" cy="60" r="9"/>
+<circle cx="215" cy="100" r="9"/><circle cx="233" cy="100" r="9"/>
+<circle cx="215" cy="140" r="9"/><circle cx="233" cy="140" r="9"/>
+</g>
+<g fill="#F85300">
+<circle cx="251" cy="60" r="9"/><circle cx="251" cy="100" r="9"/>
+</g>
+<text x="300" y="150" fill="#5C554F">● A &nbsp; ● B</text>
+<circle cx="292" cy="146" r="5" fill="#0B5C8A"/><circle cx="316" cy="146" r="5" fill="#F85300"/>
+</svg>
+<figcaption>Mavi tanecikler A, turuncu tanecikler B atomunu gösterir.</figcaption>
+</figure>
+<ul class="siklar">
+<li><b>a)</b> Tepkimenin denklemini yazın.</li>
+<li><b>b)</b> Hangi madde sınırlayıcıdır, hangisi artmıştır?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Öncesini oku: <b>3 tane A<sub>2</sub></b> ve <b>1 tane B<sub>2</sub></b> var.</li>
+<li>Sonrasını oku: <b>2 tane A<sub>2</sub>B</b> ve <b>1 tane A<sub>2</sub></b> var.</li>
+<li>Harcananlar: 2 A<sub>2</sub> ve 1 B<sub>2</sub>. Oluşan: 2 A<sub>2</sub>B.</li>
+<li>a) <b>2A<sub>2</sub> + B<sub>2</sub> → 2A<sub>2</sub>B</b></li>
+<li>Atom kontrolü: solda 4 A + 2 B, sağda 4 A + 2 B ✔</li>
+<li>b) B<sub>2</sub>'nin tamamı bitmiş, A<sub>2</sub>'den 1 tane kalmış → <b>B<sub>2</sub> sınırlayıcı, A<sub>2</sub> artan</b>.</li>
+<li>Kutu sorularında yöntem hep aynı: <b>ne kayboldu, ne oluştu, ne kaldı</b> — üçünü ayrı ayrı say.</li>
+</ol>
+<div class="cevap">a) 2A<sub>2</sub> + B<sub>2</sub> → 2A<sub>2</sub>B &nbsp;·&nbsp; b) Sınırlayıcı B<sub>2</sub>, artan A<sub>2</sub></div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 51</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Aşağıda bir molekülün Lewis yapısı verilmiştir.</p>
+<figure>
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif" font-size="16" role="img" aria-label="Bir molekülün Lewis yapısı">
+<circle cx="143" cy="46" r="3" fill="#14110F"/><circle cx="157" cy="46" r="3" fill="#14110F"/>
+<text x="150" y="82" text-anchor="middle" font-weight="700" fill="#14110F">N</text>
+<line x1="138" y1="80" x2="105" y2="103" stroke="#14110F" stroke-width="2"/>
+<line x1="150" y1="90" x2="150" y2="112" stroke="#14110F" stroke-width="2"/>
+<line x1="162" y1="80" x2="195" y2="103" stroke="#14110F" stroke-width="2"/>
+<text x="96" y="118" text-anchor="middle" font-weight="700" fill="#14110F">H</text>
+<text x="150" y="130" text-anchor="middle" font-weight="700" fill="#14110F">H</text>
+<text x="204" y="118" text-anchor="middle" font-weight="700" fill="#14110F">H</text>
+</svg>
+<figcaption>Noktalar ortaklanmamış elektron çiftini, çizgiler bağları gösterir.</figcaption>
+</figure>
+<ul class="siklar">
+<li><b>a)</b> Molekülün formülü nedir?</li>
+<li><b>b)</b> Kaç bağ, kaç ortaklanmamış elektron çifti vardır?</li>
+<li><b>c)</b> Aynı bilgi top-çubuk modelinden okunabilir mi?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Merkezde N, çevresinde üç H bağlı → a) formül <b>NH<sub>3</sub></b>.</li>
+<li>b) <b>3 tane N—H bağı</b> ve azotun üzerinde <b>1 tane ortaklanmamış elektron çifti</b> vardır.</li>
+<li>Azotun 5 değerlik elektronu var: 3 tanesi bağlarda paylaşılır, kalan 2 tanesi çift hâlinde durur.</li>
+<li>c) <b>Bağ sayısı okunur, ortaklanmamış çift okunamaz.</b> Top-çubuk modeli yalnızca atomları ve bağları çizer; elektronları göstermez.</li>
+<li>Bu ayrım önemlidir: NH<sub>3</sub>'ün piramit şeklinde olmasının sebebi tam da bu görünmeyen elektron çiftidir.</li>
+</ol>
+<div class="cevap">a) NH<sub>3</sub> &nbsp;·&nbsp; b) 3 bağ, 1 ortaklanmamış çift &nbsp;·&nbsp; c) Yalnızca bağ sayısı okunur</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 52</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Aynı molekül üç farklı modelle çizilmiştir.</p>
+<figure>
+<svg viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif" font-size="12" role="img" aria-label="Çizgi-bağ, top-çubuk ve uzay-dolgu modelleri">
+<text x="56" y="20" text-anchor="middle" fill="#5C554F" font-weight="700">I</text>
+<text x="170" y="20" text-anchor="middle" fill="#5C554F" font-weight="700">II</text>
+<text x="284" y="20" text-anchor="middle" fill="#5C554F" font-weight="700">III</text>
+<g font-weight="700" fill="#14110F" font-size="14">
+<text x="56" y="70" text-anchor="middle">O</text>
+<line x1="46" y1="76" x2="28" y2="98" stroke="#14110F" stroke-width="2"/>
+<line x1="66" y1="76" x2="84" y2="98" stroke="#14110F" stroke-width="2"/>
+<text x="22" y="112" text-anchor="middle">H</text>
+<text x="90" y="112" text-anchor="middle">H</text>
+</g>
+<line x1="170" y1="70" x2="146" y2="100" stroke="#8A8078" stroke-width="6"/>
+<line x1="170" y1="70" x2="194" y2="100" stroke="#8A8078" stroke-width="6"/>
+<circle cx="170" cy="70" r="15" fill="#C7381A"/>
+<circle cx="143" cy="103" r="9" fill="#E7E0D9" stroke="#B9AFA5"/>
+<circle cx="197" cy="103" r="9" fill="#E7E0D9" stroke="#B9AFA5"/>
+<circle cx="266" cy="98" r="20" fill="#E7E0D9" stroke="#B9AFA5"/>
+<circle cx="302" cy="98" r="20" fill="#E7E0D9" stroke="#B9AFA5"/>
+<circle cx="284" cy="72" r="28" fill="#C7381A"/>
+<text x="170" y="140" text-anchor="middle" fill="#5C554F">bağ açısı görünür</text>
+<text x="284" y="140" text-anchor="middle" fill="#5C554F">hacim oranı görünür</text>
+</svg>
+<figcaption>I, II ve III aynı maddenin farklı gösterimleridir.</figcaption>
+</figure>
+<ul class="siklar">
+<li><b>a)</b> Modelleri adlandırın.</li>
+<li><b>b)</b> "Oksijen atomu hidrojenden büyüktür" bilgisini hangisi/hangileri verir?</li>
+<li><b>c)</b> "Bağ açısı yaklaşık 104,5°'dir" bilgisini hangisi verir?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>a) <b>I: çizgi-bağ</b> (semboller ve bağ çizgileri) · <b>II: top-çubuk</b> (küçük küreler + çubuklar) · <b>III: uzay-dolgu</b> (birbirine geçmiş büyük küreler).</li>
+<li>b) Atom boyutlarının gerçek oranı yalnızca <b>III</b>'te görünür. II'de de kürelerin boyutu farklı çizilir ama bu oran <b>ölçekli değildir</b>, temsilîdir.</li>
+<li>c) Bağ açısı <b>II</b>'den okunur. Çubuklar arasındaki açı gerçek geometriyi yansıtır.</li>
+<li>III'te atomlar birbirine gömüldüğü için açı ölçülemez; I'de ise çizim düzlemsel ve şematiktir, açı bilgisi taşımaz.</li>
+<li>Özet: <b>formül</b> için I, <b>geometri</b> için II, <b>boyut</b> için III.</li>
+</ol>
+<div class="cevap">a) I çizgi-bağ, II top-çubuk, III uzay-dolgu &nbsp;·&nbsp; b) III &nbsp;·&nbsp; c) II</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 53</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Bir bileşiğin ısıyla ayrışması sırasında tanecik sayıları zamana göre ölçülmüş ve aşağıdaki grafik elde edilmiştir.</p>
+<figure>
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif" font-size="11" role="img" aria-label="Tanecik sayısı zaman grafiği">
+<defs><marker id="ok2" markerWidth="8" markerHeight="8" refX="0" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 z" fill="#14110F"/></marker></defs>
+<line x1="48" y1="162" x2="306" y2="162" stroke="#14110F" stroke-width="1.4" marker-end="url(#ok2)"/>
+<line x1="48" y1="162" x2="48" y2="20" stroke="#14110F" stroke-width="1.4" marker-end="url(#ok2)"/>
+<text x="268" y="182" fill="#5C554F">Zaman</text>
+<text x="18" y="40" transform="rotate(-90 18,40)" fill="#5C554F">Tanecik sayısı</text>
+<line x1="44" y1="130" x2="48" y2="130" stroke="#14110F"/><text x="38" y="134" text-anchor="end" fill="#5C554F">2</text>
+<line x1="44" y1="98" x2="48" y2="98" stroke="#14110F"/><text x="38" y="102" text-anchor="end" fill="#5C554F">4</text>
+<line x1="44" y1="66" x2="48" y2="66" stroke="#14110F"/><text x="38" y="70" text-anchor="end" fill="#5C554F">6</text>
+<line x1="44" y1="34" x2="48" y2="34" stroke="#14110F"/><text x="38" y="38" text-anchor="end" fill="#5C554F">8</text>
+<g stroke="#B9AFA5" stroke-dasharray="4 4" stroke-width="1">
+<line x1="48" y1="66" x2="150" y2="66"/>
+<line x1="48" y1="130" x2="296" y2="130"/>
+<line x1="48" y1="34" x2="296" y2="34"/>
+</g>
+<path d="M48,66 L150,98 L250,130 L296,130" fill="none" stroke="#0B5C8A" stroke-width="2.4"/>
+<path d="M48,162 L150,98 L250,34 L296,34" fill="none" stroke="#F85300" stroke-width="2.4"/>
+<text x="250" y="146" fill="#0B5C8A" font-weight="700">X</text>
+<text x="250" y="26" fill="#F85300" font-weight="700">Y</text>
+</svg>
+<figcaption>X maddesinin tanecik sayısı azalırken Y maddesininki artmaktadır.</figcaption>
+</figure>
+<ul class="siklar">
+<li><b>a)</b> Tepkimenin türü nedir?</li>
+<li><b>b)</b> X ve Y'nin katsayı oranı kaçtır?</li>
+<li><b>c)</b> Tepkime neden bir süre sonra durmuştur?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>X azalıyor → <b>giren</b>; Y artıyor → <b>ürün</b>. Tek madde parçalanıp ürün verdiği için <b>analiz</b> tepkimesidir.</li>
+<li>b) Grafikten değişimleri oku: X 6'dan 2'ye inmiş → <b>ΔX = 4</b>. Y 0'dan 8'e çıkmış → <b>ΔY = 8</b>.</li>
+<li>Katsayı oranı, <b>değişim miktarlarının</b> oranıdır: 4 : 8 = <b>1 : 2</b>.</li>
+<li>Denklem kalıbı: X → 2Y</li>
+<li>c) X'in tamamı bitmediği hâlde çizgiler yataylaşmış. Demek ki tepkime X tükendiği için değil, <b>durduğu</b> için bitmiştir (ısıtma kesilmiş ya da denge kurulmuş olabilir).</li>
+<li>Sık yapılan hata: başlangıç değerlerinin oranını (6 : 0) almak. Katsayıyı belirleyen <b>başlangıç değeri değil, değişim</b>dir.</li>
+</ol>
+<div class="cevap">a) Analiz &nbsp;·&nbsp; b) 1 : 2 (X → 2Y) &nbsp;·&nbsp; c) X bitmeden durduğu için tepkime tamamlanmamıştır</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 54</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">İki ayrı deneyde, eşit derişimli baz çözeltilerine damla damla asit ekleniyor ve iletkenlik ölçülüyor.</p>
+<figure>
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif" font-size="11" role="img" aria-label="İletkenlik eklenen asit hacmi grafiği">
+<defs><marker id="ok3" markerWidth="8" markerHeight="8" refX="0" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 z" fill="#14110F"/></marker></defs>
+<line x1="48" y1="160" x2="306" y2="160" stroke="#14110F" stroke-width="1.4" marker-end="url(#ok3)"/>
+<line x1="48" y1="160" x2="48" y2="20" stroke="#14110F" stroke-width="1.4" marker-end="url(#ok3)"/>
+<text x="232" y="180" fill="#5C554F">Eklenen asit hacmi</text>
+<text x="18" y="40" transform="rotate(-90 18,40)" fill="#5C554F">İletkenlik</text>
+<line x1="170" y1="160" x2="170" y2="30" stroke="#B9AFA5" stroke-dasharray="4 4"/>
+<text x="170" y="26" text-anchor="middle" fill="#8A8078">denklik noktası</text>
+<path d="M48,50 L170,110 L292,50" fill="none" stroke="#0B5C8A" stroke-width="2.4"/>
+<path d="M48,50 L170,152 L292,50" fill="none" stroke="#F85300" stroke-width="2.4"/>
+<text x="96" y="76" fill="#0B5C8A" font-weight="700">Deney 1</text>
+<text x="96" y="140" fill="#F85300" font-weight="700">Deney 2</text>
+</svg>
+<figcaption>Her iki deneyde de denklik noktası aynı hacimde gözlenmiştir.</figcaption>
+</figure>
+<p class="veri">Deneylerden biri NaOH + HCl, diğeri Ba(OH)<sub>2</sub> + H<sub>2</sub>SO<sub>4</sub> çiftidir.</p>
+<ul class="siklar">
+<li><b>a)</b> Hangi eğri hangi deneye aittir?</li>
+<li><b>b)</b> Deney 2'de iletkenliğin neredeyse sıfıra inmesinin sebebi nedir?</li>
+<li><b>c)</b> Denklik noktasından sonra iki eğri de neden yükseliyor?</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>İletkenlik <b>serbest iyon sayısıyla</b> orantılıdır.</li>
+<li>NaOH + HCl'de H<sup>+</sup> ve OH<sup>−</sup> suya dönüşür ama <b>Na<sup>+</sup> ve Cl<sup>−</sup> çözeltide kalır</b> → iletkenlik düşer, sıfıra inmez.</li>
+<li>Ba(OH)<sub>2</sub> + H<sub>2</sub>SO<sub>4</sub>'te ise Ba<sup>2+</sup> ve SO<sub>4</sub><sup>2−</sup> BaSO<sub>4</sub> olarak <b>çöker</b>, H<sup>+</sup> ve OH<sup>−</sup> suya dönüşür → dört iyon da ortamdan çekilir.</li>
+<li>a) <b>Deney 1 = NaOH + HCl</b> (dibe inmeyen mavi eğri), <b>Deney 2 = Ba(OH)<sub>2</sub> + H<sub>2</sub>SO<sub>4</sub></b> (dibe inen turuncu eğri).</li>
+<li>b) Çözeltide iyon taşıyacak neredeyse hiçbir tanecik kalmadığı için; ortamda katı BaSO<sub>4</sub> ve su vardır.</li>
+<li>c) Denklik noktasından sonra eklenen asidin tepkimeye girecek bazı kalmamıştır; H<sup>+</sup> ve anyonları çözeltide <b>birikmeye başlar</b> → iyon sayısı, dolayısıyla iletkenlik artar.</li>
+<li>Grafiğin <b>ne kadar dibe indiği</b>, tepkimede kaç tür iyonun ortamdan ayrıldığını söyler. Bu, iki nötrleşmeyi ayırt etmenin en pratik yoludur.</li>
+</ol>
+<div class="cevap">a) Deney 1 NaOH+HCl, Deney 2 Ba(OH)<sub>2</sub>+H<sub>2</sub>SO<sub>4</sub> &nbsp;·&nbsp; b) Dört iyon da çökelek ve suya dönüştüğü için &nbsp;·&nbsp; c) Fazla asit iyon biriktirdiği için</div>
+</details>
+</div>
+</div>
+
+<!-- ==================== 9 ==================== -->
+<h2><span class="no">Bölüm 9</span>Sınav tarzı sorular</h2>
+
+<div class="kart ek-not">
+<div class="baslik">Not</div>
+<p>Bu bölümdeki sorular ÖSYM biçiminde (beş seçenekli, öncüllü) yazılmıştır ancak <b>çıkmış sınav soruları değildir</b>; modülün konularını sınav diliyle sormak için hazırlanmıştır. 10. sınıf konuları AYT'de doğrudan sorulmaz, temel olarak kullanılır.</p>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 55</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">Kapalı bir kapta gerçekleşen bir kimyasal tepkimeyle ilgili,</p>
+<ul class="oncul">
+<li><b>I.</b> Girenlerin ve ürünlerin toplam kütleleri eşittir.</li>
+<li><b>II.</b> Girenlerin ve ürünlerin toplam mol sayıları eşittir.</li>
+<li><b>III.</b> Her elementin atom sayısı korunur.</li>
+</ul>
+<p class="veri">yargılarından hangileri <b>daima</b> doğrudur?</p>
+<ul class="secenek">
+<li><b>A)</b> Yalnız I</li><li><b>B)</b> Yalnız II</li><li><b>C)</b> I ve III</li><li><b>D)</b> II ve III</li><li><b>E)</b> I, II ve III</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I ✔</b> Kapalı sistemde kütle daima korunur.</li>
+<li><b>II ✘</b> Mol sayısı korunmayabilir: N<sub>2</sub> + 3H<sub>2</sub> → 2NH<sub>3</sub>'te 4 mol → 2 mol.</li>
+<li><b>III ✔</b> Atomlar yalnızca yer değiştirir; her elementin atom sayısı sabittir.</li>
+<li>"Daima" kelimesi kritik: bazı tepkimelerde mol sayısı tesadüfen eşit kalabilir (H<sub>2</sub> + Cl<sub>2</sub> → 2HCl), ama bu kural değildir.</li>
+</ol>
+<div class="cevap">C) I ve III</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 56</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">X, Y ve Z sulu çözeltileriyle yapılan deneylerde;</p>
+<ul class="oncul">
+<li>X + Y → beyaz çökelek</li>
+<li>X + Z → gaz çıkışı</li>
+<li>Y + Z → gözle görülür değişim yok</li>
+</ul>
+<p class="veri">gözlenmiştir. Buna göre X, Y, Z aşağıdakilerden hangisi olabilir?</p>
+<ul class="secenek">
+<li><b>A)</b> X: Na<sub>2</sub>CO<sub>3</sub>, Y: CaCl<sub>2</sub>, Z: HCl</li>
+<li><b>B)</b> X: NaCl, Y: KNO<sub>3</sub>, Z: HCl</li>
+<li><b>C)</b> X: NaOH, Y: HCl, Z: KCl</li>
+<li><b>D)</b> X: BaCl<sub>2</sub>, Y: NaCl, Z: HNO<sub>3</sub></li>
+<li><b>E)</b> X: KI, Y: NaNO<sub>3</sub>, Z: H<sub>2</sub>SO<sub>4</sub></li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>Üç gözlemi de <b>aynı anda</b> sağlayan şıkkı ararız. İki gözlemi tutturup üçüncüsünü kontrol etmemek en sık yapılan hatadır.</li>
+<li><b>A'yı dene:</b> Na<sub>2</sub>CO<sub>3</sub> + CaCl<sub>2</sub> → CaCO<sub>3</sub> beyaz çökelek ✔</li>
+<li>Na<sub>2</sub>CO<sub>3</sub> + HCl → CO<sub>2</sub> gaz çıkışı ✔</li>
+<li>CaCl<sub>2</sub> + HCl → olası ürünler yine CaCl<sub>2</sub> ve HCl; çökelek, gaz veya su oluşmaz → değişim yok ✔ Üçü de tuttu.</li>
+<li><b>B ✘</b> NaCl + KNO<sub>3</sub> çökelek vermez; ilk gözlem sağlanmaz.</li>
+<li><b>C ✘</b> NaOH + HCl nötrleşmedir, gözle görülür çökelek yoktur.</li>
+<li><b>D ✘</b> BaCl<sub>2</sub> + NaCl arasında tepkime yok; ayrıca BaCl<sub>2</sub> + HNO<sub>3</sub> gaz vermez.</li>
+<li><b>E ✘</b> KI + NaNO<sub>3</sub> çökelek vermez.</li>
+</ol>
+<div class="cevap">A) X: Na<sub>2</sub>CO<sub>3</sub>, Y: CaCl<sub>2</sub>, Z: HCl</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 57</span><span class="seviye s-orta">Orta</span></div>
+<div class="govde">
+<p class="metin">aC<sub>2</sub>H<sub>2</sub> + bO<sub>2</sub> → cCO<sub>2</sub> + dH<sub>2</sub>O</p>
+<p class="veri">denklemi en küçük tam sayılarla denkleştirildiğinde a + b + c + d toplamı kaçtır?</p>
+<ul class="secenek">
+<li><b>A)</b> 10</li><li><b>B)</b> 11</li><li><b>C)</b> 13</li><li><b>D)</b> 15</li><li><b>E)</b> 17</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li>a = 1 kabul et. C: 2 → c = 2. H: 2 → d = 1.</li>
+<li>O: sağda 2 × 2 + 1 = 5 atom → b = 5/2.</li>
+<li>Kesirden kurtulmak için tümünü 2 ile çarp: a = 2, b = 5, c = 4, d = 2.</li>
+<li><b>2C<sub>2</sub>H<sub>2</sub> + 5O<sub>2</sub> → 4CO<sub>2</sub> + 2H<sub>2</sub>O</b></li>
+<li>Toplam: 2 + 5 + 4 + 2 = <b>13</b></li>
+<li>Tuzak: kesirli hâlde bırakıp 1 + 2,5 + 2 + 1 = 6,5 bulmak ya da yalnızca b'yi 5 yapıp diğerlerini çarpmayı unutmak.</li>
+</ol>
+<div class="cevap">C) 13</div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 58</span><span class="seviye s-zor">Zor</span></div>
+<div class="govde">
+<p class="metin">Aşağıdaki tepkimelerden hangisi <b>hem</b> indirgenme-yükseltgenme <b>hem</b> yer değiştirme tepkimesidir?</p>
+<ul class="secenek">
+<li><b>A)</b> NaOH + HCl → NaCl + H<sub>2</sub>O</li>
+<li><b>B)</b> CaCO<sub>3</sub> → CaO + CO<sub>2</sub></li>
+<li><b>C)</b> Mg + 2HCl → MgCl<sub>2</sub> + H<sub>2</sub></li>
+<li><b>D)</b> AgNO<sub>3</sub> + NaCl → AgCl + NaNO<sub>3</sub></li>
+<li><b>E)</b> N<sub>2</sub> + 3H<sub>2</sub> → 2NH<sub>3</sub></li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>A ✘</b> Nötrleşme; elektron aktarımı yok.</li>
+<li><b>B ✘</b> Analiz; yükler değişmiyor.</li>
+<li><b>C ✔</b> Mg, HCl'deki hidrojenin yerine geçiyor → yer değiştirme. Mg elektron veriyor, H<sup>+</sup> alıyor → redoks.</li>
+<li><b>D ✘</b> Çift yer değiştirme; iyon yükleri sabit, redoks değil.</li>
+<li><b>E ✘</b> Redokstur ama yer değiştirme değil, <b>sentezdir</b>.</li>
+<li>Kilit ayrım: E şıkkı "redoks mu?" sorusuna evet der ama "yer değiştirme mi?" sorusuna hayır. İki koşulun <b>ikisini birden</b> arayan sorularda her şıkkı iki kez sorgula.</li>
+</ol>
+<div class="cevap">C) Mg + 2HCl → MgCl<sub>2</sub> + H<sub>2</sub></div>
+</details>
+</div>
+</div>
+
+<div class="soru">
+<div class="ust-serit"><span class="numara">Soru 59</span><span class="seviye s-ileri">İleri</span></div>
+<div class="govde">
+<p class="metin">Ağzı açık bir kapta 24 gram X katısı ısıtılıyor. Isıtma sonunda kapta 16 gram katı kalıyor ve kaptan yalnızca CO<sub>2</sub> gazı çıktığı belirleniyor.</p>
+<ul class="oncul">
+<li><b>I.</b> Olay bir analiz tepkimesidir.</li>
+<li><b>II.</b> Kütlenin korunumu yasası ihlal edilmiştir.</li>
+<li><b>III.</b> Kap kapalı olsaydı terazi 24 gramı gösterirdi.</li>
+<li><b>IV.</b> Çıkan gazın kütlesi 8 gramdır.</li>
+</ul>
+<p class="veri">yargılarından hangileri doğrudur?</p>
+<ul class="secenek">
+<li><b>A)</b> I ve II</li><li><b>B)</b> I, III ve IV</li><li><b>C)</b> II ve IV</li><li><b>D)</b> Yalnız IV</li><li><b>E)</b> I, II, III ve IV</li>
+</ul>
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
+<ol class="adim">
+<li><b>I ✔</b> Tek bileşik ısıyla parçalanıp katı ve gaz veriyor → analiz.</li>
+<li><b>II ✘</b> Yasa ihlal edilmemiştir; yalnızca çıkan gaz tartım dışında kalmıştır.</li>
+<li><b>III ✔</b> Kapalı kapta hiçbir madde çıkmayacağı için terazi başlangıç değerini gösterir.</li>
+<li><b>IV ✔</b> 24 − 16 = <b>8 gram</b> CO<sub>2</sub> çıkmıştır.</li>
+<li>II ve III birbirinin sınavıdır: III'ü doğru bulan biri II'yi de yanlış bulmak zorundadır. Öncüller arasında böyle bağlar aramak süre kazandırır.</li>
+</ol>
+<div class="cevap">B) I, III ve IV</div>
+</details>
+</div>
+</div>
+
+<!-- ==================== ETKİNLİK ==================== -->
+<h2><span class="no">Etkinlik</span>Tabloyu doldur, doğru-yanlışı işaretle</h2>
+
+<p><b>1.</b> Aşağıdaki tepkimeler için tabloyu doldurun.</p>
+
+<div class="tablo-sar">
+<table>
+<tr><th>Tepkime</th><th>Türü</th><th>Redoks mu?</th><th>Net iyon denklemi var mı?</th></tr>
+<tr><td>2Na + Cl<sub>2</sub> → 2NaCl</td><td></td><td></td><td></td></tr>
+<tr><td>Pb(NO<sub>3</sub>)<sub>2</sub> + 2KI → PbI<sub>2</sub> + 2KNO<sub>3</sub></td><td></td><td></td><td></td></tr>
+<tr><td>2H<sub>2</sub>O → 2H<sub>2</sub> + O<sub>2</sub></td><td></td><td></td><td></td></tr>
+<tr><td>KOH + HNO<sub>3</sub> → KNO<sub>3</sub> + H<sub>2</sub>O</td><td></td><td></td><td></td></tr>
+<tr><td>Zn + CuSO<sub>4</sub> → ZnSO<sub>4</sub> + Cu</td><td></td><td></td><td></td></tr>
+<tr><td>NaCl + KNO<sub>3</sub> → ?</td><td></td><td></td><td></td></tr>
+</table>
+</div>
+
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Cevapları göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Cevapları gizle</span></summary>
+<div class="tablo-sar">
+<table>
+<tr><th>Tepkime</th><th>Türü</th><th>Redoks</th><th>Net iyon</th></tr>
+<tr><td>2Na + Cl<sub>2</sub> → 2NaCl</td><td>Sentez</td><td>Evet</td><td>Hayır (sulu değil)</td></tr>
+<tr><td>Pb(NO<sub>3</sub>)<sub>2</sub> + 2KI → PbI<sub>2</sub> + 2KNO<sub>3</sub></td><td>Çift yer değiştirme (çökelme)</td><td>Hayır</td><td>Pb<sup>2+</sup> + 2I<sup>−</sup> → PbI<sub>2</sub>(k)</td></tr>
+<tr><td>2H<sub>2</sub>O → 2H<sub>2</sub> + O<sub>2</sub></td><td>Analiz</td><td>Evet</td><td>Hayır</td></tr>
+<tr><td>KOH + HNO<sub>3</sub> → KNO<sub>3</sub> + H<sub>2</sub>O</td><td>Nötrleşme</td><td>Hayır</td><td>H<sup>+</sup> + OH<sup>−</sup> → H<sub>2</sub>O</td></tr>
+<tr><td>Zn + CuSO<sub>4</sub> → ZnSO<sub>4</sub> + Cu</td><td>Yer değiştirme</td><td>Evet</td><td>Zn + Cu<sup>2+</sup> → Zn<sup>2+</sup> + Cu</td></tr>
+<tr><td>NaCl + KNO<sub>3</sub></td><td>Tepkime yok</td><td>Hayır</td><td>Yazılamaz</td></tr>
+</table>
+</div>
+</details>
+
+<p style="margin-top:26px"><b>2.</b> Aşağıdaki ifadelerin başına doğruysa <b>D</b>, yanlışsa <b>Y</b> yazın.</p>
+
+<ul class="oncul">
+<li><b>a)</b> (....) Gaz çıkışı gözlenen her olay kimyasal değişimdir.</li>
+<li><b>b)</b> (....) Kimyasal tepkimede toplam molekül sayısı korunur.</li>
+<li><b>c)</b> (....) Bütün yanma tepkimeleri aynı zamanda redokstur.</li>
+<li><b>d)</b> (....) Net iyon denklemi verilen bir tepkimenin hangi tuzlarla yapıldığı kesin olarak bulunabilir.</li>
+<li><b>e)</b> (....) İndirgen madde, tepkimede elektron veren maddedir.</li>
+<li><b>f)</b> (....) Uzay-dolgu modeli bağ açılarını gösterir.</li>
+<li><b>g)</b> (....) Bir tepkime hem sentez hem redoks olabilir.</li>
+<li><b>h)</b> (....) Açık kapta gaz çıkışlı bir tepkimede kütlenin korunumu yasası geçersizdir.</li>
+</ul>
+
+<details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Cevapları göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Cevapları gizle</span></summary>
+<ol class="adim">
+<li><b>a) Y</b> — Kaynayan su, açılan gazoz fiziksel olduğu hâlde gaz çıkarır.</li>
+<li><b>b) Y</b> — Korunan atom sayısıdır; molekül sayısı değişebilir.</li>
+<li><b>c) D</b> — Yanmada oksijen elektron alır, yakıt verir.</li>
+<li><b>d) Y</b> — Seyirci iyonlar silindiği için hangi tuzun kullanıldığı anlaşılamaz.</li>
+<li><b>e) D</b> — İndirgen elektron verir, kendisi yükseltgenir.</li>
+<li><b>f) Y</b> — Bağ açısını top-çubuk gösterir; uzay-dolgu hacim oranını gösterir.</li>
+<li><b>g) D</b> — 2Mg + O<sub>2</sub> → 2MgO hem sentez hem redokstur.</li>
+<li><b>h) Y</b> — Yasa geçerlidir; yalnızca çıkan gaz tartımda görünmez.</li>
+</ol>
+<div class="cevap">a) Y · b) Y · c) D · d) Y · e) D · f) Y · g) D · h) Y</div>
+</details>
+
+<!-- ==================== KENDİN ÇÖZ ==================== -->
+<div class="test">
+<h3>Kendin çöz</h3>
+<p class="alt-baslik">Bölüm 1-7 karışık · cevapları açmadan önce kâğıt üzerinde dene</p>
+<ol>
+<li><span class="tip">Değişim türü</span>Bir demir çivi bir gece boyunca tuzlu suda bekletiliyor ve üzerinde kahverengi bir tabaka oluşuyor. Bu tabakayı zımparayla temizlediğimizde çivinin kütlesi başlangıçtakinden az çıkıyor. Olayı sınıflandırın ve kütle kaybını açıklayın.
+<details><summary>Cevabı gör</summary><p>Kimyasal değişim (paslanma). Demir atomlarının bir kısmı okside dönüşüp zımparayla birlikte uzaklaştığı için çivinin kütlesi azalır; sistemin toplam kütlesi ise korunur.</p></details></li>
+
+<li><span class="tip">Korunan-değişen</span>Kapalı bir kapta 2SO<sub>2</sub>(g) + O<sub>2</sub>(g) → 2SO<sub>3</sub>(g) tepkimesi gerçekleşiyor. Toplam kütle, toplam mol sayısı, toplam atom sayısı ve ortalama mol kütlesi nasıl değişir?
+<details><summary>Cevabı gör</summary><p>Kütle sabit, atom sayısı sabit, mol sayısı azalır (3 → 2), ortalama mol kütlesi artar.</p></details></li>
+
+<li><span class="tip">Kütle korunumu</span>16 gram X ile 12 gram Y tam olarak birleşip XY bileşiğini veriyor. 24 gram X ile 24 gram Y karıştırılırsa kaç gram bileşik oluşur ve hangi madde kaç gram artar?
+<details><summary>Cevabı gör</summary><p>Oran X : Y = 4 : 3. 24 g X, 18 g Y ister → Y fazla. 24 + 18 = 42 gram bileşik oluşur, 6 gram Y artar.</p></details></li>
+
+<li><span class="tip">Gösterge</span>Aşağıdakilerden hangisi kimyasal değişimin kesin göstergesi <b>değildir</b>? A) Kireç suyunu bulandıran gaz çıkışı B) İki çözelti karışınca çökelek oluşması C) Buzun erirken ısı alması D) Yanma sırasında ışık çıkması
+<details><summary>Cevabı gör</summary><p>C. Erime fiziksel bir olaydır; ısı alışverişi tek başına kimyasal değişim göstermez.</p></details></li>
+
+<li><span class="tip">Tanecik sayımı</span>Bir kapta 4 tane A<sub>2</sub> ve 6 tane B<sub>2</sub> molekülü var. Tepkime sonunda 8 tane AB<sub>2</sub> oluşuyor. Kapta hangi maddeden kaç molekül artar?
+<details><summary>Cevabı gör</summary><p>8 AB<sub>2</sub> için 8 A ve 16 B atomu gerekir. Elimizde 8 A (tam) ve 12 B atomu var — 16 &gt; 12 olduğundan bu ürün miktarı mümkün değildir. Veriler tutarsızdır; en fazla 6 tane AB<sub>2</sub> oluşabilir ve 1 tane A<sub>2</sub> artar.</p></details></li>
+
+<li><span class="tip">Modelleme</span>"Sofra tuzu kristali, Na<sup>+</sup> ve Cl<sup>−</sup> iyonlarının üç boyutlu düzenli yığını olarak gösterilmiştir." Bu ifade hangi düzeydedir?
+<details><summary>Cevabı gör</summary><p>Alt mikroskobik düzey — tanecikler ve dizilişleri anlatılıyor.</p></details></li>
+
+<li><span class="tip">Açık-kapalı sistem</span>Ağzı açık bir kapta magnezyum şeridi yakılıyor ve tartım <b>artıyor</b>. Bu, kütlenin korunumu yasasına aykırı mıdır?
+<details><summary>Cevabı gör</summary><p>Hayır. Havadan oksijen sisteme katıldığı için katının kütlesi artar (2Mg + O<sub>2</sub> → 2MgO). Giren oksijen de hesaba katılırsa kütle korunur.</p></details></li>
+
+<li><span class="tip">Yorum</span>Bir öğrenci "kimyasal tepkimede molekül sayısı korunur" diyor. Bu yargıyı çürüten bir örnek verin.
+<details><summary>Cevabı gör</summary><p>N<sub>2</sub> + 3H<sub>2</sub> → 2NH<sub>3</sub>: 4 molekül girer, 2 molekül çıkar. Korunan şey atom sayısıdır.</p></details></li>
+
+<li><span class="tip">Ayırt etme</span>Elinizde kimliği bilinmeyen beyaz bir katı var. Isıtınca eriyor, soğuyunca yine aynı beyaz katıyı veriyor. Bu katı hakkında ne söylenebilir, ne söylenemez?
+<details><summary>Cevabı gör</summary><p>Söylenebilir: gözlenen olay fizikseldir. Söylenemez: maddenin ne olduğu, saf olup olmadığı. Erime sırasında sıcaklığın sabit kalıp kalmadığına bakılmadan saflık hakkında yorum yapılamaz.</p></details></li>
+
+<li><span class="tip">Denklem okuma</span>2C<sub>2</sub>H<sub>6</sub> + 7O<sub>2</sub> → 4CO<sub>2</sub> + 6H<sub>2</sub>O denkleminde iki tarafta kaçar tane oksijen atomu vardır?
+<details><summary>Cevabı gör</summary><p>Solda 7 × 2 = 14. Sağda 4 × 2 + 6 × 1 = 8 + 6 = 14. Eşit ✔</p></details></li>
+
+<li><span class="tip">Çok adımlı</span>Kapalı bir kapta 10 gram CaCO<sub>3</sub> ısıtılıyor, bir süre sonra kap açılıp tekrar tartıldığında 5,6 gram katı kalıyor. Kaç gram gaz çıkmıştır ve kap açılmasaydı terazi ne gösterirdi?
+<details><summary>Cevabı gör</summary><p>Çıkan gaz 10 − 5,6 = 4,4 gram CO<sub>2</sub>. Kap açılmasaydı terazi 10 gramı göstermeye devam ederdi.</p></details></li>
+
+<li><span class="tip">Bütünleştirici</span>Bir tepkimede girenlerin toplam kütlesi 60 gram, ürünlerden biri 24 gram. Geriye kalan tek ürünün kütlesi kaç gramdır? Bu bilgiyle ürünün formülü bulunabilir mi?
+<details><summary>Cevabı gör</summary><p>36 gram. Formül bulunamaz — kütle korunumu yalnızca toplamı verir, mol kütlesi ve atom oranı bilinmeden formül belirlenemez.</p></details></li>
+
+<li><span class="tip">Çözünürlük</span>Aşağıdakilerden hangisi suda çözünmez? A) (NH<sub>4</sub>)<sub>2</sub>CO<sub>3</sub> B) Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> C) KI D) NaOH
+<details><summary>Cevabı gör</summary><p>B. Fosfatlar çözünmez; istisna yalnızca 1A ve NH<sub>4</sub><sup>+</sup>'dır, Ca<sup>2+</sup> bu listede yok.</p></details></li>
+
+<li><span class="tip">Net iyon</span>Na<sub>2</sub>CO<sub>3</sub> çözeltisine CaCl<sub>2</sub> çözeltisi ekleniyor. Net iyon denklemini yazın ve seyirci iyonları söyleyin.
+<details><summary>Cevabı gör</summary><p>Ca<sup>2+</sup>(suda) + CO<sub>3</sub><sup>2−</sup>(suda) → CaCO<sub>3</sub>(k). Seyirciler: Na<sup>+</sup> ve Cl<sup>−</sup>.</p></details></li>
+
+<li><span class="tip">Nötrleşme</span>2HNO<sub>3</sub> + Ba(OH)<sub>2</sub> → ? Denklemi tamamlayın ve net iyon denklemini yazın.
+<details><summary>Cevabı gör</summary><p>2HNO<sub>3</sub> + Ba(OH)<sub>2</sub> → Ba(NO<sub>3</sub>)<sub>2</sub> + 2H<sub>2</sub>O. Ba(NO<sub>3</sub>)<sub>2</sub> çözünür olduğu için net iyon denklemi H<sup>+</sup> + OH<sup>−</sup> → H<sub>2</sub>O'dur.</p></details></li>
+
+<li><span class="tip">Asit-baz</span>Bir çözelti kırmızı turnusolü maviye çeviriyor ve dokunulduğunda kaygan geliyor. İçine Mg şeridi atılırsa gaz çıkar mı?
+<details><summary>Cevabı gör</summary><p>Çözelti baziktir. Magnezyum bazlarla tepkimeye girip H<sub>2</sub> çıkarmaz; gaz gözlenmez.</p></details></li>
+
+<li><span class="tip">Redoks</span>Sn<sup>2+</sup> + 2Fe<sup>3+</sup> → Sn<sup>4+</sup> + 2Fe<sup>2+</sup> tepkimesinde indirgen ve yükseltgen maddeleri belirtin.
+<details><summary>Cevabı gör</summary><p>Sn<sup>2+</sup> 2 elektron verir → yükseltgenir, indirgen maddedir. Fe<sup>3+</sup> elektron alır → indirgenir, yükseltgen maddedir.</p></details></li>
+
+<li><span class="tip">Aktiflik</span>Gümüş kaşık CuSO<sub>4</sub> çözeltisine batırılıyor, hiçbir değişim olmuyor. Bakır tel AgNO<sub>3</sub> çözeltisine batırılınca üzerinde parlak bir tabaka oluşuyor. Hangi metal daha aktiftir?
+<details><summary>Cevabı gör</summary><p>Bakır. Cu, Ag<sup>+</sup>'ya elektron verip gümüşü açığa çıkarıyor; tersi olmuyor. Yani Cu &gt; Ag.</p></details></li>
+
+<li><span class="tip">Denkleştirme</span>C<sub>2</sub>H<sub>5</sub>OH + O<sub>2</sub> → CO<sub>2</sub> + H<sub>2</sub>O denklemini denkleştirin. (Dikkat: molekülde zaten oksijen var.)
+<details><summary>Cevabı gör</summary><p>C<sub>2</sub>H<sub>5</sub>OH + 3O<sub>2</sub> → 2CO<sub>2</sub> + 3H<sub>2</sub>O. Sağda 4 + 3 = 7 oksijen atomu var; 1 tanesi etanolden geldiği için O<sub>2</sub>'den 6 atom, yani 3 molekül gerekir.</p></details></li>
+</ol>
+</div>
+
+<div class="kart ek-not">
+<div class="baslik">Sırada ne var</div>
+<p>Bu modül tepkimelerin <b>nasıl</b> gerçekleştiğini anlattı. Modül 2 <b>ne kadar</b> sorusuna geçiyor: mol kavramı, Avogadro sayısı, mol-kütle ve mol-tanecik ilişkileri. Soru 49'da kütle oranından formüle geçemediğimiz yer, tam olarak orada çözülüyor.</p>
+</div>
+
+<nav class="gezin">
+<a class="liste" href="./"><span class="yon">Modül listesi</span><span class="ad">10. sınıf konu anlatımı</span></a>
+<a href="./10-modul-2-mol.html"><span class="yon">Sonraki modül</span><span class="ad">Modül 2 · Mol kavramı</span></a>
+<a href="../"><span class="yon">Test çöz</span><span class="ad">Konu testlerine dön</span></a>
+</nav>
+
+<footer class="alt">
+<p>kimyamed · 10. sınıf Maarif Modeli kimya konu anlatımı.</p>
+</footer>
+
+</main>
+
+<button class="yukari" id="yukari" aria-label="Yukarı çık">↑</button>
+
+<script>
+(function(){
+  var cubuk=document.getElementById('ilerleme');
+  var btn=document.getElementById('yukari');
+  function guncelle(){
+    var h=document.documentElement;
+    var oran=h.scrollTop/((h.scrollHeight-h.clientHeight)||1);
+    cubuk.style.width=(oran*100)+'%';
+    btn.classList.toggle('gor',h.scrollTop>600);
+  }
+  document.addEventListener('scroll',guncelle,{passive:true});
+  btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  guncelle();
+})();
+</script>
+</body>
+</html>
 
