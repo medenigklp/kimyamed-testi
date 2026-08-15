@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Konu Anlatımı — 11. Sınıf Kimya | kimyamed</title>
-<meta name="description" content="11. sınıf Maarif Modeli kimya müfredatına uygun konu anlatımı modülleri: enerji, hız, denge, asit-baz, çözünürlük ve sürdürülebilirlik. Çözümlü sorular, grafikler ve şekillerle.">
+<title>Konu Anlatımı — 10 ve 11. Sınıf Kimya | kimyamed</title>
+<meta name="description" content="10 ve 11. sınıf Maarif Modeli kimya müfredatına uygun konu anlatımı modülleri: kimyasal tepkimeler, mol, gazlar, çözeltiler, enerji, hız, denge, asit-baz, çözünürlük ve sürdürülebilirlik. Çözümlü sorular, grafikler ve şekillerle.">
 <style>
 :root{--turuncu:#F85300;--murekkep:#14110F;--gri:#5C554F;--kagit:#FBF9F7;--kenar:#E7E0D9;--mavi:#0B5C8A}
 *{box-sizing:border-box}
@@ -25,6 +25,14 @@ header.ust .wrap{display:flex;align-items:center;gap:12px;height:56px}
 .rozet{font-size:12.5px;font-weight:700;background:#fff;border:1px solid var(--kenar);
   border-radius:999px;padding:6px 13px;color:var(--gri)}
 .rozet b{color:var(--turuncu)}
+.sekmeler{display:flex;gap:8px;margin:0 0 22px;border-bottom:1px solid var(--kenar);padding-bottom:14px}
+.sekme{flex:1 1 0;font:inherit;font-size:15.5px;font-weight:700;cursor:pointer;
+  background:#fff;color:var(--gri);border:1px solid var(--kenar);border-radius:12px;padding:11px 10px;
+  transition:.15s;text-align:center}
+.sekme:hover{border-color:var(--turuncu)}
+.sekme[aria-selected="true"]{background:var(--turuncu);border-color:var(--turuncu);color:#fff;
+  box-shadow:0 6px 16px rgba(248,83,0,.22)}
+.sekme small{display:block;font-size:11.5px;font-weight:600;opacity:.8;letter-spacing:.04em}
 .kartlar{display:grid;gap:14px;padding-bottom:34px}
 .kart{display:block;background:#fff;border:1px solid var(--kenar);border-radius:15px;
   padding:19px 20px;text-decoration:none;color:inherit;transition:.16s}
@@ -39,17 +47,24 @@ header.ust .wrap{display:flex;align-items:center;gap:12px;height:56px}
 .sayilar{display:flex;flex-wrap:wrap;gap:7px 16px;font-size:12.5px;color:var(--gri);
   border-top:1px solid #F1ECE7;padding-top:11px}
 .sayilar b{color:var(--murekkep);font-size:14px}
+.yeni{margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  background:#E4F2EA;color:#1B6B4A;border-radius:999px;padding:3px 9px}
+.kart.yakinda{cursor:default;background:#F7F4F1;border-style:dashed}
+.kart.yakinda:hover{border-color:var(--kenar);transform:none;box-shadow:none}
+.kart.yakinda .no{background:#C9C1B9}
+.kart.yakinda h2{color:var(--gri)}
+.kart.yakinda .durum{font-size:12.5px;font-weight:700;color:#8A8078;border-top:1px solid #EDE8E3;padding-top:11px}
 .not{background:#fff;border:1px solid var(--kenar);border-left:4px solid var(--mavi);
   border-radius:12px;padding:16px 18px;margin-bottom:30px}
 .not h3{margin:0 0 7px;font-size:15.5px;color:var(--mavi)}
 .not p{margin:0;font-size:14.5px;color:var(--gri)}
 footer{border-top:1px solid var(--kenar);padding:22px 0 40px;font-size:13.5px;color:var(--gri)}
 footer a{color:var(--turuncu);font-weight:600;text-decoration:none}
-@media(min-width:700px){.kartlar{grid-template-columns:1fr 1fr}.hero h1{font-size:36px}}
+[hidden]{display:none !important}
+@media(min-width:700px){.kartlar{grid-template-columns:1fr 1fr}.hero h1{font-size:36px}.sekme{flex:0 0 200px}}
 </style>
 </head>
 <body>
-
 <header class="ust">
   <div class="wrap">
     <a class="marka" href="../" style="display:inline-flex;align-items:center;gap:9px"><img src="../logo.png" alt="" width="28" height="28" style="display:block;border-radius:50%;flex:none" onerror="this.style.display='none'"><span>kimya<b style="color:var(--turuncu);font-weight:800">med</b></span></a>
@@ -59,58 +74,124 @@ footer a{color:var(--turuncu);font-weight:600;text-decoration:none}
 
 <main class="wrap">
   <section class="hero">
-    <h1>11. Sınıf Kimya · Konu Anlatımı</h1>
-    <p>Maarif Modeli müfredatına göre hazırlanmış altı modül. Her konu şekiller ve grafiklerle anlatılıyor, ardından çözümlü sorularla pekiştiriliyor. Çözümler gizli — önce kendin dene, sonra aç.</p>
-    <div class="rozetler">
+    <h1>Kimya · Konu Anlatımı</h1>
+    <p>Maarif Modeli müfredatına göre hazırlanmış modüller. Her konu şekiller ve grafiklerle anlatılıyor, ardından çözümlü sorularla pekiştiriliyor. Çözümler gizli — önce kendin dene, sonra aç.</p>
+    <div class="rozetler" id="rozet-11">
       <span class="rozet"><b>266</b> çözümlü soru</span>
       <span class="rozet"><b>216</b> kendin çöz</span>
       <span class="rozet"><b>120+</b> şekil ve grafik</span>
       <span class="rozet">Ücretsiz · üyelik yok</span>
     </div>
+    <div class="rozetler" id="rozet-10" hidden>
+      <span class="rozet"><b>170</b> çözümlü soru</span>
+      <span class="rozet"><b>80</b> kendin çöz</span>
+      <span class="rozet"><b>20</b> şekil ve grafik</span>
+      <span class="rozet">Ücretsiz · üyelik yok</span>
+    </div>
   </section>
 
-  <div class="not">
-    <h3>Müfredat dışı içerikler işaretli</h3>
-    <p>Modüllerde AYT'de çıkabilen ancak ders kitabında yer almayan konular (tampon çözeltiler, hidroliz, K<sub>p</sub>, Q<sub>çç</sub>, Hess yasası gibi) mor <b>"müfredat dışı"</b> rozetiyle ayrı gösterilmiştir. Böylece neyin sınav için ek, neyin müfredat gereği olduğu karışmaz.</p>
+  <div class="sekmeler" role="tablist">
+    <button class="sekme" id="sekme-10" role="tab" aria-selected="false" aria-controls="liste-10">10. Sınıf<small>3 modül yayında</small></button>
+    <button class="sekme" id="sekme-11" role="tab" aria-selected="true" aria-controls="liste-11">11. Sınıf<small>6 modül · tamamlandı</small></button>
   </div>
 
-  <div class="kartlar">
-  <a class="kart" href="modul-1-enerji.html">
-    <div class="ust"><span class="no">1</span><span class="tema">1. Tema · Etkileşim</span></div>
-    <h2>Enerji, entalpi ve tepkime ısısı</h2>
-    <p>Ekzo–endotermik olaylar, entalpi, ısıl değer, bağ enerjileri, standart oluşum entalpisi ve Hess yasası. 2019–2026 çıkmış AYT soruları dâhil.</p>
-    <div class="sayilar"><span><b>43</b> çözümlü soru</span><span><b>40</b> kendin çöz</span><span><b>5</b> görsel</span></div>
-  </a>
-  <a class="kart" href="modul-2-hiz.html">
-    <div class="ust"><span class="no">2</span><span class="tema">1. Tema · Etkileşim</span></div>
-    <h2>Kimyasal tepkimelerde hız</h2>
-    <p>Etkin çarpışma, eşik enerjisi, hıza etki eden faktörler, hız denklemi ve tepkime derecesi, çok basamaklı mekanizmalar, pistonlu kaplar.</p>
-    <div class="sayilar"><span><b>30</b> çözümlü soru</span><span><b>40</b> kendin çöz</span><span><b>5</b> görsel</span></div>
-  </a>
-  <a class="kart" href="modul-3-denge.html">
-    <div class="ust"><span class="no">3</span><span class="tema">2. Tema · Çeşitlilik</span></div>
-    <h2>Kimyasal denge</h2>
-    <p>Dinamik denge, fiziksel ve kimyasal dengeler, denge sabiti, BDS tabloları, tepkime oranı ve Le Chatelier ilkesi. 16 panelli grafik atlası.</p>
-    <div class="sayilar"><span><b>51</b> çözümlü soru</span><span><b>34</b> kendin çöz</span><span><b>19</b> görsel</span></div>
-  </a>
-  <a class="kart" href="modul-4-asit-baz.html">
-    <div class="ust"><span class="no">4</span><span class="tema">2. Tema · Çeşitlilik</span></div>
-    <h2>Asit-baz dengesi</h2>
-    <p>Suyun otoiyonizasyonu, pH–pOH, asit-baz teorileri, kuvvet, pH hesapları, nötralleşme, titrasyon, indikatörler ve ürün seçimi.</p>
-    <div class="sayilar"><span><b>68</b> çözümlü soru</span><span><b>42</b> kendin çöz</span><span><b>19</b> görsel</span></div>
-  </a>
-  <a class="kart" href="modul-5-cozunurluk.html">
-    <div class="ust"><span class="no">5</span><span class="tema">2. Tema · Çeşitlilik</span></div>
-    <h2>Çözünürlük dengesi</h2>
-    <p>Çözünme–çökelme dengesi, çözünürlük çarpımı, molar çözünürlük, tuz tipleri, ortak iyon etkisi ve sıcaklığın etkisi.</p>
-    <div class="sayilar"><span><b>53</b> çözümlü soru</span><span><b>32</b> kendin çöz</span><span><b>8</b> görsel</span></div>
-  </a>
-  <a class="kart" href="modul-6-surdurulebilirlik.html">
-    <div class="ust"><span class="no">6</span><span class="tema">3. Tema · Sürdürülebilirlik</span></div>
-    <h2>Nanoteknoloji ve sürdürülebilirlik</h2>
-    <p>Yeşil hidrojen enerjisi ve hidrojen renk kodları, nanoteknolojik ürünlerin faydaları ve olası zararları, mikroplastik ve nanoplastikler.</p>
-    <div class="sayilar"><span><b>21</b> çözümlü soru</span><span><b>28</b> kendin çöz</span><span><b>3</b> görsel</span></div>
-  </a>
+  <!-- ================= 11. SINIF ================= -->
+  <div id="liste-11" role="tabpanel" aria-labelledby="sekme-11">
+    <div class="not">
+      <h3>Müfredat dışı içerikler işaretli</h3>
+      <p>Modüllerde AYT'de çıkabilen ancak ders kitabında yer almayan konular (tampon çözeltiler, hidroliz, K<sub>p</sub>, Q<sub>çç</sub>, Hess yasası gibi) mor <b>"müfredat dışı"</b> rozetiyle ayrı gösterilmiştir. Böylece neyin sınav için ek, neyin müfredat gereği olduğu karışmaz.</p>
+    </div>
+
+    <div class="kartlar">
+    <a class="kart" href="modul-1-enerji.html">
+      <div class="ust"><span class="no">1</span><span class="tema">1. Tema · Etkileşim</span></div>
+      <h2>Enerji, entalpi ve tepkime ısısı</h2>
+      <p>Ekzo–endotermik olaylar, entalpi, ısıl değer, bağ enerjileri, standart oluşum entalpisi ve Hess yasası. 2019–2026 çıkmış AYT soruları dâhil.</p>
+      <div class="sayilar"><span><b>43</b> çözümlü soru</span><span><b>40</b> kendin çöz</span><span><b>5</b> görsel</span></div>
+    </a>
+    <a class="kart" href="modul-2-hiz.html">
+      <div class="ust"><span class="no">2</span><span class="tema">1. Tema · Etkileşim</span></div>
+      <h2>Kimyasal tepkimelerde hız</h2>
+      <p>Etkin çarpışma, eşik enerjisi, hıza etki eden faktörler, hız denklemi ve tepkime derecesi, çok basamaklı mekanizmalar, pistonlu kaplar.</p>
+      <div class="sayilar"><span><b>30</b> çözümlü soru</span><span><b>40</b> kendin çöz</span><span><b>5</b> görsel</span></div>
+    </a>
+    <a class="kart" href="modul-3-denge.html">
+      <div class="ust"><span class="no">3</span><span class="tema">2. Tema · Çeşitlilik</span></div>
+      <h2>Kimyasal denge</h2>
+      <p>Dinamik denge, fiziksel ve kimyasal dengeler, denge sabiti, BDS tabloları, tepkime oranı ve Le Chatelier ilkesi. 16 panelli grafik atlası.</p>
+      <div class="sayilar"><span><b>51</b> çözümlü soru</span><span><b>34</b> kendin çöz</span><span><b>19</b> görsel</span></div>
+    </a>
+    <a class="kart" href="modul-4-asit-baz.html">
+      <div class="ust"><span class="no">4</span><span class="tema">2. Tema · Çeşitlilik</span></div>
+      <h2>Asit-baz dengesi</h2>
+      <p>Suyun otoiyonizasyonu, pH–pOH, asit-baz teorileri, kuvvet, pH hesapları, nötralleşme, titrasyon, indikatörler ve ürün seçimi.</p>
+      <div class="sayilar"><span><b>68</b> çözümlü soru</span><span><b>42</b> kendin çöz</span><span><b>19</b> görsel</span></div>
+    </a>
+    <a class="kart" href="modul-5-cozunurluk.html">
+      <div class="ust"><span class="no">5</span><span class="tema">2. Tema · Çeşitlilik</span></div>
+      <h2>Çözünürlük dengesi</h2>
+      <p>Çözünme–çökelme dengesi, çözünürlük çarpımı, molar çözünürlük, tuz tipleri, ortak iyon etkisi ve sıcaklığın etkisi.</p>
+      <div class="sayilar"><span><b>53</b> çözümlü soru</span><span><b>32</b> kendin çöz</span><span><b>8</b> görsel</span></div>
+    </a>
+    <a class="kart" href="modul-6-surdurulebilirlik.html">
+      <div class="ust"><span class="no">6</span><span class="tema">3. Tema · Sürdürülebilirlik</span></div>
+      <h2>Nanoteknoloji ve sürdürülebilirlik</h2>
+      <p>Yeşil hidrojen enerjisi ve hidrojen renk kodları, nanoteknolojik ürünlerin faydaları ve olası zararları, mikroplastik ve nanoplastikler.</p>
+      <div class="sayilar"><span><b>21</b> çözümlü soru</span><span><b>28</b> kendin çöz</span><span><b>3</b> görsel</span></div>
+    </a>
+    </div>
+  </div>
+
+  <!-- ================= 10. SINIF ================= -->
+  <div id="liste-10" role="tabpanel" aria-labelledby="sekme-10" hidden>
+    <div class="not">
+      <h3>Ders kitabına sadık, eklemeler işaretli</h3>
+      <p>10. sınıf modülleri MEB Maarif Modeli ders kitabının terimlerine bağlı kalır. Örneğin indirgenme-yükseltgenme, kitaptaki gibi <b>elektron alışverişi</b> üzerinden anlatılır; "yükseltgenme basamağı" gibi kitapta geçmeyen kavramlar mor <b>"ek konu"</b> rozetiyle ayrı gösterilir.</p>
+    </div>
+
+    <div class="kartlar">
+    <a class="kart" href="10-modul-1-tepkime-turleri.html">
+      <div class="ust"><span class="no">1</span><span class="tema">1. Tema · Etkileşim</span><span class="yeni">Yeni</span></div>
+      <h2>Kimyasal tepkimeler ve tepkime türleri</h2>
+      <p>Fiziksel–kimyasal değişim, korunan ve değişen özellikler, modelleme, çökelme ve net iyon denklemi, asit-baz ve nötrleşme, indirgenme-yükseltgenme, sentez–analiz–yer değiştirme–yanma.</p>
+      <div class="sayilar"><span><b>59</b> çözümlü soru</span><span><b>20</b> kendin çöz</span><span><b>6</b> görsel</span></div>
+    </a>
+
+    <a class="kart" href="10-modul-2-mol.html">
+      <div class="ust"><span class="no">2</span><span class="tema">1. Tema · Etkileşim</span><span class="yeni">Yeni</span></div>
+      <h2>Mol kavramı</h2>
+      <p>Avogadro sayısı, mol–tanecik ve mol–kütle ilişkileri, karışım problemleri, bağıl atom kütlesi ve izotoplar, kütlece yüzde bileşim.</p>
+      <div class="sayilar"><span><b>52</b> çözümlü soru</span><span><b>30</b> kendin çöz</span><span><b>7</b> görsel</span></div>
+    </a>
+
+    <a class="kart" href="10-modul-3-stokiyometri.html">
+      <div class="ust"><span class="no">3</span><span class="tema">1. Tema · Etkileşim</span><span class="yeni">Yeni</span></div>
+      <h2>Denkleştirme ve stokiyometri</h2>
+      <p>Denkleştirme yöntemleri, bilinmeyen formül bulma, mol–kütle geçişleri, sınırlayıcı bileşen, katı kütlesi değişimi, yüzde verim ve saflık.</p>
+      <div class="sayilar"><span><b>59</b> çözümlü soru</span><span><b>30</b> kendin çöz</span><span><b>7</b> görsel</span></div>
+    </a>
+
+    <div class="kart yakinda">
+      <div class="ust"><span class="no">4</span><span class="tema">1. Tema · Etkileşim</span></div>
+      <h2>Gazlar</h2>
+      <p>Kinetik moleküler teori, gaz yasaları, ideal gaz denklemi, Graham difüzyon ve efüzyon yasası.</p>
+      <div class="durum">Hazırlanıyor</div>
+    </div>
+
+    <div class="kart yakinda">
+      <div class="ust"><span class="no">5</span><span class="tema">2. Tema · Çeşitlilik</span></div>
+      <h2>Çözeltiler</h2>
+      <p>Çözünme süreci, çözünürlük ve etki eden faktörler, derişim birimleri (molarite, ppm), koligatif özellikler.</p>
+      <div class="durum">Hazırlanıyor</div>
+    </div>
+
+    <div class="kart yakinda">
+      <div class="ust"><span class="no">6</span><span class="tema">3. Tema · Sürdürülebilirlik</span></div>
+      <h2>Yeşil kimya</h2>
+      <p>Makro ve mikro ölçekli deneyler, atmosferdeki tepkimeler ve küresel çevre sorunları.</p>
+      <div class="durum">Hazırlanıyor</div>
+    </div>
+    </div>
   </div>
 </main>
 
@@ -118,5 +199,24 @@ footer a{color:var(--turuncu);font-weight:600;text-decoration:none}
   <p><a href="../">← kimyamed testlerine dön</a></p>
 </footer>
 
+<script>
+(function(){
+  var s10=document.getElementById('sekme-10'), s11=document.getElementById('sekme-11');
+  var l10=document.getElementById('liste-10'), l11=document.getElementById('liste-11');
+  var r10=document.getElementById('rozet-10'), r11=document.getElementById('rozet-11');
+  function sec(sinif){
+    var on10 = (sinif === '10');
+    s10.setAttribute('aria-selected', on10);
+    s11.setAttribute('aria-selected', !on10);
+    l10.hidden = !on10; l11.hidden = on10;
+    r10.hidden = !on10; r11.hidden = on10;
+    try{ history.replaceState(null,'','?sinif='+sinif); }catch(e){}
+  }
+  s10.addEventListener('click',function(){sec('10');});
+  s11.addEventListener('click',function(){sec('11');});
+  var p=new URLSearchParams(location.search).get('sinif');
+  if(p==='10'||p==='11') sec(p);
+})();
+</script>
 </body>
 </html>
