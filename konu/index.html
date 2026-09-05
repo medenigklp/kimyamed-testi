@@ -81,6 +81,12 @@ footer a{color:var(--turuncu);font-weight:600;text-decoration:none}
   <section class="hero">
     <h1>Kimya · Konu Anlatımı</h1>
     <p>Maarif Modeli müfredatına göre hazırlanmış modüller. Her konu şekiller ve grafiklerle anlatılıyor, ardından çözümlü sorularla pekiştiriliyor. Çözümler gizli — önce kendin dene, sonra aç.</p>
+    <div class="rozetler" id="rozet-9" hidden>
+      <span class="rozet"><b>466</b> çözümlü soru</span>
+      <span class="rozet"><b>184</b> kendin çöz</span>
+      <span class="rozet"><b>45</b> şekil ve grafik</span>
+      <span class="rozet">Ücretsiz · üyelik yok</span>
+    </div>
     <div class="rozetler" id="rozet-11">
       <span class="rozet"><b>266</b> çözümlü soru</span>
       <span class="rozet"><b>216</b> kendin çöz</span>
@@ -96,8 +102,44 @@ footer a{color:var(--turuncu);font-weight:600;text-decoration:none}
   </section>
 
   <div class="sekmeler" role="tablist">
+    <button class="sekme" id="sekme-9" role="tab" aria-selected="false" aria-controls="liste-9">9. Sınıf<small>4 modül · sürüyor</small></button>
     <button class="sekme" id="sekme-10" role="tab" aria-selected="false" aria-controls="liste-10">10. Sınıf<small>6 modül · tamamlandı</small></button>
     <button class="sekme" id="sekme-11" role="tab" aria-selected="true" aria-controls="liste-11">11. Sınıf<small>6 modül · tamamlandı</small></button>
+  </div>
+
+  <!-- ================= 9. SINIF ================= -->
+  <div id="liste-9" role="tabpanel" aria-labelledby="sekme-9" hidden>
+    <div class="not">
+      <h3>Yayın sürüyor · 1. Tema tamamlandı</h3>
+      <p>9. sınıf modülleri MEB Maarif Modeli ders kitabının kapsamına bağlı kalır; kitapta yer almayan ancak sınavlarda karşınıza çıkabilen konular mor <b>"ek konu"</b> rozetiyle ayrı gösterilir. 8. sınıftan gelen bilgiler ise yeşil <b>"ön bilgi"</b> rozetiyle işaretlenmiştir. <b>1. Tema (Etkileşim)</b> tamamlandı; 2. ve 3. tema modülleri hazırlanıyor.</p>
+    </div>
+
+    <div class="kartlar">
+    <a class="kart" href="9-modul-1-kimya-hayattir.html">
+      <div class="ust"><span class="no">1</span><span class="tema">1. Tema · Etkileşim</span></div>
+      <h2>Kimya hayattır</h2>
+      <p>Kimya bilimi ve alt disiplinleri, kariyer alanları, günlük hayatın kimyasalları, temizlik maddelerinin güvenli kullanımı, laboratuvar kuralları ve GHS piktogramları.</p>
+      <div class="sayilar"><span><b>122</b> çözümlü soru</span><span><b>48</b> kendin çöz</span><span><b>12</b> görsel</span></div>
+    </a>
+    <a class="kart" href="9-modul-2-atom-teorileri.html">
+      <div class="ust"><span class="no">2</span><span class="tema">1. Tema · Etkileşim</span></div>
+      <h2>Atom teorileri ve atomun yapısı</h2>
+      <p>Teori, model ve bilimsel bilginin değişebilirliği; Dalton, Thomson, Rutherford ve Bohr atom teorileri; modern atom teorisi ve orbital kavramı; proton, nötron ve elektron.</p>
+      <div class="sayilar"><span><b>106</b> çözümlü soru</span><span><b>40</b> kendin çöz</span><span><b>10</b> görsel</span></div>
+    </a>
+    <a class="kart" href="9-modul-3-orbitaller.html">
+      <div class="ust"><span class="no">3</span><span class="tema">1. Tema · Etkileşim</span></div>
+      <h2>Atom orbitalleri ve elektron dizilimi</h2>
+      <p>s, p, d ve f orbitalleri, orbitallerin bağıl enerjileri ve 4s–3d düzensizliği, Aufbau ilkesi, Pauli dışlama ilkesi ve Hund kuralı, valans elektronları, küresel simetri.</p>
+      <div class="sayilar"><span><b>100</b> çözümlü soru</span><span><b>40</b> kendin çöz</span><span><b>10</b> görsel</span></div>
+    </a>
+    <a class="kart" href="9-modul-4-periyodik-tablo.html">
+      <div class="ust"><span class="no">4</span><span class="tema">1. Tema · Etkileşim</span><span class="yeni">Yeni</span></div>
+      <h2>Periyodik tablo ve periyodik özellikler</h2>
+      <p>Tablonun gelişimi ve blok yapısı, A ve B grubu elementlerinin yerini bulma, grupların genel özellikleri, iyon oluşumu ve izoelektronik tanecikler, atom ve iyon yarıçapı, iyonlaşma enerjisi ve elektronegatiflik.</p>
+      <div class="sayilar"><span><b>138</b> çözümlü soru</span><span><b>56</b> kendin çöz</span><span><b>13</b> görsel</span></div>
+    </a>
+    </div>
   </div>
 
   <!-- ================= 11. SINIF ================= -->
@@ -208,21 +250,25 @@ footer a{color:var(--turuncu);font-weight:600;text-decoration:none}
 
 <script>
 (function(){
-  var s10=document.getElementById('sekme-10'), s11=document.getElementById('sekme-11');
-  var l10=document.getElementById('liste-10'), l11=document.getElementById('liste-11');
-  var r10=document.getElementById('rozet-10'), r11=document.getElementById('rozet-11');
+  var siniflar = ['9','10','11'], varsayilan = '11';
   function sec(sinif){
-    var on10 = (sinif === '10');
-    s10.setAttribute('aria-selected', on10);
-    s11.setAttribute('aria-selected', !on10);
-    l10.hidden = !on10; l11.hidden = on10;
-    r10.hidden = !on10; r11.hidden = on10;
+    siniflar.forEach(function(x){
+      var acik = (x === sinif);
+      var sekme = document.getElementById('sekme-'+x);
+      var liste = document.getElementById('liste-'+x);
+      var rozet = document.getElementById('rozet-'+x);
+      if(sekme) sekme.setAttribute('aria-selected', acik);
+      if(liste) liste.hidden = !acik;
+      if(rozet) rozet.hidden = !acik;
+    });
     try{ history.replaceState(null,'','?sinif='+sinif); }catch(e){}
   }
-  s10.addEventListener('click',function(){sec('10');});
-  s11.addEventListener('click',function(){sec('11');});
-  var p=new URLSearchParams(location.search).get('sinif');
-  if(p==='10'||p==='11') sec(p);
+  siniflar.forEach(function(x){
+    var sekme = document.getElementById('sekme-'+x);
+    if(sekme) sekme.addEventListener('click', function(){ sec(x); });
+  });
+  var p = new URLSearchParams(location.search).get('sinif');
+  sec(siniflar.indexOf(p) > -1 ? p : varsayilan);
 })();
 </script>
 </body>
