@@ -168,6 +168,54 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 .yukari.gor{display:flex}
 :focus-visible{outline:3px solid var(--turuncu);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== ekran: çözüm kontrol çubuğu ===== */
+.arac{position:sticky;top:56px;z-index:45;background:rgba(251,248,245,.94);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--cizgi);padding:8px 0;margin:0 0 4px}
+.arac .wrap{display:flex;gap:8px;align-items:center;padding:0}
+.arac button{font:inherit;font-size:13px;font-weight:700;cursor:pointer;background:#fff;color:var(--gri);
+  border:1px solid var(--cizgi);border-radius:999px;padding:7px 14px;transition:.15s}
+.arac button:hover{border-color:var(--turuncu);color:var(--turuncu)}
+.arac .bilgi{margin-left:auto;font-size:12px;color:var(--gri)}
+
+/* ===== baskı ===== */
+@media print{
+  @page{margin:14mm 12mm}
+  html{scroll-behavior:auto}
+  body{background:#fff;font-size:10.5pt;line-height:1.45}
+  .wrap{max-width:100%;padding:0}
+  .ust,.arac,.yukari,#ilerleme,.gezin{display:none !important}
+  .icindekiler{display:none !important}
+  .hero{padding:0 0 10px;border-bottom:2px solid #000}
+  .hero h1{font-size:20pt}
+  .hero p{display:none}
+  h2{font-size:15pt;break-after:avoid;page-break-after:avoid;margin:18px 0 6px}
+  h3{font-size:12pt;break-after:avoid;page-break-after:avoid}
+  .soru,.kart,figure,.test li,table{break-inside:avoid;page-break-inside:avoid}
+  .soru{border:1px solid #999;box-shadow:none;margin:10px 0}
+  .soru .ust-serit{background:#fff;border-bottom:1px solid #999}
+  .tur,.seviye,.ayt,.puan,.ek-rozet,.onbilgi-rozet{border:1px solid #999 !important;background:#fff !important;color:#000 !important}
+  /* açılır çözümler baskıda görünür */
+  .cozum{border-top:1px dashed #999}
+  .cozum summary{display:none !important}
+  .cozum > *:not(summary){display:block !important}
+  .cevap{background:#fff;border:1px solid #666}
+  .adim li::before{background:#fff;color:#000;border:1px solid #666}
+  /* koyu kendin-çöz bloğu baskıda beyaz */
+  .test{background:#fff !important;color:#000 !important;border:1px solid #999;padding:12px}
+  .test h3,.test .tip,.test summary{color:#000 !important}
+  .test .alt-baslik{color:#333 !important}
+  .test details{background:#fff !important;border:1px solid #bbb}
+  .test details p{color:#000 !important}
+  .test summary{display:none !important}
+  .test details > *:not(summary){display:block !important}
+  .kart{box-shadow:none}
+  .kural,.tuzak,.ek-not,.gunluk{background:#fff !important;border:1px solid #999 !important;border-left:3px solid #000 !important}
+  a{color:#000;text-decoration:none}
+  figure{border:1px solid #bbb;page-break-inside:avoid}
+  .alt{border-top:1px solid #999}
+}
+
 </style>
 </head>
 <body>
@@ -179,6 +227,14 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
   <div id="ilerleme"></div>
 </header>
+
+<div class="arac">
+  <div class="wrap">
+    <button type="button" id="tumunuAc">Tüm çözümleri aç</button>
+    <button type="button" id="tumunuKapat">Kapat</button>
+    <span class="bilgi">Yazdırmada çözümler otomatik açılır</span>
+  </div>
+</div>
 
 <main class="wrap">
 
@@ -209,6 +265,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
     <li class="ekstra"><a href="#karma">Karma tekrar<span class="sonek">20 + 10 soru</span></a></li>
     <li class="ekstra"><a href="#yazili">Yazılı denemesi · 100 puan<span class="sonek">10 soru</span></a></li>
     <li class="ekstra"><a href="#ozet">Kavram özeti<span class="sonek">tek sayfa</span></a></li>
+    <li class="ekstra"><a href="#anahtar">Cevap anahtarı<span class="sonek">190 soru</span></a></li>
   </ol>
 </div>
 
@@ -233,6 +290,12 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 
 <!-- ==================== BÖLÜM 1 ==================== -->
 <h2 id="b1"><span class="no">Bölüm 1</span>Isı, sıcaklık ve enerji değişimi</h2>
+
+<div class="kart gunluk">
+  <div class="baslik">Çekirdek rota · 6 soru</div>
+  <p>Zamanın kısıtlıysa önce şu soruları çöz: <b>Soru <a href="#s2" style="color:var(--yesil);font-weight:800">2</a> · <a href="#s3" style="color:var(--yesil);font-weight:800">3</a> · <a href="#s6" style="color:var(--yesil);font-weight:800">6</a> · <a href="#s9" style="color:var(--yesil);font-weight:800">9</a> · <a href="#s13" style="color:var(--yesil);font-weight:800">13</a> · <a href="#s14" style="color:var(--yesil);font-weight:800">14</a></b></p>
+  <p style="margin-bottom:0">Bu altı soru bölümün temel becerilerini kapsar: ısı–sıcaklık ayrımı, ısı akış yönünü veriden okuma ve "ölçüm yönü verir, büyüklüğü vermez" ilkesi. Kalanlar pekiştirme ve ileri düzeydir. Ardından <b>Kendin çöz</b> bloğundan 1., 2. ve son soruyu yap.</p>
+</div>
 
 <p>Bir tepkimenin enerji alıp verdiğini doğrudan göremeyiz. Gördüğümüz şey <b>ortamın sıcaklığındaki değişimdir</b> — kabın ısınması, elin üşümesi, bazen bir ışık. Bu yüzden enerji konusuna, hangi bölgeyi incelediğimizi ve ısı ile sıcaklığın ne olduğunu netleştirerek başlıyoruz.</p>
 
@@ -320,7 +383,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <p>Kaynak (elektrik ark) işleminde ışık ve ısı birlikte açığa çıkar. Ateş böceğinde ise neredeyse yalnızca ışık çıkar, ısı çok azdır — buna <b>soğuk ışık</b> denir. İkisinde de kimyasal enerji başka türlere dönüşmüştür; oran farklıdır.</p>
 </div>
 
-<div class="soru">
+<div class="soru" id="s1">
   <div class="ust-serit"><span class="numara">Soru 1</span><span class="tur">Sınıflandırma</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki olaylarda sistemi ve çevreyi belirleyin.</p>
@@ -341,7 +404,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s2">
   <div class="ust-serit"><span class="numara">Soru 2</span><span class="tur">Öncüllü</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Isı ve sıcaklık ile ilgili verilen yargılardan hangileri doğrudur?</p>
@@ -363,7 +426,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s3">
   <div class="ust-serit"><span class="numara">Soru 3</span><span class="tur">Veri yorumlama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Her birinde 100 mL su bulunan dört ayrı beherglasta farklı maddeler çözülüyor ve sıcaklıklar ölçülüyor.</p>
@@ -394,7 +457,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s4">
   <div class="ust-serit"><span class="numara">Soru 4</span><span class="tur">Doğru/yanlış</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki ifadeler doğru ise D, yanlış ise Y olarak işaretleyin; yanlışların doğrusunu yazın.</p>
@@ -418,7 +481,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s5">
   <div class="ust-serit"><span class="numara">Soru 5</span><span class="tur">Bağlam temelli</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bombardıman böceğinin karnında iki ayrı odacıkta hidrojen peroksit ve hidrokinon bulunur. Tehlike anında bu maddeler tepkime odasında karışır; açığa çıkan ısıyla kaynama sıcaklığına ulaşan sıvı-buhar karışımı avcıya doğru püskürtülür.</p>
@@ -439,7 +502,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s6">
   <div class="ust-serit"><span class="numara">Soru 6</span><span class="tur">Çoktan seçmeli</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Termodinamiğin birinci yasası ile ilgili aşağıdakilerden hangisi <b>yanlıştır</b>?</p>
@@ -461,7 +524,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s7">
   <div class="ust-serit"><span class="numara">Soru 7</span><span class="tur">Deney tasarımı</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci, iki farklı katının suda çözünmesindeki enerji değişimini karşılaştırmak istiyor. İki beherglasa 100'er mL, 25 °C'deki sudan koyuyor; birine 10 g NaOH, diğerine 10 g NH<sub>4</sub>Cl ekleyip beş dakika sonra sıcaklıkları ölçüyor.</p>
@@ -483,7 +546,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s8">
   <div class="ust-serit"><span class="numara">Soru 8</span><span class="tur">Eşleştirme</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Kavramları tanımlarıyla eşleştirin.</p>
@@ -507,7 +570,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s9">
   <div class="ust-serit"><span class="numara">Soru 9</span><span class="tur">Hata bulma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Dört öğrenci, elinde tuttuğu buzun erimesini yorumluyor. Her cümledeki hatayı bulun; hatasız olanı belirtin.</p>
@@ -529,7 +592,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s10">
   <div class="ust-serit"><span class="numara">Soru 10</span><span class="tur">Boşluk doldurma</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Boşlukları <b>sistem · çevre · ısı · sıcaklık · ortalama · korunumu</b> sözcükleriyle doldurun.</p>
@@ -544,7 +607,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s11">
   <div class="ust-serit"><span class="numara">Soru 11</span><span class="tur">Senaryo · karar verme</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir ilk yardım çantası için iki ürün geliştiriliyor:</p>
@@ -569,7 +632,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s12">
   <div class="ust-serit"><span class="numara">Soru 12</span><span class="tur">Metin analizi</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Fotoselli bataryalarda ışık fotonları, metal yüzeydeki elektronlara enerji verir. Yeterince enerji alan elektronlar bağlı oldukları atomlardan kopar ve bir elektrik akımı oluşturur; bu akım vanayı açar.</p>
@@ -590,7 +653,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s13">
   <div class="ust-serit"><span class="numara">Soru 13</span><span class="tur">Tablo doldurma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Tabloda boş bırakılan sütunları doldurun.</p>
@@ -619,7 +682,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s14">
   <div class="ust-serit"><span class="numara">Soru 14</span><span class="tur">İddia değerlendirme</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci şu iddiayı ileri sürüyor:</p>
@@ -637,7 +700,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s15">
   <div class="ust-serit"><span class="numara">Soru 15</span><span class="tur">Veri yorumlama</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Aynı başlangıç sıcaklığındaki 300'er mL su ile yapılan iki deneyde sıcaklığın zamanla değişimi verilmiştir. Deney I'de soğuk kompres torbası, Deney II'de ispirto ocağı kullanılmıştır.</p>
@@ -680,7 +743,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s16">
   <div class="ust-serit"><span class="numara">Soru 16</span><span class="tur">Tanılayıcı dallanmış ağaç</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Öğrenci her adımda ifadenin doğru (D) ya da yanlış (Y) olduğunu seçerek ilerliyor. <b>Hiç hata yapmayan</b> bir öğrenci hangi çıkışa ulaşır?</p>
@@ -737,6 +800,12 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 
 <!-- ==================== BÖLÜM 2 ==================== -->
 <h2 id="b2"><span class="no">Bölüm 2</span>Ekzotermik ve endotermik tepkimeler · entalpi</h2>
+
+<div class="kart gunluk">
+  <div class="baslik">Çekirdek rota · 6 soru</div>
+  <p>Zamanın kısıtlıysa önce şu soruları çöz: <b>Soru <a href="#s17" style="color:var(--yesil);font-weight:800">17</a> · <a href="#s18" style="color:var(--yesil);font-weight:800">18</a> · <a href="#s19" style="color:var(--yesil);font-weight:800">19</a> · <a href="#s20" style="color:var(--yesil);font-weight:800">20</a> · <a href="#s22" style="color:var(--yesil);font-weight:800">22</a> · <a href="#s30" style="color:var(--yesil);font-weight:800">30</a></b></p>
+  <p style="margin-bottom:0">Bu altı soru bölümün temel becerilerini kapsar: ΔH tanımı, işaret kuralı, denklemde ısının yeri ve azotun yanması istisnası. Kalanlar pekiştirme ve ileri düzeydir. Ardından <b>Kendin çöz</b> bloğundan 1., 2. ve son soruyu yap.</p>
+</div>
 
 <p>Bölüm 1'de ısının hangi yöne aktığını okumayı öğrendik. Şimdi bu yöne bir <b>ad</b>, bir <b>işaret</b> ve bir <b>sayı</b> veriyoruz. Modülün geri kalanındaki her hesap bu bölümdeki işaret kuralına dayanır.</p>
 
@@ -825,7 +894,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <p>Tek cümlelik ölçüt: <b>tanecikleri birbirinden ayıran</b> her süreç ısı ister, <b>bir araya getiren</b> her süreç ısı verir.</p>
 </div>
 
-<div class="soru">
+<div class="soru" id="s17">
   <div class="ust-serit"><span class="numara">Soru 17</span><span class="tur">Çoktan seçmeli</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Entalpi ve entalpi değişimi ile ilgili aşağıdakilerden hangisi <b>yanlıştır</b>?</p>
@@ -847,7 +916,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s18">
   <div class="ust-serit"><span class="numara">Soru 18</span><span class="tur">Sınıflandırma</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki olayları endotermik ve ekzotermik olarak sınıflandırın.</p>
@@ -868,7 +937,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s19">
   <div class="ust-serit"><span class="numara">Soru 19</span><span class="tur">Veri yorumlama</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Bir tepkimenin enerji diyagramında tepkenlerin entalpisi 150 kJ, ürünlerin entalpisi 60 kJ olarak veriliyor.</p>
@@ -889,7 +958,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s20">
   <div class="ust-serit"><span class="numara">Soru 20</span><span class="tur">Öncüllü</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">KClO<sub>3</sub>(k) + ısı → KCl(k) + 3/2O<sub>2</sub>(g)</p>
@@ -912,7 +981,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s21">
   <div class="ust-serit"><span class="numara">Soru 21</span><span class="tur">Veri yorumlama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">X(g) + Y(g) → Z(g) tepkimesinin potansiyel enerji diyagramı verilmiştir.</p>
@@ -954,7 +1023,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s22">
   <div class="ust-serit"><span class="numara">Soru 22</span><span class="tur">Hata bulma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki dört gösterimden hangileri <b>hatalıdır</b>? Hataları düzeltin.</p>
@@ -977,7 +1046,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s23">
   <div class="ust-serit"><span class="numara">Soru 23</span><span class="tur">Doğru/yanlış</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">İfadeler doğru ise D, yanlış ise Y yazın; yanlışların doğrusunu belirtin.</p>
@@ -1001,7 +1070,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s24">
   <div class="ust-serit"><span class="numara">Soru 24</span><span class="tur">Bağlam temelli</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Demiryolu raylarının birleştirilmesinde termit kaynağı kullanılır. İnce öğütülmüş Fe<sub>2</sub>O<sub>3</sub> ile Al tozunun karışımı tutuşturulduğunda ortam sıcaklığı yaklaşık 2500 °C'ye çıkar ve erimiş demir raydaki boşluğa akar.</p>
@@ -1025,7 +1094,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s25">
   <div class="ust-serit"><span class="numara">Soru 25</span><span class="tur">Eşleştirme</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Eşleştirmeleri yapın.</p>
@@ -1049,7 +1118,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s26">
   <div class="ust-serit"><span class="numara">Soru 26</span><span class="tur">Senaryo · karar verme</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Askerler ve kampçılar için alevsiz ısıtma kiti tasarlanıyor. Üzerine su eklendiğinde tepkime başlayacak ve açığa çıkan ısı yiyeceği ısıtacak. Aday tepkimeler:</p>
@@ -1076,7 +1145,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s27">
   <div class="ust-serit"><span class="numara">Soru 27</span><span class="tur">Boşluk doldurma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Boşlukları doldurun: <b>ekzotermik · endotermik · artar · azalır · negatif · pozitif · ürünler · tepkenler</b></p>
@@ -1092,7 +1161,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s28">
   <div class="ust-serit"><span class="numara">Soru 28</span><span class="tur">Tanılayıcı dallanmış ağaç</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">N<sub>2</sub>(g) + O<sub>2</sub>(g) + ısı → 2NO(g) tepkimesi için her adımda D ya da Y seçilerek ilerleniyor. <b>Hiç hata yapmayan</b> öğrenci hangi çıkışa ulaşır?</p>
@@ -1115,7 +1184,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s29">
   <div class="ust-serit"><span class="numara">Soru 29</span><span class="tur">İddia değerlendirme</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Üç öğrenci, ürünlerin tepkenlerden <b>yüksek</b> enerjili olduğu bir potansiyel enerji diyagramını yorumluyor:</p>
@@ -1137,7 +1206,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s30">
   <div class="ust-serit"><span class="numara">Soru 30</span><span class="tur">Öncüllü</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Aynı miktarda H<sub>2</sub>O oluşan dört tepkime veriliyor.</p>
@@ -1166,7 +1235,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s31">
   <div class="ust-serit"><span class="numara">Soru 31</span><span class="tur">Veri yorumlama</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Yalıtılmış ve <b>sabit hacimli</b> kaplarda ayrı ayrı gerçekleşen aşağıdaki tepkimelerde kap içindeki <b>toplam gaz basıncı artmıştır</b>.</p>
@@ -1189,7 +1258,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s32">
   <div class="ust-serit"><span class="numara">Soru 32</span><span class="tur">Sentez</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci şöyle diyor: "Ekzotermik bir tepkimede sistemin enerjisi azalıyor. O hâlde bu tepkime enerjinin korunumu yasasına aykırıdır, çünkü enerji eksiliyor."</p>
@@ -1249,6 +1318,12 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 
 <!-- ==================== BÖLÜM 3 ==================== -->
 <h2 id="b3"><span class="no">Bölüm 3</span>Maddelerin enerji kaynağı olma potansiyeli</h2>
+
+<div class="kart gunluk">
+  <div class="baslik">Çekirdek rota · 6 soru</div>
+  <p>Zamanın kısıtlıysa önce şu soruları çöz: <b>Soru <a href="#s33" style="color:var(--yesil);font-weight:800">33</a> · <a href="#s34" style="color:var(--yesil);font-weight:800">34</a> · <a href="#s35" style="color:var(--yesil);font-weight:800">35</a> · <a href="#s37" style="color:var(--yesil);font-weight:800">37</a> · <a href="#s41" style="color:var(--yesil);font-weight:800">41</a> · <a href="#s47" style="color:var(--yesil);font-weight:800">47</a></b></p>
+  <p style="margin-bottom:0">Bu altı soru bölümün temel becerilerini kapsar: ısıl değerin kJ/g olarak hesaplanması, yakıt ölçütleri ve ısıl değerin tek ölçüt olmadığı. Kalanlar pekiştirme ve ileri düzeydir. Ardından <b>Kendin çöz</b> bloğundan 1., 2. ve son soruyu yap.</p>
+</div>
 
 <p>Bölüm 2'de tepkimenin ısı verip vermediğini belirledik. Şimdi soru şu: <b>ısı veren her madde iyi bir yakıt mıdır?</b> Bu bölüm, kimyasal bir büyüklüğün tek başına karar vermeye yetmediği yerdir.</p>
 
@@ -1311,7 +1386,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </table>
 </div>
 
-<div class="soru">
+<div class="soru" id="s33">
   <div class="ust-serit"><span class="numara">Soru 33</span><span class="tur">Çoktan seçmeli</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Bir maddenin iyi bir yakıt olması için aşağıdakilerden hangisi <b>istenmez</b>?</p>
@@ -1332,7 +1407,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s34">
   <div class="ust-serit"><span class="numara">Soru 34</span><span class="tur">Veri yorumlama</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Isıl değerler tablosuna göre soruları cevaplayın.</p>
@@ -1354,7 +1429,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s35">
   <div class="ust-serit"><span class="numara">Soru 35</span><span class="tur">Veri yorumlama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir araca 1 kg metan yerine 1 kg etanol konulursa elde edilen enerji yüzde kaç azalır?</p>
@@ -1371,7 +1446,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s36">
   <div class="ust-serit"><span class="numara">Soru 36</span><span class="tur">Öncüllü</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(s) + 285,8 kJ</p>
@@ -1395,7 +1470,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s37">
   <div class="ust-serit"><span class="numara">Soru 37</span><span class="tur">Hesaplama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki molar yanma ısılarından ısıl değerleri (kJ/g) hesaplayın ve yakıtları sıralayın.</p>
@@ -1420,7 +1495,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s38">
   <div class="ust-serit"><span class="numara">Soru 38</span><span class="tur">Hata bulma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci şu iki denkleme bakarak "glikoz metandan daha iyi bir yakıttır, çünkü yanınca daha çok enerji verir" diyor.</p>
@@ -1439,7 +1514,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s39">
   <div class="ust-serit"><span class="numara">Soru 39</span><span class="tur">Sınıflandırma</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki enerji kaynaklarını <b>yenilenebilir</b> ve <b>yenilenemez</b> olarak sınıflandırın. Yanmaları sonucunda CO<sub>2</sub> oluşanları ayrıca işaretleyin.</p>
@@ -1459,7 +1534,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s40">
   <div class="ust-serit"><span class="numara">Soru 40</span><span class="tur">Doğru/yanlış</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">İfadeler doğru ise D, yanlış ise Y yazın; yanlışların nedenini açıklayın.</p>
@@ -1483,7 +1558,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s41">
   <div class="ust-serit"><span class="numara">Soru 41</span><span class="tur">Bağlam temelli</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Biyoetanol (C<sub>2</sub>H<sub>5</sub>OH), şeker pancarı ve mısır gibi bitkilerin fermantasyonuyla üretilen yenilenebilir bir yakıttır. Molar yanma ısısı −1367 kJ/mol, benzinin ısıl değeri ise yaklaşık 47 kJ/g'dır. (C<sub>2</sub>H<sub>5</sub>OH = 46 g/mol)</p>
@@ -1506,7 +1581,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s42">
   <div class="ust-serit"><span class="numara">Soru 42</span><span class="tur">Deney tasarımı</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Bir grup öğrenci "ceviz mi yoksa kuru üzüm mü birim kütle başına daha fazla enerji verir?" sorusunu araştırmak istiyor. Tartılan örnek yakılıyor, alevin üzerindeki deney tüpündeki suyun sıcaklık artışı ölçülüyor.</p>
@@ -1529,7 +1604,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s43">
   <div class="ust-serit"><span class="numara">Soru 43</span><span class="tur">Tablo doldurma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Tablodaki numaralı boşlukları doldurun.</p>
@@ -1555,7 +1630,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s44">
   <div class="ust-serit"><span class="numara">Soru 44</span><span class="tur">Veri yorumlama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Dört yakıtın ısıl değerleri grafikte verilmiştir.</p>
@@ -1603,7 +1678,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s45">
   <div class="ust-serit"><span class="numara">Soru 45</span><span class="tur">Metin analizi</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Arda, 250 gramlık bir porsiyon yemek yiyor. Porsiyonun besin içeriği: <b>75 g protein, 25 g karbonhidrat, 20 g yağ</b>. Arda 1 saatlik tempolu yürüyüşte yaklaşık 2050 kJ enerji harcıyor.</p>
@@ -1628,7 +1703,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s46">
   <div class="ust-serit"><span class="numara">Soru 46</span><span class="tur">Senaryo · karar verme</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Yolu kapanabilen bir dağ köyündeki okulun ısıtma sistemi yenilenecek. Üç seçenek var:</p>
@@ -1654,7 +1729,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s47">
   <div class="ust-serit"><span class="numara">Soru 47</span><span class="tur">İddia değerlendirme</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">İddia: <b>"Isıl değeri en yüksek madde her zaman en iyi yakıttır."</b></p>
@@ -1671,7 +1746,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s48">
   <div class="ust-serit"><span class="numara">Soru 48</span><span class="tur">Sentez</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki dört yakıtın ısıl değerleri verilmiştir. Aralarındaki örüntüyü <b>moleküllerin yapısına</b> bakarak açıklayın ve bir genelleme yazın.</p>
@@ -1732,6 +1807,12 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 
 <!-- ==================== BÖLÜM 4 ==================== -->
 <h2 id="b4"><span class="no">Bölüm 4</span>Bağ enerjileriyle tepkime entalpisi</h2>
+
+<div class="kart gunluk">
+  <div class="baslik">Çekirdek rota · 6 soru</div>
+  <p>Zamanın kısıtlıysa önce şu soruları çöz: <b>Soru <a href="#s49" style="color:var(--yesil);font-weight:800">49</a> · <a href="#s50" style="color:var(--yesil);font-weight:800">50</a> · <a href="#s51" style="color:var(--yesil);font-weight:800">51</a> · <a href="#s53" style="color:var(--yesil);font-weight:800">53</a> · <a href="#s55" style="color:var(--yesil);font-weight:800">55</a> · <a href="#s58" style="color:var(--yesil);font-weight:800">58</a></b></p>
+  <p style="margin-bottom:0">Bu altı soru bölümün temel becerilerini kapsar: bağ sayma, ΔH = Σkırılan − Σoluşan ve yöntemin yalnız gaz fazında geçerli olması. Kalanlar pekiştirme ve ileri düzeydir. Ardından <b>Kendin çöz</b> bloğundan 1., 2. ve son soruyu yap.</p>
+</div>
 
 <p>Bölüm 2'de ΔH'yi bir <b>diyagramdan okuduk</b>. Şimdi aynı sayıyı, tepkimeye giren moleküllerin <b>yapısından hesaplayacağız</b>. Buradaki mantık modülün geri kalanına da temel olur: bir tepkimenin ısısı, kırılan ve kurulan bağların enerjileri arasındaki farktır.</p>
 
@@ -1815,7 +1896,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 </table>
 </div>
 
-<div class="soru">
+<div class="soru" id="s49">
   <div class="ust-serit"><span class="numara">Soru 49</span><span class="tur">Çoktan seçmeli</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Bağ enerjisi ile ilgili aşağıdakilerden hangisi <b>yanlıştır</b>?</p>
@@ -1837,7 +1918,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s50">
   <div class="ust-serit"><span class="numara">Soru 50</span><span class="tur">Öncüllü</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">X<sub>2</sub>(g) → X(g) + X(g) &nbsp;&nbsp; ΔH = +500 kJ</p>
@@ -1860,7 +1941,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s51">
   <div class="ust-serit"><span class="numara">Soru 51</span><span class="tur">Hesaplama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">N<sub>2</sub>(g) + 3H<sub>2</sub>(g) → 2NH<sub>3</sub>(g) tepkimesinin ΔH'sini bağ enerjilerinden hesaplayın.</p>
@@ -1878,7 +1959,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s52">
   <div class="ust-serit"><span class="numara">Soru 52</span><span class="tur">Hesaplama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">2H<sub>2</sub>(g) + O<sub>2</sub>(g) → 2H<sub>2</sub>O(g) tepkimesinin ΔH'sini bulun.</p>
@@ -1895,7 +1976,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s53">
   <div class="ust-serit"><span class="numara">Soru 53</span><span class="tur">Hesaplama</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">CH<sub>4</sub>(g) + Cl<sub>2</sub>(g) → CH<sub>3</sub>Cl(g) + HCl(g) &nbsp;&nbsp; ΔH = −113 kJ<br>Buna göre C—Cl bağ enerjisi kaç kJ/mol'dür?</p>
@@ -1914,7 +1995,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s54">
   <div class="ust-serit"><span class="numara">Soru 54</span><span class="tur">Veri yorumlama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Tabloda azot atomları arasındaki bağların enerjileri verilmiştir.</p>
@@ -1941,7 +2022,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s55">
   <div class="ust-serit"><span class="numara">Soru 55</span><span class="tur">Hata bulma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) → CO<sub>2</sub>(g) + 2H<sub>2</sub>O(<b>s</b>) tepkimesinin entalpisini şöyle hesaplıyor:</p>
@@ -1960,7 +2041,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s56">
   <div class="ust-serit"><span class="numara">Soru 56</span><span class="tur">Bağlam temelli</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Kloroform (CHCl<sub>3</sub>), yapıştırıcı ve soğutucu üretiminde kullanılan bir çözücüdür. Metan gazının klor gazı ile tepkimesinden elde edilir:</p>
@@ -1986,7 +2067,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s57">
   <div class="ust-serit"><span class="numara">Soru 57</span><span class="tur">Veri yorumlama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir tepkimede tepkenlerin önce atomlarına ayrıştığı, sonra ürünleri oluşturduğu varsayımıyla çizilen entalpi şeması aşağıdadır.</p>
@@ -2024,7 +2105,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s58">
   <div class="ust-serit"><span class="numara">Soru 58</span><span class="tur">Sınıflandırma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki tepkimelerden hangilerinin entalpisi <b>bağ enerjileri kullanılarak</b> hesaplanabilir?</p>
@@ -2050,7 +2131,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s59">
   <div class="ust-serit"><span class="numara">Soru 59</span><span class="tur">Hesaplama</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Doğal gazın bileşenlerinden etanın yanma tepkimesi aşağıdadır. Tepkimenin ΔH'sini bağ enerjilerinden hesaplayın.</p>
@@ -2070,7 +2151,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s60">
   <div class="ust-serit"><span class="numara">Soru 60</span><span class="tur">Hesaplama</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Gaz fazında gerçekleşen X<sub>2</sub> + Y<sub>2</sub> → 2XY tepkimesinin entalpisi −185 kJ'dür.</p>
@@ -2093,7 +2174,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s61">
   <div class="ust-serit"><span class="numara">Soru 61</span><span class="tur">Doğru/yanlış</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">İfadeleri D/Y olarak değerlendirin; yanlışların doğrusunu yazın.</p>
@@ -2117,7 +2198,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s62">
   <div class="ust-serit"><span class="numara">Soru 62</span><span class="tur">İddia değerlendirme</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci, bağ enerjileriyle hesapladığı ΔH değerinin kitapta verilen deneysel değerden 8 kJ farklı çıktığını görüyor ve "hesabım yanlış" diyerek baştan çözüyor. İkinci çözümde de aynı sonucu buluyor.</p>
@@ -2138,7 +2219,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s63">
   <div class="ust-serit"><span class="numara">Soru 63</span><span class="tur">Boşluk doldurma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Boşlukları <b>kırılması · oluşması · endotermik · ekzotermik · pozitif · negatif · büyük · küçük</b> ifadeleriyle doldurun.</p>
@@ -2153,7 +2234,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s64">
   <div class="ust-serit"><span class="numara">Soru 64</span><span class="tur">Sentez</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki üç tepkime gaz fazında gerçekleşmektedir.</p>
@@ -2216,6 +2297,12 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 
 <!-- ==================== BÖLÜM 5 ==================== -->
 <h2 id="b5"><span class="no">Bölüm 5</span>Standart oluşum entalpisi</h2>
+
+<div class="kart gunluk">
+  <div class="baslik">Çekirdek rota · 6 soru</div>
+  <p>Zamanın kısıtlıysa önce şu soruları çöz: <b>Soru <a href="#s65" style="color:var(--yesil);font-weight:800">65</a> · <a href="#s66" style="color:var(--yesil);font-weight:800">66</a> · <a href="#s67" style="color:var(--yesil);font-weight:800">67</a> · <a href="#s69" style="color:var(--yesil);font-weight:800">69</a> · <a href="#s71" style="color:var(--yesil);font-weight:800">71</a> · <a href="#s78" style="color:var(--yesil);font-weight:800">78</a></b></p>
+  <p style="margin-bottom:0">Bu altı soru bölümün temel becerilerini kapsar: ΔHf° tanımı, kararlı hâl seçimi ve sıfır kabulünün sınırları. Kalanlar pekiştirme ve ileri düzeydir. Ardından <b>Kendin çöz</b> bloğundan 1., 2. ve son soruyu yap.</p>
+</div>
 
 <p>Bölüm 2'de şunu söylemiştik: <b>entalpinin mutlak değeri ölçülemez, yalnızca farkı ölçülebilir.</b> Peki her bileşiğin enerjisini tek bir tabloda toplamak istersek ne yaparız? Cevap basit ve akıllıcadır: ortak bir <b>sıfır noktası seçeriz</b>. Bu bölüm o seçimi ve sonuçlarını anlatıyor.</p>
 
@@ -2307,7 +2394,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 <figcaption>Her iki diyagramda da başlangıç çizgisi <b>sıfır</b>: elementlerin kararlı hâlleri. Bileşik bu çizginin altındaysa ΔH<sub>f</sub>° negatif, üstündeyse pozitiftir.</figcaption>
 </figure>
 
-<div class="soru">
+<div class="soru" id="s65">
   <div class="ust-serit"><span class="numara">Soru 65</span><span class="tur">Çoktan seçmeli</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Standart oluşum entalpisi ile ilgili aşağıdakilerden hangisi <b>yanlıştır</b>?</p>
@@ -2329,7 +2416,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s66">
   <div class="ust-serit"><span class="numara">Soru 66</span><span class="tur">Sınıflandırma</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Aşağıdakilerden hangilerinin standart oluşum entalpisi sıfırdır?</p>
@@ -2347,7 +2434,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s67">
   <div class="ust-serit"><span class="numara">Soru 67</span><span class="tur">Sınıflandırma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Aşağıdakilerden hangilerinin standart koşullardaki molar oluşum entalpisi <b>sıfırdır</b>? Sıfır olmayanların nedenini yazın.</p>
@@ -2372,7 +2459,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s68">
   <div class="ust-serit"><span class="numara">Soru 68</span><span class="tur">Öncüllü</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki tepkimelerden hangileri <b>standart molar oluşum entalpisi</b> tanımına uyar?</p>
@@ -2398,7 +2485,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s69">
   <div class="ust-serit"><span class="numara">Soru 69</span><span class="tur">Hesaplama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki bileşiklerin standart molar oluşum denklemlerini yazın.</p>
@@ -2419,7 +2506,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s70">
   <div class="ust-serit"><span class="numara">Soru 70</span><span class="tur">Veri yorumlama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Tabloda bazı bileşiklerin standart molar oluşum entalpileri verilmiştir.</p>
@@ -2448,7 +2535,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s71">
   <div class="ust-serit"><span class="numara">Soru 71</span><span class="tur">Hata bulma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki tepkimelerin hangilerinde standart koşullardaki entalpi değişimi, oluşan bileşiğin <b>molar oluşum entalpisine eşit değildir</b>? Nedenini yazın.</p>
@@ -2473,7 +2560,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s72">
   <div class="ust-serit"><span class="numara">Soru 72</span><span class="tur">Veri yorumlama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Aşağıda bazı maddelerin entalpi–tepkime koordinatı grafiği verilmiştir.</p>
@@ -2513,7 +2600,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s73">
   <div class="ust-serit"><span class="numara">Soru 73</span><span class="tur">Metin analizi</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Dünya yüzeyinin yaklaşık %71'i sularla kaplıdır. Suyun bu kadar bol bulunmasının sebeplerinden biri, oluşumunun kolay olmasıdır: su oluşurken çok fazla enerji açığa çıkar, bu yüzden kararlılığı yüksektir ve kolayca tepkimeye girmez.</p>
@@ -2534,7 +2621,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s74">
   <div class="ust-serit"><span class="numara">Soru 74</span><span class="tur">Doğru/yanlış</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">İfadeleri D/Y olarak değerlendirin; yanlışların doğrusunu yazın.</p>
@@ -2558,7 +2645,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s75">
   <div class="ust-serit"><span class="numara">Soru 75</span><span class="tur">Eşleştirme</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Elementleri standart koşullardaki kararlı hâlleriyle eşleştirin.</p>
@@ -2579,7 +2666,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s76">
   <div class="ust-serit"><span class="numara">Soru 76</span><span class="tur">Hesaplama</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">N<sub>2</sub>(g) + 2O<sub>2</sub>(g) → 2NO<sub>2</sub>(g) &nbsp;&nbsp; ΔH° = +66,4 kJ</p>
@@ -2600,7 +2687,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s77">
   <div class="ust-serit"><span class="numara">Soru 77</span><span class="tur">Hesaplama</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">M(k) + ½O<sub>2</sub>(g) → MO(k) tepkimesine göre 8 gram MO oluştuğunda 30 kJ ısı açığa çıkmaktadır. MO'nun standart molar oluşum entalpisi −300 kJ/mol olduğuna göre M'nin atom kütlesi kaçtır?</p>
@@ -2619,7 +2706,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s78">
   <div class="ust-serit"><span class="numara">Soru 78</span><span class="tur">İddia değerlendirme</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci şöyle diyor: "O<sub>2</sub>(g)'nin standart oluşum entalpisi sıfır olduğuna göre oksijen molekülünün hiç enerjisi yoktur. Bu yüzden O<sub>2</sub> hiçbir tepkimeye enerji katkısı yapamaz."</p>
@@ -2640,7 +2727,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s79">
   <div class="ust-serit"><span class="numara">Soru 79</span><span class="tur">Boşluk doldurma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Boşlukları doldurun: <b>1 mol · element · kararlı · sıfır · negatif · pozitif · 25 °C ve 1 atm</b></p>
@@ -2655,7 +2742,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s80">
   <div class="ust-serit"><span class="numara">Soru 80</span><span class="tur">Sentez</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Karbonun iki allotropu için veriler: ΔH<sub>f</sub>°(C, grafit) = 0 &nbsp;·&nbsp; ΔH<sub>f</sub>°(C, elmas) = 1,90 kJ/mol</p>
@@ -2712,6 +2799,12 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 <!-- ==================== BÖLÜM 6 ==================== -->
 <h2 id="b6"><span class="no">Bölüm 6</span>Standart tepkime entalpisi</h2>
 
+<div class="kart gunluk">
+  <div class="baslik">Çekirdek rota · 6 soru</div>
+  <p>Zamanın kısıtlıysa önce şu soruları çöz: <b>Soru <a href="#s81" style="color:var(--yesil);font-weight:800">81</a> · <a href="#s82" style="color:var(--yesil);font-weight:800">82</a> · <a href="#s84" style="color:var(--yesil);font-weight:800">84</a> · <a href="#s87" style="color:var(--yesil);font-weight:800">87</a> · <a href="#s93" style="color:var(--yesil);font-weight:800">93</a> · <a href="#s96" style="color:var(--yesil);font-weight:800">96</a></b></p>
+  <p style="margin-bottom:0">Bu altı soru bölümün temel becerilerini kapsar: Σn·ΔHf° formülü, katsayı ve işaret disiplini, bir çıkmış AYT sorusu. Kalanlar pekiştirme ve ileri düzeydir. Ardından <b>Kendin çöz</b> bloğundan 1., 2. ve son soruyu yap.</p>
+</div>
+
 <p>Bölüm 5'te her bileşik için bir sayı tanımladık: elementlerinden oluşurken açığa çıkan ya da harcanan enerji. Şimdi bu sayılarla <b>herhangi bir tepkimenin</b> entalpisini hesaplayacağız. Ders kitabının bu bölüme ait öğrenme çıktısı (K4) tam olarak budur ve son yılların çıkmış AYT sorularının çoğu buradan gelir.</p>
 
 <h3>Formül ve mantığı</h3>
@@ -2753,7 +2846,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <p>Elementlerin ΔH<sub>f</sub>° değeri sıfırdır diye o maddeyi <b>denklemden silmek</b> yanlış bir alışkanlık doğurur. O<sub>2</sub> denklemde durur, katsayısı vardır, yalnızca katkısı 0'dır. Silme alışkanlığı, Br<sub>2</sub>(g) ya da O<sub>3</sub>(g) gibi <b>sıfır olmayan</b> element hâlleri çıktığında doğrudan hataya dönüşür.</p>
 </div>
 
-<div class="soru">
+<div class="soru" id="s81">
   <div class="ust-serit"><span class="numara">Soru 81</span><span class="tur">Çoktan seçmeli</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Standart tepkime entalpisi hesabı ile ilgili aşağıdakilerden hangisi <b>yanlıştır</b>?</p>
@@ -2774,7 +2867,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s82">
   <div class="ust-serit"><span class="numara">Soru 82</span><span class="tur">Hesaplama</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">2H<sub>2</sub>S(g) + 3O<sub>2</sub>(g) → 2SO<sub>2</sub>(g) + 2H<sub>2</sub>O(s) tepkimesinin standart entalpisini bulun.</p>
@@ -2792,7 +2885,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s83">
   <div class="ust-serit"><span class="numara">Soru 83</span><span class="tur">Hesaplama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">CaCO<sub>3</sub>(k) → CaO(k) + CO<sub>2</sub>(g)</p>
@@ -2811,7 +2904,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s84">
   <div class="ust-serit"><span class="numara">Soru 84</span><span class="tur">Hesaplama</span><span class="ayt">AYT 2023</span></div>
   <div class="govde">
     <p class="metin">HBr(g) için standart oluşum entalpisi −36 kJ/mol, H<sub>2</sub>O(s) için −286 kJ/mol'dür. Buna göre</p>
@@ -2833,7 +2926,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s85">
   <div class="ust-serit"><span class="numara">Soru 85</span><span class="tur">Hesaplama</span><span class="ayt">AYT 2022</span></div>
   <div class="govde">
     <p class="metin">C(k) + O<sub>2</sub>(g) → CO<sub>2</sub>(g) &nbsp; ΔH° = −393,5 kJ/mol<br>H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(s) &nbsp; ΔH° = −285,8 kJ/mol<br>C(k) + 2H<sub>2</sub>(g) → CH<sub>4</sub>(g) &nbsp; ΔH° = −74,8 kJ/mol</p>
@@ -2855,7 +2948,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s86">
   <div class="ust-serit"><span class="numara">Soru 86</span><span class="tur">Hesaplama</span><span class="ayt">AYT 2021</span></div>
   <div class="govde">
     <p class="metin">½N<sub>2</sub>(g) + O<sub>2</sub>(g) → NO<sub>2</sub>(g) &nbsp; ΔH° = 33,2 kJ/mol<br>N<sub>2</sub>(g) + 2O<sub>2</sub>(g) → N<sub>2</sub>O<sub>4</sub>(g) &nbsp; ΔH° = 11,1 kJ/mol</p>
@@ -2876,7 +2969,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s87">
   <div class="ust-serit"><span class="numara">Soru 87</span><span class="tur">Ters hesap</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">C<sub>2</sub>H<sub>2</sub>(g) + 5/2O<sub>2</sub>(g) → 2CO<sub>2</sub>(g) + H<sub>2</sub>O(s) &nbsp; ΔH° = −1300 kJ<br>Buna göre asetilenin standart oluşum entalpisi kaçtır?</p>
@@ -2895,7 +2988,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s88">
   <div class="ust-serit"><span class="numara">Soru 88</span><span class="tur">Ters hesap</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">4NH<sub>3</sub>(g) + 5O<sub>2</sub>(g) → 4NO(g) + 6H<sub>2</sub>O(g) tepkimesi gerçekleşirken çevreye <b>900 kJ ısı salınmaktadır</b>. Buna göre NH<sub>3</sub> gazının molar oluşum entalpisi kaç kJ/mol'dür?</p>
@@ -2914,7 +3007,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s89">
   <div class="ust-serit"><span class="numara">Soru 89</span><span class="tur">Ters hesap</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">CS<sub>2</sub>(s) + 3O<sub>2</sub>(g) → CO<sub>2</sub>(g) + 2SO<sub>2</sub>(g) + 1060 kJ</p>
@@ -2934,7 +3027,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s90">
   <div class="ust-serit"><span class="numara">Soru 90</span><span class="tur">Öncüllü</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">2NO(g) + O<sub>2</sub>(g) → 2NO<sub>2</sub>(g)</p>
@@ -2956,7 +3049,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s91">
   <div class="ust-serit"><span class="numara">Soru 91</span><span class="tur">Formül bulma</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">C<sub>n</sub>H<sub>2n</sub> bileşiğinin standart molar yanma ısısı −2030 kJ/mol'dür. CO<sub>2</sub>, H<sub>2</sub>O ve C<sub>n</sub>H<sub>2n</sub> bileşiklerinin standart molar oluşum ısıları sırasıyla −390, −240 ve +140 kJ/mol'dür. Buna göre bileşiğin formülü nedir?</p>
@@ -2975,7 +3068,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s92">
   <div class="ust-serit"><span class="numara">Soru 92</span><span class="tur">Veri yorumlama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Standart koşullardaki bazı maddelerin entalpi–tepkime koordinatı grafiği verilmiştir.</p>
@@ -3018,7 +3111,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s93">
   <div class="ust-serit"><span class="numara">Soru 93</span><span class="tur">Hata bulma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci C<sub>2</sub>H<sub>4</sub>(g) + 3O<sub>2</sub>(g) → 2CO<sub>2</sub>(g) + 2H<sub>2</sub>O(g) tepkimesini şöyle çözüyor:</p>
@@ -3039,7 +3132,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s94">
   <div class="ust-serit"><span class="numara">Soru 94</span><span class="tur">Bağlam temelli</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Nitrik asit üretimi üç aşamalıdır. Bir kimya mühendisi, tesisteki ısıtma işlemleri için gereken enerjinin bir kısmını üretim sürecindeki tepkimelerden karşılamak istiyor.</p>
@@ -3063,7 +3156,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s95">
   <div class="ust-serit"><span class="numara">Soru 95</span><span class="tur">İddia değerlendirme</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci şu iki iddiayı ileri sürüyor:</p>
@@ -3085,7 +3178,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s96">
   <div class="ust-serit"><span class="numara">Soru 96</span><span class="tur">Sentez</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) → CO<sub>2</sub>(g) + 2H<sub>2</sub>O(g) tepkimesi iki ayrı yöntemle hesaplanıyor.</p>
@@ -3143,6 +3236,12 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 
 <!-- ==================== BÖLÜM 7 ==================== -->
 <h2 id="b7"><span class="no">Bölüm 7</span>Tepkime entalpisini etkileyen faktörler</h2>
+
+<div class="kart gunluk">
+  <div class="baslik">Çekirdek rota · 6 soru</div>
+  <p>Zamanın kısıtlıysa önce şu soruları çöz: <b>Soru <a href="#s97" style="color:var(--yesil);font-weight:800">97</a> · <a href="#s98" style="color:var(--yesil);font-weight:800">98</a> · <a href="#s99" style="color:var(--yesil);font-weight:800">99</a> · <a href="#s102" style="color:var(--yesil);font-weight:800">102</a> · <a href="#s103" style="color:var(--yesil);font-weight:800">103</a> · <a href="#s107" style="color:var(--yesil);font-weight:800">107</a></b></p>
+  <p style="margin-bottom:0">Bu altı soru bölümün temel becerilerini kapsar: katalizör–ΔH ayrımı, fiziksel hâlin etkisi ve "ΔH sabit, toplam ısı değişir" ayrımı. Kalanlar pekiştirme ve ileri düzeydir. Ardından <b>Kendin çöz</b> bloğundan 1., 2. ve son soruyu yap.</p>
+</div>
 
 <p>Buraya kadar ΔH'yi hesaplamayı öğrendik. Şimdi bir adım geriye çekilip soruyu tersine çeviriyoruz: <b>aynı tepkimenin ΔH'si hangi koşullarda değişir, hangilerinde değişmez?</b> Sınavlarda en çok yanıltan sorular bu ayrımı test eder.</p>
 
@@ -3212,7 +3311,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <p>Katalizör sorularında "aktivasyon enerjisini düşürür" ile "ΔH'yi düşürür" ifadeleri karıştırılır. Katalizör <b>tepeyi alçaltır</b>, ama <b>başlangıç ve bitiş çizgilerine dokunmaz</b>. ΔH bu iki çizginin farkı olduğu için değişmez.</p>
 </div>
 
-<div class="soru">
+<div class="soru" id="s97">
   <div class="ust-serit"><span class="numara">Soru 97</span><span class="tur">Çoktan seçmeli</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Aşağıdakilerden hangisi bir tepkimenin ΔH değerini <b>değiştirmez</b>?</p>
@@ -3235,7 +3334,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s98">
   <div class="ust-serit"><span class="numara">Soru 98</span><span class="tur">Hesaplama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">2CO(g) + O<sub>2</sub>(g) → 2CO<sub>2</sub>(g) + 560 kJ</p>
@@ -3261,7 +3360,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s99">
   <div class="ust-serit"><span class="numara">Soru 99</span><span class="tur">Veri yorumlama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">SO<sub>3</sub> gazının oluşumuna ilişkin aynı koşullarda gerçekleştirilen üç farklı tepkimenin potansiyel enerji diyagramları verilmiştir.</p>
@@ -3324,7 +3423,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s100">
   <div class="ust-serit"><span class="numara">Soru 100</span><span class="tur">Hesaplama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(s) &nbsp; ΔH = −285 kJ<br>H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(g) &nbsp; ΔH = −240 kJ</p>
@@ -3344,7 +3443,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s101">
   <div class="ust-serit"><span class="numara">Soru 101</span><span class="tur">Öncüllü</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">A(g) → 2B(g) tepkimesinin potansiyel enerji diyagramında tepkenler üstte, ürünler altta olup aradaki fark x kJ'dür.</p>
@@ -3366,7 +3465,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s102">
   <div class="ust-serit"><span class="numara">Soru 102</span><span class="tur">Hata bulma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Dört öğrenci katalizör hakkında konuşuyor. Hangilerinin ifadesi yanlıştır?</p>
@@ -3389,7 +3488,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s103">
   <div class="ust-serit"><span class="numara">Soru 103</span><span class="tur">Veri yorumlama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">CH<sub>3</sub>OH(g) → CO(g) + 2H<sub>2</sub>(g) tepkimesinin entalpi diyagramı verilmiştir.</p>
@@ -3429,7 +3528,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s104">
   <div class="ust-serit"><span class="numara">Soru 104</span><span class="tur">Hesaplama</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">X sıvısının molar oluşum entalpisi −280 kJ/mol, X gazının molar oluşum entalpisi −240 kJ/mol'dür.</p>
@@ -3450,7 +3549,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s105">
   <div class="ust-serit"><span class="numara">Soru 105</span><span class="tur">Bağlam temelli</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Sabit hızla ısıtmak için tasarlanmış ve yakıt olarak propan kullanılan bir kamp ocağı, Antalya'da deniz kenarında ve Kayseri'de Erciyes Dağı'nın eteklerinde <b>eşit süre</b> çalıştırılıyor.</p>
@@ -3471,7 +3570,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s106">
   <div class="ust-serit"><span class="numara">Soru 106</span><span class="tur">Öncüllü</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">X(g) + 2Y(g) → Z(g) &nbsp; ΔH = a kJ</p>
@@ -3495,7 +3594,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s107">
   <div class="ust-serit"><span class="numara">Soru 107</span><span class="tur">İddia değerlendirme</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">İki öğrenci tartışıyor:</p>
@@ -3517,7 +3616,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s108">
   <div class="ust-serit"><span class="numara">Soru 108</span><span class="tur">Tablo doldurma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Tabloyu "değişir / değişmez" olarak doldurun.</p>
@@ -3547,7 +3646,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s109">
   <div class="ust-serit"><span class="numara">Soru 109</span><span class="tur">Senaryo · karar verme</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Roket yakıtı olarak kullanılan hidrazin (N<sub>2</sub>H<sub>4</sub>) oda sıcaklığında sıvı hâldedir. Roketlerde ısı yalıtımlı tanklarda saklanır ve uygun bir katalizörle kendiliğinden ayrışır:</p>
@@ -3570,7 +3669,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s110">
   <div class="ust-serit"><span class="numara">Soru 110</span><span class="tur">Hesaplama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">S(k) + O<sub>2</sub>(g) → SO<sub>2</sub>(g) &nbsp; ΔH = −295 kJ</p>
@@ -3592,7 +3691,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s111">
   <div class="ust-serit"><span class="numara">Soru 111</span><span class="tur">Boşluk doldurma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Boşlukları <b>hâl fonksiyonu · katalizör · artar · azalar · gaz · katı · sabit · toplam</b> ifadeleriyle doldurun. (Bir ifade fazladan verilmiştir.)</p>
@@ -3608,7 +3707,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s112">
   <div class="ust-serit"><span class="numara">Soru 112</span><span class="tur">Sentez</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Bölüm 1'de şu sonuca varmıştık: <b>bir deneyde ölçülen sıcaklık değişimi, enerji değişiminin yönünü güvenilir biçimde verir ama büyüklüğünü vermez.</b></p>
@@ -3664,6 +3763,12 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 
 <!-- ==================== BÖLÜM 8 ==================== -->
 <h2 id="b8"><span class="no">Bölüm 8</span>Stokiyometri ile entalpi hesapları</h2>
+
+<div class="kart gunluk">
+  <div class="baslik">Çekirdek rota · 6 soru</div>
+  <p>Zamanın kısıtlıysa önce şu soruları çöz: <b>Soru <a href="#s113" style="color:var(--yesil);font-weight:800">113</a> · <a href="#s114" style="color:var(--yesil);font-weight:800">114</a> · <a href="#s116" style="color:var(--yesil);font-weight:800">116</a> · <a href="#s118" style="color:var(--yesil);font-weight:800">118</a> · <a href="#s122" style="color:var(--yesil);font-weight:800">122</a> · <a href="#s128" style="color:var(--yesil);font-weight:800">128</a></b></p>
+  <p style="margin-bottom:0">Bu altı soru bölümün temel becerilerini kapsar: sınırlayıcı bileşen, verim ve birim üçlüsünün doğru sırayla uygulanması. Kalanlar pekiştirme ve ileri düzeydir. Ardından <b>Kendin çöz</b> bloğundan 1., 2. ve son soruyu yap.</p>
+</div>
 
 <p>Bu bölümde yeni bir kavram yok; buraya kadar öğrendiklerimiz <b>sayısal soruya</b> dönüşüyor. Soruların neredeyse tamamı aynı zinciri kullanır:</p>
 
@@ -3721,7 +3826,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <p>Bu sırayı bozmak — örneğin verimi fazla olan maddeye uygulamak ya da birimi en başta çevirmek — sonucu bozar.</p>
 </div>
 
-<div class="soru">
+<div class="soru" id="s113">
   <div class="ust-serit"><span class="numara">Soru 113</span><span class="tur">Hesaplama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">2Fe<sub>2</sub>O<sub>3</sub>(k) + 3C(k) + 360 kJ → 4Fe(k) + 3CO<sub>2</sub>(g)</p>
@@ -3746,7 +3851,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s114">
   <div class="ust-serit"><span class="numara">Soru 114</span><span class="tur">Hesaplama</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">CaO(k) + H<sub>2</sub>O(s) → Ca(OH)<sub>2</sub>(k) &nbsp; ΔH = −62,5 kJ<br>2,8 gram CaO katısının yeterli miktarda su ile etkileşmesiyle açığa çıkan enerji kaç <b>joule</b>'dür?</p>
@@ -3765,7 +3870,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s115">
   <div class="ust-serit"><span class="numara">Soru 115</span><span class="tur">Ters hesap</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">4X(k) + 2O<sub>2</sub>(g) → 4XO(k) &nbsp; ΔH = −1250 kJ<br>Bu tepkimede 14,4 gram XO oluştuğunda 62,5 kJ enerji açığa çıktığına göre X'in atom kütlesi kaçtır?</p>
@@ -3784,7 +3889,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s116">
   <div class="ust-serit"><span class="numara">Soru 116</span><span class="tur">Hesaplama</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">2HCl + Ca(OH)<sub>2</sub> → CaCl<sub>2</sub> + 2H<sub>2</sub>O + Q kJ<br>Bu nötrleşme tepkimesine göre 0,1 M 300 mL HCl çözeltisi ile 0,2 M 100 mL Ca(OH)<sub>2</sub> çözeltisi tam verimle etkileştiğinde kaç Q kJ ısı açığa çıkar?</p>
@@ -3801,7 +3906,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s117">
   <div class="ust-serit"><span class="numara">Soru 117</span><span class="tur">Ters hesap</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">S(k) + 3/2 O<sub>2</sub>(g) → SO<sub>3</sub>(g)<br>Bu tepkimeye göre 9,6'şar gram S ve O<sub>2</sub> tam verimle etkileştiğinde 39,5 kJ ısı açığa çıkıyor. Buna göre SO<sub>3</sub>(g)'ün molar oluşum ısısı kaç kJ/mol'dür?</p>
@@ -3820,7 +3925,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s118">
   <div class="ust-serit"><span class="numara">Soru 118</span><span class="tur">Hesaplama</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">CaO(k) + H<sub>2</sub>O(s) → Ca(OH)<sub>2</sub>(k) &nbsp; ΔH = −65,2 kJ<br>Buna göre 2,8 gram CaO ile 0,36 gram H<sub>2</sub>O'nun <b>%25 verimle</b> etkileşmesinden kaç joule enerji açığa çıkar?</p>
@@ -3839,7 +3944,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s119">
   <div class="ust-serit"><span class="numara">Soru 119</span><span class="tur">Hesaplama</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">H<sub>2</sub>SO<sub>4</sub>(suda) + 2KOH(suda) → K<sub>2</sub>SO<sub>4</sub>(suda) + 2H<sub>2</sub>O(s)<br>Bu tepkimeye göre 0,4 M 500 mL KOH çözeltisi yeterince H<sub>2</sub>SO<sub>4</sub> ile tepkimeye girdiğinde 16 kJ enerji açığa çıkıyor.</p>
@@ -3862,7 +3967,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s120">
   <div class="ust-serit"><span class="numara">Soru 120</span><span class="tur">Hesaplama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">N<sub>2</sub>(g) + 3H<sub>2</sub>(g) → 2NH<sub>3</sub>(g) &nbsp; ΔH = −92 kJ<br>1 mol N<sub>2</sub> ve 6 mol H<sub>2</sub>'den oluşan karışım <b>%50 verimle</b> tepkimeye giriyor. Açığa çıkan ısı kaç kJ'dür?</p>
@@ -3879,7 +3984,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s121">
   <div class="ust-serit"><span class="numara">Soru 121</span><span class="tur">Veri yorumlama</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">C<sub>3</sub>H<sub>8</sub>(g) + 5O<sub>2</sub>(g) → 3CO<sub>2</sub>(g) + 4H<sub>2</sub>O(g) &nbsp; ΔH = −x kJ</p>
@@ -3906,7 +4011,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s122">
   <div class="ust-serit"><span class="numara">Soru 122</span><span class="tur">Hata bulma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci şu soruyu çözüyor: "2Al + 3Cl<sub>2</sub> → 2AlCl<sub>3</sub> &nbsp; ΔH = −1400 kJ. 0,4 mol Al ile 0,45 mol Cl<sub>2</sub> tepkimeye giriyor. Açığa çıkan ısı kaçtır?"</p>
@@ -3926,7 +4031,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s123">
   <div class="ust-serit"><span class="numara">Soru 123</span><span class="tur">Öncüllü</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">CS<sub>2</sub>(s) + 2H<sub>2</sub>O(s) + x kJ → CO<sub>2</sub>(g) + 2H<sub>2</sub>S(g)</p>
@@ -3952,7 +4057,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s124">
   <div class="ust-serit"><span class="numara">Soru 124</span><span class="tur">Bağlam temelli</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir yakıtın enerji içeriği <b>bomba kalorimetre</b> adı verilen kapalı bir kapta yakılarak belirlenebilir. Bir deneyde 2,3 gram etanol yakıldığında toplam 68,35 kJ enerji açığa çıkmıştır.</p>
@@ -3975,7 +4080,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s125">
   <div class="ust-serit"><span class="numara">Soru 125</span><span class="tur">Hesaplama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">HCl(suda) + NaOH(suda) → NaCl(suda) + H<sub>2</sub>O(s) + 57,3 kJ</p>
@@ -3998,7 +4103,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s126">
   <div class="ust-serit"><span class="numara">Soru 126</span><span class="tur">Ters hesap</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">CaO(k) + H<sub>2</sub>O(s) → Ca(OH)<sub>2</sub>(k) &nbsp; ΔH = −65 kJ<br>5,6 gram CaO yeterince su ile etkileştirildiğinde <b>gerçekte 4,55 kJ</b> ısı ölçülmüştür.</p>
@@ -4020,7 +4125,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s127">
   <div class="ust-serit"><span class="numara">Soru 127</span><span class="tur">Tablo doldurma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">2C<sub>2</sub>H<sub>2</sub>(g) + 5O<sub>2</sub>(g) → 4CO<sub>2</sub>(g) + 2H<sub>2</sub>O(g) &nbsp; ΔH = −2600 kJ tepkimesine göre tabloyu doldurun.</p>
@@ -4050,7 +4155,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s128">
   <div class="ust-serit"><span class="numara">Soru 128</span><span class="tur">Sentez</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">2Mg(k) + O<sub>2</sub>(g) → 2MgO(k) &nbsp; ΔH = −1200 kJ</p>
@@ -4112,6 +4217,12 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 <!-- ==================== BÖLÜM 9 ==================== -->
 <h2 id="b9"><span class="no">Bölüm 9</span>Grafik ve diyagram soruları</h2>
 
+<div class="kart gunluk">
+  <div class="baslik">Çekirdek rota · 6 soru</div>
+  <p>Zamanın kısıtlıysa önce şu soruları çöz: <b>Soru <a href="#s129" style="color:var(--yesil);font-weight:800">129</a> · <a href="#s130" style="color:var(--yesil);font-weight:800">130</a> · <a href="#s131" style="color:var(--yesil);font-weight:800">131</a> · <a href="#s132" style="color:var(--yesil);font-weight:800">132</a> · <a href="#s137" style="color:var(--yesil);font-weight:800">137</a> · <a href="#s144" style="color:var(--yesil);font-weight:800">144</a></b></p>
+  <p style="margin-bottom:0">Bu altı soru bölümün temel becerilerini kapsar: üç grafik türünün okunması ve ölçeksiz diyagramda karşılaştırma yapılamaması. Kalanlar pekiştirme ve ileri düzeydir. Ardından <b>Kendin çöz</b> bloğundan 1., 2. ve son soruyu yap.</p>
+</div>
+
 <p>Enerji konusunda üç tür görsel sorulur. Üçü de farklı bilgi taşır ve farklı biçimde okunur. Bir sorunun yarısı, elindeki görselin hangi türden olduğunu anlamakla çözülür.</p>
 
 <div class="kart kural">
@@ -4128,7 +4239,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <p>Eksende sayı yoksa diyagramdan yalnızca <b>yön</b> (ekzo/endo) okunabilir. İki ayrı diyagramdaki çizgi aralıklarına bakıp "bunun ısısı daha çok" demek, eksen ölçeklerinin aynı olduğu <b>belirtilmedikçe</b> geçersizdir.</p>
 </div>
 
-<div class="soru">
+<div class="soru" id="s129">
   <div class="ust-serit"><span class="numara">Soru 129</span><span class="tur">Diyagram okuma</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Diyagramdaki tepkime için soruları yanıtlayın.</p>
@@ -4170,7 +4281,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s130">
   <div class="ust-serit"><span class="numara">Soru 130</span><span class="tur">Isı–mol doğrusu</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir yakıtın yanmasında açığa çıkan toplam ısının, yakılan mol sayısıyla değişimi grafikteki gibidir.</p>
@@ -4211,7 +4322,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s131">
   <div class="ust-serit"><span class="numara">Soru 131</span><span class="tur">Basamaklı şema</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Karbonun karbondioksite dönüşümünün iki farklı yolu şemada gösterilmiştir.</p>
@@ -4251,7 +4362,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s132">
   <div class="ust-serit"><span class="numara">Soru 132</span><span class="tur">Ölçek tuzağı</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">İki ayrı tepkimenin diyagramı verilmiştir. Eksenlerde sayısal değer yoktur.</p>
@@ -4294,7 +4405,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s133">
   <div class="ust-serit"><span class="numara">Soru 133</span><span class="tur">Isı–mol doğrusu</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">İki yakıtın yanmasında açığa çıkan ısının mol sayısıyla değişimi verilmiştir.</p>
@@ -4333,7 +4444,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s134">
   <div class="ust-serit"><span class="numara">Soru 134</span><span class="tur">Bağ enerjisi şeması</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">A<sub>2</sub>(g) + B<sub>2</sub>(g) → 2AB(g) tepkimesi için bağ enerjileri üzerinden çizilen şema aşağıdadır.</p>
@@ -4371,7 +4482,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s135">
   <div class="ust-serit"><span class="numara">Soru 135</span><span class="tur">Diyagram okuma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Suyun elementlerinden oluşumuna ait diyagram verilmiştir.</p>
@@ -4414,7 +4525,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s136">
   <div class="ust-serit"><span class="numara">Soru 136</span><span class="tur">Diyagram okuma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Karbonun iki allotropu için entalpi diyagramı verilmiştir.</p>
@@ -4448,7 +4559,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s137">
   <div class="ust-serit"><span class="numara">Soru 137</span><span class="tur">Öğrenci yorumu</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Üç öğrenci, ekzotermik bir tepkimenin potansiyel enerji diyagramını yorumluyor. Diyagramda ürünler tepkenlerden aşağıdadır ve aradaki aktivasyon tepesi görünmektedir.</p>
@@ -4471,7 +4582,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s138">
   <div class="ust-serit"><span class="numara">Soru 138</span><span class="tur">Veri yorumlama</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Aynı ölçekte çizilmiş üç tepkimenin diyagramı verilmiştir.</p>
@@ -4528,7 +4639,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s139">
   <div class="ust-serit"><span class="numara">Soru 139</span><span class="tur">Hata bulma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci, ΔH = −250 kJ olan bir tepkimeyi diyagramla göstermek için aşağıdaki çizimi yapmıştır.</p>
@@ -4559,7 +4670,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s140">
   <div class="ust-serit"><span class="numara">Soru 140</span><span class="tur">Diyagram okuma</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki entalpi diyagramında X(k) ve Y<sub>2</sub>(g)'den elde edilen iki bileşiğin enerji düzeyleri verilmiştir.</p>
@@ -4601,7 +4712,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s141">
   <div class="ust-serit"><span class="numara">Soru 141</span><span class="tur">Veriden grafiğe</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci farklı miktarlarda magnezyum yakarak aşağıdaki verileri elde ediyor.</p>
@@ -4630,7 +4741,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s142">
   <div class="ust-serit"><span class="numara">Soru 142</span><span class="tur">Öncüllü</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir ısı–mol grafiğinin <b>doğrusal</b> ve <b>orijinden geçiyor</b> olması ile ilgili hangi yargılar doğrudur?</p>
@@ -4653,7 +4764,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s143">
   <div class="ust-serit"><span class="numara">Soru 143</span><span class="tur">Basamaklı şema</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Bir maddenin A hâlinden D hâline iki farklı yolla geçtiği şema aşağıdadır.</p>
@@ -4698,7 +4809,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s144">
   <div class="ust-serit"><span class="numara">Soru 144</span><span class="tur">Sentez</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Üç farklı grafik türünün hangi bilgiyi verdiğini ayırt edin.</p>
@@ -4756,6 +4867,12 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 <h2 id="b10"><span class="no">Bölüm 10</span>Hess yasası</h2>
 <span class="ek-rozet">Ek konu · müfredat dışı · AYT için gerekli</span>
 
+<div class="kart gunluk">
+  <div class="baslik">Çekirdek rota · 6 soru</div>
+  <p>Zamanın kısıtlıysa önce şu soruları çöz: <b>Soru <a href="#s145" style="color:var(--yesil);font-weight:800">145</a> · <a href="#s146" style="color:var(--yesil);font-weight:800">146</a> · <a href="#s147" style="color:var(--yesil);font-weight:800">147</a> · <a href="#s148" style="color:var(--yesil);font-weight:800">148</a> · <a href="#s153" style="color:var(--yesil);font-weight:800">153</a> · <a href="#s160" style="color:var(--yesil);font-weight:800">160</a></b></p>
+  <p style="margin-bottom:0">Bu altı soru bölümün temel becerilerini kapsar: üç hamle (ters çevir, çarp, topla) ve ters çevirirken işaret hatası. Kalanlar pekiştirme ve ileri düzeydir. Ardından <b>Kendin çöz</b> bloğundan 1., 2. ve son soruyu yap.</p>
+</div>
+
 <div class="kart ek-not">
   <div class="baslik">Müfredat notu</div>
   <p>11. sınıf Maarif Modeli kimya ders kitabında <b>"Hess" adı hiç geçmez</b>. Kitabın ilgili öğrenme çıktısı (K4), standart tepkime entalpisinin <b>yalnızca standart oluşum entalpisi verileriyle</b> hesaplanmasını ister — Bölüm 6'da yaptığımız budur.</p>
@@ -4809,7 +4926,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <p>Ters çevirirken işareti değiştirmeyi unutmak, bu bölümdeki hataların yarısından fazlasını oluşturur. Sınav soruları bu hatanın sonucunu <b>şık olarak</b> koyar: doğru cevabı bulduğunu sanıp yanlış şıkkı işaretlersin. Çözümün sonunda, sadeleşmelerin hedef denklemi <b>tam olarak</b> verdiğini kontrol et.</p>
 </div>
 
-<div class="soru">
+<div class="soru" id="s145">
   <div class="ust-serit"><span class="numara">Soru 145</span><span class="tur">Çoktan seçmeli</span><span class="seviye s-kolay">Kolay</span></div>
   <div class="govde">
     <p class="metin">Hess yasası ile ilgili aşağıdakilerden hangisi <b>yanlıştır</b>?</p>
@@ -4831,7 +4948,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s146">
   <div class="ust-serit"><span class="numara">Soru 146</span><span class="tur">Hesaplama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">I. S(k) + O<sub>2</sub>(g) → SO<sub>2</sub>(g) &nbsp; ΔH<sub>1</sub> = −297 kJ<br>II. 2SO<sub>2</sub>(g) + O<sub>2</sub>(g) → 2SO<sub>3</sub>(g) &nbsp; ΔH<sub>2</sub> = −198 kJ<br><b>Hedef:</b> S(k) + 3/2O<sub>2</sub>(g) → SO<sub>3</sub>(g)</p>
@@ -4848,7 +4965,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s147">
   <div class="ust-serit"><span class="numara">Soru 147</span><span class="tur">Hesaplama</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">I. C(k) + O<sub>2</sub>(g) → CO<sub>2</sub>(g) &nbsp; ΔH<sub>1</sub> = −394 kJ<br>II. CO(g) + ½O<sub>2</sub>(g) → CO<sub>2</sub>(g) &nbsp; ΔH<sub>2</sub> = −283 kJ<br><b>Hedef:</b> C(k) + ½O<sub>2</sub>(g) → CO(g)</p>
@@ -4865,7 +4982,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s148">
   <div class="ust-serit"><span class="numara">Soru 148</span><span class="tur">Hesaplama</span><span class="ayt">AYT 2019</span></div>
   <div class="govde">
     <p class="metin">C(k) + ½O<sub>2</sub>(g) → CO(g) &nbsp; ΔH = −110,5 kJ/mol<br>CO<sub>2</sub>(g) → ½O<sub>2</sub>(g) + CO(g) &nbsp; ΔH = +283 kJ/mol</p>
@@ -4887,7 +5004,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s149">
   <div class="ust-serit"><span class="numara">Soru 149</span><span class="tur">Hesaplama</span><span class="ayt">AYT 2020</span></div>
   <div class="govde">
     <p class="metin">C<sub>2</sub>H<sub>2</sub>(g) + 5/2O<sub>2</sub>(g) → 2CO<sub>2</sub>(g) + H<sub>2</sub>O(s) &nbsp; ΔH = −1300 kJ<br>C(k) + O<sub>2</sub>(g) → CO<sub>2</sub>(g) &nbsp; ΔH = −394 kJ<br>H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(s) &nbsp; ΔH = −286 kJ</p>
@@ -4909,7 +5026,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s150">
   <div class="ust-serit"><span class="numara">Soru 150</span><span class="tur">Hesaplama</span><span class="ayt">AYT 2024</span></div>
   <div class="govde">
     <p class="metin">H<sub>2</sub>(g) + O<sub>2</sub>(g) → H<sub>2</sub>O<sub>2</sub>(s) &nbsp; ΔH° = −188 kJ/mol<br>H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(s) &nbsp; ΔH° = −286 kJ/mol</p>
@@ -4932,7 +5049,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s151">
   <div class="ust-serit"><span class="numara">Soru 151</span><span class="tur">Hesaplama</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">I. N<sub>2</sub>(g) + O<sub>2</sub>(g) → 2NO(g) &nbsp; ΔH<sub>1</sub> = +180 kJ<br>II. 2NO(g) + O<sub>2</sub>(g) → 2NO<sub>2</sub>(g) &nbsp; ΔH<sub>2</sub> = −112 kJ</p>
@@ -4955,7 +5072,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s152">
   <div class="ust-serit"><span class="numara">Soru 152</span><span class="tur">Hesaplama</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">I. C(k) + O<sub>2</sub>(g) → CO<sub>2</sub>(g) &nbsp; ΔH = −394 kJ<br>II. H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(s) &nbsp; ΔH = −286 kJ<br>III. CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) → CO<sub>2</sub>(g) + 2H<sub>2</sub>O(s) &nbsp; ΔH = −890 kJ</p>
@@ -4975,7 +5092,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s153">
   <div class="ust-serit"><span class="numara">Soru 153</span><span class="tur">Hata bulma</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci, aşağıdaki verilerle 2NO<sub>2</sub>(g) → N<sub>2</sub>O<sub>4</sub>(g) tepkimesinin ΔH'sini bulmaya çalışıyor.</p>
@@ -4997,7 +5114,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s154">
   <div class="ust-serit"><span class="numara">Soru 154</span><span class="tur">Strateji</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki verilerle <b>hedef:</b> 2Al(k) + Fe<sub>2</sub>O<sub>3</sub>(k) → Al<sub>2</sub>O<sub>3</sub>(k) + 2Fe(k) tepkimesinin ΔH'si bulunacaktır.</p>
@@ -5021,7 +5138,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s155">
   <div class="ust-serit"><span class="numara">Soru 155</span><span class="tur">Ters hesap</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">I. S(k) + O<sub>2</sub>(g) → SO<sub>2</sub>(g) &nbsp; ΔH = −297 kJ<br>II. S(k) + 3/2O<sub>2</sub>(g) → SO<sub>3</sub>(g) &nbsp; ΔH = −396 kJ</p>
@@ -5040,7 +5157,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s156">
   <div class="ust-serit"><span class="numara">Soru 156</span><span class="tur">Öncüllü</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Hess yasası ile ilgili hangi yargılar doğrudur?</p>
@@ -5063,7 +5180,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s157">
   <div class="ust-serit"><span class="numara">Soru 157</span><span class="tur">Bağlam temelli</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Karbonun kısmen yanmasıyla oluşan karbon monoksit, renksiz ve kokusuz olduğu için "sessiz katil" diye anılır. C(k) + ½O<sub>2</sub>(g) → CO(g) tepkimesinin entalpisi laboratuvarda <b>doğrudan ölçülemez</b>.</p>
@@ -5084,7 +5201,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s158">
   <div class="ust-serit"><span class="numara">Soru 158</span><span class="tur">Hesaplama</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">I. C<sub>2</sub>H<sub>5</sub>OH(s) + 3O<sub>2</sub>(g) → 2CO<sub>2</sub>(g) + 3H<sub>2</sub>O(s) &nbsp; ΔH = −1367 kJ<br>II. C(k) + O<sub>2</sub>(g) → CO<sub>2</sub>(g) &nbsp; ΔH = −394 kJ<br>III. H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(s) &nbsp; ΔH = −286 kJ</p>
@@ -5105,7 +5222,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s159">
   <div class="ust-serit"><span class="numara">Soru 159</span><span class="tur">Eksik basamak</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Bir maddenin dönüşüm basamakları ve entalpileri kısmen verilmiştir.</p>
@@ -5128,7 +5245,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s160">
   <div class="ust-serit"><span class="numara">Soru 160</span><span class="tur">Sentez</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Bu modülde bir tepkimenin ΔH'sini bulmanın <b>üç</b> yolunu öğrendik: bağ enerjileri, standart oluşum entalpileri ve Hess yasası.</p>
@@ -5198,7 +5315,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </ul>
 </div>
 
-<div class="soru">
+<div class="soru" id="s161">
   <div class="ust-serit"><span class="numara">Soru 161</span><span class="tur">B1 · B2</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir beherglasta gerçekleşen bir olayda kabın dışı <b>soğumuş</b>, termometre 25 °C'den 17 °C'ye düşmüştür.</p>
@@ -5222,7 +5339,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s162">
   <div class="ust-serit"><span class="numara">Soru 162</span><span class="tur">B2 · B4</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">N<sub>2</sub>(g) + O<sub>2</sub>(g) → 2NO(g) tepkimesi için bağ enerjileri verilmiştir.</p>
@@ -5244,7 +5361,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s163">
   <div class="ust-serit"><span class="numara">Soru 163</span><span class="tur">B3</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir yakıtın 250 gramı tamamen yakıldığında 12 375 kJ enerji açığa çıkmaktadır.</p>
@@ -5266,7 +5383,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s164">
   <div class="ust-serit"><span class="numara">Soru 164</span><span class="tur">B4 · B6</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenciye C<sub>2</sub>H<sub>4</sub>(g) + H<sub>2</sub>(g) → C<sub>2</sub>H<sub>6</sub>(g) tepkimesi için iki ayrı veri seti veriliyor.</p>
@@ -5288,7 +5405,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s165">
   <div class="ust-serit"><span class="numara">Soru 165</span><span class="tur">B5</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Aşağıdakilerden hangilerinin standart oluşum entalpisi <b>sıfırdır</b>?</p>
@@ -5310,7 +5427,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s166">
   <div class="ust-serit"><span class="numara">Soru 166</span><span class="tur">B6</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">C<sub>3</sub>H<sub>8</sub>(g) + 5O<sub>2</sub>(g) → 3CO<sub>2</sub>(g) + 4H<sub>2</sub>O(g) tepkimesinin standart entalpisini hesaplayın.</p>
@@ -5328,7 +5445,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s167">
   <div class="ust-serit"><span class="numara">Soru 167</span><span class="tur">B7</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">2SO<sub>2</sub>(g) + O<sub>2</sub>(g) → 2SO<sub>3</sub>(g) &nbsp; ΔH = −198 kJ tepkimesinde aşağıdaki değişiklikler <b>ayrı ayrı</b> yapılıyor. Hangilerinde denklem başına ΔH değeri değişir?</p>
@@ -5353,7 +5470,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s168">
   <div class="ust-serit"><span class="numara">Soru 168</span><span class="tur">B8</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">2Na(k) + 2H<sub>2</sub>O(s) → 2NaOH(suda) + H<sub>2</sub>(g) &nbsp; ΔH = −368 kJ</p>
@@ -5378,7 +5495,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s169">
   <div class="ust-serit"><span class="numara">Soru 169</span><span class="tur">B9 · B5</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Diyagramda üç maddenin standart koşullardaki enerji düzeyleri verilmiştir.</p>
@@ -5418,7 +5535,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s170">
   <div class="ust-serit"><span class="numara">Soru 170</span><span class="tur">B10</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">I. 2C(k) + H<sub>2</sub>(g) → C<sub>2</sub>H<sub>2</sub>(g) &nbsp; ΔH = +226 kJ<br>II. C<sub>2</sub>H<sub>2</sub>(g) + 2H<sub>2</sub>(g) → C<sub>2</sub>H<sub>6</sub>(g) &nbsp; ΔH = −311 kJ</p>
@@ -5437,7 +5554,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s171">
   <div class="ust-serit"><span class="numara">Soru 171</span><span class="tur">B2 · B4 · B5</span><span class="ayt">AYT 2026</span></div>
   <div class="govde">
     <p class="metin">25 °C'de suyun elementlerinden oluşma tepkimesi aşağıdaki gibidir:</p>
@@ -5464,7 +5581,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s172">
   <div class="ust-serit"><span class="numara">Soru 172</span><span class="tur">B3 · B8</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Bir evin ısıtılması için günde 1 780 000 kJ enerji gerekiyor. Bu enerji metan yakılarak sağlanacaktır.</p>
@@ -5487,7 +5604,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s173">
   <div class="ust-serit"><span class="numara">Soru 173</span><span class="tur">B2 · B9</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci, ΔH = +90 kJ olan bir tepkimeyi diyagramla göstermek istiyor ve tepkenleri 60 kJ düzeyine yerleştiriyor.</p>
@@ -5510,7 +5627,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s174">
   <div class="ust-serit"><span class="numara">Soru 174</span><span class="tur">B5 · B6</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">2SO<sub>2</sub>(g) + O<sub>2</sub>(g) → 2SO<sub>3</sub>(g) &nbsp; ΔH° = −198 kJ<br>SO<sub>2</sub>'nin standart oluşum entalpisi −297 kJ/mol'dür.</p>
@@ -5532,7 +5649,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s175">
   <div class="ust-serit"><span class="numara">Soru 175</span><span class="tur">B1 · B7</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci, iki farklı asidin nötrleşme entalpilerini karşılaştırmak için deney tasarlıyor: eşit hacimde HCl ve H<sub>2</sub>SO<sub>4</sub> çözeltilerini ayrı ayrı NaOH ile karıştırıp sıcaklık artışlarını ölçecek.</p>
@@ -5553,7 +5670,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s176">
   <div class="ust-serit"><span class="numara">Soru 176</span><span class="tur">B4 · B9</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">H<sub>2</sub>(g) + Br<sub>2</sub>(g) → 2HBr(g) tepkimesi için bağ enerjileri: H—H 436, Br—Br 193, H—Br 364 kJ/mol.</p>
@@ -5574,7 +5691,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s177">
   <div class="ust-serit"><span class="numara">Soru 177</span><span class="tur">B6 · B10</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Aynı tepkime iki farklı veri setiyle veriliyor: <b>CaCO<sub>3</sub>(k) → CaO(k) + CO<sub>2</sub>(g)</b></p>
@@ -5596,7 +5713,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s178">
   <div class="ust-serit"><span class="numara">Soru 178</span><span class="tur">B8</span><span class="seviye s-orta">Orta</span></div>
   <div class="govde">
     <p class="metin">H<sub>2</sub>SO<sub>4</sub>(suda) + 2NaOH(suda) → Na<sub>2</sub>SO<sub>4</sub>(suda) + 2H<sub>2</sub>O(s) + 114 kJ</p>
@@ -5619,7 +5736,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s179">
   <div class="ust-serit"><span class="numara">Soru 179</span><span class="tur">B3</span><span class="seviye s-zor">Zor</span></div>
   <div class="govde">
     <p class="metin">Metan ve kömür (saf karbon) aynı miktarda enerji verecek biçimde yakılıyor.</p>
@@ -5642,7 +5759,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="s180">
   <div class="ust-serit"><span class="numara">Soru 180</span><span class="tur">Sentez · tüm bölümler</span><span class="seviye s-ileri">İleri</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci elindeki soruyu şöyle tarif ediyor: "Tepkimede bir katı var, iki tepkenin de kütlesi verilmiş, verim %60 ve cevap joule isteniyor. Ayrıca oluşum entalpileri tablosu da verilmiş."</p>
@@ -5719,7 +5836,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <p>Bu deneme <b>yalnızca ders kitabı kapsamındadır</b>. Hess yasası (Bölüm 10) müfredat dışı olduğu için denemeye dâhil edilmemiştir. q = m·c·ΔT ve kalorimetre hesabı içeren soru da yoktur.</p>
 </div>
 
-<div class="soru">
+<div class="soru" id="y1">
   <div class="ust-serit"><span class="numara">Soru 1</span><span class="tur">Boşluk doldurma</span><span class="puan">10 puan</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki boşlukları uygun ifadelerle doldurunuz. <span style="font-weight:400;color:var(--gri)">(Her boşluk 2 puan)</span></p>
@@ -5734,7 +5851,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="y2">
   <div class="ust-serit"><span class="numara">Soru 2</span><span class="tur">Doğru / yanlış</span><span class="puan">10 puan</span></div>
   <div class="govde">
     <p class="metin">İfadelerin başına doğru ise <b>D</b>, yanlış ise <b>Y</b> yazınız. <span style="font-weight:400;color:var(--gri)">(Her madde 2 puan)</span></p>
@@ -5759,7 +5876,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="y3">
   <div class="ust-serit"><span class="numara">Soru 3</span><span class="tur">Sınıflandırma</span><span class="puan">10 puan</span></div>
   <div class="govde">
     <p class="metin">Aşağıdaki olayları <b>endotermik</b> ve <b>ekzotermik</b> olarak sınıflandırınız. <span style="font-weight:400;color:var(--gri)">(Her olay 2 puan)</span></p>
@@ -5781,7 +5898,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="y4">
   <div class="ust-serit"><span class="numara">Soru 4</span><span class="tur">Hesaplama</span><span class="puan">10 puan</span></div>
   <div class="govde">
     <p class="metin">N<sub>2</sub>(g) + 3H<sub>2</sub>(g) → 2NH<sub>3</sub>(g) tepkimesinin entalpi değişimini <b>bağ enerjilerinden</b> yararlanarak hesaplayınız ve tepkimeyi sınıflandırınız.</p>
@@ -5799,7 +5916,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="y5">
   <div class="ust-serit"><span class="numara">Soru 5</span><span class="tur">Hesaplama</span><span class="puan">10 puan</span></div>
   <div class="govde">
     <p class="metin">C<sub>3</sub>H<sub>8</sub>(g) + 5O<sub>2</sub>(g) → 3CO<sub>2</sub>(g) + 4H<sub>2</sub>O(g) tepkimesinin standart entalpi değişimini <b>standart oluşum entalpilerinden</b> hesaplayınız.</p>
@@ -5817,7 +5934,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="y6">
   <div class="ust-serit"><span class="numara">Soru 6</span><span class="tur">Diyagram okuma</span><span class="puan">10 puan</span></div>
   <div class="govde">
     <p class="metin">Verilen potansiyel enerji diyagramına göre soruları cevaplayınız. <span style="font-weight:400;color:var(--gri)">(Her şık 2,5 puan)</span></p>
@@ -5859,7 +5976,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="y7">
   <div class="ust-serit"><span class="numara">Soru 7</span><span class="tur">Hesaplama</span><span class="puan">10 puan</span></div>
   <div class="govde">
     <p class="metin">2Al(k) + 3Cl<sub>2</sub>(g) → 2AlCl<sub>3</sub>(k) &nbsp; ΔH = −1400 kJ</p>
@@ -5879,7 +5996,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="y8">
   <div class="ust-serit"><span class="numara">Soru 8</span><span class="tur">Veri yorumlama</span><span class="puan">10 puan</span></div>
   <div class="govde">
     <p class="metin">Bazı yakıtların ısıl değerleri tabloda verilmiştir.</p>
@@ -5909,7 +6026,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="y9">
   <div class="ust-serit"><span class="numara">Soru 9</span><span class="tur">Ters hesap</span><span class="puan">10 puan</span></div>
   <div class="govde">
     <p class="metin">C<sub>2</sub>H<sub>2</sub>(g) + 5/2O<sub>2</sub>(g) → 2CO<sub>2</sub>(g) + H<sub>2</sub>O(s) &nbsp; ΔH° = −1300 kJ</p>
@@ -5931,7 +6048,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   </div>
 </div>
 
-<div class="soru">
+<div class="soru" id="y10">
   <div class="ust-serit"><span class="numara">Soru 10</span><span class="tur">Açık uçlu</span><span class="puan">10 puan</span></div>
   <div class="govde">
     <p class="metin">Bir öğrenci iki beherglasa <b>eşit kütlede</b> iki farklı katı koyup üzerlerine su ekliyor ve sıcaklık artışlarını ölçüyor. A katısında sıcaklık 12 °C, B katısında 7 °C artıyor. Öğrenci şu sonuca varıyor:</p>
@@ -6147,6 +6264,293 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <p>Bir tepkimenin enerjisi, <b>kırılan bağlara ödenen bedel ile kurulan bağlardan gelen kazancın farkıdır</b>; bu fark yola değil, yalnızca başlangıç ve bitiş hâline bağlıdır.</p>
 </div>
 
+<!-- ==================== CEVAP ANAHTARI ==================== -->
+<h2 id="anahtar"><span class="no">Cevap anahtarı</span>Bütün soruların cevapları tek listede</h2>
+
+<p>Hızlı kontrol için. Çözüm adımları için sorunun kendisine dön; bu liste yalnızca sonuçları içerir. Bölüm başlıklarına tıklayarak ilgili bölüme gidebilirsin.</p>
+
+<div class="kart kural">
+  <div class="baslik">İki kısayol</div>
+  <ul>
+    <li>Sayfanın üstündeki <b>"Tüm çözümleri aç"</b> düğmesi bütün açılır kutuları tek seferde açar.</li>
+    <li>Yazdırırken çözümler <b>kendiliğinden açılır</b>; kâğıda basılan sürüm çözümlü olur, arka planlar beyaza döner.</li>
+  </ul>
+</div>
+
+<h3><a href="#b1" style="text-decoration:none;color:inherit">Bölüm 1 · Isı, sıcaklık ve enerji değişimi <span style="color:var(--turuncu);font-size:.8em">↗</span></a></h3>
+<div class="tablo-sar">
+<table>
+<tr><th style="width:96px">Soru</th><th>Cevap</th></tr>
+<tr><td><b><a href="#s1" style="color:var(--mavi)">1</a></b></td><td>Sistem, incelenen maddelerin kendisidir; kap, hava ve el daima çevredir.</td></tr>
+<tr><td><b><a href="#s2" style="color:var(--mavi)">2</a></b></td><td>II, III ve IV doğru; I yanlış.</td></tr>
+<tr><td><b><a href="#s3" style="color:var(--mavi)">3</a></b></td><td>a) II ve IV &nbsp;·&nbsp; b) II (ve IV) &nbsp;·&nbsp; c) Hayır; madde miktarları bilinmeden karşılaştırılamaz.</td></tr>
+<tr><td><b><a href="#s4" style="color:var(--mavi)">4</a></b></td><td>I: D · II: Y · III: Y · IV: D · V: D</td></tr>
+<tr><td><b><a href="#s5" style="color:var(--mavi)">5</a></b></td><td>Sistem tepkimeye giren iki kimyasal; ısının kaynağı maddelerdeki kimyasal enerjidir, dışarıdan enerji harcanmaz.</td></tr>
+<tr><td><b><a href="#s6" style="color:var(--mavi)">6</a></b></td><td>E</td></tr>
+<tr><td><b><a href="#s7" style="color:var(--mavi)">7</a></b></td><td>Bağımsız: katı cinsi · Bağımlı: sıcaklık değişimi · Kontrol: su, sıcaklık, kütle, süre. Deney yönü gösterir, büyüklük karşılaştırmasına yetmez.</td></tr>
+<tr><td><b><a href="#s8" style="color:var(--mavi)">8</a></b></td><td>a–3 · b–5 · c–2 · d–4 · e–1</td></tr>
+<tr><td><b><a href="#s9" style="color:var(--mavi)">9</a></b></td><td>Yalnız Deniz doğru; Kaan, Ela ve Poyraz hatalı.</td></tr>
+<tr><td><b><a href="#s10" style="color:var(--mavi)">10</a></b></td><td>sistem · çevre · ısı · sıcaklık · ortalama · korunumu</td></tr>
+<tr><td><b><a href="#s11" style="color:var(--mavi)">11</a></b></td><td>a) A: çevreden sisteme · B: sistemden çevreye &nbsp;·&nbsp; b) Ürün A &nbsp;·&nbsp; c) Çevreden sisteme</td></tr>
+<tr><td><b><a href="#s12" style="color:var(--mavi)">12</a></b></td><td>a) Enerji alan (endotermik) &nbsp;·&nbsp; b) Işık → elektron → elektrik → hareket &nbsp;·&nbsp; c) Enerji ışık ve elektrik olarak da aktarılır; ısı tek yol değildir.</td></tr>
+<tr><td><b><a href="#s13" style="color:var(--mavi)">13</a></b></td><td>Isı alanlar: I, IV &nbsp;·&nbsp; Isı verenler: II, III, V. Hâl değişimlerinde sistemin sıcaklığı sabittir.</td></tr>
+<tr><td><b><a href="#s14" style="color:var(--mavi)">14</a></b></td><td>İddia yanlış. Sıcaklık, enerji değişiminin tek göstergesi değildir; ışık, hâl değişimi ve yalıtımsız kap üç ayrı karşı örnektir.</td></tr>
+<tr><td><b><a href="#s15" style="color:var(--mavi)">15</a></b></td><td>a) I: çevreden sisteme, II: sistemden çevreye &nbsp;·&nbsp; c) Hayır; madde miktarları bilinmiyor &nbsp;·&nbsp; d) Olayın tükenmesi ve dış ortama ısı kaçağı.</td></tr>
+<tr><td><b><a href="#s16" style="color:var(--mavi)">16</a></b></td><td>4. çıkış (D → Y → Y)</td></tr>
+</table>
+</div>
+
+<h3><a href="#b2" style="text-decoration:none;color:inherit">Bölüm 2 · Ekzotermik ve endotermik tepkimeler · entalpi <span style="color:var(--turuncu);font-size:.8em">↗</span></a></h3>
+<div class="tablo-sar">
+<table>
+<tr><th style="width:96px">Soru</th><th>Cevap</th></tr>
+<tr><td><b><a href="#s17" style="color:var(--mavi)">17</a></b></td><td>D</td></tr>
+<tr><td><b><a href="#s18" style="color:var(--mavi)">18</a></b></td><td>Ekzotermik: II, IV, VII &nbsp;·&nbsp; Endotermik: I, III, V, VI, VIII, IX</td></tr>
+<tr><td><b><a href="#s19" style="color:var(--mavi)">19</a></b></td><td>a) −90 kJ &nbsp;·&nbsp; b) Evet, ekzotermik &nbsp;·&nbsp; c) +90 kJ</td></tr>
+<tr><td><b><a href="#s20" style="color:var(--mavi)">20</a></b></td><td>I, II ve III doğru; IV yanlış.</td></tr>
+<tr><td><b><a href="#s21" style="color:var(--mavi)">21</a></b></td><td>a) +100 kJ &nbsp;·&nbsp; b) Hayır, endotermik &nbsp;·&nbsp; c) −100 kJ &nbsp;·&nbsp; d) Soğur</td></tr>
+<tr><td><b><a href="#s22" style="color:var(--mavi)">22</a></b></td><td>I ve III hatalı. I: ΔH = −890 kJ. III: ΔH = +180 kJ, azotun yanması endotermiktir.</td></tr>
+<tr><td><b><a href="#s23" style="color:var(--mavi)">23</a></b></td><td>I: D · II: Y · III: D · IV: Y · V: D</td></tr>
+<tr><td><b><a href="#s24" style="color:var(--mavi)">24</a></b></td><td>a) Ekzotermik, ΔH &lt; 0 &nbsp;·&nbsp; b) Tepkenler daha yüksek enerjili &nbsp;·&nbsp; c) Sistemden çevreye &nbsp;·&nbsp; d) Hayır; başlatma enerjisi ΔH'yi belirlemez.</td></tr>
+<tr><td><b><a href="#s25" style="color:var(--mavi)">25</a></b></td><td>a–2 · b–4 · c–1 · d–5 · e–3</td></tr>
+<tr><td><b><a href="#s26" style="color:var(--mavi)">26</a></b></td><td>a) I ve III &nbsp;·&nbsp; b) II ve IV soğutma paketi olarak &nbsp;·&nbsp; c) I; III'te yanıcı H<sub>2</sub> gazı oluşur.</td></tr>
+<tr><td><b><a href="#s27" style="color:var(--mavi)">27</a></b></td><td>endotermik · pozitif · artar · azalır · tepkenler · ekzotermik · tepkenler · artar</td></tr>
+<tr><td><b><a href="#s28" style="color:var(--mavi)">28</a></b></td><td>3. çıkış (D → Y → D)</td></tr>
+<tr><td><b><a href="#s29" style="color:var(--mavi)">29</a></b></td><td>Kaan ve Poyraz doğru; Nehir yanlış.</td></tr>
+<tr><td><b><a href="#s30" style="color:var(--mavi)">30</a></b></td><td>a) IV &gt; II &gt; I &gt; III &nbsp;·&nbsp; b) ΔH<sub>IV</sub> &lt; ΔH<sub>II</sub> &lt; ΔH<sub>I</sub> &lt; ΔH<sub>III</sub></td></tr>
+<tr><td><b><a href="#s31" style="color:var(--mavi)">31</a></b></td><td>I ve III</td></tr>
+<tr><td><b><a href="#s32" style="color:var(--mavi)">32</a></b></td><td>Yasa evren için geçerlidir. Sistem −, çevre +, evren sabit. Eksi işareti kayıp değil yön bildirir.</td></tr>
+</table>
+</div>
+
+<h3><a href="#b3" style="text-decoration:none;color:inherit">Bölüm 3 · Maddelerin enerji kaynağı olma potansiyeli <span style="color:var(--turuncu);font-size:.8em">↗</span></a></h3>
+<div class="tablo-sar">
+<table>
+<tr><th style="width:96px">Soru</th><th>Cevap</th></tr>
+<tr><td><b><a href="#s33" style="color:var(--mavi)">33</a></b></td><td>C</td></tr>
+<tr><td><b><a href="#s34" style="color:var(--mavi)">34</a></b></td><td>a) 2830 kJ &nbsp;·&nbsp; b) yaklaşık 428 g &nbsp;·&nbsp; c) Fosil yakıtların ısıl değeri daha yüksektir.</td></tr>
+<tr><td><b><a href="#s35" style="color:var(--mavi)">35</a></b></td><td>Yaklaşık %47 daha az enerji elde edilir.</td></tr>
+<tr><td><b><a href="#s36" style="color:var(--mavi)">36</a></b></td><td>I, II ve IV doğru; III yanlış.</td></tr>
+<tr><td><b><a href="#s37" style="color:var(--mavi)">37</a></b></td><td>Metanol 22,7 · Glikoz 15,6 · Propan 50,5 kJ/g. Sıralama: propan &gt; metanol &gt; glikoz.</td></tr>
+<tr><td><b><a href="#s38" style="color:var(--mavi)">38</a></b></td><td>Hata, kJ/mol ile karşılaştırmaktır. kJ/g'ye çevrildiğinde metan (55,6) glikozdan (15,6) çok daha iyidir.</td></tr>
+<tr><td><b><a href="#s39" style="color:var(--mavi)">39</a></b></td><td>Yenilenemez: I, III, V · Yenilenebilir: II, IV, VI · CO<sub>2</sub> vermeyen tek yakıt: VI</td></tr>
+<tr><td><b><a href="#s40" style="color:var(--mavi)">40</a></b></td><td>I: Y · II: D · III: D · IV: Y · V: Y</td></tr>
+<tr><td><b><a href="#s41" style="color:var(--mavi)">41</a></b></td><td>a) ≈29,7 kJ/g &nbsp;·&nbsp; b) 273,4 kJ &nbsp;·&nbsp; c) ≈1,58 kat &nbsp;·&nbsp; d) Yenilenebilir olması ve düşük net karbon salımı</td></tr>
+<tr><td><b><a href="#s42" style="color:var(--mavi)">42</a></b></td><td>Bağımsız: besin türü · Bağımlı: sıcaklık artışı · Ölçülen değer, ısı kaçağı ve eksik yanma nedeniyle gerçekten düşüktür.</td></tr>
+<tr><td><b><a href="#s43" style="color:var(--mavi)">43</a></b></td><td>(1) 143 kJ/g · (2) −890 kJ/mol · (3) ≈48 kJ/g · (4) 12 g/mol</td></tr>
+<tr><td><b><a href="#s44" style="color:var(--mavi)">44</a></b></td><td>a) ≈1,14 kg &nbsp;·&nbsp; b) ≈2,67 kg &nbsp;·&nbsp; c) Depolama, güvenlik, maliyet ve altyapı grafikte görünmez.</td></tr>
+<tr><td><b><a href="#s45" style="color:var(--mavi)">45</a></b></td><td>a) 2460 kJ &nbsp;·&nbsp; b) 72 dakika &nbsp;·&nbsp; c) Kalan kütle büyük ölçüde sudur, enerji vermez.</td></tr>
+<tr><td><b><a href="#s46" style="color:var(--mavi)">46</a></b></td><td>Doğal gaz, temin edilemediği için uygun değildir. Odun veya kömür — hangisi seçilirse seçilsin, gerekçe ölçüt karşılaştırmasına dayanmalıdır.</td></tr>
+<tr><td><b><a href="#s47" style="color:var(--mavi)">47</a></b></td><td>İddia yanlış. Hidrojen (depolama), taş kömürü (çevresel etki) ve biyoetanol (yenilenebilirlik) üç bağımsız karşı örnektir.</td></tr>
+<tr><td><b><a href="#s48" style="color:var(--mavi)">48</a></b></td><td>Molekülündeki oksijen oranı arttıkça ısıl değer düşer; karbonun bir kısmı zaten yükseltgenmiştir. Oran tek belirleyici değildir, hidrojen oranı da etkilidir.</td></tr>
+</table>
+</div>
+
+<h3><a href="#b4" style="text-decoration:none;color:inherit">Bölüm 4 · Bağ enerjileriyle tepkime entalpisi <span style="color:var(--turuncu);font-size:.8em">↗</span></a></h3>
+<div class="tablo-sar">
+<table>
+<tr><th style="width:96px">Soru</th><th>Cevap</th></tr>
+<tr><td><b><a href="#s49" style="color:var(--mavi)">49</a></b></td><td>C</td></tr>
+<tr><td><b><a href="#s50" style="color:var(--mavi)">50</a></b></td><td>I, II ve IV doğru; III yanlış (enerji açığa çıkmaz, harcanır).</td></tr>
+<tr><td><b><a href="#s51" style="color:var(--mavi)">51</a></b></td><td>ΔH = −80 kJ (ekzotermik)</td></tr>
+<tr><td><b><a href="#s52" style="color:var(--mavi)">52</a></b></td><td>ΔH = −486 kJ</td></tr>
+<tr><td><b><a href="#s53" style="color:var(--mavi)">53</a></b></td><td>C—Cl bağ enerjisi = 339 kJ/mol</td></tr>
+<tr><td><b><a href="#s54" style="color:var(--mavi)">54</a></b></td><td>a) Üçü de artar &nbsp;·&nbsp; b) Üç katından büyüktür &nbsp;·&nbsp; c) N≡N bağı çok güçlü olduğu için (946 kJ/mol).</td></tr>
+<tr><td><b><a href="#s55" style="color:var(--mavi)">55</a></b></td><td>Aritmetik doğru, yöntem geçersiz: ürün sıvı su olduğu için bağ enerjileriyle hesap yapılamaz.</td></tr>
+<tr><td><b><a href="#s56" style="color:var(--mavi)">56</a></b></td><td>a) 1971 / 2310 kJ &nbsp;·&nbsp; b) −339 kJ &nbsp;·&nbsp; c) Ekzotermik &nbsp;·&nbsp; d) Bağ sayısı değil bağ gücü belirleyicidir.</td></tr>
+<tr><td><b><a href="#s57" style="color:var(--mavi)">57</a></b></td><td>a) Kırılan bağların toplam enerjisi &nbsp;·&nbsp; b) −800 kJ &nbsp;·&nbsp; c) Evet; A—B = 400 &gt; 310 kJ/mol</td></tr>
+<tr><td><b><a href="#s58" style="color:var(--mavi)">58</a></b></td><td>Yalnız I ve III</td></tr>
+<tr><td><b><a href="#s59" style="color:var(--mavi)">59</a></b></td><td>ΔH = −1154 kJ</td></tr>
+<tr><td><b><a href="#s60" style="color:var(--mavi)">60</a></b></td><td>a) 430 kJ/mol &nbsp;·&nbsp; b) +185 kJ &nbsp;·&nbsp; c) X—X (435 kJ/mol)</td></tr>
+<tr><td><b><a href="#s61" style="color:var(--mavi)">61</a></b></td><td>I: Y · II: Y · III: D · IV: Y · V: D</td></tr>
+<tr><td><b><a href="#s62" style="color:var(--mavi)">62</a></b></td><td>Fark ortalama bağ enerjilerinden gelir; hesap hatalı değildir, yöntem yaklaşıktır ama kullanışlıdır.</td></tr>
+<tr><td><b><a href="#s63" style="color:var(--mavi)">63</a></b></td><td>kırılması · oluşması · büyük · endotermik · pozitif · küçük</td></tr>
+<tr><td><b><a href="#s64" style="color:var(--mavi)">64</a></b></td><td>a) I: −535 kJ · II: −99 kJ · III: +99 kJ &nbsp;·&nbsp; b) I ve II &nbsp;·&nbsp; c) Zayıf F—F, güçlü H—F &nbsp;·&nbsp; d) N≡N'nin 946 kJ'lik maliyeti karşılanamıyor.</td></tr>
+</table>
+</div>
+
+<h3><a href="#b5" style="text-decoration:none;color:inherit">Bölüm 5 · Standart oluşum entalpisi <span style="color:var(--turuncu);font-size:.8em">↗</span></a></h3>
+<div class="tablo-sar">
+<table>
+<tr><th style="width:96px">Soru</th><th>Cevap</th></tr>
+<tr><td><b><a href="#s65" style="color:var(--mavi)">65</a></b></td><td>D</td></tr>
+<tr><td><b><a href="#s66" style="color:var(--mavi)">66</a></b></td><td>II, IV ve VI</td></tr>
+<tr><td><b><a href="#s67" style="color:var(--mavi)">67</a></b></td><td>I, II, IV, V, VII ve IX</td></tr>
+<tr><td><b><a href="#s68" style="color:var(--mavi)">68</a></b></td><td>Yalnız V</td></tr>
+<tr><td><b><a href="#s69" style="color:var(--mavi)">69</a></b></td><td>a) ½N₂ + 3/2H₂ → NH₃ &nbsp;·&nbsp; b) Ca + C(grafit) + 3/2O₂ → CaCO₃ &nbsp;·&nbsp; c) ½H₂ + ½Br₂(s) → HBr &nbsp;·&nbsp; d) 3C(grafit) + 4H₂ → C₃H₈</td></tr>
+<tr><td><b><a href="#s70" style="color:var(--mavi)">70</a></b></td><td>a) SiO₂ &nbsp;·&nbsp; b) NO ve C₂H₂ &nbsp;·&nbsp; c) 92,2 kJ &nbsp;·&nbsp; d) Enerjice zengin olduğu için.</td></tr>
+<tr><td><b><a href="#s71" style="color:var(--mavi)">71</a></b></td><td>I, II, III ve IV eşit değildir; yalnız V eşittir.</td></tr>
+<tr><td><b><a href="#s72" style="color:var(--mavi)">72</a></b></td><td>a) ½X₂ + ½Y₂ → XY, −120 kJ/mol &nbsp;·&nbsp; b) ½X₂ + Y₂ → XY₂, −300 kJ/mol &nbsp;·&nbsp; c) XY₂</td></tr>
+<tr><td><b><a href="#s73" style="color:var(--mavi)">73</a></b></td><td>a) Çok negatif (−285,8 kJ/mol) &nbsp;·&nbsp; b) Negatiflik arttıkça kararlılık ve doğada bulunma eğilimi artar &nbsp;·&nbsp; c) Hayır; hız ve koşullar da belirleyicidir.</td></tr>
+<tr><td><b><a href="#s74" style="color:var(--mavi)">74</a></b></td><td>I: D · II: Y · III: Y · IV: Y · V: D</td></tr>
+<tr><td><b><a href="#s75" style="color:var(--mavi)">75</a></b></td><td>a–2 · b–6 · c–1 · d–4 · e–3 · f–5</td></tr>
+<tr><td><b><a href="#s76" style="color:var(--mavi)">76</a></b></td><td>a) +33,2 kJ/mol &nbsp;·&nbsp; b) 16,6 kJ alınır &nbsp;·&nbsp; c) −66,4 kJ</td></tr>
+<tr><td><b><a href="#s77" style="color:var(--mavi)">77</a></b></td><td>M'nin atom kütlesi 64'tür.</td></tr>
+<tr><td><b><a href="#s78" style="color:var(--mavi)">78</a></b></td><td>Sıfır olan enerji değil, referans noktasıdır. O=O bağ enerjisinin 498 kJ/mol olması iddiayı doğrudan çürütür.</td></tr>
+<tr><td><b><a href="#s79" style="color:var(--mavi)">79</a></b></td><td>25 °C ve 1 atm · element · kararlı · 1 mol · sıfır · negatif</td></tr>
+<tr><td><b><a href="#s80" style="color:var(--mavi)">80</a></b></td><td>a) +1,90 kJ/mol, endotermik &nbsp;·&nbsp; b) Grafit &nbsp;·&nbsp; c) Dönüşüm çok yavaştır &nbsp;·&nbsp; d) Standart hâl bir seçimdir, zorunlu olarak en düşük enerjili hâl değildir.</td></tr>
+</table>
+</div>
+
+<h3><a href="#b6" style="text-decoration:none;color:inherit">Bölüm 6 · Standart tepkime entalpisi <span style="color:var(--turuncu);font-size:.8em">↗</span></a></h3>
+<div class="tablo-sar">
+<table>
+<tr><th style="width:96px">Soru</th><th>Cevap</th></tr>
+<tr><td><b><a href="#s81" style="color:var(--mavi)">81</a></b></td><td>D</td></tr>
+<tr><td><b><a href="#s82" style="color:var(--mavi)">82</a></b></td><td>ΔH° = −1123,8 kJ</td></tr>
+<tr><td><b><a href="#s83" style="color:var(--mavi)">83</a></b></td><td>ΔH° = +178,4 kJ; endotermiktir, ısıtılması gerekir.</td></tr>
+<tr><td><b><a href="#s84" style="color:var(--mavi)">84</a></b></td><td>A) −428</td></tr>
+<tr><td><b><a href="#s85" style="color:var(--mavi)">85</a></b></td><td>B) −890,3</td></tr>
+<tr><td><b><a href="#s86" style="color:var(--mavi)">86</a></b></td><td>A) −55,3</td></tr>
+<tr><td><b><a href="#s87" style="color:var(--mavi)">87</a></b></td><td>ΔH<sub>f</sub>°(C<sub>2</sub>H<sub>2</sub>) = +226 kJ/mol</td></tr>
+<tr><td><b><a href="#s88" style="color:var(--mavi)">88</a></b></td><td>ΔH<sub>f</sub>°(NH<sub>3</sub>) = −45 kJ/mol</td></tr>
+<tr><td><b><a href="#s89" style="color:var(--mavi)">89</a></b></td><td>ΔH<sub>f</sub>°(SO<sub>2</sub>) = −290 kJ/mol</td></tr>
+<tr><td><b><a href="#s90" style="color:var(--mavi)">90</a></b></td><td>I ve II</td></tr>
+<tr><td><b><a href="#s91" style="color:var(--mavi)">91</a></b></td><td>C<sub>3</sub>H<sub>6</sub></td></tr>
+<tr><td><b><a href="#s92" style="color:var(--mavi)">92</a></b></td><td>a) −120 kJ/mol &nbsp;·&nbsp; b) −300 kJ/mol &nbsp;·&nbsp; c) −180 kJ</td></tr>
+<tr><td><b><a href="#s93" style="color:var(--mavi)">93</a></b></td><td>Tepkenler çıkarılmalıydı; doğru sonuç ΔH° = −1310 kJ</td></tr>
+<tr><td><b><a href="#s94" style="color:var(--mavi)">94</a></b></td><td>A (−905,2 kJ) ve B (−114,2 kJ); C endotermiktir (+6,5 kJ).</td></tr>
+<tr><td><b><a href="#s95" style="color:var(--mavi)">95</a></b></td><td>1: Genel olarak doğru (aynı tür bileşikler karşılaştırılmak kaydıyla). 2: Yanlış; ΔH hız hakkında bilgi vermez.</td></tr>
+<tr><td><b><a href="#s96" style="color:var(--mavi)">96</a></b></td><td>a) −676 kJ / −802,2 kJ &nbsp;·&nbsp; b) Ortalama bağ enerjileri &nbsp;·&nbsp; c) Oluşum entalpileri &nbsp;·&nbsp; d) Katı veya sıvı madde varsa yalnızca oluşum entalpileri.</td></tr>
+</table>
+</div>
+
+<h3><a href="#b7" style="text-decoration:none;color:inherit">Bölüm 7 · Tepkime entalpisini etkileyen faktörler <span style="color:var(--turuncu);font-size:.8em">↗</span></a></h3>
+<div class="tablo-sar">
+<table>
+<tr><th style="width:96px">Soru</th><th>Cevap</th></tr>
+<tr><td><b><a href="#s97" style="color:var(--mavi)">97</a></b></td><td>C</td></tr>
+<tr><td><b><a href="#s98" style="color:var(--mavi)">98</a></b></td><td>a) 28 kJ &nbsp;·&nbsp; b) −112 kJ &nbsp;·&nbsp; c) −112 kJ &nbsp;·&nbsp; d) 56 kJ</td></tr>
+<tr><td><b><a href="#s99" style="color:var(--mavi)">99</a></b></td><td>a) −390 / −100 / −70 kJ &nbsp;·&nbsp; b) Tepkenler farklı &nbsp;·&nbsp; c) Tepkenin fiziksel hâli farklı &nbsp;·&nbsp; d) Tepken türü ve fiziksel hâl</td></tr>
+<tr><td><b><a href="#s100" style="color:var(--mavi)">100</a></b></td><td>ΔH = −90 kJ</td></tr>
+<tr><td><b><a href="#s101" style="color:var(--mavi)">101</a></b></td><td>I ve III doğru; II yanlış.</td></tr>
+<tr><td><b><a href="#s102" style="color:var(--mavi)">102</a></b></td><td>Kaan ve Poyraz yanlış.</td></tr>
+<tr><td><b><a href="#s103" style="color:var(--mavi)">103</a></b></td><td>a) Endotermik &nbsp;·&nbsp; b) Artar &nbsp;·&nbsp; c) ΔH = +(201 + x) kJ</td></tr>
+<tr><td><b><a href="#s104" style="color:var(--mavi)">104</a></b></td><td>0,8 mol Y</td></tr>
+<tr><td><b><a href="#s105" style="color:var(--mavi)">105</a></b></td><td>Aynı değildir; sıcaklık ve basınç farkı entalpiyi etkiler. Standart koşullar bu belirsizliği ortadan kaldırmak için tanımlanmıştır.</td></tr>
+<tr><td><b><a href="#s106" style="color:var(--mavi)">106</a></b></td><td>I, III ve IV; katalizör (II) ΔH'yi değiştirmez.</td></tr>
+<tr><td><b><a href="#s107" style="color:var(--mavi)">107</a></b></td><td>Terim ayrımı: denklem başına ΔH sabit, açığa çıkan toplam ısı miktarla orantılıdır.</td></tr>
+<tr><td><b><a href="#s108" style="color:var(--mavi)">108</a></b></td><td>Değişmez: I, III, VI &nbsp;·&nbsp; Değişir: II, IV, V</td></tr>
+<tr><td><b><a href="#s109" style="color:var(--mavi)">109</a></b></td><td>Yalnız I doğru.</td></tr>
+<tr><td><b><a href="#s110" style="color:var(--mavi)">110</a></b></td><td>a) 295 / 590 / 118 kJ &nbsp;·&nbsp; b) 118 kJ &nbsp;·&nbsp; c) 6,4 gram</td></tr>
+<tr><td><b><a href="#s111" style="color:var(--mavi)">111</a></b></td><td>hâl fonksiyonu · katalizör · gaz · artar · sabit · toplam</td></tr>
+<tr><td><b><a href="#s112" style="color:var(--mavi)">112</a></b></td><td>Miktar, fiziksel hâl, sıcaklık–basınç üç değişkendir; çözüm standart koşullar ve mol başına tablolanmış değerlerdir.</td></tr>
+</table>
+</div>
+
+<h3><a href="#b8" style="text-decoration:none;color:inherit">Bölüm 8 · Stokiyometri ile entalpi hesapları <span style="color:var(--turuncu);font-size:.8em">↗</span></a></h3>
+<div class="tablo-sar">
+<table>
+<tr><th style="width:96px">Soru</th><th>Cevap</th></tr>
+<tr><td><b><a href="#s113" style="color:var(--mavi)">113</a></b></td><td>a) +360 kJ &nbsp;·&nbsp; b) 36 kJ &nbsp;·&nbsp; c) 36 kJ &nbsp;·&nbsp; d) 144 kJ</td></tr>
+<tr><td><b><a href="#s114" style="color:var(--mavi)">114</a></b></td><td>3125 joule</td></tr>
+<tr><td><b><a href="#s115" style="color:var(--mavi)">115</a></b></td><td>X'in atom kütlesi 56'dır.</td></tr>
+<tr><td><b><a href="#s116" style="color:var(--mavi)">116</a></b></td><td>0,015Q kJ</td></tr>
+<tr><td><b><a href="#s117" style="color:var(--mavi)">117</a></b></td><td>−197,5 kJ/mol</td></tr>
+<tr><td><b><a href="#s118" style="color:var(--mavi)">118</a></b></td><td>326 joule</td></tr>
+<tr><td><b><a href="#s119" style="color:var(--mavi)">119</a></b></td><td>a) 160 kJ &nbsp;·&nbsp; b) 80 kJ &nbsp;·&nbsp; c) Aynı ısı farklı mol sayılarına bölünüyor.</td></tr>
+<tr><td><b><a href="#s120" style="color:var(--mavi)">120</a></b></td><td>46 kJ</td></tr>
+<tr><td><b><a href="#s121" style="color:var(--mavi)">121</a></b></td><td>I = III &gt; II</td></tr>
+<tr><td><b><a href="#s122" style="color:var(--mavi)">122</a></b></td><td>İkisi de yanlış. Sınırlayıcı Cl<sub>2</sub>'dir; açığa çıkan ısı 210 kJ'dür.</td></tr>
+<tr><td><b><a href="#s123" style="color:var(--mavi)">123</a></b></td><td>Q<sub>2</sub> &gt; Q<sub>1</sub> = Q<sub>3</sub></td></tr>
+<tr><td><b><a href="#s124" style="color:var(--mavi)">124</a></b></td><td>a) −1367 kJ/mol &nbsp;·&nbsp; b) 29,7 kJ/g &nbsp;·&nbsp; c) 2970 kJ</td></tr>
+<tr><td><b><a href="#s125" style="color:var(--mavi)">125</a></b></td><td>a) NaOH &nbsp;·&nbsp; b) 2,292 kJ &nbsp;·&nbsp; c) Asidik</td></tr>
+<tr><td><b><a href="#s126" style="color:var(--mavi)">126</a></b></td><td>a) 6,5 kJ &nbsp;·&nbsp; b) %70 &nbsp;·&nbsp; c) Nem, tamamlanmama, ısı kaçağı, safsızlık</td></tr>
+<tr><td><b><a href="#s127" style="color:var(--mavi)">127</a></b></td><td>1) 2600 kJ · 2) 650 kJ · 3) 650 kJ · 4) 0,5 mol · 5) 2600 J</td></tr>
+<tr><td><b><a href="#s128" style="color:var(--mavi)">128</a></b></td><td>a) O<sub>2</sub> &nbsp;·&nbsp; b) 96 000 J &nbsp;·&nbsp; c) 6,4 g MgO &nbsp;·&nbsp; d) 3,36 g Mg artar</td></tr>
+</table>
+</div>
+
+<h3><a href="#b9" style="text-decoration:none;color:inherit">Bölüm 9 · Grafik ve diyagram soruları <span style="color:var(--turuncu);font-size:.8em">↗</span></a></h3>
+<div class="tablo-sar">
+<table>
+<tr><th style="width:96px">Soru</th><th>Cevap</th></tr>
+<tr><td><b><a href="#s129" style="color:var(--mavi)">129</a></b></td><td>a) −70 kJ &nbsp;·&nbsp; b) Ekzotermik &nbsp;·&nbsp; c) +70 kJ &nbsp;·&nbsp; d) Ortam ısınır</td></tr>
+<tr><td><b><a href="#s130" style="color:var(--mavi)">130</a></b></td><td>a) −890 kJ/mol &nbsp;·&nbsp; b) 445 kJ &nbsp;·&nbsp; c) Isı mol sayısıyla doğru orantılıdır &nbsp;·&nbsp; d) Değişmez</td></tr>
+<tr><td><b><a href="#s131" style="color:var(--mavi)">131</a></b></td><td>a) −283 kJ &nbsp;·&nbsp; b) Entalpi hâl fonksiyonudur &nbsp;·&nbsp; c) +283 kJ</td></tr>
+<tr><td><b><a href="#s132" style="color:var(--mavi)">132</a></b></td><td>a) Evet, ikisi de ekzotermik &nbsp;·&nbsp; b) Hayır &nbsp;·&nbsp; c) Sayısal değer ya da "aynı ölçek" bilgisi</td></tr>
+<tr><td><b><a href="#s133" style="color:var(--mavi)">133</a></b></td><td>a) X: −600 kJ/mol · Y: −300 kJ/mol &nbsp;·&nbsp; b) X &nbsp;·&nbsp; c) Hayır; mol kütleleri gerekir.</td></tr>
+<tr><td><b><a href="#s134" style="color:var(--mavi)">134</a></b></td><td>a) −160 kJ &nbsp;·&nbsp; b) 760 kJ; kırılanlardan büyük &nbsp;·&nbsp; c) 380 kJ/mol</td></tr>
+<tr><td><b><a href="#s135" style="color:var(--mavi)">135</a></b></td><td>a) +44 kJ/mol &nbsp;·&nbsp; b) +5 kJ/mol &nbsp;·&nbsp; c) −88 kJ &nbsp;·&nbsp; d) Katı</td></tr>
+<tr><td><b><a href="#s136" style="color:var(--mavi)">136</a></b></td><td>a) Endotermik &nbsp;·&nbsp; b) Grafit 0, elmas +1,9 kJ/mol &nbsp;·&nbsp; c) Grafit &nbsp;·&nbsp; d) Elmas</td></tr>
+<tr><td><b><a href="#s137" style="color:var(--mavi)">137</a></b></td><td>Yalnız Kaan doğru.</td></tr>
+<tr><td><b><a href="#s138" style="color:var(--mavi)">138</a></b></td><td>a) −80 / −30 / +60 kJ &nbsp;·&nbsp; b) I &gt; II &gt; III &nbsp;·&nbsp; c) III &gt; II &gt; I</td></tr>
+<tr><td><b><a href="#s139" style="color:var(--mavi)">139</a></b></td><td>Ürünler altta olmalı, ok aşağı bakmalı; verilen sayılarla ΔH = +250 kJ çıkar. Çizim kendi içinde çelişkilidir.</td></tr>
+<tr><td><b><a href="#s140" style="color:var(--mavi)">140</a></b></td><td>I, II, III ve IV — hepsi doğru.</td></tr>
+<tr><td><b><a href="#s141" style="color:var(--mavi)">141</a></b></td><td>a) Orijinden geçen doğru &nbsp;·&nbsp; b) 600 kJ/mol &nbsp;·&nbsp; c) −1200 kJ &nbsp;·&nbsp; d) 180 kJ</td></tr>
+<tr><td><b><a href="#s142" style="color:var(--mavi)">142</a></b></td><td>I, III ve IV doğru; II yanlış.</td></tr>
+<tr><td><b><a href="#s143" style="color:var(--mavi)">143</a></b></td><td>a) −145 kJ &nbsp;·&nbsp; b) +145 kJ &nbsp;·&nbsp; c) Evet, −80 kJ &nbsp;·&nbsp; d) Etkilemez</td></tr>
+<tr><td><b><a href="#s144" style="color:var(--mavi)">144</a></b></td><td>Her grafik farklı bilgi verir; çizgiler arası mesafe yalnızca tepken–ürün arasında ΔH'dir. Eksen etiketi yorumun ilk adımıdır.</td></tr>
+</table>
+</div>
+
+<h3><a href="#b10" style="text-decoration:none;color:inherit">Bölüm 10 · Hess yasası <span style="color:var(--turuncu);font-size:.8em">↗</span></a></h3>
+<div class="tablo-sar">
+<table>
+<tr><th style="width:96px">Soru</th><th>Cevap</th></tr>
+<tr><td><b><a href="#s145" style="color:var(--mavi)">145</a></b></td><td>E</td></tr>
+<tr><td><b><a href="#s146" style="color:var(--mavi)">146</a></b></td><td>ΔH = −396 kJ</td></tr>
+<tr><td><b><a href="#s147" style="color:var(--mavi)">147</a></b></td><td>ΔH = −111 kJ</td></tr>
+<tr><td><b><a href="#s148" style="color:var(--mavi)">148</a></b></td><td>E) −393,5</td></tr>
+<tr><td><b><a href="#s149" style="color:var(--mavi)">149</a></b></td><td>C) 226</td></tr>
+<tr><td><b><a href="#s150" style="color:var(--mavi)">150</a></b></td><td>C) −49</td></tr>
+<tr><td><b><a href="#s151" style="color:var(--mavi)">151</a></b></td><td>a) +68 kJ &nbsp;·&nbsp; b) +34 kJ/mol &nbsp;·&nbsp; c) +90 kJ/mol</td></tr>
+<tr><td><b><a href="#s152" style="color:var(--mavi)">152</a></b></td><td>ΔH<sub>f</sub>°(CH<sub>4</sub>) = −76 kJ/mol</td></tr>
+<tr><td><b><a href="#s153" style="color:var(--mavi)">153</a></b></td><td>I ters çevrilmeliydi; doğru sonuç ΔH = −55 kJ</td></tr>
+<tr><td><b><a href="#s154" style="color:var(--mavi)">154</a></b></td><td>a) II ters çevrilir &nbsp;·&nbsp; b) Gerekmez &nbsp;·&nbsp; c) −846 kJ &nbsp;·&nbsp; d) Evet, çok ekzotermik</td></tr>
+<tr><td><b><a href="#s155" style="color:var(--mavi)">155</a></b></td><td>ΔH = −198 kJ</td></tr>
+<tr><td><b><a href="#s156" style="color:var(--mavi)">156</a></b></td><td>I, III ve IV doğru; II yanlış.</td></tr>
+<tr><td><b><a href="#s157" style="color:var(--mavi)">157</a></b></td><td>a) Saf CO elde edilemez, CO₂ de oluşur &nbsp;·&nbsp; b) Ölçülebilenlerden dolaylı hesap &nbsp;·&nbsp; c) Karbonun ve CO'nun tam yanma tepkimeleri</td></tr>
+<tr><td><b><a href="#s158" style="color:var(--mavi)">158</a></b></td><td>ΔH<sub>f</sub>°(C<sub>2</sub>H<sub>5</sub>OH) = −279 kJ/mol</td></tr>
+<tr><td><b><a href="#s159" style="color:var(--mavi)">159</a></b></td><td>a) −145 kJ &nbsp;·&nbsp; b) +185 kJ &nbsp;·&nbsp; c) T</td></tr>
+<tr><td><b><a href="#s160" style="color:var(--mavi)">160</a></b></td><td>Üç yöntem de hâl fonksiyonu ilkesine dayanır; en güvenilir sonuç oluşum entalpileri ve Hess'ten gelir.</td></tr>
+</table>
+</div>
+
+<h3><a href="#karma" style="text-decoration:none;color:inherit">Karma tekrar · On bölümden karışık sorular <span style="color:var(--turuncu);font-size:.8em">↗</span></a></h3>
+<div class="tablo-sar">
+<table>
+<tr><th style="width:96px">Soru</th><th>Cevap</th></tr>
+<tr><td><b><a href="#s161" style="color:var(--mavi)">161</a></b></td><td>I, II ve IV doğru.</td></tr>
+<tr><td><b><a href="#s162" style="color:var(--mavi)">162</a></b></td><td>a) +264 kJ (endotermik) &nbsp;·&nbsp; b) Hayır, bilinen istisnadır &nbsp;·&nbsp; c) N≡N bağı çok güçlüdür</td></tr>
+<tr><td><b><a href="#s163" style="color:var(--mavi)">163</a></b></td><td>a) 49,5 kJ/g &nbsp;·&nbsp; b) Doğal gaz &nbsp;·&nbsp; c) Yaklaşık 728 g (0,73 kg) odun</td></tr>
+<tr><td><b><a href="#s164" style="color:var(--mavi)">164</a></b></td><td>a) −128 kJ / −137 kJ &nbsp;·&nbsp; b) 9 kJ fark; ortalama bağ enerjilerinden kaynaklanır, güvenilir olan oluşum entalpisi sonucudur.</td></tr>
+<tr><td><b><a href="#s165" style="color:var(--mavi)">165</a></b></td><td>I, III, V ve VII</td></tr>
+<tr><td><b><a href="#s166" style="color:var(--mavi)">166</a></b></td><td>ΔH° = −2043,9 kJ</td></tr>
+<tr><td><b><a href="#s167" style="color:var(--mavi)">167</a></b></td><td>II, IV ve V'te değişir.</td></tr>
+<tr><td><b><a href="#s168" style="color:var(--mavi)">168</a></b></td><td>a) H<sub>2</sub>O &nbsp;·&nbsp; b) 27 600 J &nbsp;·&nbsp; c) 0,075 mol</td></tr>
+<tr><td><b><a href="#s169" style="color:var(--mavi)">169</a></b></td><td>a) +33 kJ/mol &nbsp;·&nbsp; b) +9 kJ/mol &nbsp;·&nbsp; c) −57 kJ &nbsp;·&nbsp; d) N<sub>2</sub>O<sub>4</sub></td></tr>
+<tr><td><b><a href="#s170" style="color:var(--mavi)">170</a></b></td><td>ΔH<sub>f</sub>°(C<sub>2</sub>H<sub>6</sub>) = −85 kJ/mol</td></tr>
+<tr><td><b><a href="#s171" style="color:var(--mavi)">171</a></b></td><td>D) I ve II</td></tr>
+<tr><td><b><a href="#s172" style="color:var(--mavi)">172</a></b></td><td>a) 32 kg &nbsp;·&nbsp; b) 88 kg CO<sub>2</sub> &nbsp;·&nbsp; c) ~12,5 kg H<sub>2</sub>, CO<sub>2</sub> salınmaz</td></tr>
+<tr><td><b><a href="#s173" style="color:var(--mavi)">173</a></b></td><td>a) 150 kJ &nbsp;·&nbsp; b) Yukarı &nbsp;·&nbsp; c) Çizgiler aynı, ok aşağı, ΔH = −90 kJ &nbsp;·&nbsp; d) Soğur</td></tr>
+<tr><td><b><a href="#s174" style="color:var(--mavi)">174</a></b></td><td>a) −396 kJ/mol &nbsp;·&nbsp; b) SO<sub>3</sub> &nbsp;·&nbsp; c) 0</td></tr>
+<tr><td><b><a href="#s175" style="color:var(--mavi)">175</a></b></td><td>a) Hacim, derişim, sıcaklık, kap &nbsp;·&nbsp; b) Yeterli değil &nbsp;·&nbsp; c) Hayır; OH⁻ molü başına karşılaştırılmalı</td></tr>
+<tr><td><b><a href="#s176" style="color:var(--mavi)">176</a></b></td><td>a) −99 kJ &nbsp;·&nbsp; b) Yukarı +629, aşağı −728, net 99 kJ aşağıda &nbsp;·&nbsp; c) Hayır</td></tr>
+<tr><td><b><a href="#s177" style="color:var(--mavi)">177</a></b></td><td>a) +178 kJ &nbsp;·&nbsp; b) +178 kJ &nbsp;·&nbsp; c) Zorunludur; formül Hess'in kısayoludur.</td></tr>
+<tr><td><b><a href="#s178" style="color:var(--mavi)">178</a></b></td><td>a) NaOH &nbsp;·&nbsp; b) 8550 J &nbsp;·&nbsp; c) Asidik</td></tr>
+<tr><td><b><a href="#s179" style="color:var(--mavi)">179</a></b></td><td>a) 1,12 / 2,54 mol &nbsp;·&nbsp; b) 49,3 / 111,8 g &nbsp;·&nbsp; c) Metan, yaklaşık 2,3 kat az</td></tr>
+<tr><td><b><a href="#s180" style="color:var(--mavi)">180</a></b></td><td>a) Bağ enerjisi (katı madde var) &nbsp;·&nbsp; b) ΔH → mol → sınırlayıcı → verim → enerji → birim &nbsp;·&nbsp; c) Sınırlayıcı seçimi, verimin yeri, birim</td></tr>
+</table>
+</div>
+
+<h3><a href="#yazili" style="text-decoration:none;color:inherit">Yazılı denemesi · 1. Tema · Enerji · 100 puan <span style="color:var(--turuncu);font-size:.8em">↗</span></a></h3>
+<div class="tablo-sar">
+<table>
+<tr><th style="width:96px">Soru</th><th>Cevap</th></tr>
+<tr><td><b><a href="#y1" style="color:var(--mavi)">1</a></b></td><td>sistem · sıcaklık · ekzotermik · sıfır · endotermik</td></tr>
+<tr><td><b><a href="#y2" style="color:var(--mavi)">2</a></b></td><td>I: D · II: Y · III: Y · IV: D · V: Y</td></tr>
+<tr><td><b><a href="#y3" style="color:var(--mavi)">3</a></b></td><td>Endotermik: I, III, V &nbsp;·&nbsp; Ekzotermik: II, IV</td></tr>
+<tr><td><b><a href="#y4" style="color:var(--mavi)">4</a></b></td><td>ΔH = −80 kJ, ekzotermik</td></tr>
+<tr><td><b><a href="#y5" style="color:var(--mavi)">5</a></b></td><td>ΔH° = −2043,9 kJ</td></tr>
+<tr><td><b><a href="#y6" style="color:var(--mavi)">6</a></b></td><td>a) +120 kJ · b) Endotermik · c) −120 kJ · d) Soğur</td></tr>
+<tr><td><b><a href="#y7" style="color:var(--mavi)">7</a></b></td><td>112 000 J (112 kJ)</td></tr>
+<tr><td><b><a href="#y8" style="color:var(--mavi)">8</a></b></td><td>a) 111 200 kJ · b) ≈ 3,7 kg · c) Depolama, maliyet, altyapı, güvenlik</td></tr>
+<tr><td><b><a href="#y9" style="color:var(--mavi)">9</a></b></td><td>a) +226 kJ/mol &nbsp;·&nbsp; b) Pozitif → kararsız, yüksek enerjili</td></tr>
+<tr><td><b><a href="#y10" style="color:var(--mavi)">10</a></b></td><td>Söylenemez: mol sayıları, su miktarı ve yalıtım/ısı kaybı kontrol edilmemiştir.</td></tr>
+</table>
+</div>
+
 <nav class="gezin">
   <a href="modul-2-hiz.html"><span class="yon">Sonraki →</span><span class="ad">Modül 2 · Hız</span></a>
   <a class="liste" href="./"><span class="ad">Tüm modüller</span></a>
@@ -6170,6 +6574,29 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   document.addEventListener('scroll',guncelle,{passive:true});
   btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
   guncelle();
+
+  var hepsi=function(){return document.querySelectorAll('details');};
+  var ac=document.getElementById('tumunuAc'),kapat=document.getElementById('tumunuKapat');
+  if(ac) ac.addEventListener('click',function(){hepsi().forEach(function(d){d.open=true;});});
+  if(kapat) kapat.addEventListener('click',function(){hepsi().forEach(function(d){d.open=false;});});
+
+  /* yazdırmadan önce hepsini aç, sonra eski hâline döndür */
+  var oncekiler=null;
+  function baskiyaHazirla(){
+    oncekiler=[];hepsi().forEach(function(d){oncekiler.push(d.open);d.open=true;});
+  }
+  function baskiSonrasi(){
+    if(!oncekiler) return;
+    hepsi().forEach(function(d,i){d.open=oncekiler[i];});oncekiler=null;
+  }
+  window.addEventListener('beforeprint',baskiyaHazirla);
+  window.addEventListener('afterprint',baskiSonrasi);
+  if(window.matchMedia){
+    var mq=window.matchMedia('print');
+    var dinle=function(e){e.matches?baskiyaHazirla():baskiSonrasi();};
+    if(mq.addEventListener) mq.addEventListener('change',dinle);
+    else if(mq.addListener) mq.addListener(dinle);
+  }
 })();
 </script>
 </body>
