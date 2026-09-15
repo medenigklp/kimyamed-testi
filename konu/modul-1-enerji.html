@@ -169,6 +169,48 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 :focus-visible{outline:3px solid var(--turuncu);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
+
+/* ===== deney raporu / çalışma yaprağı ===== */
+.yaprak{background:var(--beyaz);border:1px solid var(--cizgi);border-radius:var(--r);padding:18px 20px;margin:20px 0}
+.yaprak > h4{margin:0 0 4px;font-size:17px}
+.yaprak .ustbilgi{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--gri);
+  border-bottom:1px solid var(--cizgi);padding-bottom:10px;margin-bottom:14px}
+.yaprak .ustbilgi b{color:var(--murekkep)}
+.alan{margin:14px 0}
+.alan .etiket{font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--turuncu);margin-bottom:7px}
+.alan .aciklama{font-size:14px;color:var(--gri);margin:0 0 8px}
+.cizgi{border-bottom:1px dotted #A79E95;height:25px}
+.cizgi + .cizgi{margin-top:5px}
+.kutucuk{display:inline-block;width:15px;height:15px;border:1.5px solid var(--gri);border-radius:3px;
+  vertical-align:-2px;margin-right:7px}
+.bos td{height:30px}
+.bos td.dolu{background:#F7F4F1;font-weight:600}
+table.bos th{font-size:12.5px}
+@media print{
+  .yaprak{break-inside:avoid;page-break-inside:avoid;border:1px solid #666}
+  .cizgi{border-bottom:1px dotted #333}
+  .yaprak h4{font-size:12pt}
+}
+
+/* ===== deney raporu / çalışma yaprağı ===== */
+.rapor{background:var(--beyaz);border:1px solid var(--cizgi);border-radius:var(--r);padding:18px 20px;margin:20px 0}
+.rapor .kunye{display:flex;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--cizgi);padding-bottom:12px;margin-bottom:14px;font-size:14px;color:var(--gri)}
+.rapor .kunye b{color:var(--murekkep)}
+.rapor h4{margin:18px 0 6px;font-size:15px;color:var(--turuncu);letter-spacing:.02em;text-transform:uppercase;font-size:12px;font-weight:800}
+.rapor h4:first-of-type{margin-top:0}
+.rapor p{margin:0 0 10px;font-size:15px}
+.cizgi-alan{border-bottom:1px dotted #B9AFA5;height:24px;margin:0 0 6px}
+.cizgi-alan.kisa{width:60%}
+.guvenlik{background:#FFF4F1;border:1px solid #F5CFC5;border-left:4px solid #C7381A;border-radius:10px;padding:12px 15px;margin:12px 0;font-size:14.5px}
+.guvenlik b{color:#C7381A}
+.rapor ol,.rapor ul{font-size:15px}
+@media print{
+  .rapor{border:1px solid #999;break-inside:auto;page-break-inside:auto}
+  .rapor h4{color:#000}
+  .guvenlik{background:#fff !important;border:1px solid #999 !important}
+  .cizgi-alan{border-bottom:1px dotted #555}
+}
+
 /* ===== ekran: çözüm kontrol çubuğu ===== */
 .arac{position:sticky;top:56px;z-index:45;background:rgba(251,248,245,.94);backdrop-filter:blur(10px);
   border-bottom:1px solid var(--cizgi);padding:8px 0;margin:0 0 4px}
@@ -264,6 +306,8 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
     <li><a href="#b10">Hess yasası · ek konu<span class="sonek">16 + 8 soru</span></a></li>
     <li class="ekstra"><a href="#karma">Karma tekrar<span class="sonek">20 + 10 soru</span></a></li>
     <li class="ekstra"><a href="#yazili">Yazılı denemesi · 100 puan<span class="sonek">10 soru</span></a></li>
+    <li class="ekstra"><a href="#deney">Deney raporu ve çalışma yaprakları<span class="sonek">yazdırılabilir</span></a></li>
+    <li class="ekstra"><a href="#deney">Çalışma yaprağı · deney raporu<span class="sonek">2 form + rubrik</span></a></li>
     <li class="ekstra"><a href="#ozet">Kavram özeti<span class="sonek">tek sayfa</span></a></li>
     <li class="ekstra"><a href="#anahtar">Cevap anahtarı<span class="sonek">190 soru</span></a></li>
   </ol>
@@ -1441,7 +1485,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
       <li>Yüzde azalma = 25 900 ÷ 55 600 × 100 ≈ <b>%46,6</b></li>
       <li>Yorum: etanolün molekülünde <b>oksijen</b> bulunduğu için karbonun bir kısmı zaten yükseltgenmiştir; yakılacak daha az "yakıt" kalmıştır.</li>
     </ol>
-    <div class="cevap">Yaklaşık %47 daha az enerji elde edilir.</div>
+    <div class="cevap">%46,6 (yaklaşık %47) daha az enerji elde edilir.</div>
     </details>
   </div>
 </div>
@@ -5375,7 +5419,8 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
     <ol class="adim">
       <li>a) Isıl değer = 12 375 ÷ 250 = <b>49,5 kJ/g</b></li>
       <li>b) <b>Doğal gaz</b>.</li>
-      <li>c) 12 375 ÷ 17 = 727,9 g ≈ <b>0,73 kg odun</b>... <b>Dikkat:</b> bu yanlış. Odunun ısıl değeri daha <b>düşük</b> olduğu için daha <b>çok</b> odun gerekir. Doğru işlem: 12 375 ÷ 17 = <b>728 gram</b>? Kontrol edelim: 728 g × 17 kJ/g = 12 376 kJ ✔ Sonuç doğru: <b>yaklaşık 0,73 kg</b>.</li>
+      <li>c) 12 375 ÷ 17 = <b>727,9 ≈ 728 gram (0,73 kg) odun</b></li>
+      <li>Sağlama: 728 g × 17 kJ/g ≈ 12 376 kJ ✔</li>
       <li>Burada sezgiyi yanıltan şey karşılaştırmanın <b>aynı enerji</b> için yapılmasıdır: 250 g doğal gaz ile 728 g odun aynı enerjiyi verir. Yani odundan <b>yaklaşık 3 kat fazla kütle</b> gerekir — bu da ısıl değerler oranıyla uyumludur (49,5 ÷ 17 ≈ 2,9).</li>
     </ol>
     <div class="cevap">a) 49,5 kJ/g &nbsp;·&nbsp; b) Doğal gaz &nbsp;·&nbsp; c) Yaklaşık 728 g (0,73 kg) odun</div>
@@ -6087,6 +6132,437 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
     <tr><td colspan="3"><b>Toplam</b></td><td><b>100</b></td></tr>
   </table>
   </div>
+</div>
+
+<!-- ==================== DENEY RAPORU VE ÇALIŞMA YAPRAKLARI ==================== -->
+<h2 id="deney"><span class="no">Ek materyal</span>Deney raporu ve çalışma yaprakları</h2>
+
+<p>Bu bölüm yazdırılıp doldurulmak üzere tasarlandı. Ders kitabının <b>1.1 ve 1.2 etkinlikleri</b>, <b>1.3 etkinliği</b> ve <b>1.1 çalışma yaprağı</b> ile aynı beceriyi hedefler: deney kurmak, değişkenleri ayırmak ve veriden sonuç çıkarmak.</p>
+
+<div class="kart ek-not">
+  <div class="baslik">Kapsam uyarısı</div>
+  <p>Deneylerde <b>sayısal ısı hesabı yapılmaz</b>. q = m·c·ΔT bağıntısı kitapta yer almadığı için ölçülen sıcaklık değişimi yalnızca <b>yön belirlemek</b> ve <b>aynı koşullarda karşılaştırma yapmak</b> için kullanılır. Bu, Bölüm 1'de kurduğumuz ilkenin doğrudan uygulamasıdır.</p>
+</div>
+
+<h3>A · Boş deney raporu şablonu</h3>
+
+<div class="yaprak">
+  <h4>Deney Raporu</h4>
+  <div class="ustbilgi"><span><b>Ad–Soyad:</b> ……………………………</span><span><b>Sınıf / No:</b> …………</span><span><b>Tarih:</b> …………</span><span><b>Grup:</b> …………</span></div>
+
+  <div class="alan"><div class="etiket">1 · Deneyin adı</div><div class="cizgi"></div></div>
+
+  <div class="alan"><div class="etiket">2 · Araştırma sorusu</div>
+    <p class="aciklama">Tek cümleyle, ölçülebilir biçimde yaz. "…arttırılırsa … nasıl değişir?" kalıbı işe yarar.</p>
+    <div class="cizgi"></div><div class="cizgi"></div></div>
+
+  <div class="alan"><div class="etiket">3 · Hipotez</div>
+    <p class="aciklama">Sonucu tahmin et ve <b>gerekçesini</b> yaz. Tahmin yanlış çıkarsa deney başarısız olmaz.</p>
+    <div class="cizgi"></div><div class="cizgi"></div></div>
+
+  <div class="alan"><div class="etiket">4 · Değişkenler</div>
+    <div class="tablo-sar"><table class="bos">
+      <tr><th style="width:170px">Bağımsız değişken</th><td></td></tr>
+      <tr><th>Bağımlı değişken</th><td></td></tr>
+      <tr><th>Kontrol değişkenleri</th><td></td></tr>
+    </table></div>
+  </div>
+
+  <div class="alan"><div class="etiket">5 · Malzemeler</div><div class="cizgi"></div><div class="cizgi"></div></div>
+
+  <div class="alan"><div class="etiket">6 · Güvenlik önlemleri</div>
+    <p class="aciklama"><span class="kutucuk"></span>Gözlük &nbsp; <span class="kutucuk"></span>Eldiven &nbsp; <span class="kutucuk"></span>Önlük &nbsp; <span class="kutucuk"></span>Havalandırma &nbsp; <span class="kutucuk"></span>Öğretmen onayı</p>
+    <div class="cizgi"></div></div>
+
+  <div class="alan"><div class="etiket">7 · İşlem basamakları</div>
+    <div class="cizgi"></div><div class="cizgi"></div><div class="cizgi"></div><div class="cizgi"></div></div>
+
+  <div class="alan"><div class="etiket">8 · Veriler ve gözlemler</div>
+    <div class="tablo-sar"><table class="bos">
+      <tr><th>#</th><th>Ölçülen / gözlenen</th><th>Başlangıç</th><th>Son</th><th>Değişim</th></tr>
+      <tr><td class="dolu">1</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="dolu">2</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="dolu">3</td><td></td><td></td><td></td><td></td></tr>
+    </table></div>
+  </div>
+
+  <div class="alan"><div class="etiket">9 · Sonuç</div>
+    <p class="aciklama">Olay endotermik mi ekzotermik mi? Isı hangi yöne aktı? Hipotezin doğrulandı mı?</p>
+    <div class="cizgi"></div><div class="cizgi"></div><div class="cizgi"></div></div>
+
+  <div class="alan"><div class="etiket">10 · Hata kaynakları ve iyileştirme</div>
+    <p class="aciklama">Ölçümü bozabilecek en az iki etken yaz ve nasıl giderileceğini belirt.</p>
+    <div class="cizgi"></div><div class="cizgi"></div></div>
+</div>
+
+<h3>B · Deney 1 · Isı değişimleri</h3>
+
+<div class="yaprak">
+  <h4>Fiziksel ve kimyasal olayları endotermik / ekzotermik olarak belirleme</h4>
+  <div class="ustbilgi"><span><b>Süre:</b> 35 dk</span><span><b>Çalışma biçimi:</b> 4–6 kişilik grup</span><span><b>İlgili bölüm:</b> 1 ve 2</span></div>
+
+  <div class="alan"><div class="etiket">Malzeme</div>
+    <p class="aciklama">2 adet 200 mL beherglas · 2 termometre · 2 spatül · dereceli silindir · cam baget · elektronik terazi · NaOH katısı · NH<sub>4</sub>Cl katısı · saf su</p>
+  </div>
+
+  <div class="alan"><div class="etiket">Güvenlik</div>
+    <p class="aciklama"><b>NaOH aşındırıcıdır</b>; deriye ve göze temas ettirilmez. Gözlük ve eldiven zorunludur. Katılar spatülle alınır, elle tutulmaz. Çözeltiler öğretmenin belirttiği kaba boşaltılır.</p>
+  </div>
+
+  <div class="alan"><div class="etiket">İşlem basamakları</div>
+    <ol style="font-size:15px">
+      <li>Her iki beherglasa <b>100'er mL</b> saf su koyun.</li>
+      <li>İkisinin de başlangıç sıcaklığını ölçüp tabloya yazın.</li>
+      <li>Birinci beherglasa <b>5 g NaOH</b>, ikincisine <b>5 g NH<sub>4</sub>Cl</b> ekleyin.</li>
+      <li>Cam bagetle aynı hızda karıştırın, katılar tamamen çözünsün.</li>
+      <li>Üç dakika sonra son sıcaklıkları ölçüp tabloya yazın.</li>
+      <li>Kapların dış yüzeyini elinizle yoklayın ve gözleminizi not edin.</li>
+    </ol>
+  </div>
+
+  <div class="alan"><div class="etiket">Veriler</div>
+    <div class="tablo-sar"><table class="bos">
+      <tr><th>Kap</th><th>Çözünen</th><th>Başlangıç (°C)</th><th>Son (°C)</th><th>ΔT</th><th>Kap dışı</th><th>Endo / Ekzo</th></tr>
+      <tr><td class="dolu">1</td><td class="dolu">NaOH</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="dolu">2</td><td class="dolu">NH<sub>4</sub>Cl</td><td></td><td></td><td></td><td></td><td></td></tr>
+    </table></div>
+  </div>
+
+  <div class="alan"><div class="etiket">Değişkenler</div>
+    <div class="tablo-sar"><table class="bos">
+      <tr><th style="width:170px">Bağımsız</th><td></td></tr>
+      <tr><th>Bağımlı</th><td></td></tr>
+      <tr><th>Kontrol</th><td></td></tr>
+    </table></div>
+  </div>
+
+  <div class="alan"><div class="etiket">Sonuç soruları</div>
+    <p class="aciklama"><b>1.</b> Her iki olayda ısı hangi yönde aktı? Sistem ve çevreyi belirterek yazın.</p>
+    <div class="cizgi"></div><div class="cizgi"></div>
+    <p class="aciklama" style="margin-top:12px"><b>2.</b> Hangi kabın dış yüzeyi terledi? Sebebini açıklayın.</p>
+    <div class="cizgi"></div><div class="cizgi"></div>
+    <p class="aciklama" style="margin-top:12px"><b>3.</b> "NaOH daha fazla enerji açığa çıkarır" sonucu bu deneyle kesin olarak söylenebilir mi? Gerekçelendirin.</p>
+    <div class="cizgi"></div><div class="cizgi"></div><div class="cizgi"></div>
+  </div>
+
+  <details class="cozum"><summary><span class="kapali">Beklenen sonuçlar (öğretmen)</span><span class="acik">Gizle</span></summary>
+  <ol class="adim">
+    <li>NaOH çözünürken sıcaklık <b>artar</b> (ekzotermik, sistemden çevreye); NH<sub>4</sub>Cl çözünürken <b>düşer</b> (endotermik, çevreden sisteme). Sistem çözünen + su, çevre kap ve havadır.</li>
+    <li>Soğuyan kabın (NH<sub>4</sub>Cl) dışı terler; havadaki su buharı soğuk yüzeyde <b>yoğuşur</b>. Yoğuşmanın kendisi de ekzotermik bir olaydır.</li>
+    <li><b>Söylenemez.</b> Kütleler eşit olsa da <b>mol sayıları</b> farklıdır (NaOH 40, NH<sub>4</sub>Cl 53,5 g/mol); ayrıca iki olayın yönü zıttır, "daha fazla" karşılaştırması anlamsızdır. Deney yalnızca <b>yönü</b> güvenilir biçimde verir.</li>
+    <li><b>Değişkenler:</b> bağımsız → çözünen katının cinsi · bağımlı → çözeltinin sıcaklık değişimi · kontrol → su hacmi, başlangıç sıcaklığı, katı kütlesi, karıştırma ve bekleme süresi, kap türü.</li>
+  </ol>
+  </details>
+</div>
+
+<h3>C · Deney 2 · Maddelerin enerji kaynağı olma potansiyeli</h3>
+
+<div class="yaprak">
+  <h4>Yağlı tohumların yakıt olarak karşılaştırılması</h4>
+  <div class="ustbilgi"><span><b>Süre:</b> 35 dk</span><span><b>İlgili bölüm:</b> 3</span><span><b>Öğrenme çıktısı:</b> K2</span></div>
+
+  <div class="alan"><div class="etiket">Araştırma sorusu</div>
+    <p class="aciklama">Örnek: "Eşit kütlede fındık ve ceviz yakıldığında aynı miktardaki suyun sıcaklığı aynı ölçüde mi artar?"</p>
+    <div class="cizgi"></div></div>
+
+  <div class="alan"><div class="etiket">Hipotez ve gerekçesi</div><div class="cizgi"></div><div class="cizgi"></div></div>
+
+  <div class="alan"><div class="etiket">Güvenlik</div>
+    <p class="aciklama"><b>Açık alev vardır.</b> Saç ve giysiler toplanır, gözlük takılır, yanıcı maddeler tezgâhtan uzaklaştırılır. Deney öğretmen gözetiminde yapılır; söndürme örtüsü hazır bulundurulur.</p>
+  </div>
+
+  <div class="alan"><div class="etiket">İşlem basamakları</div>
+    <ol style="font-size:15px">
+      <li>Deney tüpüne <b>20 mL</b> su koyup başlangıç sıcaklığını ölçün.</li>
+      <li><b>1'er gram</b> fındık ve ceviz tartın.</li>
+      <li>Örneği iğneye geçirip tutuşturun, alevi tüpün altında sabit uzaklıkta tutun.</li>
+      <li>Örnek tamamen yandığında suyun son sıcaklığını ölçün.</li>
+      <li>Aynı işlemi diğer örnek için <b>aynı su miktarı ve aynı uzaklıkla</b> tekrarlayın.</li>
+    </ol>
+  </div>
+
+  <div class="alan"><div class="etiket">Veriler</div>
+    <div class="tablo-sar"><table class="bos">
+      <tr><th>Örnek</th><th>Kütle (g)</th><th>Su (mL)</th><th>Başlangıç (°C)</th><th>Son (°C)</th><th>ΔT</th></tr>
+      <tr><td class="dolu">Fındık</td><td class="dolu">1,0</td><td class="dolu">20</td><td></td><td></td><td></td></tr>
+      <tr><td class="dolu">Ceviz</td><td class="dolu">1,0</td><td class="dolu">20</td><td></td><td></td><td></td></tr>
+      <tr><td class="dolu">(isteğe bağlı)</td><td></td><td></td><td></td><td></td><td></td></tr>
+    </table></div>
+  </div>
+
+  <div class="alan"><div class="etiket">Sonuç soruları</div>
+    <p class="aciklama"><b>1.</b> Hangi örnek suyu daha çok ısıttı? Bu, o örneğin ısıl değerinin daha yüksek olduğunu <b>kanıtlar mı</b>?</p>
+    <div class="cizgi"></div><div class="cizgi"></div>
+    <p class="aciklama" style="margin-top:12px"><b>2.</b> Ölçülen sıcaklık artışının, açığa çıkan enerjinin tamamını göstermemesinin üç sebebini yazın.</p>
+    <div class="cizgi"></div><div class="cizgi"></div><div class="cizgi"></div>
+    <p class="aciklama" style="margin-top:12px"><b>3.</b> Bu deneyden yola çıkarak "yağlı tohumlar enerji bakımından zengindir" önermesini nasıl desteklersiniz?</p>
+    <div class="cizgi"></div><div class="cizgi"></div>
+  </div>
+
+  <details class="cozum"><summary><span class="kapali">Beklenen sonuçlar (öğretmen)</span><span class="acik">Gizle</span></summary>
+  <ol class="adim">
+    <li><b>Kanıtlamaz, destekler.</b> Karşılaştırma ancak kütle, su miktarı, uzaklık ve süre sabitken anlamlıdır; bu koşullarda bile sonuç <b>nitel</b> bir sıralamadır. Sayısal ısıl değer bu düzenekle ölçülemez.</li>
+    <li>Isının büyük kısmı <b>havaya ve tüpe</b> gider; örnek <b>tam yanmayabilir</b> (is kalır); alev ile tüp arası uzaklık ve süre her denemede tam olarak aynı olmaz; tüpün camı da ısı soğurur.</li>
+    <li>Yağın fizyolojik enerji değeri <b>38 kJ/g</b>, karbonhidrat ve proteinin <b>17 kJ/g</b>'dır. Yağ oranı yüksek olan tohumların birim kütle başına daha çok enerji vermesi beklenir; deneydeki sıcaklık artışı bu beklentiyle uyumluysa önerme desteklenmiş olur.</li>
+    <li><b>Değişkenler:</b> bağımsız → tohum cinsi · bağımlı → suyun sıcaklık değişimi · kontrol → örnek kütlesi, su hacmi, alev–tüp uzaklığı, tüp cinsi, başlangıç sıcaklığı.</li>
+  </ol>
+  </details>
+</div>
+
+<h3>D · Çalışma yaprağı · Bağ enerjileriyle entalpi hesabı</h3>
+
+<div class="yaprak">
+  <h4>Üç sanayi tepkimesi</h4>
+  <div class="ustbilgi"><span><b>İlgili bölüm:</b> 4</span><span><b>Öğrenme çıktısı:</b> K3</span><span><b>Süre:</b> 25 dk</span></div>
+
+  <div class="alan"><div class="etiket">Bağ enerjileri (kJ/mol)</div>
+    <div class="tablo-sar"><table>
+      <tr><th>C—H</th><th>C—Cl</th><th>Cl—Cl</th><th>H—Cl</th><th>C≡C</th><th>C=C</th><th>C=O</th><th>N—H</th><th>C—N</th><th>O—H</th></tr>
+      <tr><td>414</td><td>339</td><td>243</td><td>431</td><td>837</td><td>611</td><td>736</td><td>389</td><td>305</td><td>464</td></tr>
+    </table></div>
+  </div>
+
+  <div class="alan"><div class="etiket">1 · Kloroform üretimi</div>
+    <p class="aciklama">CH<sub>4</sub>(g) + 3Cl<sub>2</sub>(g) → CHCl<sub>3</sub>(g) + 3HCl(g)</p>
+    <div class="tablo-sar"><table class="bos">
+      <tr><th style="width:130px">Kırılan bağ</th><th style="width:90px">Sayı</th><th>Enerji</th><th style="width:130px">Oluşan bağ</th><th style="width:90px">Sayı</th><th>Enerji</th></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><th>Toplam</th><td></td><td></td><th>Toplam</th><td></td><td></td></tr>
+    </table></div>
+    <p class="aciklama" style="margin-top:8px">ΔH = …………………… &nbsp;·&nbsp; Tepkime türü: <span class="kutucuk"></span>endotermik &nbsp;<span class="kutucuk"></span>ekzotermik</p>
+  </div>
+
+  <div class="alan"><div class="etiket">2 · Vinil klorür üretimi (PVC ham maddesi)</div>
+    <p class="aciklama">C<sub>2</sub>H<sub>2</sub>(g) + HCl(g) → C<sub>2</sub>H<sub>3</sub>Cl(g) &nbsp;<span style="font-size:13px">(asetilenden vinil klorür)</span></p>
+    <div class="tablo-sar"><table class="bos">
+      <tr><th style="width:130px">Kırılan bağ</th><th style="width:90px">Sayı</th><th>Enerji</th><th style="width:130px">Oluşan bağ</th><th style="width:90px">Sayı</th><th>Enerji</th></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><th>Toplam</th><td></td><td></td><th>Toplam</th><td></td><td></td></tr>
+    </table></div>
+    <p class="aciklama" style="margin-top:8px">ΔH = …………………… &nbsp;·&nbsp; Tepkime türü: <span class="kutucuk"></span>endotermik &nbsp;<span class="kutucuk"></span>ekzotermik</p>
+  </div>
+
+  <div class="alan"><div class="etiket">3 · Üre (gübre) üretimi</div>
+    <p class="aciklama">CO<sub>2</sub>(g) + 2NH<sub>3</sub>(g) → (NH<sub>2</sub>)<sub>2</sub>CO(g) + H<sub>2</sub>O(g)</p>
+    <div class="tablo-sar"><table class="bos">
+      <tr><th style="width:130px">Kırılan bağ</th><th style="width:90px">Sayı</th><th>Enerji</th><th style="width:130px">Oluşan bağ</th><th style="width:90px">Sayı</th><th>Enerji</th></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><th>Toplam</th><td></td><td></td><th>Toplam</th><td></td><td></td></tr>
+    </table></div>
+    <p class="aciklama" style="margin-top:8px">ΔH = …………………… &nbsp;·&nbsp; Tepkime türü: <span class="kutucuk"></span>endotermik &nbsp;<span class="kutucuk"></span>ekzotermik</p>
+  </div>
+
+  <div class="alan"><div class="etiket">Değerlendirme</div>
+    <p class="aciklama"><b>a)</b> Üç tepkimenin hepsinde bütün maddeler gaz hâlinde verilmiştir. Bu neden zorunludur?</p>
+    <div class="cizgi"></div><div class="cizgi"></div>
+    <p class="aciklama" style="margin-top:12px"><b>b)</b> Hesapladığınız değerler gerçek ölçüm sonuçlarından birkaç kJ farklı olabilir. Sebebi nedir?</p>
+    <div class="cizgi"></div><div class="cizgi"></div>
+  </div>
+
+  <details class="cozum"><summary><span class="kapali">Cevaplar (öğretmen)</span><span class="acik">Gizle</span></summary>
+  <ol class="adim">
+    <li><b>1 · Kloroform.</b> Değişen kısım 3 C—H bağıdır; dördüncüsü iki tarafta da durur.<br>Kırılan: 3(414) + 3(243) = 1242 + 729 = <b>1971</b> · Oluşan: 3(339) + 3(431) = 1017 + 1293 = <b>2310</b><br>ΔH = 1971 − 2310 = <b>−339 kJ</b> · <b>ekzotermik</b></li>
+    <li><b>2 · Vinil klorür.</b> C≡C bağı C=C'ye dönüşür, H—Cl kırılır; yeni bir C—H ve bir C—Cl kurulur.<br>Kırılan: 837 + 431 = <b>1268</b> · Oluşan: 611 + 414 + 339 = <b>1364</b><br>ΔH = 1268 − 1364 = <b>−96 kJ</b> · <b>ekzotermik</b></li>
+    <li><b>3 · Üre.</b> Kırılan: 2 C=O + 6 N—H = 2(736) + 6(389) = 1472 + 2334 = <b>3806</b><br>Oluşan: üre molekülünde 1 C=O, 2 C—N, 4 N—H; suda 2 O—H → 736 + 2(305) + 4(389) + 2(464) = 736 + 610 + 1556 + 928 = <b>3830</b><br>ΔH = 3806 − 3830 = <b>−24 kJ</b> · <b>ekzotermik</b> (sınıra yakın; küçük veri farkları işareti değiştirebilir)</li>
+    <li><b>a)</b> Bağ enerjileri yalnızca <b>gaz fazı</b> için tanımlıdır. Katı ve sıvılarda moleküller arası etkileşimler de enerji değişimine katılır ve tabloda yer almaz.</li>
+    <li><b>b)</b> Tablodaki değerler <b>ortalama</b> bağ enerjileridir; aynı bağ farklı moleküllerde biraz farklı enerjiye sahiptir. Yöntem bu yüzden <b>yaklaşık</b> sonuç verir.</li>
+  </ol>
+  </details>
+</div>
+
+<!-- ==================== DENEY RAPORU ==================== -->
+<h2 id="deney"><span class="no">Çalışma yaprağı</span>Deney raporu formları</h2>
+
+<p>Ders kitabının 1.2 ve 1.3 numaralı etkinlikleri, bu modülün <b>K1</b> ve <b>K2</b> öğrenme çıktılarına karşılık gelir. Aşağıdaki iki form doldurulup teslim edilmek üzere tasarlanmıştır; sayfayı yazdırdığında boş satırlar el yazısı için hazır gelir.</p>
+
+<div class="kart ek-not">
+  <div class="baslik">Kapsam notu</div>
+  <p>Her iki deneyde de <b>sıcaklık değişimi ölçülür, ısı miktarı hesaplanmaz</b>. q = m·c·ΔT bağıntısı ders kitabında yer almadığı için formlarda da yoktur. Deneyler enerji değişiminin <b>yönünü</b> belirlemeye ve <b>karşılaştırma</b> yapmaya yöneliktir.</p>
+</div>
+
+<!-- ---------- DENEY 1 ---------- -->
+<div class="rapor">
+  <div class="kunye">
+    <div><b>Deney 1</b></div><div>Çözünme olaylarında ısı değişimi</div>
+    <div style="margin-left:auto"><b>Ad Soyad:</b> …………………………</div>
+    <div><b>Sınıf / No:</b> ………………</div>
+    <div><b>Tarih:</b> ……/……/………</div>
+  </div>
+
+  <h4>Amaç</h4>
+  <p>Farklı katıların suda çözünmesindeki enerji değişimini endotermik ve ekzotermik olarak belirlemek.</p>
+
+  <h4>Araştırma sorusu</h4>
+  <p>Farklı katılar suda çözünürken çözeltinin sıcaklığı nasıl değişir?</p>
+
+  <h4>Hipotez</h4>
+  
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div>
+
+  <h4>Malzemeler</h4>
+  <p>2 adet 200 mL beherglas · 2 adet termometre · dereceli silindir · 2 spatül · cam baget · elektronik terazi · NaOH (sodyum hidroksit) katısı · NH<sub>4</sub>Cl (amonyum klorür) katısı · saf su · koruyucu gözlük ve eldiven</p>
+
+  <div class="guvenlik">
+    <b>Güvenlik.</b> NaOH <b>aşındırıcıdır</b>; deriye ve göze temas ettirmeyin, koruyucu gözlük ve eldiven takın. Çözünme sırasında kap ısınabilir, beherglası tabanından tutun. Katıları spatülle alın, elle dokunmayın. Deney sonunda çözeltileri öğretmeninizin belirttiği kaba boşaltın.
+  </div>
+
+  <h4>İşlem basamakları</h4>
+  <ol>
+    <li>Her iki beherglasa dereceli silindirle <b>100'er mL</b> saf su koyun.</li>
+    <li>Suların başlangıç sıcaklığını ölçüp tabloya kaydedin.</li>
+    <li>Terazide <b>5'er gram</b> NaOH ve NH<sub>4</sub>Cl tartın.</li>
+    <li>Katıları ayrı beherglaslara ekleyip cam bagetle karıştırın.</li>
+    <li>Çözünme tamamlandığında ulaşılan <b>en yüksek ya da en düşük</b> sıcaklığı kaydedin.</li>
+  </ol>
+
+  <h4>Değişkenler</h4>
+  <p><b>Bağımsız değişken:</b></p>
+<div class="cizgi-alan kisa"></div>
+<p></p>
+  <p><b>Bağımlı değişken:</b> </p>
+<div class="cizgi-alan kisa"></div>
+<p></p>
+  <p><b>Kontrol değişkenleri:</b> 
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div></p>
+
+  <h4>Veriler</h4>
+  <div class="tablo-sar">
+  <table>
+    <tr><th>Madde</th><th>Kütle (g)</th><th>Su (mL)</th><th>T<sub>başlangıç</sub> (°C)</th><th>T<sub>son</sub> (°C)</th><th>ΔT (°C)</th><th>Endo / Ekzo</th></tr>
+    <tr><td>NaOH</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>NH<sub>4</sub>Cl</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  </div>
+
+  <h4>Gözlemler</h4>
+  
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div>
+
+  <h4>Sonuç ve değerlendirme</h4>
+  <ol>
+    <li>Hangi olay endotermiktir? Bunu hangi gözleme dayanarak söylüyorsunuz?
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div></li>
+    <li>Her iki deneyde sistem ve çevre nedir? Isının akış yönünü yazın.
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div></li>
+    <li>Kütleler eşit alınmıştı. Karşılaştırmanın daha güvenilir olması için <b>mol sayılarının</b> eşit alınması neden daha doğru olurdu?
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div></li>
+    <li>Ölçtüğünüz sıcaklık değişimi, tepkimenin ΔH değerini <b>doğrudan</b> verir mi? Gerekçenizi yazın.
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div></li>
+    <li>Beherglasları elinizde tutarak beklemeniz sonucu nasıl etkilerdi?
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div></li>
+  </ol>
+</div>
+
+<!-- ---------- DENEY 2 ---------- -->
+<div class="rapor">
+  <div class="kunye">
+    <div><b>Deney 2</b></div><div>Maddelerin enerji kaynağı olma potansiyeli</div>
+    <div style="margin-left:auto"><b>Ad Soyad:</b> …………………………</div>
+    <div><b>Sınıf / No:</b> ………………</div>
+    <div><b>Tarih:</b> ……/……/………</div>
+  </div>
+
+  <h4>Amaç</h4>
+  <p>Farklı besinlerin birim kütle başına verdikleri enerjiyi karşılaştırmak ve enerji kaynağı olma potansiyellerine ilişkin hipotez oluşturmak.</p>
+
+  <h4>Araştırma sorusu</h4>
+  <p>Fındık, ceviz ve kraker örneklerinden hangisi aynı kütlede daha çok enerji verir?</p>
+
+  <h4>Hipotez</h4>
+  
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div>
+
+  <h4>Malzemeler</h4>
+  <p>Fındık, ceviz ve kraker (ya da mısır cipsi) örnekleri · deney tüpü ve tüp maşası · termometre · dereceli silindir · elektronik terazi · iğne batırılmış mantar tapa veya metal tel · seramik altlık · çakmak · koruyucu gözlük</p>
+
+  <div class="guvenlik">
+    <b>Güvenlik.</b> Bu deneyde <b>açık alev</b> kullanılır. Saçınızı toplayın, kollarınızı sıvamayın, yanmaz altlık kullanın. Tüpün ağzını kendinize ya da arkadaşınıza doğru tutmayın. Yanan örneği söndürmek için ıslak bez hazır bulundurun. Deneyi yalnızca öğretmen gözetiminde yapın.
+  </div>
+
+  <h4>İşlem basamakları</h4>
+  <ol>
+    <li>Her örnekten <b>1'er gram</b> tartın.</li>
+    <li>Deney tüpüne <b>10 mL</b> su koyun ve başlangıç sıcaklığını ölçün.</li>
+    <li>Örneği iğneye geçirip tutuşturun ve tüpün altında yanmasını sağlayın.</li>
+    <li>Yanma bittiğinde suyun ulaştığı <b>en yüksek sıcaklığı</b> kaydedin.</li>
+    <li>Tüpü ve suyu yenileyerek diğer örnekler için işlemi tekrarlayın.</li>
+  </ol>
+
+  <h4>Değişkenler</h4>
+  <p><b>Bağımsız değişken:</b></p>
+<div class="cizgi-alan kisa"></div>
+<p></p>
+  <p><b>Bağımlı değişken:</b> </p>
+<div class="cizgi-alan kisa"></div>
+<p></p>
+  <p><b>Kontrol değişkenleri:</b> 
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div></p>
+
+  <h4>Veriler</h4>
+  <div class="tablo-sar">
+  <table>
+    <tr><th>Örnek</th><th>Kütle (g)</th><th>Su (mL)</th><th>T<sub>başlangıç</sub> (°C)</th><th>T<sub>son</sub> (°C)</th><th>ΔT (°C)</th><th>Sıralama</th></tr>
+    <tr><td>Fındık</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>Ceviz</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>Kraker</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  </div>
+
+  <h4>Sonuç ve değerlendirme</h4>
+  <ol>
+    <li>Örnekleri verdikleri enerjiye göre sıralayın. Sıralamanız hipotezinizi doğruladı mı?
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div></li>
+    <li>Yağ oranı yüksek besinlerin daha çok enerji vermesini, besinlerin fizyolojik enerji değerleriyle (yağ 38 kJ/g, karbonhidrat ve protein 17 kJ/g) ilişkilendirin.
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div></li>
+    <li>Bu deneyde açığa çıkan ısının bir kısmı suya geçmez. Nereye gider ve bu, ölçümünüzü hangi yönde etkiler?
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div></li>
+    <li>Bu deneyden örneklerin <b>kJ/g cinsinden ısıl değerini</b> doğrudan hesaplayabilir misiniz? Gerekçenizi yazın.
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div></li>
+    <li>Deneyi tekrarlasaydınız hangi kontrol değişkenini daha dikkatli sabitlerdiniz? Neden?
+<div class="cizgi-alan"></div>
+<div class="cizgi-alan"></div></li>
+  </ol>
+</div>
+
+<!-- ---------- RUBRİK ---------- -->
+<h3>Dereceli puanlama anahtarı</h3>
+<p style="font-size:15.5px;color:var(--gri)">Her ölçüt 3 puan üzerinden değerlendirilir; toplam 12 puandır. Öğrenciye rapordan önce verilmesi önerilir.</p>
+
+<div class="tablo-sar">
+<table>
+<tr><th style="width:150px">Ölçüt</th><th>3 puan</th><th>2 puan</th><th>1 puan</th></tr>
+<tr><td><b>Hipotez ve değişkenler</b></td><td>Hipotez test edilebilir; üç değişken türü de doğru ve eksiksiz yazılmış</td><td>Hipotez var; değişkenlerin biri eksik ya da hatalı</td><td>Hipotez belirsiz; değişkenler ayırt edilmemiş</td></tr>
+<tr><td><b>Düzenek ve güvenlik</b></td><td>İşlem basamakları uygulanmış, güvenlik kurallarına tümüyle uyulmuş</td><td>Basamaklar uygulanmış, bir güvenlik kuralı atlanmış</td><td>Basamaklar eksik uygulanmış, güvenlik önlemleri alınmamış</td></tr>
+<tr><td><b>Veri kaydı</b></td><td>Tablo eksiksiz; birimler ve ΔT doğru yazılmış</td><td>Tablo dolu, birim ya da işaret hataları var</td><td>Veriler eksik ya da okunmuyor</td></tr>
+<tr><td><b>Sonuç ve yorum</b></td><td>Endo/ekzo doğru belirlenmiş; ölçümün sınırları (ısı kaybı, mol farkı) gerekçeli tartışılmış</td><td>Endo/ekzo doğru; sınırlar yüzeysel değinilmiş</td><td>Yalnızca gözlem yazılmış, yorum yok</td></tr>
+</table>
+</div>
+
+<div class="kart kural">
+  <div class="baslik">Öğretmen notu</div>
+  <ul>
+    <li><b>Deney 1</b> Bölüm 1 ve 2'den sonra, <b>Deney 2</b> Bölüm 3'ten sonra yapılırsa sorular karşılık bulur.</li>
+    <li>Deney 1'in 3. ve 4. değerlendirme sorusu doğrudan <b>Soru 7</b> ve <b>Soru 112</b> ile aynı fikri ölçer: ölçüm yönü verir, büyüklüğü vermez.</li>
+    <li>Deney 2'nin 4. sorusunun beklenen cevabı <b>"hayır"</b>dır; ısı miktarı hesabı bu modülün kapsamı dışındadır. Öğrenci yalnızca <b>karşılaştırma</b> yapabilir.</li>
+  </ul>
 </div>
 
 <!-- ==================== KAVRAM ÖZETİ ==================== -->
