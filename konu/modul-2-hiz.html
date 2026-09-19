@@ -250,6 +250,8 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <ul>
     <li><b>Anlık hız ve teğet eğimi:</b> kitap yalnızca <b>ortalama</b> hızı işler. Anlık hız Bölüm 5'te ek konu olarak verilir.</li>
     <li><b>Maxwell-Boltzmann dağılımı:</b> kitap bu grafiği <b>adını vermeden</b> "tanecik sayısı – kinetik enerji grafiği" olarak kullanır. Modülde grafik aynen işlenir, adı yalnızca bilgi notu olarak geçer.</li>
+    <li><b>10 °C kuralı:</b> "her 10 °C'de hız 2–3 katına çıkar" yaklaşımı kitapta yoktur; sınavlarda sık kullanıldığı için Bölüm 7'de ek konu olarak verilir.</li>
+    <li><b>Ara ürünün yerine konması:</b> yavaş basamak ilk basamak değilse hız denklemi ara ürün içerir. Bu durumun çözümü Bölüm 9'da ek konu olarak gösterilir.</li>
   </ul>
   <p style="margin-bottom:0">Kitapta geçen ve modülde <b>tam olarak</b> işlenen kavramlar: çarpışma teorisi, uygun geometri, eşik değeri, aktivasyon enerjisi, ortalama hız, hıza etki eden faktörler, katalizör ve inhibitör, hız denklemi, tepkime derecesi, hız sabiti, mekanizma ve ara ürün.</p>
 </div>
@@ -2746,14 +2748,15 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
       <li><b>A)</b> Katı tepkeni toz hâline getirmek</li>
       <li><b>B)</b> Sulu çözeltinin derişimini artırmak</li>
       <li><b>C)</b> Gaz tepkimesinde kabın hacmini küçültmek</li>
-      <li><b>D)</b> Aynı boyutta katı tepkenden bir parça daha eklemek</li>
+      <li><b>D)</b> Sabit hacimli kaba tepkimeye girmeyen bir gaz eklemek</li>
       <li><b>E)</b> Tepkeni katı yerine çözelti hâlinde kullanmak</li>
     </ul>
     <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
     <ol class="adim">
-      <li><b>D hızı artırmaz.</b> Katının derişimi tanımlı değildir; ikinci bir parça eklemek çözeltideki tepkenin karşılaştığı <b>yüzey</b> miktarını artırsa da, kitabın kapsamında katı miktarı hız faktörü sayılmaz. Belirleyici olan <b>temas yüzeyidir</b>.</li>
-      <li>A yüzeyi, B ve C derişimi, E fiziksel hâli değiştirerek hızı artırır.</li>
+      <li><b>D hızı artırmaz.</b> Sabit hacimde tepkimeye girmeyen gaz eklemek toplam basıncı artırır, ama <b>tepkenlerin derişimini değiştirmez</b>: mol sayıları ve hacim aynı kaldığı için n/V oranları sabittir.</li>
+      <li>A <b>temas yüzeyini</b>, B ve C <b>derişimi</b>, E <b>fiziksel hâli</b> değiştirerek hızı artırır.</li>
       <li>C'nin gerekçesi: hacim küçülünce aynı mol gaz daha küçük hacme sıkışır, derişim artar.</li>
+      <li>Dikkat: aynı işlem <b>pistonlu</b> kapta yapılsaydı hacim büyür, tepkenler seyrelir ve hız <b>azalırdı</b> (Bölüm 10).</li>
     </ol>
     <div class="cevap">D</div>
     </details>
@@ -2888,7 +2891,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
     <p class="metin" style="margin-top:10px">Cümledeki üç ayrı hatayı gösterin.</p>
     <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
     <ol class="adim">
-      <li><b>Hata 1 — katının derişimi:</b> katıların derişimi tanımlı değildir. Çinko miktarını artırmak "derişimi artırmak" demek değildir; hıza etki eden şey <b>temas yüzeyidir</b>.</li>
+      <li><b>Hata 1 — katının derişimi:</b> katıların derişimi tanımlı değildir. Çinko miktarını artırmak "derişimi artırmak" demek değildir. İkinci levha <b>temas yüzeyini</b> büyüttüğü için hız gerçekten artar — ama gerekçe derişim değil, <b>yüzeydir</b>.</li>
       <li><b>Hata 2 — "iki kat hızlanır":</b> hızın kaç kat değişeceği <b>hız denklemine</b> bağlıdır ve deneyle bulunur. Bir faktörü iki katına çıkarmak hızı otomatik olarak iki katına çıkarmaz.</li>
       <li><b>Hata 3 — "iki kat hidrojen":</b> bu, hızla ilgili değil <b>stokiyometriyle</b> ilgili bir sonuçtur. Çinko sınırlayıcıysa gerçekten iki kat H<sub>2</sub> çıkar; ama asit sınırlayıcıysa hiç değişmez. Hangi maddenin sınırlayıcı olduğu belirtilmemiş.</li>
       <li>Üç hatanın ortak kökeni: <b>hız, miktar ve derişim kavramlarının birbirine karışması</b>. Hız "ne kadar sürede", stokiyometri "ne kadar" sorusunu yanıtlar.</li>
@@ -3149,8 +3152,8 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
     <li><span class="tip">Grafik</span>İki eğri farklı derişimlerde başlayıp farklı derişimlerde bitiyorsa aradaki fark neden kaynaklanır?
       <details><summary>Cevabı gör</summary><p><b>Miktardan.</b> Katalizör ya da sıcaklık farkı olsaydı eğriler aynı noktada başlar ve aynı noktada biterdi.</p></details>
     </li>
-    <li><span class="tip">Yanılgı</span>"Katı tepkenden daha çok koyarsam tepkime hızlanır" ifadesi doğru mudur?
-      <details><summary>Cevabı gör</summary><p><b>Hayır.</b> Katının derişimi tanımlı değildir; hıza etki eden <b>temas yüzeyidir</b>. Aynı boyutta parça eklemek hızı belirgin biçimde değiştirmez.</p></details>
+    <li><span class="tip">Yanılgı</span>"Katı tepkenin <b>derişimini</b> artırırsam tepkime hızlanır" ifadesindeki hata nedir?
+      <details><summary>Cevabı gör</summary><p>Katının <b>derişimi tanımlı değildir</b>; hız ifadesinde yer almaz. Hıza etki eden büyüklük <b>temas yüzeyidir</b> — katıyı toz hâline getirmek ya da daha çok yüzey sunmak hızı artırır, ama bunun adı "derişim artışı" değildir.</p></details>
     </li>
     <li><span class="tip">Sentez</span>Bu bölümdeki faktörlerden hangisi oluşan ürün miktarını da değiştirir?
       <details><summary>Cevabı gör</summary><p>Yalnızca <b>sınırlayıcı tepkenin miktarını</b> artırmak. Yüzey, derişim (fazla olan madde için) ve hacim değişiklikleri yalnızca süreyi etkiler.</p></details>
@@ -3176,9 +3179,13 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
   <ul>
     <li>Sıcaklık artışı <b>iki etki</b> yapar: tanecikler hızlandığı için çarpışma sayısı artar <b>ve</b> eşik değerini aşabilen taneciklerin oranı büyür.</li>
     <li><b>İkinci etki baskındır.</b> Sıcaklığın hızı bu kadar çok artırmasının sebebi budur; hızı <b>en çok</b> etkileyen faktör sayılır.</li>
-    <li>Yaklaşık kural: sıcaklığın her <b>10 °C</b> artışında hız <b>2–3 katına</b> çıkar. Kaç kat olduğu soruda verilir.</li>
     <li>Sıcaklık <b>aktivasyon enerjisini değiştirmez</b>; grafikteki tepe ve eşik çizgisi yerinde kalır.</li>
   </ul>
+</div>
+
+<div class="kart ek-not">
+  <div class="baslik">Ek konu · 10 °C kuralı</div>
+  <p style="margin-bottom:0">Sıcaklığın her <b>10 °C</b> artışında hızın <b>2–3 katına</b> çıktığı yaklaşık kuralı <b>ders kitabında geçmez</b>; buna karşılık sınav sorularında sık kullanılır. Kaç kat olduğu soruda mutlaka verilir — verilmemişse soru bu kuralla çözülemez. Aşağıdaki hesap soruları (99, 100, 108, 109) bu kurala dayanır.</p>
 </div>
 
 <h3>Katalizör</h3>
@@ -3216,7 +3223,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
     <li>E<sub>ai</sub> ve E<sub>ag</sub>'yi <b>eşit miktarda</b> düşürür → ileri ve geri tepkimeyi <b>eşit oranda</b> hızlandırır.</li>
     <li><b>ΔH'yi, oluşan ürün miktarını ve verimi değiştirmez.</b> Aynı sonuca <b>daha erken</b> varılır.</li>
     <li>Tepkimeye girer ama sonunda <b>değişmeden geri çıkar</b>: mekanizmanın ilk basamağında harcanır, son basamağında yeniden oluşur.</li>
-    <li><b>İnhibitör (negatif katalizör)</b> aktivasyon enerjisini <b>yükselterek</b> hızı düşürür.</li>
+    <li><b>İnhibitör (negatif katalizör)</b> aktivasyon enerjisini <b>yükselterek</b> hızı düşürür. Gıdaların bozulma tepkimelerini yavaşlatmak için kullanılan <b>sodyum benzoat, sodyum klorür ve askorbik asit</b> bu amaçla eklenen maddelerdir.</li>
   </ul>
 </div>
 
@@ -3646,7 +3653,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 <div class="kart kural">
   <div class="baslik">Kural</div>
   <ul>
-    <li><b>k — hız sabiti:</b> yalnızca <b>sıcaklığa ve katalizöre</b> bağlıdır. Derişim değişse de k değişmez.</li>
+    <li><b>k — hız sabiti:</b> <b>tepkimenin niteliğine, sıcaklığa, temas yüzeyine ve katalizöre</b> bağlıdır; sıcaklık, temas yüzeyi ve katalizörle <b>artar</b>. <b>Derişimden bağımsızdır</b> — derişim değişse de k değişmez.</li>
     <li><b>m ve n — tepkime dereceleri:</b> <b>deneyle bulunur</b>, denklem katsayılarından okunamaz. <b>m + n</b> toplam derecedir.</li>
     <li><b>Tek istisna:</b> tepkime <b>tek basamakta</b> gerçekleşiyorsa katsayılar üs olarak yazılabilir.</li>
     <li><b>Katılar ve saf sıvılar</b> hız denkleminde yer almaz.</li>
@@ -3690,7 +3697,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
     <details class="cozum"><summary><span class="kapali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Çözümü göster</span><span class="acik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 20C5 20 1 12 1 12a19 19 0 0 1 5.1-5.9"/><path d="M9.9 4.2A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a19 19 0 0 1-2.2 3.2"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M1 1l22 22"/></svg>Çözümü gizle</span></summary>
     <ol class="adim">
       <li><b>C yanlıştır.</b> k, derişimden <b>tamamen bağımsızdır</b>. Derişim değiştiğinde değişen hızdır, k değil.</li>
-      <li>k'yi değiştiren iki şey vardır: <b>sıcaklık</b> ve <b>katalizör</b>.</li>
+      <li>k'yi değiştiren etkenler: <b>tepkimenin kendi niteliği, sıcaklık, temas yüzeyi ve katalizör</b>. Bunların üçü (sıcaklık, yüzey, katalizör) k'yi <b>büyütür</b>.</li>
       <li>D'deki istisna önemlidir: yalnızca tek basamaklı (elementer) tepkimelerde katsayı = üs.</li>
     </ol>
     <div class="cevap">C</div>
@@ -3737,7 +3744,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
       <li><b>II ✔</b> Katalizör de aynı etkiyi eşik değerini düşürerek yapar.</li>
       <li><b>III ✘</b> Derişim hız denkleminde zaten <b>ayrı bir çarpan</b> olarak bulunur; k'ye etki etmez.</li>
       <li><b>IV ✔</b> Hızın birimi mol/L·s sabit kaldığı için k'nin birimi dereceye göre ayarlanır.</li>
-      <li>Hatırlatma: k'yi değiştiren iki etken, Bölüm 7'deki iki faktörle aynıdır — <b>sıcaklık ve katalizör</b>. Bölüm 6'daki faktörler k'ye değil, denklemdeki <b>derişim çarpanlarına</b> etki eder.</li>
+      <li>Hatırlatma: <b>derişim</b> denklemdeki çarpanlara etki eder, k'ye değil. Buna karşılık <b>temas yüzeyi</b> derişim çarpanı olarak yazılamadığı için etkisini <b>k'nin içinde</b> gösterir (Soru 125).</li>
     </ol>
     <div class="cevap">I, II ve IV doğru.</div>
     </details>
@@ -3938,10 +3945,10 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
       <li>a) <b>k ile hız aynı şey değildir.</b> Hız derişimlere bağlıdır; k ise derişimden bağımsız bir <b>orantı katsayısıdır</b>. Aynı sıcaklıkta yapılan bütün deneylerde k aynıdır.</li>
       <li>b) <b>Deney 1:</b> 0,0060 ÷ [(0,10)<sup>2</sup> × 0,10] = 0,0060 ÷ 0,001 = <b>6</b><br><b>Deney 2:</b> 0,0240 ÷ [(0,20)<sup>2</sup> × 0,10] = 0,0240 ÷ 0,004 = <b>6</b><br><b>Deney 3:</b> 0,0180 ÷ [(0,10)<sup>2</sup> × 0,30] = 0,0180 ÷ 0,003 = <b>6</b></li>
       <li>Üç deneyde de <b>k = 6</b>. İddia çürütülmüştür.</li>
-      <li>c) k yalnızca <b>sıcaklık</b> ya da <b>katalizör</b> değişirse değişir. Deney tablolarında sıcaklık genellikle sabit tutulur; bu yüzden k tüm satırlarda aynı çıkar.</li>
+      <li>c) k <b>sıcaklık, temas yüzeyi ya da katalizör</b> değişirse değişir. Deney tablolarında bunların hepsi sabit tutulur; bu yüzden k tüm satırlarda aynı çıkar.</li>
       <li><b>Pratik sağlama:</b> bir tabloda bulduğun hız denklemini her satıra uygulayıp k'nin sabit çıkıp çıkmadığına bak. Çıkmıyorsa dereceleri yanlış bulmuşsundur.</li>
     </ol>
-    <div class="cevap">k derişimden bağımsızdır; üç deneyde de k = 6. k'yi yalnızca sıcaklık ve katalizör değiştirir.</div>
+    <div class="cevap">k derişimden bağımsızdır; üç deneyde de k = 6. k'yi sıcaklık, temas yüzeyi ve katalizör değiştirir.</div>
     </details>
   </div>
 </div>
@@ -4084,7 +4091,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
       <details><summary>Cevabı gör</summary><p><b>Yazılamaz</b>, deneyle bulunur. Tek istisna: tepkimenin <b>tek basamakta</b> gerçekleştiği belirtilmişse katsayılar üs olarak kullanılır.</p></details>
     </li>
     <li><span class="tip">Hız sabiti</span>Derişim iki katına çıkarılırsa k nasıl değişir?
-      <details><summary>Cevabı gör</summary><p><b>Değişmez.</b> k'yi yalnızca sıcaklık ve katalizör değiştirir; derişim hız denkleminde ayrı bir çarpandır.</p></details>
+      <details><summary>Cevabı gör</summary><p><b>Değişmez.</b> k'yi sıcaklık, temas yüzeyi ve katalizör değiştirir; derişim hız denkleminde <b>ayrı bir çarpan</b> olarak zaten bulunur.</p></details>
     </li>
     <li><span class="tip">Hacim</span>Toplam derecesi 3 olan bir gaz tepkimesinde kabın hacmi yarıya indirilirse hız kaç katına çıkar?
       <details><summary>Cevabı gör</summary><p>Bütün derişimler 2 katına çıkar → 2³ = <b>8 katına</b>.</p></details>
@@ -6202,7 +6209,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 
 <h3>Hız denklemi</h3>
 <ul>
-  <li><b>k:</b> yalnızca sıcaklık ve katalizöre bağlı. Derişimle <b>değişmez</b>.</li>
+  <li><b>k:</b> tepkimenin niteliğine, <b>sıcaklığa, temas yüzeyine ve katalizöre</b> bağlı; bu üçüyle artar. Derişimle <b>değişmez</b>.</li>
   <li><b>Dereceler deneyle bulunur.</b> Tek istisna: "tepkime tek basamakta gerçekleşiyor" denmişse katsayılar üs olur.</li>
   <li><b>k'nin birimi:</b> 0. derece mol/L·s · 1. derece s<sup>−1</sup> · 2. derece L/mol·s · 3. derece L<sup>2</sup>/mol<sup>2</sup>·s</li>
   <li>Katılar ve saf sıvılar hız denkleminde <b>yer almaz</b>.</li>
@@ -6433,7 +6440,7 @@ figcaption{font-size:14px;color:var(--gri);margin-top:10px;text-align:center}
 <tr><td><a href="#s120" style="font-weight:800;color:var(--mavi);text-decoration:none">120</a></td><td>a) r = k[Y]² &nbsp;·&nbsp; b) k = 4 L/mol·s &nbsp;·&nbsp; c) Hayır, girer ama hızı etkilemez</td></tr>
 <tr><td><a href="#s121" style="font-weight:800;color:var(--mavi);text-decoration:none">121</a></td><td>a) 0,16 mol/L·s &nbsp;·&nbsp; b) 0,20 mol/L</td></tr>
 <tr><td><a href="#s122" style="font-weight:800;color:var(--mavi);text-decoration:none">122</a></td><td>(1) 0,450 &nbsp;·&nbsp; (2) 0,150 &nbsp;·&nbsp; (3) 0,400 &nbsp;·&nbsp; (4) 0,20 mol/L</td></tr>
-<tr><td><a href="#s123" style="font-weight:800;color:var(--mavi);text-decoration:none">123</a></td><td>k derişimden bağımsızdır; üç deneyde de k = 6. k'yi yalnızca sıcaklık ve katalizör değiştirir.</td></tr>
+<tr><td><a href="#s123" style="font-weight:800;color:var(--mavi);text-decoration:none">123</a></td><td>k derişimden bağımsızdır; üç deneyde de k = 6. k'yi sıcaklık, temas yüzeyi ve katalizör değiştirir.</td></tr>
 <tr><td><a href="#s124" style="font-weight:800;color:var(--mavi);text-decoration:none">124</a></td><td>I ve IV değişir.</td></tr>
 <tr><td><a href="#s125" style="font-weight:800;color:var(--mavi);text-decoration:none">125</a></td><td>a) r = k[O₂] &nbsp;·&nbsp; b) Katının derişimi tanımlı değil &nbsp;·&nbsp; c) Etkiler; etkisi k'nin içinde görünür</td></tr>
 <tr><td><a href="#s126" style="font-weight:800;color:var(--mavi);text-decoration:none">126</a></td><td>a) Üç deney, her seferinde tek derişim değişir &nbsp;·&nbsp; b) Derişimler kesin bilinsin diye &nbsp;·&nbsp; c) Sıcaklık &nbsp;·&nbsp; d) Herhangi bir deneyden</td></tr>
