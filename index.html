@@ -7936,8 +7936,13 @@ MAARIF.forEach((m, i) => {
 const YOL_ANAHTAR = "kimyamed_yol";
 let aktifYol = null;                /* null = seçim ekranı */
 try { aktifYol = localStorage.getItem(YOL_ANAHTAR) || null; } catch(e){}
+if(aktifYol !== "ayt" && aktifYol !== "maarif"){
+  aktifYol = null;
+  try { localStorage.removeItem(YOL_ANAHTAR); } catch(e){}
+}
 
 function yolSec(y){
+  if(y !== "ayt" && y !== "maarif") return;
   aktifYol = y;
   try { localStorage.setItem(YOL_ANAHTAR, y); } catch(e){}
   girisCiz();
@@ -7951,6 +7956,7 @@ function yolaGeriDon(){
 }
 
 /* ---- seçim ekranı ---- */
+const KONU_MODUL = 21, KONU_SORU = 2404;   /* konu anlatımı kartı · yeni modül eklendikçe güncelle */
 function yolEkraniCiz(kap){
   const say = y => TESTLER.filter(t=>t.yol===y).reduce((a,t)=>a+t.dizi.length, 0);
   const bol = y => TESTLER.filter(t=>t.yol===y).length;
@@ -7967,6 +7973,11 @@ function yolEkraniCiz(kap){
       '<div class="yol-alt">Okul müfredatı · 3 tema, beceri temelli</div></div></div>' +
       '<div class="yol-sayi">' + bol("maarif") + ' bölüm · ' + say("maarif") + ' soru</div>' +
     '</button>' +
+    '<a class="yol-kart" id="konuBag" href="konu/" style="display:block;text-decoration:none;color:inherit">' +
+      '<div class="yol-ust"><span class="yol-rozet">📗</span>' +
+      '<div><div class="yol-ad">Konu Anlatımı</div></div></div>' +
+      '<div class="yol-sayi">' + KONU_MODUL + ' modül · ' + KONU_SORU + ' çözümlü soru</div>' +
+    '</a>' +
     '<p class="yol-not">Seçimin hatırlanır; istediğin zaman değiştirebilirsin.</p>';
 }
 
@@ -8248,7 +8259,7 @@ girisBagla();
   const kap = $("konu-liste");
   if(kap) kap.addEventListener("click", function(e){
     const y = e.target.closest(".yol-kart");
-    if(y){ yolSec(y.dataset.yol); }
+    if(y && y.dataset.yol){ yolSec(y.dataset.yol); }
   });
   const g = $("yol-geri");
   if(g) g.addEventListener("click", yolaGeriDon);
@@ -8480,34 +8491,29 @@ function ilerlemeYukle(){
   return true;
 }
 
+/* ---- geri tuşuyla dönüşte sayfa önbellekten gelirse ekranı tazele ---- */
+window.addEventListener("pageshow", function(e){ if(e.persisted) girisCiz(); });
+
+/* ---- akıllı tahta / büyük ekran: arayüzü ekrana göre büyüt ---- */
+function ekranOlcek(){
+  const w = window.innerWidth, hh = window.innerHeight;
+  let z = 1;
+  if(w >= 700){
+    z = Math.min(w * 0.9 / 560, hh / 620);
+    z = Math.max(1, Math.min(z, 2.6));
+  }
+  document.body.style.zoom = z === 1 ? "" : z.toFixed(2);
+}
+window.addEventListener("resize", ekranOlcek);
+window.addEventListener("orientationchange", function(){ setTimeout(ekranOlcek, 300); });
+ekranOlcek();
+
 /* ---- başlangıç ---- */
 girisCiz();
 ilerlemeYukle();
 
 </script>
- <script>
-(function(){
-  var MODUL = 21, SORU = 2404;   // yeni modül eklendikçe sadece bu satırı güncelle
-  function ekle(){
-    var kap = document.querySelector('.yol-kart');
-    if (!kap || document.getElementById('konuBag')) return;
-    var a = document.createElement('a');
-    a.id = 'konuBag';
-    a.className = 'yol-kart';
-    a.href = 'konu/';
-    a.style.display = 'block';
-    a.style.textDecoration = 'none';
-    a.style.color = 'inherit';
-    a.innerHTML = '<div class="yol-ust"><span class="yol-rozet">📗</span>'+
-      '<div><div class="yol-ad">Konu Anlatımı</div></div></div>'+
-      '<div class="yol-sayi">'+MODUL+' modül · '+SORU+' çözümlü soru</div>';
-    var son = document.querySelectorAll('.yol-kart');
-    son = son[son.length-1];
-    son.parentNode.insertBefore(a, son.nextSibling);
-  }
-  var t = setInterval(function(){ ekle(); if (document.getElementById('konuBag')) clearInterval(t); }, 500);
-})();
-</script>
+ 
 
 
 
