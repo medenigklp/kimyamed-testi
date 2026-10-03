@@ -7201,6 +7201,563 @@ const sorularSurd4 = [
 ];
 
 
+/* ═══ 11. sınıf Maarif · Enerji genel tekrar testleri (kolay / orta / zor) ═══ */
+const sorularEnerjiGT1 = [
+  {konu:"Isı ve sıcaklık",
+   s:"Taneciklerin ortalama kinetik enerjisinin ölçüsü olan büyüklük aşağıdakilerden hangisidir?",
+   sik:["Isı", "Sıcaklık", "Entalpi", "Bağ enerjisi", "Isıl değer"],
+   d:1,
+   c:"Sıcaklık ortalama kinetik enerjinin ölçüsüdür ve madde miktarına bağlı değildir. Isı ise sıcaklık farkı nedeniyle aktarılan enerjidir."},
+
+  {konu:"Sistem ve çevre",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir beherglasta suda tuz çözünmesi inceleniyor. Sistem olarak tuz ve su seçiliyor.</span>Buna göre aşağıdakilerden hangisi çevreye aittir?",
+   sik:["Beherglasın camı ve dış hava", "Tuz", "Su", "Oluşan çözelti", "Çözünen iyonlar"],
+   d:0,
+   c:"Sistem, incelenen maddelerin kendisidir (tuz + su). Kap ve hava sistemin dışında kalır; çevredir."},
+
+  {konu:"Ekzotermik olaylar",
+   s:"Aşağıdaki olaylardan hangisi ekzotermiktir?",
+   sik:["Odunun yanması", "Buzun erimesi", "Suyun buharlaşması", "Fotosentez", "Suyun elektrolizi"],
+   d:0,
+   c:"Yanma ısı verir. Erime, buharlaşma, fotosentez ve elektroliz enerji alan olaylardır."},
+
+  {konu:"Endotermik olaylar",
+   s:"Aşağıdaki olaylardan hangisi endotermiktir?",
+   sik:["Nötrleşme", "Solunum", "Su buharının yoğuşması", "CaCO<sub>3</sub>'ün CaO ve CO<sub>2</sub>'ye ayrışması", "Metanın yanması"],
+   d:3,
+   c:"Bir bileşiğin bileşenlerine ayrışması enerji ister. Diğer dördü ısı veren olaylardır."},
+
+  {konu:"ΔH işareti",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir tepkimenin entalpi değişimi ΔH = +50 kJ'dir.</span>Bu tepkime ile ilgili aşağıdakilerden hangisi yanlıştır?",
+   sik:["Tepkime endotermiktir.", "Ürünlerin entalpisi tepkenlerinkinden büyüktür.", "Tepkime sırasında ortam soğur.", "Isı, denklemde tepkenler tarafında yazılabilir.", "Tepkime sırasında çevreye ısı verilir."],
+   d:4,
+   c:"ΔH pozitifse sistem çevreden ısı alır; çevreye ısı vermez. Diğer seçenekler endotermik tepkimenin özellikleridir."},
+
+  {konu:"Azotun yanması",
+   s:"Aşağıdaki yanma tepkimelerinden hangisi endotermiktir?",
+   sik:["C(k) + O<sub>2</sub>(g) → CO<sub>2</sub>(g)", "S(k) + O<sub>2</sub>(g) → SO<sub>2</sub>(g)", "N<sub>2</sub>(g) + O<sub>2</sub>(g) → 2NO(g)", "2H<sub>2</sub>(g) + O<sub>2</sub>(g) → 2H<sub>2</sub>O(g)", "CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) → CO<sub>2</sub>(g) + 2H<sub>2</sub>O(g)"],
+   d:2,
+   c:"Yanma tepkimeleri ekzotermiktir; tek istisna azot gazının yanmasıdır."},
+
+  {konu:"Diyagramdan ΔH",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir potansiyel enerji diyagramında tepkenler 80 kJ, ürünler 20 kJ düzeyindedir.</span>Buna göre tepkimenin ΔH değeri kaç kJ'dir?",
+   sik:["−100", "−60", "−20", "+60", "+100"],
+   d:1,
+   c:"ΔH = H(ürünler) − H(tepkenler) = 20 − 80 = −60 kJ."},
+
+  {konu:"Ters tepkime",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">A → B tepkimesinin entalpi değişimi ΔH = −120 kJ'dir.</span>Buna göre B → A tepkimesinin ΔH değeri kaç kJ'dir?",
+   sik:["−240", "−120", "−60", "+60", "+120"],
+   d:4,
+   c:"Tepkime ters çevrildiğinde ΔH'nin yalnızca işareti değişir: +120 kJ."},
+
+  {konu:"Katsayı ve ΔH",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(s) &nbsp; ΔH = −286 kJ</span>Buna göre 2H<sub>2</sub>(g) + O<sub>2</sub>(g) → 2H<sub>2</sub>O(s) tepkimesinin ΔH değeri kaç kJ'dir?",
+   sik:["−143", "−286", "−429", "−572", "+572"],
+   d:3,
+   c:"Denklem 2 ile çarpıldığı için ΔH de 2 ile çarpılır: 2 × (−286) = −572 kJ."},
+
+  {konu:"Isıl değer",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Metanın molar yanma ısısı 890 kJ/mol'dür. (CH<sub>4</sub>: 16 g/mol)</span>Buna göre metanın ısıl değeri yaklaşık kaç kJ/g'dır?",
+   sik:["16", "32,5", "55,6", "74,0", "890"],
+   d:2,
+   c:"Isıl değer = molar yanma ısısı ÷ mol kütlesi = 890 ÷ 16 ≈ 55,6 kJ/g."},
+
+  {konu:"İyi yakıt ölçütleri",
+   s:"Aşağıdakilerden hangisi iyi bir yakıtta aranan özelliklerden biri değildir?",
+   sik:["Birim kütle başına çok enerji vermesi", "Kolay depolanabilmesi", "Maliyetinin düşük olması", "Atık miktarının az olması", "Toksik olması"],
+   d:4,
+   c:"İyi bir yakıt toksik olmamalıdır. Diğer dördü aranan özelliklerdir."},
+
+  {konu:"Hidrojen yakıtı",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Hidrojen gazı gelecekte önemli bir yakıt olarak görülmektedir.</span>Hidrojenin çevre dostu bir yakıt sayılmasının temel nedeni aşağıdakilerden hangisidir?",
+   sik:["Ucuz olması", "Kolay depolanabilmesi", "Oda koşullarında sıvı olması", "Standart oluşum entalpisinin sıfır olması", "Yanma ürününün yalnızca su olması"],
+   d:4,
+   c:"Hidrojen yandığında yalnızca su oluşur, sera gazı salınmaz. Depolanması ise zordur ve maliyetlidir."},
+
+  {konu:"Bağ enerjisi",
+   s:"Bağ enerjisi ile ilgili aşağıdakilerden hangisi doğrudur?",
+   sik:["Bağ enerjisi her zaman pozitif değerdir.", "Bağ kırılması ekzotermiktir.", "Bağ oluşumu endotermiktir.", "Bağ enerjisi sıvı hâldeki maddelerde ölçülür.", "Bağ enerjisi büyük olan bağ daha zayıftır."],
+   d:0,
+   c:"Bağ kırmak her zaman enerji ister; bu yüzden bağ enerjisi daima pozitiftir. Ölçüm gaz fazında yapılır ve büyük bağ enerjisi güçlü bağ demektir."},
+
+  {konu:"Bağ enerjisiyle ΔH",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">H<sub>2</sub>(g) + Cl<sub>2</sub>(g) → 2HCl(g)<br/>Bağ enerjileri: H—H 436 · Cl—Cl 243 · H—Cl 431 kJ/mol</span>Buna göre tepkimenin ΔH değeri kaç kJ'dir?",
+   sik:["−183", "−248", "+183", "−431", "+248"],
+   d:0,
+   c:"Kırılan: 436 + 243 = 679. Oluşan: 2 × 431 = 862. ΔH = 679 − 862 = −183 kJ."},
+
+  {konu:"Oluşum entalpisi sıfır",
+   s:"Aşağıdakilerden hangisinin standart oluşum entalpisi sıfırdır?",
+   sik:["H<sub>2</sub>O(s)", "O<sub>3</sub>(g)", "C(elmas)", "N<sub>2</sub>(g)", "CO<sub>2</sub>(g)"],
+   d:3,
+   c:"Elementlerin standart koşullardaki en kararlı hâlleri için ΔH°ol = 0'dır. N₂(g) azotun kararlı hâlidir; O₃ ve elmas kararlı hâl değildir, H₂O ve CO₂ bileşiktir."},
+
+  {konu:"Oluşum denklemi",
+   s:"Aşağıdaki tepkimelerden hangisinin ΔH değeri, ürünün standart molar oluşum entalpisine eşittir?",
+   sik:["CO(g) + ½O<sub>2</sub>(g) → CO<sub>2</sub>(g)", "2H<sub>2</sub>(g) + O<sub>2</sub>(g) → 2H<sub>2</sub>O(s)", "C(grafit) + O<sub>2</sub>(g) → CO<sub>2</sub>(g)", "N<sub>2</sub>(g) + 3H<sub>2</sub>(g) → 2NH<sub>3</sub>(g)", "C(elmas) + O<sub>2</sub>(g) → CO<sub>2</sub>(g)"],
+   d:2,
+   c:"Tepkenlerin hepsi kararlı hâlde element, ürün tam 1 mol olmalı. Yalnız C seçeneği bu şartları sağlar."},
+
+  {konu:"Standart tepkime entalpisi",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">2Mg(k) + O<sub>2</sub>(g) → 2MgO(k)<br/>ΔH°ol(MgO) = −601,7 kJ/mol</span>Buna göre tepkimenin standart entalpi değişimi kaç kJ'dir?",
+   sik:["−601,7", "−1203,4", "+601,7", "−300,9", "+1203,4"],
+   d:1,
+   c:"Mg ve O₂ elementlerin kararlı hâlleridir (0). ΔH° = 2 × (−601,7) − 0 = −1203,4 kJ."},
+
+  {konu:"Katalizör ve ΔH",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir tepkimeye uygun bir katalizör ekleniyor.</span>Buna göre aşağıdakilerden hangisi değişmez?",
+   sik:["Tepkime hızı", "Aktivasyon enerjisi", "Tepkime süresi", "Tepkimenin izlediği yol", "Tepkimenin ΔH değeri"],
+   d:4,
+   c:"Katalizör tepkimenin yolunu değiştirip aktivasyon enerjisini düşürür; başlangıç ve son hâli değiştirmediği için ΔH aynı kalır."},
+
+  {konu:"Fiziksel hâl",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">H<sub>2</sub>(g) + ½O<sub>2</sub>(g) tepkimesinden aynı koşullarda farklı fiziksel hâllerde su elde ediliyor.</span>Hangi durumda açığa çıkan ısı en fazladır?",
+   sik:["Su buharı oluşursa", "Sıvı su oluşursa", "Buz oluşursa", "Üçünde de eşittir", "Belirlenemez"],
+   d:2,
+   c:"Ürün ne kadar düşük enerjili hâldeyse açığa çıkan ısı o kadar çoktur. En düşük enerjili hâl katıdır (−291 kJ/mol)."},
+
+  {konu:"Isı–mol orantısı",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">S(k) + O<sub>2</sub>(g) → SO<sub>2</sub>(g) &nbsp; ΔH = −297 kJ</span>Buna göre 0,5 mol kükürt yandığında kaç kJ ısı açığa çıkar?",
+   sik:["74,25", "148,5", "297", "594", "891"],
+   d:1,
+   c:"Açığa çıkan ısı mol sayısıyla doğru orantılıdır: 0,5 × 297 = 148,5 kJ."},
+
+  {konu:"Kütleden ısıya",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">C(k) + O<sub>2</sub>(g) → CO<sub>2</sub>(g) &nbsp; ΔH = −394 kJ</span>Buna göre 24 gram karbon yandığında kaç kJ ısı açığa çıkar? (C: 12)",
+   sik:["197", "394", "591", "788", "1182"],
+   d:3,
+   c:"n = 24 ÷ 12 = 2 mol → 2 × 394 = 788 kJ."},
+
+  {konu:"Isı–mol grafiği",
+   gorsel:"<svg style=\"width:100%;max-width:420px\" role=\"img\" aria-label=\"Soru grafiği\" viewBox=\"0 0 400 226\"><line x1=\"70\" y1=\"196\" x2=\"70\" y2=\"14\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M70,10 L66.5,17.5 L73.5,17.5 Z\" fill=\"#14110F\"/><line x1=\"70\" y1=\"196\" x2=\"376\" y2=\"196\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M380,196 L372.5,192.5 L372.5,199.5 Z\" fill=\"#14110F\"/><text x=\"76\" y=\"14\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\">Açığa çıkan ısı (kJ)</text><text x=\"380\" y=\"214\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\" text-anchor=\"end\">Yakılan mol</text><text x=\"64\" y=\"59\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">600</text><line x1=\"70\" y1=\"54.571428571428584\" x2=\"270\" y2=\"54.571428571428584\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"270\" y1=\"54.571428571428584\" x2=\"270\" y2=\"196\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"270\" y=\"210\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"middle\">2</text><line x1=\"70\" y1=\"196\" x2=\"290\" y2=\"40\" stroke=\"#C7381A\" stroke-width=\"2.6\"/></svg>",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Grafikte bir yakıtın yanmasında açığa çıkan ısının yakılan mol sayısıyla değişimi verilmiştir.</span>Buna göre yakıtın molar yanma ısısı kaç kJ/mol'dür?",
+   sik:["150", "300", "600", "900", "1200"],
+   d:1,
+   c:"Doğrunun eğimi molar yanma ısısını verir: 600 ÷ 2 = 300 kJ/mol."},
+
+  {konu:"Bağlam · sönmemiş kireç",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Sönmemiş kireç (CaO) üzerine su döküldüğünde karışımın ısındığı gözleniyor.</span>Bu olay için aşağıdakilerden hangisi doğrudur?",
+   sik:["Endotermiktir, ΔH > 0", "Ekzotermiktir, ΔH < 0", "Endotermiktir, ΔH < 0", "Ekzotermiktir, ΔH > 0", "ΔH = 0'dır"],
+   d:1,
+   c:"Karışım ısınıyorsa sistem çevreye ısı veriyordur: olay ekzotermiktir ve ΔH negatiftir."},
+
+  {konu:"Yenilenebilir yakıt",
+   s:"Aşağıdakilerden hangisi yenilenebilir bir yakıttır?",
+   sik:["Biyoetanol", "Taş kömürü", "Petrol", "Doğal gaz", "Linyit"],
+   d:0,
+   c:"Biyoetanol bitkilerden üretilir ve yeniden yetiştirilebilir. Diğerleri fosil yakıttır, yenilenemez."},
+
+  {konu:"Besin enerjisi",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Besin öğelerinin fizyolojik enerji değerleri: yağ 38 kJ/g · karbonhidrat 17 kJ/g</span>10 g yağ ve 10 g karbonhidrat içeren bir besin toplam kaç kJ enerji sağlar?",
+   sik:["170", "380", "550", "720", "1100"],
+   d:2,
+   c:"10 × 38 + 10 × 17 = 380 + 170 = 550 kJ."},
+
+  {konu:"Diyagram okuma",
+   gorsel:"<svg style=\"width:100%;max-width:420px\" role=\"img\" aria-label=\"Soru grafiği\" viewBox=\"0 0 400 230\"><line x1=\"70\" y1=\"215\" x2=\"70\" y2=\"16\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M70,12 L66.5,19.5 L73.5,19.5 Z\" fill=\"#14110F\"/><line x1=\"70\" y1=\"215\" x2=\"376\" y2=\"215\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M380,215 L372.5,211.5 L372.5,218.5 Z\" fill=\"#14110F\"/><text x=\"76\" y=\"16\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\">Potansiyel enerji (kJ)</text><text x=\"380\" y=\"233\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\" text-anchor=\"end\">Tepkime koordinatı</text><line x1=\"66\" y1=\"190\" x2=\"70\" y2=\"190\" stroke=\"#14110F\" stroke-width=\"1.4\"/><text x=\"61\" y=\"194\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">30</text><line x1=\"66\" y1=\"40\" x2=\"70\" y2=\"40\" stroke=\"#14110F\" stroke-width=\"1.4\"/><text x=\"61\" y=\"44\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">90</text><line x1=\"70\" y1=\"189.99975000041664\" x2=\"105\" y2=\"189.99975000041664\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"70\" y1=\"40.0\" x2=\"235\" y2=\"40.0\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"105\" y1=\"190\" x2=\"195\" y2=\"190\" stroke=\"#0B5C8A\" stroke-width=\"3\"/><text x=\"150\" y=\"183\" font-size=\"11.5\" font-weight=\"700\" fill=\"#0B5C8A\" text-anchor=\"middle\">tepkenler</text><line x1=\"235\" y1=\"40\" x2=\"335\" y2=\"40\" stroke=\"#1B6B4A\" stroke-width=\"3\"/><text x=\"285\" y=\"33\" font-size=\"11.5\" font-weight=\"700\" fill=\"#1B6B4A\" text-anchor=\"middle\">ürünler</text><path d=\"M195,190 C215,190 215,40 235,40\" fill=\"none\" stroke=\"#B9AFA5\" stroke-width=\"1.6\" stroke-dasharray=\"4 3\"/></svg>",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Şekildeki potansiyel enerji diyagramı veriliyor.</span>Buna göre aşağıdakilerden hangisi doğrudur?",
+   sik:["ΔH = −60 kJ'dir.", "Tepkime ekzotermiktir.", "Ürünler tepkenlerden daha kararlıdır.", "ΔH = +60 kJ'dir.", "Tepkime sırasında ortam ısınır."],
+   d:3,
+   c:"Ürünler üstte olduğu için tepkime endotermiktir: ΔH = 90 − 30 = +60 kJ. Ortam soğur, tepkenler daha kararlıdır."},
+
+  {konu:"Bromun kararlı hâli",
+   s:"Standart oluşum entalpisi sıfır kabul edilen brom hangi hâlde yazılır?",
+   sik:["Br(g)", "Br<sub>2</sub>(g)", "Br<sub>2</sub>(s)", "Br<sub>2</sub>(k)", "Br<sup>−</sup>(suda)"],
+   d:2,
+   c:"Brom 25 °C ve 1 atm'de sıvıdır; kararlı hâli Br₂(s)'dir."},
+
+  {konu:"Kararlılık",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Standart oluşum entalpileri (kJ/mol): CO<sub>2</sub>(g) −394 · NO(g) +90 · H<sub>2</sub>O(s) −286 · NH<sub>3</sub>(g) −46 · C<sub>2</sub>H<sub>2</sub>(g) +227</span>Buna göre elementlerine göre en kararlı bileşik hangisidir?",
+   sik:["CO<sub>2</sub>", "NO", "H<sub>2</sub>O", "NH<sub>3</sub>", "C<sub>2</sub>H<sub>2</sub>"],
+   d:0,
+   c:"Oluşum entalpisi en negatif olan bileşik elementlerine göre en düşük enerjili, yani en kararlıdır: CO₂ (−394)."},
+
+  {konu:"Isıl değer birimi",
+   s:"Isıl değerin birimi aşağıdakilerden hangisidir?",
+   sik:["kJ/mol", "°C", "J", "g/mol", "kJ/g"],
+   d:4,
+   c:"Isıl değer 1 gram yakıtın yanmasıyla açığa çıkan enerjidir: kJ/g."},
+
+  {konu:"Bağ sayma",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">N<sub>2</sub>(g) + 3H<sub>2</sub>(g) → 2NH<sub>3</sub>(g) tepkimesinin ΔH'si bağ enerjilerinden hesaplanacaktır.</span>Ürün tarafında toplam kaç tane N—H bağı oluşur?",
+   sik:["2", "3", "4", "6", "8"],
+   d:3,
+   c:"Her NH₃'te 3 N—H bağı vardır; 2 molekül için 2 × 3 = 6 bağ oluşur."}
+];
+
+const sorularEnerjiGT2 = [
+  {konu:"Isı ve sıcaklık",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Kaynamakta olan bir bardak su ile kaynamakta olan bir kazan su karşılaştırılıyor.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Sıcaklıkları eşittir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> Verebilecekleri ısı miktarları eşittir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Su moleküllerinin ortalama kinetik enerjileri eşittir.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["Yalnız I", "Yalnız II", "I ve II", "I ve III", "I, II ve III"],
+   d:3,
+   c:"Sıcaklık ve ortalama kinetik enerji eşittir. Kazanda çok daha fazla tanecik olduğu için verebileceği ısı daha fazladır."},
+
+  {konu:"Endotermik tepkime",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">KClO<sub>3</sub>(k) + ısı → KCl(k) + 3/2O<sub>2</sub>(g)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Tepkime endotermiktir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> ΔH pozitiftir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Tepkime gerçekleşirken ortam ısınır.</span><span style=\"display:block;height:8px\"></span>Bu tepkime ile ilgili yargılardan hangileri doğrudur?",
+   sik:["Yalnız I", "Yalnız II", "I ve II", "I ve III", "I, II ve III"],
+   d:2,
+   c:"Isı tepkenler tarafındadır: tepkime endotermiktir, ΔH > 0. Sistem çevreden ısı çektiği için ortam soğur."},
+
+  {konu:"Ters tepkimenin ΔH'si",
+   gorsel:"<svg style=\"width:100%;max-width:420px\" role=\"img\" aria-label=\"Soru grafiği\" viewBox=\"0 0 400 230\"><line x1=\"70\" y1=\"215\" x2=\"70\" y2=\"16\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M70,12 L66.5,19.5 L73.5,19.5 Z\" fill=\"#14110F\"/><line x1=\"70\" y1=\"215\" x2=\"376\" y2=\"215\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M380,215 L372.5,211.5 L372.5,218.5 Z\" fill=\"#14110F\"/><text x=\"76\" y=\"16\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\">Potansiyel enerji (kJ)</text><text x=\"380\" y=\"233\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\" text-anchor=\"end\">Tepkime koordinatı</text><line x1=\"66\" y1=\"40\" x2=\"70\" y2=\"40\" stroke=\"#14110F\" stroke-width=\"1.4\"/><text x=\"61\" y=\"44\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">120</text><line x1=\"66\" y1=\"190\" x2=\"70\" y2=\"190\" stroke=\"#14110F\" stroke-width=\"1.4\"/><text x=\"61\" y=\"194\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">40</text><line x1=\"70\" y1=\"40.0\" x2=\"105\" y2=\"40.0\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"70\" y1=\"189.99981250023436\" x2=\"235\" y2=\"189.99981250023436\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"105\" y1=\"40\" x2=\"195\" y2=\"40\" stroke=\"#0B5C8A\" stroke-width=\"3\"/><text x=\"150\" y=\"33\" font-size=\"11.5\" font-weight=\"700\" fill=\"#0B5C8A\" text-anchor=\"middle\">X + Y</text><line x1=\"235\" y1=\"190\" x2=\"335\" y2=\"190\" stroke=\"#1B6B4A\" stroke-width=\"3\"/><text x=\"285\" y=\"183\" font-size=\"11.5\" font-weight=\"700\" fill=\"#1B6B4A\" text-anchor=\"middle\">Z</text><path d=\"M195,40 C215,40 215,190 235,190\" fill=\"none\" stroke=\"#B9AFA5\" stroke-width=\"1.6\" stroke-dasharray=\"4 3\"/></svg>",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Şekilde X + Y → Z tepkimesinin potansiyel enerji diyagramı verilmiştir.</span>Buna göre Z → X + Y tepkimesinin ΔH değeri kaç kJ'dir?",
+   sik:["−160", "−80", "+40", "+80", "+160"],
+   d:3,
+   c:"Düz tepkime: ΔH = 40 − 120 = −80 kJ. Ters tepkimede işaret döner: +80 kJ."},
+
+  {konu:"Isıl değer sıralaması",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Molar yanma ısıları ve mol kütleleri: metanol 726 kJ/mol, 32 g/mol · propan 2220 kJ/mol, 44 g/mol · glikoz 2803 kJ/mol, 180 g/mol</span>Buna göre bu maddelerin kütlece ısıl değerlerinin sıralaması aşağıdakilerden hangisidir?",
+   sik:["Glikoz > Propan > Metanol", "Glikoz > Metanol > Propan", "Metanol > Propan > Glikoz", "Propan > Glikoz > Metanol", "Propan > Metanol > Glikoz"],
+   d:4,
+   c:"Isıl değerler: propan 2220 ÷ 44 ≈ 50,5 · metanol 726 ÷ 32 ≈ 22,7 · glikoz 2803 ÷ 180 ≈ 15,6 kJ/g. Molar değere göre sıralamak (glikoz en büyük) yanıltır."},
+
+  {konu:"Bağlam · ısı kaybı",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir sobanın odaya 4950 kJ ısı vermesi isteniyor. Sobada yakılan doğal gazın ısıl değeri 49,5 kJ/g'dır ve açığa çıkan ısının %50'si bacadan kaybolmaktadır.</span>Buna göre en az kaç gram doğal gaz yakılmalıdır?",
+   sik:["50", "100", "150", "200", "400"],
+   d:3,
+   c:"Isının yarısı kaybolduğu için 2 × 4950 = 9900 kJ üretilmelidir. 9900 ÷ 49,5 = 200 g. Kayıp hesaba katılmazsa 100 g bulunur."},
+
+  {konu:"Bağ enerjisiyle ΔH",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">2H<sub>2</sub>(g) + O<sub>2</sub>(g) → 2H<sub>2</sub>O(g)<br/>Bağ enerjileri: H—H 436 · O=O 498 · O—H 464 kJ/mol</span>Buna göre tepkimenin ΔH değeri kaç kJ'dir?",
+   sik:["−486", "−243", "−972", "+486", "−1370"],
+   d:0,
+   c:"Kırılan: 2(436) + 498 = 1370. Oluşan: 4 × 464 = 1856. ΔH = 1370 − 1856 = −486 kJ."},
+
+  {konu:"Bilinmeyen bağ enerjisi",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Gaz fazında gerçekleşen X<sub>2</sub> + Y<sub>2</sub> → 2XY tepkimesinin ΔH değeri −185 kJ'dir.<br/>Bağ enerjileri: X—X 435 · Y—Y 240 kJ/mol</span>Buna göre X—Y bağının enerjisi kaç kJ/mol'dür?",
+   sik:["215", "337,5", "430", "860", "245"],
+   d:2,
+   c:"(435 + 240) − 2x = −185 → 2x = 860 → x = 430 kJ/mol."},
+
+  {konu:"Yöntemin sınırı",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Aşağıdaki tepkimeler veriliyor.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> H<sub>2</sub>(g) + Br<sub>2</sub>(g) → 2HBr(g)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> C(k) + O<sub>2</sub>(g) → CO<sub>2</sub>(g)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) → CO<sub>2</sub>(g) + 2H<sub>2</sub>O(s)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>IV.</b> N<sub>2</sub>(g) + 3H<sub>2</sub>(g) → 2NH<sub>3</sub>(g)</span><span style=\"display:block;height:8px\"></span>Bu tepkimelerden hangilerinin ΔH değeri bağ enerjileri kullanılarak hesaplanabilir?",
+   sik:["Yalnız I", "I ve III", "I ve IV", "II ve IV", "I, III ve IV"],
+   d:2,
+   c:"Bağ enerjisi yöntemi yalnızca bütün maddeler gaz iken kullanılabilir. II'de katı karbon, III'te sıvı su vardır."},
+
+  {konu:"Oluşum entalpisi sıfır",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Aşağıdaki maddeler veriliyor.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Hg(s)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> I<sub>2</sub>(g)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> C(grafit)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>IV.</b> O<sub>3</sub>(g)</span><span style=\"display:block;height:8px\"></span>Bunlardan hangilerinin standart oluşum entalpisi sıfırdır?",
+   sik:["I ve II", "II ve IV", "I, II ve III", "I, III ve IV", "I ve III"],
+   d:4,
+   c:"Cıva oda koşullarında sıvı, karbonun kararlı hâli grafittir. İyot katıdır (gazı değil), oksijenin kararlı hâli O₂'dir (O₃ değil)."},
+
+  {konu:"Standart tepkime entalpisi",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">CaCO<sub>3</sub>(k) → CaO(k) + CO<sub>2</sub>(g)<br/>ΔH°ol (kJ/mol): CaCO<sub>3</sub> −1207 · CaO −635,1 · CO<sub>2</sub> −393,5</span>Buna göre tepkimenin standart entalpi değişimi kaç kJ'dir?",
+   sik:["−178,4", "+178,4", "−2235,6", "+813,5", "−813,5"],
+   d:1,
+   c:"ΔH° = (−635,1 − 393,5) − (−1207) = −1028,6 + 1207 = +178,4 kJ. Kireç taşının ayrışması endotermiktir."},
+
+  {konu:"Standart tepkime entalpisi",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">2H<sub>2</sub>S(g) + 3O<sub>2</sub>(g) → 2SO<sub>2</sub>(g) + 2H<sub>2</sub>O(g)<br/>ΔH°ol (kJ/mol): H<sub>2</sub>S −20 · SO<sub>2</sub> −297 · H<sub>2</sub>O(g) −242</span>Buna göre tepkimenin standart entalpi değişimi kaç kJ'dir?",
+   sik:["−1078", "−519", "+1038", "−559", "−1038"],
+   d:4,
+   c:"Ürünler: 2(−297) + 2(−242) = −1078. Tepkenler: 2(−20) + 0 = −40. ΔH° = −1078 − (−40) = −1038 kJ."},
+
+  {konu:"Oluşum entalpisi ters hesap",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">C<sub>2</sub>H<sub>4</sub>(g) + 3O<sub>2</sub>(g) → 2CO<sub>2</sub>(g) + 2H<sub>2</sub>O(s) &nbsp; ΔH° = −1411 kJ<br/>ΔH°ol: CO<sub>2</sub>(g) −394 · H<sub>2</sub>O(s) −286 kJ/mol</span>Buna göre C<sub>2</sub>H<sub>4</sub>'ün standart oluşum entalpisi kaç kJ/mol'dür?",
+   sik:["+51", "−51", "+102", "−1360", "+25,5"],
+   d:0,
+   c:"−1411 = [2(−394) + 2(−286)] − x = −1360 − x → x = +51 kJ/mol. Bilinmeyenin önündeki eksiyi unutmak −51 verir."},
+
+  {konu:"Molar oluşum entalpisi",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">N<sub>2</sub>(g) + 2O<sub>2</sub>(g) → 2NO<sub>2</sub>(g) &nbsp; ΔH° = +66 kJ</span>Buna göre NO<sub>2</sub>'nin standart molar oluşum entalpisi kaç kJ/mol'dür?",
+   sik:["+66", "−33", "+132", "−66", "+33"],
+   d:4,
+   c:"Denklemde 2 mol NO₂ oluşuyor; molar oluşum entalpisi 1 mol içindir: 66 ÷ 2 = +33 kJ/mol."},
+
+  {konu:"ΔH'yi değiştirenler",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir tepkimede aşağıdaki değişiklikler ayrı ayrı yapılıyor.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Katalizör eklemek</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> Ürünü gaz yerine sıvı hâlde elde etmek</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Denklemin katsayılarını iki katına çıkarmak</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>IV.</b> Aynı denklemle iki katı madde kullanmak</span><span style=\"display:block;height:8px\"></span>Bunlardan hangileri denklemin ΔH değerini değiştirir?",
+   sik:["II ve III", "I ve II", "III ve IV", "I, II ve III", "II, III ve IV"],
+   d:0,
+   c:"Fiziksel hâl ve katsayılar ΔH'yi değiştirir. Katalizör değiştirmez. Madde miktarı arttığında açığa çıkan toplam ısı artar ama denklemin ΔH değeri aynı kalır."},
+
+  {konu:"Buharlaşma entalpisi",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(s) &nbsp; ΔH = −286 kJ<br/>H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(g) &nbsp; ΔH = −242 kJ</span>Buna göre 36 gram sıvı su buharlaşırken entalpi değişimi kaç kJ olur? (H<sub>2</sub>O: 18 g/mol)",
+   sik:["−88", "+44", "+88", "−44", "+176"],
+   d:2,
+   c:"Buharlaşma: (−242) − (−286) = +44 kJ/mol. 36 g = 2 mol → 2 × 44 = +88 kJ."},
+
+  {konu:"Sınırlayıcı bileşen",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">CaO(k) + H<sub>2</sub>O(s) → Ca(OH)<sub>2</sub>(k) &nbsp; ΔH = −65 kJ<br/>28 gram CaO ile 3,6 gram su karıştırılıyor.</span>Tepkime tam verimle gerçekleştiğine göre açığa çıkan ısı kaç kJ'dir? (CaO: 56, H<sub>2</sub>O: 18)",
+   sik:["13", "26", "32,5", "6,5", "45,5"],
+   d:0,
+   c:"CaO 0,5 mol, su 0,2 mol; katsayılar 1:1 olduğundan sınırlayıcı sudur. 0,2 × 65 = 13 kJ. CaO'ya göre hesaplanırsa 32,5 kJ bulunur."},
+
+  {konu:"Sınırlayıcı ve verim",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">N<sub>2</sub>(g) + 3H<sub>2</sub>(g) → 2NH<sub>3</sub>(g) &nbsp; ΔH = −92 kJ<br/>2 mol N<sub>2</sub> ile 3 mol H<sub>2</sub> %50 verimle tepkimeye giriyor.</span>Buna göre açığa çıkan ısı kaç kJ'dir?",
+   sik:["23", "92", "138", "46", "184"],
+   d:3,
+   c:"Katsayıya böl: N₂ → 2 ÷ 1 = 2, H₂ → 3 ÷ 3 = 1 → sınırlayıcı H₂ (1 birim). %50 verimle 0,5 birim → 0,5 × 92 = 46 kJ."},
+
+  {konu:"Nötrleşme ve birim",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">HCl(suda) + NaOH(suda) → NaCl(suda) + H<sub>2</sub>O(s) &nbsp; ΔH = −57 kJ<br/>0,1 M 200 mL HCl çözeltisi ile 0,2 M 50 mL NaOH çözeltisi karıştırılıyor.</span>Buna göre açığa çıkan ısı kaç joule'dür?",
+   sik:["285", "1140", "0,57", "5700", "570"],
+   d:4,
+   c:"HCl 0,02 mol, NaOH 0,01 mol → sınırlayıcı NaOH. 0,01 × 57 = 0,57 kJ = 570 J. Hacmi büyük olan değil, mol sayısı az olan (1:1'de) sınırlayıcıdır."},
+
+  {konu:"Isı–mol grafiği",
+   gorsel:"<svg style=\"width:100%;max-width:420px\" role=\"img\" aria-label=\"Soru grafiği\" viewBox=\"0 0 400 226\"><line x1=\"70\" y1=\"196\" x2=\"70\" y2=\"14\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M70,10 L66.5,17.5 L73.5,17.5 Z\" fill=\"#14110F\"/><line x1=\"70\" y1=\"196\" x2=\"376\" y2=\"196\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M380,196 L372.5,192.5 L372.5,199.5 Z\" fill=\"#14110F\"/><text x=\"76\" y=\"14\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\">Açığa çıkan ısı (kJ)</text><text x=\"380\" y=\"214\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\" text-anchor=\"end\">Yakılan mol</text><text x=\"64\" y=\"131\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">400</text><line x1=\"70\" y1=\"126.52631578947368\" x2=\"270\" y2=\"126.52631578947368\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"64\" y=\"61\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">800</text><line x1=\"70\" y1=\"57.05263157894737\" x2=\"270\" y2=\"57.05263157894737\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"270\" y1=\"57.05263157894737\" x2=\"270\" y2=\"196\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"270\" y=\"210\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"middle\">2</text><line x1=\"70\" y1=\"196\" x2=\"290\" y2=\"43\" stroke=\"#C7381A\" stroke-width=\"2.6\"/><text x=\"298\" y=\"48\" font-size=\"12\" font-weight=\"700\" fill=\"#C7381A\">A</text><line x1=\"70\" y1=\"196\" x2=\"290\" y2=\"120\" stroke=\"#0B5C8A\" stroke-width=\"2.6\"/><text x=\"298\" y=\"125\" font-size=\"12\" font-weight=\"700\" fill=\"#0B5C8A\">B</text></svg>",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Grafikte A ve B yakıtlarının yanmasında açığa çıkan ısının yakılan mol sayısıyla değişimi verilmiştir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> A'nın molar yanma ısısı 400 kJ/mol'dür.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> 0,5 mol B yandığında 100 kJ ısı açığa çıkar.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Kütlece ısıl değeri daha yüksek olan yakıt A'dır.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri kesinlikle doğrudur?",
+   sik:["Yalnız I", "Yalnız III", "I ve II", "II ve III", "I, II ve III"],
+   d:2,
+   c:"Eğimler: A 800 ÷ 2 = 400, B 400 ÷ 2 = 200 kJ/mol. 0,5 × 200 = 100 kJ. Kütlece karşılaştırma için mol kütleleri gerekir; III kesin değildir."},
+
+  {konu:"Hâl fonksiyonu",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir maddenin dönüşümünde A → B basamağının ΔH değeri −50 kJ, B → C basamağınınki +20 kJ'dir.</span>Buna göre A → C dönüşümünün ΔH değeri kaç kJ'dir?",
+   sik:["−30", "−70", "+30", "+70", "−10"],
+   d:0,
+   c:"Entalpi hâl fonksiyonudur; basamakların toplamı doğrudan yolun ΔH'sine eşittir: −50 + 20 = −30 kJ."},
+
+  {konu:"Katalizör",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Ekzotermik bir tepkimeye katalizör ekleniyor.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Aktivasyon enerjisi düşer.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> ΔH değeri küçülür.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Açığa çıkan toplam ısı değişmez.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["Yalnız I", "Yalnız II", "I ve II", "I ve III", "II ve III"],
+   d:3,
+   c:"Katalizör tepeyi alçaltır (aktivasyon enerjisi düşer), başlangıç ve son hâli değiştirmez; ΔH ve açığa çıkan toplam ısı aynı kalır."},
+
+  {konu:"Deney değişkenleri",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir öğrenci NaOH ve NH<sub>4</sub>Cl'nin suda çözünmesindeki enerji değişimini karşılaştırmak için eşit mol tuzu eşit miktarda ve aynı sıcaklıktaki suda çözüp sıcaklık değişimlerini ölçüyor.</span>Bu deneyde bağımlı değişken aşağıdakilerden hangisidir?",
+   sik:["Tuzun türü", "Su miktarı", "Sıcaklık değişimi", "Kabın türü", "Başlangıç sıcaklığı"],
+   d:2,
+   c:"Ölçülen büyüklük sıcaklık değişimidir (bağımlı). Tuz türü bağımsız değişken; su miktarı, kap ve başlangıç sıcaklığı kontrol değişkenleridir."},
+
+  {konu:"Bağlam · CO₂ salımı",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) → CO<sub>2</sub>(g) + 2H<sub>2</sub>O(s) &nbsp; ΔH = −890 kJ</span>Bir evin ısınması için 1780 kJ enerji metan yakılarak sağlanıyor. Bu sırada kaç gram CO<sub>2</sub> atmosfere salınır? (CO<sub>2</sub>: 44 g/mol)",
+   sik:["22", "44", "132", "88", "176"],
+   d:3,
+   c:"1780 ÷ 890 = 2 mol CH₄ yanar; her mol CH₄ 1 mol CO₂ verir → 2 × 44 = 88 g."},
+
+  {konu:"Allotrop ve kararlılık",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Karbonun standart hâli grafittir. Elmasın standart oluşum entalpisi +1,9 kJ/mol'dür.</span>C(grafit) → C(elmas) dönüşümünün ΔH değeri ve iki allotroptan daha kararlı olanı aşağıdakilerden hangisinde doğru verilmiştir?",
+   sik:["−1,9 kJ · elmas", "+1,9 kJ · grafit", "+1,9 kJ · elmas", "−1,9 kJ · grafit", "0 · ikisi eşit"],
+   d:1,
+   c:"ΔH = 1,9 − 0 = +1,9 kJ (endotermik). Daha düşük enerjili olan grafit daha kararlıdır."},
+
+  {konu:"Ekzotermik ve bağlar",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Gaz fazında gerçekleşen ekzotermik bir tepkime inceleniyor.</span>Bu tepkime için aşağıdakilerden hangisi kesinlikle doğrudur?",
+   sik:["Kırılan bağların toplam enerjisi oluşanlarınkinden büyüktür.", "Oluşan bağların toplam enerjisi kırılanlarınkinden büyüktür.", "Üründeki her bağ tepkendeki her bağdan güçlüdür.", "Ürünlerdeki bağ sayısı tepkenlerdekinden fazladır.", "ΔH değeri pozitiftir."],
+   d:1,
+   c:"ΔH = Σkırılan − Σoluşan < 0 ise Σoluşan > Σkırılan. Bu yalnızca toplamlar için geçerlidir; tek tek bağlar ve bağ sayısı hakkında bilgi vermez."},
+
+  {konu:"Standart tepkime entalpisi",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) → CO<sub>2</sub>(g) + 2H<sub>2</sub>O(g)<br/>ΔH°ol (kJ/mol): CH<sub>4</sub> −75 · CO<sub>2</sub> −394 · H<sub>2</sub>O(g) −242</span>Buna göre tepkimenin standart entalpi değişimi kaç kJ'dir?",
+   sik:["−711", "−878", "−561", "+803", "−803"],
+   d:4,
+   c:"Ürünler: −394 + 2(−242) = −878. Tepkenler: −75. ΔH° = −878 − (−75) = −803 kJ. Tepkenleri çıkarmak yerine toplamak −953 gibi yanlış bir değer verir."},
+
+  {konu:"Fiziksel hâl etkisi",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Ekzotermik bir tepkimede tepkenlerden biri gaz yerine sıvı hâlde kullanılıyor; ürünler aynı kalıyor.</span>Buna göre açığa çıkan ısı nasıl değişir?",
+   sik:["Artar", "Azalır", "Değişmez", "Sıfır olur", "Tepkime endotermik olur"],
+   d:1,
+   c:"Sıvı tepken gazdan daha düşük enerjilidir; başlangıç çizgisi aşağı iner, ürüne olan mesafe kısalır ve açığa çıkan ısı azalır."},
+
+  {konu:"Isıdan kütleye",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">2C<sub>2</sub>H<sub>2</sub>(g) + 5O<sub>2</sub>(g) → 4CO<sub>2</sub>(g) + 2H<sub>2</sub>O(g) &nbsp; ΔH = −2600 kJ</span>Buna göre 650 kJ ısı elde etmek için kaç gram asetilen yakılmalıdır? (C<sub>2</sub>H<sub>2</sub>: 26 g/mol)",
+   sik:["13", "6,5", "26", "52", "3,25"],
+   d:0,
+   c:"Denklem 2 mol C₂H₂ için 2600 kJ veriyor: 650 kJ için 0,5 mol gerekir → 0,5 × 26 = 13 g."},
+
+  {konu:"Entalpi kavramı",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Entalpi ile ilgili aşağıdaki yargılar veriliyor.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Bir maddenin entalpisinin mutlak değeri ölçülebilir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> Entalpi bir hâl fonksiyonudur.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Bir tepkimenin ΔH değeri izlenen yola bağlıdır.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["Yalnız I", "Yalnız II", "I ve III", "II ve III", "I, II ve III"],
+   d:1,
+   c:"Entalpinin mutlak değeri ölçülemez, yalnızca değişimi ölçülür. Hâl fonksiyonu olduğu için ΔH yoldan bağımsızdır."},
+
+  {konu:"Bağlam · soğuk kompres",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Soğuk kompres paketinde NH<sub>4</sub>NO<sub>3</sub>(k) → NH<sub>4</sub><sup>+</sup>(suda) + NO<sub>3</sub><sup>−</sup>(suda) &nbsp; ΔH = +26 kJ olayı gerçekleşir.</span>Paketteki 40 gram NH<sub>4</sub>NO<sub>3</sub>'ün tamamı çözündüğünde paket çevreden kaç kJ ısı çeker? (NH<sub>4</sub>NO<sub>3</sub>: 80 g/mol)",
+   sik:["6,5", "13", "26", "52", "3,25"],
+   d:1,
+   c:"40 ÷ 80 = 0,5 mol → 0,5 × 26 = 13 kJ ısı çekilir."}
+];
+
+const sorularEnerjiGT3 = [
+  {konu:"Isı ve sıcaklık",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir öğrenci, sıcaklıkları 25 °C olan 200 g ve 50 g iki su örneğini karşılaştırıyor.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> İki örnekteki su moleküllerinin ortalama kinetik enerjileri eşittir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> 200 g sudaki moleküllerin toplam kinetik enerjisi daha büyüktür.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> İki örnek karıştırılırsa 200 g sudan 50 g suya net ısı akışı olur.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["Yalnız I", "I ve II", "I ve III", "II ve III", "I, II ve III"],
+   d:1,
+   c:"Sıcaklık ortalama kinetik enerjinin ölçüsüdür (I doğru); tanecik sayısı fazla olduğu için toplam enerji büyüktür (II doğru). Sıcaklıklar eşit olduğundan net ısı akışı olmaz (III yanlış)."},
+
+  {konu:"Sistem ve çevre",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir öğrenci oda sıcaklığındaki suya NH<sub>4</sub>NO<sub>3</sub> katısı ekleyip karıştırıyor. Beherin dış yüzeyinin soğuduğunu ve yüzeyde su damlacıkları biriktiğini gözlüyor. Sistem olarak beherin içindeki tuz ve su alınıyor.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Çözünme olayı endotermiktir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> Sistemden çevreye ısı aktarılmıştır.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Sistemin entalpisi artmıştır.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>IV.</b> Dış yüzeydeki damlacıklar havadaki su buharının yoğuşmasıyla oluşur; bu yoğuşma ekzotermiktir.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["I ve III", "II ve IV", "I, II ve IV", "I, III ve IV", "I, II, III ve IV"],
+   d:3,
+   c:"Beher soğuyorsa çevreden sisteme ısı akmıştır: olay endotermiktir, sistemin entalpisi artar. II ters yöndür. Yoğuşma ısı veren bir hâl değişimidir."},
+
+  {konu:"Endotermik olaylar",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Aşağıda bazı fiziksel ve kimyasal olaylar verilmiştir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Suyun buharlaşması</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> Na(g) → Na<sup>+</sup>(g) + e<sup>−</sup></span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> H<sub>2</sub>O(g) → H<sub>2</sub>O(k)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>IV.</b> N<sub>2</sub>(g) + O<sub>2</sub>(g) → 2NO(g)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>V.</b> Fotosentez</span><span style=\"display:block;height:8px\"></span>Bu olaylardan hangileri endotermiktir?",
+   sik:["I ve IV", "I, IV ve V", "I, II, IV ve V", "II, III, IV ve V", "I, II, III, IV ve V"],
+   d:2,
+   c:"Buharlaşma, elektron koparma (iyonlaşma), azotun oksijenle birleşmesi ve fotosentez enerji alır. Gazın doğrudan katılaşması (kırağılaşma) ısı verir."},
+
+  {konu:"Isı ve ΔH ayrımı",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Aynı koşullarda gerçekleşen X ve Y tepkimeleri denklemlerinde yazıldığı miktarlarda gerçekleştiğinde X'te 400 kJ, Y'de 250 kJ ısı açığa çıkıyor.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> X'in ΔH değeri Y'ninkinden büyüktür.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> X'te ürünlerin toplam entalpisi tepkenlerinkinden 400 kJ küçüktür.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Her iki tepkimede de ürünler tepkenlerden daha düşük enerjilidir.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["Yalnız I", "Yalnız II", "I ve II", "II ve III", "I, II ve III"],
+   d:3,
+   c:"ΔH(X) = −400 kJ, ΔH(Y) = −250 kJ; −400 < −250 olduğundan I yanlıştır. Çok ısı veren tepkimenin ΔH'si daha küçüktür. II ve III ekzotermikliğin tanımıdır."},
+
+  {konu:"Entalpi diyagramı",
+   gorsel:"<svg style=\"width:100%;max-width:420px\" role=\"img\" aria-label=\"Soru grafiği\" viewBox=\"0 0 400 236\"><line x1=\"70\" y1=\"226\" x2=\"70\" y2=\"16\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M70,12 L66.5,19.5 L73.5,19.5 Z\" fill=\"#14110F\"/><line x1=\"70\" y1=\"226\" x2=\"376\" y2=\"226\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M380,226 L372.5,222.5 L372.5,229.5 Z\" fill=\"#14110F\"/><text x=\"76\" y=\"16\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\">Entalpi (kJ)</text><text x=\"380\" y=\"244\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\" text-anchor=\"end\"></text><line x1=\"66\" y1=\"40.0\" x2=\"70\" y2=\"40.0\" stroke=\"#14110F\" stroke-width=\"1.4\"/><text x=\"61\" y=\"44.0\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">+30</text><line x1=\"66\" y1=\"82.0\" x2=\"70\" y2=\"82.0\" stroke=\"#14110F\" stroke-width=\"1.4\"/><text x=\"61\" y=\"86.0\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">0</text><line x1=\"66\" y1=\"152.0\" x2=\"70\" y2=\"152.0\" stroke=\"#14110F\" stroke-width=\"1.4\"/><text x=\"61\" y=\"156.0\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">−50</text><line x1=\"66\" y1=\"208.0\" x2=\"70\" y2=\"208.0\" stroke=\"#14110F\" stroke-width=\"1.4\"/><text x=\"61\" y=\"212.0\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">−90</text><line x1=\"70\" y1=\"82.0\" x2=\"360\" y2=\"82.0\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"105\" y1=\"40.0\" x2=\"205\" y2=\"40.0\" stroke=\"#14110F\" stroke-width=\"3\"/><text x=\"155.0\" y=\"33.0\" font-size=\"11.5\" font-weight=\"700\" fill=\"#14110F\" text-anchor=\"middle\">A₂(g) + B₂(g)</text><line x1=\"70\" y1=\"40.0\" x2=\"105\" y2=\"40.0\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"235\" y1=\"152.0\" x2=\"335\" y2=\"152.0\" stroke=\"#0B5C8A\" stroke-width=\"3\"/><text x=\"285.0\" y=\"145.0\" font-size=\"11.5\" font-weight=\"700\" fill=\"#0B5C8A\" text-anchor=\"middle\">2AB(g)</text><line x1=\"70\" y1=\"152.0\" x2=\"235\" y2=\"152.0\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"235\" y1=\"208.0\" x2=\"335\" y2=\"208.0\" stroke=\"#D8480F\" stroke-width=\"3\"/><text x=\"285.0\" y=\"201.0\" font-size=\"11.5\" font-weight=\"700\" fill=\"#D8480F\" text-anchor=\"middle\">2AB(s)</text><line x1=\"70\" y1=\"208.0\" x2=\"235\" y2=\"208.0\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/></svg>",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Şekildeki entalpi diyagramında A<sub>2</sub>(g) + B<sub>2</sub>(g) karışımının ve aynı miktar maddeden oluşan 2AB'nin gaz ve sıvı hâllerinin entalpileri gösterilmiştir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> A<sub>2</sub>(g) + B<sub>2</sub>(g) → 2AB(g) tepkimesinin ΔH değeri −80 kJ'dir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> 1 mol AB(g) yoğuşurken 20 kJ ısı açığa çıkar.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> A<sub>2</sub>(g) + B<sub>2</sub>(g) → 2AB(s) tepkimesinde açığa çıkan ısı, 2AB(g) oluşumundakinden 40 kJ fazladır.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["Yalnız I", "I ve II", "I ve III", "II ve III", "I, II ve III"],
+   d:4,
+   c:"I: −50 − (+30) = −80 kJ. II: 2 mol için −90 − (−50) = −40 kJ, 1 mol için 20 kJ. III: sıvı ürün için −120 kJ, fark 40 kJ."},
+
+  {konu:"Yakıt karşılaştırması",
+   gorsel: G.tablo(["Yakıt", "Mol kütlesi (g/mol)", "Molar yanma ısısı (kJ/mol)"],[["H<sub>2</sub>", "2", "286"], ["CH<sub>4</sub>", "16", "890"], ["C<sub>2</sub>H<sub>5</sub>OH", "46", "1367"], ["C<sub>8</sub>H<sub>18</sub>", "114", "5471"]]),
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir mühendislik öğrencisi farklı yakıtları enerji kaynağı olarak karşılaştırmak için tablodaki verileri topluyor. (Yanma ürünleri CO<sub>2</sub>(g) ve H<sub>2</sub>O(s) kabul edilmiştir.)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Gram başına en çok ısıyı H<sub>2</sub> verir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> Mol başına en çok ısıyı C<sub>8</sub>H<sub>18</sub> verir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> 1 g CH<sub>4</sub> yandığında, 1 g C<sub>8</sub>H<sub>18</sub> yandığındakinden daha fazla ısı açığa çıkar.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>IV.</b> Kütlece ısıl değeri en düşük yakıt C<sub>8</sub>H<sub>18</sub>'dir.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["I ve II", "I ve III", "I, II ve III", "II, III ve IV", "I, II, III ve IV"],
+   d:2,
+   c:"Isıl değerler (kJ/g): H₂ 143 · CH₄ ≈ 55,6 · C₈H₁₈ ≈ 48,0 · C₂H₅OH ≈ 29,7. Kütlece en düşük olan etanoldür; IV yanlıştır."},
+
+  {konu:"Verim ve stokiyometri",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir ısıtma sisteminde CH<sub>4</sub> yakılmaktadır.<br/>CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) → CO<sub>2</sub>(g) + 2H<sub>2</sub>O(s) ΔH = −890 kJ<br/>Yanmada açığa çıkan ısının yalnızca %80'i suya aktarılabilmektedir.</span>Suya 3560 kJ ısı aktarılabilmesi için yakılması gereken CH<sub>4</sub> kütlesi ve bu sırada oluşan CO<sub>2</sub> kütlesi aşağıdakilerden hangisinde doğru verilmiştir? (H: 1, C: 12, O: 16)",
+   sik:["64 g · 176 g", "64 g · 220 g", "80 g · 176 g", "80 g · 220 g", "100 g · 275 g"],
+   d:3,
+   c:"Gereken toplam ısı 3560 ÷ 0,80 = 4450 kJ → 4450 ÷ 890 = 5 mol CH₄ = 80 g. Oluşan CO₂ 5 mol = 220 g. Verim hesaba katılmazsa 64 g / 176 g bulunur."},
+
+  {konu:"Bilinmeyen bağ enerjisi",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Amonyak üretiminde N<sub>2</sub>(g) + 3H<sub>2</sub>(g) → 2NH<sub>3</sub>(g) tepkimesi kullanılır. Aynı koşullarda 6,8 g NH<sub>3</sub> oluşurken 16 kJ ısı açığa çıkıyor.<br/>Bağ enerjileri: N≡N 946 kJ/mol · H—H 436 kJ/mol</span>Buna göre N—H bağının ortalama bağ enerjisi kaç kJ/mol'dür? (N: 14, H: 1)",
+   sik:["375", "382", "389", "396", "403"],
+   d:2,
+   c:"6,8 g = 0,4 mol NH₃ → 16 kJ; denklemdeki 2 mol için 80 kJ, ΔH = −80 kJ. Kırılan: 946 + 3·436 = 2254; oluşan: 6x. 2254 − 6x = −80 → x = 389."},
+
+  {konu:"Yalıtılmış sistem",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Ağzı kapalı ve tam yalıtılmış bir kapta katı X ile Y çözeltisi tepkimeye giriyor. Tepkime ilerledikçe kabın içindeki karışımın sıcaklığı artıyor. Sistem olarak kabın içi alınıyor.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Tepkime ekzotermiktir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> Kabın içindeki maddelerin toplam kimyasal potansiyel enerjisi artmıştır.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Karışımın sıcaklığı artarken sistemden çevreye ısı aktarılmıştır.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["Yalnız I", "Yalnız II", "I ve II", "I ve III", "I, II ve III"],
+   d:0,
+   c:"Yalıtılmış sistemde açığa çıkan enerji dışarı gidemez, karışımı ısıtır: tepkime ekzotermiktir. Kimyasal potansiyel enerji azalıp ısıl enerjiye dönüşmüştür (II yanlış). Yalıtım nedeniyle çevreye ısı aktarılmaz (III yanlış)."},
+
+  {konu:"Ortalama bağ enerjisi",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir öğrenci, tüm maddelerin gaz hâlinde olduğu bir tepkimenin ΔH değerini hem bağ enerjileriyle hem de standart oluşum entalpileriyle hesaplıyor. İki sonuç arasında 20 kJ fark çıkıyor; hesaplarda aritmetik hata yoktur.</span>Bu farkın en olası nedeni aşağıdakilerden hangisidir?",
+   sik:["Oluşum entalpileri yalnızca sıvı maddeler için geçerlidir.", "Tablodaki bağ enerjileri, aynı bağın farklı moleküllerdeki değerlerinin ortalamasıdır.", "Bağ enerjileriyle yapılan hesapta tepkimenin yönü ters alınmıştır.", "Elementlerin oluşum entalpisinin sıfır kabul edilmesi hesabı bozmuştur.", "Bağ enerjileri yalnızca katı maddelerde ölçülebilir."],
+   d:1,
+   c:"Bir bağın enerjisi bulunduğu moleküle göre biraz değişir; tablolar ortalama verir. Bu yüzden bağ enerjisiyle bulunan ΔH yaklaşık bir değerdir."},
+
+  {konu:"Oluşum denklemi",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Aşağıda standart koşullarda gerçekleşen bazı tepkimeler verilmiştir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> C(grafit) + O<sub>2</sub>(g) → CO<sub>2</sub>(g)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> C(elmas) + O<sub>2</sub>(g) → CO<sub>2</sub>(g)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(s)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>IV.</b> 2H<sub>2</sub>(g) + O<sub>2</sub>(g) → 2H<sub>2</sub>O(s)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>V.</b> CO(g) + ½O<sub>2</sub>(g) → CO<sub>2</sub>(g)</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>VI.</b> ½N<sub>2</sub>(g) + 3/2 H<sub>2</sub>(g) → NH<sub>3</sub>(g)</span><span style=\"display:block;height:8px\"></span>Bu tepkimelerden hangilerinin ΔH değeri, ürünün standart oluşum entalpisine eşittir?",
+   sik:["I ve III", "I, III ve VI", "I, II, III ve VI", "III, IV ve VI", "I, III, V ve VI"],
+   d:1,
+   c:"Oluşum tepkimesinde 1 mol ürün, elementlerin standart hâllerinden oluşur. Elmas standart hâl değildir (II), IV'te 2 mol ürün var, V'te tepken bir bileşiktir."},
+
+  {konu:"Sıfır kabulü",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Standart oluşum entalpisi ile ilgili aşağıdaki yargılar veriliyor.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> O<sub>2</sub>(g)'nin standart oluşum entalpisinin sıfır olması, O<sub>2</sub> molekülünde bağ enerjisi bulunmadığını gösterir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> O<sub>3</sub>(g)'nin standart oluşum entalpisi sıfırdan farklıdır.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Br<sub>2</sub>(s)'nin standart oluşum entalpisi sıfır, Br<sub>2</sub>(g)'ninki sıfırdan büyüktür.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>IV.</b> Karbonun elmas hâlinin standart oluşum entalpisi sıfırdır.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["Yalnız II", "Yalnız III", "II ve III", "I ve III", "II, III ve IV"],
+   d:2,
+   c:"Sıfır bir ölçüm değil, bir seçimdir: elementin standart hâline verilir. O₂'de O=O bağı vardır (498 kJ/mol). O₃ ve Br₂(g) standart hâl değildir; Br₂(s)→Br₂(g) endotermik olduğundan gazınki pozitiftir. Karbonun standart hâli grafittir."},
+
+  {konu:"Oluşum entalpisi ters hesap",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">C<sub>2</sub>H<sub>5</sub>OH(s) + 3O<sub>2</sub>(g) → 2CO<sub>2</sub>(g) + 3H<sub>2</sub>O(s) ΔH = −1368 kJ<br/>ΔH°ol: CO<sub>2</sub>(g) = −394 kJ/mol · H<sub>2</sub>O(s) = −286 kJ/mol</span>Buna göre standart koşullarda 4,6 g etanol elementlerinden oluşurken kaç kJ ısı açığa çıkar? (C<sub>2</sub>H<sub>5</sub>OH: 46 g/mol)",
+   sik:["13,9", "27,8", "55,6", "136,8", "278"],
+   d:1,
+   c:"−1368 = [2(−394) + 3(−286)] − x → x = −278 kJ/mol. 4,6 g = 0,1 mol → 27,8 kJ. 136,8 kJ, yanma ısısının 0,1 molü ile karıştırılırsa bulunur."},
+
+  {konu:"Termit · sınırlayıcı",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Demiryolu raylarının kaynağında termit tepkimesi kullanılır:<br/>Fe<sub>2</sub>O<sub>3</sub>(k) + 2Al(k) → Al<sub>2</sub>O<sub>3</sub>(k) + 2Fe(k)<br/>ΔH°ol: Fe<sub>2</sub>O<sub>3</sub>(k) = −824 kJ/mol · Al<sub>2</sub>O<sub>3</sub>(k) = −1676 kJ/mol<br/>Bir kaynak işleminde 16 g Fe<sub>2</sub>O<sub>3</sub> ile 10,8 g Al karıştırılıp tepkime tam verimle gerçekleştiriliyor.</span>Buna göre açığa çıkan ısı kaç kJ'dir? (O: 16, Al: 27, Fe: 56)",
+   sik:["85,2", "170,4", "340,8", "426", "852"],
+   d:0,
+   c:"ΔH = −1676 − (−824) = −852 kJ. Fe₂O₃ 0,1 mol, Al 0,4 mol; Al için 0,2 mol yetiyor → sınırlayıcı Fe₂O₃. 0,1 × 852 = 85,2 kJ. Al'den hesaplanırsa 170,4 kJ bulunur."},
+
+  {konu:"Suyun hâlleri",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(g) ΔH = −242 kJ<br/>H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(s) ΔH = −286 kJ</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> H<sub>2</sub>O(g) → H<sub>2</sub>O(s) tepkimesinin ΔH değeri −44 kJ'dir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> 9 g su buharlaşırken 22 kJ ısı alır.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> 2 g H<sub>2</sub>'nin yanmasında oluşan suyun yarısı sıvı, yarısı gaz hâlindeyse 286 kJ ısı açığa çıkar.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur? (H: 1, O: 16)",
+   sik:["Yalnız I", "Yalnız II", "I ve II", "II ve III", "I, II ve III"],
+   d:2,
+   c:"I: −286 − (−242) = −44 kJ. II: 0,5 mol × 44 = 22 kJ. III: 0,5·286 + 0,5·242 = 264 kJ olur; 286 kJ yalnızca suyun tamamı sıvıysa doğrudur."},
+
+  {konu:"Denklem başına ΔH",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">2SO<sub>2</sub>(g) + O<sub>2</sub>(g) → 2SO<sub>3</sub>(g) ΔH = −198 kJ</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Ortama 4 mol SO<sub>2</sub> konulup tepkime tamamlanırsa bu denklemin ΔH değeri −396 kJ olur.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> 4 mol SO<sub>2</sub> tamamen tepkimeye girerse 396 kJ ısı açığa çıkar.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> SO<sub>3</sub>(g) → SO<sub>2</sub>(g) + ½O<sub>2</sub>(g) tepkimesinin ΔH değeri +99 kJ'dir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>IV.</b> 1 mol O<sub>2</sub> harcandığında 198 kJ ısı açığa çıkar.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["II ve III", "III ve IV", "I, II ve III", "II, III ve IV", "I, II, III ve IV"],
+   d:3,
+   c:"ΔH denkleme aittir ve yazılan denklem için sabittir; değişen, açığa çıkan toplam ısıdır (I yanlış, II doğru). Ters çevrilip yarıya bölünen denklemin ΔH'si +99 kJ'dir. 1 mol O₂ denklemdeki miktardır."},
+
+  {konu:"Sınırlayıcı ve verim",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Kireç söndürme olayında şu tepkime gerçekleşir:<br/>CaO(k) + H<sub>2</sub>O(s) → Ca(OH)<sub>2</sub>(k) ΔH = −65 kJ<br/>28 g CaO ile 27 g su karıştırılıyor ve tepkime %80 verimle gerçekleşiyor.</span>Buna göre açığa çıkan ısı kaç kJ'dir? (CaO: 56 g/mol, H<sub>2</sub>O: 18 g/mol)",
+   sik:["20,8", "26", "32,5", "78", "97,5"],
+   d:1,
+   c:"CaO 0,5 mol, su 1,5 mol → sınırlayıcı CaO. Tepkimeye giren 0,5 × 0,80 = 0,4 mol → 0,4 × 65 = 26 kJ. Su üzerinden hesaplanırsa 78 kJ bulunur."},
+
+  {konu:"Soğuk kompres",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Spor sakatlıklarında kullanılan soğuk kompres paketinde şu olay gerçekleşir:<br/>NH<sub>4</sub>NO<sub>3</sub>(k) → NH<sub>4</sub><sup>+</sup>(suda) + NO<sub>3</sub><sup>−</sup>(suda) ΔH = +26 kJ<br/>Paket sıkıldığında içindeki tuzun yalnızca %75'i çözünebilmektedir.</span>Paketin çevreden 39 kJ ısı çekebilmesi için içine en az kaç gram NH<sub>4</sub>NO<sub>3</sub> konulmalıdır? (NH<sub>4</sub>NO<sub>3</sub>: 80 g/mol)",
+   sik:["90", "120", "150", "160", "200"],
+   d:3,
+   c:"39 ÷ 26 = 1,5 mol tuzun çözünmesi gerekir. Bu toplamın %75'i olduğundan 1,5 ÷ 0,75 = 2 mol = 160 g. Yüzde hesaba katılmazsa 120 g bulunur."},
+
+  {konu:"Sıcaklık–zaman grafiği",
+   gorsel:"<svg style=\"width:100%;max-width:420px\" role=\"img\" aria-label=\"Soru grafiği\" viewBox=\"0 0 400 214\"><line x1=\"60\" y1=\"190\" x2=\"60\" y2=\"18\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M60,14 L56.5,21.5 L63.5,21.5 Z\" fill=\"#14110F\"/><line x1=\"60\" y1=\"190\" x2=\"376\" y2=\"190\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M380,190 L372.5,186.5 L372.5,193.5 Z\" fill=\"#14110F\"/><text x=\"66\" y=\"18\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\">Sıcaklık (°C)</text><text x=\"380\" y=\"208\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\" text-anchor=\"end\">Zaman</text><text x=\"54\" y=\"170\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">17</text><line x1=\"60\" y1=\"166\" x2=\"360\" y2=\"166\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"54\" y=\"134\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">20</text><line x1=\"60\" y1=\"130\" x2=\"360\" y2=\"130\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"54\" y=\"62\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">26</text><line x1=\"60\" y1=\"58\" x2=\"360\" y2=\"58\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><path d=\"M60,130 L100,130 C130,70 170,58 360,58\" fill=\"none\" stroke=\"#C7381A\" stroke-width=\"2.6\"/><path d=\"M60,130 L100,130 C130,158.79999999999998 170,166 360,166\" fill=\"none\" stroke=\"#0B5C8A\" stroke-width=\"2.6\"/><text x=\"250\" y=\"50\" font-size=\"11\" font-weight=\"700\" fill=\"#C7381A\">X · 100 g su</text><text x=\"250\" y=\"182\" font-size=\"11\" font-weight=\"700\" fill=\"#0B5C8A\">Y · 300 g su</text><line x1=\"100\" y1=\"186\" x2=\"100\" y2=\"194\" stroke=\"#14110F\" stroke-width=\"1.2\"/><text x=\"100\" y=\"206\" font-size=\"11\" fill=\"#5C554F\" text-anchor=\"middle\">tuz eklenir</text></svg>",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Eşit mol sayılarında alınan X ve Y tuzları ayrı kaplarda suda çözülüyor. X 100 g suda, Y 300 g suda çözülüyor ve sıcaklıklar grafikteki gibi değişiyor. Suyun aldığı ya da verdiği ısı, kütlesi ve sıcaklık değişimiyle doğru orantılıdır.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> X'in çözünmesi ekzotermiktir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> Y'nin çözünmesinde sistemin entalpisi artar.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Mol başına çözünme ısısının mutlak değeri X için daha büyüktür.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["Yalnız I", "I ve II", "I ve III", "II ve III", "I, II ve III"],
+   d:1,
+   c:"X'te sıcaklık artar (ekzotermik), Y'de azalır (endotermik, entalpi artar). Isı kütle × sıcaklık değişimiyle orantılı: X için 100 × 6 = 600, Y için 300 × 3 = 900 birim. Mol sayıları eşit olduğundan Y'ninki büyüktür; III yanlıştır. Yalnızca sıcaklık değişimine bakmak yanıltır."},
+
+  {konu:"Isı–kütle grafiği",
+   gorsel:"<svg style=\"width:100%;max-width:420px\" role=\"img\" aria-label=\"Soru grafiği\" viewBox=\"0 0 400 226\"><line x1=\"70\" y1=\"196\" x2=\"70\" y2=\"14\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M70,10 L66.5,17.5 L73.5,17.5 Z\" fill=\"#14110F\"/><line x1=\"70\" y1=\"196\" x2=\"376\" y2=\"196\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M380,196 L372.5,192.5 L372.5,199.5 Z\" fill=\"#14110F\"/><text x=\"76\" y=\"14\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\">Açığa çıkan ısı (kJ)</text><text x=\"380\" y=\"214\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\" text-anchor=\"end\">Kütle (g)</text><text x=\"64\" y=\"150.5\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">300</text><line x1=\"70\" y1=\"146.5\" x2=\"210\" y2=\"146.5\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"64\" y=\"117.5\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"end\">500</text><line x1=\"70\" y1=\"113.5\" x2=\"210\" y2=\"113.5\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"210\" y1=\"113.5\" x2=\"210\" y2=\"196\" stroke=\"#5C554F\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"210\" y=\"210\" font-size=\"11\" fill=\"#14110F\" text-anchor=\"middle\">10</text><line x1=\"70\" y1=\"196\" x2=\"350\" y2=\"31.0\" stroke=\"#C7381A\" stroke-width=\"2.6\"/><line x1=\"70\" y1=\"196\" x2=\"350\" y2=\"97.0\" stroke=\"#0B5C8A\" stroke-width=\"2.6\"/><text x=\"358\" y=\"36.0\" font-size=\"12\" font-weight=\"700\" fill=\"#C7381A\">A</text><text x=\"358\" y=\"102.0\" font-size=\"12\" font-weight=\"700\" fill=\"#0B5C8A\">B</text></svg>",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Grafikte A ve B yakıtlarının yakılan kütlesine göre açığa çıkardıkları ısı gösterilmiştir. A'nın mol kütlesi 16 g/mol, B'nin mol kütlesi 46 g/mol'dür.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> A'nın kütlece ısıl değeri B'ninkinden büyüktür.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> 1 mol B yandığında 1 mol A yandığındakinden daha fazla ısı açığa çıkar.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> 1380 kJ ısı elde etmek için yakılması gereken A kütlesi, B kütlesinden azdır.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["Yalnız I", "I ve II", "I ve III", "II ve III", "I, II ve III"],
+   d:4,
+   c:"Eğim ısıl değerdir: A 50 kJ/g, B 30 kJ/g. Molar: A 800, B 1380 kJ/mol. 1380 kJ için A 27,6 g, B 46 g gerekir."},
+
+  {konu:"Ekzotermik ve bağlar",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Gaz fazında gerçekleşen ekzotermik bir tepkime inceleniyor.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Ürünlerdeki bağların toplam enerjisi, tepkenlerdekinden büyüktür.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> Ürünlerdeki her bağ, tepkenlerdeki her bağdan daha güçlüdür.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Ürünlerin toplam potansiyel enerjisi, tepkenlerinkinden küçüktür.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri kesinlikle doğrudur?",
+   sik:["Yalnız I", "Yalnız III", "I ve III", "II ve III", "I, II ve III"],
+   d:2,
+   c:"Ekzotermik tepkimede oluşan bağların enerjisi kırılanlarınkinden büyüktür; bu yalnızca TOPLAMLAR için geçerlidir. Tek tek bağlar hakkında bir şey söylenemez (II)."},
+
+  {konu:"Değişen bağlar",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">CH<sub>4</sub>(g) + Cl<sub>2</sub>(g) → CH<sub>3</sub>Cl(g) + HCl(g) ΔH = −113 kJ<br/>Bağ enerjileri: C—H 414 · Cl—Cl 243 · H—Cl 431 kJ/mol</span>Buna göre C—Cl bağının ortalama bağ enerjisi kaç kJ/mol'dür?",
+   sik:["339", "352", "365", "413", "452"],
+   d:0,
+   c:"Değişmeyen üç C—H bağı iki tarafta da vardır, hesaptan düşer. Kırılan: 414 + 243 = 657; oluşan: x + 431. 657 − (x + 431) = −113 → x = 339."},
+
+  {konu:"Deney değişkenleri",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir grup öğrenci NaOH, KNO<sub>3</sub> ve NH<sub>4</sub>Cl'nin suda çözünmesinin ısı alışverişini karşılaştıran bir deney tasarlıyor. Amaçları hangi tuzun çözünürken daha fazla ısı alışverişi yaptığını bulmaktır.</span>Bu deneyde aşağıdakilerden hangisi sabit tutulması gereken bir değişken değildir?",
+   sik:["Kullanılan suyun kütlesi", "Çözülen tuzun mol sayısı", "Suyun başlangıç sıcaklığı", "Kabın türü ve yalıtımı", "Çözünme sonrası ölçülen sıcaklık değişimi"],
+   d:4,
+   c:"Sıcaklık değişimi deneyde ölçülen bağımlı değişkendir; diğerleri karşılaştırmanın adil olması için sabit tutulur."},
+
+  {konu:"İddia · hidrojen döngüsü",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Bir öğrenci şu iddiayı ileri sürüyor: \"H<sub>2</sub>'nin kütlece ısıl değeri çok yüksektir. Bu nedenle suyu elektrolizle H<sub>2</sub> ve O<sub>2</sub>'ye ayırıp elde edilen H<sub>2</sub>'yi yakarsak harcadığımızdan daha fazla enerji elde ederiz.\"<br/>H<sub>2</sub>(g) + ½O<sub>2</sub>(g) → H<sub>2</sub>O(s) ΔH = −286 kJ</span>Bu iddia ile ilgili aşağıdaki değerlendirmelerden hangisi doğrudur?",
+   sik:["Yanlıştır; 1 mol suyu ayırmak için en az 286 kJ enerji gerekir, yakınca en fazla bu kadarı geri alınır.", "Doğrudur; H<sub>2</sub>'nin ısıl değeri harcanan elektrik enerjisinden büyüktür.", "Doğrudur; suyun elektrolizi ekzotermik bir olaydır.", "Yanlıştır; H<sub>2</sub>'nin yanması endotermiktir.", "Karar verilemez; elektroliz enerjisi tepkimenin ΔH'si ile ilişkili değildir."],
+   d:0,
+   c:"Ters tepkimenin ΔH'si aynı büyüklükte ve zıt işaretlidir: H₂O(s) → H₂ + ½O₂ ΔH = +286 kJ. Döngüden net enerji kazanılamaz; H₂ bir enerji kaynağı değil, enerji taşıyıcısıdır."},
+
+  {konu:"Grafit ve elmas",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Karbonun standart hâli grafittir.<br/>C(grafit) + O<sub>2</sub>(g) → CO<sub>2</sub>(g) ΔH = −394 kJ<br/>C(elmas) + O<sub>2</sub>(g) → CO<sub>2</sub>(g) ΔH = −396 kJ</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Elmasın grafite dönüşmesi ekzotermiktir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> Elmasın standart oluşum entalpisi +2 kJ/mol'dür.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Eşit kütlede elmas ve grafit yakılırsa elmas daha fazla ısı açığa çıkarır.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>IV.</b> Elmas, grafitten daha düşük enerjili olduğu için daha kararlıdır.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["I, II ve III", "I, II ve IV", "I, III ve IV", "II, III ve IV", "I, II, III ve IV"],
+   d:0,
+   c:"İkinci denklemden −396 = −394 − ΔH°ol(elmas) → +2 kJ/mol. Elmas grafitten 2 kJ/mol yüksek enerjilidir: dönüşüm ekzotermik, yanma ısısı büyük, kararlılık daha düşüktür (IV yanlış)."},
+
+  {konu:"Azot oksitleri",
+   gorsel:"<svg style=\"width:100%;max-width:420px\" role=\"img\" aria-label=\"Soru grafiği\" viewBox=\"0 0 400 214\"><line x1=\"50\" y1=\"186\" x2=\"50\" y2=\"16\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M50,12 L46.5,19.5 L53.5,19.5 Z\" fill=\"#14110F\"/><line x1=\"50\" y1=\"186\" x2=\"376\" y2=\"186\" stroke=\"#14110F\" stroke-width=\"1.6\"/><path d=\"M380,186 L372.5,182.5 L372.5,189.5 Z\" fill=\"#14110F\"/><text x=\"56\" y=\"16\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\">ΔH°ol (kJ/mol)</text><text x=\"380\" y=\"204\" font-size=\"11\" font-weight=\"700\" fill=\"#14110F\" text-anchor=\"end\"></text><rect x=\"82\" y=\"42.0\" width=\"46\" height=\"144.0\" fill=\"#F9E2D9\" stroke=\"#D8480F\" stroke-width=\"1.4\"/><text x=\"105\" y=\"36.0\" font-size=\"11.5\" font-weight=\"700\" fill=\"#D8480F\" text-anchor=\"middle\">+90</text><text x=\"105\" y=\"203\" font-size=\"11.5\" font-weight=\"700\" fill=\"#14110F\" text-anchor=\"middle\">NO(g)</text><rect x=\"156\" y=\"54.79999999999998\" width=\"46\" height=\"131.20000000000002\" fill=\"#F9E2D9\" stroke=\"#D8480F\" stroke-width=\"1.4\"/><text x=\"179\" y=\"48.79999999999998\" font-size=\"11.5\" font-weight=\"700\" fill=\"#D8480F\" text-anchor=\"middle\">+82</text><text x=\"179\" y=\"203\" font-size=\"11.5\" font-weight=\"700\" fill=\"#14110F\" text-anchor=\"middle\">N₂O(g)</text><rect x=\"230\" y=\"133.2\" width=\"46\" height=\"52.80000000000001\" fill=\"#F9E2D9\" stroke=\"#D8480F\" stroke-width=\"1.4\"/><text x=\"253\" y=\"127.19999999999999\" font-size=\"11.5\" font-weight=\"700\" fill=\"#D8480F\" text-anchor=\"middle\">+33</text><text x=\"253\" y=\"203\" font-size=\"11.5\" font-weight=\"700\" fill=\"#14110F\" text-anchor=\"middle\">NO₂(g)</text><rect x=\"304\" y=\"171.6\" width=\"46\" height=\"14.400000000000006\" fill=\"#F9E2D9\" stroke=\"#D8480F\" stroke-width=\"1.4\"/><text x=\"327\" y=\"165.6\" font-size=\"11.5\" font-weight=\"700\" fill=\"#D8480F\" text-anchor=\"middle\">+9</text><text x=\"327\" y=\"203\" font-size=\"11.5\" font-weight=\"700\" fill=\"#14110F\" text-anchor=\"middle\">N₂O₄(g)</text></svg>",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Grafikte azotun bazı oksitlerinin standart oluşum entalpileri verilmiştir. Bu oksitler araç egzozlarında ve atmosferde birbirine dönüşebilir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Grafikteki oksitlerin hepsinin elementlerinden oluşumu endotermiktir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> 2NO<sub>2</sub>(g) → N<sub>2</sub>O<sub>4</sub>(g) tepkimesinin ΔH değeri −57 kJ'dir.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> 2NO(g) + O<sub>2</sub>(g) → 2NO<sub>2</sub>(g) tepkimesinde 1 mol NO<sub>2</sub> oluşurken 57 kJ ısı açığa çıkar.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["Yalnız I", "Yalnız II", "I ve II", "II ve III", "I, II ve III"],
+   d:4,
+   c:"Dört değer de pozitiftir. II: 9 − 2·33 = −57 kJ. III: 2·33 − 2·90 = −114 kJ, 2 mol NO₂ için; 1 mol için 57 kJ."},
+
+  {konu:"Gaz karışımı",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Normal koşullarda 11,2 L hacim kaplayan CH<sub>4</sub> ve C<sub>3</sub>H<sub>8</sub> gaz karışımı tamamen yakıldığında 711 kJ ısı açığa çıkıyor.<br/>Molar yanma ısıları: CH<sub>4</sub> 890 kJ/mol · C<sub>3</sub>H<sub>8</sub> 2220 kJ/mol</span>Buna göre karışımdaki C<sub>3</sub>H<sub>8</sub> kaç gramdır? (H: 1, C: 12; NK'da 1 mol gaz 22,4 L)",
+   sik:["8,8", "13,2", "17,6", "22", "26,4"],
+   d:0,
+   c:"x + y = 0,5 ve 890x + 2220y = 711 → y = 0,2 mol C₃H₈ = 8,8 g (x = 0,3 mol CH₄). Mol sayıları karıştırılırsa 13,2 g bulunur."},
+
+  {konu:"Kaynama ve entalpi",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Açık bir kapta kaynamakta olan suya ısı verilmeye devam ediliyor; su kaynarken sıcaklığı sabit kalıyor.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> Verilen ısı, su molekülleri arasındaki etkileşimleri yenmek için harcanır.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> Aynı sıcaklıkta su buharının entalpisi sıvı suyunkinden büyüktür.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Sıcaklık değişmediği için suyun entalpisi de değişmez.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>IV.</b> Kaynama süresince moleküllerin ortalama kinetik enerjisi değişmez.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur?",
+   sik:["I ve II", "I ve III", "II ve IV", "I, II ve IV", "I, II, III ve IV"],
+   d:3,
+   c:"Hâl değişiminde alınan ısı potansiyel enerjiyi artırır; sıcaklık (ortalama kinetik enerji) sabit kalır ama entalpi artar. III, sıcaklık ile entalpinin karıştırılmasıdır."},
+
+  {konu:"Sıvı brom ve bağ enerjisi",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">H<sub>2</sub>(g) + Br<sub>2</sub>(s) → 2HBr(g)<br/>Bağ enerjileri: H—H 436 · Br—Br 193 · H—Br 366 kJ/mol<br/>Br<sub>2</sub>(s) → Br<sub>2</sub>(g) ΔH = +31 kJ</span>Buna göre tepkimenin ΔH değeri kaç kJ'dir?",
+   sik:["−165", "−134", "−103", "−93", "−72"],
+   d:4,
+   c:"Bağ enerjileri gaz fazı içindir. Gaz Br₂ ile ΔH = (436 + 193) − 2·366 = −103 kJ. Br₂ sıvı olduğundan önce buharlaşmalıdır: −103 + 31 = −72 kJ. −103, buharlaşmayı unutan; −134, işareti ters alan cevaptır."},
+
+  {konu:"Propan · sentez",
+   s:"<span style=\"display:block;font-weight:400;margin-bottom:10px\">Mutfak tüplerinde kullanılan propanın yanma tepkimesi:<br/>C<sub>3</sub>H<sub>8</sub>(g) + 5O<sub>2</sub>(g) → 3CO<sub>2</sub>(g) + 4H<sub>2</sub>O(s) ΔH = −2220 kJ<br/>ΔH°ol: CO<sub>2</sub>(g) = −394 kJ/mol · H<sub>2</sub>O(s) = −286 kJ/mol</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>I.</b> C<sub>3</sub>H<sub>8</sub>(g)'nin standart oluşum entalpisi −106 kJ/mol'dür.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>II.</b> 22 g propan yandığında 1110 kJ ısı açığa çıkar.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>III.</b> Tepkimede su gaz hâlinde oluşsaydı açığa çıkan ısı daha az olurdu.</span><span style=\"display:block;font-weight:400;padding-left:24px;text-indent:-24px;margin:3px 0\"><b>IV.</b> 1 mol O<sub>2</sub> harcandığında 444 kJ ısı açığa çıkar.</span><span style=\"display:block;height:8px\"></span>Buna göre yargılardan hangileri doğrudur? (H: 1, C: 12)",
+   sik:["I ve II", "I ve III", "I, II ve IV", "II, III ve IV", "I, II, III ve IV"],
+   d:4,
+   c:"I: −2220 = [3(−394) + 4(−286)] − x → x = −106. II: 0,5 mol → 1110 kJ. III: buhar oluşursa yoğuşma ısısı açığa çıkmaz. IV: 2220 ÷ 5 = 444 kJ."}
+];
+
+
 const TESTLER = [
   {id:"atom", unite:"Modern Atom Teorisi", bolum:0, toplam:1,
    alt:"Kuantum sayıları · orbital enerjileri · Bohr ve de Broglie",
@@ -7326,6 +7883,9 @@ const MAARIF = [
   {id:"m2",  tema:1, unite:"Kitaptaki Özel Örnekler",           dizi:sorularMaarifOzel,    acilis:null,          kod:"ORNEK"},
   {id:"m3",  tema:1, unite:"Bağ Enerjileri ve Entalpi",         dizi:sorularMaarifBag,     acilis:"2026-09-08",  kod:"BAGENERJI"},
   {id:"m4",  tema:1, unite:"Standart Oluşum Entalpisi",         dizi:sorularMaarifOlusum,  acilis:"2026-09-15",  kod:"OLUSUM"},
+  {id:"m4k", tema:1, unite:"Enerji · Genel Tekrar · Kolay",     dizi:sorularEnerjiGT1,     acilis:null,          kod:"GTKOLAY", seviye:"Kolay"},
+  {id:"m4o", tema:1, unite:"Enerji · Genel Tekrar · Orta",      dizi:sorularEnerjiGT2,     acilis:null,          kod:"GTORTA",  seviye:"Orta"},
+  {id:"m4z", tema:1, unite:"Enerji · Genel Tekrar · Zor",       dizi:sorularEnerjiGT3,     acilis:null,          kod:"GTZOR",   seviye:"Zor"},
   {id:"m5",  tema:1, unite:"Tepkime Hızı Kavramı",              dizi:sorularMaarifHiz1,    acilis:"2026-09-22",  kod:"HIZ"},
   {id:"m6",  tema:1, unite:"Çarpışma Teorisi",                  dizi:sorularMaarifHiz2,    acilis:"2026-09-29",  kod:"CARPISMA2"},
   {id:"m7",  tema:1, unite:"Hızı Etkileyen Faktörler",          dizi:sorularMaarifHiz3,    acilis:"2026-10-06",  kod:"FAKTOR"},
@@ -7482,7 +8042,7 @@ function girisCiz(){
   const bs = $("giris-baslik"), ba = $("giris-alt"), yg = $("yol-geri");
   if(aktifYol === "maarif"){
     if(bs) bs.innerHTML = "11. Sınıf · <u>Maarif</u>";
-    if(ba) ba.textContent = "Üç tema, 28 bölüm. Beceri ve bağlam temelli sorular; her birinin çözümü hemen altında.";
+    if(ba) ba.textContent = "Üç tema, " + MAARIF.length + " bölüm. Beceri ve bağlam temelli sorular; her birinin çözümü hemen altında.";
   } else {
     if(bs) bs.innerHTML = "Hangi konudan <u>test</u> çözmek istersin?";
     if(ba) ba.textContent = "Her testte 20 soru var. Müfredat içi ama bilerek zor tutuldu — ezberle değil, kurallarla çözülür.";
@@ -7510,7 +8070,7 @@ function girisCiz(){
     b.innerHTML =
       '<div class="konu-ad">' + t.unite + bolumEt + "</div>" +
       (t.alt ? '<div class="konu-alt">' + t.alt + "</div>" : "") +
-      '<div class="konu-rozet"><span>' + t.dizi.length + " soru</span><span>Zor</span></div>" +
+      '<div class="konu-rozet"><span>' + t.dizi.length + " soru</span><span>" + (t.seviye || "Zor") + "</span></div>" +
       (kilit
         ? '<div class="kilit-bar">🔒 ' + kilitYazi(t) +
           '<em>Erken erişim kodun varsa dokun</em></div>' +
@@ -7927,7 +8487,7 @@ ilerlemeYukle();
 </script>
  <script>
 (function(){
-  var MODUL = 10, SORU = 850;   // yeni modül eklendikçe sadece bu satırı güncelle
+  var MODUL = 21, SORU = 2404;   // yeni modül eklendikçe sadece bu satırı güncelle
   function ekle(){
     var kap = document.querySelector('.yol-kart');
     if (!kap || document.getElementById('konuBag')) return;
