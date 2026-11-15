@@ -127,7 +127,7 @@ ul.nasil {{ margin:0; padding-left:20px; display:grid; gap:6px; }}
 </style>
 <div class="sar">
 <header>
-  <div class="marka"><img src="g/logo.png" alt=""><div><h1><span>kimyamed</span> Instagram</h1><p class="alt">1. hafta · 16–21 Kasım 2026 · her gün 20:00, hikâyeler 18:00</p></div></div>
+  <div class="marka"><img src="g/logo.png" alt=""><div><h1><span>kimyamed</span> Instagram</h1><p class="alt">1. hafta · 16–21 Kasım 2026 · gönderiler 18:00 (cumartesi 10:00), hikâyeler 12:00</p></div></div>
   <div>{ust_durum}</div>
   <nav><a href="#hafta">Bu hafta</a><a href="#profil">Profil</a><a href="#plan">4 haftalık plan</a><a href="#nasil">Nasıl çalışıyoruz</a></nav>
 </header>

@@ -60,30 +60,37 @@ Peki BF₃? Cevabını yorumlara yaz, açıklaması yarın hikâyede.
 
 #kimya #9sınıfkimya #polarlık #molekül #tyt #yks #kimyamed"""
 
-P6 = """Kimya çalışırken işine yarayacak 3 ücretsiz araç 👇
+P6 = """Kimyayı ücretsiz çalışabileceğin site: kimyamed 👇
 
-🔸 Ronya Kimya: 9-12. sınıf ve AYT konu anlatımlı soru bankası, hesaplayıcılar, 3D laboratuvar
-🔸 Sesli Ders: konu anlatımı tahtada, doğal Türkçe seslerle
-🔸 kimyamed: 9, 10 ve 11. sınıf Maarif konu anlatımı, 2.400'den fazla çözümlü soru
+🔸 9, 10 ve 11. sınıf Maarif modeli konu anlatımı
+🔸 2.400'den fazla çözümlü soru: önce kendin dene, sonra çözümü aç
+🔸 17 modülde 100 puanlık yazılı denemesi
 
-Hepsi ücretsiz, üyelik yok. Bağlantılar profilde.
+Ücretsiz, üyelik yok. Bağlantılar profilde.
 
-Bu hesapta her gün bir kimya içeriği var: pazartesi ve perşembe konu özeti, salı ve cuma Reels, çarşamba günün sorusu, cumartesi tuzak kartı ya da araç.
+Bu hesapta her gün bir kimya içeriği var: pazartesi ve perşembe konu özeti, salı ve cuma Reels, çarşamba günün sorusu, cumartesi tuzak kartı ya da ücretsiz kaynak. Kaçırmamak için takip et 🔔
 
-#kimya #yks #tyt #ayt #ücretsiz #kimyaöğretmeni #maarifmodeli #kimyamed"""
+#kimya #yks #tyt #ayt #ücretsiz #kimyaöğretmeni #maarifmodeli #9sınıfkimya #10sınıfkimya #11sınıfkimya #kimyamed"""
+
+# Ronya şimdilik paylaşılmıyor (kullanıcının isteği): hiçbir gönderide, açıklamada ya da profil bağlantısında yer almaz.
+P6_ALT = ["Kapak: Kimyayı ücretsiz çalış. Konu anlatımı ve 2.400'den fazla çözümlü soru. kimyamed sitesinden üç telefon ekranı.",
+          "Konu anlatımı: her konu şekil ve grafikle. 9. sınıfta 9, 10 ve 11. sınıfta 6'şar modül, 270 şekil ve grafik.",
+          "Çözümlü sorular: 2.400'den fazla çözümlü soru, çözümler gizli. 9. sınıf 916, 10. sınıf 584, 11. sınıf 904.",
+          "Yazılıya prova: 17 modülde 100 puanlık yazılı denemesi, çözümlerde puanlama notu.",
+          "Bu hesapta her gün bir kimya içeriği: haftalık paylaşım düzeni."]
 
 # (anahtar, gün etiketi, tarih-saat, tür, başlık, medya listesi, kapak, açıklama)
 PLAN = [
-    ('pzt', 'Pazartesi 16 Kasım', '2026-11-16T20:00:00', 'POST', 'Periyodik tabloda yer bulma (9. sınıf)', [f'pzt-{i}.jpg' for i in range(1, 8)], None, P1),
-    ('sal-h', 'Salı 17 Kasım', '2026-11-17T18:00:00', 'STORY', 'Hikâye: Ca ve Zn cevabı', ['sal-hikaye.jpg'], None, ''),
-    ('sal', 'Salı 17 Kasım', '2026-11-17T20:00:00', 'REEL', 'Reels: Bu ikisini evde asla karıştırma', ['sal-reels.mp4'], 'sal-kapak.jpg', P2),
-    ('car', 'Çarşamba 18 Kasım', '2026-11-18T20:00:00', 'POST', 'Günün Sorusu: izoelektronik yarıçap (TYT)', ['car-1.jpg'], None, P3),
-    ('per-h', 'Perşembe 19 Kasım', '2026-11-19T18:00:00', 'STORY', 'Hikâye: günün sorusunun cevabı', ['per-hikaye.jpg'], None, ''),
-    ('per', 'Perşembe 19 Kasım', '2026-11-19T20:00:00', 'POST', 'Tepkime hızı tek grafikte (11. sınıf)', [f'per-{i}.jpg' for i in range(1, 8)], None, P4),
-    ('cum-h', 'Cuma 20 Kasım', '2026-11-20T18:00:00', 'STORY', 'Hikâye: sıcaklık düşerse', ['cum-hikaye.jpg'], None, ''),
-    ('cum', 'Cuma 20 Kasım', '2026-11-20T20:00:00', 'REEL', 'Reels: Polar bağ ≠ polar molekül', ['cum-reels.mp4'], 'cum-kapak.jpg', P5),
-    ('cmt-h', 'Cumartesi 21 Kasım', '2026-11-21T18:00:00', 'STORY', 'Hikâye: BF₃ cevabı', ['cmt-hikaye.jpg'], None, ''),
-    ('cmt', 'Cumartesi 21 Kasım', '2026-11-21T20:00:00', 'POST', 'Ücretsiz araçlar ve haftalık düzen', [f'cmt-{i}.jpg' for i in range(1, 6)], None, P6),
+    ('pzt', 'Pazartesi 16 Kasım', '2026-11-16T18:00:00', 'POST', 'Periyodik tabloda yer bulma (9. sınıf)', [f'pzt-{i}.jpg' for i in range(1, 8)], None, P1),
+    ('sal-h', 'Salı 17 Kasım', '2026-11-17T12:00:00', 'STORY', 'Hikâye: Ca ve Zn cevabı', ['sal-hikaye.jpg'], None, ''),
+    ('sal', 'Salı 17 Kasım', '2026-11-17T18:00:00', 'REEL', 'Reels: Bu ikisini evde asla karıştırma', ['sal-reels.mp4'], 'sal-kapak.jpg', P2),
+    ('car', 'Çarşamba 18 Kasım', '2026-11-18T18:00:00', 'POST', 'Günün Sorusu: izoelektronik yarıçap (TYT)', ['car-1.jpg'], None, P3),
+    ('per-h', 'Perşembe 19 Kasım', '2026-11-19T12:00:00', 'STORY', 'Hikâye: günün sorusunun cevabı', ['per-hikaye.jpg'], None, ''),
+    ('per', 'Perşembe 19 Kasım', '2026-11-19T18:00:00', 'POST', 'Tepkime hızı tek grafikte (11. sınıf)', [f'per-{i}.jpg' for i in range(1, 8)], None, P4),
+    ('cum-h', 'Cuma 20 Kasım', '2026-11-20T12:00:00', 'STORY', 'Hikâye: sıcaklık düşerse', ['cum-hikaye.jpg'], None, ''),
+    ('cum', 'Cuma 20 Kasım', '2026-11-20T18:00:00', 'REEL', 'Reels: Polar bağ ≠ polar molekül', ['cum-reels.mp4'], 'cum-kapak.jpg', P5),
+    ('cmt-h', 'Cumartesi 21 Kasım', '2026-11-21T12:00:00', 'STORY', 'Hikâye: BF₃ cevabı', ['cmt-hikaye.jpg'], None, ''),
+    ('cmt', 'Cumartesi 21 Kasım', '2026-11-21T10:00:00', 'POST', 'Ücretsiz kaynak: kimyamed ve haftalık düzen', [f'cmt2-{i}.jpg' for i in range(1, 6)], None, P6),
 ]
 
 PROFIL_AD = 'kimyamed | Kimya · YKS'
@@ -94,18 +101,17 @@ Her gün: konu özeti • günün sorusu • Reels
 BAGLANTILAR = [
     ('kimyamed konu anlatımı', 'https://medenigklp.github.io/kimyamed-testi/konu/'),
     ('kimyamed testler', 'https://medenigklp.github.io/kimyamed-testi/'),
-    ('Ronya Kimya ve Sesli Ders', 'https://medenigklp.github.io/Ronya/'),
 ]
 ONE_CIKANLAR = [('gunun-sorusu', 'Günün Sorusu'), ('9-sinif', '9. Sınıf'), ('10-sinif', '10. Sınıf'), ('11-sinif', '11. Sınıf'),
                 ('12-sinif', '12. Sınıf'), ('yks', 'YKS'), ('araclar', 'Araçlar')]
 
 HAFTALAR = [
     ('1. hafta · 16–21 Kasım', ['9 · Periyodik tabloda yer bulma', 'Reels · Evde asla karıştırma', 'Günün sorusu · İzoelektronik yarıçap',
-                                 '11 · Tepkime hızı tek grafikte', 'Reels · Polar bağ ≠ polar molekül', 'Ücretsiz araçlar']),
+                                 '11 · Tepkime hızı tek grafikte', 'Reels · Polar bağ ≠ polar molekül', 'Ücretsiz kaynak · kimyamed']),
     ('2. hafta · 23–28 Kasım', ['10 · Mol kavramı tek şemada', 'Reels · Buz neden suda yüzer?', 'Günün sorusu · Mol (TYT)',
                                  '12 · Pil mi elektroliz mi? Anot-katot tuzağı', 'Reels · Ekzotermik mi endotermik mi?', 'Tuzak kartı · İzoelektronik ≠ aynı']),
     ('3. hafta · 30 Kasım–5 Aralık', ['9 · İyonik mi kovalent mi? 3 soruda karar', 'Reels · Tuz suda nasıl çözünür?', 'Günün sorusu · Denge (AYT)',
-                                       '11 · Le Chatelier: dengeyi bozunca', 'Reels · Katalizör dengeyi değiştirir mi?', 'Araç · Sesli Ders ile tekrar']),
+                                       '11 · Le Chatelier: dengeyi bozunca', 'Reels · Katalizör dengeyi değiştirir mi?', 'Tuzak kartı · Denge ifadesine katı ve sıvı yazılmaz']),
     ('4. hafta · 7–12 Aralık (yazılı haftası)', ['9 · 1. dönem yazılısı: 10 maddede tekrar', 'Reels · Yazılıda en çok puan kaybettiren 3 hata', 'Günün sorusu · Tepkime türleri',
                                                   '10-11 · Yazılı tekrarı', 'Reels · Son gece nasıl tekrar yapılır?', 'kimyamed yazılı denemeleri']),
 ]

@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
-"""Hafta 1 · Cumartesi · Ücretsiz araçlar + hesabın haftalık düzeni (5 slayt)"""
+"""Hafta 1 · Cumartesi · Ücretsiz kaynak: kimyamed + hesabın haftalık düzeni (5 slayt)
+Ronya şimdilik paylaşılmıyor (kullanıcının isteği): bu gönderide yalnızca kimyamed var."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from motor import slayt, bas, pafta, RENK
 
 EKRAN = 'file://' + os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ekran')
 SERI = 'arac'
-SERI_METNI = 'ÜCRETSİZ ARAÇLAR'
+SERI_METNI = 'ÜCRETSİZ KAYNAK'
 T = 5
 
 
@@ -18,43 +19,44 @@ slaytlar = []
 
 slaytlar.append(slayt(f'''
 <div style="margin-top:56px">
-  <div class="ust-not">KİMYA ÇALIŞIRKEN</div>
-  <h1>İşine yarayacak <em>3 ücretsiz</em> araç</h1>
-  <p class="alt-baslik">Hepsi telefonda çalışır. Üyelik yok, ücret yok.</p>
+  <div class="ust-not">ÜCRETSİZ · ÜYELİK YOK</div>
+  <h1>Kimyayı <em>ücretsiz</em> çalış</h1>
+  <p class="alt-baslik">Konu anlatımı ve 2.400'den fazla çözümlü soru</p>
 </div>
 <div style="position:relative; flex:1; margin:24px -84px 0">
-  <div style="position:absolute; left:150px; top:64px; transform:rotate(-9deg)">{telefon('ronya', 280)}</div>
-  <div style="position:absolute; right:150px; top:64px; transform:rotate(9deg)">{telefon('kimyamed', 280)}</div>
-  <div style="position:absolute; left:50%; top:6px; transform:translateX(-50%)">{telefon('sesli', 300)}</div>
+  <div style="position:absolute; left:150px; top:64px; transform:rotate(-9deg)">{telefon('km-konu', 280)}</div>
+  <div style="position:absolute; right:150px; top:64px; transform:rotate(9deg)">{telefon('km-soru', 280)}</div>
+  <div style="position:absolute; left:50%; top:6px; transform:translateX(-50%)">{telefon('km-dizin', 300)}</div>
 </div>
 ''', SERI_METNI, SERI, 1, T, kaydir=True))
 
 
-def arac_slayti(no, ad, alt, maddeler, ekran, adres, sayfa):
+def ozellik_slayti(no, ad, alt, maddeler, ekran, adres, sayfa, boyut=60):
     lis = ''.join(f'<li>{m}</li>' for m in maddeler)
+    adres_html = f'<p class="kucuk" style="margin-top:38px; font-weight:600; overflow-wrap:anywhere">{adres}</p>' if adres else ''
     return slayt(f'''
 <div class="yan" style="margin-top:44px; gap:40px; flex:1; align-items:flex-start">
   <div style="flex:1; min-width:0">
     <div class="ust-not">{no}</div>
-    <h2 style="font-size:64px">{ad}</h2>
+    <h2 style="font-size:{boyut}px">{ad}</h2>
     <p style="color:#4A4458; margin-bottom:34px">{alt}</p>
     <ul class="madde">{lis}</ul>
-    <p class="kucuk" style="margin-top:38px; font-weight:600; overflow-wrap:anywhere">{adres}</p>
+    {adres_html}
   </div>
   <div style="flex:0 0 360px; margin-top:20px">{telefon(ekran, 360)}</div>
 </div>
 ''', SERI_METNI, SERI, sayfa, T)
 
 
-slaytlar.append(arac_slayti('1 · WEB SİTESİ', 'Ronya Kimya', 'Lise kimyasının çalışma masası.',
-                            ['9-12. sınıf ve AYT konu anlatımlı soru bankası', 'Hesaplayıcılar, 3D laboratuvar, periyodik tablo', 'YKS araçları'],
-                            'ronya', 'medenigklp.github.io/Ronya', 2))
-slaytlar.append(arac_slayti('2 · RONYA İÇİNDE', 'Sesli Ders', 'Konu anlatımı tahtada, adım adım.',
-                            ['Doğal Türkçe seslerle anlatım', 'Karşılıklı anlatım: Elif Hoca ve Kerem Hoca', 'İstediğin bölümden başla'],
-                            'sesli', 'Ronya menüsü → Sesli Ders', 3))
-slaytlar.append(arac_slayti('3 · WEB SİTESİ', 'kimyamed', '9, 10 ve 11. sınıf Maarif modeli konu anlatımı.',
-                            ['2.400\'den fazla çözümlü soru', 'Önce kendin dene, sonra çözümü aç', 'Her modülde yazılı denemesi'],
-                            'kimyamed', 'medenigklp.github.io/<wbr>kimyamed-testi/<wbr>konu', 4))
+slaytlar.append(ozellik_slayti('1 · KONU ANLATIMI', 'Her konu şekil ve grafikle', '9. sınıfta 9, 10 ve 11. sınıfta 6\'şar modül.',
+                               ['Maarif modeli kapsamında', '270 şekil ve grafik', 'Kurallar kutuda, örnekler adım adım'],
+                               'km-konu', 'medenigklp.github.io/<wbr>kimyamed-testi/<wbr>konu', 2))
+slaytlar.append(ozellik_slayti('2 · ÇÖZÜMLÜ SORULAR', '2.400\'den fazla çözümlü soru', 'Çözümler gizli: önce kendin dene, sonra aç.',
+                               ['9. sınıf: 916<br>10. sınıf: 584<br>11. sınıf: 904', 'Adım adım çözümler', '1.000\'den fazla “kendin çöz” sorusu'],
+                               'km-soru', '', 3))
+slaytlar.append(ozellik_slayti('3 · YAZILIYA PROVA', '100 puanlık yazılı denemeleri', 'Gerçek yazılı düzeninde, puanlı sorular.',
+                               ['17 modülde yazılı denemesi', 'Çözümlerde puanlama notu', 'Karma tekrar ve kavram özeti'],
+                               'km-yazili', '', 4))
 
 gunler = [('Pzt', 'Konu özeti', '9-10. sınıf', RENK['yesil']), ('Sal', 'Reels', 'kimya hayatın içinde', RENK['turuncu']),
           ('Çar', 'Günün Sorusu', 'TYT-AYT tarzı', RENK['mor']), ('Per', 'Konu özeti', '11-12. sınıf', RENK['turuncu']),
@@ -74,6 +76,6 @@ slaytlar.append(slayt(f'''
 
 if __name__ == '__main__':
     klasor = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cikti', 'h1-6-cmt')
-    yollar, tasma = bas(slaytlar, klasor, 'cmt')
+    yollar, tasma = bas(slaytlar, klasor, 'cmt2')
     print('taşma:', tasma or 'yok')
     print(pafta(yollar, os.path.join(klasor, 'pafta.jpg'), sutun=5, gen=300))
