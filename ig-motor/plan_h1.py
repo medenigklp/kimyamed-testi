@@ -85,6 +85,53 @@ P6_ALT = ["Kapak: Kışın yollara neden tuz dökülür? Hava eksi 5 derecede sa
           "Sıra sende: eşit mol sayısında NaCl ve CaCl2 1'er kg suda çözülüyor; hangisi donma noktasını daha çok düşürür?"]
 PAZ_ALT = "Dünkü sorunun cevabı CaCl2: 1 mol CaCl2 suda 3 mol, 1 mol NaCl 2 mol iyon verir; tanecik sayısı arttıkça donma noktası daha çok düşer."
 
+
+P0 = """Vücudundaki atomlar nereden geldi? 🌌
+
+🔹 Hidrojen: Büyük Patlama'nın ilk anlarından
+🔹 Karbon, azot, oksijen: yıldızların içinden
+🔹 Demir ve daha ağırları: yıldız patlamalarından
+
+Kısacası hepimiz yıldız tozundan yapıldık ✨
+
+Kaydet, bunu bilmeyen bir arkadaşına gönder.
+Yarın 18:00'de: Periyodik tabloda yerini 3 adımda bul.
+
+#kimya #bilim #evren #yıldıztozu #atom #periyodiktablo #merakedilenler #kimyahayattır #kimyamed"""
+P0_ALT = ["Kapak: Vücudundaki atomlar nereden geldi? Büyük Patlama, yıldızlar, yıldız patlamaları ve insan arasında kesikli bir yol.",
+          "Vücudun kütlece yaklaşık yüzde 65 oksijen, 18 karbon, 10 hidrojen, 3 azot ve 4 diğer elementlerden oluşur.",
+          "Hidrojen çekirdekleri Büyük Patlama'nın ilk anlarında, yaklaşık 13,8 milyar yıl önce oluştu. Evrende en çok bulunan element hidrojendir.",
+          "Karbon, azot ve oksijenin büyük kısmı yıldızların çekirdeğinde füzyonla oluştu ve yıldızlar ömrünü tamamlarken uzaya saçıldı.",
+          "Demirin büyük kısmı süpernova denen yıldız patlamalarında, altın gibi çok ağır elementler nötron yıldızı çarpışmaları gibi olaylarda oluşur.",
+          "Kısacası hepimiz yıldız tozundan yapıldık. Yarın 18:00: Periyodik tabloda yerini 3 adımda bul."]
+# "Bunu biliyor muydun?" hikâyeleri, her akşam 21:00 (Instagram sürümü bilgi-N.jpg, WhatsApp sürümü cikti/whatsapp)
+BILGI = [
+    ('Pazar 15 Kasım', '2026-11-15', 'Kurşun kalemde kurşun yok', "Bunu biliyor muydun: Kurşun kalemin ucu kurşun değil, grafit ve kilden yapılır."),
+    ('Pazartesi 16 Kasım', '2026-11-16', 'J ve Q harfleri yok', "Bunu biliyor muydun: 118 elementin hiçbirinin sembolünde J ve Q harfleri geçmez."),
+    ('Salı 17 Kasım', '2026-11-17', 'Helyum önce Güneş\'te bulundu', "Bunu biliyor muydun: Helyum 1868'de önce Güneş ışığında keşfedildi, Dünya'da 1895'te bulundu."),
+    ('Çarşamba 18 Kasım', '2026-11-18', 'Bir bardak sudaki molekül sayısı', "Bunu biliyor muydun: 250 mL suda yaklaşık 8 çarpı 10 üzeri 24 su molekülü vardır."),
+    ('Perşembe 19 Kasım', '2026-11-19', 'Oda sıcaklığında sıvı elementler', "Bunu biliyor muydun: Oda sıcaklığında sıvı olan iki element vardır: cıva ve brom."),
+    ('Cuma 20 Kasım', '2026-11-20', 'Ozon: kalkan ve kirletici', "Bunu biliyor muydun: Ozon üst atmosferde UV ışınlarını tutan bir kalkan, yere yakın ise bir hava kirleticisidir."),
+    ('Cumartesi 21 Kasım', '2026-11-21', 'Sofra tuzu ve iki tehlikeli madde', "Bunu biliyor muydun: Sofra tuzu, suyla şiddetli tepkime veren sodyum ile zehirli klor gazından oluşur."),
+    ('Pazar 22 Kasım', '2026-11-22', 'Tek harfli 14 sembol', "Bunu biliyor muydun: Sembolü tek harf olan 14 element vardır: H, B, C, N, O, F, P, S, K, V, Y, I, W, U."),
+]
+
+P7 = """Haftanın mini testi 📝
+
+Bu hafta paylaştıklarımızdan 6 soru: periyodik tablo, evde güvenlik, iyon yarıçapı, tepkime hızı, polarlık ve yollara tuz.
+
+Önce kendin dene, cevaplar son slaytta.
+Kaç doğru yaptın? Yorumlara yaz 👇
+
+Kaydet, yazılıdan önce tekrar et.
+
+#kimya #kimyatesti #yks #tyt #9sınıfkimya #10sınıfkimya #11sınıfkimya #tekrar #kimyamed"""
+P7_ALT = ["Kapak: Bu haftayı ne kadar hatırlıyorsun? Haftanın gönderilerinden 6 soru, cevaplar son slaytta.",
+          "Soru 1: 19K atomu periyodik tablonun neresindedir? Soru 2: Çamaşır suyu ile tuz ruhu karıştırılınca hangi zehirli gaz açığa çıkar? Dörder seçenek.",
+          "Soru 3: O2 eksi, F eksi ve Na artı taneciklerinden yarıçapı en küçük olan hangisidir? Soru 4: Katalizör eklenince tanecik enerji dağılımı grafiğinde ne değişir?",
+          "Soru 5: Hangisi polardır: CO2, CH4, H2O, CCl4? Soru 6: Kışın yollara tuz dökülmesinin nedeni nedir?",
+          "Cevaplar: 1 B, 2 C, 3 C, 4 B, 5 C, 6 B. Puanını yorumlara yaz."]
+
 # (anahtar, gün etiketi, tarih-saat, tür, başlık, medya listesi, kapak, açıklama)
 PLAN = [
     ('pzt', 'Pazartesi 16 Kasım', '2026-11-16T18:00:00', 'POST', 'Periyodik tabloda yer bulma (9. sınıf)', [f'pzt-{i}.jpg' for i in range(1, 8)], None, P1),
@@ -98,7 +145,12 @@ PLAN = [
     ('cmt-h', 'Cumartesi 21 Kasım', '2026-11-21T12:00:00', 'STORY', 'Hikâye: BF₃ cevabı', ['cmt-hikaye.jpg'], None, ''),
     ('cmt', 'Cumartesi 21 Kasım', '2026-11-21T10:00:00', 'POST', 'Merak: Kışın yollara neden tuz dökülür?', [f'cmt3-{i}.jpg' for i in range(1, 7)], None, P6),
     ('paz-h', 'Pazar 22 Kasım', '2026-11-22T12:00:00', 'STORY', 'Hikâye: NaCl mi CaCl₂ mi? cevabı', ['paz-hikaye.jpg'], None, ''),
+    ('paz15', 'Pazar 15 Kasım', '2026-11-15T18:30:00', 'POST', 'Merak: Vücudundaki atomlar nereden geldi?', [f'paz15-{i}.jpg' for i in range(1, 7)], None, P0),
+    ('paz22', 'Pazar 22 Kasım', '2026-11-22T18:30:00', 'POST', 'Haftanın mini testi (6 soru)', [f'paz22-{i}.jpg' for i in range(1, 6)], None, P7),
 ]
+PLAN += [(f'b{i}', gun, f'{tarih}T21:00:00', 'STORY', f'Bunu biliyor muydun? {baslik}', [f'bilgi-{i}.jpg'], None, '')
+         for i, (gun, tarih, baslik, _) in enumerate(BILGI, 1)]
+PLAN.sort(key=lambda o: o[2])
 
 PROFIL_AD = 'kimyamed | Kimya · YKS'
 PROFIL_BIO = """Medeni Gökalp ile kimya 🧪
@@ -114,11 +166,11 @@ ONE_CIKANLAR = [('gunun-sorusu', 'Günün Sorusu'), ('9-sinif', '9. Sınıf'), (
 
 HAFTALAR = [
     ('1. hafta · 16–21 Kasım', ['9 · Periyodik tabloda yer bulma', 'Reels · Evde asla karıştırma', 'Günün sorusu · İzoelektronik yarıçap',
-                                 '11 · Tepkime hızı tek grafikte', 'Reels · Polar bağ ≠ polar molekül', 'Merak · Kışın yollara neden tuz dökülür?']),
+                                 '11 · Tepkime hızı tek grafikte', 'Reels · Polar bağ ≠ polar molekül', 'Merak · Kışın yollara neden tuz dökülür?', 'Mini test · Haftanın 6 sorusu']),
     ('2. hafta · 23–28 Kasım', ['10 · Mol kavramı tek şemada', 'Reels · Buz neden suda yüzer?', 'Günün sorusu · Mol (TYT)',
-                                 '12 · Pil mi elektroliz mi? Anot-katot tuzağı', 'Reels · Ekzotermik mi endotermik mi?', 'Güncel · 2026 Nobel Kimya Ödülü']),
+                                 '12 · Pil mi elektroliz mi? Anot-katot tuzağı', 'Reels · Ekzotermik mi endotermik mi?', 'Güncel · 2026 Nobel Kimya Ödülü', 'Mini test · Haftanın soruları']),
     ('3. hafta · 30 Kasım–5 Aralık', ['9 · İyonik mi kovalent mi? 3 soruda karar', 'Reels · Tuz suda nasıl çözünür?', 'Günün sorusu · Denge (AYT)',
-                                       '11 · Le Chatelier: dengeyi bozunca', 'Reels · Katalizör dengeyi değiştirir mi?', 'Kültür · Aziz Sancar ve DNA onarımı']),
+                                       '11 · Le Chatelier: dengeyi bozunca', 'Reels · Katalizör dengeyi değiştirir mi?', 'Kültür · Aziz Sancar ve DNA onarımı', 'Mini test · Haftanın soruları']),
     ('4. hafta · 7–12 Aralık (yazılı haftası)', ['9 · 1. dönem yazılısı: 10 maddede tekrar', 'Reels · Yazılıda en çok puan kaybettiren 3 hata', 'Günün sorusu · Tepkime türleri',
-                                                  '10-11 · Yazılı tekrarı', 'Reels · Son gece nasıl tekrar yapılır?', 'Merak · Kek neden kabarır?']),
+                                                  '10-11 · Yazılı tekrarı', 'Reels · Son gece nasıl tekrar yapılır?', 'Merak · Kek neden kabarır?', 'Mini test · Yazılı provası']),
 ]

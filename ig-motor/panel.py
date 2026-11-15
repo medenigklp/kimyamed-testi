@@ -50,7 +50,7 @@ for gun, ogeler in gunler.items():
 
 baglantilar = ''.join(f'''<li><span class="ad">{e(a)}</span><code id="b-{i}">{e(u)}</code><button type="button" class="kopya kucuk" data-hedef="b-{i}">Kopyala</button></li>''' for i, (a, u) in enumerate(BAGLANTILAR))
 kapaklar = ''.join(f'<figure><img src="g/kapak-{d}.jpg" alt="{e(a)} kapağı" loading="lazy"><figcaption>{e(a)}</figcaption></figure>' for d, a in ONE_CIKANLAR)
-haftalar = ''.join(f'<div class="hafta{" su-an" if i == 0 else ""}"><h3>{e(b)}</h3><ol>' + ''.join(f'<li><span class="g">{g}</span>{e(m)}</li>' for g, m in zip(['Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'], ms)) + '</ol></div>' for i, (b, ms) in enumerate(HAFTALAR))
+haftalar = ''.join(f'<div class="hafta{" su-an" if i == 0 else ""}"><h3>{e(b)}</h3><ol>' + ''.join(f'<li><span class="g">{g}</span>{e(m)}</li>' for g, m in zip(['Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt', 'Paz'], ms)) + '</ol></div>' for i, (b, ms) in enumerate(HAFTALAR))
 planli = sum(1 for k in durum.values() if k == 'planlandi')
 ust_durum = (f'<span class="cip ok">{planli} paylaşım Metricool\'da planlandı</span>' if planli else
              '<span class="cip hazir">Metricool bağlanınca otomatik paylaşılacak</span>')
@@ -127,7 +127,7 @@ ul.nasil {{ margin:0; padding-left:20px; display:grid; gap:6px; }}
 </style>
 <div class="sar">
 <header>
-  <div class="marka"><img src="g/logo.png" alt=""><div><h1><span>kimyamed</span> Instagram</h1><p class="alt">1. hafta · 16–21 Kasım 2026 · gönderiler 18:00 (cumartesi 10:00), hikâyeler 12:00</p></div></div>
+  <div class="marka"><img src="g/logo.png" alt=""><div><h1><span>kimyamed</span> Instagram</h1><p class="alt">15–22 Kasım 2026 · her gün bir gönderi · hikâyeler 12:00 ve 21:00</p></div></div>
   <div>{ust_durum}</div>
   <nav><a href="#hafta">Bu hafta</a><a href="#profil">Profil</a><a href="#plan">4 haftalık plan</a><a href="#nasil">Nasıl çalışıyoruz</a></nav>
 </header>

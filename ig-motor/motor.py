@@ -146,15 +146,18 @@ def sayfa_html(slaytlar):
             '</style></head><body>' + ''.join(slaytlar) + '</body></html>')
 
 
+WA_IMZA = f'<span class="imza"><img src="{LOGO_ISARET}">Instagram\'da takip et: <b>@kimyamed</b></span>'
+
+
 def slayt(govde, seri_metni, seri='9', sayfa=None, toplam=None, kaydir=False, hikaye=False, koyu=False,
-          desen=True, hesap='', ek_sinif=''):
+          desen=True, hesap='', ek_sinif='', imza=None):
     vurgu = SERI_RENK.get(seri, RENK['mor'])
     acik = '#FEEEE4'
     isik = '#FDD3BC'
     stil = f'--vurgu:{vurgu};--acik:{acik};--isik:{isik};'
     sinif = 's' + (' hikaye' if hikaye else '') + (' koyu' if koyu else '') + (' ' + ek_sinif if ek_sinif else '')
     desen_svg = altigen_kume(renk='#FFFFFF' if koyu else '#F85300') if desen else ''
-    alt_sol = f'<span class="imza"><img src="{LOGO_ISARET}"><b>kimyamed</b> · kayıt yok · link profilde</span>'
+    alt_sol = imza if imza is not None else f'<span class="imza"><img src="{LOGO_ISARET}"><b>kimyamed</b> · kayıt yok · link profilde</span>'
     alt_sag = '<span class="kaydir">kaydır →</span>' if kaydir else (f'<span class="sayfa">{sayfa}/{toplam}</span>' if sayfa and toplam else '<span></span>')
     logo = f'<img class="isaret" src="{LOGO_ISARET}"><span class="marka">kimyamed</span>'
     return (f'<section class="{sinif}" style="{stil}">{desen_svg}'
