@@ -13,3 +13,7 @@ Kayıt eklemek için:
 ```
 
 Bu klasördeki kayıtlar herkese açıktır: siteyi açan herkes bu sesleri dinleyebilir ve indirebilir.
+
+# Doğal sesler (Google)
+
+`bulut.json` içindeki `adres` doluysa sesli anlatım Google'ın doğal Türkçe seslerini kullanır; boşsa cihazın kendi sesleri kullanılır. Ses servisi Ronya ile ortaktır: kurulumu ve kodu Ronya deposundaki `sesli/README.md` ve `sesli/ses-servisi.js` dosyalarında.
