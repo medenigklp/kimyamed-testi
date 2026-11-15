@@ -60,24 +60,30 @@ Peki BF₃? Cevabını yorumlara yaz, açıklaması yarın hikâyede.
 
 #kimya #9sınıfkimya #polarlık #molekül #tyt #yks #kimyamed"""
 
-P6 = """Kimyayı ücretsiz çalışabileceğin site: kimyamed 👇
+P6 = """Kışın yollara neden tuz dökülür? 🧂❄️
 
-🔸 9, 10 ve 11. sınıf Maarif modeli konu anlatımı
-🔸 2.400'den fazla çözümlü soru: önce kendin dene, sonra çözümü aç
-🔸 17 modülde 100 puanlık yazılı denemesi
+Tuz suda çözününce suyun donma noktası düşer. Böylece buz 0 °C'nin altında da eriyebilir.
 
-Ücretsiz, üyelik yok. Bağlantılar profilde.
+🔸 Yemek tuzu yaklaşık −10 °C'ye kadar işe yarar
+🔸 Daha soğukta kalsiyum klorür (CaCl₂) kullanılır
+🔸 Kum buzu eritmez, sadece kaymayı azaltır
 
-Bu hesapta her gün bir kimya içeriği var: pazartesi ve perşembe konu özeti, salı ve cuma Reels, çarşamba günün sorusu, cumartesi tuzak kartı ya da ücretsiz kaynak. Kaçırmamak için takip et 🔔
+Son slayttaki soruyu yorumlarda cevapla. Açıklaması yarın hikâyede.
+10. sınıf · Çözeltiler: donma noktası alçalması
 
-#kimya #yks #tyt #ayt #ücretsiz #kimyaöğretmeni #maarifmodeli #9sınıfkimya #10sınıfkimya #11sınıfkimya #kimyamed"""
+Her cumartesi bir kimya merakı. Kaçırmamak için takip et 🔔
 
-# Ronya şimdilik paylaşılmıyor (kullanıcının isteği): hiçbir gönderide, açıklamada ya da profil bağlantısında yer almaz.
-P6_ALT = ["Kapak: Kimyayı ücretsiz çalış. Konu anlatımı ve 2.400'den fazla çözümlü soru. kimyamed sitesinden üç telefon ekranı.",
-          "Konu anlatımı: her konu şekil ve grafikle. 9. sınıfta 9, 10 ve 11. sınıfta 6'şar modül, 270 şekil ve grafik.",
-          "Çözümlü sorular: 2.400'den fazla çözümlü soru, çözümler gizli. 9. sınıf 916, 10. sınıf 584, 11. sınıf 904.",
-          "Yazılıya prova: 17 modülde 100 puanlık yazılı denemesi, çözümlerde puanlama notu.",
-          "Bu hesapta her gün bir kimya içeriği: haftalık paylaşım düzeni."]
+#kimya #kimyahayattır #merakedilenler #kış #tuz #donmanoktası #10sınıfkimya #çözeltiler #bilim #kimyamed"""
+
+# Cumartesi genel kimya günü: merak edilenler, güncel ve kültürel konular (kullanıcının isteği).
+# Ronya şimdilik paylaşılmıyor: hiçbir gönderide, açıklamada ya da profil bağlantısında yer almaz.
+P6_ALT = ["Kapak: Kışın yollara neden tuz dökülür? Hava eksi 5 derecede saf su dolu beher donmuş, tuzlu su dolu beher sıvı.",
+          "Tuzlu su 0 derecede donmaz. Termometre: saf su 0 derecede donar, yemek tuzu yaklaşık eksi 10, kalsiyum klorür yaklaşık eksi 30 dereceye kadar işe yarar.",
+          "Tanecik düzeyinde: saf su donarken moleküller düzenli dizilir; tuzlu suda sodyum ve klorür iyonları araya girer, buz kristali kurulamaz.",
+          "NaCl suda 2 iyon, CaCl2 3 iyon verir. Çözünen tanecik sayısı arttıkça donma noktası daha çok düşer. CaCl2 çözünürken ısı açığa çıkarır.",
+          "Tuzun bedeli: paslanmayı hızlandırır, toprağa ve bitkilere zarar verir. Kum buzu eritmez, yalnızca kaymayı azaltır.",
+          "Sıra sende: eşit mol sayısında NaCl ve CaCl2 1'er kg suda çözülüyor; hangisi donma noktasını daha çok düşürür?"]
+PAZ_ALT = "Dünkü sorunun cevabı CaCl2: 1 mol CaCl2 suda 3 mol, 1 mol NaCl 2 mol iyon verir; tanecik sayısı arttıkça donma noktası daha çok düşer."
 
 # (anahtar, gün etiketi, tarih-saat, tür, başlık, medya listesi, kapak, açıklama)
 PLAN = [
@@ -90,28 +96,29 @@ PLAN = [
     ('cum-h', 'Cuma 20 Kasım', '2026-11-20T12:00:00', 'STORY', 'Hikâye: sıcaklık düşerse', ['cum-hikaye.jpg'], None, ''),
     ('cum', 'Cuma 20 Kasım', '2026-11-20T18:00:00', 'REEL', 'Reels: Polar bağ ≠ polar molekül', ['cum-reels.mp4'], 'cum-kapak.jpg', P5),
     ('cmt-h', 'Cumartesi 21 Kasım', '2026-11-21T12:00:00', 'STORY', 'Hikâye: BF₃ cevabı', ['cmt-hikaye.jpg'], None, ''),
-    ('cmt', 'Cumartesi 21 Kasım', '2026-11-21T10:00:00', 'POST', 'Ücretsiz kaynak: kimyamed ve haftalık düzen', [f'cmt2-{i}.jpg' for i in range(1, 6)], None, P6),
+    ('cmt', 'Cumartesi 21 Kasım', '2026-11-21T10:00:00', 'POST', 'Merak: Kışın yollara neden tuz dökülür?', [f'cmt3-{i}.jpg' for i in range(1, 7)], None, P6),
+    ('paz-h', 'Pazar 22 Kasım', '2026-11-22T12:00:00', 'STORY', 'Hikâye: NaCl mi CaCl₂ mi? cevabı', ['paz-hikaye.jpg'], None, ''),
 ]
 
 PROFIL_AD = 'kimyamed | Kimya · YKS'
-PROFIL_BIO = """Medeni Gökalp ile lise kimyası 🧪
-9-12. sınıf · TYT-AYT
-Her gün: konu özeti • günün sorusu • Reels
-Ücretsiz konu anlatımı ve testler 👇"""
+PROFIL_BIO = """Medeni Gökalp ile kimya 🧪
+Konu özeti • günün sorusu • Reels
+Merak edilenler • güncel • kültür
+9-12. sınıf · TYT-AYT 👇"""
 BAGLANTILAR = [
     ('kimyamed konu anlatımı', 'https://medenigklp.github.io/kimyamed-testi/konu/'),
     ('kimyamed testler', 'https://medenigklp.github.io/kimyamed-testi/'),
 ]
 ONE_CIKANLAR = [('gunun-sorusu', 'Günün Sorusu'), ('9-sinif', '9. Sınıf'), ('10-sinif', '10. Sınıf'), ('11-sinif', '11. Sınıf'),
-                ('12-sinif', '12. Sınıf'), ('yks', 'YKS'), ('araclar', 'Araçlar')]
+                ('12-sinif', '12. Sınıf'), ('yks', 'YKS'), ('araclar', 'Merak')]
 
 HAFTALAR = [
     ('1. hafta · 16–21 Kasım', ['9 · Periyodik tabloda yer bulma', 'Reels · Evde asla karıştırma', 'Günün sorusu · İzoelektronik yarıçap',
-                                 '11 · Tepkime hızı tek grafikte', 'Reels · Polar bağ ≠ polar molekül', 'Ücretsiz kaynak · kimyamed']),
+                                 '11 · Tepkime hızı tek grafikte', 'Reels · Polar bağ ≠ polar molekül', 'Merak · Kışın yollara neden tuz dökülür?']),
     ('2. hafta · 23–28 Kasım', ['10 · Mol kavramı tek şemada', 'Reels · Buz neden suda yüzer?', 'Günün sorusu · Mol (TYT)',
-                                 '12 · Pil mi elektroliz mi? Anot-katot tuzağı', 'Reels · Ekzotermik mi endotermik mi?', 'Tuzak kartı · İzoelektronik ≠ aynı']),
+                                 '12 · Pil mi elektroliz mi? Anot-katot tuzağı', 'Reels · Ekzotermik mi endotermik mi?', 'Güncel · 2026 Nobel Kimya Ödülü']),
     ('3. hafta · 30 Kasım–5 Aralık', ['9 · İyonik mi kovalent mi? 3 soruda karar', 'Reels · Tuz suda nasıl çözünür?', 'Günün sorusu · Denge (AYT)',
-                                       '11 · Le Chatelier: dengeyi bozunca', 'Reels · Katalizör dengeyi değiştirir mi?', 'Tuzak kartı · Denge ifadesine katı ve sıvı yazılmaz']),
+                                       '11 · Le Chatelier: dengeyi bozunca', 'Reels · Katalizör dengeyi değiştirir mi?', 'Kültür · Aziz Sancar ve DNA onarımı']),
     ('4. hafta · 7–12 Aralık (yazılı haftası)', ['9 · 1. dönem yazılısı: 10 maddede tekrar', 'Reels · Yazılıda en çok puan kaybettiren 3 hata', 'Günün sorusu · Tepkime türleri',
-                                                  '10-11 · Yazılı tekrarı', 'Reels · Son gece nasıl tekrar yapılır?', 'kimyamed yazılı denemeleri']),
+                                                  '10-11 · Yazılı tekrarı', 'Reels · Son gece nasıl tekrar yapılır?', 'Merak · Kek neden kabarır?']),
 ]

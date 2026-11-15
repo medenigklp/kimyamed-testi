@@ -58,7 +58,21 @@ cumartesi = slayt(f'''
 </ul>
 ''', 'CEVAP', '9', hikaye=True)
 
+pazar = slayt(f'''
+<div class="ust-not" style="margin-top:10px">DÜNKÜ SORU · 10. SINIF</div>
+<h2 style="font-size:76px">Cevap: CaCl<sub>2</sub></h2>
+<div class="kutu" style="margin-top:20px"><div class="formul" style="font-size:52px">1 mol NaCl → <b>2 mol</b> iyon</div>
+<p class="kucuk" style="margin-top:8px">Na<sup>+</sup> ve Cl<sup>−</sup></p></div>
+<div class="kutu" style="margin-top:26px"><div class="formul" style="font-size:52px">1 mol CaCl<sub>2</sub> → <b>3 mol</b> iyon</div>
+<p class="kucuk" style="margin-top:8px">Ca<sup>2+</sup> ve 2 tane Cl<sup>−</sup></p></div>
+<div class="tuzak" style="margin-top:34px"><p>Suda çözünen tanecik sayısı arttıkça donma noktası <b>daha çok düşer</b>. Eşit molde CaCl<sub>2</sub> daha çok tanecik verir.</p></div>
+<p class="alta ortala" style="font-weight:700; color:#F85300">Doğru bilenler, tebrikler!</p>
+''', 'CEVAP', 'merak', hikaye=True)
+
 if __name__ == '__main__':
-    for ad, sl, kl in [('sal-hikaye', sali, 'h1-2-sal'), ('cum-hikaye', cuma, 'h1-5-cum'), ('cmt-hikaye', cumartesi, 'h1-6-cmt')]:
+    secim = sys.argv[1:]  # boşsa hepsi; ör. python3 hikayeler_h1.py paz-hikaye
+    for ad, sl, kl in [('sal-hikaye', sali, 'h1-2-sal'), ('cum-hikaye', cuma, 'h1-5-cum'), ('cmt-hikaye', cumartesi, 'h1-6-cmt'), ('paz-hikaye', pazar, 'h1-7-paz')]:
+        if secim and ad not in secim:
+            continue
         yollar, tasma = bas([sl], os.path.join(KOK, kl), ad)
         print(ad, 'taşma:', tasma or 'yok')
