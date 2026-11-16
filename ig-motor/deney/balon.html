@@ -1,0 +1,205 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<title>Deney Köşesi · Balon</title>
+<style>
+  html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #F4EBE2; }
+  canvas { display: block; position: absolute; left: 0; top: 0; }
+  #kat { position: absolute; inset: 0; pointer-events: none; font-family: Poppins, Inter, sans-serif; color: #14110F; }
+  .ust { position: absolute; left: 70px; right: 70px; top: 110px; display: flex; align-items: center; gap: 16px; }
+  .ust .ad { font: 800 34px Poppins; }
+  .ust .ad span { color: #F85300; }
+  .ust .etiket { margin-left: auto; font: 700 22px Inter; letter-spacing: .14em; color: #7A726B; padding: 8px 16px; border: 2px solid rgba(20,17,15,.14); border-radius: 999px; background: rgba(255,255,255,.7); }
+  .blok { position: absolute; left: 84px; right: 84px; top: 235px; opacity: 0; }
+  .blok small { display: block; font: 700 26px Inter; letter-spacing: .14em; color: #F85300; margin-bottom: 10px; }
+  .blok .b { font: 800 76px/1.08 Poppins; letter-spacing: -.02em; text-wrap: balance; }
+  .blok .b em, .blok .o em { font-style: normal; color: #F85300; }
+  .blok .o { font: 700 38px/1.3 Poppins; margin-top: 16px; color: #3A332E; text-wrap: balance; }
+  .cip { position: absolute; transform: translate(-50%, 0); opacity: 0; padding: 12px 22px; border-radius: 999px; background: #fff; border: 3px solid; font: 800 30px Poppins; white-space: nowrap; box-shadow: 0 8px 22px rgba(20,17,15,.10); }
+  .cip span { display: block; font: 700 22px Inter; color: #7A726B; text-align: center; margin-top: 2px; }
+  #ph { position: absolute; left: 84px; right: 84px; top: 560px; opacity: 0; }
+  #ph .bar { position: relative; height: 46px; border-radius: 999px; background: linear-gradient(90deg, #D7263D 0%, #E84A8A 18%, #8E44AD 42%, #3E6FD8 58%, #1FA5A0 72%, #3BB54A 86%, #E6C229 100%); box-shadow: inset 0 0 0 3px rgba(255,255,255,.6), 0 8px 22px rgba(20,17,15,.12); }
+  #ph .eksen { display: flex; justify-content: space-between; font: 700 26px Inter; color: #7A726B; margin-top: 10px; }
+  #ph .eksen b { color: #14110F; }
+  #ph .ad { position: absolute; top: -58px; transform: translateX(-50%); font: 800 26px Poppins; white-space: nowrap; }
+  #ph .isaret { position: absolute; top: -18px; width: 0; height: 0; border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 18px solid #14110F; transform: translateX(-50%); }
+  .filigran { position: absolute; left: 0; right: 0; top: 1450px; display: flex; justify-content: center; }
+  .filigran div { display: inline-flex; align-items: center; gap: 12px; padding: 8px 22px 8px 8px; border-radius: 999px; background: rgba(255,255,255,.88); border: 2px solid rgba(20,17,15,.10); box-shadow: 0 6px 18px rgba(20,17,15,.06); }
+  .filigran img { width: 48px; height: 48px; border-radius: 50%; background: #fff; }
+  .filigran span { font: 600 28px Inter; color: #7A726B; }
+  .filigran b { font: 800 30px Poppins; color: #F85300; }
+  #denk { position: absolute; left: 60px; right: 60px; top: 1330px; opacity: 0; text-align: center; }
+  #denk div { display: inline-block; padding: 16px 26px; border-radius: 22px; background: #fff; border: 2px solid rgba(20,17,15,.12); box-shadow: 0 8px 22px rgba(20,17,15,.08); font: 800 34px Poppins; white-space: nowrap; }
+  #denk b { color: #F85300; }
+  .guvenlik { position: absolute; left: 84px; right: 84px; top: 1360px; text-align: center; font: 600 26px Inter; color: #7A726B; opacity: 0; }
+</style>
+<script type="importmap">{"imports":{"three":"./three/build/three.module.js","three/addons/":"./three/examples/jsm/"}}</script>
+</head><body>
+<div id="kat">
+  <div class="ust">
+    <svg width="60" height="66" viewBox="0 0 60 66"><polygon points="30,3 57,18 57,48 30,63 3,48 3,18" fill="#F85300"/>
+      <path d="M24,18 h12 M27,18 v12 l-8,16 a4,4 0 0 0 4,6 h14 a4,4 0 0 0 4,-6 l-8,-16 v-12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="ad">Deney <span>Köşesi</span></div>
+    <div class="etiket">CANLANDIRMA</div>
+  </div>
+  <div class="blok" id="b0"><small>BALON DENEYİ</small><div class="b" style="font-size:70px">Balonu üflemeden <em>şişirebilir</em> misin?</div><div class="o">Tek gereken: sirke ve karbonat.</div></div>
+  <div class="blok" id="b1"><small>HAZIRLIK</small><div class="b" style="font-size:64px">Şişede sirke, balonda karbonat</div><div class="o">Balonu şişenin ağzına geçirdik.</div></div>
+  <div class="blok" id="b2"><small>1. ADIM</small><div class="b">Balonu kaldır!</div><div class="o">Karbonat sirkeye dökülsün.</div></div>
+  <div class="blok" id="b3"><small>2. ADIM</small><div class="b" style="font-size:66px">Köpürüyor, balon <em>şişiyor!</em></div><div class="o">İçeride bir gaz oluşuyor.</div></div>
+  <div class="blok" id="b4"><small>NEDEN?</small><div class="b" style="font-size:56px">Sirke ile karbonat tepkimeye girer, <em>karbondioksit</em> gazı çıkar.</div></div>
+  <div class="blok" id="b5"><small>SIRA SENDE</small><div class="b" style="font-size:64px">Karbonatı iki katına çıkarsak ne olur?</div><div class="o">Cevabını <em>yorumlara</em> yaz!</div><div style="font:600 26px Inter; color:#7A726B; margin-top:14px">Balonun ağzını yüzüne doğru tutma, karışımı içme.</div></div>
+  <div id="denk"><div>NaHCO<sub>3</sub> + CH<sub>3</sub>COOH → CH<sub>3</sub>COONa + H<sub>2</sub>O + <b>CO<sub>2</sub>↑</b></div></div>
+  <div class="cip" id="c0" style="border-color:#C9A227">Sirke<span>asetik asit</span></div>
+  <div class="cip" id="c1" style="border-color:#7A726B">Karbonat<span>sodyum bikarbonat</span></div>
+  <div class="cip" id="c2" style="border-color:#F85300">CO<sub>2</sub> gazı<span>balonu şişiren gaz</span></div>
+  <div class="filigran"><div><img src="logo.png"><span>Instagram'da</span><b>@kimyamed</b></div></div>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+const W = 1080, H = 1920;
+const Q_ = new URLSearchParams(location.search);
+const OLCEK = parseFloat(Q_.get('olcek') || '0.75'), AA = Q_.get('aa') !== '0';
+const r = new THREE.WebGLRenderer({ antialias: AA, preserveDrawingBuffer: true });
+r.setPixelRatio(1); r.setSize(Math.round(W * OLCEK), Math.round(H * OLCEK), false);
+r.domElement.style.width = W + 'px'; r.domElement.style.height = H + 'px';
+r.toneMapping = THREE.NeutralToneMapping; r.toneMappingExposure = 0.95; r.outputColorSpace = THREE.SRGBColorSpace;
+document.body.insertBefore(r.domElement, document.body.firstChild);
+const sc = new THREE.Scene(); sc.background = new THREE.Color('#F4EBE2');
+const pm = new THREE.PMREMGenerator(r); sc.environment = pm.fromScene(new RoomEnvironment(), 0.03).texture;
+const fonP = []; for (let i = 0; i <= 40; i++) { const a = i / 40, R = 6; let y, z; if (a < 0.5) { z = 40 - 80 * a; y = 0; } else { const q = (a - 0.5) / 0.5 * Math.PI / 2; z = -R * Math.sin(q); y = R - R * Math.cos(q); } fonP.push([z, y]); }
+fonP.push([-6, 30]);
+const fonG = new THREE.PlaneGeometry(60, 1, 1, fonP.length - 1); const fp = fonG.attributes.position;
+for (let j = 0; j < fonP.length; j++) for (let i = 0; i < 2; i++) fp.setXYZ(j * 2 + i, i ? 30 : -30, fonP[j][1], fonP[j][0] - 2);
+fonG.computeVertexNormals();
+sc.add(new THREE.Mesh(fonG, new THREE.MeshStandardMaterial({ color: '#F7ECE1', roughness: 0.9, side: THREE.DoubleSide })));
+const cam = new THREE.PerspectiveCamera(26, W / H, 0.1, 200);
+const isik = new THREE.DirectionalLight('#fff1e2', 3.2); isik.position.set(5, 9, 7); sc.add(isik);
+sc.add(new THREE.HemisphereLight('#ffffff', '#f1e2d4', 0.9));
+const dolgu = new THREE.DirectionalLight('#ffffff', 0.6); dolgu.position.set(-6, 4, 6); sc.add(dolgu);
+const lathe = (p, n = 128) => new THREE.LatheGeometry(p.map(([x, y]) => new THREE.Vector2(x, y)), n);
+const golgeDoku = (() => { const cv = document.createElement('canvas'); cv.width = cv.height = 256; const cx = cv.getContext('2d'); const g = cx.createRadialGradient(128, 128, 10, 128, 128, 128); g.addColorStop(0, 'rgba(60,40,25,.55)'); g.addColorStop(0.55, 'rgba(60,40,25,.18)'); g.addColorStop(1, 'rgba(60,40,25,0)'); cx.fillStyle = g; cx.fillRect(0, 0, 256, 256); return new THREE.CanvasTexture(cv); })();
+
+// erlenmayer
+const camM = new THREE.MeshPhysicalMaterial({ color: '#ffffff', metalness: 0, roughness: 0.02, transparent: true, opacity: 0.14, clearcoat: 1, clearcoatRoughness: 0.03, envMapIntensity: 2.4, depthWrite: false, side: THREE.DoubleSide });
+const DIS = [[0, 0], [0.95, 0], [1.0, 0.05], [1.0, 0.12], [0.36, 1.75], [0.34, 2.35], [0.385, 2.42]];
+const sise = new THREE.Mesh(lathe(DIS), camM); sise.renderOrder = 5; sc.add(sise);
+const icYar = (y) => y <= 0.12 ? 0.94 : y <= 1.75 ? 1.0 - (y - 0.12) * (0.64 / 1.63) - 0.045 : 0.36 - (y - 1.75) * (0.02 / 0.6) - 0.045;
+const golge = new THREE.Mesh(new THREE.PlaneGeometry(3.0, 1.8), new THREE.MeshBasicMaterial({ map: golgeDoku, transparent: true, depthWrite: false })); golge.rotation.x = -Math.PI / 2; golge.position.set(0.25, 0.003, 0.15); sc.add(golge);
+for (let k = 1; k <= 3; k++) { const m = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.012, 0.01), new THREE.MeshBasicMaterial({ color: '#9aa3ab', transparent: true, opacity: 0.6 })); const y = 0.3 * k; m.position.set(-0.25, y, icYar(y) + 0.05); m.rotation.x = -0.37; sc.add(m); }
+// sirke (açık sarı, saydam)
+const SEV = 0.9;
+const sirke = new THREE.Mesh(lathe([[0, 0.05], [0.93, 0.05], [0.94, 0.12], [icYar(SEV) - 0.005, SEV], [0, SEV]]), new THREE.MeshPhysicalMaterial({ color: '#EBCF7A', transparent: true, opacity: 0.42, roughness: 0.05, clearcoat: 1, envMapIntensity: 1.2, depthWrite: false }));
+sirke.renderOrder = 1; sc.add(sirke);
+// köpük
+const kopukM = new THREE.MeshStandardMaterial({ color: '#FFFFFF', roughness: 0.5, envMapIntensity: 0.9 });
+const kopuk = new THREE.Mesh(new THREE.BufferGeometry(), kopukM); kopuk.renderOrder = 3; sc.add(kopuk);
+let kopukUst = -1;
+function kopukKur(y1) {
+  if (Math.abs(y1 - kopukUst) < 0.002) return; kopukUst = y1;
+  kopuk.visible = y1 > SEV + 0.01; if (!kopuk.visible) return;
+  const y0 = SEV - 0.04, p = [[0, y0]];
+  for (let i = 0; i <= 14; i++) { const y = y0 + (y1 - y0) * i / 14; p.push([icYar(y) - 0.01, y]); }
+  const ry = icYar(y1) - 0.01; p.push([ry * 0.85, y1 + 0.05], [ry * 0.5, y1 + 0.085], [0, y1 + 0.095]);
+  kopuk.geometry.dispose(); kopuk.geometry = lathe(p, 96);
+}
+const KK = 260, kopukKab = new THREE.InstancedMesh(new THREE.SphereGeometry(1, 14, 10), new THREE.MeshPhysicalMaterial({ color: '#EFE9E0', roughness: 0.18, clearcoat: 1, envMapIntensity: 1.6 }), KK); kopukKab.frustumCulled = false; kopukKab.renderOrder = 4; sc.add(kopukKab);
+
+// balon
+const BAL = [[0.16, 0], [0.26, 0.1], [0.58, 0.42], [0.84, 0.82], [0.95, 1.24], [0.9, 1.62], [0.66, 1.94], [0.34, 2.08], [0, 2.11]];
+const balM = new THREE.MeshPhysicalMaterial({ color: '#C2361C', roughness: 0.32, clearcoat: 0.8, clearcoatRoughness: 0.15, sheen: 0.4, sheenColor: new THREE.Color('#ffd2c2'), envMapIntensity: 1.0 });
+const halka = new THREE.Mesh(new THREE.TorusGeometry(0.39, 0.05, 14, 72), balM); halka.rotation.x = Math.PI / 2; halka.position.y = 2.42; sc.add(halka);
+const boyun = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.39, 0.26, 48, 1, true), balM); boyun.position.y = 2.55; sc.add(boyun);
+const govdeG = new THREE.Group(); govdeG.position.y = 2.66; sc.add(govdeG);
+const govde = new THREE.Mesh(lathe(BAL, 96), balM); govdeG.add(govde);
+// karbonat taneleri
+const TANE = 160, taneler = new THREE.InstancedMesh(new THREE.SphereGeometry(0.042, 8, 6), new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.55 }), TANE); taneler.frustumCulled = false; taneler.renderOrder = 2; sc.add(taneler);
+// gaz kabarcıkları
+const KAB = 80, kab = new THREE.InstancedMesh(new THREE.SphereGeometry(1, 12, 8), new THREE.MeshPhysicalMaterial({ color: '#ffffff', transparent: true, opacity: 0.7, roughness: 0, clearcoat: 1, envMapIntensity: 2, depthWrite: false }), KAB); kab.frustumCulled = false; kab.renderOrder = 2; sc.add(kab);
+const rnd = (() => { let s = 13; return () => (s = (s * 16807) % 2147483647) / 2147483647; })();
+const taneV = [...Array(TANE)].map(() => ({ dx: (rnd() - 0.5) * 0.22, dz: (rnd() - 0.5) * 0.16, d: rnd() * 1.0 }));
+const kabV = [...Array(KAB)].map(() => ({ a: rnd() * 6.283, u: rnd(), r: 0.018 + rnd() * 0.03, d: rnd() * 6.0, s: 0.7 + rnd() * 0.7 }));
+const kkV = [...Array(KK)].map((_, i) => ({ yan: i < 190, a: i < 190 ? (rnd() - 0.5) * 3.6 + Math.PI / 2 : rnd() * 6.283, u: rnd(), r: 0.03 + rnd() * 0.055 }));
+
+const SON = 26.5;
+const yum = (x) => x <= 0 ? 0 : x >= 1 ? 1 : x * x * (3 - 2 * x);
+const ara = (t, a, b) => yum((t - a) / (b - a));
+const cikis = (x) => 1 - Math.pow(1 - Math.min(Math.max(x, 0), 1), 2.2);
+const M = new THREE.Matrix4(), Qn = new THREE.Quaternion(), V = new THREE.Vector3(), S = new THREE.Vector3();
+const C0 = new THREE.Color('#B8301A'), C1 = new THREE.Color('#F2643F');
+const gizle = () => M.compose(V.set(0, -50, 0), Qn.identity(), S.set(0.001, 0.001, 0.001));
+let sonImza = null;
+
+window.kare = (t) => {
+  cam.position.set(0, 2.9, 25); cam.lookAt(0, 2.33, 0);
+  // balonu kaldır ve şişir
+  const kalk = ara(t, 6.9, 7.7), sis = cikis((t - 8.3) / 6.7);
+  govdeG.rotation.z = -2.55 * (1 - kalk);
+  const sx = 0.24 + (1.0 - 0.24) * sis, sy = 0.5 + (1.0 - 0.5) * sis;
+  govdeG.scale.set(sx, sy, sx);
+  balM.color.copy(C0).lerp(C1, sis);
+  // tanecikler
+  for (let k = 0; k < TANE; k++) {
+    const v = taneV[k], dt = t - (7.3 + v.d);
+    if (dt > 0) { const y = 2.6 - 4.9 * dt * dt; if (y > SEV) { M.compose(V.set(v.dx, y, v.dz), Qn.identity(), S.set(1, 1, 1)); taneler.setMatrixAt(k, M); continue; } }
+    gizle(); taneler.setMatrixAt(k, M);
+  }
+  taneler.instanceMatrix.needsUpdate = true;
+  // köpük
+  const ust = SEV + 1.05 * ara(t, 8.1, 10.8) - 0.65 * ara(t, 10.8, 15.0);
+  kopukKur(ust);
+  for (let k = 0; k < KK; k++) {
+    const v = kkV[k];
+    if (ust > SEV + 0.02) {
+      const sc_ = v.r * Math.min(1, (ust - SEV) * 6);
+      if (v.yan) { const y = SEV + (ust - SEV) * v.u, ry = icYar(y) - 0.035; M.compose(V.set(ry * Math.cos(v.a), y, ry * Math.sin(v.a)), Qn.identity(), S.set(sc_, sc_, sc_)); }
+      else { const ry = (icYar(ust) - 0.05) * Math.sqrt(v.u); M.compose(V.set(ry * Math.cos(v.a), ust + 0.07 - 0.05 * v.u, ry * Math.sin(v.a)), Qn.identity(), S.set(sc_, sc_, sc_)); }
+    } else gizle();
+    kopukKab.setMatrixAt(k, M);
+  }
+  kopukKab.instanceMatrix.needsUpdate = true;
+  // gaz kabarcıkları (sıvıda yükselir)
+  for (let k = 0; k < KAB; k++) {
+    const v = kabV[k], t0 = 7.9 + v.d, sure = 1.1 * v.s, dt = t - t0;
+    if (t0 < 14.2 && dt > 0 && dt < sure) {
+      const y = 0.12 + (SEV - 0.16) * (dt / sure), ry = (icYar(y) - 0.08) * v.u, sc_ = v.r * (1 - ara(dt, sure - 0.2, sure));
+      M.compose(V.set(ry * Math.cos(v.a), y, ry * Math.sin(v.a)), Qn.identity(), S.set(sc_, sc_, sc_));
+    } else gizle();
+    kab.setMatrixAt(k, M);
+  }
+  kab.instanceMatrix.needsUpdate = true;
+  const aktif = t >= 6.8 && t <= 15.2;
+  const imza = aktif ? 'a' + t : 'sabit' + (t > 15.2 ? 1 : 0);
+  if (imza !== sonImza) { r.render(sc, cam); sonImza = imza; }
+  katman(t);
+  return true;
+};
+const op = (t, a, b, f = 0.3) => Math.min(ara(t, a, a + f), 1 - ara(t, b - f, b));
+const $ = (id) => document.getElementById(id);
+const P2 = new THREE.Vector3();
+function cip(id, x, y, z, a, b) {
+  const e = $(id); P2.set(x, y, z).project(cam);
+  e.style.left = ((P2.x + 1) / 2 * W) + 'px'; e.style.top = ((1 - P2.y) / 2 * H) + 'px';
+  const o = op(t_, a, b); e.style.opacity = o; e.style.transform = `translate(-50%, ${(1 - ara(t_, a, a + 0.35)) * 18}px) scale(${0.9 + 0.1 * ara(t_, a, a + 0.35)})`;
+}
+let t_ = 0;
+function katman(t) {
+  t_ = t;
+  const bl = [['b0', -1, 3.2], ['b1', 3.2, 6.7], ['b2', 6.7, 9.6], ['b3', 9.6, 15.6], ['b4', 15.6, 21.6], ['b5', 21.6, SON + 1]];
+  for (const [id, a, b] of bl) { const e = $(id); e.style.opacity = op(t, a, b); e.style.transform = `translateY(${(1 - ara(t, a, a + 0.35)) * 24}px)`; }
+  cip('c0', -1.55, 0.55, 0, 3.6, 15.6);
+  cip('c1', 1.75, 2.0, 0, 4.2, 9.6);
+  cip('c2', 1.95, 3.9, 0, 13.6, 21.6);
+  const d = op(t, 16.2, 21.6); $('denk').style.opacity = d; $('denk').style.transform = `translateY(${(1 - ara(t, 16.2, 16.55)) * 20}px)`;
+}
+window.kapak = () => {
+  window.kare(16.0);
+  ['b1', 'b2', 'b3', 'b4', 'b5'].forEach((id) => $(id).style.opacity = 0); $('denk').style.opacity = 0;
+  const b0 = $('b0'); b0.style.opacity = 1; b0.style.transform = 'none';
+  ['c0', 'c1'].forEach((id) => $(id).style.opacity = 0);
+  const c2 = $('c2'); c2.style.opacity = 1; c2.style.transform = 'translate(-50%, 0)';
+  return true;
+};
+window.SURE = SON;
+await document.fonts.ready;
+window.kare(0);
+window.HAZIR = true;
+</script></body></html>
