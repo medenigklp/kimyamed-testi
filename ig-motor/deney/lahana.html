@@ -1,0 +1,261 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<title>Deney Köşesi · Kırmızı lahana</title>
+<style>
+  html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #F4EBE2; }
+  canvas { display: block; position: absolute; left: 0; top: 0; }
+  #kat { position: absolute; inset: 0; pointer-events: none; font-family: Poppins, Inter, sans-serif; color: #14110F; }
+  .ust { position: absolute; left: 70px; right: 70px; top: 110px; display: flex; align-items: center; gap: 16px; }
+  .ust .ad { font: 800 34px Poppins; }
+  .ust .ad span { color: #F85300; }
+  .ust .etiket { margin-left: auto; font: 700 22px Inter; letter-spacing: .14em; color: #7A726B; padding: 8px 16px; border: 2px solid rgba(20,17,15,.14); border-radius: 999px; background: rgba(255,255,255,.7); }
+  .blok { position: absolute; left: 84px; right: 84px; top: 235px; opacity: 0; }
+  .blok small { display: block; font: 700 26px Inter; letter-spacing: .14em; color: #F85300; margin-bottom: 10px; }
+  .blok .b { font: 800 76px/1.08 Poppins; letter-spacing: -.02em; text-wrap: balance; }
+  .blok .b em, .blok .o em { font-style: normal; color: #F85300; }
+  .blok .o { font: 700 38px/1.3 Poppins; margin-top: 16px; color: #3A332E; text-wrap: balance; }
+  .cip { position: absolute; transform: translate(-50%, 0); opacity: 0; padding: 12px 22px; border-radius: 999px; background: #fff; border: 3px solid; font: 800 30px Poppins; white-space: nowrap; box-shadow: 0 8px 22px rgba(20,17,15,.10); }
+  .cip span { display: block; font: 700 22px Inter; color: #7A726B; text-align: center; margin-top: 2px; }
+  #ph { position: absolute; left: 84px; right: 84px; top: 560px; opacity: 0; }
+  #ph .bar { position: relative; height: 46px; border-radius: 999px; background: linear-gradient(90deg, #D7263D 0%, #E84A8A 18%, #8E44AD 42%, #3E6FD8 58%, #1FA5A0 72%, #3BB54A 86%, #E6C229 100%); box-shadow: inset 0 0 0 3px rgba(255,255,255,.6), 0 8px 22px rgba(20,17,15,.12); }
+  #ph .eksen { display: flex; justify-content: space-between; font: 700 26px Inter; color: #7A726B; margin-top: 10px; }
+  #ph .eksen b { color: #14110F; }
+  #ph .ad { position: absolute; top: -58px; transform: translateX(-50%); font: 800 26px Poppins; white-space: nowrap; }
+  #ph .isaret { position: absolute; top: -18px; width: 0; height: 0; border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 18px solid #14110F; transform: translateX(-50%); }
+  .filigran { position: absolute; left: 0; right: 0; top: 1450px; display: flex; justify-content: center; }
+  .filigran div { display: inline-flex; align-items: center; gap: 12px; padding: 8px 22px 8px 8px; border-radius: 999px; background: rgba(255,255,255,.88); border: 2px solid rgba(20,17,15,.10); box-shadow: 0 6px 18px rgba(20,17,15,.06); }
+  .filigran img { width: 48px; height: 48px; border-radius: 50%; background: #fff; }
+  .filigran span { font: 600 28px Inter; color: #7A726B; }
+  .filigran b { font: 800 30px Poppins; color: #F85300; }
+  .guvenlik { position: absolute; left: 84px; right: 84px; top: 1360px; text-align: center; font: 600 26px Inter; color: #7A726B; opacity: 0; }
+</style>
+<script type="importmap">{"imports":{"three":"./three/build/three.module.js","three/addons/":"./three/examples/jsm/"}}</script>
+</head><body>
+<div id="kat">
+  <div class="ust">
+    <svg width="60" height="66" viewBox="0 0 60 66"><polygon points="30,3 57,18 57,48 30,63 3,48 3,18" fill="#F85300"/>
+      <path d="M24,18 h12 M27,18 v12 l-8,16 a4,4 0 0 0 4,6 h14 a4,4 0 0 0 4,-6 l-8,-16 v-12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="ad">Deney <span>Köşesi</span></div>
+    <div class="etiket">CANLANDIRMA</div>
+  </div>
+  <div class="blok" id="b0"><small>KIRMIZI LAHANA DENEYİ</small><div class="b">Tek sıvı, <em>üç renk!</em></div><div class="o">Üç bardakta aynı mor lahana suyu var.</div></div>
+  <div class="blok" id="b1"><small>1. BARDAK</small><div class="b">Sirke ekleyelim</div><div class="o">Sirke bir <em>asit</em>.</div></div>
+  <div class="blok" id="b2"><small>2. BARDAK</small><div class="b">Su ekleyelim</div><div class="o">Su <em>nötr</em>.</div></div>
+  <div class="blok" id="b3"><small>3. BARDAK</small><div class="b">Karbonat ekleyelim</div><div class="o">Karbonatlı su bir <em>baz</em>.</div></div>
+  <div class="blok" id="b4"><small>NEDEN?</small><div class="b" style="font-size:62px">Lahanadaki <em>antosiyanin</em> pH'a göre renk değiştirir.</div></div>
+  <div id="ph"><div class="bar"><i class="isaret" style="left:15%"></i><i class="isaret" style="left:46%"></i><i class="isaret" style="left:57%"></i>
+      <b class="ad" style="left:15%">Sirke</b><b class="ad" style="left:46%">Su</b><b class="ad" style="left:57%">Karbonat</b></div>
+    <div class="eksen"><span><b>Asit</b> · pH 1</span><span>7 · <b>Nötr</b></span><span>pH 14 · <b>Baz</b></span></div></div>
+  <div class="blok" id="b5"><small>SIRA SENDE</small><div class="b">Limon suyu hangi rengi verir?</div><div class="o">Cevabını <em>yorumlara</em> yaz!</div><div style="font:600 26px Inter; color:#7A726B; margin-top:14px">Evde denerken karışımları içme, gözlerini koru.</div></div>
+  <div class="cip" id="c0" style="border-color:#D7263D">Sirke<span>asit · kırmızı</span></div>
+  <div class="cip" id="c1" style="border-color:#8E44AD">Su<span>nötr · mor</span></div>
+  <div class="cip" id="c2" style="border-color:#1FA5A0">Karbonat<span>baz · mavi-yeşil</span></div>
+  <div class="filigran"><div><img src="logo.png"><span>Instagram'da</span><b>@kimyamed</b></div></div>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+const W = 1080, H = 1920;
+const Q_ = new URLSearchParams(location.search);
+const OLCEK = parseFloat(Q_.get('olcek') || '0.75'), GOLGE = Q_.get('golge') === '1', GECIRGEN = Q_.get('gecirgen') === '1', AA = Q_.get('aa') !== '0';
+const r = new THREE.WebGLRenderer({ antialias: AA, preserveDrawingBuffer: true });
+r.setPixelRatio(1); r.setSize(Math.round(W * OLCEK), Math.round(H * OLCEK), false);
+r.domElement.style.width = W + 'px'; r.domElement.style.height = H + 'px';
+r.toneMapping = THREE.NeutralToneMapping; r.toneMappingExposure = 0.95; r.outputColorSpace = THREE.SRGBColorSpace;
+r.shadowMap.enabled = GOLGE; r.shadowMap.type = THREE.VSMShadowMap;
+document.body.insertBefore(r.domElement, document.body.firstChild);
+const sc = new THREE.Scene(); sc.background = new THREE.Color('#F4EBE2');
+const pm = new THREE.PMREMGenerator(r); sc.environment = pm.fromScene(new RoomEnvironment(), 0.03).texture;
+
+// kesintisiz fon
+const fonP = []; for (let i = 0; i <= 40; i++) { const a = i / 40, R = 6; let y, z; if (a < 0.5) { z = 40 - 80 * a; y = 0; } else { const q = (a - 0.5) / 0.5 * Math.PI / 2; z = -R * Math.sin(q); y = R - R * Math.cos(q); } fonP.push([z, y]); }
+fonP.push([-6, 30]);
+const fonG = new THREE.PlaneGeometry(60, 1, 1, fonP.length - 1); const fp = fonG.attributes.position;
+for (let j = 0; j < fonP.length; j++) for (let i = 0; i < 2; i++) fp.setXYZ(j * 2 + i, i ? 30 : -30, fonP[j][1], fonP[j][0] - 2);
+fonG.computeVertexNormals();
+const fon = new THREE.Mesh(fonG, new THREE.MeshStandardMaterial({ color: '#F7ECE1', roughness: 0.9, side: THREE.DoubleSide })); fon.receiveShadow = true; sc.add(fon);
+
+const cam = new THREE.PerspectiveCamera(26, W / H, 0.1, 200);
+const isik = new THREE.DirectionalLight('#fff1e2', 3.2); isik.position.set(5, 9, 7); isik.castShadow = GOLGE; isik.shadow.mapSize.set(2048, 2048);
+Object.assign(isik.shadow.camera, { left: -7, right: 7, top: 7, bottom: -7, near: 1, far: 40 }); isik.shadow.radius = 14; isik.shadow.blurSamples = 20; isik.shadow.bias = -0.0005; sc.add(isik);
+sc.add(new THREE.HemisphereLight('#ffffff', '#f1e2d4', 0.9));
+const dolgu = new THREE.DirectionalLight('#ffffff', 0.6); dolgu.position.set(-6, 4, 6); sc.add(dolgu);
+
+const camMat = () => GECIRGEN ? new THREE.MeshPhysicalMaterial({ color: '#ffffff', metalness: 0, roughness: 0.03, transmission: 1, thickness: 0.05, ior: 1.5, envMapIntensity: 1.6, specularIntensity: 1, side: THREE.DoubleSide })
+  : new THREE.MeshPhysicalMaterial({ color: '#ffffff', metalness: 0, roughness: 0.02, transparent: true, opacity: 0.12, clearcoat: 1, clearcoatRoughness: 0.03, envMapIntensity: 2.4, depthWrite: false, side: THREE.DoubleSide });
+const kenarMat = new THREE.MeshPhysicalMaterial({ color: '#ffffff', roughness: 0.05, transparent: true, opacity: 0.55, envMapIntensity: 2 });
+const lathe = (p, n = 128) => new THREE.LatheGeometry(p.map(([x, y]) => new THREE.Vector2(x, y)), n);
+const golgeDoku = (() => { const cv = document.createElement('canvas'); cv.width = cv.height = 256; const cx = cv.getContext('2d'); const g = cx.createRadialGradient(128, 128, 10, 128, 128, 128); g.addColorStop(0, 'rgba(60,40,25,.55)'); g.addColorStop(0.55, 'rgba(60,40,25,.18)'); g.addColorStop(1, 'rgba(60,40,25,0)'); cx.fillStyle = g; cx.fillRect(0, 0, 256, 256); return new THREE.CanvasTexture(cv); })();
+
+const MOR = new THREE.Color('#3E1766'), KIR = new THREE.Color('#B0102F'), TEAL = new THREE.Color('#0A7F7B');
+const XS = [-1.62, 0, 1.62], SEV0 = 1.15, SEV1 = 1.32;
+const beherler = XS.map((x, i) => {
+  const g = new THREE.Group(); g.position.x = x;
+  const dis = new THREE.Mesh(lathe([[0, 0], [0.62, 0], [0.66, 0.04], [0.66, 1.9], [0.71, 1.97]]), camMat()); dis.castShadow = true; g.add(dis);
+  g.add(new THREE.Mesh(lathe([[0.62, 1.92], [0.62, 0.07], [0, 0.07]]), camMat()));
+  const agiz = new THREE.Mesh(new THREE.TorusGeometry(0.69, 0.02, 12, 128), kenarMat); agiz.rotation.x = Math.PI / 2; agiz.position.y = 1.965; g.add(agiz);
+  for (let k = 1; k <= 4; k++) { const m = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.012, 0.01), new THREE.MeshBasicMaterial({ color: '#9aa3ab', transparent: true, opacity: 0.55 })); m.position.set(-0.25, 0.35 * k, 0.665); g.add(m); }
+  const U = { uYeni: { value: MOR.clone() }, uIler: { value: 0 }, uZ: { value: 0 } };
+  const mat = new THREE.MeshPhysicalMaterial({ color: MOR, roughness: 0.35, clearcoat: 0.2, clearcoatRoughness: 0.2, sheen: 0.2, sheenColor: new THREE.Color('#ffffff'), envMapIntensity: 0.3 });
+  mat.onBeforeCompile = (sh) => {
+    Object.assign(sh.uniforms, U);
+    sh.vertexShader = 'varying vec3 vYerel;\n' + sh.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\n vYerel = position;');
+    sh.fragmentShader = 'uniform vec3 uYeni; uniform float uIler; uniform float uZ; varying vec3 vYerel;\n' + sh.fragmentShader.replace('#include <color_fragment>', `#include <color_fragment>
+      float n = sin(vYerel.x*7.0+uZ*1.3)*0.5 + sin(vYerel.z*9.0-uZ*1.1)*0.5 + sin(vYerel.y*13.0+vYerel.x*5.0+uZ*0.8)*0.35;
+      float on = uIler*1.6 - (1.0 - vYerel.y) - 0.25 + n*0.13;
+      diffuseColor.rgb = mix(diffuseColor.rgb, uYeni, smoothstep(-0.10, 0.10, on) * step(0.0001, uIler));`);
+  };
+  mat.customProgramCacheKey = () => 'sivi' + i;
+  const sv = new THREE.Mesh(lathe([[0, 0], [0.615, 0], [0.615, 1], [0, 1]]), mat); sv.position.y = 0.075; sv.scale.y = SEV0 - 0.075; g.add(sv);
+  const gl = new THREE.Mesh(new THREE.PlaneGeometry(2.2, 1.3), new THREE.MeshBasicMaterial({ map: golgeDoku, transparent: true, depthWrite: false })); gl.rotation.x = -Math.PI / 2; gl.position.set(0.18, 0.003, 0.12); g.add(gl);
+  sc.add(g);
+  return { g, sv, mat, U, x };
+});
+
+// etiketli şişe (sirke / su)
+function etiketDoku(yazi, renk, alt) {
+  const cv = document.createElement('canvas'); cv.width = 1024; cv.height = 256; const c = cv.getContext('2d');
+  c.fillStyle = '#FFF8EF'; c.fillRect(0, 0, 1024, 256); c.fillStyle = renk; c.fillRect(0, 0, 1024, 26); c.fillRect(0, 230, 1024, 26);
+  c.fillStyle = '#14110F'; c.font = '800 112px Poppins'; c.textAlign = 'center'; c.textBaseline = 'middle';
+  c.fillText(yazi, 256, 112); c.font = '700 44px Inter'; c.fillStyle = '#7A726B'; c.fillText(alt, 256, 190);
+  const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t;
+}
+function sise(yazi, renk, alt) {
+  const g = new THREE.Group();
+  const siseCam = GECIRGEN ? new THREE.MeshPhysicalMaterial({ color: '#e6f3ea', metalness: 0, roughness: 0.04, transmission: 0.9, thickness: 0.12, ior: 1.5, envMapIntensity: 1.8, attenuationColor: '#cfe9d6', attenuationDistance: 0.6, side: THREE.DoubleSide })
+    : new THREE.MeshPhysicalMaterial({ color: '#d6efdd', metalness: 0, roughness: 0.04, transparent: true, opacity: 0.55, clearcoat: 1, envMapIntensity: 2.2, side: THREE.DoubleSide });
+  const govde = new THREE.Mesh(lathe([[0, 0], [0.26, 0], [0.28, 0.04], [0.28, 0.78], [0.12, 0.98], [0.09, 1.06], [0.09, 1.24], [0.105, 1.26], [0.09, 1.28]], 64), siseCam); govde.castShadow = true; g.add(govde);
+  const et = new THREE.Mesh(new THREE.CylinderGeometry(0.287, 0.287, 0.5, 64, 1, true), new THREE.MeshStandardMaterial({ map: etiketDoku(yazi, renk, alt), roughness: 0.6 })); et.position.y = 0.4; et.rotation.y = -Math.PI / 2; g.add(et);
+  const halka = new THREE.Mesh(new THREE.TorusGeometry(0.1, 0.018, 10, 40), new THREE.MeshStandardMaterial({ color: renk, roughness: 0.4 })); halka.rotation.x = Math.PI / 2; halka.position.y = 1.2; g.add(halka);
+  const ic = new THREE.Mesh(new THREE.CylinderGeometry(0.25, 0.25, 0.15, 48), new THREE.MeshStandardMaterial({ color: '#DCEBF5', roughness: 0.2, transparent: true, opacity: 0.6 })); ic.position.y = 0.12; g.add(ic);
+  const dudak = new THREE.Object3D(); dudak.position.set(-0.09, 1.27, 0); g.add(dudak);
+  g.scale.setScalar(1.25); g.visible = false; sc.add(g); return { g, dudak };
+}
+const sirke = sise('SİRKE', '#D7263D', 'asit'), su = sise('SU', '#3E6FD8', 'nötr');
+
+// kaşık ve karbonat
+const kasik = new THREE.Group();
+const metal = new THREE.MeshPhysicalMaterial({ color: '#cfd4d9', metalness: 1, roughness: 0.22, envMapIntensity: 1.4 });
+const kase = new THREE.Mesh(new THREE.SphereGeometry(0.22, 48, 24, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), metal); kase.scale.set(1, 0.55, 0.75); kase.castShadow = true; kasik.add(kase);
+const sap = new THREE.Mesh(new THREE.BoxGeometry(1.15, 0.045, 0.09), metal); sap.position.set(0.74, 0.03, 0); sap.rotation.z = 0.08; kasik.add(sap);
+const toz = new THREE.Mesh(new THREE.SphereGeometry(0.17, 32, 16), new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.95 })); toz.scale.set(1, 0.42, 0.7); toz.position.y = 0.0; kasik.add(toz);
+kasik.scale.setScalar(1.5); kasik.visible = false; sc.add(kasik);
+const TANE = 140, taneler = new THREE.InstancedMesh(new THREE.SphereGeometry(0.03, 8, 6), new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.9 }), TANE); taneler.frustumCulled = false; sc.add(taneler);
+
+// akış
+const akis = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.04, 1, 24, 1, true), new THREE.MeshPhysicalMaterial({ color: '#d9ecff', transparent: true, opacity: 0.85, roughness: 0.03, clearcoat: 1, envMapIntensity: 2.4 }));
+akis.visible = false; sc.add(akis);
+
+// kabarcıklar (cam duvarında yükselen)
+const KAB = 16, kabarcik = new THREE.InstancedMesh(new THREE.SphereGeometry(1, 14, 10), new THREE.MeshPhysicalMaterial({ color: '#ffffff', transparent: true, opacity: 0.55, roughness: 0, clearcoat: 1, envMapIntensity: 2 }), KAB * 3); kabarcik.frustumCulled = false; sc.add(kabarcik);
+const rnd = (() => { let s = 7; return () => (s = (s * 16807) % 2147483647) / 2147483647; })();
+const kabV = [...Array(KAB * 3)].map(() => ({ a: (rnd() - 0.5) * 2.0, r: 0.012 + rnd() * 0.022, d: rnd() * 1.2, h: 0.7 + rnd() * 0.6 }));
+const taneV = [...Array(TANE)].map(() => ({ dx: (rnd() - 0.5) * 0.22, dz: (rnd() - 0.5) * 0.16, d: rnd() * 0.8 }));
+
+// zaman çizelgesi
+const ADIM = [3.2, 7.7, 12.2];          // adım başlangıçları
+const SON = 27.5;
+const yum = (x) => x <= 0 ? 0 : x >= 1 ? 1 : x * x * (3 - 2 * x);
+const ara = (t, a, b) => yum((t - a) / (b - a));
+const M = new THREE.Matrix4(), Q = new THREE.Quaternion(), V = new THREE.Vector3(), S = new THREE.Vector3();
+
+function siseHareket(o, b, t, s) {
+  const x = b.x; const g = o.g;
+  const gir = ara(t, s, s + 0.6), egil = ara(t, s + 0.6, s + 1.0) - ara(t, s + 2.2, s + 2.6), cik = ara(t, s + 2.6, s + 3.2);
+  g.visible = t > s - 0.05 && t < s + 3.3;
+  const DX = 0.972 * 1.25, DY = 2.62 + 0.791 * 1.25;
+  const px = x + 2.0 + (DX - 2.0) * gir + (2.0 - DX) * cik, py = 6.6 + (DY - 6.6) * gir + (6.6 - DY) * cik;
+  g.position.set(px, py, 0.15); g.rotation.set(0, 0, THREE.MathUtils.degToRad(35 * gir * (1 - cik) + 90 * egil));
+  const dok = t > s + 0.95 && t < s + 2.35;
+  return dok;
+}
+function akisKur(dudak, yuzeyY, t0, t1, t) {
+  dudak.updateWorldMatrix(true, false); dudak.getWorldPosition(V);
+  const bas = ara(t, t0, t0 + 0.12), bit = ara(t, t1 - 0.15, t1);
+  const ust = V.y, alt = yuzeyY; const ustY = ust - (ust - alt) * bit, altY = ust - (ust - alt) * bas;
+  akis.visible = altY < ustY - 0.01; akis.position.set(V.x, (ustY + altY) / 2, V.z); akis.scale.set(1, Math.max(ustY - altY, 0.001), 1);
+}
+
+window.kare = (t) => {
+  // kamera: yavaş yaklaşma
+  cam.position.set(0, 3.2, 19.0); cam.lookAt(0, 1.42, 0);
+  akis.visible = false;
+  beherler.forEach((b, i) => {
+    const s = ADIM[i];
+    const sev = SEV0 + (SEV1 - SEV0) * ara(t, s + 1.0, s + 2.3);
+    b.sv.scale.y = sev - 0.075;
+    b.U.uZ.value = t;
+    b.U.uIler.value = ara(t, s + 1.15, s + 2.9);
+    b.U.uYeni.value.copy(i === 0 ? KIR : i === 1 ? MOR : TEAL);
+  });
+  // şişeler
+  const d1 = siseHareket(sirke, beherler[0], t, ADIM[0]); if (d1) akisKur(sirke.dudak, 0.075 + (beherler[0].sv.scale.y), ADIM[0] + 0.95, ADIM[0] + 2.35, t);
+  const d2 = siseHareket(su, beherler[1], t, ADIM[1]); if (d2) akisKur(su.dudak, 0.075 + (beherler[1].sv.scale.y), ADIM[1] + 0.95, ADIM[1] + 2.35, t);
+  // kaşık
+  const s3 = ADIM[2], bx = beherler[2].x;
+  const gir = ara(t, s3, s3 + 0.6), egil = ara(t, s3 + 0.6, s3 + 1.0) - ara(t, s3 + 2.0, s3 + 2.4), cik = ara(t, s3 + 2.4, s3 + 3.0);
+  kasik.visible = t > s3 - 0.05 && t < s3 + 3.1;
+  kasik.position.set(bx - 0.05 + 1.6 * (1 - gir) + 1.6 * cik, 2.45 + 3.0 * (1 - gir) + 3.0 * cik, 0.1);
+  kasik.rotation.set(-1.15 * egil, 0, 0.12 * egil);
+  toz.scale.set(1 * (1 - 0.85 * ara(t, s3 + 0.9, s3 + 1.8)), 0.42 * (1 - 0.85 * ara(t, s3 + 0.9, s3 + 1.8)), 0.7 * (1 - 0.85 * ara(t, s3 + 0.9, s3 + 1.8)));
+  const yuzey3 = 0.075 + beherler[2].sv.scale.y;
+  kasik.updateWorldMatrix(true, true); kase.getWorldPosition(V);
+  for (let k = 0; k < TANE; k++) {
+    const v = taneV[k], t0 = s3 + 0.9 + v.d, dt = t - t0;
+    let gor = false;
+    if (dt > 0) { const y = V.y - 0.05 - 4.9 * dt * dt; if (y > yuzey3) { gor = true; S.set(1, 1, 1); M.compose(new THREE.Vector3(V.x + v.dx, y, V.z + v.dz), Q.identity(), S); } }
+    if (!gor) M.compose(new THREE.Vector3(0, -50, 0), Q.identity(), S.set(0.001, 0.001, 0.001));
+    taneler.setMatrixAt(k, M);
+  }
+  taneler.instanceMatrix.needsUpdate = true;
+  // kabarcıklar
+  for (let i = 0; i < 3; i++) {
+    const b = beherler[i], s = ADIM[i], ust = 0.075 + b.sv.scale.y;
+    for (let k = 0; k < KAB; k++) {
+      const v = kabV[i * KAB + k], t0 = s + 1.2 + v.d, dt = t - t0, sure = 1.6 * v.h;
+      if (dt > 0 && dt < sure) {
+        const y = 0.12 + (ust - 0.16) * (dt / sure), ac = v.a, sc_ = v.r * (1 - ara(dt, sure - 0.25, sure));
+        M.compose(V.set(b.x + 0.6 * Math.sin(ac), y, 0.6 * Math.cos(ac) + 0.005), Q.identity(), S.set(sc_, sc_, sc_));
+      } else M.compose(V.set(0, -50, 0), Q.identity(), S.set(0.001, 0.001, 0.001));
+      kabarcik.setMatrixAt(i * KAB + k, M);
+    }
+  }
+  kabarcik.instanceMatrix.needsUpdate = true;
+  // 3B sahne yalnız deney adımlarında değişir; durağan anlarda son çizim kullanılır
+  const aktif = ADIM.some((s) => t >= s - 0.1 && t <= s + 4.6);
+  const imza = aktif ? 'a' + t : 'sabit' + ADIM.filter((s) => t > s).length;
+  if (imza !== sonImza) { r.render(sc, cam); sonImza = imza; }
+  katman(t);
+  return true;
+};
+let sonImza = null;
+
+// üst katman (yazılar)
+const op = (t, a, b, f = 0.3) => Math.min(ara(t, a, a + f), 1 - ara(t, b - f, b));
+const $ = (id) => document.getElementById(id);
+const P2 = new THREE.Vector3();
+function katman(t) {
+  const bloklar = [['b0', -1, 3.2], ['b1', 3.2, 7.7], ['b2', 7.7, 12.2], ['b3', 12.2, 16.7], ['b4', 16.7, 22.7], ['b5', 22.7, SON + 1]];
+  for (const [id, a, b] of bloklar) { const o = op(t, a, b); const e = $(id); e.style.opacity = o; e.style.transform = `translateY(${(1 - ara(t, a, a + 0.35)) * 24}px)`; }
+  const ph = op(t, 17.3, 22.7); $('ph').style.opacity = ph; $('ph').style.transform = `translateY(${(1 - ara(t, 17.3, 17.7)) * 24}px)`;
+  [0, 1, 2].forEach((i) => {
+    const e = $('c' + i), a = ADIM[i] + 2.9;
+    P2.set(beherler[i].x, -0.02, 0.7).project(cam);
+    e.style.left = ((P2.x + 1) / 2 * W) + 'px'; e.style.top = ((1 - P2.y) / 2 * H + 24) + 'px';
+    e.style.opacity = ara(t, a, a + 0.3);
+    e.style.transform = `translate(-50%, ${(1 - ara(t, a, a + 0.35)) * 18}px) scale(${0.9 + 0.1 * ara(t, a, a + 0.35)})`;
+  });
+}
+window.kapak = () => {
+  window.kare(16.6);
+  ['b1','b2','b3','b4','b5'].forEach(id => $(id).style.opacity = 0); $('ph').style.opacity = 0;
+  const b0 = $('b0'); b0.style.opacity = 1; b0.style.transform = 'none';
+  b0.querySelector('.o').innerHTML = 'Kırmızı lahana suyuyla <em>asit–baz</em> deneyi';
+  [0, 1, 2].forEach(i => { const e = $('c' + i); e.style.opacity = 1; e.style.transform = 'translate(-50%, 0)'; });
+  return true;
+};
+window.olc = (t) => { const t0 = performance.now(); window.kare(t); const gl = r.getContext(); const px = new Uint8Array(4); gl.readPixels(0, 0, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px); return performance.now() - t0; };
+window.SURE = SON;
+await document.fonts.ready;
+window.kare(0);
+window.HAZIR = true;
+</script></body></html>
