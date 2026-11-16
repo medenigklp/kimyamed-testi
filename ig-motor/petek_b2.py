@@ -18,10 +18,24 @@ P.BOLUM, P.TOPLAM_ADIM = 2, 8          # üst bant: Bölüm 2, 6 dal + tuzak + s
 MAVI = '#2F7DD1'
 
 # ---------- ses: kayıt gelince doldurulur ----------
-SES_B2 = os.path.join(os.path.dirname(KOK), 'ses-b2', 'kayit.m4a')
-SATIRLAR_B2 = []      # [('L1', [(bas, son), ...]), ..., ('L13', [...]), ('SAYAC', None), ('L14', [...])]
-KELIME = {}           # 'altisi', 'tanim0..5', 'ornek0..5', 'kok', 'uc' -> kayıttaki başlangıç saniyesi
-SES_AYAR = dict(ON=0.25, ARA_IC=0.22, ARA_SATIR=0.30, SON=1.2, PAY_ON=0.04, PAY_SON=0.08, TEMPO=1.0)
+SES_B2 = os.path.join(os.path.dirname(KOK), 'ses-b2', 'kayit.wav')   # arka plan gürültüsü RNNoise ile temizlenmiş kayıt
+SATIRLAR_B2 = [
+    ('L1', [(4.14, 7.68)]), ('L2', [(9.71, 10.62), (10.99, 12.08)]),
+    ('L3', [(14.01, 16.40), (16.81, 17.88), (20.21, 22.14)]),
+    ('L4', [(23.50, 24.58), (24.86, 26.55), (27.96, 30.22)]),
+    ('L5', [(32.50, 33.60), (35.04, 36.83), (37.66, 38.75), (39.34, 39.56)]),
+    ('L6', [(41.93, 43.04), (43.74, 46.31), (47.89, 49.89)]),
+    ('L7', [(52.57, 53.24), (54.98, 57.36), (57.98, 58.56), (58.85, 59.65)]),
+    ('L8', [(61.49, 62.41), (63.03, 65.91), (66.94, 68.11)]),
+    ('L9', [(70.28, 71.37), (71.99, 75.06), (76.43, 77.87)]),
+    ('L10', [(79.67, 80.72)]), ('L11', [(82.33, 84.24)]), ('L12', [(85.68, 87.60)]),
+    ('L13', [(89.96, 91.12), (96.50, 99.09), (99.38, 100.30)]),
+    ('SAYAC', None),
+    ('L14', [(104.51, 105.85), (107.98, 110.65)]),
+]
+KELIME = {'altisi': 20.21, 'tanim0': 24.86, 'ornek0': 27.96, 'tanim1': 35.04, 'ornek1': 37.66, 'tanim2': 43.74, 'ornek2': 47.89,
+          'tanim3': 54.98, 'ornek3': 57.98, 'tanim4': 63.03, 'ornek4': 66.94, 'tanim5': 71.99, 'ornek5': 76.43, 'kok': 96.50, 'uc': 99.38}
+SES_AYAR = dict(ON=0.25, ARA_IC=0.18, ARA_SATIR=0.26, SON=1.2, PAY_ON=0.04, PAY_SON=0.08, TEMPO=1.10)
 
 # ---------- simgeler ----------
 def tup(boy=130):
