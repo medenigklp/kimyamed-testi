@@ -21,5 +21,6 @@ Bu klasördeki kayıtlar herkese açıktır: siteyi açan herkes bu sesleri dinl
 # Öğrenci sesleri, Ders PDF'si, grafik çizimi, akıllı tahta
 
 - Öğrenciler yalnızca öğretmenin seçtiği iki doğal sesi (bir kadın, bir erkek) seçebilir; öğretmen modu ve öğrenci seslerinin değiştirilmesi Ronya deposundaki `sesli/README.md`'de anlatılıyor. Ses servisine ulaşılamazsa `bulut.json`'daki `ogrenci` sesleri kullanılır.
+- **Kendi sesin:** öğretmen sesinin kopyası (Ayarlar → Kendi sesin). Kayıt ekranı `benim-ses.js` bu klasördedir, yalnızca istenince yüklenir; kurulum Ronya deposundaki `sesli/README.md`'de.
 - **Ders PDF'si** için `pdf-lib.min.js` (pdf-lib 1.17.1, MIT), `pdf-yazi.js` (DejaVu Sans alt kümesi) ve `sesli-pdf.js` bu klasördedir; yalnızca PDF istenince yüklenir.
 
