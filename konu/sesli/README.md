@@ -17,3 +17,9 @@ Bu klasördeki kayıtlar herkese açıktır: siteyi açan herkes bu sesleri dinl
 # Doğal sesler (Google)
 
 `bulut.json` içindeki `adres` doluysa sesli anlatım Google'ın doğal Türkçe seslerini kullanır; boşsa cihazın kendi sesleri kullanılır. Ses servisi Ronya ile ortaktır: kurulumu ve kodu Ronya deposundaki `sesli/README.md` ve `sesli/ses-servisi.js` dosyalarında.
+
+# Öğrenci sesleri, Ders PDF'si, grafik çizimi, akıllı tahta
+
+- Öğrenciler yalnızca öğretmenin seçtiği iki doğal sesi (bir kadın, bir erkek) seçebilir; öğretmen modu ve öğrenci seslerinin değiştirilmesi Ronya deposundaki `sesli/README.md`'de anlatılıyor. Ses servisine ulaşılamazsa `bulut.json`'daki `ogrenci` sesleri kullanılır.
+- **Ders PDF'si** için `pdf-lib.min.js` (pdf-lib 1.17.1, MIT), `pdf-yazi.js` (DejaVu Sans alt kümesi) ve `sesli-pdf.js` bu klasördedir; yalnızca PDF istenince yüklenir.
+
